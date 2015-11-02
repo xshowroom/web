@@ -1,3 +1,0 @@
-xiaotao.cloudapp.net
-3306
-root/123456
