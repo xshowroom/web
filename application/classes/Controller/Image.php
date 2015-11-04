@@ -12,10 +12,10 @@ class Controller_Image extends Controller
 
 	public function action_index()
 	{
-		$codeVal = $verifyCodeService->generateCodeValue();
+		$codeVal = $this->verifyCodeService->generateCodeValue();
 		ob_clean();
     	Header("Content-type: image/png");
-    	$verifyCodeService->generateCodeImage($codeVal);
+    	$this->verifyCodeService->generateCodeImage($codeVal);
     	exit(0);
 	}
 
