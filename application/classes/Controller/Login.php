@@ -19,7 +19,7 @@ class Controller_Login extends Controller
         $code		= Request::current()->query('code');
 
         // 验证码是否正确
-        if (!$this->codeService->verify($code, true)) {
+        if (!$this->codeService->verify($code)) {
         	echo json_encode(array(
 	            'status' => STATUS_ERROR,
 	            'msg' => 'verify code is incorrect',
@@ -33,7 +33,7 @@ class Controller_Login extends Controller
 
         echo json_encode(array(
             'status' => $status,
-            'msg' => 'username or password is incorrect',
+            'msg' => '',
         ));
 	}
 
