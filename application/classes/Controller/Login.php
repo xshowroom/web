@@ -30,10 +30,11 @@ class Controller_Login extends Controller
         $res = $this->userService->getUserInfo($email, $password);
 
         $status = empty($res) ? STATUS_ERROR : STATUS_SUCCESS;
+        $msg	= empty($res) ? 'username or password is incorrect' : 'login success';
 
         echo json_encode(array(
             'status' => $status,
-            'msg' => '',
+            'msg' 	 => $msg,
         ));
 	}
 
