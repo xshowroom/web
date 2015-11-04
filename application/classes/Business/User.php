@@ -12,6 +12,11 @@ class Business_User
 	public function getUserInfo($email, $pass)
 	{
 		$user = $this->userModel->getByEmailPass($email, $pass);
+		if (!empty($user)) {
+			unset($user['password']);
+
+			$_SESSION['opUser'] = $user;
+		}
 
 		return $user;
 	}
