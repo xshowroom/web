@@ -4,9 +4,8 @@ return array
 (
     'default' => array
     (
-        'proxy1' => array
-        (
-            'type'       => 'MySQL',
+
+        'type'       => 'MySQL',
             'connection' => array(
                 /**
                  * The following options are available for MySQL:
@@ -20,7 +19,7 @@ return array
                  *
                  * Ports and sockets may be appended to the hostname.
                  */
-                'hostname'   => 'xiaotao.cloudapp.net:3306',// 10.42.3.33:6008
+                'hostname'   => 'localhost:3306',// 10.42.3.33:6008
                 'database'   => 'xshowroom',
                 'username'   => 'root',
                 'password'   => '123456',
@@ -29,21 +28,5 @@ return array
             'table_prefix' => '',
             'charset'      => 'utf8',
             'caching'      => false,
-        ),
-        
-        'proxy2' => array
-        (
-            'type'       => 'MySQL',
-            'connection' => array(
-                'hostname'   => 'xiaotao.cloudapp.net:3306',
-                'database'   => 'xshowroom',
-                'username'   => 'root',
-                'password'   => '123456',
-                'persistent' => false,
-            ),
-            'table_prefix' => '',
-            'charset'      => 'utf8',
-            'caching'      => false,
-        ),
     ),
 );
