@@ -56,7 +56,7 @@ class Business_VerifyCode
     {
         $key = 'verifycode_' . session_id();
         $codeValue = $_SESSION[$key];
-        
+                
         return $codeValue;
     }
     
