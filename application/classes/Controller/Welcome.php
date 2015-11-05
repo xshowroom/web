@@ -4,7 +4,7 @@ class Controller_Welcome extends Controller
 {
 	public function action_index()
 	{
-		echo 'Hello World!';
+		echo 'Hello World! ';
 	}
 
 } // End Welcome
