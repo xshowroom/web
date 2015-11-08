@@ -256,3 +256,62 @@ a.active:before{
 	color: #888;
 	font-size: 10px;
 }
+
+/* filter过滤器通用样式 */
+.filter-condition{
+	margin-bottom: 10px;
+}
+.filter-condition .filter-header{
+	border-bottom: 1px solid #000;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+.filter-condition .filter-name{
+	font-size: 14px;
+	font-weight: bold;
+}
+.filter-condition .filter-clear-all{
+	color: #ccc;
+    font-size: 12px;
+    float: right;
+    margin-top: 2px;
+    cursor: pointer;
+}
+.filter-condition  .filter-checkbox-list,
+.filter-condition  .filter-radio-list{
+	list-style: none;
+	margin: 10px 0;
+}
+.filter-condition  .filter-list > li{
+	margin: 3px 0;
+    color: #878787;
+    font-size: 12px;
+    display: block;
+    width: 100%;
+    height: 28px;
+    line-height: 28px;
+    cursor: pointer;
+}
+.filter-condition  .filter-list > li > span{
+	display: inline-block;
+	float: left;
+}
+.filter-condition  .filter-list > li > .filter-selector{
+	width: 1.4em;
+    height: 1.4em;
+    border: 1px solid #878787;
+    margin: 0.3em 15px 0.3em 0;
+}
+.filter-condition  .filter-list > li.active > .filter-selector{
+	background-color: #878787;
+	color: #fff;
+}
+.filter-condition  .filter-list.filter-radio-list .filter-selector{
+	border-radius: 50%;
+}
+.filter-condition .filter-more{
+	color: #ccc;
+    font-size: 12px;
+    margin-top: -5px;
+    cursor: pointer;
+}

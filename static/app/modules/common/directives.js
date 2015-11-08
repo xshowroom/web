@@ -94,4 +94,69 @@ var app = angular.module(
         	
         }
     };
+}])
+.directive('filterCondition', [function () {
+    return {
+        template: function ($element, $attr, $scope) {
+            var html = [
+				'<div class="col-xs-12">',
+					'<div class="filter-header">',
+						'<span class="filter-name">{{title|uppercase}}</span>',
+						'<span class="filter-clear-all" ng-click="clearAll()" ng-if="hasClearAll && selectedConditions.length">CLEAR ALL</span>',
+					'</div>',
+				'</div>',
+				'<ul class="col-xs-12 filter-list filter-{{type}}-list">',
+					'<li ng-repeat="item in conditions | limitTo: limit" ng-click="toggle(item)" ng-class="{\'active\': isActive(item)}">',
+						'<span class="filter-selector glyphicon" ng-class="{\'glyphicon-ok\': isActive(item)}"></span>',
+						'<span>{{item.label|uppercase}}</span>',
+					'</li>',
+				'</ul>',
+				'<span class="col-xs-12 filter-more" ng-click="showMore()" ng-if="limit < conditions.length">More</span>',
+            ].join('');
+            return html;
+        },
+        scope: {
+        	title: '@',
+        	conditions: '=',
+        	type: '@',
+        	selected: '&',
+        	hasClearAll: '@'
+        },
+        transclude: true,
+        restrict: 'C',
+        replace: false,
+        link: function ($scope, $element, $attrs, $transclude) {
+        	$scope.selectedConditions = [];
+        	$scope.toggle = function (item) {
+        		if ($scope.type == 'checkbox') {
+        			var index = $scope.selectedConditions.indexOf(item);
+        			if (index == -1){
+        				$scope.selectedConditions.push(item);
+        			}else{
+        				$scope.selectedConditions.splice(index, 1);
+        			}
+        		} else if ($scope.type == 'radio') {
+            		$scope.selectedConditions[0] = item;
+            	}
+                $scope.selected({
+                	name: $scope.title,
+                	conditions: $scope.selectedConditions
+                });
+            };
+            $scope.clearAll = function(){
+            	$scope.selectedConditions = [];
+            	$scope.selected({
+                 	name: $scope.title,
+                  	conditions: $scope.selectedConditions
+                });
+            };
+            $scope.limit = 4;
+            $scope.isActive = function(item){
+            	return $scope.selectedConditions.indexOf(item) >= 0;
+            }
+            $scope.showMore = function(){
+            	$scope.limit += 4;
+            }
+        }
+    };
 }]);
