@@ -192,7 +192,7 @@ var app = angular.module(
 			};
 			
 			if(typeof FileReader==='undefined'){ 
-			    alert("抱歉，你的浏览器不支持 FileReader，图片已提交但是无法预览!"); 
+			    alert("抱歉，你的浏览器不支持 FileReader，图片无法预览!"); 
 			}else{ 
 				input.on('change', readFile)
 			} 
