@@ -49,7 +49,7 @@
 					ng-src="/XShowroom/app/images/brand-register-{{step.stepNumber}}.png" />
 			</div>
 
-			<form class="form-horizontal" action="/XShowroomAPI/test" ng-submit="submit()"
+			<form class="form-horizontal" action="/XShowroomAPI/test" enctype="multipart/form-data" ng-submit="submit()"
 				method="post">
 				<!-- step 1 -->
 				<div class="col-xs-7" ng-show="step.stepNumber == 1">
@@ -114,11 +114,11 @@
 					<div class="row brand-register-block-spare">
 						<div class="col-xs-3">
 							<div
-								class="panel panel-default block-center brand-register-lookbook-upload">
+								class="panel panel-default block-center brand-register-lookbook-upload imagePreview">
 								<p class="text-center">LOOKBOOK / IMAGE</p>
 								<label for="lookbook-upload" class="text-center"> UPLOAD
 									<input type="file" id="lookbook-upload" name="lookbook-upload"
-									onchange="previewLookbook(this)" ng-model="brand.lookbook" />
+									 ng-model="brand.lookbook" />
 								</label>
 							</div>
 						</div>

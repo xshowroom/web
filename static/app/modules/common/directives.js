@@ -159,4 +159,43 @@ var app = angular.module(
             }
         }
     };
+}])
+.directive('imagePreview', [function () {
+    return {
+    	template: '<div ng-transclude></div>',
+        scope: {
+        	target: '@',
+        },
+        transclude: true,
+        restrict: 'C',
+        replace: false,
+        link: function ($scope, $element, $attrs, $transclude) {
+        	var input = $element.find("input[type='file']"); 
+        	var target = $scope.target ? $element.find('#' + target) : $element;
+			 
+			var readFile = function (){ 
+			    var file = this.files[0]; 
+			    if(!/image\/\w+/.test(file.type)){ 
+			        alert("文件必须为图片！"); 
+			        return false; 
+			    } 
+			    var reader = new FileReader(); 
+			    reader.readAsDataURL(file); 
+			    reader.onload = function(e){ 
+			    	var image = target.find(".uploaded-image");
+			    	if (image.length){
+			    		image.attr('src', this.result);
+			    	}else{
+			    		target.append('<img class="uploaded-image" src="'+this.result+'" style="width:100%;height: 100%; position: absolute; left:0;top:0;z-index: -1;"/>')
+			    	}
+			    } 
+			};
+			
+			if(typeof FileReader==='undefined'){ 
+			    alert("抱歉，你的浏览器不支持 FileReader，图片已提交但是无法预览!"); 
+			}else{ 
+				input.on('change', readFile)
+			} 
+        }
+    };
 }]);

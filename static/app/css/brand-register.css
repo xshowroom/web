@@ -24,6 +24,9 @@ h2.brand-register-step {
 .brand-register-lookbook-upload {
 	font-size: 10px;
 	height: 170px;
+	background: transparent;
+    overflow: hidden;
+    position: relative;
 }
 
 .brand-register-lookbook-upload p {
