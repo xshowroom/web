@@ -1,0 +1,228 @@
+/* 无用户导航 */
+#home-page-navigation.no-user-navigation{
+	background-color: transparent;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	z-index: 99;
+}
+#home-page-navigation.no-user-navigation .share-link {
+	color: #fff;
+}
+#home-page-navigation.no-user-navigation .main-naviagtions > li > a{
+	color: #fff;
+}
+.home-banner{
+	height: auto;
+}
+.home-banner .banner-content{
+	width: 100%;
+    position: relative;
+    top: -213px;
+    left: 0;
+    overflow: hidden;
+    padding: 0;
+    margin-bottom: -213px;
+}
+.home-banner .nivo-controlNav {
+    text-align: center;
+    padding: 15px 0;
+    position: absolute;
+    z-index: 999;
+    bottom: 10px;
+    width: 100%;
+}
+.home-banner .nivo-controlNav a {
+    cursor: pointer;
+    border-radius: 100%;
+    color: transparent !important;
+    border: 1px solid #fff;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin: 0 10px;
+}
+.home-banner .nivo-controlNav a.active {
+    background-color: #fff;
+}
+.home-banner .nivo-controlNav a:before,
+.home-banner .nivo-controlNav a.active:before{
+	content: none !important;
+}
+.home-banner .nivo-caption{
+    top: 35%;
+    bottom: auto;
+    background: transparent;
+    width: 100%;
+    text-align: center;
+    opacity: 1;
+}
+.home-banner .nivo-caption * {
+	animation: fadeIn 2s;
+    -webkit-animation: fadeIn 2s;
+    -moz-animation: fadeIn 2s;
+    -o-animation: fadeIn 2s;
+}
+.home-banner .nivo-caption h2{
+	font-size: 100px;
+}
+.home-banner .nivo-caption p{
+	font-size: 22px;
+	margin-top: 30px;
+}
+.home-banner .nivo-caption .btn{
+	margin-top: 51px;
+    display: inline-block !important;
+}
+.home-banner .nivo-caption .btn.btn-type-1{
+	border: 1px solid #fff;
+    color: #fff !important;
+    background-color: transparent;
+}
+.home-banner .nivo-caption .btn.btn-type-2{
+	border: 1px solid #fff;
+    color: #000;
+    background-color: #fff;
+}
+.home-banner .nivo-caption .btn.btn-type-1:before,
+.home-banner .nivo-caption .btn.btn-type-2:before{
+    background-color: #ca7379;
+}
+.home-banner .nivo-caption .btn.btn-type-1:hover,
+.home-banner .nivo-caption .btn.btn-type-2:hover{
+	background-color: #ca7379;
+	border: 1px solid #ca7379;
+	color: #fff  !important;
+}
+@keyframes fadeIn
+{
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+@-moz-keyframes fadeIn /* Firefox */
+{
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+@-webkit-keyframes fadeIn /* Safari 和 Chrome */
+{
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+@-o-keyframes fadeIn /* Opera */
+{
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+.home-kpi h1{
+	font-size: 48px;
+	color: #606060;
+	margin: 0;
+}
+.home-kpi p{
+	font-size: 18px;
+	color: #6c6c6c;
+	margin-top: 30px;
+}
+.home-kpi .kpi-item {
+	height: 150px;
+}
+.home-kpi .kpi-item .kpi-number{
+	font-size: 36px;
+	color: #25272c;
+	margin: 45px 0 15px 0;
+}
+.home-kpi .kpi-item .kpi-name{
+	font-size: 11px;
+	color: #1f1f1f;
+}
+.home-introduction {
+	border-color: #eee;
+	border-style: solid;
+	border-width: 1px 0 1px 0;
+}
+.home-introduction .introduction-item{
+	height: 350px;
+}
+.home-introduction .introduction-item h3{
+	margin: 70px 0 30px 0;
+	font-size: 18px;
+}
+.home-introduction .introduction-item h3 span{
+    display: inline-block;
+    margin-left: 15px;
+}
+.home-introduction .introduction-item p{
+	font-size: 14px;
+}
+.home-introduction .introduction-item .btn{
+	margin-top: 50px;
+}
+.home-introduction .introduction-image:first-child{
+	background-color: #ededef;
+	text-align: right;
+}
+.home-introduction .introduction-image:last-child{
+	background-color: #F8FCFF;
+	text-align: left;
+}
+.home-introduction .introduction-image img{
+	height: 100%;
+}
+.home-showcase{
+	padding-bottom: 80px;
+}
+.home-showcase h3{
+	font-size: 20px;
+	color: #25272c;
+	margin-top: 80px;
+}
+.home-showcase p{
+	font-size: 12px;
+	color: #25272c;
+	margin: 15px 0 30px 0;
+}
+.home-showcase .showcase-item{
+	text-align: center;
+}
+.home-showcase .showcase-item .showcase-image img{
+	width: 100%;
+}
+.home-showcase .showcase-item .showcase-name{
+	font-size: 18px;
+	color: #000;
+	margin-top: 15px;
+}
+.home-showcase .showcase-item .showcase-collection,
+.home-showcase .showcase-item .showcase-identity{
+	font-size: 14px;
+	color: #000;
+	margin-top: 15px;
+}
+.home-subscribe{
+	background-image: url('/XShowroom/app/images/home-subscibe.png');
+	height: 340px;
+	background-position: center;
+	color: #fff;
+}
+
+.home-subscribe .glyphicon{
+	font-size: 30px;
+}
+.home-subscribe h3{
+	font-size: 16px;
+}
+.home-subscribe p{
+	font-size: 13px;
+	margin-top: 15px;
+}
+.home-subscribe .subscribe-submit{
+	margin-top: 30px;
+}
+.home-subscribe .subscribe-submit .form-control{
+	width: 300px;
+	display: inline-block;
+}
