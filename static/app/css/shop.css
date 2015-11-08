@@ -36,12 +36,14 @@
 	border-color: #ccc;
 	border-width: 1px 1px 2px 1px;
 	margin-bottom: 30px;
+	width: 100%;
 }
 .brand-list .brand-list-content .brand-item:before{
 	content: none;
 }
 .brand-list .brand-list-content .brand-item .brand-item-image{
 	height: 100%;
+	width: 100%;
 }
 .brand-list .brand-list-content .brand-item .brand-item-name{
 	height: 40px;
