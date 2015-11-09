@@ -15,7 +15,7 @@ class Controller_Register extends Controller
 
 	public function action_index()
 	{
-	    $roleType = Request::current()->query('roleType');
+	    $roleType = Request::current()->post('roleType');
         
         $res = $this->userService->addUser($roleType);
 

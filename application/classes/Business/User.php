@@ -39,20 +39,20 @@ class Business_User
 	
 	public function addCommonInfo()
 	{
-	    $email          = Request::current()->query('email');
-	    $password       = Request::current()->query('pass');
-	    $roleType       = Request::current()->query('roleType');
-	    $firstName      = Request::current()->query('firstName');
-	    $lastName       = Request::current()->query('lastName');
-	    $displayName    = Request::current()->query('displayName');
-	    $tel            = Request::current()->query('tel');
-	    $mobile         = Request::current()->query('mobile');
-	    $companyName    = Request::current()->query('companyName');
-	    $companyAddr    = Request::current()->query('companyAddr');
-	    $companyCountry = Request::current()->query('companyCountry');
-	    $companyZip     = Request::current()->query('companyZip');
-	    $companyTel     = Request::current()->query('companyTel');
-	    $companyWebsite = Request::current()->query('companyWebsite');
+	    $email          = Request::current()->post('email');
+	    $password       = Request::current()->post('pass');
+	    $roleType       = Request::current()->post('roleType');
+	    $firstName      = Request::current()->post('firstName');
+	    $lastName       = Request::current()->post('lastName');
+	    $displayName    = Request::current()->post('displayName');
+	    $tel            = Request::current()->post('tel');
+	    $mobile         = Request::current()->post('mobile');
+	    $companyName    = Request::current()->post('companyName');
+	    $companyAddr    = Request::current()->post('companyAddr');
+	    $companyCountry = Request::current()->post('companyCountry');
+	    $companyZip     = Request::current()->post('companyZip');
+	    $companyTel     = Request::current()->post('companyTel');
+	    $companyWebsite = Request::current()->post('companyWebsite');
 	    
 	    $emailExist = $this->checkEmail($email);
 	    if ($emailExist) {
@@ -73,8 +73,8 @@ class Business_User
 	    if (!$userId) {
 	        return null;
 	    } else {
-	        $brandName     = Request::current()->query('brandName');
-	        $disignerName  = Request::current()->query('disignerName');
+	        $brandName     = Request::current()->post('brandName');
+	        $disignerName  = Request::current()->post('disignerName');
 	        $brandUrl      = WEB_ROOT . '/brand/' . $brandName;
 	        $brandImage    = '';
 	        
@@ -89,17 +89,17 @@ class Business_User
 	    if (!$userId) {
 	        return null;
 	    } else {
-	        $name      = Request::current()->query('shopName');
-	        $type      = Request::current()->query('shopType');
-	        $colType   = Request::current()->query('collecionType');
-	        $brandList = Request::current()->query('brandList');
-	        $website   = Request::current()->query('shopWebsite');
-	        $address   = Request::current()->query('shopAddress');
-	        $country   = Request::current()->query('shopCountry');
-	        $zipcode   = Request::current()->query('shopZipcode');
-	        $tel       = Request::current()->query('shopTel');
+	        $name      = Request::current()->post('shopName');
+	        $type      = Request::current()->post('shopType');
+	        $colType   = Request::current()->post('collecionType');
+	        $brandList = Request::current()->post('brandList');
+	        $website   = Request::current()->post('shopWebsite');
+	        $address   = Request::current()->post('shopAddress');
+	        $country   = Request::current()->post('shopCountry');
+	        $zipcode   = Request::current()->post('shopZipcode');
+	        $tel       = Request::current()->post('shopTel');
 	        
-	        $shopId = $this->userModel->addShopInfo($userId, $name, $type, $colType, $brandList
+	        $shopId = $this->userModel->addShopInfo($userId, $name, $type, $colType, $brandList,
                                                     $website, $address, $country, $zipcode, $tel);
 	        return $shopId;
 	    }
