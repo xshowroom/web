@@ -27,6 +27,7 @@ class Business_User
 
 	public function getUserInfo($email, $pass)
 	{
+		$pass = md5($pass);
 		$user = $this->userModel->getByEmailPass($email, $pass);
 		if (!empty($user)) {
 			unset($user['password']);
