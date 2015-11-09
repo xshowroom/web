@@ -31,10 +31,12 @@ class Business_User
 	public function addUser($roleType)
 	{
 	    if ($roleType == self::ROLE_BRAND) {
-	        $this->addBrandUser();
+	        $ret = $this->addBrandUser();
 	    } else if ($roleType == self::ROLE_BUYER) {
-	        $this->addBuyerUser();
+	        $ret = $this->addBuyerUser();
 	    }
+	    
+	    return $ret;
 	}
 	
 	public function addCommonInfo()

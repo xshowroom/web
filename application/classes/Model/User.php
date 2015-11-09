@@ -56,7 +56,8 @@ class Model_User {
         $result = DB::select()
                     ->from('user')
                     ->where('email', '=', $email)
-                    ->execute();
+                    ->execute()
+                    ->as_array();
     
         return empty($result) ? false : true;
     }
