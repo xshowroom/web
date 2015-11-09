@@ -7,34 +7,31 @@ var app = angular.module('xShowroom.register.brand',
 			$scope.step.information[1] = 'ADD BRAND DETAILS';
 			$scope.step.information[2] = 'ADD COMPANY DETAILS';
 			$scope.step.stepNumber = 1;
-			$scope.user = {};
-			$scope.brand = {};
-			$scope.company = {};
 			$scope.result = {
-				'user' : $scope.user,
-				'brand' : $scope.brand,
-				'company' : $scope.company
+				'user' : {},
+				'brand' : {},
+				'company' : {}
 			};
 			$scope.nextCheck = function() {
 				$('.has-error').removeClass('has-error');
 				if ($scope.step.stepNumber == 1) {
-					if (!$('#username').val()) {
+					if (!$scope.result.user.username) {
 						$('#username').parent().addClass('has-error');
-					} else if(!$('#first-name').val()) {
+					} else if(!$scope.result.user.firstName) {
 						$('#first-name').parent().addClass('has-error');
-					} else if(!$('#last-name').val()) {
+					} else if(!$scope.result.user.lastName) {
 						$('#last-name').parent().addClass('has-error');
-					} else if(!$('#display-name').val()) {
+					} else if(!$scope.result.user.displayName) {
 						$('#display-name').parent().addClass('has-error');
-					} else if(!$('#telephone-number').val()) {
+					} else if(!$scope.result.user.telephoneNumber) {
 						$('#telephone-number').parent().addClass('has-error');
 					} else {
 						$scope.step.stepNumber++;
 					}
 				} else if($scope.step.stepNumber == 2) {
-					if (!$('#brand-name').val()) {
+					if (!$scope.result.brand.brandName) {
 						$('#brand-name').parent().addClass('has-error');
-					} else if(!$('#designer-name').val()) {
+					} else if(!$scope.result.brand.designerName) {
 						$('#designer-name').parent().addClass('has-error');
 					} else {
 						$scope.step.stepNumber++;
@@ -54,17 +51,3 @@ var app = angular.module('xShowroom.register.brand',
 		}
 
 		]);
-
-previewLookbook = function(files){
-	var file = files.files[0];  
-    if(window.FileReader) {
-        var fr = new FileReader();  
-        fr.onloadend = function(e) {
-            fr.readAsDataURL(file);  
-            var uploadDiv = $('#lookbook-upload').parent().parent();
-            uploadDiv.children().remove();
-            var previewImage = "<a class=\"thumbnail\"><img src=\"" + fr.result + "\" /></a>";
-            uploadDiv.append(previewImage);
-        };  
-    }
-}
