@@ -5,35 +5,35 @@
 <title>XShowroom</title>
 
 <link rel="stylesheet" type="text/css"
-	href="/XShowroom/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	href="./bower_components/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css"
-	href="/XShowroom/app/css/common.css" />
+	href="./app/css/common.css" />
 <link rel="stylesheet" type="text/css"
-	href="/XShowroom/app/css/brand-register.css" />
+	href="./app/css/brand-register.css" />
 <link rel="shortcut icon"
-	href="/XShowroom/app/resources/images/favicon.ico" />
+	href="./app/resources/images/favicon.ico" />
 <script type="text/javascript"
-	src="/XShowroom/bower_components/jquery/dist/jquery.min.js"></script>
+	src="./bower_components/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript"
-	src="/XShowroom/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript"
-	src="/XShowroom/bower_components/angular/angular.min.js"></script>
+	src="./bower_components/angular/angular.min.js"></script>
 <script type="text/javascript"
-	src="/XShowroom/bower_components/angular-cookies/angular-cookies.min.js"></script>
+	src="./bower_components/angular-cookies/angular-cookies.min.js"></script>
 <script type="text/javascript"
-	src="/XShowroom/app/modules/common/directives.js"></script>
+	src="./app/modules/common/directives.js"></script>
 <script type="text/javascript"
-	src="/XShowroom/app/modules/common/services.js"></script>
+	src="./app/modules/common/services.js"></script>
 <script type="text/javascript"
-	src="/XShowroom/app/modules/common/i18n.js"></script>
+	src="./app/modules/common/i18n.js"></script>
 <script type="text/javascript"
-	src="/XShowroom/app/modules/brand-register.js"></script>
+	src="./app/modules/brand-register.js"></script>
 </head>
 
 <body ng-controller="BrandRegisterCtrl" class="container-fluid">
-	<nav class="row setting-info" ng-include="'./global-setting-info.html'"></nav>
+	<nav class="row setting-info" ng-include="'./templates/global-setting-info.html'"></nav>
 	<nav class="row no-user-navigation"
-		ng-include="'./global-no-user-navigation.html'"></nav>
+		ng-include="'./templates/global-no-user-navigation.html'"></nav>
 
 	<section class="row brand-register-step">
 		<div class="container">
@@ -46,10 +46,10 @@
 		<div class="container">
 			<div class="col-xs-5">
 				<img class="brand-register-context"
-					ng-src="/XShowroom/app/images/brand-register-{{step.stepNumber}}.png" />
+					ng-src="./app/images/brand-register-{{step.stepNumber}}.png" />
 			</div>
 
-			<form class="form-horizontal" action="/XShowroomAPI/test" enctype="multipart/form-data" ng-submit="submit()"
+			<form class="form-horizontal" action="/web/test" enctype="multipart/form-data" ng-submit="submit()"
 				method="post">
 				<!-- step 1 -->
 				<div class="col-xs-7" ng-show="step.stepNumber == 1">
@@ -230,6 +230,6 @@
 	</section>
 
 	<footer class="row footer-navigation"
-		ng-include="'./global-footer-navigation.html'"></footer>
+		ng-include="'./templates/global-footer-navigation.html'"></footer>
 </body>
 </html>
