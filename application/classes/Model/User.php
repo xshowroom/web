@@ -26,6 +26,22 @@ class Model_User {
         
         return empty($result) ? array() : $result[0];
     }
+    
+    /**
+     * 更新登录时间
+     *
+     * @param int $userId
+     * @return int
+     */
+    public function updateLoginTime($userId)
+    {
+        $result = DB::update('user')
+                    ->set(array('las_login_time' => date('Y-m-d H:i:s')))
+                    ->where('id', '=', $userId)
+                    ->execute()
+    
+        return $result[0];
+    }
 
     /**
      * 查询单个用户信息

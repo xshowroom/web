@@ -27,6 +27,7 @@ class Business_User
 			unset($user['password']);
 
 			$_SESSION['opUser'] = $user;
+			$this->userModel->updateLoginTime($user['id']);
 		}
 
 		return $user;
