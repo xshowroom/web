@@ -1,0 +1,43 @@
+.sign-in{
+	height: 600px;
+	border: 4px solid #eee;
+	padding: 30px 50px;
+}
+.sign-in h2{
+	color: #25262c;
+	font-size: 20px;
+	margin-bottom: 30px;
+}
+.sign-in form {
+	font-size: 11px;
+}
+.sign-in form button{
+	margin: 15px 0 10px;
+}
+.sign-in #valid-code{
+	width: 75%;
+}
+.sign-in img.valid-code{
+    border: 1px solid #ccc;
+    padding: 5px;
+    height: 44px;
+    border-radius: 22px;
+    cursor: pointer;
+}
+.request-menbership{
+	height: 600px;
+	padding: 30px 50px;
+}
+.request-menbership h2{
+	color: #25262c;
+	font-size: 20px;
+	margin-top: 80px;
+	margin-bottom: 50px;
+}
+.request-menbership p {
+	color: #858585;
+	font-size: 12px;
+	padding: 0 10px;
+	line-height: 4em;
+	margin-bottom: 50px;
+}

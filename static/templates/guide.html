@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html ng-app="xShowroom.guide">
+<head>
+	<meta charset="UTF-8" >
+	<title>XShowroom</title>
+	
+	<link rel="stylesheet" type="text/css" href="/XShowroom/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/XShowroom/bower_components/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="/XShowroom/app/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="/XShowroom/app/css/guide.css" />
+	<link rel="shortcut icon" href="/XShowroom/app/resources/images/favicon.ico" />
+	<script type="text/javascript" src="/XShowroom/bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="/XShowroom/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/XShowroom/bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="/XShowroom/bower_components/angular-cookies/angular-cookies.min.js"></script>
+	<script type="text/javascript" src="/XShowroom/app/modules/common/directives.js"></script>
+	<script type="text/javascript" src="/XShowroom/app/modules/common/services.js"></script>
+	<script type="text/javascript" src="/XShowroom/app/modules/common/i18n.js"></script>
+	<script type="text/javascript" src="/XShowroom/app/modules/guide.js"></script>
+</head>
+<body ng-controller="GuideCtrl" class="container-fluid">
+	<nav class="row setting-info" ng-include="'./global-setting-info.html'"></nav>
+	<nav class="row no-user-navigation" onload="page='guide'" ng-include="'./global-no-user-navigation.html'"></nav>
+	<div class="row">
+		<div class="container-fluid">
+			<div class="row guide-tab">
+				<div class="col-xs-6 text-right guide-tab-title" ng-class="{'active': solution == 'brand'}">
+					<h2 ng-click="solution='brand';">SOLUTIONS FOR BRANDS</h2>
+				</div>
+				<div class="col-xs-6 guide-tab-title" ng-class="{'active': solution == 'retailer'}">
+					<h2 ng-click="solution='retailer';">SOLUTIONS FOR RETAILERS</h2>
+				</div>
+			</div>		
+		</div>
+	</div>
+	<section class="row no-vertical-padding">
+		<div class="container-fluid guide-banner">
+			<div class="row">
+				<span class="col-xs-12">X SHOWROOM FASHION {{solution | uppercase}}</span>
+				<span class="col-xs-12">ACCSEE SUBSCRIPTION</span>
+			</div>
+		</div>
+	</section>
+	<section class="row no-vertical-padding">
+		<div class="container guide-solution" ng-if="solution == 'brand'">
+			<div class="col-xs-10 col-xs-offset-1 text-center">
+				<h4>SHOWCASE TO SELECTED BRANDS</h4>
+				<p>Do you have your own store? Whether you choose to sell online or in store, sign up as a buyer on X SHOWROOM and view the collections that our brands have available. Sign up is FREE, and there are no subscription fees to pay. Product catalogues and our online showrooms are available 24/7. Simply view the collections and submit your order directly to the brand and they will be in touch to process your order. Our team in Shanghai are always at hand to assist in the proccess and with communication.</p>
+				<div class="col-xs-12">
+					<a class="btn btn-type-2">REGISTER</a>
+					<a class="btn btn-type-1" href="login.html" target="_self">SIGN IN</a>
+				</div>
+			</div>
+		</div>
+		<div class="container guide-solution" ng-if="solution == 'retailer'">
+			<div class="col-xs-6 text-center">
+				<p class="col-xs-10 col-xs-offset-1">Are you interested in exploring the market with the an online showroom who will help you reach your potential? Market your brand to buyers in China with us. With X SHOWROOM, you can take advantage of the extensive experience of the staff who in partnership with Project Crossover, offer the Shanghai and London showroom along with the online showroom as digital presence for your brand to streamline the wholesale process. You can be sure the visibility of your collection and products will continually increase with us through the 1000 buyers already registered.</p>
+				<div class="col-xs-12">
+					<a class="btn btn-type-2">REGISTER</a>
+					<a class="btn btn-type-1" href="login.html" target="_self">SIGN IN</a>
+				</div>
+			</div>
+			<div class="col-xs-6">
+				<div class="col-xs-10 col-xs-offset-1 guide-solution-feature">
+					<div class="col-xs-3 guide-solution-icon"></div>
+					<div class="col-xs-9">
+						<h4>SHOWCASE TO SELECTED BUYERS</h4>
+						<p>An online showroom to showcase your products to our selected buyers</p>
+					</div>
+				</div>
+				<div class="col-xs-10 col-xs-offset-1 guide-solution-feature">
+					<div class="col-xs-3 guide-solution-icon"></div>
+					<div class="col-xs-9">
+						<h4>ACCESS TO TOP BUYERS</h4>
+						<p>Gain access to our network of authenticated buyers</p>
+					</div>
+				</div>
+				<div class="col-xs-10 col-xs-offset-1 guide-solution-feature">
+					<div class="col-xs-3 guide-solution-icon"></div>
+					<div class="col-xs-9">
+						<h4>RELAIBLE NETWORK</h4>
+						<p>Only buyers with existing stores will have access to see the collection</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="row no-vertical-padding">
+		<div class="container-fluid guide-benefit">
+			<h3 class="col-xs-12 text-center">MORE BENEFITS OF REGISTERING WITH US</h3>
+			<div class="col-xs-12 guide-benefit-container" ng-if="solution == 'brand'">
+				<div class="col-xs-3 guide-benefit-item">
+					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
+					<div class="col-xs-8">
+						<h4>PREVIEW PROFILES</h4>
+						<p>Brands can view store profiles before confirming the order.</p>
+					</div>
+				</div>
+				<div class="col-xs-3 guide-benefit-item">
+					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
+					<div class="col-xs-8">
+						<h4>LANGUAGE SELECTION</h4>
+						<p>Identical pages are set up in the Chinese language to cater to our Chinese reading customers.</p>
+					</div>
+				</div>
+				<div class="col-xs-3 guide-benefit-item">
+					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
+					<div class="col-xs-8">
+						<h4>PROMOTION</h4>
+						<p>Your brand will be featured in the X SHOWROOM promotional activities including our Chinese newsletters and Chinese social media channels.</p>
+					</div>
+				</div>
+				<div class="col-xs-3 guide-benefit-item">
+					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
+					<div class="col-xs-8">
+						<h4>CHOOSE ACCOUNT TYPE</h4>
+						<p>Two types of account are available: </br>-Online account</br>-Premium account</p>
+					</div>
+				</div>
+				<div class="col-xs-3 guide-benefit-item">
+					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
+					<div class="col-xs-8">
+						<h4>DIGITAL LINESHEETS</h4>
+						<p>Line sheets are set up automatically and can be downloaded .</p>
+					</div>
+				</div>
+				<div class="col-xs-3 guide-benefit-item">
+					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
+					<div class="col-xs-8">
+						<h4>MINIMISE ORDER ERROR</h4>
+						<p>Minimise the rate of order errors as orders are made online through our reliable user friendly platform.</p>
+					</div>
+				</div>
+				<div class="col-xs-3 guide-benefit-item">
+					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
+					<div class="col-xs-8">
+						<h4>UNLIMITED UPLOAD</h4>
+						<p>Enjoy unlimited upload of collection and products.</p>
+					</div>
+				</div>
+				<div class="col-xs-3 guide-benefit-item">
+					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
+					<div class="col-xs-8">
+						<h4>24/7 SHOWROOM</h4>
+						<p>Buyers will be able to access your product catalogue 24/7.</p>
+					</div>
+				</div>
+				<div class="col-xs-3 guide-benefit-item">
+					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
+					<div class="col-xs-8">
+						<h4>24/7 ACCESS TO ORDER HISTORY</h4>
+						<p>24/7 access to buyer order history.</p>
+					</div>
+				</div>
+				<div class="col-xs-3 guide-benefit-item">
+					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
+					<div class="col-xs-8">
+						<h4>BUYER REPORTS & TRACKING STATISTICS</h4>
+						<p>Buyer reports and tracking statistics are available for your usage (on request)</p>
+					</div>
+				</div>
+				<div class="col-xs-3 guide-benefit-item">
+					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
+					<div class="col-xs-8">
+						<h4>SHOWROOM FOR PRENIUM MEMBERS</h4>
+						<p>Premium member account holders can enjoy the privilege of having an added physical showroom opened throughout the whole year, with support from our professional sales team.</p>
+					</div>
+				</div>
+				<div class="col-xs-3 guide-benefit-item">
+					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
+					<div class="col-xs-8">
+						<h4>TRADESHOWS</h4>
+						<p>X SHOWROOM will represent you in a trade show every season.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 guide-benefit-container" ng-if="solution == 'retailer'">
+				<div class="col-xs-3 guide-benefit-item">
+					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
+					<div class="col-xs-8">
+						<h4>PREVIEW COLLECTIONS</h4>
+						<p>Preview collection online.</p>
+					</div>
+				</div>
+				<div class="col-xs-3 guide-benefit-item">
+					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
+					<div class="col-xs-8">
+						<h4>24/7 ACCESS</h4>
+						<p>24/7 access to online system.</p>
+					</div>
+				</div>
+				<div class="col-xs-3 guide-benefit-item">
+					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
+					<div class="col-xs-8">
+						<h4>DISCOVER BRANDS</h4>
+						<p>Discover new brands and make new connections through our large directory</p>
+					</div>
+				</div>
+				<div class="col-xs-3 guide-benefit-item">
+					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
+					<div class="col-xs-8">
+						<h4>VIRTUAL SHOWROOMS</h4>
+						<p>Virtual showrooms for our selected Brands</p>
+					</div>
+				</div>
+				<div class="col-xs-3 guide-benefit-item">
+					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
+					<div class="col-xs-8">
+						<h4>ONLINE OREDER SYSTEM</h4>
+						<p>experience the ease of the simple online system for ordering and re-ordering</p>
+					</div>
+				</div>
+				<div class="col-xs-3 guide-benefit-item">
+					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
+					<div class="col-xs-8">
+						<h4>SAVE FOR LATER</h4>
+						<p>Set up orders for purchansing later (subject to Brand availability)</p>
+					</div>
+				</div>
+				<div class="col-xs-3 guide-benefit-item">
+					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
+					<div class="col-xs-8">
+						<h4>KEEP TRACK</h4>
+						<p>View previous orders through the order history in your account</p>
+					</div>
+				</div>
+				<div class="col-xs-3 guide-benefit-item">
+					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
+					<div class="col-xs-8">
+						<h4>TRANING</h4>
+						<p>X SHOWROOM provides training on how to use the system.</p>
+					</div>
+				</div>
+				<div class="col-xs-3 guide-benefit-item">
+					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
+					<div class="col-xs-8">
+						<h4>DEDICATED URL</h4>
+						<p>Dedicated URLs for easy access to Brands (subject to approval)</p>
+					</div>
+				</div>
+				<div class="col-xs-3 guide-benefit-item">
+					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
+					<div class="col-xs-8">
+						<h4>TRANSLATION PROVIDED</h4>
+						<p>Account Manager is able to provide help to handle communication should language be a barrier (English/Chinese)</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="row">
+		<div class="container">
+			<div class="row guide-membership">
+				<h3 class="col-xs-12 text-center">MEMBERSHIP INCLUDES</h3>
+				<ul class="col-xs-6">
+					<li>> One year access to the system</li>
+					<li>> Training to use the system</li>
+					<li>> Translation of main content text to Chinese for Chinese buyers</li>
+				</ul>
+				<ul class="col-xs-6">
+					<li>> A dedicated URL for Buyers to quickly access your product catalogue</li>
+					<li>> Account Manager to handle verbal communications where there is a language barrier for English/Chinese</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<footer class="row footer-navigation" ng-include="'./global-footer-navigation.html'"></footer>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html ng-app="xShowroom.home">
+<head>
+	<meta charset="UTF-8" >
+	<title>XShowroom</title>
+	
+	<link rel="stylesheet" type="text/css" href="/XShowroom/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/XShowroom/bower_components/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="/XShowroom/bower_components/nivoslider/nivo-slider.css" />
+	<link rel="stylesheet" type="text/css" href="/XShowroom/bower_components/nivoslider/themes/bar/bar.css" />
+	<link rel="stylesheet" type="text/css" href="/XShowroom/app/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="/XShowroom/app/css/home.css" />
+	<link rel="shortcut icon" href="/XShowroom/app/resources/images/favicon.ico" />
+	<script type="text/javascript" src="/XShowroom/bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="/XShowroom/bower_components/nivoslider/jquery.nivo.slider.pack.js"></script>
+	<script type="text/javascript" src="/XShowroom/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/XShowroom/bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="/XShowroom/bower_components/angular-cookies/angular-cookies.min.js"></script>
+	<script type="text/javascript" src="/XShowroom/app/modules/common/directives.js"></script>
+	<script type="text/javascript" src="/XShowroom/app/modules/common/services.js"></script>
+	<script type="text/javascript" src="/XShowroom/app/modules/common/i18n.js"></script>
+	<script type="text/javascript" src="/XShowroom/app/modules/home.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#home-banner').nivoSlider({
+			    effect: 'random',                 // Specify sets like: 'fold,fade,sliceDown'
+			    slices: 15,                     // For slice animations
+			    boxCols: 8,                     // For box animations
+			    boxRows: 4,                     // For box animations
+			    animSpeed: 500,                 // Slide transition speed
+			    pauseTime: 3000,                 // How long each slide will show
+			    startSlide: 0,                     // Set starting Slide (0 index)
+			    directionNav: false,             // Next & Prev navigation
+			    controlNav: true,                 // 1,2,3... navigation
+			    controlNavThumbs: false,         // Use thumbnails for Control Nav
+			    pauseOnHover: true,             // Stop animation while hovering
+			    manualAdvance: false,             // Force manual transitions
+			    prevText: 'Prev',                 // Prev directionNav text
+			    nextText: 'Next',                 // Next directionNav text
+			    randomStart: false             // Start on a random slide
+			});
+		})
+	</script>
+</head>
+<body ng-controller="HomeCtrl" class="container-fluid">
+	<nav class="row setting-info" ng-include="'./global-setting-info.html'"></nav>
+	<nav class="row no-user-navigation" onload="page='home'" id="home-page-navigation" ng-include="'./global-no-user-navigation.html'"></nav>
+	<section class="row no-vertical-padding home-banner">
+		<div class="container-fluid banner-content">
+			<div id="home-banner" class="nivoSlider">
+				<img src="/XShowroom/app/images/home-banner-1.jpg" alt="home-banner-1.jpg" title="#banner-content-1"/>
+				<img src="/XShowroom/app/images/home-banner-2.jpg" alt="home-banner-2.jpg" title="#banner-content-2"/>
+				<img src="/XShowroom/app/images/home-banner-3.jpg" alt="home-banner-3.jpg" title="#banner-content-3"/>
+			</div>
+			<div id="banner-content-1" class="nivo-html-caption">
+			    <h2>FINLAY & CO</h2>
+			    <p>SPRING SUMMER 2015</p>
+			    <div>
+					<a href="./guide.html#/retailer" class="btn btn-type-1">LEARN MORE</a>
+					<a class="btn btn-type-2">CONTACT US</a>
+				</div>
+			</div>
+			<div id="banner-content-2" class="nivo-html-caption">
+			    <h2>Hello World</h2>
+			    <p>This is a test text</p>
+			    <div>
+					<a href="./guide.html#/retailer" class="btn btn-type-1">LEARN MORE</a>
+					<a class="btn btn-type-2">CONTACT US</a>
+				</div>
+			</div>
+			<div id="banner-content-3" class="nivo-html-caption">
+			    <h2>YOUR BRAND</h2>
+			    <p>YOUR COLLECTION </p>
+			    <div>
+					<a href="./guide.html#/retailer" class="btn btn-type-1">LEARN MORE</a>
+					<a class="btn btn-type-2">CONTACT US</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="row">
+		<div class="container home-kpi text-center">
+			<div class="row">
+				<h1 class="col-xs-12">X SHOWROOM</h1>
+				<p class="col-xs-12">FIND YOUR BUSINESS HERE</p>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 kpi-item">
+					<div class="kpi-number">1000</div>
+					<div class="kpi-name">BUYER</div>
+				</div>
+				<div class="col-xs-3 kpi-item">
+					<div class="kpi-number">100</div>
+					<div class="kpi-name">BRANDS</div>
+				</div>
+				<div class="col-xs-3 kpi-item">
+					<div class="kpi-number">50000</div>
+					<div class="kpi-name">PRODUCTS</div>
+				</div>
+				<div class="col-xs-3 kpi-item">
+					<div class="kpi-number">3570</div>
+					<div class="kpi-name">BUYER</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="row no-vertical-padding">
+		<div class="container-fluid home-introduction">
+			<div class="row">
+				<div class="col-xs-offset-1 col-xs-5 text-center introduction-item">
+					<h3>
+						<img src="/XShowroom/app/images/common-icon-star.png"/>
+						<span>BRANDS</span>
+					</h3>
+					<p>Showcase your collection to the best stores<br/>in China. Expand and connect with new<br/>possibilities.</p>
+					<div>
+						<a href="./guide.html#/brand" class="btn btn-type-1">SOLUTION</a>
+						<a class="btn btn-type-1" href="./brand-register.html" target="_self">REGISTER</a>
+					</div>
+				</div>
+				<div class="col-xs-6 introduction-item introduction-image">
+					<img src="/XShowroom/app/images/home-introduction-image-1.png"/>
+				</div>
+			</div>
+			<div class="row"> 
+				<div class="col-xs-6 introduction-item introduction-image">
+					<img src="/XShowroom/app/images/home-introduction-image-2.png"/>
+				</div>
+				<div class="col-xs-5 text-center introduction-item">
+					<h3>
+						<img src="/XShowroom/app/images/common-icon-gift.png"/>
+						<span>RETAILERS</span>
+					</h3>
+					<p>Discover new and exciting brands and<br/>explore their collections.</p>
+					<div>
+						<a href="./guide.html#/retailer" class="btn btn-type-1">SOLUTION</a>
+						<a class="btn btn-type-1">REGISTER</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="row no-vertical-padding">
+		<div class="container-fluid home-showcase">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<h3>HOT BRANDS</h3>
+					<p>BRAND PROFILES</p>
+				</div>
+			</div>
+			<div class="row"> 
+				<div class="col-xs-3 showcase-item">
+					<div class="showcase-image">
+						<img src="/XShowroom/app/images/home-hot-brands-1.png"/>
+					</div>
+					<div class="showcase-name">PAPER LONDON</div>
+					<div class="showcase-collection">SSI5 COLLECTION</div>
+				</div>
+				<div class="col-xs-3 showcase-item">
+					<div class="showcase-image">
+						<img src="/XShowroom/app/images/home-hot-brands-2.png"/>
+					</div>
+					<div class="showcase-name">MAYA MAYAGAL</div>
+					<div class="showcase-collection">SSI5 COLLECTION</div>
+				</div>
+				<div class="col-xs-3 showcase-item">
+					<div class="showcase-image">
+						<img src="/XShowroom/app/images/home-hot-brands-3.png"/>
+					</div>
+					<div class="showcase-name">PPQ</div>
+					<div class="showcase-collection">SSI5 COLLECTION</div>
+				</div>
+				<div class="col-xs-3 showcase-item">
+					<div class="showcase-image">
+						<img src="/XShowroom/app/images/home-hot-brands-4.png"/>
+					</div>
+					<div class="showcase-name">MUUBAA</div>
+					<div class="showcase-collection">SSI5 COLLECTION</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<h3>TESTOMONIALS</h3>
+					<p>FEATURED</p>
+				</div>
+			</div>
+			<div class="row"> 
+				<div class="col-xs-3 showcase-item">
+					<div class="showcase-image">
+						<img src="/XShowroom/app/images/home-testomonial-1.png"/>
+					</div>
+					<div class="showcase-name">LILA SIMPSON</div>
+					<div class="showcase-identity">BUYER</div>
+				</div>
+				<div class="col-xs-3 showcase-item">
+					<div class="showcase-image">
+						<img src="/XShowroom/app/images/home-testomonial-2.png"/>
+					</div>
+					<div class="showcase-name">JOHNSON SMITH</div>
+					<div class="showcase-identity">BUYER</div>
+				</div>
+				<div class="col-xs-3 showcase-item">
+					<div class="showcase-image">
+						<img src="/XShowroom/app/images/home-testomonial-3.png"/>
+					</div>
+					<div class="showcase-name">BARNET MOLLY</div>
+					<div class="showcase-identity">BRADN DESIGNER</div>
+				</div>
+				<div class="col-xs-3 showcase-item">
+					<div class="showcase-image">
+						<img src="/XShowroom/app/images/home-testomonial-4.png"/>
+					</div>
+					<div class="showcase-name">JUDY WINTER</div>
+					<div class="showcase-identity">BUYER</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="row home-subscribe">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<div><span class="glyphicon glyphicon-envelope"></span></div>
+					<h3>SUBSCRIBE</h3>
+					<p>Set the latest news & updates from X Showroom</p>
+					<div class="subscribe-submit">
+						<input class="form-control" type="text" placeholder="YOUR EMAIL ADDRESS"/>
+						<button class="btn btn-type-2">SUBSCRIBE</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="row footer-navigation" ng-include="'./global-footer-navigation.html'"></footer>
+</body>
+</html>

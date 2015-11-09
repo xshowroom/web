@@ -1,0 +1,123 @@
+/* row of tab */
+.guide-tab{
+	height: 100px;
+}
+.guide-tab .guide-tab-title{
+	border-bottom:  10px solid transparent;
+}
+.guide-tab .guide-tab-title.active{
+	border-bottom-color: #ca7379;
+}
+.guide-tab .guide-tab-title h2{
+	font-size: 18px;
+	line-height: 90px;
+	margin: 20px 0 0 0;
+	cursor: pointer;
+}
+.guide-tab h2:first-child{
+	padding-right: 5em;
+}
+.guide-tab h2:last-child{
+	padding-left: 5em;
+}
+/* row of banner */
+.guide-banner{
+	background-color: #000;
+	height: 400px;
+	padding-top: 100px;
+	text-align: center;
+}
+.guide-banner span{
+	color: #fff;
+	font-size: 72px;
+}
+/* row of solution */
+.guide-solution {
+	border-bottom: 1px solid #eee;
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+.guide-solution h4{
+	margin-bottom: 40px;
+}
+.guide-solution p{
+	font-size: 15px;
+	color: #878787;
+}
+.guide-solution .btn{
+	margin-top: 50px;
+}
+.guide-solution .guide-solution-feature{
+	margin: 10px 0;
+}
+.guide-solution .guide-solution-feature .guide-solution-icon {
+	background-image: url('/XShowroom/app/images/guide-solution-icons.png');
+	height: 110px;
+	background-repeat: no-repeat;
+}
+.guide-solution .guide-solution-feature:nth-child(1) .guide-solution-icon{
+	background-position: center 0px;
+}
+.guide-solution .guide-solution-feature:nth-child(2) .guide-solution-icon{
+	background-position: center -115px;
+}
+.guide-solution .guide-solution-feature:nth-child(3) .guide-solution-icon{
+	background-position: center -230px;
+}
+.guide-solution .guide-solution-feature h4{
+	font-size: 12px;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.guide-solution .guide-solution-feature p{
+	font-size: 12px;
+	text-align: center;
+}
+/* row of benefit */
+.guide-benefit h3 {
+	font-size: 24px;
+	color: #878787;
+	margin: 80px 0 60px 0;
+}
+.guide-benefit .guide-benefit-container{
+	background-color: #ebebeb;
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+.guide-benefit .guide-benefit-container .guide-benefit-item{
+	height: 130px;
+} 
+.guide-benefit .guide-benefit-container .guide-benefit-item .guide-benefit-item-icon{
+	background-image: url('/XShowroom/app/images/common-icon-star.png');
+	height: 130px;
+    background-repeat: no-repeat;
+    background-position: center 15px;
+}
+.guide-benefit .guide-benefit-container .guide-benefit-item h4{
+	font-size: 13px;
+	color: #25262c;
+}
+.guide-benefit .guide-benefit-container .guide-benefit-item p{
+	font-size: 13px;
+	color: #878787;
+	margin-top: 5px;
+}
+/* row of membership */
+.guide-membership h3{
+	font-size: 24px;
+	color: #25262c;
+	margin: 0 0 70px 0;
+}
+.guide-membership ul{
+	list-style: none;
+	margin: 0;
+}
+.guide-membership ul li{
+	font-size: 16px;
+	color: #878787;
+	width: 100%;
+	float: left;
+	margin-bottom: 20px;
+}
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="xShowroom.login">
+<head>
+	<meta charset="UTF-8" >
+	<title>XShowroom</title>
+	
+	<link rel="stylesheet" type="text/css" href="/XShowroom/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/XShowroom/bower_components/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="/XShowroom/app/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="/XShowroom/app/css/login.css" />
+	<link rel="shortcut icon" href="/XShowroom/app/resources/images/favicon.ico" />
+	<script type="text/javascript" src="/XShowroom/bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="/XShowroom/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/XShowroom/bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="/XShowroom/bower_components/angular-cookies/angular-cookies.min.js"></script>
+	<script type="text/javascript" src="/XShowroom/app/modules/common/directives.js"></script>
+	<script type="text/javascript" src="/XShowroom/app/modules/common/services.js"></script>
+	<script type="text/javascript" src="/XShowroom/app/modules/common/i18n.js"></script>
+	<script type="text/javascript" src="/XShowroom/app/modules/login.js"></script>
+</head>
+<body ng-controller="LoginCtrl" class="container-fluid">
+	<nav class="row setting-info" ng-include="'./global-setting-info.html'"></nav>
+	<nav class="row no-user-navigation" ng-include="'./global-no-user-navigation.html'"></nav>
+	<section class="row">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6">
+					<article class="sign-in text-center">
+						<h2>SIGN IN</h2>
+						<form ng-submit="login();">
+							<div class="form-group">
+								<label for="username">EMAIL ADDRESS*</label> 
+								<input type="text" class="form-control" id="username" autocomplete="off" ng-model="username">
+							</div>
+							<div class="form-group">
+								<label for="password">YOUR PASSWORD</label>
+								<input type="password" class="form-control" id="password" autocomplete="off"  ng-model="password">
+							</div>
+							<div class="form-group">
+								<label for="valid-code" class="col-xs-12">VALID CODE</label>
+								<input type="text" class="form-control col-xs-9" id="valid-code" autocomplete="off">
+								<img ng-click="refreshValidCode();" class="valid-code col-xs-3" ng-src="{{validCodeUrl}}" title="Click to refresh">
+							</div>
+							<button type="submit" class="btn btn-type-2">LOGIN</button>
+							<div class="checkbox">
+								<label><input type="checkbox"> REMEMBER ME</label>
+							</div>
+							<a href="#">LOST YOUR PASSWORD?</a>
+						</form>
+					</article>
+				</div>
+				<div class="col-xs-6">
+					<article class="request-menbership text-center">
+						<h2>REQUEST MEMEBERSHIP</h2>
+						<p>X SHOWROOM IS OPEN TO SELECTED BRANDS. AGENCIES AND BUYERS TO PRATICIPATE. PLEASE REGISTER ONLINE</p>
+						<div>
+							<a class="btn btn-type-1" href="./brand-register.html">FOR BRANDS</a>
+							<a class="btn btn-type-1">FOR RETAILERS</a>
+						</div>
+					</article>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="row footer-navigation" ng-include="'./global-footer-navigation.html'"></footer>
+</body>
+</html>

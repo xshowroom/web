@@ -1,0 +1,54 @@
+section.brand-register-step {
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+
+h2.brand-register-step {
+	font-size: 20px;
+}
+
+.brand-register-inline {
+	line-height: 22px !important;
+}
+
+.brand-register-text-center {
+	line-height: 100%;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.brand-register-block-spare {
+	margin-bottom: 50px;
+}
+
+.brand-register-lookbook-upload {
+	font-size: 10px;
+	height: 170px;
+	background: transparent;
+    overflow: hidden;
+    position: relative;
+}
+
+.brand-register-lookbook-upload p {
+	margin-top: 50%;
+	margin-bottom: 0;
+}
+
+.brand-register-lookbook-upload label {
+	line-height: 100% !important;
+	margin-top: 10px;
+	color: #60b8e4;
+	cursor: pointer;
+}
+
+#lookbook-upload {
+	visibility: hidden;
+}
+
+.brand-register-checkbox label {
+	line-height: 100% !important;
+}
+
+.brand-register-checkbox label span {
+	margin-top: 15px;
+}
