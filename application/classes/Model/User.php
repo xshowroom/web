@@ -63,6 +63,23 @@ class Model_User {
     }
     
     /**
+     * 查询brand信息
+     *
+     * @param string $brandName
+     * @return array
+     */
+    public function checkBrand($brandName)
+    {
+        $result = DB::select()
+                    ->from('brand')
+                    ->where('brand_name', '=', $brandName)
+                    ->execute()
+                    ->as_array();
+    
+        return empty($result) ? false : true;
+    }
+    
+    /**
      * 增加用户信息
      *
      * @param string $email
