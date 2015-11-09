@@ -4,23 +4,23 @@
 	<meta charset="UTF-8" >
 	<title>XShowroom</title>
 	
-	<link rel="stylesheet" type="text/css" href="/XShowroom/bower_components/bootstrap/dist/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="/XShowroom/bower_components/font-awesome/css/font-awesome.min.css" />
-	<link rel="stylesheet" type="text/css" href="/XShowroom/app/css/common.css" />
-	<link rel="stylesheet" type="text/css" href="/XShowroom/app/css/login.css" />
-	<link rel="shortcut icon" href="/XShowroom/app/resources/images/favicon.ico" />
-	<script type="text/javascript" src="/XShowroom/bower_components/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="/XShowroom/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="/XShowroom/bower_components/angular/angular.min.js"></script>
-	<script type="text/javascript" src="/XShowroom/bower_components/angular-cookies/angular-cookies.min.js"></script>
-	<script type="text/javascript" src="/XShowroom/app/modules/common/directives.js"></script>
-	<script type="text/javascript" src="/XShowroom/app/modules/common/services.js"></script>
-	<script type="text/javascript" src="/XShowroom/app/modules/common/i18n.js"></script>
-	<script type="text/javascript" src="/XShowroom/app/modules/login.js"></script>
+	<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="./bower_components/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="./app/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="./app/css/login.css" />
+	<link rel="shortcut icon" href="./app/resources/images/favicon.ico" />
+	<script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="./bower_components/angular-cookies/angular-cookies.min.js"></script>
+	<script type="text/javascript" src="./app/modules/common/directives.js"></script>
+	<script type="text/javascript" src="./app/modules/common/services.js"></script>
+	<script type="text/javascript" src="./app/modules/common/i18n.js"></script>
+	<script type="text/javascript" src="./app/modules/login.js"></script>
 </head>
 <body ng-controller="LoginCtrl" class="container-fluid">
-	<nav class="row setting-info" ng-include="'./global-setting-info.html'"></nav>
-	<nav class="row no-user-navigation" ng-include="'./global-no-user-navigation.html'"></nav>
+	<nav class="row setting-info" ng-include="'./templates/global-setting-info.html'"></nav>
+	<nav class="row no-user-navigation" ng-include="'./templates/global-no-user-navigation.html'"></nav>
 	<section class="row">
 		<div class="container">
 			<div class="row">
@@ -62,6 +62,6 @@
 			</div>
 		</div>
 	</section>
-	<footer class="row footer-navigation" ng-include="'./global-footer-navigation.html'"></footer>
+	<footer class="row footer-navigation" ng-include="'./templates/global-footer-navigation.html'"></footer>
 </body>
 </html>

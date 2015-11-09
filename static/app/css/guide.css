@@ -51,7 +51,7 @@
 	margin: 10px 0;
 }
 .guide-solution .guide-solution-feature .guide-solution-icon {
-	background-image: url('/XShowroom/app/images/guide-solution-icons.png');
+	background-image: url('../images/guide-solution-icons.png');
 	height: 110px;
 	background-repeat: no-repeat;
 }
@@ -89,7 +89,7 @@
 	height: 130px;
 } 
 .guide-benefit .guide-benefit-container .guide-benefit-item .guide-benefit-item-icon{
-	background-image: url('/XShowroom/app/images/common-icon-star.png');
+	background-image: url('../images/common-icon-star.png');
 	height: 130px;
     background-repeat: no-repeat;
     background-position: center 15px;

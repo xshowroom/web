@@ -17,7 +17,7 @@ var app = angular.module(
      	'$scope',
         function ($scope) {
         	$scope.refreshValidCode = function(){
-        		$scope.validCodeUrl = '/XShowroomAPI/image?rnd=' + new Date().getTime(); 
+        		$scope.validCodeUrl = '/web/image?rnd=' + new Date().getTime(); 
         	};
         	$scope.refreshValidCode();
         	
