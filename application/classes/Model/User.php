@@ -184,18 +184,18 @@ class Model_User {
      *
      * @param int $userId
      * @param string $brandName
-     * @param string $disignerName
+     * @param string $designerName
      * @param string $brandUrl
      * @param string $brandImage
      * @return int
      */
-    public function addBrandInfo($userId, $brandName, $disignerName, $brandUrl, $brandImage)
+    public function addBrandInfo($userId, $brandName, $designerName, $brandUrl, $brandImage)
     {
         $result = DB::insert('brand')
                     ->columns(array(
                         'user_id',
                         'brand_name',
-                        'disigner_name',
+                        'designer_name',
                         'brand_url',
                         'brand_image',
                         'status',
@@ -203,7 +203,7 @@ class Model_User {
                     ->values(array(
                         $userId,
                         $brandName,
-                        $disignerName,
+                        $designerName,
                         $brandUrl,
                         $brandImage,
                         STAT_NORMAL,
