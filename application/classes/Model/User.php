@@ -36,7 +36,7 @@ class Model_User {
     public function updateLoginTime($userId)
     {
         $result = DB::update('user')
-                    ->set(array('las_login_time' => date('Y-m-d H:i:s')))
+                    ->set(array('last_login_time' => date('Y-m-d H:i:s')))
                     ->where('id', '=', $userId)
                     ->execute()
     
