@@ -1,6 +1,19 @@
 var app = angular.module(
-    'xShowroom.services', 
-    [
-        'i18n', 'ngCookies'
-    ]
+    'xShowroom.services', []
 )
+.service(
+	'User', 
+	[
+	    '$http',
+		function ($http) {
+		    return {
+		    	login: function (opts) {
+		    		return $http.get('/web/login', {params: opts});
+		      	},
+		      	register: function (opts) {
+		    		return $http.get('/web/register', {params: opts});
+		      	}
+   			};
+         }
+    ]
+);

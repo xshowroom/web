@@ -13,9 +13,9 @@
 	<script type="text/javascript" src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
 	<script type="text/javascript" src="./bower_components/angular-cookies/angular-cookies.min.js"></script>
+	<script type="text/javascript" src="./app/modules/common/i18n.js"></script>
 	<script type="text/javascript" src="./app/modules/common/directives.js"></script>
 	<script type="text/javascript" src="./app/modules/common/services.js"></script>
-	<script type="text/javascript" src="./app/modules/common/i18n.js"></script>
 	<script type="text/javascript" src="./app/modules/login.js"></script>
 </head>
 <body ng-controller="LoginCtrl" class="container-fluid">
@@ -30,15 +30,15 @@
 						<form ng-submit="login();">
 							<div class="form-group">
 								<label for="username">EMAIL ADDRESS*</label> 
-								<input type="text" class="form-control" id="username" autocomplete="off" ng-model="username">
+								<input type="text" class="form-control" id="username" autocomplete="off" ng-model="user.email">
 							</div>
 							<div class="form-group">
 								<label for="password">YOUR PASSWORD</label>
-								<input type="password" class="form-control" id="password" autocomplete="off"  ng-model="password">
+								<input type="password" class="form-control" id="password" autocomplete="off"  ng-model="user.pass">
 							</div>
 							<div class="form-group">
 								<label for="valid-code" class="col-xs-12">VALID CODE</label>
-								<input type="text" class="form-control col-xs-9" id="valid-code" autocomplete="off">
+								<input type="text" class="form-control col-xs-9" id="valid-code" autocomplete="off" ng-model="user.code">
 								<img ng-click="refreshValidCode();" class="valid-code col-xs-3" ng-src="{{validCodeUrl}}" title="Click to refresh">
 							</div>
 							<button type="submit" class="btn btn-type-2">LOGIN</button>
@@ -54,8 +54,8 @@
 						<h2>REQUEST MEMEBERSHIP</h2>
 						<p>X SHOWROOM IS OPEN TO SELECTED BRANDS. AGENCIES AND BUYERS TO PRATICIPATE. PLEASE REGISTER ONLINE</p>
 						<div>
-							<a class="btn btn-type-1" href="./brand-register.html">FOR BRANDS</a>
-							<a class="btn btn-type-1">FOR RETAILERS</a>
+							<a class="btn btn-type-1" href="./brand-register.html" target="_self">FOR BRANDS</a>
+							<a class="btn btn-type-1"  href="./brand-register.html" target="_self">FOR RETAILERS</a>
 						</div>
 					</article>
 				</div>
