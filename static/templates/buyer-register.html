@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="xShowroom.register.brand">
+<html ng-app="xShowroom.register.buyer">
 <head>
 <meta charset="UTF-8">
 <title>XShowroom</title>
@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css"
 	href="/XShowroom/app/css/common.css" />
 <link rel="stylesheet" type="text/css"
-	href="/XShowroom/app/css/brand-register.css" />
+	href="/XShowroom/app/css/buyer-register.css" />
 <link rel="shortcut icon"
 	href="/XShowroom/app/resources/images/favicon.ico" />
 <script type="text/javascript"
@@ -27,17 +27,17 @@
 <script type="text/javascript"
 	src="/XShowroom/app/modules/common/i18n.js"></script>
 <script type="text/javascript"
-	src="/XShowroom/app/modules/brand-register.js"></script>
+	src="/XShowroom/app/modules/buyer-register.js"></script>
 </head>
 
-<body ng-controller="BrandRegisterCtrl" class="container-fluid">
+<body ng-controller="BuyerRegisterCtrl" class="container-fluid">
 	<nav class="row setting-info" ng-include="'./global-setting-info.html'"></nav>
 	<nav class="row no-user-navigation"
 		ng-include="'./global-no-user-navigation.html'"></nav>
 
-	<section class="row brand-register-step">
+	<section class="row buyer-register-step">
 		<div class="container">
-			<h2 class="brand-register-step">STEP {{step.stepNumber}} OF 3:
+			<h2 class="buyer-register-step">STEP {{step.stepNumber}} OF 3:
 				{{step.information[step.stepNumber - 1]}}</h2>
 		</div>
 	</section>
@@ -45,17 +45,18 @@
 	<section class="row">
 		<div class="container">
 			<div class="col-xs-5">
-				<img class="brand-register-context"
-					ng-src="/XShowroom/app/images/brand-register-{{step.stepNumber}}.png" />
+				<img width="100%" class="buyer-register-context"
+					ng-src="/app/images/buyer-register-{{step.stepNumber}}.png" />
 			</div>
 
 			<form class="form-horizontal" action="/XShowroomAPI/test"
 				enctype="multipart/form-data" ng-submit="submit()" method="post">
+
 				<!-- step 1 -->
 				<div class="col-xs-7" ng-show="step.stepNumber == 1">
 					<div class="form-group">
 						<label for="username"
-							class="col-xs-3 text-center brand-register-inline">EMAIL
+							class="col-xs-3 text-center buyer-register-inline">EMAIL
 							ADDRESS<br>(LOGIN ID)
 						</label>
 						<div class="col-xs-9">
@@ -107,50 +108,109 @@
 						<div class="col-xs-12">
 							<a class="col-xs-3 btn btn-type-1">CANCEL</a> <a
 								class="col-xs-3 btn btn-type-2" ng-click="nextCheck()">ADD
-								BRAND</a>
+								STORE</a>
 						</div>
 					</div>
 				</div>
 				<!-- /step 1 -->
 
 				<!-- step 2 -->
-				<div class="col-xs-7" ng-show="step.stepNumber == 2">
-					<div class="row brand-register-block-spare">
+				<div class="col-xs-7 buyer-register-block-up"
+					ng-show="step.stepNumber == 2">
+					<div>
 						<div
-							class="col-xs-3 block-center brand-register-lookbook-upload imagePreview thumbnail">
+							class="col-xs-3 block-center buyer-register-lookbook-upload imagePreview thumbnail">
 							<p class="text-center">LOOKBOOK / IMAGE</p>
 							<label for="lookbook-upload" class="text-center"> UPLOAD
 								<input type="file" id="lookbook-upload" name="lookbook-upload"
-								ng-model="result.brand.lookbook" />
+								ng-model="result.store.lookbook" />
 							</label>
 						</div>
 						<div class="col-xs-9">
 							<div class="form-group col-xs-12">
-								<input type="text" class="form-control" id="brand-name"
-									name="brand-name" autocomplete="off"
-									ng-model="result.brand.brandName" ng-required="true"
-									placeholder="PLEASE ENTER YOUR BRAND NAME *">
+								<input type="text" class="form-control" id="store-name"
+									name="store-name" autocomplete="off"
+									ng-model="result.store.storeName" ng-required="true"
+									placeholder="PLEASE ENTER YOUR STORE NAME *">
 							</div>
 							<div class="form-group col-xs-12">
-								<input type="text" class="form-control" id="designer-name"
-									name="deigner-name" autocomplete="off"
-									ng-model="result.brand.designerName" ng-required="true"
-									placeholder="DESIGNER NAME *">
+								<input type="text"
+									class="form-control btn btn-default dropdown-toggle"
+									id="store-type" name="store-name" autocomplete="off"
+									ng-model="result.store.storeType" ng-required="true"
+									data-toggle="dropdown" value="{{result.store.storeType}}"
+									placeholder="PLEASE SELECT STORE TYPE *" aria-haspopup="true"
+									aria-expanded="true" readOnly>
+								<ul class="dropdown-menu buyer-register-dropdown-menu"
+									aria-labelledby="store-type">
+									<li ng-repeat="option in result.store.storeTypeOptions"
+										ng-click="selectStoreType($event)">{{option.name}}</li>
+								</ul>
 							</div>
-							<div class="form-group col-xs-12">
-								<span class="form-control brand-register-text-center lead"
-									id="brand-name" ng-model="result.brand.brandName">
-									www.xshowroom.com/{{!brand.brandName || brand.brandName == '' ?
-									'Brandname' : brand.brandName}} </span>
-								<p class="text-center help-block small">
-									This URL will be used for direct access to your Brand<br>
-									(for authenticated Buyers only)
-								</p>
+							<div class="form-group col-xs-12 buyer-register-checkbox-group"
+								id="collection-type">
+								<label>COLLECTION TYPE *</label><br>
+								<div class="checkbox-inline buyer-register-checkbox">
+									<input type="checkbox" id="collection-type-women"
+										name="collection-type"
+										ng-model="result.store.collectionType.women" value="WOMEN">
+									<label for="collection-type-women">WOMEN</label>
+								</div>
+								<div class="checkbox-inline buyer-register-checkbox">
+									<input type="checkbox" id="collection-type-accessories"
+										name="collection-type"
+										ng-model="result.store.collectionType.accessories"
+										value="ACCESSORIES"><label
+										for="collection-type-accessories">ACCESSORIES </label>
+								</div>
+								<div class="checkbox-inline buyer-register-checkbox">
+									<input type="checkbox" id="collection-type-men"
+										name="collection-type"
+										ng-model="result.store.collectionType.men" value="MEN">
+									<label for="collection-type-men">MEN </label>
+								</div>
 							</div>
 						</div>
 					</div>
+					<div class="form-group col-xs-12">
+						<input type="text" class="form-control" id="brand-carried"
+							name="brand-carried" autocomplete="off"
+							ng-model="result.store.brandCarried" ng-required="true"
+							placeholder="BRAND CARRIED IN STORE *">
+					</div>
+					<div class="form-group col-xs-12">
+						<input type="text" class="form-control" id="website"
+							name="website" autocomplete="off" ng-model="result.store.website"
+							ng-required="true" placeholder="WEBSITE *">
+					</div>
+					<div class="form-group col-xs-12">
+						<input type="text" class="form-control" id="store-address"
+							name="store-address" autocomplete="off"
+							ng-model="result.store.storeAddress" ng-required="true"
+							placeholder="STORE ADDRESS *">
+					</div>
+					<div class="form-group col-xs-12">
+						<div class="col-xs-6 buyer-register-form-inline-left">
+							<input type="text" class="form-control" id="store-country"
+								name="store-country" autocomplete="off"
+								ng-model="result.store.country" ng-required="true"
+								placeholder="STATE/COUNTRY *">
+						</div>
+						<div class="col-xs-6 buyer-register-form-inline-right">
+							<input type="text" class="form-control" id="store-postcode"
+								name="store-postcode" autocomplete="off"
+								ng-model="result.store.postcode" ng-required="true"
+								placeholder="POSTCODE/ZIP *">
+						</div>
+					</div>
+					<div class="form-group col-xs-12">
+						<input type="text" class="form-control"
+							id="store-telephone-number" name="store-telephone-number"
+							autocomplete="off" ng-model="result.store.telephoneNumber"
+							ng-required="true" placeholder="TELEPHONE NUMBER *">
+					</div>
 
-					<div class="form-group row">
+					<div class="form-group col-xs-12">
 						<a class="btn btn-type-1 col-xs-3" ng-click="previous()">PREVIOUS</a>
 						<a type="submit" class="btn btn-type-2 col-xs-3"
 							ng-click="nextCheck()">ADD COMPANY</a>
@@ -178,14 +238,14 @@
 					</div>
 					<div class="form-group">
 						<div class="col-xs-6">
-							<input type="text" class="form-control" id="country"
-								name="country" autocomplete="off"
+							<input type="text" class="form-control" id="company-country"
+								name="company-country" autocomplete="off"
 								ng-model="result.company.country" ng-required="true"
 								placeholder="STATE/COUNTRY *">
 						</div>
 						<div class="col-xs-6">
-							<input type="text" class="form-control" id="postcode"
-								name="postcode" autocomplete="off"
+							<input type="text" class="form-control" id="company-postcode"
+								name="company-postcode" autocomplete="off"
 								ng-model="result.company.postcode" ng-required="true"
 								placeholder="POSTCODE/ZIP *">
 						</div>
@@ -215,7 +275,7 @@
 					</div>
 					<div class="form-group">
 						<div class="col-xs-12">
-							<div class="checkbox brand-register-checkbox">
+							<div class="checkbox buyer-register-checkbox">
 								<label> <input type="checkbox" ng-required="true"><span
 									class="help-block small">I accept the terms and
 										conditions of Project Crossover Online Showromms web site.</span>

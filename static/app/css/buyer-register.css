@@ -1,0 +1,96 @@
+section.buyer-register-step {
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+
+h2.buyer-register-step {
+	font-size: 20px;
+}
+
+.buyer-register-inline {
+	line-height: 22px !important;
+}
+
+.buyer-register-text-center {
+	line-height: 100%;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.buyer-register-block-spare {
+	margin-bottom: 50px;
+}
+
+.buyer-register-lookbook-upload {
+	font-size: 10px;
+	height: 190px;
+	background: transparent;
+	overflow: hidden;
+	position: relative;
+}
+
+.buyer-register-lookbook-upload p {
+	margin-top: 50%;
+	margin-bottom: 0;
+}
+
+.buyer-register-lookbook-upload label {
+	line-height: 100% !important;
+	margin-top: 10px;
+	color: #60b8e4;
+	cursor: pointer;
+}
+
+#lookbook-upload {
+	visibility: hidden;
+}
+
+.buyer-register-form-inline-left {
+	padding-left: 0;
+}
+.buyer-register-form-inline-right{
+	padding-right: 0;
+}
+
+.buyer-register-block-up {
+	margin-top: -80px;
+}
+
+.buyer-register-checkbox-group {
+	padding-left: 20px;
+	color: #aaaaaa;
+}
+
+.buyer-register-checkbox-group label {
+	margin-bottom: 0;
+}
+
+.buyer-register-checkbox {
+	margin-left: 0 !important;
+	padding-top: 0 !important;
+	margin-right: 40px;
+}
+
+.buyer-register-checkbox label {
+	margin-left: 15px;
+}
+
+#store-type {
+	color: #aaaaaa;
+	background-color: #fff;
+}
+
+.buyer-register-dropdown-menu {
+	margin-left: 15px;
+	width: 429px;
+	text-align: center;
+}
+.buyer-register-dropdown-menu li {
+	font-size: 10px;
+	padding-top: 10px;
+	padding-buttom: 10px;
+}
+.buyer-register-dropdown-menu li:hover {
+	background-color: #f5f5f5;
+	cursor: pointer;
+}
