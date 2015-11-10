@@ -112,7 +112,7 @@ class Business_User
         } else {
             $name      = Request::current()->post('shopName');
             $type      = Request::current()->post('shopType');
-            $colType   = Request::current()->post('collecionType');
+            $colType   = Request::current()->post('collectionType');
             $brandList = Request::current()->post('brandList');
             $website   = Request::current()->post('shopWebsite');
             $address   = Request::current()->post('shopAddress');
