@@ -81,7 +81,7 @@ class Business_User
             return null;
         } else {
             $brandName     = Request::current()->post('brandName');
-            $disignerName  = Request::current()->post('disignerName');
+            $designerName  = Request::current()->post('designerName');
             $imagePath     = Request::current()->post('imagePath');
             $brandUrl      = WEB_ROOT . '/brand/' . $brandName;
             $realPathFile  = UPLOAD_DIR. '/' . $brandName;
@@ -99,7 +99,7 @@ class Business_User
                 unlink($imagePath);
             }
             
-            $brandId = $this->userModel->addBrandInfo($userId, $brandName, $disignerName, $brandUrl, $realPathFile);
+            $brandId = $this->userModel->addBrandInfo($userId, $brandName, $designerName, $brandUrl, $realPathFile);
             return $brandId;
         }
     }
@@ -112,7 +112,7 @@ class Business_User
         } else {
             $name      = Request::current()->post('shopName');
             $type      = Request::current()->post('shopType');
-            $colType   = Request::current()->post('collecionType');
+            $colType   = Request::current()->post('collectionType');
             $brandList = Request::current()->post('brandList');
             $website   = Request::current()->post('shopWebsite');
             $address   = Request::current()->post('shopAddress');
