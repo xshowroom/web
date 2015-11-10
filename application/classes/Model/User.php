@@ -7,11 +7,11 @@
  */
 class Model_User {
 
-	const TYPE_USER_ADMIN = 0;
-	const TYPE_USER_BRAND = 1;
-	const TYPE_USER_BUYER = 2;
+    const TYPE_USER_ADMIN = 0;
+    const TYPE_USER_BRAND = 1;
+    const TYPE_USER_BUYER = 2;
 
-	/**
+    /**
      * 查询单个用户信息
      * 
      * @param int $id
@@ -20,9 +20,9 @@ class Model_User {
     public function getById($id)
     {
         $result = DB::select()
-					->from('user')
-					->where('id', '=', $id)
-					->execute();
+                    ->from('user')
+                    ->where('id', '=', $id)
+                    ->execute();
         
         return empty($result) ? array() : $result[0];
     }
@@ -52,11 +52,11 @@ class Model_User {
      */
     public function getByEmailPass($email, $pass)
     {
-    	$result = DB::select()
-					->from('user')
-					->where('email', '=', $email)
-					->where('password', '=', $pass)
-					->execute();
+        $result = DB::select()
+                    ->from('user')
+                    ->where('email', '=', $email)
+                    ->where('password', '=', $pass)
+                    ->execute();
         
         return empty($result) ? array() : $result[0];
     }

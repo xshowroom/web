@@ -15,6 +15,13 @@ define('STAT_SUSPENDED', 1);        // 暂停
 define('STAT_DELETED',   2);        // 删除
 
 /**
+ * 数据库记录的状态常量
+ */
+define('LOGIN_SUCCESS', 0);        // 登陆成功
+define('LOGIN_FAILURE', 1);        // 登陆失败
+define('LOGIN_ERRCODE', 2);       // 验证码错误
+
+/**
  * query之间的分隔符
  */
 define('WORD_SEPARATOR', "\n");

@@ -9,7 +9,7 @@ class Controller_Base extends Controller
 		$opUser = $_SESSION['opUser'];
 		if (empty($opUser)) {
 			echo json_encode(array(
-                'status' => STATUS_ERROR,
+                'status' => LOGIN_FAILURE,
                 'msg' 	 => 'not login',
             ));
 		}

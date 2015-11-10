@@ -2,9 +2,9 @@
 
 class Controller_Welcome extends Controller
 {
-	public function action_index()
-	{
-		echo 'Hello World! ';
-	}
+    public function action_index()
+    {
+        echo 'Hello World! ';
+    }
 
 } // End Welcome

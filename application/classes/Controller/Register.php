@@ -6,26 +6,26 @@
 class Controller_Register extends Controller
 {
 
-	public $userService;
+    public $userService;
 
-	public function before()
-	{
-		$this->userService = new Business_User();
-	}
+    public function before()
+    {
+        $this->userService = new Business_User();
+    }
 
-	public function action_index()
-	{
-	    $roleType = Request::current()->post('roleType');
+    public function action_index()
+    {
+        $roleType = Request::current()->post('roleType');
         
         $res = $this->userService->addUser($roleType);
 
         $status = empty($res) ? STATUS_ERROR : STATUS_SUCCESS;
-        $msg	= empty($res) ? 'register failed' : 'register success';
+        $msg    = empty($res) ? 'register failed' : 'register success';
 
         echo json_encode(array(
             'status' => $status,
-            'msg' 	 => $msg,
+            'msg'      => $msg,
         ));
-	}
+    }
 
 }
