@@ -25,8 +25,13 @@ var app = angular.module(
         	$scope.login = function(){
         		var login = User.login($scope.user);
         		login.success(function(res){
-        			console.log(res);
-        			$scope.refreshValidCode();
+           			if(res.status != 0){
+           				console.log(321)
+           				$scope.refreshValidCode();
+           				alert(res.msg);
+           				return;
+           			}
+           			window.open('./home.html', '_self');
         		});
         	}
         }

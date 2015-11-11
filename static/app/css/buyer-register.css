@@ -1,15 +1,15 @@
-section.buyer-register-step {
-	padding-top: 50px;
-	padding-bottom: 20px;
-}
-
 h2.buyer-register-step {
 	font-size: 20px;
+	margin-bottom: 50px;
+	margin-top: 0;
+	text-indent: 2.5em;
 }
-
-.buyer-register-inline {
+.form-group{
+	position: relative;
+}
+/* .buyer-register-inline {
 	line-height: 22px !important;
-}
+} */
 
 .buyer-register-text-center {
 	line-height: 100%;
@@ -21,6 +21,9 @@ h2.buyer-register-step {
 	margin-bottom: 50px;
 }
 
+.buyer-register-lookbook-upload.has-error{
+	border-color: #a94442;
+}
 .buyer-register-lookbook-upload {
 	font-size: 10px;
 	height: 190px;
@@ -67,17 +70,35 @@ h2.buyer-register-step {
 
 .buyer-register-checkbox {
 	margin-left: 0 !important;
-	padding-top: 0 !important;
-	margin-right: 40px;
+    padding-top: 0 !important;
+    margin-right: 20px;
+    padding-left: 0;
 }
 
 .buyer-register-checkbox label {
-	margin-left: 15px;
+	margin-left: 10px;
 }
 
+label[for='store-type'] {
+	position: absolute;
+    width: 100%;
+    z-index: -1;
+    text-align: center;
+    font-weight: normal;
+    color: #999;
+    letter-spacing: 0;
+    padding-right: 30px;
+}
+label[for='store-type'].has-content{
+    color: #555;
+}
 #store-type {
-	color: #aaaaaa;
-	background-color: #fff;
+	background-color: transparent;
+	color: #fff;
+}
+#store-type option{
+	color: #000;
+	padding: 10px 0;
 }
 
 .buyer-register-dropdown-menu {
@@ -93,4 +114,7 @@ h2.buyer-register-step {
 .buyer-register-dropdown-menu li:hover {
 	background-color: #f5f5f5;
 	cursor: pointer;
+}
+.help-block{
+	margin-top: 0;
 }
