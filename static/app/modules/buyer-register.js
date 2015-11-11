@@ -9,9 +9,6 @@ var app = angular.module(
     [
         '$scope', '$element', 'uiUploader', 'User',
         function($scope, $element,  uiUploader, User) {
-			$('#Shop-type').dropdown();
-			
-			
 			$scope.step = {
 				stepNumber: 1,
 				information: ['ADD USER DETAILS', 'ADD BRAND DETAILS', 'ADD COMPANY DETAILS'],
