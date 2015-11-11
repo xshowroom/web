@@ -36,7 +36,7 @@ angular.module(
             global_no_user_navigation__GUIDE: '入圈',
             global_no_user_navigation__SHOP: '选货',
             global_no_user_navigation__DISCOVER: '入圈',
-            global_no_user_navigation__PRESS: '探索',
+            global_no_user_navigation__PRESS: '资讯',
             global_no_user_navigation__CONTACT: '联系',
 
             // guide.html
