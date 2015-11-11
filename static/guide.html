@@ -25,10 +25,10 @@
 		<div class="container-fluid">
 			<div class="row guide-tab">
 				<div class="col-xs-6 text-right guide-tab-title" ng-class="{'active': solution == 'brand'}">
-					<h2 ng-click="solution='brand';">SOLUTIONS FOR BRANDS</h2>
+					<h2 ng-click="solution='brand';">{{ "guide__SOLUTIONS_FOR_BRANDS"| translate }}</h2>
 				</div>
 				<div class="col-xs-6 guide-tab-title" ng-class="{'active': solution == 'retailer'}">
-					<h2 ng-click="solution='retailer';">SOLUTIONS FOR RETAILERS</h2>
+					<h2 ng-click="solution='retailer';">{{ "guide__SOLUTIONS_FOR_RETAILERS"| translate }}</h2>
 				</div>
 			</div>		
 		</div>
@@ -36,50 +36,50 @@
 	<section class="row no-vertical-padding">
 		<div class="container-fluid guide-banner">
 			<div class="row">
-				<span class="col-xs-12">X SHOWROOM FASHION {{solution | uppercase}}</span>
-				<span class="col-xs-12">ACCSEE SUBSCRIPTION</span>
+                <span class="col-xs-12">{{ "guide__X_SHOWROOM_FASHION"| translate }} {{solution | uppercase}}</span>
+				<span class="col-xs-12">{{ "guide__ACCESS_SUBSCRIPTION"| translate }}</span>
 			</div>
 		</div>
 	</section>
 	<section class="row no-vertical-padding">
-		<div class="container guide-solution" ng-if="solution == 'brand'">
+		<div class="container guide-solution" ng-if="solution == 'retailer'">
 			<div class="col-xs-10 col-xs-offset-1 text-center">
-				<h4>SHOWCASE TO SELECTED BRANDS</h4>
-				<p>Do you have your own store? Whether you choose to sell online or in store, sign up as a buyer on X SHOWROOM and view the collections that our brands have available. Sign up is FREE, and there are no subscription fees to pay. Product catalogues and our online showrooms are available 24/7. Simply view the collections and submit your order directly to the brand and they will be in touch to process your order. Our team in Shanghai are always at hand to assist in the proccess and with communication.</p>
+				<h4>{{ "guide__buyer_INTRODUCE"| translate }}</h4>
+				<p>{{ "guide__buyer_INTRODUCE_DESC"| translate }}</p>
 				<div class="col-xs-12">
-					<a class="btn btn-type-2" href="./brand-register.html" target="_self">REGISTER</a>
-					<a class="btn btn-type-1" href="./login.html" target="_self">SIGN IN</a>
+					<a class="btn btn-type-2" href="./brand-register.html" target="_self">{{ "guide__btn_REGISTER"| translate }}</a>
+					<a class="btn btn-type-1" href="./login.html" target="_self">{{ "guide__btn_SIGN_IN"| translate }}</a>
 				</div>
 			</div>
 		</div>
-		<div class="container guide-solution" ng-if="solution == 'retailer'">
+		<div class="container guide-solution" ng-if="solution == 'brand'">
 			<div class="col-xs-6 text-center">
-				<p class="col-xs-10 col-xs-offset-1">Are you interested in exploring the market with the an online showroom who will help you reach your potential? Market your brand to buyers in China with us. With X SHOWROOM, you can take advantage of the extensive experience of the staff who in partnership with Project Crossover, offer the Shanghai and London showroom along with the online showroom as digital presence for your brand to streamline the wholesale process. You can be sure the visibility of your collection and products will continually increase with us through the 1000 buyers already registered.</p>
+				<p class="col-xs-10 col-xs-offset-1">{{ "guide__brand_left_INTRODUCE"| translate }}</p>
 				<div class="col-xs-12">
-					<a class="btn btn-type-2" href="./buyer-register.html" target="_self">REGISTER</a>
-					<a class="btn btn-type-1" href="./login.html" target="_self">SIGN IN</a>
+					<a class="btn btn-type-2" href="./buyer-register.html" target="_self">{{ "guide__btn_REGISTER"| translate }}</a>
+					<a class="btn btn-type-1" href="./login.html" target="_self">{{ "guide__btn_SIGN_IN"| translate }}</a>
 				</div>
 			</div>
 			<div class="col-xs-6">
 				<div class="col-xs-10 col-xs-offset-1 guide-solution-feature">
 					<div class="col-xs-3 guide-solution-icon"></div>
 					<div class="col-xs-9">
-						<h4>SHOWCASE TO SELECTED BUYERS</h4>
-						<p>An online showroom to showcase your products to our selected buyers</p>
+						<h4>{{ "guide__brand_right_INTRODUCE_1"| translate }}</h4>
+						<p>{{ "guide__brand_right_INTRODUCE_DESC_1"| translate }}</p>
 					</div>
 				</div>
 				<div class="col-xs-10 col-xs-offset-1 guide-solution-feature">
 					<div class="col-xs-3 guide-solution-icon"></div>
 					<div class="col-xs-9">
-						<h4>ACCESS TO TOP BUYERS</h4>
-						<p>Gain access to our network of authenticated buyers</p>
+                        <h4>{{ "guide__brand_right_INTRODUCE_2"| translate }}</h4>
+                        <p>{{ "guide__brand_right_INTRODUCE_DESC_2"| translate }}</p>
 					</div>
 				</div>
 				<div class="col-xs-10 col-xs-offset-1 guide-solution-feature">
 					<div class="col-xs-3 guide-solution-icon"></div>
 					<div class="col-xs-9">
-						<h4>RELAIBLE NETWORK</h4>
-						<p>Only buyers with existing stores will have access to see the collection</p>
+                        <h4>{{ "guide__brand_right_INTRODUCE_3"| translate }}</h4>
+                        <p>{{ "guide__brand_right_INTRODUCE_DESC_3"| translate }}</p>
 					</div>
 				</div>
 			</div>
@@ -87,90 +87,90 @@
 	</section>
 	<section class="row no-vertical-padding">
 		<div class="container-fluid guide-benefit">
-			<h3 class="col-xs-12 text-center">MORE BENEFITS OF REGISTERING WITH US</h3>
+			<h3 class="col-xs-12 text-center">{{ "guide__MORE_BENEFITS_OF_REGISTERING_WITH_US"| translate }}</h3>
 			<div class="col-xs-12 guide-benefit-container" ng-if="solution == 'brand'">
 				<div class="col-xs-3 guide-benefit-item">
 					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
 					<div class="col-xs-8">
-						<h4>PREVIEW PROFILES</h4>
-						<p>Brands can view store profiles before confirming the order.</p>
+						<h4>{{ "guide__benefits_PREVIEW_PROFILES"| translate }}</h4>
+						<p>{{ "guide__benefits_PREVIEW_PROFILES_DESC"| translate }}</p>
 					</div>
 				</div>
 				<div class="col-xs-3 guide-benefit-item">
 					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
 					<div class="col-xs-8">
-						<h4>LANGUAGE SELECTION</h4>
-						<p>Identical pages are set up in the Chinese language to cater to our Chinese reading customers.</p>
+						<h4>{{ "guide__benefits_LANGUAGE_SELECTION"| translate }}</h4>
+						<p>{{ "guide__benefits_LANGUAGE_SELECTION_DESC"| translate }}</p>
 					</div>
 				</div>
 				<div class="col-xs-3 guide-benefit-item">
 					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
 					<div class="col-xs-8">
-						<h4>PROMOTION</h4>
-						<p>Your brand will be featured in the X SHOWROOM promotional activities including our Chinese newsletters and Chinese social media channels.</p>
+						<h4>{{ "guide__benefits_PROMOTION"| translate }}</h4>
+						<p>{{ "guide__benefits_PROMOTION_DESC"| translate }}</p>
 					</div>
 				</div>
 				<div class="col-xs-3 guide-benefit-item">
 					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
 					<div class="col-xs-8">
-						<h4>CHOOSE ACCOUNT TYPE</h4>
-						<p>Two types of account are available: </br>-Online account</br>-Premium account</p>
+						<h4>{{ "guide__benefits_CHOOSE_ACCOUNT_TYPE"| translate }}</h4>
+						<p>{{ "guide__benefits_CHOOSE_ACCOUNT_TYPE_DESC"| translate }}</br>{{ "guide__benefits_CHOOSE_ACCOUNT_TYPE_ACCOUNT_1"| translate }}</br>{{ "guide__benefits_CHOOSE_ACCOUNT_TYPE_ACCOUNT_2"| translate }}</p>
 					</div>
 				</div>
 				<div class="col-xs-3 guide-benefit-item">
 					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
 					<div class="col-xs-8">
-						<h4>DIGITAL LINESHEETS</h4>
-						<p>Line sheets are set up automatically and can be downloaded .</p>
+						<h4>{{ "guide__benefits_DIGITAL_LINE_SHEETSS"| translate }}</h4>
+						<p>{{ "guide__benefits_DIGITAL_LINE_SHEETS_DESC"| translate }}</p>
 					</div>
 				</div>
 				<div class="col-xs-3 guide-benefit-item">
 					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
 					<div class="col-xs-8">
-						<h4>MINIMISE ORDER ERROR</h4>
-						<p>Minimise the rate of order errors as orders are made online through our reliable user friendly platform.</p>
+						<h4>{{ "guide__benefits_MINIMISE_ORDER_ERROR"| translate }}</h4>
+						<p>{{ "guide__benefits_MINIMISE_ORDER_ERROR_DESC"| translate }}</p>
 					</div>
 				</div>
 				<div class="col-xs-3 guide-benefit-item">
 					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
 					<div class="col-xs-8">
-						<h4>UNLIMITED UPLOAD</h4>
-						<p>Enjoy unlimited upload of collection and products.</p>
+						<h4>{{ "guide__benefits_UNLIMITED_UPLOAD"| translate }}</h4>
+						<p>{{ "guide__benefits_UNLIMITED_UPLOAD_DESC"| translate }}</p>
 					</div>
 				</div>
 				<div class="col-xs-3 guide-benefit-item">
 					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
 					<div class="col-xs-8">
-						<h4>24/7 SHOWROOM</h4>
-						<p>Buyers will be able to access your product catalogue 24/7.</p>
+						<h4>{{ "guide__benefits_24_7_SHOWROOM"| translate }}</h4>
+						<p>{{ "guide__benefits_24_7_SHOWROOM_DESC"| translate }}</p>
 					</div>
 				</div>
 				<div class="col-xs-3 guide-benefit-item">
 					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
 					<div class="col-xs-8">
-						<h4>24/7 ACCESS TO ORDER HISTORY</h4>
-						<p>24/7 access to buyer order history.</p>
+						<h4>{{ "guide__benefits_24_7_ACCESS_TO_ORDER_HISTORY"| translate }}</h4>
+						<p>{{ "guide__benefits_24_7_ACCESS_TO_ORDER_HISTORY_DESC"| translate }}</p>
 					</div>
 				</div>
 				<div class="col-xs-3 guide-benefit-item">
 					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
 					<div class="col-xs-8">
-						<h4>BUYER REPORTS & TRACKING STATISTICS</h4>
-						<p>Buyer reports and tracking statistics are available for your usage (on request)</p>
+						<h4>{{ "guide__benefits_BUYER_REPORTS_TRACKING_STATISTICS"| translate }}</h4>
+						<p>{{ "guide__benefits_BUYER_REPORTS_TRACKING_STATISTICS_DESC"| translate }}</p>
 					</div>
 				</div>
 				<div class="col-xs-3 guide-benefit-item">
 					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
 					<div class="col-xs-8">
-						<h4>SHOWROOM FOR PRENIUM MEMBERS</h4>
-						<p>Premium member account holders can enjoy the privilege of having an added physical showroom opened throughout the whole year, with support from our professional sales team.</p>
+						<h4>{{ "guide__benefits_SHOWROOM_FOR_PREMIUM_MEMBERS"| translate }}</h4>
+						<p>{{ "guide__benefits_SHOWROOM_FOR_PREMIUM_MEMBERS_DESC"| translate }}</p>
 					</div>
 				</div>
 				<div class="col-xs-3 guide-benefit-item">
 					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
 					<div class="col-xs-8">
-						<h4>TRADESHOWS</h4>
-						<p>X SHOWROOM will represent you in a trade show every season.</p>
+						<h4>{{ "guide__benefits_TRADESHOWS"| translate }}</h4>
+						<p>{{ "guide__benefits_TRADESHOWS_DESC"| translate }}</p>
 					</div>
 				</div>
 			</div>
@@ -178,71 +178,71 @@
 				<div class="col-xs-3 guide-benefit-item">
 					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
 					<div class="col-xs-8">
-						<h4>PREVIEW COLLECTIONS</h4>
-						<p>Preview collection online.</p>
+						<h4>{{ "guide__benefits_PREVIEW_COLLECTIONS"| translate }}</h4>
+						<p>{{ "guide__benefits_PREVIEW_COLLECTIONS_DESC"| translate }}</p>
 					</div>
 				</div>
 				<div class="col-xs-3 guide-benefit-item">
 					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
 					<div class="col-xs-8">
-						<h4>24/7 ACCESS</h4>
-						<p>24/7 access to online system.</p>
+						<h4>>{{ "guide__benefits_24_7_ACCESS"| translate }}</h4>
+						<p>>{{ "guide__benefits_24_7_ACCESS_DESC"| translate }}</p>
 					</div>
 				</div>
 				<div class="col-xs-3 guide-benefit-item">
 					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
 					<div class="col-xs-8">
-						<h4>DISCOVER BRANDS</h4>
-						<p>Discover new brands and make new connections through our large directory</p>
+						<h4>{{ "guide__benefits_DISCOVER_BRANDS"| translate }}</h4>
+						<p>{{ "guide__benefits_DISCOVER_BRANDS_DESC"| translate }}</p>
 					</div>
 				</div>
 				<div class="col-xs-3 guide-benefit-item">
 					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
 					<div class="col-xs-8">
-						<h4>VIRTUAL SHOWROOMS</h4>
-						<p>Virtual showrooms for our selected Brands</p>
+						<h4>{{ "guide__benefits_VIRTUAL_SHOWROOMS"| translate }}</h4>
+						<p>{{ "guide__benefits_VIRTUAL_SHOWROOMS_DESC"| translate }}</p>
 					</div>
 				</div>
 				<div class="col-xs-3 guide-benefit-item">
 					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
 					<div class="col-xs-8">
-						<h4>ONLINE OREDER SYSTEM</h4>
-						<p>experience the ease of the simple online system for ordering and re-ordering</p>
+						<h4>{{ "guide__benefits_VIRTUAL_SHOWROOMS"| translate }}</h4>
+						<p>{{ "guide__benefits_VIRTUAL_SHOWROOMS_DESC"| translate }}</p>
 					</div>
 				</div>
 				<div class="col-xs-3 guide-benefit-item">
 					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
 					<div class="col-xs-8">
-						<h4>SAVE FOR LATER</h4>
-						<p>Set up orders for purchansing later (subject to Brand availability)</p>
+						<h4>{{ "guide__benefits_SAVE_FOR_LATER"| translate }}</h4>
+						<p>{{ "guide__benefits_SAVE_FOR_LATER_DESC"| translate }}</p>
 					</div>
 				</div>
 				<div class="col-xs-3 guide-benefit-item">
 					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
 					<div class="col-xs-8">
-						<h4>KEEP TRACK</h4>
-						<p>View previous orders through the order history in your account</p>
+						<h4>{{ "guide__benefits_KEEP_TRACK"| translate }}</h4>
+						<p>{{ "guide__benefits_KEEP_TRACK_DESC"| translate }}</p>
 					</div>
 				</div>
 				<div class="col-xs-3 guide-benefit-item">
 					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
 					<div class="col-xs-8">
-						<h4>TRANING</h4>
-						<p>X SHOWROOM provides training on how to use the system.</p>
+						<h4>{{ "guide__benefits_TRAINING"| translate }}</h4>
+						<p>{{ "guide__benefits_TRAINING_DESC"| translate }}</p>
 					</div>
 				</div>
 				<div class="col-xs-3 guide-benefit-item">
 					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
 					<div class="col-xs-8">
-						<h4>DEDICATED URL</h4>
-						<p>Dedicated URLs for easy access to Brands (subject to approval)</p>
+						<h4>{{ "guide__benefits_DEDICATED_URL"| translate }}</h4>
+						<p>{{ "guide__benefits_DEDICATED_URL_DESC"| translate }}</p>
 					</div>
 				</div>
 				<div class="col-xs-3 guide-benefit-item">
 					<div class="col-xs-offset-1 col-xs-2 guide-benefit-item-icon "></div>
 					<div class="col-xs-8">
-						<h4>TRANSLATION PROVIDED</h4>
-						<p>Account Manager is able to provide help to handle communication should language be a barrier (English/Chinese)</p>
+						<h4>{{ "guide__benefits_TRANSLATION_PROVIDED"| translate }}</h4>
+						<p>{{ "guide__benefits_TRANSLATION_PROVIDED_DESC"| translate }}</p>
 					</div>
 				</div>
 			</div>
@@ -251,15 +251,15 @@
 	<section class="row">
 		<div class="container">
 			<div class="row guide-membership">
-				<h3 class="col-xs-12 text-center">MEMBERSHIP INCLUDES</h3>
+				<h3 class="col-xs-12 text-center">{{ "guide__MEMBERSHIP_INCLUDES"| translate }}</h3>
 				<ul class="col-xs-6">
-					<li>> One year access to the system</li>
-					<li>> Training to use the system</li>
-					<li>> Translation of main content text to Chinese for Chinese buyers</li>
+					<li>{{ "guide__MEMBERSHIP_INCLUDES_R1"| translate }}</li>
+					<li>{{ "guide__MEMBERSHIP_INCLUDES_R2"| translate }}</li>
+					<li>{{ "guide__MEMBERSHIP_INCLUDES_R3"| translate }}</li>
 				</ul>
 				<ul class="col-xs-6">
-					<li>> A dedicated URL for Buyers to quickly access your product catalogue</li>
-					<li>> Account Manager to handle verbal communications where there is a language barrier for English/Chinese</li>
+					<li>{{ "guide__MEMBERSHIP_INCLUDES_R4"| translate }}</li>
+					<li>{{ "guide__MEMBERSHIP_INCLUDES_R5"| translate }}</li>
 				</ul>
 			</div>
 		</div>
