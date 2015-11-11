@@ -12,8 +12,7 @@ class Controller_Common extends Controller
 
     public function action_userInfo()
     {
-        $user = $_SESSION['user'];
-
+        $user = $_SESSION['opUser'];
         $status = empty($user) ? STATUS_ERROR : STATUS_SUCCESS;
         $msg    = empty($user) ? 'guest' : 'already logged in';
         
