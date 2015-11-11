@@ -315,3 +315,62 @@ a.active:before{
     margin-top: -5px;
     cursor: pointer;
 }
+
+/* uploading 遮罩 */
+.uploading {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    text-align: center;
+    font-size: 36px;
+}
+.uploading .uploading-content{
+	position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+.uploading .uploading-content .glyphicon{
+	padding: 10px;
+	border-radius: 50%;
+	border: 2px solid #fff;
+	margin:0 30px;
+	overflow: hidden;
+	margin-bottom: -10px;
+}
+@keyframes rollUp
+{
+from {transform: translateY(100%);}
+to {transform: translateY(-100%);}
+}
+
+@-moz-keyframes rollUp /* Firefox */
+{
+from {-moz-transform: translateY(100%);}
+to {-moz-transform: translateY(-100%);}
+}
+
+@-webkit-keyframes rollUp /* Safari 和 Chrome */
+{
+from {-webkit-transform: translateY(100%);}
+to {-webkit-transform: translateY(-100%);}
+}
+
+@-o-keyframes rollUp /* Opera */
+{
+from {-o-transform: translateY(100%);}
+to {-o-transform: translateY(-100%);}
+}
+.uploading .uploading-content .glyphicon:before{
+	display: inline-block;
+	animation: rollUp 1s linear infinite;
+    -webkit-animation: rollUp 1s linear infinite;
+    -moz-animation: rollUp 1s linear infinite;
+    -o-animation: rollUp 1s linear infinite;
+}

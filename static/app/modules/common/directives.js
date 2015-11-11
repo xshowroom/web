@@ -198,4 +198,33 @@ var app = angular.module(
 			} 
         }
     };
+}])
+.directive('uploading', [function () {
+    return {
+    	template: [
+    	    '<div ng-if="showUploading">',
+    	    	'<div class="uploading-content">',
+    	    		'<span class="glyphicon glyphicon-arrow-up"></span>',
+	    		    '<span>{{"UPLOADING" | translate}}</span>',
+	    		    '<span class="glyphicon glyphicon-arrow-up"></span>',
+    		    '</div>',
+    		'</div>'
+    	].join(''),
+        scope: {
+        	target: '@',
+        },
+        transclude: false,
+        restrict: 'C',
+        replace: true,
+        link: function ($scope, $element, $attrs, $transclude) {
+        	$scope.$on("uploading.start", function(){
+        		$scope.showUploading = true;
+        		$scope.$apply();
+        	});
+        	$scope.$on("uploading.end", function(){
+        		$scope.showUploading = false;
+        		$scope.$apply();
+        	})
+        }
+    };
 }]);

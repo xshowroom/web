@@ -1,10 +1,8 @@
-section.brand-register-step {
-	padding-top: 50px;
-	padding-bottom: 20px;
-}
-
 h2.brand-register-step {
 	font-size: 20px;
+	margin-bottom: 50px;
+	margin-top: 0;
+	text-indent: 2.5em;
 }
 
 .brand-register-inline {

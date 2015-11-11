@@ -36,31 +36,31 @@ var app = angular.module('xShowroom.register.brand',
 				    }
 				}
 			};
+			$scope.user = {
+				roleType: 1
+			};
 			
 			$scope.files = [];
-			
 			$element.find('.brand-register-block-spare').on('change', '#lookbook-upload', function(e) {
-				console.log(123)
-				var files = e.target.files;
-				uiUploader.addFiles(files);
+				$scope.$broadcast('uploading.start');
+				uiUploader.addFiles(e.target.files);
 				$scope.files = uiUploader.getFiles();
-				$scope.$apply();
                 uiUploader.startUpload({
                     url: '/web/upload/image',
-                    concurrency: 2,
-                    onProgress: function(file) {
-                        $log.info(file.name + '=' + file.humanSize);
-                        $scope.$apply();
-                    },
                     onCompleted: function(file, response) {
-                        $log.info(file + 'response' + response);
+                    	response = JSON.parse(response);
+                    	if(response.status != 0){
+                    		$scope.user.imagePath = undefined;
+                    		$scope.$apply();
+                    		alert('上传图片接口出错，请重新上传，如多次失败请联系我们！');
+                    		return
+                    	}
+                    	$scope.user.imagePath = response.data;
+                    	$scope.$apply();
+                    	$scope.$broadcast('uploading.end');
                     }
                 });
 			});
-			
-			$scope.uploadImage = function(event){
-				console.log(event)
-			}
 			
 			$scope.check = function() {
 				var stepNumber = $scope.step.stepNumber;
@@ -77,13 +77,18 @@ var app = angular.module('xShowroom.register.brand',
 					$scope.register();
 				}
 			};
+			
 			$scope.previous = function() {
 				if ($scope.step.stepNumber > 1 && $scope.step.stepNumber <= 3) {
 					$scope.step.stepNumber--;
 				}
 			};
+			
 			$scope.register = function() {
-				console.log($scope.user);
+				var register = User.register($scope.user);
+				register.success(function(res){
+        			console.log(res);
+        		});
 			};
 		}
 	]

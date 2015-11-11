@@ -24,11 +24,13 @@ angular.module(
 	{
 		'zh-CN': {
 			LANGUAGE: '语言',
-			CURRENCY: '货币'
+			CURRENCY: '货币',
+			UPLOADING: '上传图片中'
 		},
 		'en': {
 			LANGUAGE: 'LANGUAGE',
-			CURRENCY: 'CURRENCY'
+			CURRENCY: 'CURRENCY',
+			UPLOADING: 'UPLOADING IMAGE'
 		}
 	}
 );
