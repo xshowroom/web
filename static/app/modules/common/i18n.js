@@ -116,8 +116,20 @@ angular.module(
             guide__MEMBERSHIP_INCLUDES_R3: '> 将品牌文字介绍内容翻译成中文，以便中国买手浏览',
             guide__MEMBERSHIP_INCLUDES_R4: '> 专享URL地址以便买手更便捷地进入您的品牌介绍页',
             guide__MEMBERSHIP_INCLUDES_R5: '> 品牌对应的双语客户经理将及时与品牌及买手沟通，中英文时时切换，实现无障碍交流',
-		},
 
+            // login.html
+            login__SIGN_IN: '登录',
+            login__EMAIL: '电子邮箱*,',
+            login__PASSWORD: '输入密码*',
+            login__VALID_CODE: '验证码*',
+            login__btn_LOGIN: '登录',
+            login__REMEMBER_ME: '记住我',
+
+            login__REQUEST_MEMBERSHIP: '新用户申请',
+            login__REQUEST_MEMBERSHIP_DESC: '买手圈只向注册并审核通过的品牌、代理机构及买手开放。若想入驻买手圈，请完成在线注册：',
+            login__REQUEST_BRAND: '品牌入驻',
+            login__REQUEST_BUYER: '买手入圈',
+        },
 		'en': {
             // directives.js
             directives_js__LANGUAGE: 'LANGUAGE',
@@ -212,6 +224,19 @@ angular.module(
             guide__MEMBERSHIP_INCLUDES_R3: '> Translation of main content text to Chinese for Chinese buyers',
             guide__MEMBERSHIP_INCLUDES_R4: '> A dedicated URL for Buyers to quickly access your product catalogue',
             guide__MEMBERSHIP_INCLUDES_R5: '> Account Manager to handle verbal communications where there is a language barrier for English/Chinese',
+
+            // login.html
+            login__SIGN_IN: 'SIGN IN',
+            login__EMAIL: 'EMAIL ADDRESS*,',
+            login__PASSWORD: 'YOUR PASSWORD*',
+            login__VALID_CODE: 'VALID CODE*',
+            login__btn_LOGIN: 'LOGIN',
+            login__REMEMBER_ME: 'REMEMBER ME',
+
+            login__REQUEST_MEMBERSHIP: 'REQUEST MEMBERSHIP',
+            login__REQUEST_MEMBERSHIP_DESC: 'X SHOWROOM IS OPEN TO SELECTED BRANDS. AGENCIES AND BUYERS TO PARTICIPATE. PLEASE REGISTER ONLINE',
+            login__REQUEST_BRAND: 'FOR BRANDS',
+            login__REQUEST_BUYER: 'FOR BUYER',
 		}
 	}
 );

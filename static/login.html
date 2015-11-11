@@ -26,24 +26,24 @@
 			<div class="row">
 				<div class="col-xs-6">
 					<article class="sign-in text-center">
-						<h2>SIGN IN</h2>
+						<h2>{{ "login__SIGN_IN"| translate }}</h2>
 						<form ng-submit="login();">
 							<div class="form-group">
-								<label for="username">EMAIL ADDRESS*</label> 
+								<label for="username">{{ "login__EMAIL"| translate }}</label>
 								<input type="text" class="form-control" id="username" autocomplete="off" ng-model="user.email">
 							</div>
 							<div class="form-group">
-								<label for="password">YOUR PASSWORD</label>
+								<label for="password">{{ "login__PASSWORD"| translate }}</label>
 								<input type="password" class="form-control" id="password" autocomplete="off"  ng-model="user.pass">
 							</div>
 							<div class="form-group">
-								<label for="valid-code" class="col-xs-12">VALID CODE</label>
+								<label for="valid-code" class="col-xs-12">{{ "login__VALID_CODE"| translate }}</label>
 								<input type="text" class="form-control col-xs-9" id="valid-code" autocomplete="off" ng-model="user.code">
 								<img ng-click="refreshValidCode();" class="valid-code col-xs-3" ng-src="{{validCodeUrl}}" title="Click to refresh">
 							</div>
-							<button type="submit" class="btn btn-type-2">LOGIN</button>
+							<button type="submit" class="btn btn-type-2">{{ "login__btn_LOGIN"| translate }}</button>
 							<div class="checkbox">
-								<label><input type="checkbox"> REMEMBER ME</label>
+								<label><input type="checkbox">{{ "login__REMEMBER_ME"| translate }}</label>
 							</div>
 							<a href="#">LOST YOUR PASSWORD?</a>
 						</form>
@@ -51,11 +51,11 @@
 				</div>
 				<div class="col-xs-6">
 					<article class="request-menbership text-center">
-						<h2>REQUEST MEMEBERSHIP</h2>
-						<p>X SHOWROOM IS OPEN TO SELECTED BRANDS. AGENCIES AND BUYERS TO PRATICIPATE. PLEASE REGISTER ONLINE</p>
+						<h2>{{ "login__REQUEST_MEMBERSHIP"| translate }}</h2>
+						<p>{{ "login__REQUEST_MEMBERSHIP_DESC"| translate }}</p>
 						<div>
-							<a class="btn btn-type-1" href="./brand-register.html" target="_self">FOR BRANDS</a>
-							<a class="btn btn-type-1"  href="./brand-register.html" target="_self">FOR RETAILERS</a>
+							<a class="btn btn-type-1" href="./brand-register.html" target="_self">{{ "login__REQUEST_BRAND"| translate }}</a>
+							<a class="btn btn-type-1"  href="./brand-register.html" target="_self">{{ "login__REQUEST_BUYER"| translate }}</a>
 						</div>
 					</article>
 				</div>
