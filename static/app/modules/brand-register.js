@@ -71,9 +71,10 @@ var app = angular.module('xShowroom.register.brand',
 					$scope.step.validation[stepNumber][key] = hasError;
 					errorFlag = errorFlag || hasError;
 				}
+				console.log($scope.acceptConditions)
 				if (!errorFlag && $scope.step.stepNumber < 3) {
 					$scope.step.stepNumber += 1;
-				}else if (!errorFlag && $scope.step.stepNumber == 3) {
+				}else if (!errorFlag && $scope.step.stepNumber == 3 && $scope.acceptConditions) {
 					$scope.register();
 				}
 			};
