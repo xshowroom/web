@@ -15,7 +15,7 @@ class Controller_Upload extends Controller
         $res = $this->uploadService->image();
         
         $status = empty($res) ? STATUS_ERROR : STATUS_SUCCESS;
-        $msg    = empty($res) ? 'username or password is incorrect' : 'login success';
+        $msg    = empty($res) ? 'upload failed' : 'upload success';
         
         echo json_encode(array(
             'status' => $status,

@@ -31,7 +31,11 @@ class Business_Upload
             $file = $_FILES['file'];
             // 上传文件夹不存在则创建
             if (!is_dir(UPLOAD_DIR)) {
-                mkdir($realPath, 0777);
+                mkdir(UPLOAD_DIR, 0777);
+            }
+            // 临时文件夹不存在则创建
+            if (!is_dir(UPLOAD_DIR. '/tmp/')) {
+                mkdir(UPLOAD_DIR. '/tmp/', 0777);
             }
             // 文件名随机
             $realPathFile = UPLOAD_DIR. '/tmp/' . date('ymdHis'). substr(microtime(),2,4);
