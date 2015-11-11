@@ -33,5 +33,5 @@ define('SITE_DOMAIN', 'http://xiaotao.cloudapp.net');
 define('SITE_PORT', '');
 define('BASE_URI', 'web');
 define('WEB_ROOT', SITE_DOMAIN . '/' . BASE_URI);
-define('ROOT_DIR', '/home/dev_root/xshowroom' . BASE_URI);
+define('ROOT_DIR', '/home/dev_root/xshowroom/' . BASE_URI);
 define('UPLOAD_DIR', ROOT_DIR. '/data');
