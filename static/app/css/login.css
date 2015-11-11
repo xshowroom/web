@@ -11,6 +11,9 @@
 .sign-in form {
 	font-size: 11px;
 }
+.sign-in form label{
+	margin-bottom: 0;
+}
 .sign-in form button{
 	margin: 15px 0 10px;
 }
