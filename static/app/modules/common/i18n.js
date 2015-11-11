@@ -92,7 +92,7 @@ angular.module(
             guide__benefits_PREVIEW_COLLECTIONS: '浏览最新系列',
             guide__benefits_PREVIEW_COLLECTIONS_DESC: '线上平台即可浏览最新系列',
             guide__benefits_24_7_ACCESS: '24/7',
-            guide__benefits_24_7_ACCESS_DESC: '买手手享受全年无休时时订货',
+            guide__benefits_24_7_ACCESS_DESC: '买手享受全年无休时时订货',
             guide__benefits_DISCOVER_BRANDS: '探索最新品牌',
             guide__benefits_DISCOVER_BRANDS_DESC: '通过买手圈丰富的品牌库，时时探索发现最新品牌。',
             guide__benefits_VIRTUAL_SHOWROOMS: '线下showroom',
