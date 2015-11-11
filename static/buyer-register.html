@@ -33,9 +33,9 @@
 					ng-src="/app/images/buyer-register-{{step.stepNumber}}.png" />
 			</div>
 
-			<form class="form-horizontal">
+			<form class="form-horizontal col-xs-7">
 				<!-- step 1 -->
-				<div class="col-xs-7" ng-show="step.stepNumber == 1">
+				<div class="col-xs-12" ng-show="step.stepNumber == 1">
 					<div class="form-group"  ng-class="{'has-error': step.validation[1].email}">
 						<label for="email" class="col-xs-3 text-center buyer-register-inline">
 							EMAIL ADDRESS
@@ -107,7 +107,7 @@
 				<!-- /step 1 -->
 
 				<!-- step 2 -->
-				<div class="col-xs-7 buyer-register-block-up"
+				<div class="col-xs-12 buyer-register-block-up"
 					ng-show="step.stepNumber == 2">
 					<div>
 						<div ng-class="{'has-error': step.validation[2].imagePath}"
@@ -207,7 +207,7 @@
 				<!-- /step 2 -->
 
 				<!-- step 3 -->
-				<div class="col-xs-7" ng-show="step.stepNumber == 3">
+				<div class="col-xs-12" ng-show="step.stepNumber == 3">
 					<div class="form-group"  ng-class="{'has-error': step.validation[3].companyName}">
 						<div class="col-xs-12">
 							<input type="text" class="form-control" id="company-name"
