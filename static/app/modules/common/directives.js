@@ -20,7 +20,7 @@ var app = angular.module(
             var html = [
 				'<div class="dropdown">',
 					'<a id="locale-setting-language" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">',
-					 	'{{ "LANGUAGE"| translate }}:{{ language | uppercase }}',
+					 	'{{ "directives_js__LANGUAGE"| translate }}:{{ language | uppercase }}',
 					 	'<span class="caret"></span>',
 					'</a>',
 					'<ul class="dropdown-menu" aria-labelledby="locale-setting-language">',
@@ -30,7 +30,7 @@ var app = angular.module(
 				'</div>',
 				'<div class="dropdown">',
 					'<a id="locale-setting-currency" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">',
-					 	'{{ "CURRENCY"| translate }}:{{ currency }}',
+					 	'{{ "directives_js__CURRENCY"| translate }}:{{ currency }}',
 					 	'<span class="caret"></span>',
 					'</a>',
 					'<ul class="dropdown-menu" aria-labelledby="locale-setting-currency">',
@@ -76,13 +76,13 @@ var app = angular.module(
         template: function ($element, $attr, $scope) {
             var html = [
                 '<div class="user-not-logined" ng-if="!userinfo">',
-					'<span>WELCOME GUEST!</span>',
-					'<a href="./login.html" target="_self">LOGIN</a>',
-					'<span>OR</span>',
-					'<a>REGISTER</a>',
+					'<span>{{ "directives_js__WELCOME"| translate }} GUEST!</span>',
+					'<a href="./login.html" target="_self">{{ "directives_js__LOGIN"| translate }}</a>',
+					'<span> | </span>',
+					'<a href="./guide.html">{{ "directives_js__REGISTER"| translate }}</a>',
 				'</div>',
 				'<div class="user-logined" ng-if="userinfo">',
-					'<span>WELCOME 用户1!</span>',
+					'<span>{{ "directives_js__WELCOME"| translate }} 用户1!</span>',
 				'</div>'
             ].join('');
             return html;
@@ -205,7 +205,7 @@ var app = angular.module(
     	    '<div ng-if="showUploading">',
     	    	'<div class="uploading-content">',
     	    		'<span class="glyphicon glyphicon-arrow-up"></span>',
-	    		    '<span>{{"UPLOADING" | translate}}</span>',
+	    		    '<span>{{"directives_js__UPLOADING" | translate}}</span>',
 	    		    '<span class="glyphicon glyphicon-arrow-up"></span>',
     		    '</div>',
     		'</div>'
