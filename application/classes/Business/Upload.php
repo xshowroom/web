@@ -45,6 +45,7 @@ class Business_Upload
             }
             // 将临时文件拷贝到指定位置
             $result = move_uploaded_file($file['tmp_name'], $realPathFile);
+            chmod($realPathFile, 0777);
             if ($result === false) {
                 return null;
             }

@@ -92,11 +92,12 @@ class Business_User
             }
             
             if (file_exists($imagePath)){
-                $result = move_uploaded_file($imagePath, $realPathFile);
-                if ($result === false) {
+                try{
+                    copy($imagePath, $realPathFile);
+                    unlink($imagePath);
+                } catch (Exception $e) {
                     return null;
-                }
-                unlink($imagePath);
+                }                
             }
             
             $brandId = $this->userModel->addBrandInfo($userId, $brandName, $designerName, $brandUrl, $realPathFile);
