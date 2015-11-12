@@ -19,7 +19,7 @@ return array
                  *
                  * Ports and sockets may be appended to the hostname.
                  */
-                'hostname'   => 'localhost:3306',// 10.42.3.33:6008
+                'hostname'   => 'xiaotao.cloudapp.net:3306',// 10.42.3.33:6008
                 'database'   => 'xshowroom',
                 'username'   => 'root',
                 'password'   => '123456',
