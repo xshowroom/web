@@ -43,7 +43,8 @@
 							</div>
 							<button type="submit" class="btn btn-type-2">{{ "login__btn_LOGIN"| translate }}</button>
 							<div class="checkbox">
-								<label><input type="checkbox">{{ "login__REMEMBER_ME"| translate }}</label>
+								<label><input type="checkbox" ng-model="rememberMe"
+           							ng-true-value="true" ng-false-value="false">{{ "login__REMEMBER_ME"| translate }}</label>
 							</div>
 							<!-- <a href="#">LOST YOUR PASSWORD?</a> -->
 						</form>

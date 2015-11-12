@@ -75,27 +75,33 @@ var app = angular.module(
         }
     };
 }])
-.directive('userLoginNav', [function () {
+.directive('userInfoNav', [function () {
     return {
         template: function ($element, $attr, $scope) {
             var html = [
-                '<div class="user-not-logined" ng-if="!userinfo">',
+                '<div class="user-not-logined" ng-if="!userInfo">',
 					'<span>{{ "directives_js__WELCOME"| translate }} GUEST!</span>',
 					'<a href="./login.html" target="_self">{{ "directives_js__LOGIN"| translate }}</a>',
 					'<span> | </span>',
 					'<a href="./guide.html">{{ "directives_js__REGISTER"| translate }}</a>',
 				'</div>',
-				'<div class="user-logined" ng-if="userinfo">',
-					'<span>{{ "directives_js__WELCOME"| translate }} 用户1!</span>',
+				'<div class="user-logined" ng-if="userInfo">',
+					'<span>{{ "directives_js__WELCOME"| translate }}, </span>',
+					'<a href="#">{{userInfo.email}}</a>',
+					'<span> | </span>',
+					'<a href="#">{{ "directives_js__LOGOUT"| translate }}</a>',
 				'</div>'
             ].join('');
             return html;
+        },
+        scope:{
+        	userInfo: '='
         },
         transclude: true,
         restrict: 'C',
         replace: false,
         link: function ($scope, $element, $attrs, $transclude) {
-        	
+        	console.log($scope.userInfo)
         }
     };
 }])

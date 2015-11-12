@@ -28,6 +28,7 @@ angular.module(
             directives_js__CURRENCY: '货币',
             directives_js__WELCOME: '欢迎',
             directives_js__LOGIN: '登录',
+            directives_js__LOGOUT: '退出',
             directives_js__REGISTER: '注册',
             directives_js__UPLOADING: '上传图片中',
 
@@ -193,6 +194,7 @@ angular.module(
             directives_js__CURRENCY: 'CURRENCY',
             directives_js__WELCOME: 'WELCOME',
             directives_js__LOGIN: 'LOGIN',
+            directives_js__LOGOUT: 'LOGOUT',
             directives_js__REGISTER: 'REGISTER',
             directives_js__UPLOADING: 'UPLOADING IMAGE',
 
