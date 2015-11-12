@@ -8,15 +8,21 @@
 var app = angular.module(
     'xShowroom.shop', 
     [
-        'ngCookies', 'xShowroom.i18n', 'xShowroom.directives'
+        'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services'
     ]
 )
 .controller(
     'ShopCtrl',
     [
-     	'$scope',
-        function ($scope) {
-     		
+     	'$scope', 'User',
+        function ($scope, User) {
+     		User.getUserInfo().success(function(res){
+     			if (res.status != 0){
+     				$scope.userInfo = undefined;
+     				return;
+     			}
+     			$scope.userInfo = res.data;
+     		});
      		$scope.conditions = {
      			show: 	[{
          			value: '0',

@@ -8,7 +8,7 @@
 var app = angular.module(
     'xShowroom.home', 
     [
-        'ngCookies', 'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services'
+        'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services'
     ]
 )
 .controller(
@@ -16,17 +16,13 @@ var app = angular.module(
     [
      	'$scope', 'User',
         function ($scope, User) {
-     		$scope.user = {};
-     		var init = function(){
-     			User.getUserInfo().success(function(res){
-     				if (res.status != 0){
-     					$scope.userInfo = undefined;
-     					return;
-     				}
-     				$scope.userInfo = res.data;
-     			})
-     		};
-     		init();
+     		User.getUserInfo().success(function(res){
+     			if (res.status != 0){
+     				$scope.userInfo = undefined;
+     				return;
+     			}
+     			$scope.userInfo = res.data;
+     		});
         }
     ]
 );

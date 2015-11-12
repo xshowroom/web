@@ -1,4 +1,5 @@
-var app = angular.module('xShowroom.register.brand',
+var app = angular.module(
+	'xShowroom.register.brand',
 	[
 	    'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services', 'ui.uploader'
     ]
