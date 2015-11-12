@@ -25,8 +25,12 @@
 	<section class="row">
 		<div class="container">
 			<div class="col-xs-12">
-				<h2 class="buyer-register-step">STEP {{step.stepNumber}} OF 3:
-					{{step.information[step.stepNumber - 1]}}</h2>
+				<h2 class="buyer-register-step">
+					<span>STEP {{step.stepNumber}} OF 3:</span>
+					<span ng-if="step.stepNumber == 1">ADD USER DETAILS</span>
+					<span ng-if="step.stepNumber == 2">ADD SHOP DETAILS</span>
+					<span ng-if="step.stepNumber == 3">ADD COMPANY DETAILS</span>
+				</h2>
 			</div>
 			<div class="col-xs-5">
 				<img width="100%" class="buyer-register-context"

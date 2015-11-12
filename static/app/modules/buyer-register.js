@@ -11,7 +11,6 @@ var app = angular.module(
         function($scope, $element,  uiUploader, User) {
 			$scope.step = {
 				stepNumber: 1,
-				information: ['ADD USER DETAILS', 'ADD BRAND DETAILS', 'ADD COMPANY DETAILS'],
 				validation: {
 				     1: {
 				    	'email': false,
