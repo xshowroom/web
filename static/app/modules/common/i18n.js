@@ -36,11 +36,11 @@ angular.module(
             home__LEARN_MORE: '了解更多',
             home__CONTRACT_US: '联系我们',
 
-            home__XSHOWROOM_DESC: '在这里开展你的业务 . . .',
-            home__XSHOWROOM_BUYER_COUNT: '买手',
-            home__XSHOWROOM_BRANDS_COUNT: '品牌',
-            home__XSHOWROOM_PRODUCTS_COUNT: '产品',
-            home__XSHOWROOM_ORDERS_COUNT: '订单',
+            home__XSHOWROOM_DESC: '现在就开展你的业务 . . .',
+            home__XSHOWROOM_BUYER_COUNT: '时尚买手',
+            home__XSHOWROOM_BRANDS_COUNT: '品牌客户',
+            home__XSHOWROOM_PRODUCTS_COUNT: '上线产品',
+            home__XSHOWROOM_ORDERS_COUNT: '达成订单',
 
             home__BRANDS: '品牌拓展',
             home__BRANDS_DESC: '将您的品牌展示给中国最棒的买手店，与买手圈的顶尖买手们建立合作',
@@ -54,7 +54,7 @@ angular.module(
             home__BRAND_PROFILES: '品牌介绍',
             home__SSI5_COLLECTION: '2015春夏系列',
 
-            home__TESTOMONIALS: 'X人物',
+            home__TESTOMONIALS: 'XShowroom人物',
             home__FEATURED: '圈内点评',
             home__people_BUYER: '买手',
             home__people_DESIGNER: '品牌设计师',
@@ -97,12 +97,12 @@ angular.module(
             global_footer_navigation__COMPANY__CONTACT: '联系',
 
             // guide.html
+            guide__SOLUTIONS_FOR_BRANDS: '时尚品牌 - 解决方案',
+            guide__SOLUTIONS_FOR_RETAILERS: '时尚买手 - 解决方案',
+            guide__X_SHOWROOM_FASHION: 'X SHOWROOM ',
             guide__SOLUTION_BRAND: '品牌',
             guide__SOLUTION_RETAILER: '时尚买手',
-            guide__SOLUTIONS_FOR_BRANDS: '品牌 - 解决方案',
-            guide__SOLUTIONS_FOR_RETAILERS: '买手 - 解决方案',
-            guide__X_SHOWROOM_FASHION: '买手圈',
-            guide__ACCESS_SUBSCRIPTION: '入驻申请',
+            guide__ACCESS_SUBSCRIPTION: '现在加入我们',
 
             guide__brand_left_INTRODUCE: '您想通过入驻线上showroom来打通更大的市场，挖掘品牌更大的潜力吗？通过买手圈，您的品牌将成功打入中国的买手市场。通过买手圈，您将得到来自我们最专业圈内人员的支持，以更好的推广您的品牌，我们的工作人员长期与Project Crossover线下showroom合作，深悉中国买手市场。同时，我们联合上海和伦敦的两大线下showroom及线上买手圈，为品牌的成长提供多重专业平台。通过买手圈，您的品牌会被1000多名已经注册入驻的买手知晓，每个系列的知名度、浏览量、订货量都会得到显著提高。',
             guide__brand_right_INTRODUCE_1: '展示给精选买手',
@@ -118,7 +118,7 @@ angular.module(
             guide__btn_REGISTER: '注册',
             guide__btn_SIGN_IN: '登录',
 
-            guide__MORE_BENEFITS_OF_REGISTERING_WITH_US: '入驻我们的更多益处 . . .',
+            guide__MORE_BENEFITS_OF_REGISTERING_WITH_US: '加入我们的更多优势 . . .',
 
             guide__benefits_PREVIEW_PROFILES: '浏览买手信息',
             guide__benefits_PREVIEW_PROFILES_DESC: '买手提交预览品牌申请后，品牌可及时浏览买手相关信息',
@@ -302,11 +302,11 @@ angular.module(
             global_footer_navigation__COMPANY__CONTACT: 'CONTACT',
 
             // guide.html
-            guide__SOLUTION_BRAND: 'BRAND',
-            guide__SOLUTION_RETAILER: 'RETAILER',
             guide__SOLUTIONS_FOR_BRANDS: 'SOLUTIONS FOR BRANDS',
             guide__SOLUTIONS_FOR_RETAILERS: 'SOLUTIONS FOR RETAILERS',
             guide__X_SHOWROOM_FASHION: 'X SHOWROOM FASHION',
+            guide__SOLUTION_BRAND: 'BRAND',
+            guide__SOLUTION_RETAILER: 'RETAILER',
             guide__ACCESS_SUBSCRIPTION: 'ACCESS SUBSCRIPTION',
 
             guide__brand_left_INTRODUCE: 'Are you interested in exploring the market with the an online showroom who will help you reach your potential? Market your brand to buyers in China with us. With X SHOWROOM, you can take advantage of the extensive experience of the staff who in partnership with Project Crossover, offer the Shanghai and London showroom along with the online showroom as digital presence for your brand to streamline the wholesale process. You can be sure the visibility of your collection and products will continually increase with us through the 1000 buyers already registered.',
