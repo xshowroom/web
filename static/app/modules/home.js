@@ -20,8 +20,10 @@ var app = angular.module(
      		var init = function(){
      			User.getUserInfo().success(function(res){
      				if (res.status != 0){
-     					$scope.user.identity = res.msg;
+     					$scope.userInfo = undefined;
+     					return;
      				}
+     				$scope.userInfo = res.data;
      			})
      		};
      		init();

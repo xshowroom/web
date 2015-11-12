@@ -181,18 +181,18 @@ a.active:before{
     padding: 5px;
     cursor: pointer;
 }
-.setting-info .user-login-nav{
+.setting-info .user-info-nav{
 	text-align: right;
 }
-.setting-info .user-login-nav a{
+.setting-info .user-info-nav a{
 	line-height: 50px;
 	cursor: pointer;
 	color: #2aa0da;
 }
-.setting-info .user-login-nav span{
+.setting-info .user-info-nav span{
 	line-height: 50px;
 }
-.setting-info .user-login-nav * + * {
+.setting-info .user-info-nav * + * {
 	margin-left: .5em;
 }
 /* 无用户导航 */

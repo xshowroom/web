@@ -17,6 +17,12 @@ var app = angular.module(
      	'$scope', '$cookies', 'User',
         function ($scope, $cookies, User) {
      		
+     		$scope.rememberMe = eval($cookies.get('rememberMe'));
+     		$scope.user = {
+     			email: $scope.rememberMe ? $cookies.get('email') : ''
+     		};
+     		   
+     		
         	$scope.refreshValidCode = function(){
         		$scope.validCodeUrl = '/web/image?rnd=' + new Date().getTime(); 
         	};
@@ -26,18 +32,17 @@ var app = angular.module(
         		var login = User.login($scope.user);
         		login.success(function(res){
            			if(res.status != 0){
-           				console.log(321)
            				$scope.refreshValidCode();
            				alert(res.msg);
            				return;
            			}
+           			$cookies.put('rememberMe', $scope.rememberMe);
+           			if ($scope.rememberMe) {
+           				$cookies.put('email', $scope.user.email);
+           			}
            			window.open('./home.html', '_self');
         		});
         	};
-        	
-        	$scope.toggleRememberMe = function(){
-        		$cookies
-        	}
         }
     ]
 );
