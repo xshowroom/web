@@ -15,7 +15,7 @@ angular.module(
 	var langInCookie = $cookies.get('language') || 'en';
 	return function(key, language){
 		var targetLanguage = language || langInCookie;
-		targetLanguage = targetLanguage in global ? targetLanguage : 'en'
+		targetLanguage = targetLanguage in global ? targetLanguage : 'en';
 		return global[targetLanguage][key] || 'Error: label is not found';
 	}
 }])
@@ -36,7 +36,7 @@ angular.module(
             home__LEARN_MORE: '了解更多',
             home__CONTRACT_US: '联系我们',
 
-            home__XSHOWROOM_DESC: '从这里开始你的业务 . . .',
+            home__XSHOWROOM_DESC: '在这里开展你的业务 . . .',
             home__XSHOWROOM_BUYER_COUNT: '买手',
             home__XSHOWROOM_BRANDS_COUNT: '品牌',
             home__XSHOWROOM_PRODUCTS_COUNT: '产品',
@@ -63,12 +63,38 @@ angular.module(
             global_no_user_navigation__HOME: '首页',
             global_no_user_navigation__GUIDE: '入圈',
             global_no_user_navigation__SHOP: '选货',
-            global_no_user_navigation__DISCOVER: '发现',
+            global_no_user_navigation__DISCOVER: '探索',
             global_no_user_navigation__PRESS: '资讯',
             global_no_user_navigation__CONTACT: '联系',
 
-            //
+            // global-footer-navigation.html
+            global_footer_navigation__LOCATION: '地址',
 
+            global_footer_navigation__HELP: '帮助',
+            global_footer_navigation__HELP__HOW_TO_BUY: '如何购买',
+            global_footer_navigation__HELP__GENERAL_INFORMATION: '信息概览',
+            global_footer_navigation__HELP__PAYMENT: '支付方式',
+            global_footer_navigation__HELP__SHIPPING: '物流派送',
+            global_footer_navigation__HELP__RETURNS: '退货流程',
+            global_footer_navigation__HELP__EXCHANGE: '换货流程',
+            global_footer_navigation__HELP__GIFT_CARD: '礼品卡',
+            global_footer_navigation__HELP__MY_ACCOUNT: '我的账户',
+            global_footer_navigation__HELP__WATCHES: '访问网站',
+
+            global_footer_navigation__POLICIES: '政策',
+            global_footer_navigation__POLICIES__ENVIRONMENT_POLICY: '环境政策',
+            global_footer_navigation__POLICIES__ANIMAL_WELFARE: '动物保护',
+            global_footer_navigation__POLICIES__PRIVACY_POLICY: '隐私策略',
+            global_footer_navigation__POLICIES__PURCHASE_CONDITIONS: '购买要求',
+            global_footer_navigation__POLICIES__GIFT_CARD_CONDITIONS: '礼品卡要求',
+            global_footer_navigation__POLICIES__WARRANTY_ON_WATCHES: '查看担保',
+
+            global_footer_navigation__COMPANY: '公司',
+            global_footer_navigation__COMPANY__ABOUT_US: '关于我们',
+            global_footer_navigation__COMPANY__DISCOVER: '探索',
+            global_footer_navigation__COMPANY__PRESS: '咨询',
+            global_footer_navigation__COMPANY__LICENSE: '许可',
+            global_footer_navigation__COMPANY__CONTACT: '联系',
 
             // guide.html
             guide__SOLUTION_BRAND: '品牌',
@@ -206,6 +232,35 @@ angular.module(
             global_no_user_navigation__DISCOVER: 'DISCOVER',
             global_no_user_navigation__PRESS: 'PRESS',
             global_no_user_navigation__CONTACT: 'CONTACT',
+
+            // global-footer-navigation.html
+            global_footer_navigation__LOCATION: 'LOCATION',
+
+            global_footer_navigation__HELP: 'HELP',
+            global_footer_navigation__HELP__HOW_TO_BUY: 'HOW TO BUY',
+            global_footer_navigation__HELP__GENERAL_INFORMATION: 'GENERAL INFORMATION',
+            global_footer_navigation__HELP__PAYMENT: 'PAYMENT',
+            global_footer_navigation__HELP__SHIPPING: 'SHIPPING',
+            global_footer_navigation__HELP__RETURNS: 'RETURNS',
+            global_footer_navigation__HELP__EXCHANGE: 'EXCHANGE',
+            global_footer_navigation__HELP__GIFT_CARD: 'GIFT CARD',
+            global_footer_navigation__HELP__MY_ACCOUNT: 'MY ACCOUNT',
+            global_footer_navigation__HELP__WATCHES: 'WATCHES',
+
+            global_footer_navigation__POLICIES: 'POLICIES',
+            global_footer_navigation__POLICIES__ENVIRONMENT_POLICY: 'ENVIRONMENT POLICY',
+            global_footer_navigation__POLICIES__ANIMAL_WELFARE: 'ANIMAL WELFARE',
+            global_footer_navigation__POLICIES__PRIVACY_POLICY: 'PRIVACY POLICY',
+            global_footer_navigation__POLICIES__PURCHASE_CONDITIONS: 'PURCHASE CONDITIONS',
+            global_footer_navigation__POLICIES__GIFT_CARD_CONDITIONS: 'GIFT CARD CONDITIONS',
+            global_footer_navigation__POLICIES__WARRANTY_ON_WATCHES: 'WARRANTY ON WATCHES',
+
+            global_footer_navigation__COMPANY: 'COMPANY',
+            global_footer_navigation__COMPANY__ABOUT_US: 'ABOUT US',
+            global_footer_navigation__COMPANY__DISCOVER: 'DISCOVER',
+            global_footer_navigation__COMPANY__PRESS: 'PRESS',
+            global_footer_navigation__COMPANY__LICENSE: 'LICENSE',
+            global_footer_navigation__COMPANY__CONTACT: 'CONTACT',
 
             // guide.html
             guide__SOLUTION_BRAND: 'BRAND',
