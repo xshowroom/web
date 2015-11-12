@@ -34,12 +34,29 @@ angular.module(
             // home.html
             home__LEARN_MORE: '了解更多',
             home__CONTRACT_US: '联系我们',
+
+            home__XSHOWROOM_DESC: '从这里开始你的业务 . . .',
+            home__XSHOWROOM_BUYER_COUNT: '买手',
+            home__XSHOWROOM_BRANDS_COUNT: '品牌',
+            home__XSHOWROOM_PRODUCTS_COUNT: '产品',
+            home__XSHOWROOM_ORDERS_COUNT: '订单',
+
             home__BRANDS: '品牌拓展',
             home__BRANDS_DESC: '将您的品牌展示给中国最棒的买手店，与买手圈的顶尖买手们建立合作',
             home__BUYERS: '时尚买手',
             home__BUYERS_DESC: '作为时尚买手入驻买手圈，挖掘最新最赞的设计师品牌，采购最新系列',
+
             home__btn_SOLUTION: '解决方案',
             home__btn_REGISTER: '申请入驻',
+
+            home__HOT_BRANDS: '热门品牌',
+            home__BRAND_PROFILES: '品牌介绍',
+            home__SSI5_COLLECTION: '2015春夏系列',
+
+            home__TESTOMONIALS: 'X人物',
+            home__FEATURED: '圈内点评',
+            home__people_BUYER: '买手',
+            home__people_DESIGNER: '品牌设计师',
 
             // global-no-user-navigation.html
             global_no_user_navigation__HOME: '首页',
@@ -156,12 +173,29 @@ angular.module(
             // home.html
             home__LEARN_MORE: 'LEARN MORE',
             home__CONTRACT_US: 'CONTACT US',
+
+            home__XSHOWROOM_DESC: 'FIND YOUR BUSINESS HERE',
+            home__XSHOWROOM_BUYER_COUNT: 'BUYER',
+            home__XSHOWROOM_BRANDS_COUNT: 'BRANDS',
+            home__XSHOWROOM_PRODUCTS_COUNT: 'PRODUCTS',
+            home__XSHOWROOM_ORDERS_COUNT: 'ORDERS',
+
             home__BRANDS: 'BRANDS',
             home__BRANDS_DESC: 'Showcase your collection to the best stores in China. Expand and connect with new possibilities.',
             home__BUYERS: 'RETAILERS',
             home__BUYERS_DESC: 'Discover new and exciting brands and explore their collections.',
+
             home__btn_SOLUTION: 'SOLUTION',
             home__btn_REGISTER: 'REGISTER',
+
+            home__HOT_BRANDS: 'HOT BRANDS',
+            home__BRAND_PROFILES: 'BRAND PROFILES',
+            home__SSI5_COLLECTION: 'SSI5 COLLECTION',
+
+            home__TESTOMONIALS: 'TESTOMONIALS',
+            home__FEATURED: 'FEATURED',
+            home__people_BUYER: 'BUYER',
+            home__people_DESIGNER: 'BRAND DESIGNER',
 
             // global-no-user-navigation.html
             global_no_user_navigation__HOME: 'HOME',
