@@ -36,11 +36,11 @@ angular.module(
             home__LEARN_MORE: '了解更多',
             home__CONTRACT_US: '联系我们',
 
-            home__XSHOWROOM_DESC: '现在就开展你的业务 . . .',
+            home__XSHOWROOM_DESC: '与我们并肩开创你的商业之旅',
             home__XSHOWROOM_BUYER_COUNT: '时尚买手',
             home__XSHOWROOM_BRANDS_COUNT: '品牌客户',
-            home__XSHOWROOM_PRODUCTS_COUNT: '上线产品',
-            home__XSHOWROOM_ORDERS_COUNT: '达成订单',
+            home__XSHOWROOM_PRODUCTS_COUNT: '产品目录',
+            home__XSHOWROOM_ORDERS_COUNT: '交易订单',
 
             home__BRANDS: '品牌拓展',
             home__BRANDS_DESC: '将您的品牌展示给中国最棒的买手店，与买手圈的顶尖买手们建立合作',
@@ -56,7 +56,7 @@ angular.module(
 
             home__TESTOMONIALS: 'XShowroom人物',
             home__FEATURED: '圈内点评',
-            home__people_BUYER: '买手',
+            home__people_BUYER: '时尚买手',
             home__people_DESIGNER: '品牌设计师',
 
             // global-no-user-navigation.html
@@ -118,7 +118,7 @@ angular.module(
             guide__btn_REGISTER: '注册',
             guide__btn_SIGN_IN: '登录',
 
-            guide__MORE_BENEFITS_OF_REGISTERING_WITH_US: '加入我们的更多优势 . . .',
+            guide__MORE_BENEFITS_OF_REGISTERING_WITH_US: '我们为您度身订造的更多优势服务  . . .',
 
             guide__benefits_PREVIEW_PROFILES: '浏览买手信息',
             guide__benefits_PREVIEW_PROFILES_DESC: '买手提交预览品牌申请后，品牌可及时浏览买手相关信息',
@@ -168,7 +168,7 @@ angular.module(
             guide__benefits_TRANSLATION_PROVIDED: '双语客户经理',
             guide__benefits_TRANSLATION_PROVIDED_DESC: '我们的客户经理可为您提供中英双语咨询服务，无需担心任何语言问题.',
 
-            guide__MEMBERSHIP_INCLUDES: '会员权益包括…',
+            guide__MEMBERSHIP_INCLUDES: '成为会员，您还可以享有 . . .',
             guide__MEMBERSHIP_INCLUDES_R1: '> 为期一年的免费线上系统使用权',
             guide__MEMBERSHIP_INCLUDES_R2: '> 提供买手圈使用方法准则',
             guide__MEMBERSHIP_INCLUDES_R3: '> 将品牌文字介绍内容翻译成中文，以便中国买手浏览',
@@ -176,14 +176,14 @@ angular.module(
             guide__MEMBERSHIP_INCLUDES_R5: '> 品牌对应的双语客户经理将及时与品牌及买手沟通，中英文时时切换，实现无障碍交流',
 
             // login.html
-            login__SIGN_IN: '登录',
-            login__EMAIL: '电子邮箱*,',
-            login__PASSWORD: '输入密码*',
-            login__VALID_CODE: '验证码*',
+            login__SIGN_IN: '用户登录',
+            login__EMAIL: '电子邮箱',
+            login__PASSWORD: '输入密码',
+            login__VALID_CODE: '验证码',
             login__btn_LOGIN: '登录',
             login__REMEMBER_ME: '记住我',
 
-            login__REQUEST_MEMBERSHIP: '新用户申请',
+            login__REQUEST_MEMBERSHIP: '入驻XShowroom申请',
             login__REQUEST_MEMBERSHIP_DESC: '买手圈只向注册并审核通过的品牌、代理机构及买手开放。若想入驻买手圈，请完成在线注册：',
             login__REQUEST_BRAND: '品牌入驻',
             login__REQUEST_BUYER: '买手入圈',
