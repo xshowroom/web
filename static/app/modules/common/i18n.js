@@ -220,7 +220,7 @@ angular.module(
             brand_register__STEP_3__COMPANY_ADDRESS_PLACEHOLDER: '公司地址 *',
             brand_register__STEP_3__COMPANY_COUNTRY_PLACEHOLDER: '国家 *',
             brand_register__STEP_3__COMPANY_ZIP_PLACEHOLDER: '邮政编码 *',
-            brand_register__STEP_3__COMPANY_TELEPHONE_PLACEHOLDER: '公司电话R *',
+            brand_register__STEP_3__COMPANY_TELEPHONE_PLACEHOLDER: '公司电话 *',
             brand_register__STEP_3__COMPANY_URL_PLACEHOLDER: '公司网址 *',
             brand_register__STEP_3__COMPANY_ACCEPT_1: 'On receipt of your application, an invoice will be sent to your email address. Membership access will be granted on payment confirmation.',
             brand_register__STEP_3__COMPANY_ACCEPT_2: 'I accept the terms and conditions of Project Crossover Online Showrooms web site.',
