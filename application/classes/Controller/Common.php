@@ -8,6 +8,7 @@ class Controller_Common extends Controller
 
     public function before()
     {
+        session_start();
     }
 
     public function action_userInfo()
