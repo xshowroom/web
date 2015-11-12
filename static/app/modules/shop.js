@@ -14,15 +14,8 @@ var app = angular.module(
 .controller(
     'ShopCtrl',
     [
-     	'$scope', 'User',
-        function ($scope, User) {
-     		User.getUserInfo().success(function(res){
-     			if (res.status != 0){
-     				$scope.userInfo = undefined;
-     				return;
-     			}
-     			$scope.userInfo = res.data;
-     		});
+     	'$scope',
+        function ($scope) {
      		$scope.conditions = {
      			show: 	[{
          			value: '0',

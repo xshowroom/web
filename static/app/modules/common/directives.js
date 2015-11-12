@@ -1,7 +1,7 @@
 var app = angular.module(
     'xShowroom.directives', 
     [
-        'ngCookies', 'xShowroom.i18n'
+        'ngCookies', 'xShowroom.i18n', 'xShowroom.services'
     ]
 )
 .config(
@@ -75,7 +75,7 @@ var app = angular.module(
         }
     };
 }])
-.directive('userInfoNav', [function () {
+.directive('userInfoNav', ['User', function (User) {
     return {
         template: function ($element, $attr, $scope) {
             var html = [
@@ -94,14 +94,17 @@ var app = angular.module(
             ].join('');
             return html;
         },
-        scope:{
-        	userInfo: '='
-        },
         transclude: true,
         restrict: 'C',
         replace: false,
-        link: function ($scope, $element, $attrs, $transclude) {
-        	console.log($scope.userInfo)
+        controller: function ($scope) {
+        	User.getUserInfo().success(function(res){
+     			if (res.status != 0){
+     				$scope.userInfo = undefined;
+     				return;
+     			}
+     			$scope.userInfo = res.data;
+     		});
         }
     };
 }])

@@ -8,24 +8,16 @@
 var app = angular.module(
     'xShowroom.guide', 
     [
-     	'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services'
+     	'xShowroom.i18n', 'xShowroom.directives',
     ]
 )
 .controller(
     'GuideCtrl',
     [
-        '$scope', '$location', 'User',
+        '$scope', '$location',
         function ($scope, $location, User) {
         	var path = $location.path();
         	$scope.solution = path == '/retailer' ? 'retailer' : 'brand';
-        	
-        	User.getUserInfo().success(function(res){
-     			if (res.status != 0){
-     				$scope.userInfo = undefined;
-     				return;
-     			}
-     			$scope.userInfo = res.data;
-     		});
         }
     ]
 );

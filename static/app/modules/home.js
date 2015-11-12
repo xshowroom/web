@@ -8,21 +8,15 @@
 var app = angular.module(
     'xShowroom.home', 
     [
-        'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services'
+        'xShowroom.i18n', 'xShowroom.directives'
     ]
 )
 .controller(
     'HomeCtrl',
     [
-     	'$scope', 'User',
-        function ($scope, User) {
-     		User.getUserInfo().success(function(res){
-     			if (res.status != 0){
-     				$scope.userInfo = undefined;
-     				return;
-     			}
-     			$scope.userInfo = res.data;
-     		});
+     	'$scope',
+        function ($scope) {
+     	
         }
     ]
 );
