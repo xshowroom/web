@@ -15,7 +15,7 @@ var app = angular.module(
     'LoginCtrl',
     [
      	'$scope', '$cookies', 'User',
-        function ($scope, User) {
+        function ($scope, $cookies, User) {
      		
         	$scope.refreshValidCode = function(){
         		$scope.validCodeUrl = '/web/image?rnd=' + new Date().getTime(); 
