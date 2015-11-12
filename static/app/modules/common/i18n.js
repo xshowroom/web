@@ -35,12 +35,13 @@ angular.module(
             global_no_user_navigation__HOME: '首页',
             global_no_user_navigation__GUIDE: '入圈',
             global_no_user_navigation__SHOP: '选货',
-            global_no_user_navigation__DISCOVER: '入圈',
+            global_no_user_navigation__DISCOVER: '发现',
             global_no_user_navigation__PRESS: '资讯',
             global_no_user_navigation__CONTACT: '联系',
 
             // guide.html
             guide__SOLUTION_BRAND: '品牌',
+            guide__SOLUTION_RETAILER: '零售商',
             guide__SOLUTIONS_FOR_BRANDS: '品牌 - 解决方案',
             guide__SOLUTIONS_FOR_RETAILERS: '买手 - 解决方案',
             guide__X_SHOWROOM_FASHION: '买手圈',
@@ -140,7 +141,7 @@ angular.module(
             directives_js__UPLOADING: 'UPLOADING IMAGE',
 
             // global-no-user-navigation.html
-            guide__SOLUTION_BRAND: 'brand',
+            guide__SOLUTION_BRAND: 'BRAND',
             global_no_user_navigation__HOME: 'HOME',
             global_no_user_navigation__GUIDE: 'GUIDE',
             global_no_user_navigation__SHOP: 'SHOP',
@@ -149,6 +150,8 @@ angular.module(
             global_no_user_navigation__CONTACT: 'CONTACT',
 
             // guide.html
+            guide__SOLUTION_BRAND: 'BRAND',
+            guide__SOLUTION_RETAILER: 'RETAILER',
             guide__SOLUTIONS_FOR_BRANDS: 'SOLUTIONS FOR BRANDS',
             guide__SOLUTIONS_FOR_RETAILERS: 'SOLUTIONS FOR RETAILERS',
             guide__X_SHOWROOM_FASHION: 'X SHOWROOM FASHION',

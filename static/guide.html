@@ -36,7 +36,8 @@
 	<section class="row no-vertical-padding">
 		<div class="container-fluid guide-banner">
 			<div class="row">
-                <span class="col-xs-12">{{ "guide__X_SHOWROOM_FASHION"| translate }} {{solution | uppercase}}</span>
+                <span class="col-xs-12" ng-if="solution == 'brand'">{{ "guide__X_SHOWROOM_FASHION"| translate }} {{"guide__SOLUTION_BRAND" | translate}}</span>
+                <span class="col-xs-12" ng-if="solution == 'retailer'">{{ "guide__X_SHOWROOM_FASHION"| translate }} {{"guide__SOLUTION_RETAILER" | translate}}</span>
 				<span class="col-xs-12">{{ "guide__ACCESS_SUBSCRIPTION"| translate }}</span>
 			</div>
 		</div>

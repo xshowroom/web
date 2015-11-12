@@ -20,24 +20,24 @@ var app = angular.module(
             var html = [
 				'<div class="dropdown">',
 					'<a id="locale-setting-language" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">',
-					 	'{{ "directives_js__LANGUAGE"| translate }}:{{ language | uppercase }}',
+					 	'{{ "directives_js__LANGUAGE"| translate }}:{{ language }}',
 					 	'<span class="caret"></span>',
 					'</a>',
 					'<ul class="dropdown-menu" aria-labelledby="locale-setting-language">',
 						'<li ng-click="setLanguage(\'en\')">English</li>',
 						'<li ng-click="setLanguage(\'zh-CN\')">简体中文</li>',
 					'</ul>',
-				'</div>',
-				'<div class="dropdown">',
-					'<a id="locale-setting-currency" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">',
-					 	'{{ "directives_js__CURRENCY"| translate }}:{{ currency }}',
-					 	'<span class="caret"></span>',
-					'</a>',
-					'<ul class="dropdown-menu" aria-labelledby="locale-setting-currency">',
-						'<li ng-click="setCurrency(\'USD\')">USD</li>',
-						'<li ng-click="setCurrency(\'CNY\')">CNY</li>',
-						'<li ng-click="setCurrency(\'EUR\')">EUR</li>',
-					'</ul>',
+//				'</div>',
+//				'<div class="dropdown">',
+//					'<a id="locale-setting-currency" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">',
+//					 	'{{ "directives_js__CURRENCY"| translate }}:{{ currency }}',
+//					 	'<span class="caret"></span>',
+//					'</a>',
+//					'<ul class="dropdown-menu" aria-labelledby="locale-setting-currency">',
+//						'<li ng-click="setCurrency(\'USD\')">USD</li>',
+//						'<li ng-click="setCurrency(\'CNY\')">CNY</li>',
+//						'<li ng-click="setCurrency(\'EUR\')">EUR</li>',
+//					'</ul>',
 				'</div>'
             ].join('');
             return html;
@@ -46,16 +46,20 @@ var app = angular.module(
         restrict: 'C',
         replace: false,
         link: function ($scope, $element, $attrs, $transclude) {
-        	$scope.language = $cookies.get('language');
+        	var languageDict = {
+        		'en': 'ENGLISH',
+        		'zh-CN': '简体中文'
+        	}
+        	$scope.language = languageDict[$cookies.get('language')];
         	if (!$scope.language) {
         		$cookies.put('language', 'en');
-        		$scope.language = 'en';
+        		$scope.language = languageDict['en'];
         	}
-        	$scope.currency = $cookies.get('currency');
-        	if (!$scope.currency) {
-        		$cookies.put('currency', 'USD');
-        		$scope.language = 'USD';
-        	}
+//        	$scope.currency = $cookies.get('currency');
+//        	if (!$scope.currency) {
+//        		$cookies.put('currency', 'USD');
+//        		$scope.language = 'USD';
+//        	}
         	
         	$element.find('.dropdown-toggle').dropdown();
         	
@@ -63,11 +67,11 @@ var app = angular.module(
         		$cookies.put('language', language);
         		window.location.reload();
         	};
-        	
-        	$scope.setCurrency = function(currency){
-        		$cookies.put('currency', currency);
-        		window.location.reload();
-        	};
+//        	
+//        	$scope.setCurrency = function(currency){
+//        		$cookies.put('currency', currency);
+//        		window.location.reload();
+//        	};
         }
     };
 }])
