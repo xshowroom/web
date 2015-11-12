@@ -41,7 +41,7 @@ angular.module(
 
             // guide.html
             guide__SOLUTION_BRAND: '品牌',
-            guide__SOLUTION_RETAILER: '零售商',
+            guide__SOLUTION_RETAILER: '时尚买手',
             guide__SOLUTIONS_FOR_BRANDS: '品牌 - 解决方案',
             guide__SOLUTIONS_FOR_RETAILERS: '买手 - 解决方案',
             guide__X_SHOWROOM_FASHION: '买手圈',
