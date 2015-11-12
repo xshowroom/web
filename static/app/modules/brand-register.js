@@ -6,8 +6,8 @@ var app = angular.module('xShowroom.register.brand',
 .controller(
 	'BrandRegisterCtrl', 
 	[
-	    '$scope', '$element', '$log', 'uiUploader', 'User',
-	    function($scope, $element, $log, uiUploader, User) {
+	    '$scope', '$element', 'uiUploader', 'User',
+	    function($scope, $element,  uiUploader, User) {
 			$scope.step = {
 				stepNumber: 1,
 				information: ['ADD USER DETAILS', 'ADD BRAND DETAILS', 'ADD COMPANY DETAILS'],
@@ -18,8 +18,8 @@ var app = angular.module('xShowroom.register.brand',
 						'firstName': false,
 						'lastName': false,
 						'displayName': false,
-						'tel': false,
-						'mobile': false
+						'tel': false
+//						'mobile': false
 				    },
 				    2: {
 				    	'brandName': false, 
@@ -71,7 +71,6 @@ var app = angular.module('xShowroom.register.brand',
 					$scope.step.validation[stepNumber][key] = hasError;
 					errorFlag = errorFlag || hasError;
 				}
-				console.log($scope.acceptConditions)
 				if (!errorFlag && $scope.step.stepNumber < 3) {
 					$scope.step.stepNumber += 1;
 				}else if (!errorFlag && $scope.step.stepNumber == 3 && $scope.acceptConditions) {
@@ -88,7 +87,11 @@ var app = angular.module('xShowroom.register.brand',
 			$scope.register = function() {
 				var register = User.register($scope.user);
 				register.success(function(res){
-        			console.log(res);
+        			if(res.status != 0){
+        				alert(res.msg);
+        				return;
+        			}
+        			window.open('./login.html', '_self');
         		});
 			};
 		}

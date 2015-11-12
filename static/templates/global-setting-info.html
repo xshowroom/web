@@ -4,7 +4,7 @@
 			<div class="locale-settings"></div>
 		</div>
 		<div class="col-xs-6">
-			<div class="user-login-nav"></div>
+			<div ng-if="!user.identity || user.identity == 'guest'" class="user-login-nav"></div>
 		</div>
 	</div>
 </div>

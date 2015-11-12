@@ -5,9 +5,9 @@ h2.brand-register-step {
 	text-indent: 2.5em;
 }
 
-.brand-register-inline {
+/* .brand-register-inline {
 	line-height: 22px !important;
-}
+} */
 
 .brand-register-text-center {
 	line-height: 100%;
@@ -25,6 +25,9 @@ h2.brand-register-step {
 	background: transparent;
     overflow: hidden;
     position: relative;
+}
+.brand-register-lookbook-upload.has-error{
+	border-color: #a94442;
 }
 
 .brand-register-lookbook-upload p {

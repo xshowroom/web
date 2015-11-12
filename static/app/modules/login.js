@@ -8,13 +8,13 @@
 var app = angular.module(
     'xShowroom.login', 
     [
-        'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services', 
+        'ngCookies', 'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services', 
     ]
 )
 .controller(
     'LoginCtrl',
     [
-     	'$scope', 'User',
+     	'$scope', '$cookies', 'User',
         function ($scope, User) {
      		
         	$scope.refreshValidCode = function(){
@@ -25,9 +25,18 @@ var app = angular.module(
         	$scope.login = function(){
         		var login = User.login($scope.user);
         		login.success(function(res){
-        			console.log(res);
-        			$scope.refreshValidCode();
+           			if(res.status != 0){
+           				console.log(321)
+           				$scope.refreshValidCode();
+           				alert(res.msg);
+           				return;
+           			}
+           			window.open('./home.html', '_self');
         		});
+        	};
+        	
+        	$scope.toggleRememberMe = function(){
+        		$cookies
         	}
         }
     ]

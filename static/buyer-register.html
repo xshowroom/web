@@ -11,6 +11,7 @@
 	<script type="text/javascript" src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
 	<script type="text/javascript" src="./bower_components/angular-cookies/angular-cookies.min.js"></script>
+	<script type="text/javascript" src="./bower_components/angular-ui-uploader/dist/uploader.min.js"></script>
 	<script type="text/javascript" src="./app/modules/common/i18n.js"></script>
 	<script type="text/javascript" src="./app/modules/common/directives.js"></script>
 	<script type="text/javascript" src="./app/modules/common/services.js"></script>
@@ -21,80 +22,84 @@
 	<nav class="row setting-info" ng-include="'./templates/global-setting-info.html'"></nav>
 	<nav class="row no-user-navigation"
 		ng-include="'./templates/global-no-user-navigation.html'"></nav>
-
-	<section class="row buyer-register-step">
-		<div class="container">
-			<h2 class="buyer-register-step">STEP {{step.stepNumber}} OF 3:
-				{{step.information[step.stepNumber - 1]}}</h2>
-		</div>
-	</section>
-
 	<section class="row">
 		<div class="container">
+			<div class="col-xs-12">
+				<h2 class="buyer-register-step">STEP {{step.stepNumber}} OF 3:
+					{{step.information[step.stepNumber - 1]}}</h2>
+			</div>
 			<div class="col-xs-5">
 				<img width="100%" class="buyer-register-context"
 					ng-src="/app/images/buyer-register-{{step.stepNumber}}.png" />
 			</div>
 
-			<form class="form-horizontal" action="/web/register"
-				enctype="multipart/form-data" ng-submit="submit()" method="post">
-
+			<form class="form-horizontal col-xs-7">
 				<!-- step 1 -->
-				<div class="col-xs-7" ng-show="step.stepNumber == 1">
-					<div class="form-group">
-						<label for="username"
-							class="col-xs-3 text-center buyer-register-inline">EMAIL
-							ADDRESS<br>(LOGIN ID)
+				<div class="col-xs-12" ng-show="step.stepNumber == 1">
+					<div class="form-group"  ng-class="{'has-error': step.validation[1].email}">
+						<label for="email" class="col-xs-3 text-center buyer-register-inline">
+							EMAIL ADDRESS
 						</label>
 						<div class="col-xs-9">
-							<input type="text" class="form-control" id="username"
-								name="username" autocomplete="off"
-								ng-model="result.user.username" ng-required="true"
+							<input type="text" class="form-control" id="email"
+								name="email" autocomplete="off"
+								ng-model="user.email" ng-required="true"
 								placeholder="PLEASE ENTER EMAIL ADDRESS *">
 						</div>
 					</div>
+					<div class="form-group" ng-class="{'has-error': step.validation[1].pass}">
+						<label for="password"
+							class="col-xs-3 text-center brand-register-inline">PASSWORD
+						</label>
+						<div class="col-xs-9">
+							<input type="password" class="form-control" id="username"
+								name="password" autocomplete="off"
+								ng-model="user.pass" 
+								placeholder="PLEASE ENTER YOUR PASSWORD *">
+						</div>
+					</div>
 					<div class="form-group">
-						<div class="col-xs-6">
+						<div class="col-xs-6"  ng-class="{'has-error': step.validation[1].firstName}">
 							<input type="text" class="form-control" id="first-name"
 								name="first-name" autocomplete="off"
-								ng-model="result.user.firstName" ng-required="true"
+								ng-model="user.firstName" 
 								placeholder="FIRST NAME *">
 						</div>
-						<div class="col-xs-6">
+						<div class="col-xs-6" ng-class="{'has-error': step.validation[1].lastName}">
 							<input type="text" class="form-control" id="last-name"
 								name="last-name" autocomplete="off"
-								ng-model="result.user.lastName" ng-required="true"
+								ng-model="user.lastName" 
 								placeholder="LAST NAME *">
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group" ng-class="{'has-error': step.validation[1].displayName}">
 						<div class="col-xs-12">
 							<input type="text" class="form-control" id="display-name"
 								name="display" autocomplete="off"
-								ng-model="result.user.displayName" ng-required="true"
+								ng-model="user.displayName" 
 								placeholder="DISPLAY NAME *">
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group" ng-class="{'has-error': step.validation[1].tel}">
 						<div class="col-xs-12">
 							<input type="text" class="form-control" id="telephone-number"
 								name="telephone-number" autocomplete="off"
-								ng-model="result.user.telephoneNumber" ng-required="true"
+								ng-model="user.tel" 
 								placeholder="CONTACT TELEPHONE NUMBER *">
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group" ng-class="{'has-error': step.validation[1].mobile}">
 						<div class="col-xs-12">
 							<input type="text" class="form-control" id="mobile-number"
 								name="mobile-number" autocomplete="off"
-								ng-model="result.user.mobileNumber"
+								ng-model="user.mobile"
 								placeholder="CONTACT MOBILE NUMBER (OPTIONAL)">
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-xs-12">
-							<a class="col-xs-3 btn btn-type-1">CANCEL</a> <a
-								class="col-xs-3 btn btn-type-2" ng-click="nextCheck()">ADD
+							<a class="col-xs-3 btn btn-type-1" href="./home.html" target="_self">CANCEL</a> <a
+								class="col-xs-3 btn btn-type-2" ng-click="check();">ADD
 								STORE</a>
 						</div>
 					</div>
@@ -102,154 +107,150 @@
 				<!-- /step 1 -->
 
 				<!-- step 2 -->
-				<div class="col-xs-7 buyer-register-block-up"
+				<div class="col-xs-12 buyer-register-block-up"
 					ng-show="step.stepNumber == 2">
 					<div>
-						<div
+						<div ng-class="{'has-error': step.validation[2].imagePath}"
 							class="col-xs-3 block-center buyer-register-lookbook-upload imagePreview thumbnail">
 							<p class="text-center">LOOKBOOK / IMAGE</p>
 							<label for="lookbook-upload" class="text-center"> UPLOAD
-								<input type="file" id="lookbook-upload" name="lookbook-upload"
-								ng-model="result.store.lookbook" />
+								<input type="file" id="lookbook-upload" name="lookbook-upload"/>
 							</label>
+							<input type="hidden" ng-model="user.imagePath"/>
 						</div>
 						<div class="col-xs-9">
-							<div class="form-group col-xs-12">
+							<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].shopName}">
 								<input type="text" class="form-control" id="store-name"
 									name="store-name" autocomplete="off"
-									ng-model="result.store.storeName" ng-required="true"
+									ng-model="user.shopName" ng-required="true"
 									placeholder="PLEASE ENTER YOUR STORE NAME *">
 							</div>
-							<div class="form-group col-xs-12">
-								<input type="text"
-									class="form-control btn btn-default dropdown-toggle"
-									id="store-type" name="store-name" autocomplete="off"
-									ng-model="result.store.storeType" ng-required="true"
-									data-toggle="dropdown" value="{{result.store.storeType}}"
-									placeholder="PLEASE SELECT STORE TYPE *" aria-haspopup="true"
-									aria-expanded="true" readOnly>
-								<ul class="dropdown-menu buyer-register-dropdown-menu"
-									aria-labelledby="store-type">
-									<li ng-repeat="option in result.store.storeTypeOptions"
-										ng-click="selectStoreType($event)">{{option.name}}</li>
-								</ul>
+							<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].shopType}">
+								<label for="store-type" ng-class="{'has-content': user.shopType && user.shopType !=''}">{{user.shopType || 'PLEASE SELECT STORE TYPE *'}}</label>
+								<select class="form-control" id="store-type" name="store-name"
+									ng-model="user.shopType" ng-required="true" >
+									<option value="Department Shop">Department Shop</option>
+									<option value="Multi-Brand Shop">Multi-Brand Shop</option>
+									<option value="Online Shop">Online Shop</option>
+								</select>
 							</div>
 							<div class="form-group col-xs-12 buyer-register-checkbox-group"
-								id="collection-type">
+								id="collection-type" ng-class="{'has-error': step.validation[2].collectionType}">
 								<label>COLLECTION TYPE *</label><br>
 								<div class="checkbox-inline buyer-register-checkbox">
-									<input type="checkbox" id="collection-type-women"
+									<input type="radio" id="collection-type-women"
 										name="collection-type"
-										ng-model="result.store.collectionType.women" value="WOMEN">
+										ng-model="user.collectionType" value="WOMEN">
 									<label for="collection-type-women">WOMEN</label>
 								</div>
 								<div class="checkbox-inline buyer-register-checkbox">
-									<input type="checkbox" id="collection-type-accessories"
+									<input type="radio" id="collection-type-accessories"
 										name="collection-type"
-										ng-model="result.store.collectionType.accessories"
+										ng-model="user.collectionType"
 										value="ACCESSORIES"><label
 										for="collection-type-accessories">ACCESSORIES </label>
 								</div>
 								<div class="checkbox-inline buyer-register-checkbox">
-									<input type="checkbox" id="collection-type-men"
+									<input type="radio" id="collection-type-men"
 										name="collection-type"
-										ng-model="result.store.collectionType.men" value="MEN">
+										ng-model="user.collectionType" value="MEN">
 									<label for="collection-type-men">MEN </label>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="form-group col-xs-12">
+					<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].brandList}">
 						<input type="text" class="form-control" id="brand-carried"
 							name="brand-carried" autocomplete="off"
-							ng-model="result.store.brandCarried" ng-required="true"
+							ng-model="user.brandList" ng-required="true"
 							placeholder="BRAND CARRIED IN STORE *">
 					</div>
-					<div class="form-group col-xs-12">
+					<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].shopWebsite}">
 						<input type="text" class="form-control" id="website"
-							name="website" autocomplete="off" ng-model="result.store.website"
+							name="website" autocomplete="off" ng-model="user.shopWebsite"
 							ng-required="true" placeholder="WEBSITE *">
 					</div>
-					<div class="form-group col-xs-12">
+					<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].shopAddress}">
 						<input type="text" class="form-control" id="store-address"
 							name="store-address" autocomplete="off"
-							ng-model="result.store.storeAddress" ng-required="true"
+							ng-model="user.shopAddress" ng-required="true"
 							placeholder="STORE ADDRESS *">
 					</div>
-					<div class="form-group col-xs-12">
+					<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].shopCountry}">
 						<div class="col-xs-6 buyer-register-form-inline-left">
 							<input type="text" class="form-control" id="store-country"
 								name="store-country" autocomplete="off"
-								ng-model="result.store.country" ng-required="true"
+								ng-model="user.shopCountry" ng-required="true"
 								placeholder="STATE/COUNTRY *">
 						</div>
-						<div class="col-xs-6 buyer-register-form-inline-right">
+						<div class="col-xs-6 buyer-register-form-inline-right"
+							  ng-class="{'has-error': step.validation[2].shopZipcode}">
 							<input type="text" class="form-control" id="store-postcode"
 								name="store-postcode" autocomplete="off"
-								ng-model="result.store.postcode" ng-required="true"
+								ng-model="user.shopZipcode" ng-required="true"
 								placeholder="POSTCODE/ZIP *">
 						</div>
 					</div>
-					<div class="form-group col-xs-12">
+					<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].shopTel}">
 						<input type="text" class="form-control"
 							id="store-telephone-number" name="store-telephone-number"
-							autocomplete="off" ng-model="result.store.telephoneNumber"
+							autocomplete="off" ng-model="user.shopTel"
 							ng-required="true" placeholder="TELEPHONE NUMBER *">
 					</div>
 
 					<div class="form-group col-xs-12">
 						<a class="btn btn-type-1 col-xs-3" ng-click="previous()">PREVIOUS</a>
 						<a type="submit" class="btn btn-type-2 col-xs-3"
-							ng-click="nextCheck()">ADD COMPANY</a>
+							ng-click="check();">ADD COMPANY</a>
 					</div>
 				</div>
 				<!-- /step 2 -->
 
 				<!-- step 3 -->
-				<div class="col-xs-7" ng-show="step.stepNumber == 3">
-					<div class="form-group">
+				<div class="col-xs-12" ng-show="step.stepNumber == 3">
+					<div class="form-group"  ng-class="{'has-error': step.validation[3].companyName}">
 						<div class="col-xs-12">
 							<input type="text" class="form-control" id="company-name"
 								name="company-name" autocomplete="off"
-								ng-model="result.company.companyName" ng-required="true"
+								ng-model="user.companyName" 
 								placeholder="COMPANY NAME *">
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group"  ng-class="{'has-error': step.validation[3].companyAddr}">
 						<div class="col-xs-12">
 							<input type="text" class="form-control" id="company-address"
 								name="company-address" autocomplete="off"
-								ng-model="result.company.companyAddress" ng-required="true"
+								ng-model="user.companyAddr" 
 								placeholder="COMPANY ADDRESS *">
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group"  ng-class="{'has-error': step.validation[3].companyCountry}">
 						<div class="col-xs-6">
-							<input type="text" class="form-control" id="company-country"
-								name="company-country" autocomplete="off"
-								ng-model="result.company.country" ng-required="true"
+							<input type="text" class="form-control" id="country"
+								name="country" autocomplete="off"
+								ng-model="user.companyCountry" 
 								placeholder="STATE/COUNTRY *">
 						</div>
-						<div class="col-xs-6">
-							<input type="text" class="form-control" id="company-postcode"
-								name="company-postcode" autocomplete="off"
-								ng-model="result.company.postcode" ng-required="true"
+						<div class="col-xs-6"  ng-class="{'has-error': step.validation[3].companyZip}">
+							<input type="text" class="form-control" id="postcode"
+								name="postcode" autocomplete="off"
+								ng-model="user.companyZip" 
 								placeholder="POSTCODE/ZIP *">
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group"  ng-class="{'has-error': step.validation[3].companyTel}">
 						<div class="col-xs-12">
 							<input type="text" class="form-control"
 								id="company-telephone-number" name="company-telephone-number"
-								autocomplete="off" ng-model="result.company.telephoneNumber"
-								ng-required="true" placeholder="COMPANY TELEPHONE NUMBER *">
+								autocomplete="off" ng-model="user.companyTel"
+								 placeholder="COMPANY TELEPHONE NUMBER *">
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group"  ng-class="{'has-error': step.validation[3].companyWebsite}">
 						<div class="col-xs-12">
 							<input type="text" class="form-control" id="company-web-page-url"
 								name="company-web-page-url" autocomplete="off"
-								ng-model="result.company.webPageURL" ng-required="true"
+								ng-model="user.companyWebsite" 
 								placeholder="COMPANY WEB PAGE URL *">
 						</div>
 					</div>
@@ -263,7 +264,7 @@
 					<div class="form-group">
 						<div class="col-xs-12">
 							<div class="checkbox buyer-register-checkbox">
-								<label> <input type="checkbox" ng-required="true"><span
+								<label><input type="checkbox" ng-required="true" ng-model="acceptConditions"><span
 									class="help-block small">I accept the terms and
 										conditions of Project Crossover Online Showromms web site.</span>
 								</label>
@@ -273,12 +274,13 @@
 
 					<div class="form-group row">
 						<a class="btn btn-type-1 col-xs-3" ng-click="previous()">PREVIOUS</a>
-						<button type="submit" class="btn btn-type-2 col-xs-3">SUBMIT</button>
+						<button ng-click="check();" class="btn btn-type-2 col-xs-3">SUBMIT</button>
 					</div>
 				</div>
 				<!-- /step 3 -->
 			</form>
 		</div>
+		<div class="uploading"></div>
 	</section>
 
 	<footer class="row footer-navigation"

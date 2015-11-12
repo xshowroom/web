@@ -1,71 +1,91 @@
-var app = angular.module('xShowroom.register.buyer',
-		[ 'xShowroom.i18n', 'xShowroom.directives' ]).controller(
-		'BuyerRegisterCtrl', [ '$scope', function($scope) {
-			$('#store-type').dropdown();
-			
-			$scope.step = {};
-			$scope.step.information = [];
-			$scope.step.information[0] = 'ADD USER DETAILS';
-			$scope.step.information[1] = 'ADD STORE DETAILS';
-			$scope.step.information[2] = 'ADD COMPANY DETAILS';
-			
-			$scope.step.stepNumber = 1;  //默认打开页数
-			
-			$scope.result = {
-				'user' : {},
-				'store' : {
-					'storeTypeOptions' : [
-					   {id: 1, name: 'TEST1'},
-					   {id: 2, name: 'TEST2'},
-					   {id: 3, name: 'TEST3'}
-					],
-					'collectionType' : {}
-				},
-				'company' : {}
+var app = angular.module(
+	'xShowroom.register.buyer',
+	[
+	 	'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services', 'ui.uploader'
+	]
+)
+.controller(
+    'BuyerRegisterCtrl', 
+    [
+        '$scope', '$element', 'uiUploader', 'User',
+        function($scope, $element,  uiUploader, User) {
+			$scope.step = {
+				stepNumber: 1,
+				information: ['ADD USER DETAILS', 'ADD BRAND DETAILS', 'ADD COMPANY DETAILS'],
+				validation: {
+				     1: {
+				    	'email': false,
+						'pass': false,
+						'firstName': false,
+						'lastName': false,
+						'displayName': false,
+						'tel': false
+//						'mobile': false
+				    },
+				    2: {
+				    	'shopName': false,
+				    	'shopType': false,
+				    	'collectionType': false, 
+				    	'brandList': false,
+				    	'shopWebsite': false,
+				    	'shopAddress': false,
+				    	'shopCountry': false,
+				    	'shopZipcode': false,
+				    	'shopTel': false,
+						'imagePath': false
+				    },
+				    3: {
+				    	'companyName': false,
+						'companyAddr': false,
+						'companyCountry': false,
+						'companyZip': false,
+						'companyTel': false,
+						'companyWebsite': false
+				    }
+				}
+			};
+			$scope.user = {
+				roleType: 2
 			};
 			
-			//进行当前页的非空检查并往后一页
-			$scope.nextCheck = function() {
-				$('.has-error').removeClass('has-error');
-				if ($scope.step.stepNumber == 1) {
-					if (!$scope.result.user.username) {
-						$('#username').parent().addClass('has-error');
-					} else if(!$scope.result.user.firstName) {
-						$('#first-name').parent().addClass('has-error');
-					} else if(!$scope.result.user.lastName) {
-						$('#last-name').parent().addClass('has-error');
-					} else if(!$scope.result.user.displayName) {
-						$('#display-name').parent().addClass('has-error');
-					} else if(!$scope.result.user.telephoneNumber) {
-						$('#telephone-number').parent().addClass('has-error');
-					} else {
-						$scope.step.stepNumber++;
-					}
-				} else if($scope.step.stepNumber == 2) {
-					console.log();
-					if (!$scope.result.store.storeName) {
-						$('#store-name').parent().addClass('has-error');
-					} else if(!$scope.result.store.storeType) {
-						$('#store-type').parent().addClass('has-error');
-					} else if($scope.isEmpty($scope.result.store.collectionType)) {
-						$('#collection-type').addClass('has-error');
-					} else if(!$scope.result.store.brandCarried) {
-						$('#brand-carried').parent().addClass('has-error');
-					} else if(!$scope.result.store.website) {
-						$('#website').parent().addClass('has-error');
-					} else if(!$scope.result.store.storeAddress) {
-						$('#store-address').parent().addClass('has-error');
-					} else if(!$scope.result.store.country) {
-						$('#store-country').parent().addClass('has-error');
-					} else if(!$scope.result.store.postcode) {
-						$('#store-postcode').parent().addClass('has-error');
-					} else if(!$scope.result.store.telephoneNumber) {
-						$('#store-telephone-number').parent().addClass('has-error');
-					} else {
-						$scope.step.stepNumber++;
-					}
+			$scope.check = function() {
+				var stepNumber = $scope.step.stepNumber;
+				var keys = $scope.step.validation[stepNumber];
+				var errorFlag = false;
+				for(var key in keys){
+					var hasError = !$scope.user[key] || $scope.user[key] == '';
+					$scope.step.validation[stepNumber][key] = hasError;
+					errorFlag = errorFlag || hasError;
 				}
-			}
+				if (!errorFlag && $scope.step.stepNumber < 3) {
+					$scope.step.stepNumber += 1;
+				}else if (!errorFlag && $scope.step.stepNumber == 3 && $scope.acceptConditions) {
+					$scope.register();
+				}
+			};
+			
+			$scope.files = [];
+			$element.find('.buyer-register-block-up').on('change', '#lookbook-upload', function(e) {
+				console.log(3333)
+				$scope.$broadcast('uploading.start');
+				uiUploader.addFiles(e.target.files);
+				$scope.files = uiUploader.getFiles();
+                uiUploader.startUpload({
+                    url: '/web/upload/image',
+                    onCompleted: function(file, response) {
+                    	response = JSON.parse(response);
+                    	if(response.status != 0){
+                    		$scope.user.imagePath = undefined;
+                    		$scope.$apply();
+                    		alert('上传图片接口出错，请重新上传，如多次失败请联系我们！');
+                    		return
+                    	}
+                    	$scope.user.imagePath = response.data;
+                    	$scope.$apply();
+                    	$scope.$broadcast('uploading.end');
+                    }
+                });
+			});
 			
 			//往前一页
 			$scope.previous = function() {
@@ -74,32 +94,18 @@ var app = angular.module('xShowroom.register.buyer',
 				}
 			}
 			
-			//输出ng-model收集结果
-			$scope.submit = function() {
-				console.log($scope.result);
-			}
+			$scope.register = function() {
+				var register = User.register($scope.user);
+				register.success(function(res){
+        			if(res.status != 0){
+        				alert(res.msg);
+        				return;
+        			}
+        			window.open('./login.html', '_self');
+        		});
+			};
 			
-			//检测对象是否为空或对象属性全为false
-			$scope.isEmpty = function(v) {
-				if(!v) {
-					return true;
-				} else {
-					var flag = true;
-					for(var e in v) {
-						if(v[e]) {
-							flag = false;
-							break;
-						}
-					}
-					return flag;
-				}
-			}
-			
-			$scope.selectStoreType = function(event) {
-				$('#store-type').val(event.target.innerHTML);
-			}
-			
-
 		}
 
-		]);
+	]
+);

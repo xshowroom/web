@@ -23,6 +23,9 @@ var app = angular.module(
 			                return temp.join('&');
 			            }
 					});
+		      	},
+		      	getUserInfo: function(){
+		      		return $http.get('/web/common/userInfo');
 		      	}
    			};
          }
