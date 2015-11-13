@@ -203,7 +203,7 @@ angular.module(
             brand_register__STEP_1__LAST_NAME_PLACEHOLDER: '您的姓氏 *',
             brand_register__STEP_1__DISPLAY_NAME_PLACEHOLDER: '您的显示名 *',
             brand_register__STEP_1__TELEPHONE_PLACEHOLDER: '您的联系电话 *',
-            brand_register__STEP_1__MOBILE_PLACEHOLDER: '"您的手机号码 (可选)',
+            brand_register__STEP_1__MOBILE_PLACEHOLDER: '您的手机号码 (可选)',
             brand_register__STEP_1__btn__CANCEL: '取消注册',
             brand_register__STEP_1__btn__ADD_BRAND: '添加品牌',
 
