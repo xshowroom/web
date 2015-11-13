@@ -65,7 +65,6 @@ var app = angular.module(
 			
 			$scope.files = [];
 			$element.find('.buyer-register-block-up').on('change', '#lookbook-upload', function(e) {
-				console.log(3333)
 				$scope.$broadcast('uploading.start');
 				uiUploader.addFiles(e.target.files);
 				$scope.files = uiUploader.getFiles();
