@@ -36,11 +36,11 @@ angular.module(
             home__LEARN_MORE: '了解更多',
             home__CONTRACT_US: '联系我们',
 
-            home__XSHOWROOM_DESC: '在这里开展你的业务 . . .',
-            home__XSHOWROOM_BUYER_COUNT: '买手',
-            home__XSHOWROOM_BRANDS_COUNT: '品牌',
-            home__XSHOWROOM_PRODUCTS_COUNT: '产品',
-            home__XSHOWROOM_ORDERS_COUNT: '订单',
+            home__XSHOWROOM_DESC: '与我们并肩开创你的商业之旅',
+            home__XSHOWROOM_BUYER_COUNT: '时尚买手',
+            home__XSHOWROOM_BRANDS_COUNT: '品牌客户',
+            home__XSHOWROOM_PRODUCTS_COUNT: '产品目录',
+            home__XSHOWROOM_ORDERS_COUNT: '交易订单',
 
             home__BRANDS: '品牌拓展',
             home__BRANDS_DESC: '将您的品牌展示给中国最棒的买手店，与买手圈的顶尖买手们建立合作',
@@ -54,9 +54,9 @@ angular.module(
             home__BRAND_PROFILES: '品牌介绍',
             home__SSI5_COLLECTION: '2015春夏系列',
 
-            home__TESTOMONIALS: 'X人物',
+            home__TESTOMONIALS: 'XShowroom人物',
             home__FEATURED: '圈内点评',
-            home__people_BUYER: '买手',
+            home__people_BUYER: '时尚买手',
             home__people_DESIGNER: '品牌设计师',
 
             // global-no-user-navigation.html
@@ -97,12 +97,12 @@ angular.module(
             global_footer_navigation__COMPANY__CONTACT: '联系',
 
             // guide.html
+            guide__SOLUTIONS_FOR_BRANDS: '时尚品牌 - 解决方案',
+            guide__SOLUTIONS_FOR_RETAILERS: '时尚买手 - 解决方案',
+            guide__X_SHOWROOM_FASHION: 'X SHOWROOM ',
             guide__SOLUTION_BRAND: '品牌',
             guide__SOLUTION_RETAILER: '时尚买手',
-            guide__SOLUTIONS_FOR_BRANDS: '品牌 - 解决方案',
-            guide__SOLUTIONS_FOR_RETAILERS: '买手 - 解决方案',
-            guide__X_SHOWROOM_FASHION: '买手圈',
-            guide__ACCESS_SUBSCRIPTION: '入驻申请',
+            guide__ACCESS_SUBSCRIPTION: '现在加入我们',
 
             guide__brand_left_INTRODUCE: '您想通过入驻线上showroom来打通更大的市场，挖掘品牌更大的潜力吗？通过买手圈，您的品牌将成功打入中国的买手市场。通过买手圈，您将得到来自我们最专业圈内人员的支持，以更好的推广您的品牌，我们的工作人员长期与Project Crossover线下showroom合作，深悉中国买手市场。同时，我们联合上海和伦敦的两大线下showroom及线上买手圈，为品牌的成长提供多重专业平台。通过买手圈，您的品牌会被1000多名已经注册入驻的买手知晓，每个系列的知名度、浏览量、订货量都会得到显著提高。',
             guide__brand_right_INTRODUCE_1: '展示给精选买手',
@@ -118,7 +118,7 @@ angular.module(
             guide__btn_REGISTER: '注册',
             guide__btn_SIGN_IN: '登录',
 
-            guide__MORE_BENEFITS_OF_REGISTERING_WITH_US: '入驻我们的更多益处 . . .',
+            guide__MORE_BENEFITS_OF_REGISTERING_WITH_US: '我们为您度身订造的更多优势服务  . . .',
 
             guide__benefits_PREVIEW_PROFILES: '浏览买手信息',
             guide__benefits_PREVIEW_PROFILES_DESC: '买手提交预览品牌申请后，品牌可及时浏览买手相关信息',
@@ -168,7 +168,7 @@ angular.module(
             guide__benefits_TRANSLATION_PROVIDED: '双语客户经理',
             guide__benefits_TRANSLATION_PROVIDED_DESC: '我们的客户经理可为您提供中英双语咨询服务，无需担心任何语言问题.',
 
-            guide__MEMBERSHIP_INCLUDES: '会员权益包括…',
+            guide__MEMBERSHIP_INCLUDES: '成为会员，您还可以享有 . . .',
             guide__MEMBERSHIP_INCLUDES_R1: '> 为期一年的免费线上系统使用权',
             guide__MEMBERSHIP_INCLUDES_R2: '> 提供买手圈使用方法准则',
             guide__MEMBERSHIP_INCLUDES_R3: '> 将品牌文字介绍内容翻译成中文，以便中国买手浏览',
@@ -176,17 +176,56 @@ angular.module(
             guide__MEMBERSHIP_INCLUDES_R5: '> 品牌对应的双语客户经理将及时与品牌及买手沟通，中英文时时切换，实现无障碍交流',
 
             // login.html
-            login__SIGN_IN: '登录',
-            login__EMAIL: '电子邮箱*,',
-            login__PASSWORD: '输入密码*',
-            login__VALID_CODE: '验证码*',
+            login__SIGN_IN: '用户登录',
+            login__EMAIL: '电子邮箱',
+            login__PASSWORD: '输入密码',
+            login__VALID_CODE: '验证码',
             login__btn_LOGIN: '登录',
             login__REMEMBER_ME: '记住我',
 
-            login__REQUEST_MEMBERSHIP: '新用户申请',
+            login__REQUEST_MEMBERSHIP: '入驻XShowroom申请',
             login__REQUEST_MEMBERSHIP_DESC: '买手圈只向注册并审核通过的品牌、代理机构及买手开放。若想入驻买手圈，请完成在线注册：',
             login__REQUEST_BRAND: '品牌入驻',
             login__REQUEST_BUYER: '买手入圈',
+
+            // brand-register.html
+            brand_register__STEP: '步骤',
+            brand_register__SETP_OF: '/',
+            brand_register__STEP_INFORMATION_1: '添加用户信息',
+            brand_register__STEP_INFORMATION_2: '添加品牌信息',
+            brand_register__STEP_INFORMATION_3: '添加公司信息',
+
+            brand_register__STEP_1__EMAIL_ADDRESS: '电子邮箱',
+            brand_register__STEP_1__EMAIL_ADDRESS_PLACEHOLDER: '请输入电子邮箱 *',
+            brand_register__STEP_1__PASSWORD: '您的密码',
+            brand_register__STEP_1__PASSWORD_PLACEHOLDER: '请输入您的密码 *',
+            brand_register__STEP_1__FIRST_NAME_PLACEHOLDER: '您的名字 *',
+            brand_register__STEP_1__LAST_NAME_PLACEHOLDER: '您的姓氏 *',
+            brand_register__STEP_1__DISPLAY_NAME_PLACEHOLDER: '您的显示名 *',
+            brand_register__STEP_1__TELEPHONE_PLACEHOLDER: '您的联系电话 *',
+            brand_register__STEP_1__MOBILE_PLACEHOLDER: '"您的手机号码 (可选)',
+            brand_register__STEP_1__btn__CANCEL: '取消注册',
+            brand_register__STEP_1__btn__ADD_BRAND: '添加品牌',
+
+            brand_register__STEP_2__IMAGE: '相册 / 照片',
+            brand_register__STEP_2__UPLOAD: '上传',
+            brand_register__STEP_2__BRAND_NAME_PLACEHOLDER: '请输入您的品牌名称 *',
+            brand_register__STEP_2__DESIGNER_NAME_PLACEHOLDER: '设计师 *',
+            brand_register__STEP_2__URL_DESC_1: '这个链接将被用于直接定位到你的品牌站点',
+            brand_register__STEP_2__URL_DESC_2: '(通过验证的买手才能访问)',
+            brand_register__STEP_2__btn__PREVIOUS: '上一步',
+            brand_register__STEP_2__btn__ADD_COMPANY: '添加公司',
+
+            brand_register__STEP_3__COMPANY_NAME_PLACEHOLDER: '公司名称 *',
+            brand_register__STEP_3__COMPANY_ADDRESS_PLACEHOLDER: '公司地址 *',
+            brand_register__STEP_3__COMPANY_COUNTRY_PLACEHOLDER: '国家 *',
+            brand_register__STEP_3__COMPANY_ZIP_PLACEHOLDER: '邮政编码 *',
+            brand_register__STEP_3__COMPANY_TELEPHONE_PLACEHOLDER: '公司电话 *',
+            brand_register__STEP_3__COMPANY_URL_PLACEHOLDER: '公司网址 *',
+            brand_register__STEP_3__COMPANY_ACCEPT_1: 'On receipt of your application, an invoice will be sent to your email address. Membership access will be granted on payment confirmation.',
+            brand_register__STEP_3__COMPANY_ACCEPT_2: 'I accept the terms and conditions of Project Crossover Online Showrooms web site.',
+            brand_register__STEP_3__btn__PREVIOUS: '上一步',
+            brand_register__STEP_3__btn__SUBMIT: '提交注册',
         },
         'en': {
             // directives.js
@@ -263,11 +302,11 @@ angular.module(
             global_footer_navigation__COMPANY__CONTACT: 'CONTACT',
 
             // guide.html
-            guide__SOLUTION_BRAND: 'BRAND',
-            guide__SOLUTION_RETAILER: 'RETAILER',
             guide__SOLUTIONS_FOR_BRANDS: 'SOLUTIONS FOR BRANDS',
             guide__SOLUTIONS_FOR_RETAILERS: 'SOLUTIONS FOR RETAILERS',
             guide__X_SHOWROOM_FASHION: 'X SHOWROOM FASHION',
+            guide__SOLUTION_BRAND: 'BRAND',
+            guide__SOLUTION_RETAILER: 'RETAILER',
             guide__ACCESS_SUBSCRIPTION: 'ACCESS SUBSCRIPTION',
 
             guide__brand_left_INTRODUCE: 'Are you interested in exploring the market with the an online showroom who will help you reach your potential? Market your brand to buyers in China with us. With X SHOWROOM, you can take advantage of the extensive experience of the staff who in partnership with Project Crossover, offer the Shanghai and London showroom along with the online showroom as digital presence for your brand to streamline the wholesale process. You can be sure the visibility of your collection and products will continually increase with us through the 1000 buyers already registered.',
@@ -353,6 +392,45 @@ angular.module(
             login__REQUEST_MEMBERSHIP_DESC: 'X SHOWROOM IS OPEN TO SELECTED BRANDS. AGENCIES AND BUYERS TO PARTICIPATE. PLEASE REGISTER ONLINE',
             login__REQUEST_BRAND: 'FOR BRANDS',
             login__REQUEST_BUYER: 'FOR BUYER',
+
+            // brand-register.html
+            brand_register__STEP: 'STEP',
+            brand_register__SETP_OF: 'OF',
+            brand_register__STEP_INFORMATION_1: 'ADD USER DETAILS',
+            brand_register__STEP_INFORMATION_2: 'ADD BRAND DETAILS',
+            brand_register__STEP_INFORMATION_3: 'ADD COMPANY DETAILS',
+
+            brand_register__STEP_1__EMAIL_ADDRESS: 'EMAIL ADDRESS',
+            brand_register__STEP_1__EMAIL_ADDRESS_PLACEHOLDER: 'PLEASE ENTER EMAIL ADDRESS *',
+            brand_register__STEP_1__PASSWORD: 'PASSWORD',
+            brand_register__STEP_1__PASSWORD_PLACEHOLDER: 'PLEASE ENTER YOUR PASSWORD *',
+            brand_register__STEP_1__FIRST_NAME_PLACEHOLDER: 'FIRST NAME *',
+            brand_register__STEP_1__LAST_NAME_PLACEHOLDER: 'LAST NAME *',
+            brand_register__STEP_1__DISPLAY_NAME_PLACEHOLDER: 'DISPLAY NAME *',
+            brand_register__STEP_1__TELEPHONE_PLACEHOLDER: 'CONTACT TELEPHONE NUMBER *',
+            brand_register__STEP_1__MOBILE_PLACEHOLDER: '"CONTACT MOBILE NUMBER (OPTIONAL)',
+            brand_register__STEP_1__btn__CANCEL: 'CANCEL',
+            brand_register__STEP_1__btn__ADD_BRAND: 'ADD BRAND',
+
+            brand_register__STEP_2__IMAGE: 'LOOKBOOK / IMAGE',
+            brand_register__STEP_2__UPLOAD: 'UPLOAD',
+            brand_register__STEP_2__BRAND_NAME_PLACEHOLDER: 'PLEASE ENTER YOUR BRAND NAME *',
+            brand_register__STEP_2__DESIGNER_NAME_PLACEHOLDER: 'DESIGNER NAME *',
+            brand_register__STEP_2__URL_DESC_1: 'This URL will be used for direct access to your Brand',
+            brand_register__STEP_2__URL_DESC_2: '(for authenticated Buyers only)',
+            brand_register__STEP_2__btn__PREVIOUS: 'PREVIOUS',
+            brand_register__STEP_2__btn__ADD_COMPANY: 'ADD COMPANY',
+
+            brand_register__STEP_3__COMPANY_NAME_PLACEHOLDER: 'COMPANY NAME *',
+            brand_register__STEP_3__COMPANY_ADDRESS_PLACEHOLDER: 'COMPANY ADDRESS *',
+            brand_register__STEP_3__COMPANY_COUNTRY_PLACEHOLDER: 'STATE/COUNTRY *',
+            brand_register__STEP_3__COMPANY_ZIP_PLACEHOLDER: 'POSTCODE/ZIP *',
+            brand_register__STEP_3__COMPANY_TELEPHONE_PLACEHOLDER: 'COMPANY TELEPHONE NUMBER *',
+            brand_register__STEP_3__COMPANY_URL_PLACEHOLDER: 'COMPANY WEB PAGE URL *',
+            brand_register__STEP_3__COMPANY_ACCEPT_1: 'On receipt of your application, an invoice will be sent to your email address. Membership access will be granted on payment confirmation.',
+            brand_register__STEP_3__COMPANY_ACCEPT_2: 'I accept the terms and conditions of Project Crossover Online Showrooms web site.',
+            brand_register__STEP_3__btn__PREVIOUS: 'PREVIOUS',
+            brand_register__STEP_3__btn__SUBMIT: 'SUBMIT',
 		}
 	}
 );
