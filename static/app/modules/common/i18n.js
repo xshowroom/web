@@ -218,7 +218,7 @@ angular.module(
 
             brand_register__STEP_3__COMPANY_NAME_PLACEHOLDER: '公司名称 *',
             brand_register__STEP_3__COMPANY_ADDRESS_PLACEHOLDER: '公司地址 *',
-            brand_register__STEP_3__COMPANY_COUNTRY_PLACEHOLDER: '国家 *',
+            brand_register__STEP_3__COMPANY_COUNTRY_PLACEHOLDER: '所在国家 *',
             brand_register__STEP_3__COMPANY_ZIP_PLACEHOLDER: '邮政编码 *',
             brand_register__STEP_3__COMPANY_TELEPHONE_PLACEHOLDER: '公司电话 *',
             brand_register__STEP_3__COMPANY_URL_PLACEHOLDER: '公司网址 *',
@@ -231,7 +231,7 @@ angular.module(
             buyer_register__STEP: '步骤',
             buyer_register__SETP_OF: '/',
             buyer_register__STEP_INFORMATION_1: '添加用户信息',
-            buyer_register__STEP_INFORMATION_2: '添加店铺信息',
+            buyer_register__STEP_INFORMATION_2: '添加商店信息',
             buyer_register__STEP_INFORMATION_3: '添加公司信息',
 
             buyer_register__STEP_1__EMAIL_ADDRESS: '电子邮箱',
@@ -246,18 +246,23 @@ angular.module(
             buyer_register__STEP_1__btn__CANCEL: '取消注册',
             buyer_register__STEP_1__btn__ADD_STORE: '添加店铺',
 
-            buyer_register__STEP_2__IMAGE: '相册 / 照片',
+            buyer_register__STEP_2__IMAGE: '商店 / 照片',
             buyer_register__STEP_2__UPLOAD: '上传',
-            buyer_register__STEP_2__BRAND_NAME_PLACEHOLDER: '请输入您的品牌名称 *',
-            buyer_register__STEP_2__DESIGNER_NAME_PLACEHOLDER: '设计师 *',
-            buyer_register__STEP_2__URL_DESC_1: '这个链接将被用于直接定位到你的品牌站点',
-            buyer_register__STEP_2__URL_DESC_2: '(通过验证的买手才能访问)',
+            buyer_register__STEP_2__STORE_NAME_PLACEHOLDER: '请输入您的商店名称 *',
+            buyer_register__STEP_2__STORE_TYPE_PLACEHOLDER: '请选择您的商店类型 *',
+            buyer_register__STEP_2__STORE_COLLECTION_TYPE: '系列类型',
+            buyer_register__STEP_2__STORE_BRAND_PLACEHOLDER: '商店售卖的品牌 *',
+            buyer_register__STEP_2__STORE_WEBSITE_PLACEHOLDER: '网址 *',
+            buyer_register__STEP_2__STORE_ADDRESS_PLACEHOLDER: '商店地址 *',
+            buyer_register__STEP_2__STORE_COUNTRY_PLACEHOLDER: '所在国家 *',
+            buyer_register__STEP_2__STORE_ZIP_PLACEHOLDER: '邮政编码 *',
+            buyer_register__STEP_2__STORE_TELEPHONE_PLACEHOLDER: '电话号码 *',
             buyer_register__STEP_2__btn__PREVIOUS: '上一步',
             buyer_register__STEP_2__btn__ADD_COMPANY: '添加公司',
 
             buyer_register__STEP_3__COMPANY_NAME_PLACEHOLDER: '公司名称 *',
             buyer_register__STEP_3__COMPANY_ADDRESS_PLACEHOLDER: '公司地址 *',
-            buyer_register__STEP_3__COMPANY_COUNTRY_PLACEHOLDER: '国家 *',
+            buyer_register__STEP_3__COMPANY_COUNTRY_PLACEHOLDER: '所在国家 *',
             buyer_register__STEP_3__COMPANY_ZIP_PLACEHOLDER: '邮政编码 *',
             buyer_register__STEP_3__COMPANY_TELEPHONE_PLACEHOLDER: '公司电话 *',
             buyer_register__STEP_3__COMPANY_URL_PLACEHOLDER: '公司网址 *',
@@ -265,6 +270,21 @@ angular.module(
             buyer_register__STEP_3__COMPANY_ACCEPT_2: 'I accept the terms and conditions of Project Crossover Online Showrooms web site.',
             buyer_register__STEP_3__btn__PREVIOUS: '上一步',
             buyer_register__STEP_3__btn__SUBMIT: '提交注册',
+
+            /**
+             DROP DOWN LIST
+             */
+            // Store Type
+            dropdown__STORE__ALL: '全部',
+            dropdown__STORE__DEPARTMENT_SHOP: '商场',
+            dropdown__STORE__MULTI_BRAND_SHOP: '品牌集',
+            dropdown__STORE__ONLINE_SHOP: '网店',
+
+            // Collection Type
+            dropdown__COLLECTION__ALL: '全部',
+            dropdown__COLLECTION__WOMEN: '女士',
+            dropdown__COLLECTION__ACCESSORIES: '首饰',
+            dropdown__COLLECTION__MEN: '男士'
         },
         'en': {
             // directives.js
@@ -462,8 +482,8 @@ angular.module(
 
             brand_register__STEP_3__COMPANY_NAME_PLACEHOLDER: 'COMPANY NAME *',
             brand_register__STEP_3__COMPANY_ADDRESS_PLACEHOLDER: 'COMPANY ADDRESS *',
-            brand_register__STEP_3__COMPANY_COUNTRY_PLACEHOLDER: 'STATE/COUNTRY *',
-            brand_register__STEP_3__COMPANY_ZIP_PLACEHOLDER: 'POSTCODE/ZIP *',
+            brand_register__STEP_3__COMPANY_COUNTRY_PLACEHOLDER: 'STATE / COUNTRY *',
+            brand_register__STEP_3__COMPANY_ZIP_PLACEHOLDER: 'POSTCODE / ZIP *',
             brand_register__STEP_3__COMPANY_TELEPHONE_PLACEHOLDER: 'COMPANY TELEPHONE NUMBER *',
             brand_register__STEP_3__COMPANY_URL_PLACEHOLDER: 'COMPANY WEB PAGE URL *',
             brand_register__STEP_3__COMPANY_ACCEPT_1: 'On receipt of your application, an invoice will be sent to your email address. Membership access will be granted on payment confirmation.',
@@ -490,12 +510,17 @@ angular.module(
             buyer_register__STEP_1__btn__CANCEL: 'CANCEL',
             buyer_register__STEP_1__btn__ADD_STORE: 'ADD STORE',
 
-            buyer_register__STEP_2__IMAGE: 'LOOKBOOK / IMAGE',
+            buyer_register__STEP_2__IMAGE: 'SHOP / IMAGE',
             buyer_register__STEP_2__UPLOAD: 'UPLOAD',
-            buyer_register__STEP_2__BRAND_NAME_PLACEHOLDER: 'PLEASE ENTER YOUR BRAND NAME *',
-            buyer_register__STEP_2__DESIGNER_NAME_PLACEHOLDER: 'DESIGNER NAME *',
-            buyer_register__STEP_2__URL_DESC_1: 'This URL will be used for direct access to your Brand',
-            buyer_register__STEP_2__URL_DESC_2: '(for authenticated Buyers only)',
+            buyer_register__STEP_2__STORE_NAME_PLACEHOLDER: 'PLEASE ENTER YOUR STORE NAME *',
+            buyer_register__STEP_2__STORE_TYPE_PLACEHOLDER: 'PLEASE SELECT STORE TYPE *',
+            buyer_register__STEP_2__STORE_COLLECTION_TYPE: 'COLLECTION TYPE',
+            buyer_register__STEP_2__STORE_BRAND_PLACEHOLDER: 'BRAND CARRIED IN STORE *',
+            buyer_register__STEP_2__STORE_WEBSITE_PLACEHOLDER: 'WEBSITE *',
+            buyer_register__STEP_2__STORE_ADDRESS_PLACEHOLDER: 'STORE ADDRESS *',
+            buyer_register__STEP_2__STORE_COUNTRY_PLACEHOLDER: 'STATE / COUNTRY *',
+            buyer_register__STEP_2__STORE_ZIP_PLACEHOLDER: 'POSTCODE / ZIP *',
+            buyer_register__STEP_2__STORE_TELEPHONE_PLACEHOLDER: 'TELEPHONE NUMBER *',
             buyer_register__STEP_2__btn__PREVIOUS: 'PREVIOUS',
             buyer_register__STEP_2__btn__ADD_COMPANY: 'ADD COMPANY',
 
@@ -509,6 +534,21 @@ angular.module(
             buyer_register__STEP_3__COMPANY_ACCEPT_2: 'I accept the terms and conditions of Project Crossover Online Showrooms web site.',
             buyer_register__STEP_3__btn__PREVIOUS: 'PREVIOUS',
             buyer_register__STEP_3__btn__SUBMIT: 'SUBMIT',
+
+            /**
+                DROP DOWN LIST
+            */
+            // Store Type
+            dropdown__STORE__ALL: 'ALL',
+            dropdown__STORE__DEPARTMENT_SHOP: 'DEPARTMENT SHOP',
+            dropdown__STORE__MULTI_BRAND_SHOP: 'MULTI-BRAND SHOP',
+            dropdown__STORE__ONLINE_SHOP: 'ONLINE SHOP',
+
+            // Collection Type
+            dropdown__COLLECTION__ALL: 'ALL',
+            dropdown__COLLECTION__WOMEN: 'WOMEN',
+            dropdown__COLLECTION__ACCESSORIES: 'ACCESSORIES',
+            dropdown__COLLECTION__MEN: 'MEN'
 		}
 	}
 );
