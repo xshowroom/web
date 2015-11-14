@@ -6,7 +6,8 @@ class Controller_Base extends Controller
 
 	public function before()
 	{
-		$opUser = $_SESSION['opUser'];
+	    session_start();
+	    $opUser = $_SESSION['opUser'];
 		if (empty($opUser)) {
 			echo json_encode(array(
                 'status' => LOGIN_FAILURE,
