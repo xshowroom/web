@@ -161,7 +161,7 @@ class Business_User
         if ($res) {
             return array(STATUS_SUCCESS, 'check_ok');
         } else {
-            return array(STATUS_ERROR, "{$param}_existed");
+            return array(STATUS_ERROR, "{$key}_existed");
         }
     }
 } 
