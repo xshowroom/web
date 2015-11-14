@@ -637,7 +637,7 @@ angular.module(
 
             // login.html
             login__SIGN_IN: 'SIGN IN',
-            login__EMAIL: 'EMAIL ADDRESS*,',
+            login__EMAIL: 'EMAIL ADDRESS*',
             login__PASSWORD: 'YOUR PASSWORD*',
             login__VALID_CODE: 'VALID CODE*',
             login__btn_LOGIN: 'LOGIN',
