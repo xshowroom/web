@@ -26,7 +26,7 @@ angular.module(
             // directives.js
             directives_js__LANGUAGE: '语言',
             directives_js__CURRENCY: '货币',
-            directives_js__WELCOME: '欢迎 访客 ',
+            directives_js__WELCOME: '欢迎 ',
             directives_js__LOGIN: '登录',
             directives_js__LOGOUT: '退出',
             directives_js__REGISTER: '注册',
@@ -486,7 +486,7 @@ angular.module(
             // directives.js
             directives_js__LANGUAGE: 'LANGUAGE',
             directives_js__CURRENCY: 'CURRENCY',
-            directives_js__WELCOME: 'WELCOME GUEST!',
+            directives_js__WELCOME: 'WELCOME',
             directives_js__LOGIN: 'LOGIN',
             directives_js__LOGOUT: 'LOGOUT',
             directives_js__REGISTER: 'REGISTER',

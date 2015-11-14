@@ -52,6 +52,7 @@ class Controller_Login extends Controller
         session_unset();
         session_destroy();
         header('Location: '. SITE_DOMAIN . '/' . $target . '.html');
+        exit(0);
     }
 
 }
