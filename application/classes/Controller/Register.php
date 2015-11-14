@@ -32,11 +32,11 @@ class Controller_Register extends Controller
         ));
     }
     
-    public function action_checkParam($key, $param)
+    public function action_checkParam()
     {
-        $key = Request::current()->post('key');
-        $param = Request::current()->post('param');
-        
+        $key = Request::current()->query('key');
+        $param = Request::current()->query('param');
+
         list($status, $msg) = $this->userService->checkParam($key, $param);
         
         echo json_encode(array(

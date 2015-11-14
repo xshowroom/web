@@ -42,9 +42,6 @@
 								<img ng-click="refreshValidCode();" class="valid-code col-xs-3" ng-src="{{validCodeUrl}}" title="Click to refresh">
 								<div class="clearfix"></div>
 							</div>
-							<div class="alert login-alert alert-warning" role="alert" ng-if="!loginError.hasError">
-								{{ '友情提示：请注意保护账户、密码，以防账号丢失!' }}
-							</div>
 							<div class="alert login-alert alert-danger" role="alert"  ng-if="loginError.hasError">
 								{{'登陆错误：'}}{{loginError.errorMsg }}
 							</div>

@@ -157,11 +157,11 @@ class Business_User
                 $res = $this->checkEmail($param);
                 break;
         }
-        
+
         if ($res) {
-            return array(STATUS_SUCCESS, 'check_ok');
-        } else {
             return array(STATUS_ERROR, "{$key}_existed");
+        } else {
+            return array(STATUS_SUCCESS, 'check_ok');
         }
     }
 } 
