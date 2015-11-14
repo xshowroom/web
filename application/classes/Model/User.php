@@ -261,4 +261,20 @@ class Model_User {
         
         return $result[0];
     }
+    
+    /**
+     * 查询用户属性
+     *
+     * @param int $userId
+     * @return array
+     */
+    public function getAttrByUserId($userId)
+    {
+        $result = DB::select()
+                  ->from('user_attr')
+                  ->where('user_id', '=', $userId)
+                  ->execute();
+        
+        return empty($result) ? array() : $result[0];
+    }
 }
