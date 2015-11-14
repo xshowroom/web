@@ -34,8 +34,10 @@ class Controller_Register extends Controller
     
     public function action_checkParam()
     {
-        $key = Request::current()->param('key');
-        $param = Request::current()->param('param');
+        $key = Request::current()->query('key');
+        $param = Request::current()->query('param');
+
+        echo var_dump($key, $param);
 
         list($status, $msg) = $this->userService->checkParam($key, $param);
         
