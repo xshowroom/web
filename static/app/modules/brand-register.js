@@ -63,13 +63,13 @@ angular.module(
 				for(var key in keys){
 					var value = $scope.user[key];
 					if (!value || value == '') {
-						$scope.errorMsgs.push([key, '目前为空值']);
+						$scope.errorMsgs.push([key, 'EMPTY ERROR']);
 						$scope.step.validation[stepNumber][key] = true;
 						continue;
 					}
 					if($scope.step.reg[stepNumber][key]	
 						&& !$scope.step.reg[stepNumber][key].test(value)){
-						$scope.errorMsgs.push([key, '不符合格式']);
+						$scope.errorMsgs.push([key, 'PATTERN ERROR']);
 						$scope.step.validation[stepNumber][key] = true;
 						continue;
 					}
@@ -87,7 +87,7 @@ angular.module(
 						var key = res.config.params.key;
 						if (res.data.status) {
 							$scope.step.validation[stepNumber][key] = true;
-							$scope.errorMsgs.push([key, '已存在']);
+							$scope.errorMsgs.push([key, 'DUPLICATION ERROR']);
 						}else{
 							$scope.step.validation[stepNumber][key] = false;
 						}
