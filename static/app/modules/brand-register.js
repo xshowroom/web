@@ -1,16 +1,16 @@
-var app = angular.module(
+angular.module(
 	'xShowroom.register.brand',
 	[
-	    'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services', 'ui.uploader'
+	    'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services'
     ]
 )
 .controller(
 	'BrandRegisterCtrl', 
 	[
-	    '$scope', '$element', 'uiUploader', 'User',
-	    function($scope, $element,  uiUploader, User) {
+	    '$scope', '$element', 'User',
+	    function($scope, $element,  User) {
 			$scope.step = {
-				stepNumber: 1,
+				stepNumber: 2,
 				validation: {
 				     1: {
 				    	'email': false,
@@ -41,26 +41,6 @@ var app = angular.module(
 			};
 			
 			$scope.files = [];
-			$element.find('.brand-register-block-spare').on('change', '#lookbook-upload', function(e) {
-				$scope.$broadcast('uploading.start');
-				uiUploader.addFiles(e.target.files);
-				$scope.files = uiUploader.getFiles();
-                uiUploader.startUpload({
-                    url: '/web/upload/image',
-                    onCompleted: function(file, response) {
-                    	response = JSON.parse(response);
-                    	if(response.status != 0){
-                    		$scope.user.imagePath = undefined;
-                    		$scope.$apply();
-                    		alert('上传图片接口出错，请重新上传，如多次失败请联系我们！');
-                    		return
-                    	}
-                    	$scope.user.imagePath = response.data;
-                    	$scope.$apply();
-                    	$scope.$broadcast('uploading.end');
-                    }
-                });
-			});
 			
 			$scope.check = function() {
 				var stepNumber = $scope.step.stepNumber;
