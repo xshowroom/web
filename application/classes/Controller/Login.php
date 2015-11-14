@@ -40,7 +40,7 @@ class Controller_Login extends Controller
     
     public function action_logout()
     {
-        session_unset()
+        session_unset();
         session_destroy();
         header('Location: '. SITE_DOMAIN);
     }
