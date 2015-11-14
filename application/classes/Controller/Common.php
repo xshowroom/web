@@ -3,12 +3,11 @@
 /**
  * @author liyashuai
  */
-class Controller_Common extends Controller_Base
+class Controller_Common extends Controller
 {
 
     public function before()
     {
-        parent::before();
     }
 
     public function action_userInfo()
