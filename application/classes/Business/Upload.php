@@ -29,6 +29,10 @@ class Business_Upload
         // 处理图片上传
         try {
             $file = $_FILES['file'];
+            $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
+            if (empty($extension)) {
+                return null;
+            }
             // 上传文件夹不存在则创建
             if (!is_dir(UPLOAD_DIR)) {
                 mkdir(UPLOAD_DIR, 0777);
@@ -38,7 +42,7 @@ class Business_Upload
                 mkdir(UPLOAD_DIR. '/tmp/', 0777);
             }
             // 文件名随机
-            $realPathFile = UPLOAD_DIR. '/tmp/' . date('ymdHis'). substr(microtime(),2,4);
+            $realPathFile = UPLOAD_DIR. '/tmp/' . date('ymdHis'). substr(microtime(),2,4). '.'. $extension;
             // 如果已经存在文件，可将其删除
             if (file_exists($realPathFile)){
                 unlink($realPathFile);
