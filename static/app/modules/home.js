@@ -5,7 +5,7 @@
  * 
  */
 
-var app = angular.module(
+angular.module(
     'xShowroom.home', 
     [
         'xShowroom.i18n', 'xShowroom.directives'

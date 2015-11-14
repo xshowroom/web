@@ -1,5 +1,5 @@
 .sign-in{
-	height: 600px;
+	height: 650px;
 	border: 4px solid #eee;
 	padding: 30px 50px;
 }
@@ -13,6 +13,10 @@
 }
 .sign-in form label{
 	margin-bottom: 0;
+}
+.sign-in .alert{
+	margin-top: 30px;
+	border-radius: 30px;
 }
 .sign-in form button{
 	margin: 15px 0 10px;
@@ -28,7 +32,7 @@
     cursor: pointer;
 }
 .request-menbership{
-	height: 600px;
+	height: 650px;
 	padding: 30px 50px;
 }
 .request-menbership h2{

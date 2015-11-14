@@ -1,7 +1,8 @@
-var app = angular.module(
+document.write("<script type='text/javascript' src='/bower_components/angular-ui-uploader/dist/uploader.min.js'></script>"); 
+angular.module(
     'xShowroom.directives', 
     [
-        'ngCookies', 'xShowroom.i18n', 'xShowroom.services'
+        'ngCookies', 'xShowroom.i18n', 'xShowroom.services', 'ui.uploader'
     ]
 )
 .config(
@@ -87,9 +88,9 @@ var app = angular.module(
 				'</div>',
 				'<div class="user-logined" ng-if="userInfo">',
 					'<span>{{ "directives_js__WELCOME"| translate }}, </span>',
-					'<a href="#">{{userInfo.email}}</a>',
+					'<a href="#">{{userInfo.displayName}}</a>',
 					'<span> | </span>',
-					'<a href="#">{{ "directives_js__LOGOUT"| translate }}</a>',
+					'<a href="/web/login/logout" target="_self">{{ "directives_js__LOGOUT"| translate }}</a>',
 				'</div>'
             ].join('');
             return html;
@@ -173,7 +174,7 @@ var app = angular.module(
         }
     };
 }])
-.directive('imagePreview', [function () {
+.directive('imagePreview', ['uiUploader', function (uiUploader) {
     return {
     	template: '<div ng-transclude></div>',
         scope: {
@@ -182,61 +183,100 @@ var app = angular.module(
         transclude: true,
         restrict: 'C',
         replace: false,
+        scope: {
+        	targetModel: '='
+        },
         link: function ($scope, $element, $attrs, $transclude) {
         	var input = $element.find("input[type='file']"); 
         	var target = $scope.target ? $element.find('#' + target) : $element;
 			 
-			var readFile = function (){ 
-			    var file = this.files[0]; 
-			    if(!/image\/\w+/.test(file.type)){ 
-			        alert("文件必须为图片！"); 
-			        return false; 
-			    } 
+			var readFile = function (files){ 
 			    var reader = new FileReader(); 
-			    reader.readAsDataURL(file); 
+			    reader.readAsDataURL(files[0]); 
 			    reader.onload = function(e){ 
 			    	var image = target.find(".uploaded-image");
 			    	if (image.length){
 			    		image.attr('src', this.result);
 			    	}else{
-			    		target.append('<img class="uploaded-image" src="'+this.result+'" style="width:100%;height: 100%; position: absolute; left:0;top:0;z-index: -1;"/>')
+			    		target.append([
+			    		    '<img class="uploaded-image" src="' + this.result + '" ',
+			    		    'style="',
+			    		    	'width:100%;',
+			    		    	'position: absolute;',
+			    		    	'left:0;',
+			    		    	'top:50%;',
+			    		    	'z-index: -1;',
+			    		    	'transform: translateY(-50%);',
+			    		    	'-webkit-transform: translateY(-50%);',
+			    		    	'-moz-transform: translateY(-50%);',
+			    		    	'-o-transform: translateY(-50%);',
+			    		    '"/>'
+			    		].join(''));
 			    	}
 			    } 
 			};
+			var uploadFile = function(files){
+				$scope.$emit('uploading.start');
+				uiUploader.removeAll();
+				uiUploader.addFiles(files);
+                uiUploader.startUpload({
+                    url: '/web/upload/image',
+                    onCompleted: function(file, response) {
+                    	response = JSON.parse(response);
+                    	if(response.status != 0){
+                    		alert('上传图片接口出错，请重新上传，如多次失败请联系我们！');
+                    		return
+                    	}
+                    	$scope.targetModel = response.data;
+                    	$scope.$apply();
+                    	$scope.$emit('uploading.end');
+                    }
+                });
+			}
 			
 			if(typeof FileReader==='undefined'){ 
 			    alert("抱歉，你的浏览器不支持 FileReader，图片无法预览!"); 
 			}else{ 
-				input.on('change', readFile)
+				input.on('change', function(e){
+					var files = e.target.files;
+					if (!files.length){
+						return;
+					}
+					if(!/image\/\w+/.test(files[0].type)){
+						alert('上传文件类型必须为图片！');
+						input.val('');
+					    return; 
+					} 
+					readFile(files);
+					uploadFile(files);
+				})
 			} 
         }
     };
 }])
-.directive('uploading', [function () {
+.directive('uploading', ['$filter', function ($filter) {
     return {
-    	template: [
-    	    '<div ng-if="showUploading">',
-    	    	'<div class="uploading-content">',
-    	    		'<span class="glyphicon glyphicon-arrow-up"></span>',
-	    		    '<span>{{"directives_js__UPLOADING" | translate}}</span>',
-	    		    '<span class="glyphicon glyphicon-arrow-up"></span>',
-    		    '</div>',
-    		'</div>'
-    	].join(''),
-        scope: {
-        	target: '@',
-        },
+//        scope: {
+//        	target: '@',
+//        },
         transclude: false,
         restrict: 'C',
-        replace: true,
+        replace: false,
         link: function ($scope, $element, $attrs, $transclude) {
         	$scope.$on("uploading.start", function(){
-        		$scope.showUploading = true;
-        		$scope.$apply();
+            	var template = [
+            	    '<div class="uploading-mask">',
+            	      	'<div class="uploading-content">',
+            	       		'<span class="glyphicon glyphicon-arrow-up"></span>',
+            	      	    '<span>' + $filter('translate')("directives_js__UPLOADING") + '</span>',
+            	       	    '<span class="glyphicon glyphicon-arrow-up"></span>',
+            	       '</div>',
+            	    '</div>'
+            	].join('');
+            	$element.append(template);
         	});
         	$scope.$on("uploading.end", function(){
-        		$scope.showUploading = false;
-        		$scope.$apply();
+        		$element.find(".uploading-mask").remove();
         	})
         }
     };

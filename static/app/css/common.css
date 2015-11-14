@@ -317,7 +317,7 @@ a.active:before{
 }
 
 /* uploading 遮罩 */
-.uploading {
+.uploading-mask {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -328,7 +328,7 @@ a.active:before{
     text-align: center;
     font-size: 36px;
 }
-.uploading .uploading-content{
+.uploading-mask .uploading-content{
 	position: absolute;
     top: 50%;
     width: 100%;
@@ -337,7 +337,7 @@ a.active:before{
     -moz-transform: translateY(-50%);
     -o-transform: translateY(-50%);
 }
-.uploading .uploading-content .glyphicon{
+.uploading-mask .uploading-content .glyphicon{
 	padding: 10px;
 	border-radius: 50%;
 	border: 2px solid #fff;
@@ -368,7 +368,7 @@ to {-webkit-transform: translateY(-100%);}
 from {-o-transform: translateY(100%);}
 to {-o-transform: translateY(-100%);}
 }
-.uploading .uploading-content .glyphicon:before{
+.uploading-mask .uploading-content .glyphicon:before{
 	display: inline-block;
 	animation: rollUp 1s linear infinite;
     -webkit-animation: rollUp 1s linear infinite;

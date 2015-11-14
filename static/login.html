@@ -29,17 +29,24 @@
 						<h2>{{ "login__SIGN_IN"| translate }}</h2>
 						<form ng-submit="login();">
 							<div class="form-group">
-								<label for="username">{{ "login__EMAIL"| translate }}</label>
-								<input type="text" class="form-control" id="username" autocomplete="off" ng-model="user.email">
+								<label for="email">{{ "login__EMAIL"| translate }}</label>
+								<input type="text" class="form-control" id="email" ng-model="user.email">
 							</div>
 							<div class="form-group">
 								<label for="password">{{ "login__PASSWORD"| translate }}</label>
-								<input type="password" class="form-control" id="password" autocomplete="off"  ng-model="user.pass">
+								<input type="password" class="form-control" id="password" ng-model="user.pass">
 							</div>
 							<div class="form-group">
 								<label for="valid-code" class="col-xs-12">{{ "login__VALID_CODE"| translate }}</label>
-								<input type="text" class="form-control col-xs-9" id="valid-code" autocomplete="off" ng-model="user.code">
+								<input type="text" class="form-control col-xs-9" id="valid-code"  ng-model="user.code">
 								<img ng-click="refreshValidCode();" class="valid-code col-xs-3" ng-src="{{validCodeUrl}}" title="Click to refresh">
+								<div class="clearfix"></div>
+							</div>
+							<div class="alert login-alert alert-warning" role="alert" ng-if="!loginError.hasError">
+								{{ '友情提示：请注意保护账户、密码，以防账号丢失!' }}
+							</div>
+							<div class="alert login-alert alert-danger" role="alert"  ng-if="loginError.hasError">
+								{{'登陆错误：'}}{{loginError.errorMsg }}
 							</div>
 							<button type="submit" class="btn btn-type-2">{{ "login__btn_LOGIN"| translate }}</button>
 							<div class="checkbox">
