@@ -10,7 +10,7 @@ angular.module(
 	    '$scope', '$element', 'User',
 	    function($scope, $element,  User) {
 			$scope.step = {
-				stepNumber: 2,
+				stepNumber: 1,
 				validation: {
 				     1: {
 				    	'email': false,
