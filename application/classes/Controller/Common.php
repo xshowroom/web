@@ -6,16 +6,20 @@
 class Controller_Common extends Controller
 {
 
+    const MSG_KEY_1 = 'not_login';
+    const MSG_KEY_2 = 'logged in';
+    
     public function before()
     {
         session_start();
+        I18n::lang($_COOKIE['language']);
     }
 
     public function action_userInfo()
     {
         $opUser = $_SESSION['opUser'];
         $status = empty($opUser) ? STATUS_ERROR : STATUS_SUCCESS;
-        $msg    = empty($opUser) ? 'guest' : 'already logged in';
+        $msg    = empty($opUser) ? __(self::MSG_KEY_1) : __(self::MSG_KEY_2);
         
         if (empty($opUser)) {
             $data = array();

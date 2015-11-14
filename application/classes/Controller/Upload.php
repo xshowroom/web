@@ -3,6 +3,9 @@
 class Controller_Upload extends Controller
 {
 
+    const MSG_KEY_1 = 'upload_failed';
+    const MSG_KEY_2 = 'upload_success';
+    
     public $uploadService;
 
     public function before()
@@ -15,7 +18,7 @@ class Controller_Upload extends Controller
         $res = $this->uploadService->image();
         
         $status = empty($res) ? STATUS_ERROR : STATUS_SUCCESS;
-        $msg    = empty($res) ? 'upload failed' : 'upload success';
+        $msg    = empty($res) ? __(self::MSG_KEY_1) : __(self::MSG_KEY_2);
         
         echo json_encode(array(
             'status' => $status,

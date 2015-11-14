@@ -6,10 +6,14 @@
 class Controller_Register extends Controller
 {
 
+    const MSG_KEY_1 = 'register_failed';
+    const MSG_KEY_2 = 'register_success';
+    
     public $userService;
 
     public function before()
     {
+        I18n::lang($_COOKIE['language']);
         $this->userService = new Business_User();
     }
 
@@ -20,7 +24,7 @@ class Controller_Register extends Controller
         $res = $this->userService->addUser($roleType);
 
         $status = empty($res) ? STATUS_ERROR : STATUS_SUCCESS;
-        $msg    = empty($res) ? 'register failed' : 'register success';
+        $msg    = empty($res) ? __(self::MSG_KEY_1) : __(self::MSG_KEY_2);
 
         echo json_encode(array(
             'status' => $status,
@@ -37,7 +41,7 @@ class Controller_Register extends Controller
         
         echo json_encode(array(
             'status'    => $status,
-            'msg'       => $msg,
+            'msg'       => __($msg),
         ));
     }
 
