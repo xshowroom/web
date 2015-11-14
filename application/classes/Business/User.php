@@ -89,7 +89,7 @@ class Business_User
             //$brandUrl      = WEB_ROOT . '/brand/' . $brandName;
             $brandUrl      = $brandName;
             //$realPathFile  = UPLOAD_DIR. '/' . $brandName;
-            $realPathFile  = '/data/' . $brandName;
+            $realPathFile  = 'data/' . $brandName;
             
             $brandExist = $this->checkBrand($brandName);
             if ($brandExist) {
