@@ -3,11 +3,16 @@
 class Controller_Login extends Controller
 {
 
+    const MSG_KEY_1 = 'image_err';
+    const MSG_KEY_2 = 'not_login';
+    const MSG_KEY_3 = 'logged in';
+    
     public $userService;
     public $codeService;
 
     public function before()
     {
+        I18n::lang($_COOKIE['language']);
         $this->userService = new Business_User();
         $this->codeService = new Business_VerifyCode();
     }
@@ -22,7 +27,7 @@ class Controller_Login extends Controller
         if (!$this->codeService->verify($code)) {
             echo json_encode(array(
                 'status' => LOGIN_ERRCODE,
-                'msg' => 'verify code is incorrect',
+                'msg' => __(self::MSG_KEY_1),
             ));
             exit(0);
         }
@@ -30,7 +35,7 @@ class Controller_Login extends Controller
         $res = $this->userService->getUserInfo($email, $password);
 
         $status = empty($res) ? LOGIN_FAILURE : LOGIN_SUCCESS;
-        $msg    = empty($res) ? 'username or password is incorrect' : 'login success';
+        $msg    = empty($res) ? __(self::MSG_KEY_2) : __(self::MSG_KEY_3);
 
         echo json_encode(array(
             'status'   => $status,
@@ -40,9 +45,10 @@ class Controller_Login extends Controller
     
     public function action_logout()
     {
+        $target = Request::current()->query('target');
         session_unset();
         session_destroy();
-        header('Location: '. SITE_DOMAIN);
+        header('Location: '. SITE_DOMAIN . '/' . $target . 'html');
     }
 
 }

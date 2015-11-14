@@ -4,7 +4,7 @@
 class Controller_Base extends Controller
 {
 
-    const MSG_KEY = 'base_1';
+    const MSG_KEY = 'not_login';
     
 	public function before()
 	{
@@ -15,7 +15,7 @@ class Controller_Base extends Controller
 		if (empty($opUser)) {
 			echo json_encode(array(
                 'status' => LOGIN_FAILURE,
-                'msg' 	 => __(MSG_KEY),
+                'msg' 	 => __(self::MSG_KEY),
             ));
 		}
 	}
