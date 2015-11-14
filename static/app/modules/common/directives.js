@@ -82,7 +82,7 @@ angular.module(
             var html = [
                 '<div class="user-not-logined" ng-if="!userInfo">',
 					'<span>{{ "directives_js__WELCOME"| translate }}</span>',
-					'<a href="/web/login/logout?target=login" target="_self">{{ "directives_js__LOGIN"| translate }}</a>',
+					'<a href="./login.html" target="_self">{{ "directives_js__LOGIN"| translate }}</a>',
 					'<span> | </span>',
 					'<a href="./guide.html">{{ "directives_js__REGISTER"| translate }}</a>',
 				'</div>',
@@ -99,6 +99,7 @@ angular.module(
         restrict: 'C',
         replace: false,
         controller: function ($scope) {
+        	
         	User.getUserInfo().success(function(res){
      			if (res.status != 0){
      				$scope.userInfo = undefined;
