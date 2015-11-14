@@ -27,5 +27,18 @@ class Controller_Register extends Controller
             'msg'      => $msg,
         ));
     }
+    
+    public function action_checkParam($key, $param)
+    {
+        $key = Request::current()->post('key');
+        $param = Request::current()->post('param');
+        
+        list($status, $msg) = $this->userService->checkParam($key, $param);
+        
+        echo json_encode(array(
+            'status'    => $status,
+            'msg'       => $msg,
+        ));
+    }
 
 }

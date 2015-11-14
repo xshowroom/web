@@ -13,25 +13,26 @@ class Controller_Common extends Controller
 
     public function action_userInfo()
     {
-        $user = $_SESSION['opUser'];
-        $status = empty($user) ? STATUS_ERROR : STATUS_SUCCESS;
-        $msg    = empty($user) ? 'guest' : 'already logged in';
+        $opUser = $_SESSION['opUser'];
+        $status = empty($opUser) ? STATUS_ERROR : STATUS_SUCCESS;
+        $msg    = empty($opUser) ? 'guest' : 'already logged in';
         
-        if (empty($user)) {
+        if (empty($opUser)) {
             $data = array();
         } else {
             $data = array(
-                'userId' => $user['id'],
-                'email' => $user['email'],
-                'roleType' => $user['role_type'],
-                'lastLoginTime' => $user['last_login_time'],
+                'userId' => $opUser['id'],
+                'email' => $opUser['email'],
+                'displayName' => $opUser['display_name'],
+                'roleType' => $opUser['role_type'],
+                'lastLoginTime' => $opUser['last_login_time'],
             );
         }
 
         echo json_encode(array(
-            'status' => $status,
-            'msg'      => $msg,
-            'data' => $data,
+            'status'    => $status,
+            'msg'       => $msg,
+            'data'      => $data,
         ));
     }
 

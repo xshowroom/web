@@ -14,9 +14,9 @@ class Controller_Login extends Controller
 
     public function action_index()
     {
-        $email         = Request::current()->query('email');
-        $password     = Request::current()->query('pass');
-        $code        = Request::current()->query('code');
+        $email          = Request::current()->query('email');
+        $password       = Request::current()->query('pass');
+        $code           = Request::current()->query('code');
 
         // 验证码是否正确
         if (!$this->codeService->verify($code)) {
@@ -33,9 +33,16 @@ class Controller_Login extends Controller
         $msg    = empty($res) ? 'username or password is incorrect' : 'login success';
 
         echo json_encode(array(
-            'status' => $status,
+            'status'   => $status,
             'msg'      => $msg,
         ));
     }
+    
+    public function action_logout()
+    {
+        session_unset();
+        session_destroy();
+        header('Location: '. SITE_DOMAIN);
+    }
 
-} // End Welcome
+}

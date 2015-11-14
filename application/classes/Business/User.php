@@ -24,12 +24,15 @@ class Business_User
         $pass = md5($pass);
         $user = $this->userModel->getByEmailPass($email, $pass);
         if (!empty($user)) {
+            $userAttr = $this->userModel->getAttrByUserId($user['id']);
+            if (!empty($userAttr)) {
+                $user['display_name'] = $userAttr['display_name'];
+            }
             unset($user['password']);
-
             $_SESSION['opUser'] = $user;
             $this->userModel->updateLoginTime($user['id']);
         }
-
+        
         return $user;
     }
     
@@ -137,5 +140,26 @@ class Business_User
     {
         $res = $this->userModel->checkBrand($brandName);
         return $res;
+    }
+    
+    public function checkParam($key, $param)
+    {
+        switch ($key) {
+            case 'email' :
+                $res = $this->checkEmail($param);
+                break;
+            case 'brand':
+                $res = $this->checkBrand($param);
+                break;
+            default:
+                $res = $this->checkEmail($param);
+                break;
+        }
+        
+        if ($res) {
+            return array(STATUS_SUCCESS, 'ok');
+        } else {
+            return array(STATUS_ERROR, "{$param} existed");
+        }
     }
 } 
