@@ -46,9 +46,12 @@ class Controller_Login extends Controller
     public function action_logout()
     {
         $target = Request::current()->query('target');
+        if (empty($target)) {
+            $target = 'home';
+        }
         session_unset();
         session_destroy();
-        header('Location: '. SITE_DOMAIN . '/' . $target . 'html');
+        header('Location: '. SITE_DOMAIN . '/' . $target . '.html');
     }
 
 }
