@@ -7,8 +7,8 @@ angular.module(
 .controller(
     'BuyerRegisterCtrl', 
     [
-        '$scope', '$element', 'uiUploader', 'User',
-        function($scope, $element,  uiUploader, User) {
+        '$scope', '$element', '$q', 'User',
+        function($scope, $element,  $q, User) {
 			$scope.step = {
 				stepNumber: 1,
 				validation: {
@@ -72,13 +72,13 @@ angular.module(
 				for(var key in keys){
 					var value = $scope.user[key];
 					if (!value || value == '') {
-						$scope.errorMsgs.push(key + '目前为空值');
+						$scope.errorMsgs.push([key, '目前为空值']);
 						$scope.step.validation[stepNumber][key] = true;
 						continue;
 					}
 					if($scope.step.reg[stepNumber][key]	
 						&& !$scope.step.reg[stepNumber][key].test(value)){
-						$scope.errorMsgs.push(key + '不符合格式');
+						$scope.errorMsgs.push([key, '不符合格式']);
 						$scope.step.validation[stepNumber][key] = true;
 						continue;
 					}
@@ -96,7 +96,7 @@ angular.module(
 						var key = res.config.params.key;
 						if (res.data.status) {
 							$scope.step.validation[stepNumber][key] = true;
-							$scope.errorMsgs.push('该' + key + '已存在');
+							$scope.errorMsgs.push([key, '已存在']);
 						}else{
 							$scope.step.validation[stepNumber][key] = false;
 						}

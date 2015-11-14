@@ -34,6 +34,13 @@
 			<div class="col-xs-5">
 				<img width="100%" class="buyer-register-context"
 					ng-src="/app/images/buyer-register-{{step.stepNumber}}.png" />
+				<div class="alert login-alert alert-danger" role="alert"  ng-if="errorMsgs.length">
+					<div class="col-xs-4">错误信息：</div>
+					<ul class="col-xs-8">
+						<li ng-repeat="msg in errorMsgs" class>{{msg[0]}}{{msg[1]}}</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
 			</div>
 
 			<form class="form-horizontal col-xs-7">
