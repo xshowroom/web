@@ -88,7 +88,8 @@ class Business_User
             $imagePath     = Request::current()->post('imagePath');
             //$brandUrl      = WEB_ROOT . '/brand/' . $brandName;
             $brandUrl      = $brandName;
-            $realPathFile  = UPLOAD_DIR. '/' . $brandName;
+            //$realPathFile  = UPLOAD_DIR. '/' . $brandName;
+            $realPathFile  = '/data/' . $brandName;
             
             $brandExist = $this->checkBrand($brandName);
             if ($brandExist) {
