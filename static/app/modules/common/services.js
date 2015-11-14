@@ -6,6 +6,13 @@ angular.module(
 	[
 	    '$http',
 		function ($http) {
+	    	var postRequestTransformer = function(data){
+				var temp = [];
+				for(var i in data){
+					temp.push(i + '=' + data[i]);
+				}
+                return temp.join('&');
+            }
 		    return {
 		    	login: function (opts) {
 		    		return $http.get('/web/login', {params: opts});
@@ -15,18 +22,15 @@ angular.module(
 						headers: {
 							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
 						},
-						transformRequest:function(data){
-							var temp = [];
-							for(var i in data){
-								temp.push(i + '=' + data[i]);
-							}
-			                return temp.join('&');
-			            }
+						transformRequest: postRequestTransformer
 					});
 		      	},
 		      	getUserInfo: function(){
 		      		return $http.get('/web/common/userInfo');
-		      	}
+		      	},
+		      	duplicationCheck: function (opts) {
+		    		return $http.get('/web/register/checkParam', {params: opts});
+		    	}
    			};
          }
     ]

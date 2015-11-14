@@ -44,43 +44,42 @@
                                class="col-xs-3 text-center buyer-register-inline">{{ "buyer_register__STEP_1__EMAIL_ADDRESS"| translate }}
 						</label>
 						<div class="col-xs-9">
-							<input type="text" class="form-control" id="email" ng-model="user.email"
+							<input type="text" class="form-control" id="email" ng-model="user.email"  name="email"
                                    placeholder='{{ "buyer_register__STEP_1__EMAIL_ADDRESS_PLACEHOLDER"| translate }}'>
 						</div>
 					</div>
 					<div class="form-group" ng-class="{'has-error': step.validation[1].pass}">
 						<label for="password" class="col-xs-3 text-center brand-register-inline">{{ "buyer_register__STEP_1__PASSWORD"| translate }}</label>
 						<div class="col-xs-9">
-							<input type="password" class="form-control" id="password" ng-model="user.pass"
+							<input type="password" class="form-control" id="password" ng-model="user.pass" name="pass"
                                    placeholder='{{ "buyer_register__STEP_1__PASSWORD_PLACEHOLDER"| translate }}'>
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-xs-6"  ng-class="{'has-error': step.validation[1].firstName}">
-							<input type="text" class="form-control" id="first-name"
+							<input type="text" class="form-control" id="first-name" name="firstName"
 								ng-model="user.firstName"  placeholder='{{ "buyer_register__STEP_1__FIRST_NAME_PLACEHOLDER"| translate }}'>
 						</div>
 						<div class="col-xs-6" ng-class="{'has-error': step.validation[1].lastName}">
-							<input type="text" class="form-control" id="last-name"
+							<input type="text" class="form-control" id="last-name" name="lastName"
 								ng-model="user.lastName"  placeholder='{{ "buyer_register__STEP_1__LAST_NAME_PLACEHOLDER"| translate }}'>
 						</div>
 					</div>
 					<div class="form-group" ng-class="{'has-error': step.validation[1].displayName}">
 						<div class="col-xs-12">
-							<input type="text" class="form-control" id="display-name"
-								name="display" autocomplete="off"
+							<input type="text" class="form-control" id="display-name" name="displayName"
 								ng-model="user.displayName" placeholder='{{ "buyer_register__STEP_1__DISPLAY_NAME_PLACEHOLDER"| translate }}'>
 						</div>
 					</div>
 					<div class="form-group" ng-class="{'has-error': step.validation[1].tel}">
 						<div class="col-xs-12">
-							<input type="text" class="form-control" id="telephone-number"
+							<input type="text" class="form-control" id="telephone-number" name="tel"
 								ng-model="user.tel" placeholder='{{ "buyer_register__STEP_1__TELEPHONE_PLACEHOLDER"| translate }}'>
 						</div>
 					</div>
 					<div class="form-group" ng-class="{'has-error': step.validation[1].mobile}">
 						<div class="col-xs-12">
-							<input type="text" class="form-control" id="mobile-number"
+							<input type="text" class="form-control" id="mobile-number" name="mobile"
 								ng-model="user.mobile" placeholder='{{ "buyer_register__STEP_1__MOBILE_PLACEHOLDER"| translate }}'>
 						</div>
 					</div>
@@ -101,17 +100,17 @@
 							class="col-xs-3 block-center buyer-register-lookbook-upload imagePreview thumbnail" data-target-model="user.imagePath">
 							<p class="text-center">{{ "buyer_register__STEP_2__IMAGE"| translate }}</p>
 							<label for="lookbook-upload" class="text-center">{{ "buyer_register__STEP_2__UPLOAD"| translate }}
-								<input type="file" id="lookbook-upload" name="lookbook-upload"/>
+								<input type="file" id="lookbook-upload" name="lookbook-upload" name="imagePath"/>
 							</label>
 						</div>
 						<div class="col-xs-9">
 							<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].shopName}">
-								<input type="text" class="form-control" id="store-name"
+								<input type="text" class="form-control" id="store-name" name="shopName"
 									ng-model="user.shopName" placeholder='{{ "buyer_register__STEP_2__STORE_NAME_PLACEHOLDER"| translate }}'>
 							</div>
 							<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].shopType}">
 								<label for="store-type" ng-class="{'has-content': user.shopType && user.shopType !=''}">{{ (user.shopType || "buyer_register__STEP_2__STORE_TYPE_PLACEHOLDER") | translate }}</label>
-								<select class="form-control" id="store-type" ng-model="user.shopType">
+								<select class="form-control" id="store-type" ng-model="user.shopType" name="shopType">
                                     <option value="DEPARTMENT_SHOP">{{ "dropdown__STORE__DEPARTMENT_SHOP"| translate }}</option>
                                     <option value="MULTI_BRAND_SHOP">{{ "dropdown__STORE__MULTI_BRAND_SHOP"| translate }}</option>
                                     <option value="ONLINE_SHOP">{{ "dropdown__STORE__ONLINE_SHOP"| translate }}</option>
@@ -121,44 +120,44 @@
 								id="collection-type" ng-class="{'has-error': step.validation[2].collectionType}">
 								<label>{{ "buyer_register__STEP_2__STORE_COLLECTION_TYPE"| translate }}</label><br>
 								<div class="checkbox-inline buyer-register-checkbox">
-									<input type="radio" id="collection-type-women" name="collection-type"  ng-model="user.collectionType" value="dropdown__COLLECTION__WOMEN">
+									<input type="radio" id="collection-type-women" name="collectionType"  ng-model="user.collectionType" value="dropdown__COLLECTION__WOMEN">
 									<label for="collection-type-women">{{ "dropdown__COLLECTION__WOMEN"| translate }}</label>
 								</div>
 								<div class="checkbox-inline buyer-register-checkbox">
-									<input type="radio" id="collection-type-accessories" name="collection-type" ng-model="user.collectionType" value="dropdown__COLLECTION__ACCESSORIES"><label
+									<input type="radio" id="collection-type-accessories" name="collectionType" ng-model="user.collectionType" value="dropdown__COLLECTION__ACCESSORIES"><label
 										for="collection-type-accessories">{{ "dropdown__COLLECTION__ACCESSORIES"| translate }}</label>
 								</div>
 								<div class="checkbox-inline buyer-register-checkbox">
-									<input type="radio" id="collection-type-men" name="collection-type" ng-model="user.collectionType" value="dropdown__COLLECTION__MEN">
+									<input type="radio" id="collection-type-men" name="collectionType" ng-model="user.collectionType" value="dropdown__COLLECTION__MEN">
 									<label for="collection-type-men">{{ "dropdown__COLLECTION__MEN"| translate }}</label>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].brandList}">
-						<input type="text" class="form-control" id="brand-carried"
+						<input type="text" class="form-control" id="brand-carried" name="brandList"
 							ng-model="user.brandList" placeholder='{{ "buyer_register__STEP_2__STORE_BRAND_PLACEHOLDER"| translate }}'>
 					</div>
 					<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].shopWebsite}">
-						<input type="text" class="form-control" id="website"
+						<input type="text" class="form-control" id="website" name="shopWebsite"
 							ng-model="user.shopWebsite" placeholder='{{ "buyer_register__STEP_2__STORE_WEBSITE_PLACEHOLDER"| translate }}'>
 					</div>
 					<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].shopAddress}">
-						<input type="text" class="form-control" id="store-address"
+						<input type="text" class="form-control" id="store-address" name="shopAddress"
 							ng-model="user.shopAddress" placeholder='{{ "buyer_register__STEP_2__STORE_ADDRESS_PLACEHOLDER"| translate }}'>
 					</div>
 					<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].shopCountry}">
 						<div class="col-xs-6 buyer-register-form-inline-left">
-							<input type="text" class="form-control" id="store-country"
+							<input type="text" class="form-control" id="store-country" name="shopCountry"
                                    ng-model="user.shopCountry" placeholder='{{ "buyer_register__STEP_2__STORE_COUNTRY_PLACEHOLDER"| translate }}'>
 						</div>
 						<div class="col-xs-6 buyer-register-form-inline-right" ng-class="{'has-error': step.validation[2].shopZipcode}">
-							<input type="text" class="form-control" id="store-postcode"
+							<input type="text" class="form-control" id="store-postcode" name="shopZipcode"
 								ng-model="user.shopZipcode" placeholder='{{ "buyer_register__STEP_2__STORE_ZIP_PLACEHOLDER"| translate }}'>
 						</div>
 					</div>
 					<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].shopTel}">
-						<input type="text" class="form-control" id="store-telephone-number" 
+						<input type="text" class="form-control" id="store-telephone-number" name="shopTel"
 							ng-model="user.shopTel" placeholder='{{ "buyer_register__STEP_2__STORE_TELEPHONE_PLACEHOLDER"| translate }}'>
 					</div>
 
