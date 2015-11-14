@@ -8,7 +8,7 @@ return array(
     'register_success' => '注册成功',
     'upload_failed' => '上传失败',
     'upload_success' => '上传成功',
-    'email_existed' => '邮箱已存在',
-    'brand_existed' => '品牌已存在',
+    'email_existed' => '该邮箱已被注册',
+    'brand_existed' => '该品牌名称已存在',
     'check_ok' => '参数验证成功',
 );

@@ -7,12 +7,12 @@ angular.module(
 .controller(
 	'BrandRegisterCtrl', 
 	[
-	    '$scope', '$element', 'User',
-	    function($scope, $element,  User) {
+	    '$scope', '$element', '$timeout', '$q', 'User',
+	    function($scope, $element, $timeout, $q, User) {
 			$scope.step = {
 				stepNumber: 1,
 				validation: {
-				     1: {
+				    1: {
 				    	'email': false,
 						'pass': false,
 						'firstName': false,
@@ -34,28 +34,70 @@ angular.module(
 						'companyTel': false,
 						'companyWebsite': false
 				    }
+				},
+				reg:{
+					1: {
+				    	'email': /^([a-zA-Z0-9])+([a-zA-Z0-9_-])*@([a-zA-Z0-9_-])+\.([a-zA-Z0-9_-])+/
+				    },
+				    2:{},
+				    3:{}
+				},
+				duplication: {
+					1: ['email'],
+					2: ['brandName'],
+					3: []
 				}
 			};
 			$scope.user = {
 				roleType: 1
 			};
 			
-			$scope.files = [];
-			
 			$scope.check = function() {
 				var stepNumber = $scope.step.stepNumber;
 				var keys = $scope.step.validation[stepNumber];
-				var errorFlag = false;
+				
+				$scope.errorMsgs = [];
+				
+				var promises = [];
+				
 				for(var key in keys){
-					var hasError = !$scope.user[key] || $scope.user[key] == '';
-					$scope.step.validation[stepNumber][key] = hasError;
-					errorFlag = errorFlag || hasError;
+					var value = $scope.user[key];
+					if (!value || value == '') {
+						$scope.errorMsgs.push([key, 'EMPTY ERROR']);
+						$scope.step.validation[stepNumber][key] = true;
+						continue;
+					}
+					if($scope.step.reg[stepNumber][key]	
+						&& !$scope.step.reg[stepNumber][key].test(value)){
+						$scope.errorMsgs.push([key, 'PATTERN ERROR']);
+						$scope.step.validation[stepNumber][key] = true;
+						continue;
+					}
+					if ($scope.step.duplication[stepNumber].indexOf(key) >= 0){
+						promises.push(User.duplicationCheck({
+							key: key,
+							param: value
+						}));
+					}
+					$scope.step.validation[stepNumber][key] = false;
 				}
-				if (!errorFlag && $scope.step.stepNumber < 3) {
-					$scope.step.stepNumber += 1;
-				}else if (!errorFlag && $scope.step.stepNumber == 3 && $scope.acceptConditions) {
-					$scope.register();
-				}
+				$q.all(promises).then(function(){
+					for(var i = 0; i < arguments[0].length; i++) {
+						var res = arguments[0][i];
+						var key = res.config.params.key;
+						if (res.data.status) {
+							$scope.step.validation[stepNumber][key] = true;
+							$scope.errorMsgs.push([key, 'DUPLICATION ERROR']);
+						}else{
+							$scope.step.validation[stepNumber][key] = false;
+						}
+					}
+					if (!$scope.errorMsgs.length && $scope.step.stepNumber < 3) {
+						$scope.step.stepNumber += 1;
+					}else if (!$scope.errorMsgs.length && $scope.step.stepNumber == 3 && $scope.acceptConditions) {
+						$scope.register();
+					}
+				});
 			};
 			
 			$scope.previous = function() {

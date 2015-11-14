@@ -183,7 +183,7 @@ angular.module(
             login__btn_LOGIN: '登录',
             login__REMEMBER_ME: '记住我',
             
-            login__EMAIL_PATTERN_ERROR: '邮件格式错误，请重新输入！',
+            login__EMAIL_PATTERN_ERROR: 'Email格式错误！',
 
             login__REQUEST_MEMBERSHIP: '入驻XShowroom申请',
             login__REQUEST_MEMBERSHIP_DESC: '买手圈只向注册并审核通过的品牌、代理机构及买手开放。若想入驻买手圈，请完成在线注册：',
@@ -637,13 +637,13 @@ angular.module(
 
             // login.html
             login__SIGN_IN: 'SIGN IN',
-            login__EMAIL: 'EMAIL ADDRESS*,',
+            login__EMAIL: 'EMAIL ADDRESS*',
             login__PASSWORD: 'YOUR PASSWORD*',
             login__VALID_CODE: 'VALID CODE*',
             login__btn_LOGIN: 'LOGIN',
             login__REMEMBER_ME: 'REMEMBER ME',
             
-            login__EMAIL_PATTERN_ERROR: '邮件格式错误，请重新输入！',
+            login__EMAIL_PATTERN_ERROR: 'email address is not valid！',
 
             login__REQUEST_MEMBERSHIP: 'REQUEST MEMBERSHIP',
             login__REQUEST_MEMBERSHIP_DESC: 'X SHOWROOM IS OPEN TO SELECTED BRANDS. AGENCIES AND BUYERS TO PARTICIPATE. PLEASE REGISTER ONLINE',

@@ -36,6 +36,13 @@
 			<div class="col-xs-5">
 				<img class="brand-register-context"
 					ng-src="./app/images/brand-register-{{step.stepNumber}}.png" />
+				<div class="alert login-alert alert-danger" role="alert"  ng-if="errorMsgs.length">
+					<div class="col-xs-4">错误信息：</div>
+					<ul class="col-xs-8">
+						<li ng-repeat="msg in errorMsgs" class>{{msg[0]}}{{msg[1]}}</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
 			</div>
 
 			<form class="form-horizontal col-xs-7">
@@ -46,42 +53,42 @@
 							class="col-xs-3 text-center brand-register-inline">{{ "brand_register__STEP_1__EMAIL_ADDRESS"| translate }}
 						</label>
 						<div class="col-xs-9">
-							<input type="text" class="form-control" id="email" ng-model="user.email" 
+							<input type="text" class="form-control" id="email" ng-model="user.email" name='email'
 								placeholder='{{ "brand_register__STEP_1__EMAIL_ADDRESS_PLACEHOLDER"| translate }}'>
 						</div>
 					</div>
 					<div class="form-group" ng-class="{'has-error': step.validation[1].pass}">
 						<label for="password" class="col-xs-3 text-center brand-register-inline">{{ "brand_register__STEP_1__PASSWORD"| translate }}</label>
 						<div class="col-xs-9">
-							<input type="password" class="form-control" id="password" ng-model="user.pass" 
+							<input type="password" class="form-control" id="password" ng-model="user.pass" name='pass'
 								placeholder='{{ "brand_register__STEP_1__PASSWORD_PLACEHOLDER"| translate }}'>
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-xs-6"  ng-class="{'has-error': step.validation[1].firstName}">
-							<input type="text" class="form-control" id="first-name"
+							<input type="text" class="form-control" id="first-name" name='firstName'
 								ng-model="user.firstName" placeholder='{{ "brand_register__STEP_1__FIRST_NAME_PLACEHOLDER"| translate }}'>
 						</div>
 						<div class="col-xs-6" ng-class="{'has-error': step.validation[1].lastName}">
-							<input type="text" class="form-control" id="last-name"
+							<input type="text" class="form-control" id="last-name" name='lastName'
 								ng-model="user.lastName" placeholder='{{ "brand_register__STEP_1__LAST_NAME_PLACEHOLDER"| translate }}'>
 						</div>
 					</div>
 					<div class="form-group" ng-class="{'has-error': step.validation[1].displayName}">
 						<div class="col-xs-12">
-							<input type="text" class="form-control" id="display-name"
+							<input type="text" class="form-control" id="display-name" name='displayName'
 								ng-model="user.displayName" placeholder='{{ "brand_register__STEP_1__DISPLAY_NAME_PLACEHOLDER"| translate }}'>
 						</div>
 					</div>
 					<div class="form-group" ng-class="{'has-error': step.validation[1].tel}">
 						<div class="col-xs-12">
-							<input type="text" class="form-control" id="telephone-number"
+							<input type="text" class="form-control" id="telephone-number" name='tel'
 								ng-model="user.tel"  placeholder='{{ "brand_register__STEP_1__TELEPHONE_PLACEHOLDER"| translate }}'>
 						</div>
 					</div>
 					<div class="form-group" ng-class="{'has-error': step.validation[1].mobile}">
 						<div class="col-xs-12">
-							<input type="text" class="form-control" id="mobile-number"
+							<input type="text" class="form-control" id="mobile-number" name='mobile'
 								ng-model="user.mobile" placeholder='{{ "brand_register__STEP_1__MOBILE_PLACEHOLDER"| translate }}'>
 						</div>
 					</div>
@@ -101,16 +108,16 @@
 							ng-class="{'has-error': step.validation[2].imagePath}" data-target-model="user.imagePath">
 							<p class="text-center">{{ "brand_register__STEP_2__IMAGE"| translate }}</p>
 							<label for="lookbook-upload" class="text-center">{{ "brand_register__STEP_2__UPLOAD"| translate }}
-								<input type="file" id="lookbook-upload" name="lookbook-upload"/>
+								<input type="file" id="lookbook-upload" name="lookbook-upload" name="imagePath"/>
 							</label>
 						</div>
 						<div class="col-xs-9">
 							<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].brandName}">
-								<input type="text" class="form-control" id="brand-name"
+								<input type="text" class="form-control" id="brand-name" name="brandName"
 									ng-model="user.brandName"  placeholder='{{ "brand_register__STEP_2__BRAND_NAME_PLACEHOLDER"| translate }}'>
 							</div>
 							<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].designerName}">
-								<input type="text" class="form-control" id="designer-name"
+								<input type="text" class="form-control" id="designer-name" name="designerName"
 									ng-model="user.designerName"  placeholder='{{ "brand_register__STEP_2__DESIGNER_NAME_PLACEHOLDER"| translate }}'>
 							</div>
 							<div class="form-group col-xs-12">
@@ -137,35 +144,35 @@
 				<div class="col-xs-12" ng-show="step.stepNumber == 3">
 					<div class="form-group"  ng-class="{'has-error': step.validation[3].companyName}">
 						<div class="col-xs-12">
-							<input type="text" class="form-control" id="company-name"
+							<input type="text" class="form-control" id="company-name" name="companyName"
 								ng-model="user.companyName" placeholder='{{ "brand_register__STEP_3__COMPANY_NAME_PLACEHOLDER"| translate }}'>
 						</div>
 					</div>
 					<div class="form-group"  ng-class="{'has-error': step.validation[3].companyAddr}">
 						<div class="col-xs-12">
-							<input type="text" class="form-control" id="company-address"
+							<input type="text" class="form-control" id="company-address" name="companyAddr"
 								ng-model="user.companyAddr" placeholder='{{ "brand_register__STEP_3__COMPANY_ADDRESS_PLACEHOLDER"| translate }}'>
 						</div>
 					</div>
 					<div class="form-group"  ng-class="{'has-error': step.validation[3].companyCountry}">
 						<div class="col-xs-6">
-							<input type="text" class="form-control" id="country"
+							<input type="text" class="form-control" id="country" name="companyCountry"
 								ng-model="user.companyCountry" placeholder='{{ "brand_register__STEP_3__COMPANY_COUNTRY_PLACEHOLDER"| translate }}'>
 						</div>
 						<div class="col-xs-6"  ng-class="{'has-error': step.validation[3].companyZip}">
-							<input type="text" class="form-control" id="postcode"
+							<input type="text" class="form-control" id="postcode" name="companyZip"
 								ng-model="user.companyZip" placeholder='{{ "brand_register__STEP_3__COMPANY_ZIP_PLACEHOLDER"| translate }}'>
 						</div>
 					</div>
 					<div class="form-group"  ng-class="{'has-error': step.validation[3].companyTel}">
 						<div class="col-xs-12">
-							<input type="text" class="form-control" id="company-telephone-number" 
+							<input type="text" class="form-control" id="company-telephone-number"  name="companyTel"
 								ng-model="user.companyTel" placeholder='{{ "brand_register__STEP_3__COMPANY_TELEPHONE_PLACEHOLDER"| translate }}'>
 						</div>
 					</div>
 					<div class="form-group"  ng-class="{'has-error': step.validation[3].companyWebsite}">
 						<div class="col-xs-12">
-							<input type="text" class="form-control" id="company-web-page-url"
+							<input type="text" class="form-control" id="company-web-page-url" name="companyWebsite"
 								ng-model="user.companyWebsite" placeholder='{{ "brand_register__STEP_3__COMPANY_URL_PLACEHOLDER"| translate }}'>
 						</div>
 					</div>
