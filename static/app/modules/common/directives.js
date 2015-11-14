@@ -82,7 +82,7 @@ angular.module(
             var html = [
                 '<div class="user-not-logined" ng-if="!userInfo">',
 					'<span>{{ "directives_js__WELCOME"| translate }}</span>',
-					'<a href="./login.html" target="_self">{{ "directives_js__LOGIN"| translate }}</a>',
+					'<a href="/web/login/logout?target=login" target="_self">{{ "directives_js__LOGIN"| translate }}</a>',
 					'<span> | </span>',
 					'<a href="./guide.html">{{ "directives_js__REGISTER"| translate }}</a>',
 				'</div>',
@@ -90,7 +90,7 @@ angular.module(
 					'<span>{{ "directives_js__WELCOME"| translate }}, </span>',
 					'<a href="#">{{userInfo.displayName}}</a>',
 					'<span> | </span>',
-					'<a href="/web/login/logout" target="_self">{{ "directives_js__LOGOUT"| translate }}</a>',
+					'<a href="/web/login/logout?target=home" target="_self">{{ "directives_js__LOGOUT"| translate }}</a>',
 				'</div>'
             ].join('');
             return html;
@@ -256,9 +256,6 @@ angular.module(
 }])
 .directive('uploading', ['$filter', function ($filter) {
     return {
-//        scope: {
-//        	target: '@',
-//        },
         transclude: false,
         restrict: 'C',
         replace: false,
