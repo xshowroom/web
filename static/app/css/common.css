@@ -163,8 +163,9 @@ a.active:before{
 .setting-info {
 	height: 40px;
     background: #000;
-    color: #888;
+    color: #999;
     font-size: 10px;
+    font-weight: 200;
 }
 .setting-info .locale-settings .dropdown{
 	display: inline-block;
@@ -177,7 +178,7 @@ a.active:before{
 }
 .setting-info .locale-settings .dropdown a{
 	text-decoration: none;
-	color: #666;
+	color: #999;
 	line-height: 40px;
 	height: 40px;
 	display: inline-block;
@@ -198,6 +199,7 @@ a.active:before{
     padding: 0;
 }
 .setting-info .locale-settings	.dropdown .dropdown-menu > li{
+    font-size: 12px;
     padding: 0 5px;
     cursor: pointer;
     line-height: 40px;
@@ -241,6 +243,7 @@ a.active:before{
 .no-user-navigation .main-naviagtions > li > a{
 	color: #000;
 	font-size: 14px;
+    font-weight: 200;
 }
 /* 页尾导航 */
 .footer-navigation{
