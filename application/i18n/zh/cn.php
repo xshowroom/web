@@ -1,7 +1,7 @@
 <?php defined('SYSPATH') OR die('No direct script access.');
 
 return array(
-    'not_login' => '未登录',
+    'not_login' => '用户名或者密码错误',
     'logged_in' => '已登录',
     'image_err' => '验证码不正确',
     'register_failed' => '注册失败',

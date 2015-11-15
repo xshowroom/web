@@ -1,7 +1,7 @@
 <?php defined('SYSPATH') OR die('No direct script access.');
 
 return array(
-    'not_login' => 'not login',
+    'not_login' => 'username & password mismatch',
     'logged_in' => 'logged in',
     'image_err' => 'validation code is not correct',
     'register_failed' => 'register failed',
