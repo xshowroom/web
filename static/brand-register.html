@@ -36,16 +36,9 @@
 			<div class="col-xs-5">
 				<img class="brand-register-context"
 					ng-src="./app/images/brand-register-{{step.stepNumber}}.png" />
-				<div class="alert login-alert alert-danger" role="alert"  ng-if="errorMsgs.length">
-					<div class="col-xs-4">错误信息：</div>
-					<ul class="col-xs-8">
-						<li ng-repeat="msg in errorMsgs" class>{{msg[0]}}{{msg[1]}}</li>
-					</ul>
-					<div class="clearfix"></div>
-				</div>
 			</div>
 
-			<form class="form-horizontal col-xs-7">
+			<form class="form-horizontal col-xs-7" id="brand-register" name="brandRegister">
 				<!-- step 1 -->
 				<div class="col-xs-12" ng-show="step.stepNumber == 1">
 					<div class="form-group" ng-class="{'has-error': step.validation[1].email}">
@@ -92,6 +85,15 @@
 								ng-model="user.mobile" placeholder='{{ "brand_register__STEP_1__MOBILE_PLACEHOLDER"| translate }}'>
 						</div>
 					</div>
+					<div class="alert" role="alert">
+						<ul class="col-xs-8"  ng-if="errorMsgs.length">
+							<li ng-repeat="msg in errorMsgs">
+								<span class="glyphicon glyphicon-remove-sign"></span>
+								<span>{{msg[0]}}{{msg[1]}}</span>
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
 					<div class="form-group">
 						<div class="col-xs-12">
 							<a class="col-xs-3 btn btn-type-1" href="./home.html" target="_self">{{ "brand_register__STEP_1__btn__CANCEL"| translate }}</a>
@@ -121,7 +123,7 @@
 									ng-model="user.designerName"  placeholder='{{ "brand_register__STEP_2__DESIGNER_NAME_PLACEHOLDER"| translate }}'>
 							</div>
 							<div class="form-group col-xs-12">
-								<span class="form-control brand-register-text-center lead">
+								<span class="form-control brand-register-text-center" name="generated-url">
 									www.xshowroom.com/{{!user.brandName || user.brandName == '' ?
 									'Brandname' : user.brandName}} </span>
 								<p class="text-center help-block small">
@@ -131,7 +133,15 @@
 							</div>
 						</div>
 					</div>
-
+					<div class="alert" role="alert"  ng-if="errorMsgs.length">
+						<ul class="col-xs-8">
+							<li ng-repeat="msg in errorMsgs">
+								<span class="glyphicon glyphicon-remove-sign"></span>
+								<span>{{msg[0]}}{{msg[1]}}</span>
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
 					<div class="form-group row">
 						<a class="btn btn-type-1 col-xs-3" ng-click="previous()">{{ "brand_register__STEP_2__btn__PREVIOUS"| translate }}</a>
 						<a type="submit" class="btn btn-type-2 col-xs-3"
@@ -183,14 +193,22 @@
 					</div>
 					<div class="form-group">
 						<div class="col-xs-12">
-							<div class="checkbox brand-register-checkbox">
-								<label> <input type="checkbox" ng-required="true" ng-model="acceptConditions" value="true"><span
-									class="help-block small">{{ "brand_register__STEP_3__COMPANY_ACCEPT_2"| translate }}</span>
+							<div class="brand-register-checkbox">
+								<label> <input type="checkbox" ng-required="true" ng-model="acceptConditions" value="true" name="accept">
+									<span>{{ "brand_register__STEP_3__COMPANY_ACCEPT_2"| translate }}</span>
 								</label>
 							</div>
 						</div>
 					</div>
-
+					<div class="alert" role="alert"  ng-if="errorMsgs.length">
+						<ul class="col-xs-8">
+							<li ng-repeat="msg in errorMsgs">
+								<span class="glyphicon glyphicon-remove-sign"></span>
+								<span>{{msg[0]}}{{msg[1]}}</span>
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
 					<div class="form-group row">
 						<a class="btn btn-type-1 col-xs-3" ng-click="previous()">{{ "brand_register__STEP_3__btn__PREVIOUS"| translate }}</a>
 						<button class="btn btn-type-2 col-xs-3" ng-click="check();">{{ "brand_register__STEP_3__btn__SUBMIT"| translate }}</button>

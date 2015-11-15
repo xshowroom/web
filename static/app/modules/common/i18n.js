@@ -665,7 +665,7 @@ angular.module(
             brand_register__STEP_1__LAST_NAME_PLACEHOLDER: 'LAST NAME *',
             brand_register__STEP_1__DISPLAY_NAME_PLACEHOLDER: 'DISPLAY NAME *',
             brand_register__STEP_1__TELEPHONE_PLACEHOLDER: 'CONTACT TELEPHONE NUMBER *',
-            brand_register__STEP_1__MOBILE_PLACEHOLDER: '"CONTACT MOBILE NUMBER (OPTIONAL)',
+            brand_register__STEP_1__MOBILE_PLACEHOLDER: 'CONTACT MOBILE NUMBER (OPTIONAL)',
             brand_register__STEP_1__btn__CANCEL: 'CANCEL',
             brand_register__STEP_1__btn__ADD_BRAND: 'ADD BRAND',
 

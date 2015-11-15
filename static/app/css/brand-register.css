@@ -10,13 +10,11 @@ h2.brand-register-step {
 } */
 
 .brand-register-text-center {
-	line-height: 100%;
-	text-align: center;
-	margin-bottom: 10px;
+	line-height: 28px;
 }
 
 .brand-register-block-spare {
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 }
 
 .brand-register-lookbook-upload {
@@ -45,11 +43,22 @@ h2.brand-register-step {
 #lookbook-upload {
 	visibility: hidden;
 }
-
-.brand-register-checkbox label {
-	line-height: 100% !important;
+/* #brand-register .brand-register-checkbox{
+	margin-bottom: 50px;
+} */
+#brand-register .brand-register-checkbox input[type='checkbox']{
+	margin-top: 1px;
 }
+/* .brand-register-checkbox label {
+	line-height: 100% !important;
+} */
 
-.brand-register-checkbox label span {
+/* .brand-register-checkbox label span {
 	margin-top: 15px;
+} */
+#brand-register .form-group label{
+	color: #878787;
+    font-weight: normal;
+    line-height: 40px;
+    margin-bottom: 0;
 }

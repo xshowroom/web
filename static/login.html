@@ -42,8 +42,9 @@
 								<img ng-click="refreshValidCode();" class="valid-code col-xs-3" ng-src="{{validCodeUrl}}" title="Click to refresh">
 								<div class="clearfix"></div>
 							</div>
-							<div class="alert login-alert alert-danger" role="alert"  ng-if="loginError.hasError">
-								{{loginError.errorMsg }}
+							<div class="alert login-alert" role="alert"  ng-if="loginError.hasError">
+								<span class="glyphicon glyphicon-remove-sign"></span>
+								<span>{{loginError.errorMsg }}</span>
 							</div>
 							<button type="submit" class="btn btn-type-2">{{ "login__btn_LOGIN"| translate }}</button>
 							<div class="checkbox">

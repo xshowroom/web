@@ -1,25 +1,22 @@
 .sign-in{
-	height: 650px;
 	border: 4px solid #eee;
 	padding: 30px 50px;
 }
 .sign-in h2{
-	color: #25262c;
-	font-size: 20px;
-	margin-bottom: 30px;
-}
-.sign-in form {
-	font-size: 11px;
+	font-size: 18px;
+	margin: 30px 0 50px 0;
 }
 .sign-in form label{
-	margin-bottom: 0;
+	margin-bottom: 15px;
 }
-.sign-in .alert{
-	margin-top: 30px;
-	border-radius: 30px;
+.sign-in form input{
+	margin-bottom: 5px;
+}
+.sign-in form input[type='checkbox']{
+	margin-top: 1px;
 }
 .sign-in form button{
-	margin: 15px 0 10px;
+	margin: 0 0 10px;
 }
 .sign-in #valid-code{
 	width: 75%;
@@ -32,19 +29,18 @@
     cursor: pointer;
 }
 .request-menbership{
-	height: 650px;
 	padding: 30px 50px;
 }
 .request-menbership h2{
-	color: #25262c;
+	color: #606060;
 	font-size: 20px;
-	margin-top: 80px;
-	margin-bottom: 50px;
+	margin-top: 120px;
+	margin-bottom: 60px;
 }
 .request-menbership p {
-	color: #858585;
+	color: #878787;
 	font-size: 12px;
 	padding: 0 10px;
-	line-height: 4em;
-	margin-bottom: 50px;
+	line-height: 2em;
+	margin-bottom: 70px;
 }
