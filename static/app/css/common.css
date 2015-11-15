@@ -236,7 +236,7 @@ a.active:before{
 }
 .no-user-navigation .main-naviagtions > li{
 	display: inline-block;
-	margin: 0 3em;
+	margin: 0 2em;
 }
 .no-user-navigation .main-naviagtions > li > a{
 	color: #000;
