@@ -29,7 +29,7 @@ label{
 .form-control{
 	font-size: 12px;
 	/* padding: 17px; */
-	height: 40px;
+	height: 38px;
 	border-radius: 20px;
 	text-align: center;
 }
@@ -164,7 +164,7 @@ a.active:before{
 	height: 40px;
     background: #000;
     color: #888;
-    font-size: 12px;
+    font-size: 10px;
 }
 .setting-info .locale-settings .dropdown{
 	display: inline-block;
