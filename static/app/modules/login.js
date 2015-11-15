@@ -58,7 +58,7 @@ angular.module(
            			if ($scope.rememberMe) {
            				$cookies.put('email', $scope.user.email);
            			}
-           			window.open('./home.html', '_self');
+           			window.open('./dashboard.html', '_self');
         		});
         	};
         }
