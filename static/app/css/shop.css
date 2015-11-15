@@ -29,7 +29,7 @@
 	padding-top: 20px;
 }
 .brand-list .brand-list-content .brand-item{
-	height: 270px;
+	height: 260px;
 	position: relative;
 	display: inline-block;
 	border-style: solid;
@@ -41,12 +41,15 @@
 .brand-list .brand-list-content .brand-item:before{
 	content: none;
 }
+.brand-list .brand-list-content .brand-item{
+	overflow: hidden;
+}
 .brand-list .brand-list-content .brand-item .brand-item-image{
 	height: 100%;
 	width: 100%;
 }
 .brand-list .brand-list-content .brand-item .brand-item-name{
-	height: 40px;
+	height: 45px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -54,6 +57,21 @@
     display: inline-block;
     width: 100%;
     text-align: center;
-    line-height: 40px;
+    line-height: 45px;
     color: #222;
+    transform: translateY(100%);
+   	-webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+   	-o-transform: translateY(100%);
+    transition: all .3s linear;
+	-webkit-transition: all .3s linear;
+	-moz-transition: all .3s linear;
+	-o-transition: all .3s linear;
+    
+}
+.brand-list .brand-list-content .brand-item:hover .brand-item-name{
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+   	-o-transform: translateY(0);
 }

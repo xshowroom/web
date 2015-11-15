@@ -283,12 +283,13 @@ a.active:before{
 }
 .filter-condition .filter-header{
 	border-bottom: 1px solid #000;
-	padding-top: 8px;
-	padding-bottom: 8px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 .filter-condition .filter-name{
 	font-size: 14px;
 	font-weight: bold;
+	color: #333;
 }
 .filter-condition .filter-clear-all{
 	color: #ccc;
@@ -300,7 +301,7 @@ a.active:before{
 .filter-condition  .filter-checkbox-list,
 .filter-condition  .filter-radio-list{
 	list-style: none;
-	margin: 10px 0;
+	margin: 15px 0;
 }
 .filter-condition  .filter-list > li{
 	margin: 3px 0;
