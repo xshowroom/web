@@ -38,12 +38,23 @@ class Business_User
     
     public function addUser($roleType)
     {
-        if ($roleType == self::ROLE_BRAND) {
-            $ret = $this->addBrandUser();
-        } else if ($roleType == self::ROLE_BUYER) {
-            $ret = $this->addBuyerUser();
+        $ret = null;
+
+        // use transaction to avoid exception
+        try {
+            Database::instance()->begin();
+
+            if ($roleType == self::ROLE_BRAND) {
+                $ret = $this->addBrandUser();
+            } else if ($roleType == self::ROLE_BUYER) {
+                $ret = $this->addBuyerUser();
+            }
+
+            Database::instance()->commit();
+        } catch (Exception $e) {
+            Database::instance()->rollback();
         }
-        
+
         return $ret;
     }
     
@@ -106,7 +117,7 @@ class Business_User
                     return null;
                 }                
             }
-            
+
             $brandId = $this->userModel->addBrandInfo($userId, $brandName, $designerName, $brandUrl, $realPathFile);
             return $brandId;
         }
