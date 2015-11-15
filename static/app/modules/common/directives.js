@@ -21,7 +21,7 @@ angular.module(
             var html = [
 				'<div class="dropdown">',
 					'<a id="locale-setting-language" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">',
-					 	'{{ "directives_js__LANGUAGE"| translate }}:{{ language }}',
+					 	'{{ language }}',
 					 	'<span class="caret"></span>',
 					'</a>',
 					'<ul class="dropdown-menu" aria-labelledby="locale-setting-language">',
