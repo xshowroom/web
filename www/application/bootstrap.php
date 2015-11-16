@@ -148,7 +148,7 @@ Cookie::$salt = 'xshowroom';
 
 Route::set('default', '(<directory>/)(<controller>(/<action>))',
         array(
-            'directory' => '(api)',
+            'directory' => '(Api)',
         ))
         ->defaults(array(
             'controller' => 'home',
