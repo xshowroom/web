@@ -11,4 +11,9 @@ class Controller_Base extends Controller
 
 	}
 
+	protected function destroy_session()
+	{
+		session_unset();
+		session_destroy();
+	}
 }

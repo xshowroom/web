@@ -91,7 +91,7 @@ angular.module(
 					'<span>{{ "directives_js__WELCOME"| translate }}, </span>',
 					'<a href="#">{{userInfo.displayName}}</a>',
 					'<span> | </span>',
-					'<a href="/web/login/logout?target=home" target="_self">{{ "directives_js__LOGOUT"| translate }}</a>',
+					'<a href="/user/logout" target="_self">{{ "directives_js__LOGOUT"| translate }}</a>',
 				'</div>'
             ].join('');
             return html;
@@ -222,7 +222,7 @@ angular.module(
 				uiUploader.removeAll();
 				uiUploader.addFiles(files);
                 uiUploader.startUpload({
-                    url: '/web/upload/image',
+                    url: 'api/upload/image',
                     onCompleted: function(file, response) {
                     	response = JSON.parse(response);
                     	if(response.status != 0){

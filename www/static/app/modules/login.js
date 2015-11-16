@@ -24,7 +24,7 @@ angular.module(
      		   
      		
         	$scope.refreshValidCode = function(){
-        		$scope.validCodeUrl = '/web/image?rnd=' + new Date().getTime(); 
+        		$scope.validCodeUrl = 'api/image?rnd=' + new Date().getTime();
         	};
         	$scope.refreshValidCode();
         	
