@@ -7,6 +7,6 @@ class Controller_Dashboard extends Controller_BaseReqLogin
     {
         echo "User login successfully!";
 
-        //var_dump($this->opUser);
+        var_dump($this->opUser);
     }
 }

@@ -12,7 +12,6 @@ class Controller_BaseReqLogin extends Controller_Base
         $this->opUser = $_SESSION['opUser'];
 
         if(empty($opUser)) {
-            var_dump($this->opUser);
             $roleType = $this->opUser['role_type'];
 
             if($roleType != Business_User::ROLE_BRAND and $roleType != Business_User::ROLE_BUYER){
