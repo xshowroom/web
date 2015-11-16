@@ -96,7 +96,7 @@
 					</div>
 					<div class="form-group">
 						<div class="col-xs-12">
-							<a class="col-xs-3 btn btn-type-1" href="./home.html" target="_self">{{ "brand_register__STEP_1__btn__CANCEL"| translate }}</a>
+							<a class="col-xs-3 btn btn-type-1" href="/home" target="_self">{{ "brand_register__STEP_1__btn__CANCEL"| translate }}</a>
 							<a class="col-xs-3 btn btn-type-2" ng-click="check()">{{ "brand_register__STEP_1__btn__ADD_BRAND"| translate }}</a>
 						</div>
 					</div>
@@ -124,8 +124,7 @@
 							</div>
 							<div class="form-group col-xs-12">
 								<span class="form-control brand-register-text-center" name="generated-url">
-									www.xshowroom.com/{{!user.brandName || user.brandName == '' ?
-									'Brandname' : user.brandName}} </span>
+									www.xshowroom.com/{{!user.brandName || user.brandName == '' ? 'Brandname' : user.brandName}} </span>
 								<p class="text-center help-block small">
 									{{ "brand_register__STEP_2__URL_DESC_1"| translate }}<br>
 									{{ "brand_register__STEP_2__URL_DESC_2"| translate }}

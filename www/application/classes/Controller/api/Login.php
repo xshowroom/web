@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Login extends Controller_ApiBase
+class Controller_Api_Login extends Controller_Api_ApiBase
 {
 
     const MSG_KEY_1 = 'image_err';

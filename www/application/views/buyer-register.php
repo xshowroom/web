@@ -33,7 +33,7 @@
 			</div>
 			<div class="col-xs-5">
 				<img width="100%" class="buyer-register-context"
-					ng-src="/app/images/buyer-register-{{step.stepNumber}}.png" />
+					ng-src="/static/app/images/buyer-register-{{step.stepNumber}}.png" />
 			</div>
 
 			<form class="form-horizontal col-xs-7" id="buyer-register">
@@ -94,7 +94,7 @@
 					</div>
 					<div class="form-group">
 						<div class="col-xs-12">
-							<a class="col-xs-3 btn btn-type-1" href="./home.html" target="_self">{{ "buyer_register__STEP_1__btn__CANCEL"| translate }}</a> <a
+							<a class="col-xs-3 btn btn-type-1" href="/home" target="_self">{{ "buyer_register__STEP_1__btn__CANCEL"| translate }}</a> <a
 								class="col-xs-3 btn btn-type-2" ng-click="check();">{{ "buyer_register__STEP_1__btn__ADD_STORE"| translate }}</a>
 						</div>
 					</div>

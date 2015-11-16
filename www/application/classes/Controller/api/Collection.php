@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Collection extends Controller_ApiBase
+class Controller_Collection extends Controller_Api_ApiBase
 {
     public $collectionService;
 
