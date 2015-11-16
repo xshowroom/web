@@ -23,8 +23,7 @@
 		<?php echo View::factory('common/global-setting-info'); ?>
 	</nav>
 	<nav class="row no-user-navigation">
-        <?php $currentPage = 'shop'; ?>
-        <?php echo View::factory('common/global-no-user-navigation'); ?>
+        <?php echo View::factory('common/global-no-user-navigation', array('currentPage' =>  'shop')); ?>
 	</nav>
 	<section class="row">
 		<div class="container">

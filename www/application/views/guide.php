@@ -23,8 +23,7 @@
         <?php echo View::factory('common/global-setting-info'); ?>
 	</nav>
 	<nav class="row no-user-navigation">
-		<?php $currentPage = 'guide'; ?>
-        <?php echo View::factory('common/global-no-user-navigation'); ?>
+        <?php echo View::factory('common/global-no-user-navigation', array('currentPage' =>  'guide')); ?>
 	</nav>
 	<section class="row no-vertical-padding">
 		<div class="container-fluid guide-banner">

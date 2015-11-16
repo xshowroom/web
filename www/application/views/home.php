@@ -47,8 +47,7 @@
         <?php echo View::factory('common/global-setting-info'); ?>
 	</nav>
 	<nav class="row no-user-navigation"  id="home-page-navigation">
-        <?php $currentPage = 'home'; ?>
-        <?php echo View::factory('common/global-no-user-navigation'); ?>
+        <?php echo View::factory('common/global-no-user-navigation', array('currentPage' =>  'home')); ?>
 	</nav>
 	<section class="row no-vertical-padding home-banner">
 		<div class="container-fluid banner-content">
