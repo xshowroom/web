@@ -11,6 +11,7 @@ class Controller_User extends Controller_Base
     public function action_logout()
     {
         $this->destroy_session();
-        echo "User has logout";
+
+        $this->redirect('/home');
     }
 }

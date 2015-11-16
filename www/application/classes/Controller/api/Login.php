@@ -42,17 +42,4 @@ class Controller_Api_Login extends Controller_Api_ApiBase
             'msg'      => $msg,
         ));
     }
-    
-    public function action_logout()
-    {
-        $target = Request::current()->query('target');
-        if (empty($target)) {
-            $target = 'home';
-        }
-        session_unset();
-        session_destroy();
-        header('Location: ' . '/' . $target . '.html');
-        exit(0);
-    }
-
 }
