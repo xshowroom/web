@@ -14,7 +14,7 @@ class Controller_Api_Brand extends Controller_Base
     const CONDITION_CATEGORY_DRESS      = 5;
     const CONDITION_CATEGORY_JUMPSUIT   = 6;
     const CONDITION_CATEGORY_COAT       = 7;
-    const CONDITION_CATEGORY_SHIRT      = 8;
+    // const CONDITION_CATEGORY_SHIRT      = 8;
     const CONDITION_CATEGORY_PANTS      = 9;
     const CONDITION_CATEGORY_BAG        = 10;
     

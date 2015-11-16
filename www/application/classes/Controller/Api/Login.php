@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Api_Login extends Controller
+class Controller_Api_Login extends Controller_Base
 {
 
     const MSG_KEY_1 = 'image_err';
@@ -24,15 +24,16 @@ class Controller_Api_Login extends Controller
         $code        = Request::current()->query('code');
 
         // 验证码是否正确
-        if (!$this->codeService->verify($code)) {
-            echo json_encode(array(
-                'status' => LOGIN_ERRCODE,
-                'msg' => __(self::MSG_KEY_1),
-            ));
-            exit(0);
-        }
+        // if (!$this->codeService->verify($code)) {
+        //    echo json_encode(array(
+        //        'status' => LOGIN_ERRCODE,
+        //        'msg' => __(self::MSG_KEY_1),
+        //    ));
+        //    exit(0);
+        //}
 
-        $res = $this->userService->getUserInfo($email, $password);
+        $res = $this->userService->login($email, $password);
+        var_dump($_SESSION);
 
         $status = empty($res) ? LOGIN_FAILURE : LOGIN_SUCCESS;
         $msg    = empty($res) ? __(self::MSG_KEY_2) : __(self::MSG_KEY_3);

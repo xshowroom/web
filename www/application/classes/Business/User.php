@@ -19,21 +19,22 @@ class Business_User
         $this->userModel = new Model_User();
     }
 
-    public function getUserInfo($email, $pass)
+    public function login($email, $pass)
     {
-        $pass = md5($pass);
-        $user = $this->userModel->getByEmailPass($email, $pass);
+        $user = $this->userModel->getByEmailPass($email, md5($pass));
+
         if (!empty($user)) {
-            $userAttr = $this->userModel->getAttrByUserId($user['id']);
-            if (!empty($userAttr)) {
-                $user['display_name'] = $userAttr['display_name'];
-            }
-            unset($user['password']);
             $_SESSION['opUser'] = $user;
+            unset($user['password']);
             $this->userModel->updateLoginTime($user['id']);
         }
-        
+
         return $user;
+    }
+
+    public function getUserAttr($userId)
+    {
+        return $this->userModel->getAttrByUserId($userId);
     }
     
     public function addUser($roleType)

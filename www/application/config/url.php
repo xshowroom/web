@@ -3,7 +3,10 @@
 return array(
 
 	'trusted_hosts' => array(
-		'localhost'
+		'localhost',
+		'localhost:8888',
+		'xiaotao.cloudapp.net',
+		'xshowroom-demo.cloudapp.net',
 	),
 
 );
