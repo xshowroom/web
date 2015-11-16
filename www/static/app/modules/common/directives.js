@@ -83,9 +83,9 @@ angular.module(
             var html = [
                 '<div class="user-not-logined" ng-if="!userInfo">',
 					'<span>{{ "directives_js__WELCOME"| translate }} GUEST</span>',
-					'<a href="./login.html" target="_self">{{ "directives_js__LOGIN"| translate }}</a>',
+					'<a href="login" target="_self">{{ "directives_js__LOGIN"| translate }}</a>',
 					'<span> | </span>',
-					'<a href="./guide.html">{{ "directives_js__REGISTER"| translate }}</a>',
+					'<a href="guide">{{ "directives_js__REGISTER"| translate }}</a>',
 				'</div>',
 				'<div class="user-logined" ng-if="userInfo">',
 					'<span>{{ "directives_js__WELCOME"| translate }}, </span>',
