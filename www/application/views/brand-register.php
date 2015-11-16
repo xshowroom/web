@@ -22,7 +22,7 @@
 		<?php echo View::factory('common/global-setting-info'); ?>
 	</nav>
 	<nav class="row no-user-navigation">
-		<?php include '/global-no-user-navigation.php';?>
+        <?php echo View::factory('common/global-no-user-navigation'); ?>
 	</nav>
 
 	<section class="row">
