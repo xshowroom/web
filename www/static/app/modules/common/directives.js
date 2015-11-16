@@ -222,7 +222,7 @@ angular.module(
 				uiUploader.removeAll();
 				uiUploader.addFiles(files);
                 uiUploader.startUpload({
-                    url: 'api/upload/image',
+                    url: '/api/upload/image',
                     onCompleted: function(file, response) {
                     	response = JSON.parse(response);
                     	if(response.status != 0){

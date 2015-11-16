@@ -15,10 +15,10 @@ angular.module(
             }
 		    return {
 		    	login: function (opts) {
-		    		return $http.get('api/login', {params: opts});
+		    		return $http.get('/api/login', {params: opts});
 		      	},
 		      	register: function (opts) {
-		      		return $http.post('api/register', opts, {
+		      		return $http.post('/api/register', opts, {
 						headers: {
 							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
 						},
@@ -29,7 +29,7 @@ angular.module(
 //		      		return $http.get('/api/common/userInfo');
 //		      	},
 		      	duplicationCheck: function (opts) {
-		    		return $http.get('api/register/checkParam', {params: opts});
+		    		return $http.get('/api/register/checkParam', {params: opts});
 		    	}
    			};
          }
