@@ -113,7 +113,7 @@ angular.module(
         				alert(res.msg);
         				return;
         			}
-        			window.open('./login.html', '_self');
+        			window.open('/login', '_self');
         		});
 			};
 		}
