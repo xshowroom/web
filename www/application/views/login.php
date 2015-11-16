@@ -20,7 +20,7 @@
 </head>
 <body ng-controller="LoginCtrl" class="container-fluid">
 	<nav class="row setting-info">
-		<?php include '/global-setting-info.php'; ?>
+		<?php echo View::factory('common/global-setting-info'); ?>
 	</nav>
 	<nav class="row no-user-navigation"  id="home-page-navigation">
 		<?php include '/global-no-user-navigation.php'; ?>
@@ -73,7 +73,7 @@
 		</div>
 	</section>
 	<footer class="row footer-navigation">
-		<?php include '/global-footer-navigation.php'; ?>
+		<?php echo View::factory('common/global-footer-navigation'); ?>
 	</footer>
 </body>
 </html>

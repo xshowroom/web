@@ -20,10 +20,11 @@
 </head>
 <body ng-controller="ShopCtrl" class="container-fluid">
 	<nav class="row setting-info">
-		<?php include '/global-setting-info.php'; ?>
+		<?php echo View::factory('common/global-setting-info'); ?>
 	</nav>
 	<nav class="row no-user-navigation">
-		<?php  $currentPage = 'shop';include '/global-no-user-navigation.php';?>
+        <?php $currentPage = 'shop'; ?>
+        <?php echo View::factory('common/global-no-user-navigation'); ?>
 	</nav>
 	<section class="row">
 		<div class="container">
@@ -125,7 +126,7 @@
 		</div>
 	</section>
 	<footer class="row footer-navigation">
-		<?php include '/global-footer-navigation.php'; ?>
+		<?php echo View::factory('common/global-footer-navigation'); ?>
 	</footer>
 </body>
 </html>
