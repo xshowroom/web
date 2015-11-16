@@ -20,10 +20,10 @@
 </head>
 <body ng-controller="ShopCtrl" class="container-fluid">
 	<nav class="row setting-info">
-		<?php echo View::factory('common/global-setting-info'); ?>
+		<?php echo View::factory('common/global-setting-info', array('userAttr'=> $userAttr)); ?>
 	</nav>
 	<nav class="row no-user-navigation">
-        <?php echo View::factory('common/global-no-user-navigation', array('currentPage' =>  'shop')); ?>
+        <?php echo View::factory('common/global-no-user-navigation', array('currentPage' => 'shop')); ?>
 	</nav>
 	<section class="row">
 		<div class="container">
