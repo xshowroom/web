@@ -77,40 +77,40 @@ angular.module(
         }
     };
 }])
-.directive('userInfoNav', ['User', function (User) {
-    return {
-        template: function ($element, $attr, $scope) {
-            var html = [
-                '<div class="user-not-logined" ng-if="!userInfo">',
-					'<span>{{ "directives_js__WELCOME"| translate }} GUEST</span>',
-					'<a href="login" target="_self">{{ "directives_js__LOGIN"| translate }}</a>',
-					'<span> | </span>',
-					'<a href="guide">{{ "directives_js__REGISTER"| translate }}</a>',
-				'</div>',
-				'<div class="user-logined" ng-if="userInfo">',
-					'<span>{{ "directives_js__WELCOME"| translate }}, </span>',
-					'<a href="#">{{userInfo.displayName}}</a>',
-					'<span> | </span>',
-					'<a href="/user/logout" target="_self">{{ "directives_js__LOGOUT"| translate }}</a>',
-				'</div>'
-            ].join('');
-            return html;
-        },
-        transclude: true,
-        restrict: 'C',
-        replace: false,
-        controller: function ($scope) {
-        	
-        	User.getUserInfo().success(function(res){
-     			if (res.status != 0){
-     				$scope.userInfo = undefined;
-     				return;
-     			}
-     			$scope.userInfo = res.data;
-     		});
-        }
-    };
-}])
+//.directive('userInfoNav', ['User', function (User) {
+//    return {
+//        template: function ($element, $attr, $scope) {
+//            var html = [
+//                '<div class="user-not-logined" ng-if="!userInfo">',
+//					'<span>{{ "directives_js__WELCOME"| translate }} GUEST</span>',
+//					'<a href="login" target="_self">{{ "directives_js__LOGIN"| translate }}</a>',
+//					'<span> | </span>',
+//					'<a href="guide">{{ "directives_js__REGISTER"| translate }}</a>',
+//				'</div>',
+//				'<div class="user-logined" ng-if="userInfo">',
+//					'<span>{{ "directives_js__WELCOME"| translate }}, </span>',
+//					'<a href="#">{{userInfo.displayName}}</a>',
+//					'<span> | </span>',
+//					'<a href="/user/logout" target="_self">{{ "directives_js__LOGOUT"| translate }}</a>',
+//				'</div>'
+//            ].join('');
+//            return html;
+//        },
+//        transclude: true,
+//        restrict: 'C',
+//        replace: false,
+//        controller: function ($scope) {
+//        	
+//        	User.getUserInfo().success(function(res){
+//     			if (res.status != 0){
+//     				$scope.userInfo = undefined;
+//     				return;
+//     			}
+//     			$scope.userInfo = res.data;
+//     		});
+//        }
+//    };
+//}])
 .directive('filterCondition', [function () {
     return {
         template: function ($element, $attr, $scope) {

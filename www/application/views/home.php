@@ -43,8 +43,12 @@
 	</script>
 </head>
 <body ng-controller="HomeCtrl" class="container-fluid">
-	<nav class="row setting-info" ng-include="'/static/templates/global-setting-info.html'"></nav>
-	<nav class="row no-user-navigation" onload="page='home'" id="home-page-navigation" ng-include="'/static/templates/global-no-user-navigation.html'"></nav>
+	<nav class="row setting-info">
+		<?php include '/global-setting-info.php'; ?>
+	</nav>
+	<nav class="row no-user-navigation"  id="home-page-navigation">
+		<?php  $currentPage = 'home';include '/global-no-user-navigation.php';?>
+	</nav>
 	<section class="row no-vertical-padding home-banner">
 		<div class="container-fluid banner-content">
 			<div id="home-banner" class="nivoSlider">
@@ -59,7 +63,7 @@
 			    <h2>FINLAY & CO</h2>
 			    <p>SPRING SUMMER 2015</p>
 			    <div>
-					<a href="./guide.html#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
+					<a href="./guide.php#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
 					<a class="btn btn-type-2">{{ "home__CONTRACT_US"| translate }}</a>
 				</div>
 			</div>
@@ -67,7 +71,7 @@
 			    <h2>Hello World</h2>
 			    <p>This is a test text</p>
 			    <div>
-					<a href="./guide.html#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
+					<a href="./guide.php#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
 					<a class="btn btn-type-2">{{ "home__CONTRACT_US"| translate }}</a>
 				</div>
 			</div>
@@ -75,7 +79,7 @@
 			    <h2>YOUR BRAND</h2>
 			    <p>YOUR COLLECTION </p>
 			    <div>
-					<a href="./guide.html#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
+					<a href="./guide.php#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
 					<a class="btn btn-type-2">{{ "home__CONTRACT_US"| translate }}</a>
 				</div>
 			</div>
@@ -83,7 +87,7 @@
                 <h2>YOUR BRAND</h2>
                 <p>YOUR COLLECTION </p>
                 <div>
-                    <a href="./guide.html#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
+                    <a href="./guide.php#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
                     <a class="btn btn-type-2">{{ "home__CONTRACT_US"| translate }}</a>
                 </div>
             </div>
@@ -91,7 +95,7 @@
                 <h2>YOUR BRAND</h2>
                 <p>YOUR COLLECTION </p>
                 <div>
-                    <a href="./guide.html#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
+                    <a href="./guide.php#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
                     <a class="btn btn-type-2">{{ "home__CONTRACT_US"| translate }}</a>
                 </div>
             </div>
@@ -133,7 +137,7 @@
 					</h3>
 					<p>{{ "home__BRANDS_DESC"| translate }}</p>
 					<div>
-						<a href="./guide.html#/brand" class="btn btn-type-1">{{ "home__btn_SOLUTION"| translate }}</a>
+						<a href="./guide.php#/brand" class="btn btn-type-1">{{ "home__btn_SOLUTION"| translate }}</a>
 						<a class="btn btn-type-1" href="/web/login/logout?target=brand-register" target="_self">{{ "home__btn_REGISTER"| translate }}</a>
 					</div>
 				</div>
@@ -152,7 +156,7 @@
 					</h3>
 					<p>{{ "home__BUYERS_DESC"| translate }}</p>
 					<div>
-						<a href="./guide.html#/retailer" class="btn btn-type-1">{{ "home__btn_SOLUTION"| translate }}</a>
+						<a href="./guide.php#/retailer" class="btn btn-type-1">{{ "home__btn_SOLUTION"| translate }}</a>
 						<a class="btn btn-type-1" href="/web/login/logout?target=buyer-register" target="_self">{{ "home__btn_REGISTER"| translate }}</a>
 					</div>
 				</div>
@@ -250,6 +254,8 @@
 			</div>
 		</div>
 	</section>
-	<footer class="row footer-navigation" ng-include="'/static/templates/global-footer-navigation.html'"></footer>
+	<footer class="row footer-navigation">
+		<?php include '/global-footer-navigation.php'; ?>
+	</footer>
 </body>
 </html>

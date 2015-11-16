@@ -19,8 +19,12 @@
 	<script type="text/javascript" src="/static/app/modules/guide.js"></script>
 </head>
 <body ng-controller="GuideCtrl" class="container-fluid">
-	<nav class="row setting-info" ng-include="'/static/templates/global-setting-info.html'"></nav>
-	<nav class="row no-user-navigation" onload="page='guide'" ng-include="'/static/templates/global-no-user-navigation.html'"></nav>
+	<nav class="row setting-info">
+		<?php include '/global-setting-info.php'; ?>
+	</nav>
+	<nav class="row no-user-navigation">
+		<?php $currentPage = 'guide';include '/global-no-user-navigation.php'; ?>
+	</nav>
 	<section class="row no-vertical-padding">
 		<div class="container-fluid guide-banner">
 			<div class="row">
@@ -271,6 +275,8 @@
 			</div>
 		</div>
 	</section>
-	<footer class="row footer-navigation" ng-include="'/static/templates/global-footer-navigation.html'"></footer>
+	<footer class="row footer-navigation">
+		<?php include '/global-footer-navigation.php'; ?>
+	</footer>
 </body>
 </html>

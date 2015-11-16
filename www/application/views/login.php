@@ -19,8 +19,12 @@
 	<script type="text/javascript" src="/static/app/modules/login.js"></script>
 </head>
 <body ng-controller="LoginCtrl" class="container-fluid">
-	<nav class="row setting-info" ng-include="'/static/templates/global-setting-info.html'"></nav>
-	<nav class="row no-user-navigation" ng-include="'/static/templates/global-no-user-navigation.html'"></nav>
+	<nav class="row setting-info">
+		<?php include '/global-setting-info.php'; ?>
+	</nav>
+	<nav class="row no-user-navigation"  id="home-page-navigation">
+		<?php include '/global-no-user-navigation.php'; ?>
+	</nav>
 	<section class="row">
 		<div class="container">
 			<div class="row">
@@ -68,6 +72,8 @@
 			</div>
 		</div>
 	</section>
-	<footer class="row footer-navigation" ng-include="'/static/templates/global-footer-navigation.html'"></footer>
+	<footer class="row footer-navigation">
+		<?php include '/global-footer-navigation.php'; ?>
+	</footer>
 </body>
 </html>
