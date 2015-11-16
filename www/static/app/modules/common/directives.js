@@ -1,4 +1,5 @@
-document.write("<script type='text/javascript' src='/bower_components/angular-ui-uploader/dist/uploader.min.js'></script>"); 
+document.write("<script type='text/javascript' src='/static/bower_components/angular-ui-uploader/dist/uploader.min.js'></script>");
+
 angular.module(
     'xShowroom.directives', 
     [

@@ -4,22 +4,22 @@
 	<meta charset="UTF-8" >
 	<title>XShowroom</title>
 	
-	<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="./bower_components/font-awesome/css/font-awesome.min.css" />
-	<link rel="stylesheet" type="text/css" href="./bower_components/nivoslider/nivo-slider.css" />
-	<link rel="stylesheet" type="text/css" href="./bower_components/nivoslider/themes/bar/bar.css" />
-	<link rel="stylesheet" type="text/css" href="./app/css/common.css" />
-	<link rel="stylesheet" type="text/css" href="./app/css/home.css" />
-	<link rel="shortcut icon" href="./app/resources/images/favicon.ico" />
-	<script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="./bower_components/nivoslider/jquery.nivo.slider.pack.js"></script>
-	<script type="text/javascript" src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
-	<script type="text/javascript" src="./bower_components/angular-cookies/angular-cookies.min.js"></script>
-	<script type="text/javascript" src="./app/modules/common/i18n.js"></script>
-	<script type="text/javascript" src="./app/modules/common/services.js"></script>
-	<script type="text/javascript" src="./app/modules/common/directives.js"></script>
-	<script type="text/javascript" src="./app/modules/home.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/static/bower_components/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="/static/bower_components/nivoslider/nivo-slider.css" />
+	<link rel="stylesheet" type="text/css" href="/static/bower_components/nivoslider/themes/bar/bar.css" />
+	<link rel="stylesheet" type="text/css" href="/static/app/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="/static/app/css/home.css" />
+	<link rel="shortcut icon" href="/static/app/resources/images/favicon.ico" />
+	<script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/bower_components/nivoslider/jquery.nivo.slider.pack.js"></script>
+	<script type="text/javascript" src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/static/bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="/static/bower_components/angular-cookies/angular-cookies.min.js"></script>
+	<script type="text/javascript" src="/static/app/modules/common/i18n.js"></script>
+	<script type="text/javascript" src="/static/app/modules/common/services.js"></script>
+	<script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
+	<script type="text/javascript" src="/static/app/modules/home.js"></script>
 	<script>
 		$(document).ready(function(){
 			$('#home-banner').nivoSlider({
@@ -43,16 +43,16 @@
 	</script>
 </head>
 <body ng-controller="HomeCtrl" class="container-fluid">
-	<nav class="row setting-info" ng-include="'./templates/global-setting-info.html'"></nav>
-	<nav class="row no-user-navigation" onload="page='home'" id="home-page-navigation" ng-include="'./templates/global-no-user-navigation.html'"></nav>
+	<nav class="row setting-info" ng-include="'/static/templates/global-setting-info.html'"></nav>
+	<nav class="row no-user-navigation" onload="page='home'" id="home-page-navigation" ng-include="'/static/templates/global-no-user-navigation.html'"></nav>
 	<section class="row no-vertical-padding home-banner">
 		<div class="container-fluid banner-content">
 			<div id="home-banner" class="nivoSlider">
-				<img src="./app/images/home-banner-1.jpg" alt="home-banner-1.jpg" title="#banner-content-1"/>
-				<img src="./app/images/home-banner-2.jpg" alt="home-banner-2.jpg" title="#banner-content-2"/>
-				<img src="./app/images/home-banner-3.jpg" alt="home-banner-3.jpg" title="#banner-content-3"/>
-                <img src="./app/images/home-banner-4.jpg" alt="home-banner-4.jpg" title="#banner-content-4"/>
-                <img src="./app/images/home-banner-5.jpg" alt="home-banner-5.jpg" title="#banner-content-5"/>
+				<img src="/static/app/images/home-banner-1.jpg" alt="home-banner-1.jpg" title="#banner-content-1"/>
+				<img src="/static/app/images/home-banner-2.jpg" alt="home-banner-2.jpg" title="#banner-content-2"/>
+				<img src="/static/app/images/home-banner-3.jpg" alt="home-banner-3.jpg" title="#banner-content-3"/>
+                <img src="/static/app/images/home-banner-4.jpg" alt="home-banner-4.jpg" title="#banner-content-4"/>
+                <img src="/static/app/images/home-banner-5.jpg" alt="home-banner-5.jpg" title="#banner-content-5"/>
 
 			</div>
 			<div id="banner-content-1" class="nivo-html-caption">
@@ -128,7 +128,7 @@
 			<div class="row">
 				<div class="col-xs-offset-1 col-xs-5 text-center introduction-item">
 					<h3>
-						<img src="./app/images/common-icon-star.png"/>
+						<img src="/static/app/images/common-icon-star.png"/>
 						<span>{{ "home__BRANDS"| translate }}</span>
 					</h3>
 					<p>{{ "home__BRANDS_DESC"| translate }}</p>
@@ -138,16 +138,16 @@
 					</div>
 				</div>
 				<div class="col-xs-6 introduction-item introduction-image">
-					<img src="./app/images/home-introduction-image-1.png"/>
+					<img src="/static/app/images/home-introduction-image-1.png"/>
 				</div>
 			</div>
 			<div class="row"> 
 				<div class="col-xs-6 introduction-item introduction-image">
-					<img src="./app/images/home-introduction-image-2.png"/>
+					<img src="/static/app/images/home-introduction-image-2.png"/>
 				</div>
 				<div class="col-xs-5 text-center introduction-item">
 					<h3>
-						<img src="./app/images/common-icon-gift.png"/>
+						<img src="/static/app/images/common-icon-gift.png"/>
 						<span>{{ "home__BUYERS"| translate }}</span>
 					</h3>
 					<p>{{ "home__BUYERS_DESC"| translate }}</p>
@@ -170,28 +170,28 @@
 			<div class="row"> 
 				<div class="col-xs-3 showcase-item">
 					<div class="showcase-image">
-						<img src="./app/images/home-hot-brands-1.png"/>
+						<img src="/static/app/images/home-hot-brands-1.png"/>
 					</div>
 					<div class="showcase-name">PAPER LONDON</div>
 					<div class="showcase-collection">{{ "home__SSI5_COLLECTION"| translate }}</div>
 				</div>
 				<div class="col-xs-3 showcase-item">
 					<div class="showcase-image">
-						<img src="./app/images/home-hot-brands-2.png"/>
+						<img src="/static/app/images/home-hot-brands-2.png"/>
 					</div>
 					<div class="showcase-name">MAYA MAYAGAL</div>
 					<div class="showcase-collection">{{ "home__SSI5_COLLECTION"| translate }}</div>
 				</div>
 				<div class="col-xs-3 showcase-item">
 					<div class="showcase-image">
-						<img src="./app/images/home-hot-brands-3.png"/>
+						<img src="/static/app/images/home-hot-brands-3.png"/>
 					</div>
 					<div class="showcase-name">PPQ</div>
 					<div class="showcase-collection">{{ "home__SSI5_COLLECTION"| translate }}</div>
 				</div>
 				<div class="col-xs-3 showcase-item">
 					<div class="showcase-image">
-						<img src="./app/images/home-hot-brands-4.png"/>
+						<img src="/static/app/images/home-hot-brands-4.png"/>
 					</div>
 					<div class="showcase-name">MUUBAA</div>
 					<div class="showcase-collection">{{ "home__SSI5_COLLECTION"| translate }}</div>
@@ -206,28 +206,28 @@
 			<div class="row"> 
 				<div class="col-xs-3 showcase-item">
 					<div class="showcase-image">
-						<img src="./app/images/home-testomonial-1.png"/>
+						<img src="/static/app/images/home-testomonial-1.png"/>
 					</div>
 					<div class="showcase-name">LILA SIMPSON</div>
 					<div class="showcase-identity">{{ "home__people_BUYER"| translate }}</div>
 				</div>
 				<div class="col-xs-3 showcase-item">
 					<div class="showcase-image">
-						<img src="./app/images/home-testomonial-2.png"/>
+						<img src="/static/app/images/home-testomonial-2.png"/>
 					</div>
 					<div class="showcase-name">JOHNSON SMITH</div>
 					<div class="showcase-identity">{{ "home__people_BUYER"| translate }}</div>
 				</div>
 				<div class="col-xs-3 showcase-item">
 					<div class="showcase-image">
-						<img src="./app/images/home-testomonial-3.png"/>
+						<img src="/static/app/images/home-testomonial-3.png"/>
 					</div>
 					<div class="showcase-name">BARNET MOLLY</div>
 					<div class="showcase-identity">{{ "home__people_DESIGNER"| translate }}</div>
 				</div>
 				<div class="col-xs-3 showcase-item">
 					<div class="showcase-image">
-						<img src="./app/images/home-testomonial-4.png"/>
+						<img src="/static/app/images/home-testomonial-4.png"/>
 					</div>
 					<div class="showcase-name">JUDY WINTER</div>
 					<div class="showcase-identity">{{ "home__people_BUYER"| translate }}</div>
@@ -250,6 +250,6 @@
 			</div>
 		</div>
 	</section>
-	<footer class="row footer-navigation" ng-include="'./templates/global-footer-navigation.html'"></footer>
+	<footer class="row footer-navigation" ng-include="'/static/templates/global-footer-navigation.html'"></footer>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Upload extends Controller
+class Controller_Upload extends Controller_ApiBase
 {
 
     const MSG_KEY_1 = 'upload_failed';

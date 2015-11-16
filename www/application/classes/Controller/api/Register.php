@@ -3,7 +3,7 @@
 /**
  * @author liyashuai
  */
-class Controller_Register extends Controller
+class Controller_Register extends Controller_ApiBase
 {
 
     const MSG_KEY_1 = 'register_failed';

@@ -4,23 +4,23 @@
 	<meta charset="UTF-8" >
 	<title>XShowroom</title>
 	
-	<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="./bower_components/font-awesome/css/font-awesome.min.css" />
-	<link rel="stylesheet" type="text/css" href="./app/css/common.css" />
-	<link rel="stylesheet" type="text/css" href="./app/css/guide.css" />
-	<link rel="shortcut icon" href="./app/resources/images/favicon.ico" />
-	<script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
-	<script type="text/javascript" src="./bower_components/angular-cookies/angular-cookies.min.js"></script>
-	<script type="text/javascript" src="./app/modules/common/i18n.js"></script>
-	<script type="text/javascript" src="./app/modules/common/services.js"></script>
-	<script type="text/javascript" src="./app/modules/common/directives.js"></script>
-	<script type="text/javascript" src="./app/modules/guide.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/static/bower_components/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="/static/app/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="/static/app/css/guide.css" />
+	<link rel="shortcut icon" href="/static/app/resources/images/favicon.ico" />
+	<script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/static/bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="/static/bower_components/angular-cookies/angular-cookies.min.js"></script>
+	<script type="text/javascript" src="/static/app/modules/common/i18n.js"></script>
+	<script type="text/javascript" src="/static/app/modules/common/services.js"></script>
+	<script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
+	<script type="text/javascript" src="/static/app/modules/guide.js"></script>
 </head>
 <body ng-controller="GuideCtrl" class="container-fluid">
-	<nav class="row setting-info" ng-include="'./templates/global-setting-info.html'"></nav>
-	<nav class="row no-user-navigation" onload="page='guide'" ng-include="'./templates/global-no-user-navigation.html'"></nav>
+	<nav class="row setting-info" ng-include="'/static/templates/global-setting-info.html'"></nav>
+	<nav class="row no-user-navigation" onload="page='guide'" ng-include="'/static/templates/global-no-user-navigation.html'"></nav>
 	<section class="row no-vertical-padding">
 		<div class="container-fluid guide-banner">
 			<div class="row">
@@ -271,6 +271,6 @@
 			</div>
 		</div>
 	</section>
-	<footer class="row footer-navigation" ng-include="'./templates/global-footer-navigation.html'"></footer>
+	<footer class="row footer-navigation" ng-include="'/static/templates/global-footer-navigation.html'"></footer>
 </body>
 </html>

@@ -3,24 +3,24 @@
 <head>
 	<meta charset="UTF-8">
 	<title>XShowroom</title>
-	<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="./app/css/common.css" />
-	<link rel="stylesheet" type="text/css" href="./app/css/brand-register.css" />
-	<link rel="shortcut icon" href="./app/resources/images/favicon.ico" />
-	<script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
-	<script type="text/javascript" src="./bower_components/angular-cookies/angular-cookies.min.js"></script>
-	<script type="text/javascript" src="./app/modules/common/i18n.js"></script>
-	<script type="text/javascript" src="./app/modules/common/services.js"></script>
-	<script type="text/javascript" src="./app/modules/common/directives.js"></script>
-	<script type="text/javascript" src="./app/modules/brand-register.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/static/app/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="/static/app/css/brand-register.css" />
+	<link rel="shortcut icon" href="/static/app/resources/images/favicon.ico" />
+	<script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/static/bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="/static/bower_components/angular-cookies/angular-cookies.min.js"></script>
+	<script type="text/javascript" src="/static/app/modules/common/i18n.js"></script>
+	<script type="text/javascript" src="/static/app/modules/common/services.js"></script>
+	<script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
+	<script type="text/javascript" src="/static/app/modules/brand-register.js"></script>
 </head>
 
 <body ng-controller="BrandRegisterCtrl" class="container-fluid">
-	<nav class="row setting-info" ng-include="'./templates/global-setting-info.html'"></nav>
+	<nav class="row setting-info" ng-include="'/static/templates/global-setting-info.html'"></nav>
 	<nav class="row no-user-navigation"
-		ng-include="'./templates/global-no-user-navigation.html'"></nav>
+		ng-include="'/static/templates/global-no-user-navigation.html'"></nav>
 
 	<section class="row">
 		<div class="container uploading">
@@ -35,7 +35,7 @@
 		
 			<div class="col-xs-5">
 				<img class="brand-register-context"
-					ng-src="./app/images/brand-register-{{step.stepNumber}}.png" />
+					ng-src="/static/app/images/brand-register-{{step.stepNumber}}.png" />
 			</div>
 
 			<form class="form-horizontal col-xs-7" id="brand-register" name="brandRegister">
@@ -220,6 +220,6 @@
 		<!-- <div class="uploading"></div> -->
 	</section>
 
-	<footer class="row footer-navigation" ng-include="'./templates/global-footer-navigation.html'"></footer>
+	<footer class="row footer-navigation" ng-include="'/static/templates/global-footer-navigation.html'"></footer>
 </body>
 </html>

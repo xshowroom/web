@@ -1,16 +1,18 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Collection extends Controller_Base
+class Controller_Brand extends Controller_ApiBase
 {
-    public $collectionService;
+    public $brandService;
 
     public function before()
     {
-        $this->collectionService = new Business_Collection();
+        $this->brandService = new Business_Brand();
     }
 
     public function action_list()
     {
+        $res = $this->brandService->getAllBrand();
+        
         echo json_encode(array(
             'status' => $status,
             'msg'      => $msg,
