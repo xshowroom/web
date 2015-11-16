@@ -20,7 +20,7 @@
 </head>
 <body ng-controller="GuideCtrl" class="container-fluid">
 	<nav class="row setting-info">
-        <?php echo View::factory('global-setting-info'); ?>
+        <?php echo View::factory('common/global-setting-info'); ?>
 	</nav>
 	<nav class="row no-user-navigation">
 		<?php $currentPage = 'guide'; ?>
