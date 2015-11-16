@@ -1,7 +1,7 @@
 <?php defined('SYSPATH') || die('No direct script access.');
 
 
-class Controller_Api_Image extends Controller_Api_ApiBase
+class Controller_Api_Image extends Controller
 {
 
     public $verifyCodeService;

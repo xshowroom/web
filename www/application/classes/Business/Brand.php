@@ -11,17 +11,20 @@ class Business_Brand
         $this->brandModel = new Model_Brand();
     }
     
-    private function wellFormatedBrand($brandList)
-    {
-        
-    }
-    
     public function getAllBrand()
     {
         $brandList = $this->brandModel->getAllList();
-        $resList = $this->wellFormatedBrand($brandList);
         
-        return $resList;
+        return $brandList;
     }
     
+    private function parseCondition()
+    {
+        
+    }
+    
+    public function getBrandList()
+    {
+        
+    }
 }

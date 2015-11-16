@@ -8,13 +8,13 @@ require SYSPATH.'classes/Kohana/Core'.EXT;
 
 if (is_file(APPPATH.'classes/Kohana'.EXT))
 {
-	// Application extends the core
-	require APPPATH.'classes/Kohana'.EXT;
+    // Application extends the core
+    require APPPATH.'classes/Kohana'.EXT;
 }
 else
 {
-	// Load empty core extension
-	require SYSPATH.'classes/Kohana'.EXT;
+    // Load empty core extension
+    require SYSPATH.'classes/Kohana'.EXT;
 }
 
 /**
@@ -73,8 +73,8 @@ I18n::lang('en-us');
 
 if (isset($_SERVER['SERVER_PROTOCOL']))
 {
-	// Replace the default protocol.
-	HTTP::$protocol = $_SERVER['SERVER_PROTOCOL'];
+    // Replace the default protocol.
+    HTTP::$protocol = $_SERVER['SERVER_PROTOCOL'];
 }
 
 /**
@@ -85,7 +85,7 @@ if (isset($_SERVER['SERVER_PROTOCOL']))
  */
 if (isset($_SERVER['KOHANA_ENV']))
 {
-	Kohana::$environment = constant('Kohana::'.strtoupper($_SERVER['KOHANA_ENV']));
+    Kohana::$environment = constant('Kohana::'.strtoupper($_SERVER['KOHANA_ENV']));
 }
 
 /**
@@ -104,7 +104,7 @@ if (isset($_SERVER['KOHANA_ENV']))
  * - boolean  expose      set the X-Powered-By header                        FALSE
  */
 Kohana::init(array(
-	'base_url'   => '/',
+    'base_url'   => '/',
 ));
 
 /**
@@ -121,16 +121,16 @@ Kohana::$config->attach(new Config_File);
  * Enable modules. Modules are referenced by a relative or absolute path.
  */
 Kohana::modules(array(
-	// 'auth'       => MODPATH.'auth',       // Basic authentication
-	// 'cache'      => MODPATH.'cache',      // Caching with multiple backends
-	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
-	'database'   => MODPATH.'database',   // Database access
-	// 'image'      => MODPATH.'image',      // Image manipulation
-	// 'minion'     => MODPATH.'minion',     // CLI Tasks
-	// 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
-	// 'unittest'   => MODPATH.'unittest',   // Unit testing
-	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
-	));
+    // 'auth'       => MODPATH.'auth',       // Basic authentication
+    // 'cache'      => MODPATH.'cache',      // Caching with multiple backends
+    // 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
+    'database'   => MODPATH.'database',   // Database access
+    // 'image'      => MODPATH.'image',      // Image manipulation
+    // 'minion'     => MODPATH.'minion',     // CLI Tasks
+    // 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
+    // 'unittest'   => MODPATH.'unittest',   // Unit testing
+    // 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
+    ));
 
 /**
  * Cookie Salt
@@ -146,14 +146,11 @@ Cookie::$salt = 'xshowroom';
  * defaults for the URI.
  */
 
-Route::set('api','api(/<controller>(/<action>(/<id>)))')
-		->defaults(array(
-				'directory'  => 'api',
-		));
-
-
-Route::set('default', '(<controller>(/<action>(/<id>)))')
-	->defaults(array(
-			'controller' => 'home',
-			'action'     => 'index',
-	));
+Route::set('default', '(<directory>/)(<controller>(/<action>))',
+        array(
+            'directory' => '(api)',
+        ))
+        ->defaults(array(
+            'controller' => 'home',
+            'action'     => 'index',
+        ));

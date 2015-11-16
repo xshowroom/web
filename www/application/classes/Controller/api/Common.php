@@ -3,7 +3,7 @@
 /**
  * @author liyashuai
  */
-class Controller_Common extends Controller_Api_ApiBase
+class Controller_Common extends Controller_Base
 {
 
     const MSG_KEY_1 = 'not_login';

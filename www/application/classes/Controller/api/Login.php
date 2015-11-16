@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Api_Login extends Controller_Api_ApiBase
+class Controller_Api_Login extends Controller
 {
 
     const MSG_KEY_1 = 'image_err';
@@ -19,9 +19,9 @@ class Controller_Api_Login extends Controller_Api_ApiBase
 
     public function action_index()
     {
-        $email          = Request::current()->query('email');
-        $password       = Request::current()->query('pass');
-        $code           = Request::current()->query('code');
+        $email       = Request::current()->query('email');
+        $password    = Request::current()->query('pass');
+        $code        = Request::current()->query('code');
 
         // 验证码是否正确
         if (!$this->codeService->verify($code)) {
