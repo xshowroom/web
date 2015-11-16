@@ -22,7 +22,7 @@
 	<nav class="row setting-info">
 		<?php include '/global-setting-info.php'; ?>
 	</nav>
-	<nav class="row no-user-navigation"  id="home-page-navigation">
+	<nav class="row no-user-navigation">
 		<?php  $currentPage = 'shop';include '/global-no-user-navigation.php';?>
 	</nav>
 	<section class="row">

@@ -8,9 +8,9 @@
 				<?php if( empty($userInfo)) { ?>
 				<div class="user-not-logined">
 					<span>{{ "directives_js__WELCOME"| translate }} GUEST</span>
-					<a href="login" target="_self">{{ "directives_js__LOGIN"| translate }}</a>
+					<a href="/login" target="_self">{{ "directives_js__LOGIN"| translate }}</a>
 					<span> | </span>
-					<a href="guide">{{ "directives_js__REGISTER"| translate }}</a>
+					<a href="/guide">{{ "directives_js__REGISTER"| translate }}</a>
 				</div>
 				<?php } else{ ?>
 				<div class="user-logined">

@@ -63,7 +63,7 @@
 			    <h2>FINLAY & CO</h2>
 			    <p>SPRING SUMMER 2015</p>
 			    <div>
-					<a href="./guide.php#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
+					<a href="/guide#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
 					<a class="btn btn-type-2">{{ "home__CONTRACT_US"| translate }}</a>
 				</div>
 			</div>
@@ -71,7 +71,7 @@
 			    <h2>Hello World</h2>
 			    <p>This is a test text</p>
 			    <div>
-					<a href="./guide.php#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
+					<a href="/guide#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
 					<a class="btn btn-type-2">{{ "home__CONTRACT_US"| translate }}</a>
 				</div>
 			</div>
@@ -79,7 +79,7 @@
 			    <h2>YOUR BRAND</h2>
 			    <p>YOUR COLLECTION </p>
 			    <div>
-					<a href="./guide.php#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
+					<a href="/guide#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
 					<a class="btn btn-type-2">{{ "home__CONTRACT_US"| translate }}</a>
 				</div>
 			</div>
@@ -87,7 +87,7 @@
                 <h2>YOUR BRAND</h2>
                 <p>YOUR COLLECTION </p>
                 <div>
-                    <a href="./guide.php#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
+                    <a href="/guide#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
                     <a class="btn btn-type-2">{{ "home__CONTRACT_US"| translate }}</a>
                 </div>
             </div>
@@ -95,7 +95,7 @@
                 <h2>YOUR BRAND</h2>
                 <p>YOUR COLLECTION </p>
                 <div>
-                    <a href="./guide.php#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
+                    <a href="/guide#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
                     <a class="btn btn-type-2">{{ "home__CONTRACT_US"| translate }}</a>
                 </div>
             </div>
@@ -137,8 +137,8 @@
 					</h3>
 					<p>{{ "home__BRANDS_DESC"| translate }}</p>
 					<div>
-						<a href="./guide.php#/brand" class="btn btn-type-1">{{ "home__btn_SOLUTION"| translate }}</a>
-						<a class="btn btn-type-1" href="/web/login/logout?target=brand-register" target="_self">{{ "home__btn_REGISTER"| translate }}</a>
+						<a href="/guide#/brand" class="btn btn-type-1">{{ "home__btn_SOLUTION"| translate }}</a>
+						<a class="btn btn-type-1" href="/register/brand" target="_self">{{ "home__btn_REGISTER"| translate }}</a>
 					</div>
 				</div>
 				<div class="col-xs-6 introduction-item introduction-image">
@@ -156,8 +156,8 @@
 					</h3>
 					<p>{{ "home__BUYERS_DESC"| translate }}</p>
 					<div>
-						<a href="./guide.php#/retailer" class="btn btn-type-1">{{ "home__btn_SOLUTION"| translate }}</a>
-						<a class="btn btn-type-1" href="/web/login/logout?target=buyer-register" target="_self">{{ "home__btn_REGISTER"| translate }}</a>
+						<a href="/guide#/retailer" class="btn btn-type-1">{{ "home__btn_SOLUTION"| translate }}</a>
+						<a class="btn btn-type-1" href="/register/buyer" target="_self">{{ "home__btn_REGISTER"| translate }}</a>
 					</div>
 				</div>
 			</div>

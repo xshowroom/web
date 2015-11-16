@@ -52,8 +52,8 @@
 					<h4>{{ "guide__buyer_INTRODUCE"| translate }}</h4>
 					<p>{{ "guide__buyer_INTRODUCE_DESC"| translate }}</p>
 					<div class="col-xs-12">
-						<a class="btn btn-type-2" href="/web/login/logout?target=buyer-register" target="_self">{{ "guide__btn_REGISTER"| translate }}</a>
-						<a class="btn btn-type-1" href="/web/login/logout?target=login" target="_self">{{ "guide__btn_SIGN_IN"| translate }}</a>
+						<a class="btn btn-type-2" href="/register/buyer" target="_self">{{ "guide__btn_REGISTER"| translate }}</a>
+						<a class="btn btn-type-1" href="/login" target="_self">{{ "guide__btn_SIGN_IN"| translate }}</a>
 					</div>
 				</div>
 			</div>
@@ -63,8 +63,8 @@
 				<div class="col-xs-6 text-center">
 					<p class="col-xs-12">{{ "guide__brand_left_INTRODUCE"| translate }}</p>
 					<div class="col-xs-12">
-						<a class="btn btn-type-2" href="/web/login/logout?target=brand-register" target="_self">{{ "guide__btn_REGISTER"| translate }}</a>
-						<a class="btn btn-type-1" href="/web/login/logout?target=login" target="_self">{{ "guide__btn_SIGN_IN"| translate }}</a>
+						<a class="btn btn-type-2" href="/register/brand" target="_self">{{ "guide__btn_REGISTER"| translate }}</a>
+						<a class="btn btn-type-1" href="/login" target="_self">{{ "guide__btn_SIGN_IN"| translate }}</a>
 					</div>
 				</div>
 				<div class="col-xs-6">

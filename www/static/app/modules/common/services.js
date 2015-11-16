@@ -25,11 +25,11 @@ angular.module(
 						transformRequest: postRequestTransformer
 					});
 		      	},
-		      	getUserInfo: function(){
-		      		return $http.get('/api/common/userInfo');
-		      	},
+//		      	getUserInfo: function(){
+//		      		return $http.get('/api/common/userInfo');
+//		      	},
 		      	duplicationCheck: function (opts) {
-		    		return $http.get('/api/register/checkParam', {params: opts});
+		    		return $http.get('api/register/checkParam', {params: opts});
 		    	}
    			};
          }
