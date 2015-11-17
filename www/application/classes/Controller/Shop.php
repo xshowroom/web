@@ -9,10 +9,10 @@ class Controller_Shop extends Controller_Base
     public function action_index()
     {
         $view = View::factory('shop');
-        
-        $opUser = $_SESSION['opUser'];
 
         // get user info if login
+        $opUser = $_SESSION['opUser'];
+
         if(!empty($opUser)) {
             $view->set('user', $this->opUser);
 
