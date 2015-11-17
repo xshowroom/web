@@ -22,6 +22,9 @@ class Controller_Brand extends Controller_BaseReqLogin
         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
         $view->set('brandInfo', $this->brandService->getBrandInfo($this->opUser['id']));
         
+        $collectionList = $this->collectionService->getAllCollectionList($this->opUser['id']);
+        $view->set('collectionList', array_slice($collectionList, 0, 4));
+        
         $this->response->body($view);
     }
     public function action_collection()
@@ -29,9 +32,6 @@ class Controller_Brand extends Controller_BaseReqLogin
         $view = View::factory('brand_collection');
         $view->set('user', $this->opUser);
         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
-        
-        $collectionList = $this->collectionService->getAllCollectionList($this->opUser['id']);
-        $view->set('collectionList', array_slice($collectionList, 0, 4));
         
         $this->response->body($view);
     }

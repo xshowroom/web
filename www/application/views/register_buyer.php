@@ -118,7 +118,9 @@
 									ng-model="user.shopName" placeholder='{{ "buyer_register__STEP_2__STORE_NAME_PLACEHOLDER"| translate }}'>
 							</div>
 							<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].shopType}">
-								<label for="store-type" ng-class="{'has-content': user.shopType && user.shopType !=''}">{{ (user.shopType || "buyer_register__STEP_2__STORE_TYPE_PLACEHOLDER") | translate }}</label>
+								<label for="store-type" ng-class="{'has-content': user.shopType && user.shopType !=''}">
+									{{ (user.shopType || "buyer_register__STEP_2__STORE_TYPE_PLACEHOLDER") | translate }}
+								</label>
 								<select class="form-control" id="store-type" ng-model="user.shopType" name="shopType">
                                     <option value="dropdown__STORE__DEPARTMENT_SHOP">{{ "dropdown__STORE__DEPARTMENT_SHOP"| translate }}</option>
                                     <option value="dropdown__STORE__MULTI_BRAND_SHOP">{{ "dropdown__STORE__MULTI_BRAND_SHOP"| translate }}</option>
@@ -159,8 +161,14 @@
 					</div>
 					<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].shopCountry}">
 						<div class="col-xs-6 buyer-register-form-inline-left">
-							<input type="text" class="form-control" id="store-country" name="shopCountry"
-                                   ng-model="user.shopCountry" placeholder='{{ "buyer_register__STEP_2__STORE_COUNTRY_PLACEHOLDER"| translate }}'>
+							<label for="store-country" ng-class="{'has-content': user.shopCountry && user.shopCountry !=''}">
+								{{ user.shopCountry || "buyer_register__STEP_2__STORE_COUNTRY_PLACEHOLDER"| translate }}
+							</label>
+							<select  class="form-control" id="store-country" name="shopCountry" ng-model="user.shopCountry">
+								<option ng-repeat="country in countries" value="dropdown__COUNTRY__{{country}}">
+									{{ ("dropdown__COUNTRY__" + country)| translate}}
+								</option>
+							</select>
 						</div>
 						<div class="col-xs-6 buyer-register-form-inline-right" ng-class="{'has-error': step.validation[2].shopZipcode}">
 							<input type="text" class="form-control" id="store-postcode" name="shopZipcode"

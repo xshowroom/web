@@ -7,10 +7,10 @@ angular.module(
 .controller(
     'RegisterBuyerCtrl', 
     [
-        '$scope', '$element', '$q', 'User',
-        function($scope, $element,  $q, User) {
+        '$scope', '$element', '$q', 'User', 'Country',
+        function($scope, $element, $q, User, Country) {
 			$scope.step = {
-				stepNumber: 2,
+				stepNumber: 1,
 				validation: {
 				     1: {
 				    	'email': false,
@@ -130,7 +130,7 @@ angular.module(
 					$scope.step.stepNumber--;
 				}
 			}
-			
+			$scope.countries = Country.getAll();
 			$scope.register = function() {
 				var register = User.register($scope.user);
 				register.success(function(res){
