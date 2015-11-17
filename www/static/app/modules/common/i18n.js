@@ -23,25 +23,13 @@ angular.module(
 	'global',
 	{
 		'zh-CN': {
+            // directives.js
             directives_js__UPLOADING: '上传图片中',
             directives_js__UPLOAD: '上传图片',
             directives_js__FILE_SIZE: '文件大小上限为5MB',
 
-
-            // login.html
-            login__SIGN_IN: '用户登录',
-            login__EMAIL: '电子邮箱',
-            login__PASSWORD: '输入密码',
-            login__VALID_CODE: '验证码',
-            login__btn_LOGIN: '登录',
-            login__REMEMBER_ME: '记住我',
-            
+            // login.js
             login__EMAIL_PATTERN_ERROR: 'Email格式错误！',
-
-            login__REQUEST_MEMBERSHIP: '入驻XShowroom申请',
-            login__REQUEST_MEMBERSHIP_DESC: '买手圈只向注册并审核通过的品牌、代理机构及买手开放。若想入驻买手圈，请完成在线注册：',
-            login__REQUEST_BRAND: '品牌入驻',
-            login__REQUEST_BUYER: '买手入圈',
 
             // brand-register.html
             brand_register__STEP: '步骤',
@@ -336,24 +324,13 @@ angular.module(
             dropdown__COLLECTION__MEN: '男士'
         },
         'en': {
+            // directives.js
             directives_js__UPLOADING: 'UPLOADING IMAGE',
             directives_js__UPLOAD: 'UPLOAD',
             directives_js__FILE_SIZE: 'File size limit is 5MB',
 
-            // login.html
-            login__SIGN_IN: 'SIGN IN',
-            login__EMAIL: 'EMAIL ADDRESS*',
-            login__PASSWORD: 'YOUR PASSWORD*',
-            login__VALID_CODE: 'VALID CODE*',
-            login__btn_LOGIN: 'LOGIN',
-            login__REMEMBER_ME: 'REMEMBER ME',
-            
+            // login.js
             login__EMAIL_PATTERN_ERROR: 'email address is not valid！',
-
-            login__REQUEST_MEMBERSHIP: 'REQUEST MEMBERSHIP',
-            login__REQUEST_MEMBERSHIP_DESC: 'X SHOWROOM IS OPEN TO SELECTED BRANDS. AGENCIES AND BUYERS TO PARTICIPATE. PLEASE REGISTER ONLINE',
-            login__REQUEST_BRAND: 'FOR BRANDS',
-            login__REQUEST_BUYER: 'FOR BUYER',
 
             // brand-register.html
             brand_register__STEP: 'STEP',

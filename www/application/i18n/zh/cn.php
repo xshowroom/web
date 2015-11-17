@@ -179,5 +179,20 @@ return array_merge(
         'guide__MEMBERSHIP_INCLUDES_R3' => '> 将品牌文字介绍内容翻译成中文，以便中国买手浏览',
         'guide__MEMBERSHIP_INCLUDES_R4' => '> 专享URL地址以便买手更便捷地进入您的品牌介绍页',
         'guide__MEMBERSHIP_INCLUDES_R5' => '> 品牌对应的双语客户经理将及时与品牌及买手沟通，中英文时时切换，实现无障碍交流',
+        ),
+    /**
+     * login.php
+     */
+    array(
+        'login__SIGN_IN' => '用户登录',
+        'login__EMAIL' => '电子邮箱',
+        'login__PASSWORD' => '输入密码',
+        'login__VALID_CODE' => '验证码',
+        'login__btn_LOGIN' => '登录',
+        'login__REMEMBER_ME' => '记住我',
+        'login__EMAIL_PATTERN_ERROR' => 'Email格式错误！','login__REQUEST_MEMBERSHIP' => '入驻XShowroom申请',
+        'login__REQUEST_MEMBERSHIP_DESC' => '买手圈只向注册并审核通过的品牌、代理机构及买手开放。若想入驻买手圈，请完成在线注册：',
+        'login__REQUEST_BRAND' => '品牌入驻',
+        'login__REQUEST_BUYER' => '买手入圈',
     )
 );

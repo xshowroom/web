@@ -179,5 +179,20 @@ return array_merge(
         'guide__MEMBERSHIP_INCLUDES_R3' => '> Translation of main content text to Chinese for Chinese buyers',
         'guide__MEMBERSHIP_INCLUDES_R4' => '> A dedicated URL for Buyers to quickly access your product catalogue',
         'guide__MEMBERSHIP_INCLUDES_R5' => '> Account Manager to handle verbal communications where there is a language barrier for English/Chinese',
+    ),
+    /**
+     * login.php
+     */
+    array(
+        'login__SIGN_IN' => 'SIGN IN',
+        'login__EMAIL' => 'EMAIL ADDRESS*',
+        'login__PASSWORD' => 'YOUR PASSWORD*',
+        'login__VALID_CODE' => 'VALID CODE*',
+        'login__btn_LOGIN' => 'LOGIN',
+        'login__REMEMBER_ME' => 'REMEMBER ME',
+        'login__REQUEST_MEMBERSHIP' => 'REQUEST MEMBERSHIP',
+        'login__REQUEST_MEMBERSHIP_DESC' => 'X SHOWROOM IS OPEN TO SELECTED BRANDS. AGENCIES AND BUYERS TO PARTICIPATE. PLEASE REGISTER ONLINE',
+        'login__REQUEST_BRAND' => 'FOR BRANDS',
+        'login__REQUEST_BUYER' => 'FOR BUYER',
     )
 );
