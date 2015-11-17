@@ -163,7 +163,7 @@ a.active:before{
 	height: 40px;
     background: #000;
     color: #aaa;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 200;
 }
 .setting-info .locale-settings .dropdown{
@@ -173,7 +173,7 @@ a.active:before{
 	margin-left: 20px;
 }
 .setting-info .locale-settings .dropdown .caret{
-	margin-left: 10px;
+	margin-left: 20px;
 }
 .setting-info .locale-settings .dropdown a{
 	text-decoration: none;
@@ -279,7 +279,7 @@ a.active:before{
 .footer-navigation ul > li > a,
 .footer-navigation ul > li > span{
 	color: #888;
-	font-size: 10px;
+	font-size: 12px;
 }
 
 /* filter过滤器通用样式 */

@@ -30,7 +30,7 @@ h2.buyer-register-step {
 	border-color: #a94442;
 }
 .buyer-register-lookbook-upload {
-	font-size: 10px;
+	font-size: 12px;
 	height: 190px;
 	overflow: hidden;
 	position: relative;
@@ -111,7 +111,7 @@ label[for='store-type'].has-content{
 	text-align: center;
 }
 .buyer-register-dropdown-menu li {
-	font-size: 10px;
+	font-size: 12px;
 	padding-top: 10px;
 	padding-buttom: 10px;
 }
