@@ -21,7 +21,7 @@
 	<nav class="row setting-info">
 		<?php echo View::factory('common/global_setting_with_login'); ?>
 	</nav>
-	<nav class="row no-user-navigation"  id="home-page-navigation">
+	<nav class="row guest-navigation"  id="home-page-navigation">
         <?php echo View::factory('common/global_navigation_top_guest'); ?>
 	</nav>
 	<section class="row">

@@ -1,18 +1,18 @@
 /* 无用户导航 */
-#home-page-navigation.no-user-navigation{
+#home-page-navigation.guest-navigation{
 	background-color: transparent;
 	z-index: 99;
 	position: absolute;
     top: 40px;
     width: 100%;
 }
-#home-page-navigation.no-user-navigation .share-link {
+#home-page-navigation.guest-navigation .share-link {
 	color: #fff;
 }
-#home-page-navigation.no-user-navigation .main-naviagtions{
+#home-page-navigation.guest-navigation .main-naviagtions{
 	margin-top: 50px;
 }
-#home-page-navigation.no-user-navigation .main-naviagtions > li > a{
+#home-page-navigation.guest-navigation .main-naviagtions > li > a{
 	color: #fff;
 }
 .home-banner{

@@ -1,0 +1,97 @@
+.order-list,
+.collection-list{
+	padding: 30px 0 0 0;
+}
+.order-list .order-list-header,
+.collection-list .collection-list-header{
+	border-bottom: 1px solid #e3e3e3;
+}
+.order-list .order-list-header .order-list-title,
+.collection-list .collection-list-header .collection-list-title{
+	font-size: 18px;
+	display: inline-block;
+	text-indent: 2em;
+	margin-right: 2em;
+}
+.order-list .order-list-header .order-list-all-link,
+.collection-list .collection-list-header .collection-list-all-link{
+	color: #878787;
+}
+.order-list .order-list-content,
+.collection-list .collection-list-content{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.order-list .order-list-content .order-item{
+	border: 1px solid #ccc;
+    height: 310px;
+    padding: 15px;
+    overflow: hidden;
+    display: inline-block;
+}
+.order-list .order-list-content .order-item .order-images{
+	height: 160px;
+}
+.order-list .order-list-content .order-item .order-images .order-item-image{
+	width: 50%;
+}
+.order-list .order-list-content .order-item .order-images .order-item-sub-image{
+	width: 23%;
+    vertical-align: bottom;
+}
+.order-list .order-list-content .order-item .order-detail{
+	font-size: 12px;
+	color: #878787;
+	line-height: 20px;
+	font-weight: bold;
+	margin-top: 20px;
+}
+.order-list .order-list-content .order-item .order-status{
+	font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+.collection-list .collection-list-content .collection-item{
+	height: 365px;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    box-shadow: 0px 3px 3px #ddd;
+}
+.collection-list .collection-list-content .collection-item .collection-item-image{
+	width: 100%;
+	height: 100%;
+}
+.collection-list .collection-list-content .collection-item  .collection-name {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.8);
+    height: 120px;
+    color: #25272c;
+    line-height: 120px;
+    text-align: center;
+    font-weight: bold;
+}
+.support{
+	padding-top: 50px;
+	padding-bottom: 80px;
+}
+.support .account-manager-image{
+	widht: 80px;
+	height: 80px;
+	border-radius: 40px;
+	float: left;
+}
+.support p{
+	color: #878787;
+    font-size: 14px;
+    float: left;
+    width: 70%;
+    margin-left: 30px;
+    margin-right: 50px;
+}
+.support .btn{
+    margin-top: 35px;
+}

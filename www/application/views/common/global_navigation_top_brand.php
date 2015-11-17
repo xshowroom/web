@@ -1,17 +1,28 @@
 <div class="container">
 	<div class="row">
-		<div class="col-xs-3">
+		<div class="col-xs-2">
 			<img class="site-logo" ng-src="/static/app/images/logo-black.png">
 		</div>
-		<div class="col-xs-12 text-center">
+		<div class="col-xs-8">
 			<ul class="main-naviagtions">
-				<li><a href="/home" <?php if ($currentPage == 'home'){?>class="active"<?php }?>>{{ "global_no_user_navigation__HOME"| translate }}</a></li>
-				<li><a href="/guide" <?php if ($currentPage == 'guide'){?>class="active"<?php }?>>{{ "global_no_user_navigation__GUIDE"| translate }}</a></li>
-				<li><a href="/shop" <?php if ($currentPage == 'shop'){?>class="active"<?php }?>>{{ "global_no_user_navigation__SHOP"| translate }}</a></li>
-				<li><a href="#"  <?php if ($currentPage == 'discovery'){?>class="active"<?php }?>>{{ "global_no_user_navigation__DISCOVER"| translate }}</a></li>
-				<li><a href="#"  <?php if ($currentPage == 'press'){?>class="active"<?php }?>>{{ "global_no_user_navigation__PRESS"| translate }}</a></li>
-				<li><a href="#"  <?php if ($currentPage == 'contact'){?>class="active"<?php }?>>{{ "global_no_user_navigation__CONTACT"| translate }}</a></li>
+				<li><a href="/brand/dashboard" <?php if ($currentPage == dashboard){?>class="active"<?php }?>>DASHBOARD</a></li>
+				<li><a href="/brand/collection" <?php if ($currentPage == collection){?>class="active"<?php }?>>COLLECTION</a></li>
+				<li><a href="/brand/order" <?php if ($currentPage == order){?>class="active"<?php }?>>ORDER</a></li>
+				<li><a href="/brand/message"  <?php if ($currentPage == message){?>class="active"<?php }?>>MESSAGE</a></li>
 			</ul>
+		</div>
+		<div class="col-xs-2 text-right">
+			<div class="dropdown user-actions">
+				<a type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<img ng-src="/static/app/images/user-action.png">
+				 	<span><?= $userAttr['display_name'] ?></span>
+				 	<span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="#">MY PROFILE</a></li>
+					<li><a href="/user/logout">SIGN OUT</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </div>

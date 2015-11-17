@@ -46,7 +46,7 @@
 	<nav class="row setting-info">
 		<?php echo View::factory('common/global_setting_with_login', array('userAttr'=> $userAttr)); ?>
 	</nav>
-	<nav class="row no-user-navigation"  id="home-page-navigation">
+	<nav class="row guest-navigation"  id="home-page-navigation">
         <?php echo View::factory('common/global_navigation_top_guest', array('currentPage' =>  'home')); ?>
 	</nav>
 	<section class="row no-vertical-padding home-banner">
