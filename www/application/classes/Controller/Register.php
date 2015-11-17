@@ -5,13 +5,13 @@ class Controller_Register extends Controller_Base
 {
     public function action_brand()
     {
-        $view = View::factory('brand-register');
+        $view = View::factory('register-brand');
         $this->response->body($view);
     }
 
     public function action_buyer()
     {
-        $view = View::factory('buyer-register');
+        $view = View::factory('register-buyer');
         $this->response->body($view);
     }
 }
