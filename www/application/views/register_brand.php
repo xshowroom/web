@@ -164,8 +164,14 @@
 					</div>
 					<div class="form-group"  ng-class="{'has-error': step.validation[3].companyCountry}">
 						<div class="col-xs-6">
-							<input type="text" class="form-control" id="country" name="companyCountry"
-								ng-model="user.companyCountry" placeholder='{{ "brand_register__STEP_3__COMPANY_COUNTRY_PLACEHOLDER"| translate }}'>
+							<label for="country" ng-class="{'has-content': user.companyCountry && user.companyCountry !=''}">
+								{{ user.companyCountry || "brand_register__STEP_3__COMPANY_COUNTRY_PLACEHOLDER"| translate }}
+							</label>
+							<select  class="form-control" id="country" name="companyCountry" ng-model="user.companyCountry">
+								<option ng-repeat="country in countries" value="dropdown__COUNTRY__{{country}}">
+									{{ ("dropdown__COUNTRY__" + country)| translate}}
+								</option>
+							</select>
 						</div>
 						<div class="col-xs-6"  ng-class="{'has-error': step.validation[3].companyZip}">
 							<input type="text" class="form-control" id="postcode" name="companyZip"
