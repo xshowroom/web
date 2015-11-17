@@ -176,48 +176,35 @@ angular.module(
         }
     };
 }])
-.directive('imagePreview', ['uiUploader', function (uiUploader) {
+.directive('imageUploader', ['uiUploader', '$location', function (uiUploader, $location) {
     return {
-    	template: '<div ng-transclude></div>',
-        scope: {
-        	target: '@',
-        },
-        transclude: true,
+    	template: [
+    	    '<div>',
+		    	'<img ng-src="{{imageOnlineUrl}}" class="uploaded-image">',
+    	        '<label for="{{imageId}}">',
+    	        	'<span>UPLOAD</span>',
+    	        	'<span ng-if="title">{{title}}</span>',
+    	        	'<span>(File size limit is 5MB)</span>',
+    	        	'<input id="{{imageId}}" type="file">',
+    	        '</label>',
+    	    '</div>',
+    	].join(''),
+        transclude: false,
         restrict: 'C',
-        replace: false,
+        replace: true,
         scope: {
+        	title: '@',
         	targetModel: '='
         },
         link: function ($scope, $element, $attrs, $transclude) {
-        	var input = $element.find("input[type='file']"); 
-        	var target = $scope.target ? $element.find('#' + target) : $element;
-			 
-			var readFile = function (files){ 
-			    var reader = new FileReader(); 
-			    reader.readAsDataURL(files[0]); 
-			    reader.onload = function(e){ 
-			    	var image = target.find(".uploaded-image");
-			    	if (image.length){
-			    		image.attr('src', this.result);
-			    	}else{
-			    		target.append([
-			    		    '<img class="uploaded-image" src="' + this.result + '" ',
-			    		    'style="',
-			    		    	'width:100%;',
-			    		    	'position: absolute;',
-			    		    	'left:0;',
-			    		    	'top:50%;',
-			    		    	'z-index: -1;',
-			    		    	'transform: translateY(-50%);',
-			    		    	'-webkit-transform: translateY(-50%);',
-			    		    	'-moz-transform: translateY(-50%);',
-			    		    	'-o-transform: translateY(-50%);',
-			    		    '"/>'
-			    		].join(''));
-			    	}
-			    } 
-			};
-			var uploadFile = function(files){
+        	$scope.imageId = [
+        	    new Date().getTime(),
+        	    Math.round(Math.random() *1000)
+        	].join('');
+        	
+        	var siteRootUrl = $location.protocol() + '://' + $location.host() + ":" + 	$location.port() + '/';
+        	
+        	var uploadFile = function(files){
 				$scope.$emit('uploading.start');
 				uiUploader.removeAll();
 				uiUploader.addFiles(files);
@@ -229,30 +216,32 @@ angular.module(
                     		alert('上传图片接口出错，请重新上传，如多次失败请联系我们！');
                     		return
                     	}
+                    	$scope.imageOnlineUrl = siteRootUrl + response.data;
                     	$scope.targetModel = response.data;
                     	$scope.$apply();
                     	$scope.$emit('uploading.end');
                     }
                 });
-			}
+			};
 			
-			if(typeof FileReader==='undefined'){ 
-			    alert("抱歉，你的浏览器不支持 FileReader，图片无法预览!"); 
-			}else{ 
-				input.on('change', function(e){
-					var files = e.target.files;
-					if (!files.length){
-						return;
-					}
-					if(!/image\/\w+/.test(files[0].type)){
-						alert('上传文件类型必须为图片！');
-						input.val('');
-					    return; 
-					} 
-					readFile(files);
-					uploadFile(files);
-				})
-			} 
+        	$($element).on('change', '#'+$scope.imageId, function(e){
+				var files = e.target.files;
+				if (!files.length){
+					return;
+				}
+				if(!/image\/\w+/.test(files[0].type)){
+					alert('上传文件类型必须为图片！');
+					input.val('');
+				    return; 
+				}
+				if(files[0].size / 1024 / 1024 > 5){
+					alert('上传文件大于5MB！');
+					input.val('');
+				    return; 
+				}
+				uploadFile(files);
+			});
+
         }
     };
 }])

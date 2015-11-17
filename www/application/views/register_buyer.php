@@ -109,11 +109,8 @@
 					ng-show="step.stepNumber == 2">
 					<div>
 						<div ng-class="{'has-error': step.validation[2].imagePath}"
-							class="col-xs-3 block-center buyer-register-lookbook-upload imagePreview thumbnail" data-target-model="user.imagePath">
-							<p class="text-center">{{ "buyer_register__STEP_2__IMAGE"| translate }}</p>
-							<label for="lookbook-upload" class="text-center">{{ "buyer_register__STEP_2__UPLOAD"| translate }}
-								<input type="file" id="lookbook-upload" name="lookbook-upload" name="imagePath"/>
-							</label>
+							class="col-xs-3 block-center buyer-register-lookbook-upload image-uploader thumbnail"
+							data-title="{{ 'buyer_register__STEP_2__IMAGE'| translate }}" data-target-model="user.imagePath">
 						</div>
 						<div class="col-xs-9">
 							<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].shopName}">

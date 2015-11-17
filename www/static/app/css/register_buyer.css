@@ -32,7 +32,6 @@ h2.buyer-register-step {
 .buyer-register-lookbook-upload {
 	font-size: 10px;
 	height: 190px;
-	background: transparent;
 	overflow: hidden;
 	position: relative;
 }
@@ -42,12 +41,12 @@ h2.buyer-register-step {
 	margin-bottom: 0;
 }
 
-.buyer-register-lookbook-upload label {
+/* .buyer-register-lookbook-upload label {
 	line-height: 100% !important;
 	margin-top: 10px;
 	color: #60b8e4;
 	cursor: pointer;
-}
+} */
 
 #lookbook-upload {
 	visibility: hidden;
@@ -126,6 +125,9 @@ label[for='store-type'].has-content{
 
 #buyer-register .buyer-register-checkbox input[type='checkbox']{
 	margin-top: 1px;
+}
+#buyer-register .form-group .buyer-register-checkbox label{
+	line-height: 17px;
 }
 #buyer-register .form-group label{
 	color: #878787;

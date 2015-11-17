@@ -23,9 +23,8 @@ h2.brand-register-step {
 }
 
 .brand-register-lookbook-upload {
-	font-size: 10px;
 	height: 200px;
-	background: transparent;
+	/* background: transparent; */
     overflow: hidden;
     position: relative;
 }
@@ -38,12 +37,12 @@ h2.brand-register-step {
 	margin-bottom: 0;
 }
 
-.brand-register-lookbook-upload label {
+/* .brand-register-lookbook-upload label {
 	line-height: 100% !important;
 	margin-top: 10px;
 	color: #60b8e4;
 	cursor: pointer;
-}
+} */
 
 #lookbook-upload {
 	visibility: hidden;

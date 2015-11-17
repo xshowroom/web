@@ -341,7 +341,50 @@ a.active:before{
     margin-top: -5px;
     cursor: pointer;
 }
-
+/* image uploader样式 */
+.image-uploader{
+	background-color: #ccc;
+    border-radius: 2px;
+    background-image: url("/static/app/images/image-uploader-bg.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 20%;
+    color: #fff;
+    position: relative;
+}
+.image-uploader .uploaded-image{
+	width:100%;
+	position: absolute;
+	left:0;
+	top:50%;
+	z-index: 0;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+}
+.image-uploader input[type='file']{
+	position: absolute;
+	z-index: -1;
+	visibility: hidden;
+}
+.image-uploader label{
+	width:100%;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	position: absolute;
+	cursor: pointer;
+}
+.image-uploader label > span{
+	font-size: 14px;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}
+.image-uploader label > span:first-child{
+	margin-top: 65%;
+}
 /* uploading 遮罩 */
 .uploading-mask {
     position: absolute;
