@@ -128,17 +128,19 @@
 							<div class="form-group col-xs-12 buyer-register-checkbox-group"
 								id="collection-type" ng-class="{'has-error': step.validation[2].collectionType}">
 								<label>{{ "buyer_register__STEP_2__STORE_COLLECTION_TYPE"| translate }}*</label><br>
-								<div class="checkbox-inline buyer-register-checkbox">
-									<input type="checkbox" id="collection-type-women" name="collectionType"  ng-model="user.collectionType" value="dropdown__COLLECTION__WOMEN">
-									<label for="collection-type-women">{{ "dropdown__COLLECTION__WOMEN"| translate }}</label>
-								</div>
-								<div class="checkbox-inline buyer-register-checkbox">
-									<input type="checkbox" id="collection-type-accessories" name="collectionType" ng-model="user.collectionType" value="dropdown__COLLECTION__ACCESSORIES"><label
-										for="collection-type-accessories">{{ "dropdown__COLLECTION__ACCESSORIES"| translate }}</label>
-								</div>
-								<div class="checkbox-inline buyer-register-checkbox">
-									<input type="checkbox" id="collection-type-men" name="collectionType" ng-model="user.collectionType" value="dropdown__COLLECTION__MEN">
-									<label for="collection-type-men">{{ "dropdown__COLLECTION__MEN"| translate }}</label>
+								<div>
+									<label for="collection-type-women" class="checkbox-inline">
+										<input type="checkbox" id="collection-type-women" name="collectionType" ng-model="collectionType.women"  ng-change="setCollection('dropdown__COLLECTION__WOMEN')">
+										{{ "dropdown__COLLECTION__WOMEN"| translate }}
+									</label>
+									<label for="collection-type-accessories" class="checkbox-inline">
+										<input type="checkbox" id="collection-type-accessories" name="collectionType" ng-model="collectionType.accessories"  ng-change="setCollection('dropdown__COLLECTION__ACCESSORIES')">
+										{{ "dropdown__COLLECTION__ACCESSORIES"| translate }}
+									</label>
+									<label for="collection-type-men" class="checkbox-inline">
+										<input type="checkbox" id="collection-type-men" name="collectionType" ng-model="collectionType.men" ng-change="setCollection('dropdown__COLLECTION__MEN')">
+										{{ "dropdown__COLLECTION__MEN"| translate }}
+									</label>
 								</div>
 							</div>
 						</div>

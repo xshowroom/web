@@ -32,7 +32,7 @@ angular.module(
             directives_js__REGISTER: '注册',
             directives_js__UPLOADING: '上传图片中',
             directives_js__UPLOAD: '上传图片',
-            directives_js__FILE_SIZE: '文件大小上线为5MB',
+            directives_js__FILE_SIZE: '文件大小上限为5MB',
 
             // home.html
             home__LEARN_MORE: '了解更多',
