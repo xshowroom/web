@@ -22,7 +22,7 @@
 		<?php echo View::factory('common/global_setting_with_login'); ?>
 	</nav>
 	<nav class="row no-user-navigation"  id="home-page-navigation">
-        <?php echo View::factory('common/global_navigation_top_no_user'); ?>
+        <?php echo View::factory('common/global_navigation_top_guest'); ?>
 	</nav>
 	<section class="row">
 		<div class="container uploading">

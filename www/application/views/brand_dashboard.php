@@ -22,7 +22,7 @@
 	<nav class="row setting-info">
 		<?php echo View::factory('common/global_setting_without_login'); ?>
 	</nav>
-	<nav class="row no-user-navigation"  id="home-page-navigation">
+	<nav class="row user-nav"  id="home-page-navigation">
         <?php echo View::factory('common/global_navigation_top_brand',
         	array('currentPage' =>  'dashboard'),
         	array('userAttr'=> $userAttr)); 
