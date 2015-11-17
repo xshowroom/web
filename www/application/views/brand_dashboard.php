@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  ng-app="xShowroom.dashboard">
+<html  ng-app="xShowroom.brand.dashboard">
 <head>
 	<meta charset="UTF-8" >
 	<title>XShowroom</title>
@@ -16,9 +16,9 @@
 	<script type="text/javascript" src="/static/app/modules/common/i18n.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/services.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
-	<script type="text/javascript" src="/static/app/modules/dashboard.js"></script>
+	<script type="text/javascript" src="/static/app/modules/brand_dashboard.js"></script>
 </head>
-<body ng-controller="DashboardCtrl" class="container-fluid">
+<body ng-controller="BrandDashboardCtrl" class="container-fluid">
 	<nav class="row setting-info">
 		<?php echo View::factory('common/global_setting_without_login'); ?>
 	</nav>

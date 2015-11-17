@@ -6,13 +6,13 @@
  */
 
 angular.module(
-    'xShowroom.dashboard', 
+    'xShowroom.brand.dashboard', 
     [
         'xShowroom.i18n', 'xShowroom.directives'
     ]
 )
 .controller(
-    'DashboardCtrl',
+    'BrandDashboardCtrl',
     [
      	'$scope',
         function ($scope) {

@@ -1,18 +1,18 @@
 angular.module(
-	'xShowroom.register.buyer',
+	'xShowroom.register.brand',
 	[
-	 	'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services', 'ui.uploader'
-	]
+	    'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services'
+    ]
 )
 .controller(
-    'BuyerRegisterCtrl', 
-    [
-        '$scope', '$element', '$q', 'User',
-        function($scope, $element,  $q, User) {
+	'RegisterBrandCtrl', 
+	[
+	    '$scope', '$element', '$timeout', '$q', 'User',
+	    function($scope, $element, $timeout, $q, User) {
 			$scope.step = {
 				stepNumber: 1,
 				validation: {
-				     1: {
+				    1: {
 				    	'email': false,
 						'pass': false,
 						'firstName': false,
@@ -22,15 +22,8 @@ angular.module(
 //						'mobile': false
 				    },
 				    2: {
-				    	'shopName': false,
-				    	'shopType': false,
-				    	'collectionType': false, 
-				    	'brandList': false,
-				    	'shopWebsite': false,
-				    	'shopAddress': false,
-				    	'shopCountry': false,
-				    	'shopZipcode': false,
-				    	'shopTel': false,
+				    	'brandName': false, 
+						'designerName': false,
 						'imagePath': false
 				    },
 				    3: {
@@ -56,10 +49,8 @@ angular.module(
 				}
 			};
 			$scope.user = {
-				roleType: 2
+				roleType: 1
 			};
-			
-			$scope.errorMsgs = [];
 			
 			$scope.check = function() {
 				var stepNumber = $scope.step.stepNumber;
@@ -109,12 +100,11 @@ angular.module(
 				});
 			};
 			
-			//往前一页
 			$scope.previous = function() {
 				if ($scope.step.stepNumber > 1 && $scope.step.stepNumber <= 3) {
 					$scope.step.stepNumber--;
 				}
-			}
+			};
 			
 			$scope.register = function() {
 				var register = User.register($scope.user);
@@ -123,11 +113,9 @@ angular.module(
         				alert(res.msg);
         				return;
         			}
-        			window.open('./login.html', '_self');
+        			window.open('/login', '_self');
         		});
 			};
-			
 		}
-
 	]
 );
