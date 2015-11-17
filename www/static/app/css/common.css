@@ -197,6 +197,9 @@ a.active:before{
     min-width: 100px;
     padding: 0;
 }
+.setting-info .locale-settings.right .dropdown .dropdown-menu > li{
+	text-align: center;
+}
 .setting-info .locale-settings	.dropdown .dropdown-menu > li{
     font-size: 12px;
     padding: 0 5px;
