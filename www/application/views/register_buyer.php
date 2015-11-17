@@ -14,7 +14,7 @@
 	<script type="text/javascript" src="/static/app/modules/common/i18n.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/services.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
-	<script type="text/javascript" src="/static/app/modules/buyer-register.js"></script>
+	<script type="text/javascript" src="/static/app/modules/buyer_register.js"></script>
 </head>
 
 <body ng-controller="BuyerRegisterCtrl" class="container-fluid">

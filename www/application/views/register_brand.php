@@ -14,7 +14,7 @@
 	<script type="text/javascript" src="/static/app/modules/common/i18n.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/services.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
-	<script type="text/javascript" src="/static/app/modules/brand-register.js"></script>
+	<script type="text/javascript" src="/static/app/modules/brand_register.js"></script>
 </head>
 
 <body ng-controller="BrandRegisterCtrl" class="container-fluid">
