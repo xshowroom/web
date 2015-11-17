@@ -31,6 +31,8 @@ angular.module(
             directives_js__LOGOUT: '退出',
             directives_js__REGISTER: '注册',
             directives_js__UPLOADING: '上传图片中',
+            directives_js__UPLOAD: '上传图片',
+            directives_js__FILE_SIZE: '文件大小上线为5MB',
 
             // home.html
             home__LEARN_MORE: '了解更多',
@@ -210,7 +212,7 @@ angular.module(
             brand_register__STEP_1__btn__ADD_BRAND: '添加品牌',
 
             brand_register__STEP_2__IMAGE: '相册 / 照片',
-            brand_register__STEP_2__UPLOAD: '上传',
+//            brand_register__STEP_2__UPLOAD: '上传',
             brand_register__STEP_2__BRAND_NAME_PLACEHOLDER: '请输入您的品牌名称 *',
             brand_register__STEP_2__DESIGNER_NAME_PLACEHOLDER: '设计师 *',
             brand_register__STEP_2__URL_DESC_1: '这个链接将被用于直接定位到你的品牌站点',
@@ -249,7 +251,7 @@ angular.module(
             buyer_register__STEP_1__btn__ADD_STORE: '添加店铺',
 
             buyer_register__STEP_2__IMAGE: '商店 / 照片',
-            buyer_register__STEP_2__UPLOAD: '上传',
+//            buyer_register__STEP_2__UPLOAD: '上传',
             buyer_register__STEP_2__STORE_NAME_PLACEHOLDER: '请输入您的商店名称 *',
             buyer_register__STEP_2__STORE_TYPE_PLACEHOLDER: '请选择您的商店类型 *',
             buyer_register__STEP_2__STORE_COLLECTION_TYPE: '系列类型',
@@ -491,6 +493,8 @@ angular.module(
             directives_js__LOGOUT: 'LOGOUT',
             directives_js__REGISTER: 'REGISTER',
             directives_js__UPLOADING: 'UPLOADING IMAGE',
+            directives_js__UPLOAD: 'UPLOAD',
+            directives_js__FILE_SIZE: 'File size limit is 5MB',
 
             // home.html
             home__LEARN_MORE: 'LEARN MORE',
@@ -670,7 +674,7 @@ angular.module(
             brand_register__STEP_1__btn__ADD_BRAND: 'ADD BRAND',
 
             brand_register__STEP_2__IMAGE: 'LOOKBOOK / IMAGE',
-            brand_register__STEP_2__UPLOAD: 'UPLOAD',
+//            brand_register__STEP_2__UPLOAD: 'UPLOAD',
             brand_register__STEP_2__BRAND_NAME_PLACEHOLDER: 'PLEASE ENTER YOUR BRAND NAME *',
             brand_register__STEP_2__DESIGNER_NAME_PLACEHOLDER: 'DESIGNER NAME *',
             brand_register__STEP_2__URL_DESC_1: 'This URL will be used for direct access to your Brand',
@@ -709,7 +713,7 @@ angular.module(
             buyer_register__STEP_1__btn__ADD_STORE: 'ADD STORE',
 
             buyer_register__STEP_2__IMAGE: 'SHOP / IMAGE',
-            buyer_register__STEP_2__UPLOAD: 'UPLOAD',
+//            buyer_register__STEP_2__UPLOAD: 'UPLOAD',
             buyer_register__STEP_2__STORE_NAME_PLACEHOLDER: 'PLEASE ENTER YOUR STORE NAME *',
             buyer_register__STEP_2__STORE_TYPE_PLACEHOLDER: 'PLEASE SELECT STORE TYPE *',
             buyer_register__STEP_2__STORE_COLLECTION_TYPE: 'COLLECTION TYPE',
