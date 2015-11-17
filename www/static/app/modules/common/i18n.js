@@ -23,16 +23,10 @@ angular.module(
 	'global',
 	{
 		'zh-CN': {
-            // directives.js
-            directives_js__LANGUAGE: '语言',
-            directives_js__CURRENCY: '货币',
-            directives_js__WELCOME: '欢迎 ',
-            directives_js__LOGIN: '登录',
-            directives_js__LOGOUT: '退出',
-            directives_js__REGISTER: '注册',
             directives_js__UPLOADING: '上传图片中',
             directives_js__UPLOAD: '上传图片',
             directives_js__FILE_SIZE: '文件大小上限为5MB',
+
 
             // login.html
             login__SIGN_IN: '用户登录',
@@ -342,18 +336,9 @@ angular.module(
             dropdown__COLLECTION__MEN: '男士'
         },
         'en': {
-            // directives.js
-            directives_js__LANGUAGE: 'LANGUAGE',
-            directives_js__CURRENCY: 'CURRENCY',
-            directives_js__WELCOME: 'WELCOME',
-            directives_js__LOGIN: 'LOGIN',
-            directives_js__LOGOUT: 'LOGOUT',
-            directives_js__REGISTER: 'REGISTER',
             directives_js__UPLOADING: 'UPLOADING IMAGE',
             directives_js__UPLOAD: 'UPLOAD',
             directives_js__FILE_SIZE: 'File size limit is 5MB',
-
-
 
             // login.html
             login__SIGN_IN: 'SIGN IN',
