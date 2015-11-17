@@ -65,7 +65,7 @@
 						<p>{{ "login__REQUEST_MEMBERSHIP_DESC"| translate }}</p>
 						<div>
 							<a class="btn btn-type-1" href="/register/brand" target="_self">{{ "login__REQUEST_BRAND"| translate }}</a>
-							<a class="btn btn-type-1" href="/register/brand" target="_self">{{ "login__REQUEST_BUYER"| translate }}</a>
+							<a class="btn btn-type-1" href="/register/buyer" target="_self">{{ "login__REQUEST_BUYER"| translate }}</a>
 						</div>
 					</article>
 				</div>

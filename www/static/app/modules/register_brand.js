@@ -113,7 +113,7 @@ angular.module(
         				alert(res.msg);
         				return;
         			}
-        			window.open('/login', '_self');
+        			window.open('/brand/dashboard', '_self');
         		});
 			};
 		}

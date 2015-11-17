@@ -129,15 +129,15 @@
 								id="collection-type" ng-class="{'has-error': step.validation[2].collectionType}">
 								<label>{{ "buyer_register__STEP_2__STORE_COLLECTION_TYPE"| translate }}*</label><br>
 								<div class="checkbox-inline buyer-register-checkbox">
-									<input type="radio" id="collection-type-women" name="collectionType"  ng-model="user.collectionType" value="dropdown__COLLECTION__WOMEN">
+									<input type="checkbox" id="collection-type-women" name="collectionType"  ng-model="user.collectionType" value="dropdown__COLLECTION__WOMEN">
 									<label for="collection-type-women">{{ "dropdown__COLLECTION__WOMEN"| translate }}</label>
 								</div>
 								<div class="checkbox-inline buyer-register-checkbox">
-									<input type="radio" id="collection-type-accessories" name="collectionType" ng-model="user.collectionType" value="dropdown__COLLECTION__ACCESSORIES"><label
+									<input type="checkbox" id="collection-type-accessories" name="collectionType" ng-model="user.collectionType" value="dropdown__COLLECTION__ACCESSORIES"><label
 										for="collection-type-accessories">{{ "dropdown__COLLECTION__ACCESSORIES"| translate }}</label>
 								</div>
 								<div class="checkbox-inline buyer-register-checkbox">
-									<input type="radio" id="collection-type-men" name="collectionType" ng-model="user.collectionType" value="dropdown__COLLECTION__MEN">
+									<input type="checkbox" id="collection-type-men" name="collectionType" ng-model="user.collectionType" value="dropdown__COLLECTION__MEN">
 									<label for="collection-type-men">{{ "dropdown__COLLECTION__MEN"| translate }}</label>
 								</div>
 							</div>
