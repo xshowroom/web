@@ -22,7 +22,8 @@ class Model_User {
         $result = DB::select()
                     ->from('user')
                     ->where('id', '=', $id)
-                    ->execute();
+                    ->execute()
+                    ->as_array();
         
         return empty($result) ? array() : $result[0];
     }
@@ -38,7 +39,8 @@ class Model_User {
         $result = DB::update('user')
                     ->set(array('last_login_time' => date('Y-m-d H:i:s')))
                     ->where('id', '=', $userId)
-                    ->execute();
+                    ->execute()
+                    ->as_array();
     
         return $result[0];
     }
@@ -56,7 +58,8 @@ class Model_User {
                     ->from('user')
                     ->where('email', '=', $email)
                     ->where('password', '=', $pass)
-                    ->execute();
+                    ->execute()
+                    ->as_array();
         
         return empty($result) ? array() : $result[0];
     }
@@ -273,7 +276,8 @@ class Model_User {
         $result = DB::select()
                   ->from('user_attr')
                   ->where('user_id', '=', $userId)
-                  ->execute();
+                  ->execute()
+                  ->as_array();
         
         return empty($result) ? array() : $result[0];
     }

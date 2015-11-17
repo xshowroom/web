@@ -14,7 +14,8 @@ class Model_Collection
         $result = DB::select()
                     ->from('collection')
                     ->where('status', '=', STAT_NORMAL)
-                    ->execute();
+                    ->execute()
+                    ->as_array();
         
         return $result;
     }
@@ -26,7 +27,8 @@ class Model_Collection
                     ->where('user_id', '=', $userId)
                     ->where('status', '=', STAT_NORMAL)
                     ->order_by('id', 'DESC')
-                    ->execute();
+                    ->execute()
+                    ->as_array();
         
         return empty($result) ? array() : $result[0];
     }

@@ -13,7 +13,8 @@ class Model_Brand
         $result = DB::select()
                     ->from('brand')
                     ->where('status', '=', STAT_NORMAL)
-                    ->execute();
+                    ->execute()
+                    ->as_array();
         
         return $result;
     }
@@ -24,7 +25,8 @@ class Model_Brand
                     ->from('brand')
                     ->where('brand_name', 'like', '%'.$name.'%')
                     ->where('status', '=', STAT_NORMAL)
-                    ->execute();
+                    ->execute()
+                    ->as_array();
         
         return $result;
     }
@@ -35,7 +37,8 @@ class Model_Brand
                     ->from('brand')
                     ->where('user_id', '=', $userId)
                     ->where('status', '=', STAT_NORMAL)
-                    ->execute();
+                    ->execute()
+                    ->as_array();
         
         return empty($result) ? array() : $result[0];
     }
