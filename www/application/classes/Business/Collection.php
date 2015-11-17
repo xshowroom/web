@@ -11,4 +11,10 @@ class Business_Collection
         $this->collectionModel = new Model_Collection();
     }
     
+    public function getAllCollectionList($userId)
+    {
+        $collectionList = $this->collectionModel->getListByUserId($userId);
+        
+        return $collectionList;
+    }
 }

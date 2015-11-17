@@ -28,4 +28,15 @@ class Model_Brand
         
         return $result;
     }
+    
+    public function getByUserId($userId)
+    {
+        $result = DB::select()
+                    ->from('brand')
+                    ->where('user_id', '=', $userId)
+                    ->where('status', '=', STAT_NORMAL)
+                    ->execute();
+        
+        return empty($result) ? array() : $result[0];
+    }
 }

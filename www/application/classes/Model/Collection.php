@@ -19,8 +19,15 @@ class Model_Collection
         return $result;
     }
     
-    public function getByCond()
+    public function getListByUserId($userId)
     {
+        $result = DB::select()
+                    ->from('collection')
+                    ->where('user_id', '=', $userId)
+                    ->where('status', '=', STAT_NORMAL)
+                    ->order_by('id', 'DESC')
+                    ->execute();
         
+        return empty($result) ? array() : $result[0];
     }
 }
