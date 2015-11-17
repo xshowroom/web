@@ -1,7 +1,9 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-2">
-			<img class="site-logo" ng-src="/static/app/images/logo-black.png">
+			<a href="/home" class="logo-link" target="_self">
+				<img class="site-logo" ng-src="/static/app/images/logo-black.png">
+			</a>
 		</div>
 		<div class="col-xs-8">
 			<ul class="main-naviagtions">

@@ -217,6 +217,9 @@ a.active:before{
 .setting-info .user-info-nav * + * {
 	margin-left: .5em;
 }
+.logo-link:before{
+	content: none;
+}
 /* 无用户导航 */
 .guest-navigation{
 	background-color: #fafafa;

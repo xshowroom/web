@@ -9,7 +9,7 @@ class Controller_Guide extends Controller_Base
      	$opUser = $_SESSION['opUser'];
 
         if(!empty($opUser)) {
-            $view->set('user', $this->opUser);
+            $view->set('user', $opUser);
 
             $userService = new Business_User();
             $view->set('userAttr', $userService->getUserAttr($opUser['id']));

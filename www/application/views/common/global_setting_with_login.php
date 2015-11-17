@@ -15,7 +15,7 @@
 				<?php } else{ ?>
 				<div class="user-logined">
 					<span>{{ "directives_js__WELCOME"| translate }} </span>
-					<a href="#"><?= $userAttr['display_name'] ?></a>
+					<a href="/<?= ['admin', 'brand', 'buyer'][$user['role_type']]?>/dashboard"><?= $userAttr['display_name'] ?></a>
 					<span> | </span>
 					<a href="/user/logout" target="_self">{{ "directives_js__LOGOUT"| translate }}</a>
 				</div>
