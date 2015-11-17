@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  ng-app="xShowroom.brand.dashboard">
+<html  ng-app="xShowroom.dashboard">
 <head>
 	<meta charset="UTF-8" >
 	<title>XShowroom</title>
@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="/static/bower_components/font-awesome/css/font-awesome.min.css" />
 	<link rel="stylesheet" type="text/css" href="/static/app/css/common.css" />
-	<link rel="stylesheet" type="text/css" href="/static/app/css/brand_dashboard.css" />
+	<link rel="stylesheet" type="text/css" href="/static/app/css/brand-dashboard.css" />
 	<link rel="shortcut icon" href="/static/app/resources/images/favicon.ico" />
 	<script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -16,9 +16,9 @@
 	<script type="text/javascript" src="/static/app/modules/common/i18n.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/services.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
-	<script type="text/javascript" src="/static/app/modules/brand_dashboard.js"></script>
+	<script type="text/javascript" src="/static/app/modules/dashboard.js"></script>
 </head>
-<body ng-controller="BrandDashboardCtrl" class="container-fluid">
+<body ng-controller="DashboardCtrl" class="container-fluid">
 	<nav class="row setting-info">
 		<?php echo View::factory('common/global_setting_without_login'); ?>
 	</nav>
@@ -169,15 +169,6 @@
 						<img src="/static/app/images/shop-brand-1.png" class="collection-item-image">
 						<div class="collection-name">COLLECTION A</div>
 					</a>
-				</div>
-			</div>
-		</div>
-		<div class="container collection-list">
-			<div class="row">
-				<div class="col-xs-12 text-center empty-warning">
-					<img src="/static/app/images/empty.png">
-					<p>Oops, your collection is empty!</p>
-					<p><a href="/collection/create">Add collections</a> to attract more followers.</p>
 				</div>
 			</div>
 		</div>

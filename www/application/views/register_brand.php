@@ -5,7 +5,7 @@
 	<title>XShowroom</title>
 	<link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="/static/app/css/common.css" />
-	<link rel="stylesheet" type="text/css" href="/static/app/css/brand-register.css" />
+	<link rel="stylesheet" type="text/css" href="/static/app/css/register_brand.css" />
 	<link rel="shortcut icon" href="/static/app/resources/images/favicon.ico" />
 	<script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

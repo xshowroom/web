@@ -1,7 +1,7 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
 
-class Controller_Dashboard extends Controller_BaseReqLogin
+class Controller_Collection extends Controller_BaseReqLogin
 {
     public $userService;
 
@@ -11,9 +11,9 @@ class Controller_Dashboard extends Controller_BaseReqLogin
         $this->userService = new Business_User();
     }
 
-    public function action_index()
+    public function action_create()
     {
-        $view = View::factory('dashboard');
+        $view = View::factory('collection_create');
         $view->set('user', $this->opUser);
         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
         $this->response->body($view);
