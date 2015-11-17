@@ -20,7 +20,7 @@
 </head>
 <body ng-controller="DashboardCtrl" class="container-fluid">
 	<nav class="row setting-info">
-		<?php echo View::factory('common/global-setting-without-login'); ?>
+		<?php echo View::factory('common/global_setting_without_login'); ?>
 	</nav>
 	<nav class="row no-user-navigation"  id="home-page-navigation">
         <?php echo View::factory('common/global_navigation_top_brand',
