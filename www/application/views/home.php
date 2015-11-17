@@ -44,10 +44,10 @@
 </head>
 <body ng-controller="HomeCtrl" class="container-fluid">
 	<nav class="row setting-info">
-        <?php echo View::factory('common/global-setting-info'); ?>
+		<?php echo View::factory('common/global_setting_with_login', array('userAttr'=> $userAttr)); ?>
 	</nav>
 	<nav class="row no-user-navigation"  id="home-page-navigation">
-        <?php echo View::factory('common/global-no-user-navigation', array('currentPage' =>  'home')); ?>
+        <?php echo View::factory('common/global_navigation_top_no_user', array('currentPage' =>  'home')); ?>
 	</nav>
 	<section class="row no-vertical-padding home-banner">
 		<div class="container-fluid banner-content">
@@ -255,7 +255,7 @@
 		</div>
 	</section>
 	<footer class="row footer-navigation">
-        <?php echo View::factory('common/global-footer-navigation'); ?>
+        <?php echo View::factory('common/global_navigation_footer'); ?>
 	</footer>
 </body>
 </html>

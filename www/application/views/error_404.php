@@ -20,10 +20,10 @@
 </head>
 <body ng-controller="DashboardCtrl" class="container-fluid">
 	<nav class="row setting-info">
-		<?php echo View::factory('common/global-setting-info', array('userAttr'=> $userAttr)); ?>
+		<?php echo View::factory('common/global_setting_info', array('userAttr'=> $userAttr)); ?>
 	</nav>
 	<nav class="row no-user-navigation">
-        <?php echo View::factory('common/global-no-user-navigation'); ?>
+        <?php echo View::factory('common/global_navigation_top_no_user'); ?>
 	</nav>
 	<section class="row">
 		<div class="container">
@@ -34,7 +34,7 @@
 		</div>
 	</section>
 	<footer class="row footer-navigation">
-		<?php echo View::factory('common/global-footer-navigation'); ?>
+        <?php echo View::factory('common/global_navigation_footer'); ?>
 	</footer>
 </body>
 </html>

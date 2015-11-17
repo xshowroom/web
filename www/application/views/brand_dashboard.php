@@ -20,10 +20,13 @@
 </head>
 <body ng-controller="DashboardCtrl" class="container-fluid">
 	<nav class="row setting-info">
-		<?php echo View::factory('common/global-setting-info', array('userAttr'=> $userAttr)); ?>
+		<?php echo View::factory('common/global-setting-without-login'); ?>
 	</nav>
-	<nav class="row no-user-navigation">
-        <?php echo View::factory('common/global-no-user-navigation'); ?>
+	<nav class="row no-user-navigation"  id="home-page-navigation">
+        <?php echo View::factory('common/global_navigation_top_brand',
+        	array('currentPage' =>  'dashboard'),
+        	array('userAttr'=> $userAttr)); 
+       	?>
 	</nav>
 	<section class="row">
 		<div class="container">
@@ -36,7 +39,7 @@
 		</div>
 	</section>
 	<footer class="row footer-navigation">
-		<?php echo View::factory('common/global-footer-navigation'); ?>
+        <?php echo View::factory('common/global_navigation_footer'); ?>
 	</footer>
 </body>
 </html>

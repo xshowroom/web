@@ -19,12 +19,11 @@
 
 <body ng-controller="BrandRegisterCtrl" class="container-fluid">
 	<nav class="row setting-info">
-		<?php echo View::factory('common/global-setting-info'); ?>
+		<?php echo View::factory('common/global_setting_with_login'); ?>
 	</nav>
-	<nav class="row no-user-navigation">
-        <?php echo View::factory('common/global-no-user-navigation'); ?>
+	<nav class="row no-user-navigation"  id="home-page-navigation">
+        <?php echo View::factory('common/global_navigation_top_no_user'); ?>
 	</nav>
-
 	<section class="row">
 		<div class="container uploading">
 			<div class="col-xs-12">
@@ -223,7 +222,7 @@
 	</section>
 
 	<footer class="row footer-navigation">
-		<?php echo View::factory('common/global-footer-navigation'); ?>
+        <?php echo View::factory('common/global_navigation_footer'); ?>
 	</footer>
 </body>
 </html>
