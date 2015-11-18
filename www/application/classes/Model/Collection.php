@@ -20,6 +20,18 @@ class Model_Collection
         return $result;
     }
     
+    public function getByCollectionId($collectionId)
+    {
+        $result = DB::select()
+                    ->from('collection')
+                    ->where('id', '=', $collectionId)
+                    ->where('status', '=', STAT_NORMAL)
+                    ->execute()
+                    ->as_array();
+        
+        return empty($result) ? array() : $result[0];
+    }
+    
     public function getListByUserId($userId)
     {
         $result = DB::select()
