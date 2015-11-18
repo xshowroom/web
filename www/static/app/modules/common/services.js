@@ -36,6 +36,31 @@ angular.module(
     ]
 )
 .service(
+	'Collection', 
+	[
+	    '$http',
+		function ($http) {
+	    	var postRequestTransformer = function(data){
+				var temp = [];
+				for(var i in data){
+					temp.push(i + '=' + data[i]);
+				}
+                return temp.join('&');
+            }
+		    return {
+		      	create: function (opts) {
+		      		return $http.post('/api/collection/add', opts, {
+						headers: {
+							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
+						},
+						transformRequest: postRequestTransformer
+					});
+		      	}
+   			};
+         }
+    ]
+)
+.service(
     'Country',
     [
 		function () {
