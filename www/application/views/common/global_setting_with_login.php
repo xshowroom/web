@@ -7,17 +7,17 @@
 			<div class="user-info-nav">
 				<?php if(empty($userAttr)) { ?>
 				<div class="user-not-logined">
-					<span>{{ "directives_js__WELCOME"| translate }} GUEST</span>
-					<a href="/login" target="_self">{{ "directives_js__LOGIN"| translate }}</a>
+					<span><?= __("global_setting_with_login__WELCOME")?> GUEST</span>
+					<a href="/login" target="_self"><?= __("global_setting_with_login__LOGIN")?></a>
 					<span> | </span>
-					<a href="/guide">{{ "directives_js__REGISTER"| translate }}</a>
+					<a href="/guide"><?= __("global_setting_with_login__REGISTER")?></a>
 				</div>
 				<?php } else{ ?>
 				<div class="user-logined">
-					<span>{{ "directives_js__WELCOME"| translate }} </span>
+					<span><?= __("global_setting_with_login__WELCOME")?> </span>
 					<a href="/<?= ['admin', 'brand', 'buyer'][$user['role_type']]?>/dashboard"><?= $userAttr['display_name'] ?></a>
 					<span> | </span>
-					<a href="/user/logout" target="_self">{{ "directives_js__LOGOUT"| translate }}</a>
+					<a href="/user/logout" target="_self"><?= __("global_setting_with_login__LOGOUT")?></a>
 				</div>
 				<?php } ?>
 			</div>

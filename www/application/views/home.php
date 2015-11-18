@@ -63,40 +63,40 @@
 			    <h2>FINLAY & CO</h2>
 			    <p>SPRING SUMMER 2015</p>
 			    <div>
-					<a href="/guide#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
-					<a class="btn btn-type-2">{{ "home__CONTRACT_US"| translate }}</a>
+					<a href="/guide#/retailer" class="btn btn-type-1"><?=__("home__LEARN_MORE")?></a>
+					<a class="btn btn-type-2"><?=__("home__CONTRACT_US")?></a>
 				</div>
 			</div>
 			<div id="banner-content-2" class="nivo-html-caption">
 			    <h2>Hello World</h2>
 			    <p>This is a test text</p>
 			    <div>
-					<a href="/guide#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
-					<a class="btn btn-type-2">{{ "home__CONTRACT_US"| translate }}</a>
+					<a href="/guide#/retailer" class="btn btn-type-1"><?=__("home__LEARN_MORE")?></a>
+					<a class="btn btn-type-2"><?=__("home__CONTRACT_US")?></a>
 				</div>
 			</div>
 			<div id="banner-content-3" class="nivo-html-caption">
 			    <h2>YOUR BRAND</h2>
 			    <p>YOUR COLLECTION </p>
 			    <div>
-					<a href="/guide#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
-					<a class="btn btn-type-2">{{ "home__CONTRACT_US"| translate }}</a>
+					<a href="/guide#/retailer" class="btn btn-type-1"><?=__("home__LEARN_MORE")?></a>
+					<a class="btn btn-type-2"><?=__("home__CONTRACT_US")?></a>
 				</div>
 			</div>
             <div id="banner-content-4" class="nivo-html-caption">
                 <h2>YOUR BRAND</h2>
                 <p>YOUR COLLECTION </p>
                 <div>
-                    <a href="/guide#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
-                    <a class="btn btn-type-2">{{ "home__CONTRACT_US"| translate }}</a>
+                    <a href="/guide#/retailer" class="btn btn-type-1"><?=__("home__LEARN_MORE")?></a>
+                    <a class="btn btn-type-2"><?=__("home__CONTRACT_US")?></a>
                 </div>
             </div>
             <div id="banner-content-5" class="nivo-html-caption">
                 <h2>YOUR BRAND</h2>
                 <p>YOUR COLLECTION </p>
                 <div>
-                    <a href="/guide#/retailer" class="btn btn-type-1">{{ "home__LEARN_MORE"| translate }}</a>
-                    <a class="btn btn-type-2">{{ "home__CONTRACT_US"| translate }}</a>
+                    <a href="/guide#/retailer" class="btn btn-type-1"><?=__("home__LEARN_MORE")?></a>
+                    <a class="btn btn-type-2"><?=__("home__CONTRACT_US")?></a>
                 </div>
             </div>
 		</div>
@@ -105,24 +105,24 @@
 		<div class="container home-kpi text-center">
 			<div class="row">
 				<h1 class="col-xs-12">X SHOWROOM</h1>
-				<p class="col-xs-12">{{ "home__XSHOWROOM_DESC"| translate }}</p>
+				<p class="col-xs-12"><?=__("home__XSHOWROOM_DESC")?></p>
 			</div>
 			<div class="row">
 				<div class="col-xs-3 kpi-item">
 					<div class="kpi-number">1214</div>
-					<div class="kpi-name">{{ "home__XSHOWROOM_BUYER_COUNT"| translate }}</div>
+					<div class="kpi-name"><?=__("home__XSHOWROOM_BUYER_COUNT")?></div>
 				</div>
 				<div class="col-xs-3 kpi-item">
 					<div class="kpi-number">121</div>
-					<div class="kpi-name">{{ "home__XSHOWROOM_BRANDS_COUNT"| translate }}</div>
+					<div class="kpi-name"><?=__("home__XSHOWROOM_BRANDS_COUNT")?></div>
 				</div>
 				<div class="col-xs-3 kpi-item">
 					<div class="kpi-number">3571</div>
-					<div class="kpi-name">{{ "home__XSHOWROOM_PRODUCTS_COUNT"| translate }}</div>
+					<div class="kpi-name"><?=__("home__XSHOWROOM_PRODUCTS_COUNT")?></div>
 				</div>
 				<div class="col-xs-3 kpi-item">
 					<div class="kpi-number">52291</div>
-					<div class="kpi-name">{{ "home__XSHOWROOM_ORDERS_COUNT"| translate }}</div>
+					<div class="kpi-name"><?=__("home__XSHOWROOM_ORDERS_COUNT")?></div>
 				</div>
 			</div>
 		</div>
@@ -133,12 +133,12 @@
 				<div class="col-xs-offset-1 col-xs-5 text-center introduction-item">
 					<h3>
 						<img src="/static/app/images/common-icon-star.png"/>
-						<span>{{ "home__BRANDS"| translate }}</span>
+						<span><?=__("home__BRANDS")?></span>
 					</h3>
-					<p>{{ "home__BRANDS_DESC"| translate }}</p>
+					<p><?=__("home__BRANDS_DESC")?></p>
 					<div>
-						<a href="/guide#/brand" class="btn btn-type-1">{{ "home__btn_SOLUTION"| translate }}</a>
-						<a class="btn btn-type-1" href="/register/brand" target="_self">{{ "home__btn_REGISTER"| translate }}</a>
+						<a href="/guide#/brand" class="btn btn-type-1"><?=__("home__btn_SOLUTION")?></a>
+						<a class="btn btn-type-1" href="/register/brand" target="_self"><?=__( "home__btn_REGISTER")?></a>
 					</div>
 				</div>
 				<div class="col-xs-6 introduction-item introduction-image">
@@ -152,12 +152,12 @@
 				<div class="col-xs-5 text-center introduction-item">
 					<h3>
 						<img src="/static/app/images/common-icon-gift.png"/>
-						<span>{{ "home__BUYERS"| translate }}</span>
+						<span><?=__("home__BUYERS")?></span>
 					</h3>
-					<p>{{ "home__BUYERS_DESC"| translate }}</p>
+					<p><?=__("home__BUYERS_DESC")?></p>
 					<div>
-						<a href="/guide#/retailer" class="btn btn-type-1">{{ "home__btn_SOLUTION"| translate }}</a>
-						<a class="btn btn-type-1" href="/register/buyer" target="_self">{{ "home__btn_REGISTER"| translate }}</a>
+						<a href="/guide#/retailer" class="btn btn-type-1"><?=__("home__btn_SOLUTION")?></a>
+						<a class="btn btn-type-1" href="/register/buyer" target="_self"><?=__("home__btn_REGISTER")?></a>
 					</div>
 				</div>
 			</div>
@@ -167,8 +167,8 @@
 		<div class="container-fluid home-showcase">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<h3>{{ "home__HOT_BRANDS"| translate }}</h3>
-					<p>{{ "home__BRAND_PROFILES"| translate }}</p>
+					<h3><?=__("home__HOT_BRANDS")?></h3>
+					<p><?=__("home__BRAND_PROFILES")?></p>
 				</div>
 			</div>
 			<div class="row"> 
@@ -177,34 +177,34 @@
 						<img src="/static/app/images/home-hot-brands-1.png"/>
 					</div>
 					<div class="showcase-name">PAPER LONDON</div>
-					<div class="showcase-collection">{{ "home__SSI5_COLLECTION"| translate }}</div>
+					<div class="showcase-collection"><?=__("home__SSI5_COLLECTION")?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
 					<div class="showcase-image">
 						<img src="/static/app/images/home-hot-brands-2.png"/>
 					</div>
 					<div class="showcase-name">MAYA MAYAGAL</div>
-					<div class="showcase-collection">{{ "home__SSI5_COLLECTION"| translate }}</div>
+					<div class="showcase-collection"><?=__("home__SSI5_COLLECTION")?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
 					<div class="showcase-image">
 						<img src="/static/app/images/home-hot-brands-3.png"/>
 					</div>
 					<div class="showcase-name">PPQ</div>
-					<div class="showcase-collection">{{ "home__SSI5_COLLECTION"| translate }}</div>
+					<div class="showcase-collection"><?=__("home__SSI5_COLLECTION")?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
 					<div class="showcase-image">
 						<img src="/static/app/images/home-hot-brands-4.png"/>
 					</div>
 					<div class="showcase-name">MUUBAA</div>
-					<div class="showcase-collection">{{ "home__SSI5_COLLECTION"| translate }}</div>
+					<div class="showcase-collection"><?=__("home__SSI5_COLLECTION")?></div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<h3>{{ "home__TESTOMONIALS"| translate }}</h3>
-					<p>{{ "home__FEATURED"| translate }}</p>
+					<h3><?=__("home__TESTOMONIALS")?></h3>
+					<p><?=__("home__FEATURED")?></p>
 				</div>
 			</div>
 			<div class="row"> 
@@ -213,28 +213,28 @@
 						<img src="/static/app/images/home-testomonial-1.png"/>
 					</div>
 					<div class="showcase-name">LILA SIMPSON</div>
-					<div class="showcase-identity">{{ "home__people_BUYER"| translate }}</div>
+					<div class="showcase-identity"><?=__("home__people_BUYER")?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
 					<div class="showcase-image">
 						<img src="/static/app/images/home-testomonial-2.png"/>
 					</div>
 					<div class="showcase-name">JOHNSON SMITH</div>
-					<div class="showcase-identity">{{ "home__people_BUYER"| translate }}</div>
+					<div class="showcase-identity"><?=__("home__people_BUYER")?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
 					<div class="showcase-image">
 						<img src="/static/app/images/home-testomonial-3.png"/>
 					</div>
 					<div class="showcase-name">BARNET MOLLY</div>
-					<div class="showcase-identity">{{ "home__people_DESIGNER"| translate }}</div>
+					<div class="showcase-identity"><?=__("home__people_DESIGNER")?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
 					<div class="showcase-image">
 						<img src="/static/app/images/home-testomonial-4.png"/>
 					</div>
 					<div class="showcase-name">JUDY WINTER</div>
-					<div class="showcase-identity">{{ "home__people_BUYER"| translate }}</div>
+					<div class="showcase-identity"><?=__("home__people_BUYER")?></div>
 				</div>
 			</div>
 		</div>
