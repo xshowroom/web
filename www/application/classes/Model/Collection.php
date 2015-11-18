@@ -32,4 +32,54 @@ class Model_Collection
         
         return empty($result) ? array() : $result[0];
     }
+    
+    /**
+     * 增加用户信息
+     *
+     * @param string $email
+     * @param string $password
+     * @param int $roleType
+     * @return int
+     */
+    public function addCollection($userId, $name, $category, $mode, $season, $miniOrder, $currency, $deadline, $deliveryDate, $description, $imageUrl,$imageMediumUrl,$imageSmallUrl)
+    {
+        $result = DB::insert('collection')
+                    ->columns(array(
+                        'user_id',
+                        'name',
+                        'category',
+                        'mode',
+                        'season',
+                        'mini_order',
+                        'currency',
+                        'deadline',
+                        'delivery_date',
+                        'description',
+                        'cover_image',
+                        'cover_image_medium',
+                        'cover_image_small',
+                        'create_time',
+                        'status',
+                    ))
+                    ->values(array(
+                        $userId,
+                        $name,
+                        $category,
+                        $mode,
+                        $season,
+                        $miniOrder,
+                        $currency,
+                        $deadline,
+                        $deliveryDate,
+                        $description,
+                        $imageUrl,
+                        $imageMediumUrl,
+                        $imageSmallUrl,
+                        date('Y-m-d H:i:s'),
+                        STAT_NORMAL,
+                    ))
+                    ->execute();
+    
+        return $result[0];
+    }
 }

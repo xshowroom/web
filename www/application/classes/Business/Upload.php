@@ -59,4 +59,25 @@ class Business_Upload
         
         return $realPathFile;
     }
+    
+    public function resize($filename, $percent, $suffix = 'medium')
+    {
+        // 获取新的尺寸
+        list($width, $height) = getimagesize($filename);
+        $new_width = $width * $percent;
+        $new_height = $height * $percent;
+        
+        // 重新取样
+        $image_p = imagecreatetruecolor($new_width, $new_height);
+        $image = imagecreatefromjpeg($filename);
+        imagecopyresampled($image_p, $image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
+        
+        $temp = pathinfo($filename);
+        $output = "{$temp['dirname']}/{$temp['filename']}_{$suffix}.{$temp['extension']}";
+        
+        // 输出
+        imagejpeg($image_p, $output, 100);
+        
+        return $output;
+    }
 } 
