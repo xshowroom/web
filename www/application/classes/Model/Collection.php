@@ -8,6 +8,11 @@
  */
 class Model_Collection
 {
+    const TYPE_OF_DRAFT     = 0;
+    const TYPE_OF_ONLINE    = 1;
+    const TYPE_OF_CLOSE     = 2;
+    const TYPE_OF_DELETE    = 3;
+    
     
     public function getAllList()
     {
@@ -93,5 +98,53 @@ class Model_Collection
                     ->execute();
     
         return $result[0];
+    }
+    
+    public function updateCollection($userId, $collectionId, $name, $category, $mode, $season, $miniOrder, $currency, $deadline, $deliveryDate, $description, $imageUrl,$imageMediumUrl,$imageSmallUrl)
+    {
+        $result = DB::update('collection')
+                    ->set(array(
+                        'name' => $name,
+                        'category' => $category,
+                        'mode' => $mode,
+                        'season' => $season,
+                        'mini_order' => $miniOrder,
+                        'currency' => $currency,
+                        'deadline' => $deadline,
+                        'delivery_date' => $deliveryDate,
+                        'description' => $description,
+                        'cover_image' => $imageUrl,
+                        'cover_image_medium' => $imageMediumUrl,
+                        'cover_image_small' => $imageSmallUrl,
+                        'modify_time' => date('Y-m-d H:i:s'),
+                    ))
+                    ->where('user_id', '=', $userId)
+                    ->where('id', '=', $collectionId)
+                    ->execute();
+    
+        return $result;
+    }
+    
+    public function checkName($collectionName)
+    {
+        $result = DB::select()
+                    ->from('collection')
+                    ->where('name', '=', $collectionName)
+                    ->execute()
+                    ->as_array();
+    
+        return empty($result) ? false : true;
+    }
+    
+    public function updateStatus($collectionId, $status)
+    {
+        $result = DB::update('collection')
+                    ->set(array(
+                        'status' => $status,
+                    ))
+                    ->where('id', '=', $collectionId)
+                    ->execute();
+        
+        return $result;
     }
 }

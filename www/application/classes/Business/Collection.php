@@ -20,7 +20,7 @@ class Business_Collection
         return $collectionList;
     }
     
-    public function addCollection($userId, $name, $category, $mode, $season, $order, $currency, $deadline, $delivery, $description, $imagePath)
+    private function createThreeImage($imagePath)
     {
         $extension = substr(strrchr($imagePath, '.'), 1);
         $realPathFile  = 'data/' . date('ymdHis'). substr(microtime(),2,4) . '.' . $extension;
@@ -33,11 +33,61 @@ class Business_Collection
                 $smallPathFile = $this->uploadService->resize($realPathFile, 0.50, 'small');
                 unlink($imagePath);
             } catch (Exception $e) {
-                return null;
+                $errorInfo = Kohana::message('message', 'IMAGE_ERROR');
+                throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
             }
         }
         
+        return array($realPathFile, $mediumPathFile, $smallPathFile);
+    }
+    
+    public function addCollection($userId, $name, $category, $mode, $season, $order, $currency, $deadline, $delivery, $description, $imagePath)
+    {
+        list($realPathFile, $mediumPathFile, $smallPathFile) = $this->createThreeImage($imagePath);
+        
         $collectionId = $this->collectionModel->addCollection($userId, $name, $category, $mode, $season, $order, $currency, $deadline, $delivery, $description, $realPathFile, $mediumPathFile, $smallPathFile);
         return $collectionId;
+    }
+    
+    public function modifyCollection($userId, $collectionId, $name, $category, $mode, $season, $order, $currency, $deadline, $delivery, $description, $imagePath)
+    {
+        list($realPathFile, $mediumPathFile, $smallPathFile) = $this->createThreeImage($imagePath);
+        
+        $collection = $this->collectionModel->getByCollectionId($collectionId);
+        if (empty($collection) || $collection['user_id'] != $userId) {
+            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+        
+        $res = $this->collectionModel->updateCollection($userId, $collectionId, $name, $category, $mode, $season, $order, $currency, $deadline, $delivery, $description, $realPathFile, $mediumPathFile, $smallPathFile);
+        return $res;
+    }
+    
+    public function removeCollection($userId, $collectionId)
+    {
+        $collection = $this->collectionModel->getByCollectionId($collectionId);
+        if (empty($collection) || $collection['user_id'] != $userId) {
+            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+        
+        $res = $this->updateStatus($collectionId, Model_Collection::TYPE_OF_DELETE);
+        return $res;
+    }
+    
+    public function checkCollectionName($collectionName)
+    {
+        $res = $this->collectionModel->checkName($collectionName);
+        if ($res) {
+            return array(STATUS_ERROR, "{$key}_existed");
+        } else {
+            return array(STATUS_SUCCESS, 'check_ok');
+        }
+    }
+    
+    public function updateStatus($collectionId, $status)
+    {
+        $res = $this->collectionModel->updateStatus($collectionId, $status);
+        return $res;
     }
 }
