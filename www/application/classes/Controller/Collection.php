@@ -21,6 +21,6 @@ class Controller_Collection extends Controller_BaseReqLogin
     
     public function action_index()
     {
-        echo Request::current()->uri();
+        echo Request::current()->param('id');
     }
 }
