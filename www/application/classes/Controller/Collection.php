@@ -18,4 +18,9 @@ class Controller_Collection extends Controller_BaseReqLogin
         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
         $this->response->body($view);
     }
+    
+    public function action_detail()
+    {
+        echo Request::current()->uri();
+    }
 }

@@ -155,3 +155,14 @@ Route::set('default', '(<directory>/)(<controller>(/<action>))',
             'controller' => 'home',
             'action'     => 'index',
         ));
+        
+Route::set('detail', '<controller>/<action>/<id>)',
+        array(
+            'controller' => '(collection|order)',
+            'action'    => '(detail)',
+            'id'        => '\d+',
+        ))
+        ->defaults(array(
+            'controller' => 'collection',
+            'action'     => 'index',
+        ));
