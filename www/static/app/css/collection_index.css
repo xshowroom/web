@@ -123,20 +123,22 @@ section.row.collection-product{
     left: 0;
     display: inline-block;
 	background: rgba(255,255,255,.7);
-	padding: 15px;
+	padding: 10px 15px;
 }
 .collection-product .collection-category-content .collection-product-detail .product-info .product-name{
 	color: #25272c;
 	font-size: 14px;
 	font-weight: bold;
 	display: inline-block;
-	width: 100%;
+	width: 100%;+
+    line-height: 25px;
 }
 .collection-product .collection-category-content .collection-product-detail .product-info .product-prize{
 	color: #878787;
 	font-size: 12px;
 	display: inline-block;
 	width: 100%;
+	line-height: 25px;
 }
 
 
