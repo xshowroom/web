@@ -321,7 +321,22 @@ angular.module(
             dropdown__COLLECTION__ALL: '全部',
             dropdown__COLLECTION__WOMEN: '女士',
             dropdown__COLLECTION__ACCESSORIES: '首饰',
-            dropdown__COLLECTION__MEN: '男士'
+            dropdown__COLLECTION__MEN: '男士',
+
+            // Product Category
+            dropdown__PRODUCT_HAT: "帽子",
+            dropdown__PRODUCT_TOP: "上衣",
+            dropdown__PRODUCT_KNIT: "编织衫",
+            dropdown__PRODUCT_SHIRT: "衬衫",
+            dropdown__PRODUCT_DRESS: "连衣裙",
+            dropdown__PRODUCT_JUMPSUIT: "连衣裤",
+            dropdown__PRODUCT_COAT: "大衣",
+            dropdown__PRODUCT_SKIRT: "裙子",
+            dropdown__PRODUCT_PANTS: "裤子",
+            dropdown__PRODUCT_BELT: "腰带",
+            dropdown__PRODUCT_GLOVES: "手套",
+            dropdown__PRODUCT_SHOES: "鞋履",
+            dropdown__PRODUCT_BAG: "手袋"
         },
         'en': {
             // directives.js
@@ -622,9 +637,22 @@ angular.module(
             dropdown__COLLECTION__ALL: 'ALL',
             dropdown__COLLECTION__WOMEN: 'WOMEN',
             dropdown__COLLECTION__ACCESSORIES: 'ACCESSORIES',
-            dropdown__COLLECTION__MEN: 'MEN'
+            dropdown__COLLECTION__MEN: 'MEN',
 
-            // Collection Season
+            // Product Category
+            dropdown__PRODUCT_HAT: "HAT",
+            dropdown__PRODUCT_TOP: "TOP",
+            dropdown__PRODUCT_KNIT: "KNIT",
+            dropdown__PRODUCT_SHIRT: "衬衫",
+            dropdown__PRODUCT_DRESS: "DRESS",
+            dropdown__PRODUCT_JUMPSUIT: "JUMPSUIT",
+            dropdown__PRODUCT_COAT: "COAT",
+            dropdown__PRODUCT_SKIRT: "SKIRT",
+            dropdown__PRODUCT_PANTS: "PANTS",
+            dropdown__PRODUCT_BELT: "BELT",
+            dropdown__PRODUCT_GLOVES: "GLOVES",
+            dropdown__PRODUCT_SHOES: "SHOES",
+            dropdown__PRODUCT_BAG: "BAG"
 		}
 	}
 );
