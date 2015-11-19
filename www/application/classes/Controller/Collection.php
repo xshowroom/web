@@ -21,7 +21,7 @@ class Controller_Collection extends Controller_BaseReqLogin
     
     public function action_index()
     {
-		echo Request::current()->param('id');
+// 		echo Request::current()->param('id');
         $view = View::factory('collection_index');
         $view->set('user', $this->opUser);
         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
