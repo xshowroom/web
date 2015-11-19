@@ -147,6 +147,17 @@ Cookie::$salt = 'xshowroom';
  * defaults for the URI.
  */
 
+Route::set('detail', '<controller>/<action>/<id>)',
+        array(
+                'controller' => '(collection|order)',
+                'action'    => '(detail)',
+                'id'        => '\d+',
+        ))
+        ->defaults(array(
+                'controller' => 'collection',
+                'action'     => 'index',
+        ));
+
 Route::set('default', '(<directory>/)(<controller>(/<action>))',
         array(
             'directory' => '(api)',
@@ -156,13 +167,4 @@ Route::set('default', '(<directory>/)(<controller>(/<action>))',
             'action'     => 'index',
         ));
         
-Route::set('detail', '<controller>/<action>/<id>)',
-        array(
-            'controller' => '(collection|order)',
-            'action'    => '(detail)',
-            'id'        => '\d+',
-        ))
-        ->defaults(array(
-            'controller' => 'collection',
-            'action'     => 'index',
-        ));
+
