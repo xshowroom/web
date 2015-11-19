@@ -7,7 +7,7 @@ class Controller_Collection extends Controller_BaseReqLogin
 
     public function before()
     {
-        Controller_BaseReqLogin::before();
+        parent::before();
         $this->userService = new Business_User();
     }
 
@@ -19,7 +19,7 @@ class Controller_Collection extends Controller_BaseReqLogin
         $this->response->body($view);
     }
     
-    public function action_detail()
+    public function action_index()
     {
         echo Request::current()->uri();
     }
