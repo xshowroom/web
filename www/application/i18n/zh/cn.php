@@ -194,5 +194,46 @@ return array_merge(
         'login__REQUEST_MEMBERSHIP_DESC' => '买手圈只向注册并审核通过的品牌、代理机构及买手开放。若想入驻买手圈，请完成在线注册：',
         'login__REQUEST_BRAND' => '品牌入驻',
         'login__REQUEST_BUYER' => '买手入圈',
+    ),
+    /**
+     * register_brand.php
+     */
+    array(
+        'brand_register__STEP' => '步骤',
+        'brand_register__SETP_OF' => '/',
+        'brand_register__STEP_INFORMATION_1' => '添加用户信息',
+        'brand_register__STEP_INFORMATION_2' => '添加品牌信息',
+        'brand_register__STEP_INFORMATION_3' => '添加公司信息',
+
+        'brand_register__STEP_1__EMAIL_ADDRESS' => '电子邮箱',
+        'brand_register__STEP_1__EMAIL_ADDRESS_PLACEHOLDER' => '请输入电子邮箱 *',
+        'brand_register__STEP_1__PASSWORD' => '您的密码',
+        'brand_register__STEP_1__PASSWORD_PLACEHOLDER' => '请输入您的密码 *',
+        'brand_register__STEP_1__FIRST_NAME_PLACEHOLDER' => '您的名字 *',
+        'brand_register__STEP_1__LAST_NAME_PLACEHOLDER' => '您的姓氏 *',
+        'brand_register__STEP_1__DISPLAY_NAME_PLACEHOLDER' => '您的显示名称 *',
+        'brand_register__STEP_1__TELEPHONE_PLACEHOLDER' => '您的联系电话 *',
+        'brand_register__STEP_1__MOBILE_PLACEHOLDER' => '您的手机号码 (可选)',
+        'brand_register__STEP_1__btn__CANCEL' => '取消注册',
+        'brand_register__STEP_1__btn__ADD_BRAND' => '添加品牌',
+
+        'brand_register__STEP_2__IMAGE' => '相册 / 照片',
+        'brand_register__STEP_2__BRAND_NAME_PLACEHOLDER' => '请输入您的品牌名称 *',
+        'brand_register__STEP_2__DESIGNER_NAME_PLACEHOLDER' => '设计师 *',
+        'brand_register__STEP_2__URL_DESC_1' => '这个链接将被用于直接定位到你的品牌站点',
+        'brand_register__STEP_2__URL_DESC_2' => '(通过验证的买手才能访问)',
+        'brand_register__STEP_2__btn__PREVIOUS' => '上一步',
+        'brand_register__STEP_2__btn__ADD_COMPANY' => '添加公司',
+
+        'brand_register__STEP_3__COMPANY_NAME_PLACEHOLDER' => '公司名称 *',
+        'brand_register__STEP_3__COMPANY_ADDRESS_PLACEHOLDER' => '公司地址 *',
+        'brand_register__STEP_3__COMPANY_COUNTRY_PLACEHOLDER' => '所在国家 *',
+        'brand_register__STEP_3__COMPANY_ZIP_PLACEHOLDER' => '邮政编码 *',
+        'brand_register__STEP_3__COMPANY_TELEPHONE_PLACEHOLDER' => '公司电话 *',
+        'brand_register__STEP_3__COMPANY_URL_PLACEHOLDER' => '公司网址 *',
+        'brand_register__STEP_3__COMPANY_ACCEPT_1' => 'On receipt of your application, an invoice will be sent to your email address. Membership access will be granted on payment confirmation.',
+        'brand_register__STEP_3__COMPANY_ACCEPT_2' => 'I accept the terms and conditions of Project Crossover Online Showrooms web site.',
+        'brand_register__STEP_3__btn__PREVIOUS' => '上一步',
+        'brand_register__STEP_3__btn__SUBMIT' => '提交注册',
     )
 );

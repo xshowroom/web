@@ -194,5 +194,46 @@ return array_merge(
         'login__REQUEST_MEMBERSHIP_DESC' => 'X SHOWROOM IS OPEN TO SELECTED BRANDS. AGENCIES AND BUYERS TO PARTICIPATE. PLEASE REGISTER ONLINE',
         'login__REQUEST_BRAND' => 'FOR BRANDS',
         'login__REQUEST_BUYER' => 'FOR BUYER',
+    ),
+    /**
+     * register_brand.php
+     */
+    array(
+        'brand_register__STEP' => 'STEP',
+        'brand_register__SETP_OF' => 'OF',
+        'brand_register__STEP_INFORMATION_1' => 'ADD USER DETAILS',
+        'brand_register__STEP_INFORMATION_2' => 'ADD BRAND DETAILS',
+        'brand_register__STEP_INFORMATION_3' => 'ADD COMPANY DETAILS',
+
+        'brand_register__STEP_1__EMAIL_ADDRESS' => 'EMAIL ADDRESS',
+        'brand_register__STEP_1__EMAIL_ADDRESS_PLACEHOLDER' => 'PLEASE ENTER EMAIL ADDRESS *',
+        'brand_register__STEP_1__PASSWORD' => 'PASSWORD',
+        'brand_register__STEP_1__PASSWORD_PLACEHOLDER' => 'PLEASE ENTER YOUR PASSWORD *',
+        'brand_register__STEP_1__FIRST_NAME_PLACEHOLDER' => 'FIRST NAME *',
+        'brand_register__STEP_1__LAST_NAME_PLACEHOLDER' => 'LAST NAME *',
+        'brand_register__STEP_1__DISPLAY_NAME_PLACEHOLDER' => 'DISPLAY NAME *',
+        'brand_register__STEP_1__TELEPHONE_PLACEHOLDER' => 'CONTACT TELEPHONE NUMBER *',
+        'brand_register__STEP_1__MOBILE_PLACEHOLDER' => 'CONTACT MOBILE NUMBER (OPTIONAL)',
+        'brand_register__STEP_1__btn__CANCEL' => 'CANCEL',
+        'brand_register__STEP_1__btn__ADD_BRAND' => 'ADD BRAND',
+
+        'brand_register__STEP_2__IMAGE' => 'LOOKBOOK / IMAGE',
+        'brand_register__STEP_2__BRAND_NAME_PLACEHOLDER' => 'PLEASE ENTER YOUR BRAND NAME *',
+        'brand_register__STEP_2__DESIGNER_NAME_PLACEHOLDER' => 'DESIGNER NAME *',
+        'brand_register__STEP_2__URL_DESC_1' => 'This URL will be used for direct access to your Brand',
+        'brand_register__STEP_2__URL_DESC_2' => '(for authenticated Buyers only)',
+        'brand_register__STEP_2__btn__PREVIOUS' => 'PREVIOUS',
+        'brand_register__STEP_2__btn__ADD_COMPANY' => 'ADD COMPANY',
+
+        'brand_register__STEP_3__COMPANY_NAME_PLACEHOLDER' => 'COMPANY NAME *',
+        'brand_register__STEP_3__COMPANY_ADDRESS_PLACEHOLDER' => 'COMPANY ADDRESS *',
+        'brand_register__STEP_3__COMPANY_COUNTRY_PLACEHOLDER' => 'STATE / COUNTRY *',
+        'brand_register__STEP_3__COMPANY_ZIP_PLACEHOLDER' => 'POSTCODE / ZIP *',
+        'brand_register__STEP_3__COMPANY_TELEPHONE_PLACEHOLDER' => 'COMPANY TELEPHONE NUMBER *',
+        'brand_register__STEP_3__COMPANY_URL_PLACEHOLDER' => 'COMPANY WEB PAGE URL *',
+        'brand_register__STEP_3__COMPANY_ACCEPT_1' => 'On receipt of your application, an invoice will be sent to your email address. Membership access will be granted on payment confirmation.',
+        'brand_register__STEP_3__COMPANY_ACCEPT_2' => 'I accept the terms and conditions of Project Crossover Online Showrooms web site.',
+        'brand_register__STEP_3__btn__PREVIOUS' => 'PREVIOUS',
+        'brand_register__STEP_3__btn__SUBMIT' => 'SUBMIT',
     )
 );
