@@ -235,5 +235,51 @@ return array_merge(
         'brand_register__STEP_3__COMPANY_ACCEPT_2' => 'I accept the terms and conditions of Project Crossover Online Showrooms web site.',
         'brand_register__STEP_3__btn__PREVIOUS' => '上一步',
         'brand_register__STEP_3__btn__SUBMIT' => '提交注册',
+    ),
+    /**
+     * register_brand.php
+     */
+    array(
+        'buyer_register__STEP' => '步骤',
+        'buyer_register__SETP_OF' => '/',
+        'buyer_register__STEP_INFORMATION_1' => '添加用户信息',
+        'buyer_register__STEP_INFORMATION_2' => '添加商店信息',
+        'buyer_register__STEP_INFORMATION_3' => '添加公司信息',
+
+        'buyer_register__STEP_1__EMAIL_ADDRESS' => '电子邮箱',
+        'buyer_register__STEP_1__EMAIL_ADDRESS_PLACEHOLDER' => '请输入电子邮箱 *',
+        'buyer_register__STEP_1__PASSWORD' => '您的密码',
+        'buyer_register__STEP_1__PASSWORD_PLACEHOLDER' => '请输入您的密码 *',
+        'buyer_register__STEP_1__FIRST_NAME_PLACEHOLDER' => '您的名字 *',
+        'buyer_register__STEP_1__LAST_NAME_PLACEHOLDER' => '您的姓氏 *',
+        'buyer_register__STEP_1__DISPLAY_NAME_PLACEHOLDER' => '您的显示名称 *',
+        'buyer_register__STEP_1__TELEPHONE_PLACEHOLDER' => '您的联系电话 *',
+        'buyer_register__STEP_1__MOBILE_PLACEHOLDER' => '您的手机号码 (可选)',
+        'buyer_register__STEP_1__btn__CANCEL' => '取消注册',
+        'buyer_register__STEP_1__btn__ADD_STORE' => '添加店铺',
+
+        'buyer_register__STEP_2__IMAGE' => '商店 / 照片',
+        'buyer_register__STEP_2__STORE_NAME_PLACEHOLDER' => '请输入您的商店名称 *',
+        'buyer_register__STEP_2__STORE_TYPE_PLACEHOLDER' => '请选择您的商店类型 *',
+        'buyer_register__STEP_2__STORE_COLLECTION_TYPE' => '系列类型',
+        'buyer_register__STEP_2__STORE_BRAND_PLACEHOLDER' => '商店售卖的品牌 *',
+        'buyer_register__STEP_2__STORE_WEBSITE_PLACEHOLDER' => '网址 *',
+        'buyer_register__STEP_2__STORE_ADDRESS_PLACEHOLDER' => '商店地址 *',
+        'buyer_register__STEP_2__STORE_COUNTRY_PLACEHOLDER' => '所在国家 *',
+        'buyer_register__STEP_2__STORE_ZIP_PLACEHOLDER' => '邮政编码 *',
+        'buyer_register__STEP_2__STORE_TELEPHONE_PLACEHOLDER' => '电话号码 *',
+        'buyer_register__STEP_2__btn__PREVIOUS' => '上一步',
+        'buyer_register__STEP_2__btn__ADD_COMPANY' => '添加公司',
+
+        'buyer_register__STEP_3__COMPANY_NAME_PLACEHOLDER' => '公司名称 *',
+        'buyer_register__STEP_3__COMPANY_ADDRESS_PLACEHOLDER' => '公司地址 *',
+        'buyer_register__STEP_3__COMPANY_COUNTRY_PLACEHOLDER' => '所在国家 *',
+        'buyer_register__STEP_3__COMPANY_ZIP_PLACEHOLDER' => '邮政编码 *',
+        'buyer_register__STEP_3__COMPANY_TELEPHONE_PLACEHOLDER' => '公司电话 *',
+        'buyer_register__STEP_3__COMPANY_URL_PLACEHOLDER' => '公司网址 *',
+        'buyer_register__STEP_3__COMPANY_ACCEPT_1' => 'On receipt of your application, an invoice will be sent to your email address. Membership access will be granted on payment confirmation.',
+        'buyer_register__STEP_3__COMPANY_ACCEPT_2' => 'I accept the terms and conditions of Project Crossover Online Showrooms web site.',
+        'buyer_register__STEP_3__btn__PREVIOUS' => '上一步',
+        'buyer_register__STEP_3__btn__SUBMIT' => '提交注册',
     )
 );

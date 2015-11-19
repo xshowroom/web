@@ -235,5 +235,51 @@ return array_merge(
         'brand_register__STEP_3__COMPANY_ACCEPT_2' => 'I accept the terms and conditions of Project Crossover Online Showrooms web site.',
         'brand_register__STEP_3__btn__PREVIOUS' => 'PREVIOUS',
         'brand_register__STEP_3__btn__SUBMIT' => 'SUBMIT',
+    ),
+    /**
+     * register_brand.php
+     */
+    array(
+        'buyer_register__STEP' => 'STEP',
+        'buyer_register__SETP_OF' => 'OF',
+        'buyer_register__STEP_INFORMATION_1' => 'ADD USER DETAILS',
+        'buyer_register__STEP_INFORMATION_2' => 'ADD SHOP DETAILS',
+        'buyer_register__STEP_INFORMATION_3' => 'COMPANY DETAILS',
+
+        'buyer_register__STEP_1__EMAIL_ADDRESS' => 'EMAIL ADDRESS',
+        'buyer_register__STEP_1__EMAIL_ADDRESS_PLACEHOLDER' => 'PLEASE ENTER EMAIL ADDRESS *',
+        'buyer_register__STEP_1__PASSWORD' => 'PASSWORD',
+        'buyer_register__STEP_1__PASSWORD_PLACEHOLDER' => 'PLEASE ENTER YOUR PASSWORD *',
+        'buyer_register__STEP_1__FIRST_NAME_PLACEHOLDER' => 'FIRST NAME *',
+        'buyer_register__STEP_1__LAST_NAME_PLACEHOLDER' => 'LAST NAME *',
+        'buyer_register__STEP_1__DISPLAY_NAME_PLACEHOLDER' => 'DISPLAY NAME *',
+        'buyer_register__STEP_1__TELEPHONE_PLACEHOLDER' => 'CONTACT TELEPHONE NUMBER *',
+        'buyer_register__STEP_1__MOBILE_PLACEHOLDER' => '"CONTACT MOBILE NUMBER (OPTIONAL)',
+        'buyer_register__STEP_1__btn__CANCEL' => 'CANCEL',
+        'buyer_register__STEP_1__btn__ADD_STORE' => 'ADD STORE',
+
+        'buyer_register__STEP_2__IMAGE' => 'SHOP / IMAGE',
+        'buyer_register__STEP_2__STORE_NAME_PLACEHOLDER' => 'PLEASE ENTER YOUR STORE NAME *',
+        'buyer_register__STEP_2__STORE_TYPE_PLACEHOLDER' => 'PLEASE SELECT STORE TYPE *',
+        'buyer_register__STEP_2__STORE_COLLECTION_TYPE' => 'COLLECTION TYPE',
+        'buyer_register__STEP_2__STORE_BRAND_PLACEHOLDER' => 'BRAND CARRIED IN STORE *',
+        'buyer_register__STEP_2__STORE_WEBSITE_PLACEHOLDER' => 'WEBSITE *',
+        'buyer_register__STEP_2__STORE_ADDRESS_PLACEHOLDER' => 'STORE ADDRESS *',
+        'buyer_register__STEP_2__STORE_COUNTRY_PLACEHOLDER' => 'STATE / COUNTRY *',
+        'buyer_register__STEP_2__STORE_ZIP_PLACEHOLDER' => 'POSTCODE / ZIP *',
+        'buyer_register__STEP_2__STORE_TELEPHONE_PLACEHOLDER' => 'TELEPHONE NUMBER *',
+        'buyer_register__STEP_2__btn__PREVIOUS' => 'PREVIOUS',
+        'buyer_register__STEP_2__btn__ADD_COMPANY' => 'ADD COMPANY',
+
+        'buyer_register__STEP_3__COMPANY_NAME_PLACEHOLDER' => 'COMPANY NAME *',
+        'buyer_register__STEP_3__COMPANY_ADDRESS_PLACEHOLDER' => 'COMPANY ADDRESS *',
+        'buyer_register__STEP_3__COMPANY_COUNTRY_PLACEHOLDER' => 'STATE/COUNTRY *',
+        'buyer_register__STEP_3__COMPANY_ZIP_PLACEHOLDER' => 'POSTCODE/ZIP *',
+        'buyer_register__STEP_3__COMPANY_TELEPHONE_PLACEHOLDER' => 'COMPANY TELEPHONE NUMBER *',
+        'buyer_register__STEP_3__COMPANY_URL_PLACEHOLDER' => 'COMPANY WEB PAGE URL *',
+        'buyer_register__STEP_3__COMPANY_ACCEPT_1' => 'On receipt of your application, an invoice will be sent to your email address. Membership access will be granted on payment confirmation.',
+        'buyer_register__STEP_3__COMPANY_ACCEPT_2' => 'I accept the terms and conditions of Project Crossover Online Showrooms web site.',
+        'buyer_register__STEP_3__btn__PREVIOUS' => 'PREVIOUS',
+        'buyer_register__STEP_3__btn__SUBMIT' => 'SUBMIT',
     )
 );
