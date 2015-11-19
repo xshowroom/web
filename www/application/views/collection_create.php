@@ -7,7 +7,6 @@
     <link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/bower_components/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/bower_components/angular-motion/dist/angular-motion.min.css">
-    <link rel="stylesheet" type="text/css" href="/static/bower_components/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/app/css/common.css" />
     <link rel="stylesheet" type="text/css" href="/static/app/css/collection_create.css" />
     <script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
@@ -63,10 +62,10 @@
                             <label for="mode" class="col-xs-4 control-label">Collection Mode</label>
                             <div class="col-xs-8">
                                   <select class="form-control" id="mode" ng-model="collection.mode">
-                                      <option value="Preorder">Preorder</option>
+                                      <option value="Pre-Order">Pre-Order</option>
                                       <option value="Stock">Stock</option>
-                                      <option value="Reorder">Reorder</option>
-                                      <option value="Permanen">permanen</option>
+                                      <option value="Re-Order">Re-Order</option>
+                                      <option value="Permanen">Permanen</option>
                                   </select>
                             </div>
                         </div>
