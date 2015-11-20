@@ -38,7 +38,7 @@
                         <h3 class="brand-name"><?= $brandInfo['brand_name'] ?></h3>
                         <div class="brand-detail">
                             <span >Based in</span>
-                            <span><?= $userAttr['company_country'] ?></span>
+                            <span>{{ "<?= $userAttr['company_country'] ?>" | translate}}</span>
                         </div>
                         <div class="brand-detail">
                             <span>Established</span>

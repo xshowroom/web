@@ -23,6 +23,9 @@ angular.module(
 	'global',
 	{
 		'zh-CN': {
+            /**
+             * JS files
+             */
             // directives.js
             directives_js__UPLOADING: '上传图片中',
             directives_js__UPLOAD: '上传图片',
@@ -31,91 +34,8 @@ angular.module(
             // login.js
             login__EMAIL_PATTERN_ERROR: 'Email格式错误！',
 
-            // brand-register.html
-            brand_register__STEP: '步骤',
-            brand_register__SETP_OF: '/',
-            brand_register__STEP_INFORMATION_1: '添加用户信息',
-            brand_register__STEP_INFORMATION_2: '添加品牌信息',
-            brand_register__STEP_INFORMATION_3: '添加公司信息',
-
-            brand_register__STEP_1__EMAIL_ADDRESS: '电子邮箱',
-            brand_register__STEP_1__EMAIL_ADDRESS_PLACEHOLDER: '请输入电子邮箱 *',
-            brand_register__STEP_1__PASSWORD: '您的密码',
-            brand_register__STEP_1__PASSWORD_PLACEHOLDER: '请输入您的密码 *',
-            brand_register__STEP_1__FIRST_NAME_PLACEHOLDER: '您的名字 *',
-            brand_register__STEP_1__LAST_NAME_PLACEHOLDER: '您的姓氏 *',
-            brand_register__STEP_1__DISPLAY_NAME_PLACEHOLDER: '您的显示名称 *',
-            brand_register__STEP_1__TELEPHONE_PLACEHOLDER: '您的联系电话 *',
-            brand_register__STEP_1__MOBILE_PLACEHOLDER: '您的手机号码 (可选)',
-            brand_register__STEP_1__btn__CANCEL: '取消注册',
-            brand_register__STEP_1__btn__ADD_BRAND: '添加品牌',
-
-            brand_register__STEP_2__IMAGE: '相册 / 照片',
-//            brand_register__STEP_2__UPLOAD: '上传',
-            brand_register__STEP_2__BRAND_NAME_PLACEHOLDER: '请输入您的品牌名称 *',
-            brand_register__STEP_2__DESIGNER_NAME_PLACEHOLDER: '设计师 *',
-            brand_register__STEP_2__URL_DESC_1: '这个链接将被用于直接定位到你的品牌站点',
-            brand_register__STEP_2__URL_DESC_2: '(通过验证的买手才能访问)',
-            brand_register__STEP_2__btn__PREVIOUS: '上一步',
-            brand_register__STEP_2__btn__ADD_COMPANY: '添加公司',
-
-            brand_register__STEP_3__COMPANY_NAME_PLACEHOLDER: '公司名称 *',
-            brand_register__STEP_3__COMPANY_ADDRESS_PLACEHOLDER: '公司地址 *',
-            brand_register__STEP_3__COMPANY_COUNTRY_PLACEHOLDER: '所在国家 *',
-            brand_register__STEP_3__COMPANY_ZIP_PLACEHOLDER: '邮政编码 *',
-            brand_register__STEP_3__COMPANY_TELEPHONE_PLACEHOLDER: '公司电话 *',
-            brand_register__STEP_3__COMPANY_URL_PLACEHOLDER: '公司网址 *',
-            brand_register__STEP_3__COMPANY_ACCEPT_1: 'On receipt of your application, an invoice will be sent to your email address. Membership access will be granted on payment confirmation.',
-            brand_register__STEP_3__COMPANY_ACCEPT_2: 'I accept the terms and conditions of Project Crossover Online Showrooms web site.',
-            brand_register__STEP_3__btn__PREVIOUS: '上一步',
-            brand_register__STEP_3__btn__SUBMIT: '提交注册',
-
-            // brand-register.html
-            buyer_register__STEP: '步骤',
-            buyer_register__SETP_OF: '/',
-            buyer_register__STEP_INFORMATION_1: '添加用户信息',
-            buyer_register__STEP_INFORMATION_2: '添加商店信息',
-            buyer_register__STEP_INFORMATION_3: '添加公司信息',
-
-            buyer_register__STEP_1__EMAIL_ADDRESS: '电子邮箱',
-            buyer_register__STEP_1__EMAIL_ADDRESS_PLACEHOLDER: '请输入电子邮箱 *',
-            buyer_register__STEP_1__PASSWORD: '您的密码',
-            buyer_register__STEP_1__PASSWORD_PLACEHOLDER: '请输入您的密码 *',
-            buyer_register__STEP_1__FIRST_NAME_PLACEHOLDER: '您的名字 *',
-            buyer_register__STEP_1__LAST_NAME_PLACEHOLDER: '您的姓氏 *',
-            buyer_register__STEP_1__DISPLAY_NAME_PLACEHOLDER: '您的显示名称 *',
-            buyer_register__STEP_1__TELEPHONE_PLACEHOLDER: '您的联系电话 *',
-            buyer_register__STEP_1__MOBILE_PLACEHOLDER: '您的手机号码 (可选)',
-            buyer_register__STEP_1__btn__CANCEL: '取消注册',
-            buyer_register__STEP_1__btn__ADD_STORE: '添加店铺',
-
-            buyer_register__STEP_2__IMAGE: '商店 / 照片',
-//            buyer_register__STEP_2__UPLOAD: '上传',
-            buyer_register__STEP_2__STORE_NAME_PLACEHOLDER: '请输入您的商店名称 *',
-            buyer_register__STEP_2__STORE_TYPE_PLACEHOLDER: '请选择您的商店类型 *',
-            buyer_register__STEP_2__STORE_COLLECTION_TYPE: '系列类型',
-            buyer_register__STEP_2__STORE_BRAND_PLACEHOLDER: '商店售卖的品牌 *',
-            buyer_register__STEP_2__STORE_WEBSITE_PLACEHOLDER: '网址 *',
-            buyer_register__STEP_2__STORE_ADDRESS_PLACEHOLDER: '商店地址 *',
-            buyer_register__STEP_2__STORE_COUNTRY_PLACEHOLDER: '所在国家 *',
-            buyer_register__STEP_2__STORE_ZIP_PLACEHOLDER: '邮政编码 *',
-            buyer_register__STEP_2__STORE_TELEPHONE_PLACEHOLDER: '电话号码 *',
-            buyer_register__STEP_2__btn__PREVIOUS: '上一步',
-            buyer_register__STEP_2__btn__ADD_COMPANY: '添加公司',
-
-            buyer_register__STEP_3__COMPANY_NAME_PLACEHOLDER: '公司名称 *',
-            buyer_register__STEP_3__COMPANY_ADDRESS_PLACEHOLDER: '公司地址 *',
-            buyer_register__STEP_3__COMPANY_COUNTRY_PLACEHOLDER: '所在国家 *',
-            buyer_register__STEP_3__COMPANY_ZIP_PLACEHOLDER: '邮政编码 *',
-            buyer_register__STEP_3__COMPANY_TELEPHONE_PLACEHOLDER: '公司电话 *',
-            buyer_register__STEP_3__COMPANY_URL_PLACEHOLDER: '公司网址 *',
-            buyer_register__STEP_3__COMPANY_ACCEPT_1: 'On receipt of your application, an invoice will be sent to your email address. Membership access will be granted on payment confirmation.',
-            buyer_register__STEP_3__COMPANY_ACCEPT_2: 'I accept the terms and conditions of Project Crossover Online Showrooms web site.',
-            buyer_register__STEP_3__btn__PREVIOUS: '上一步',
-            buyer_register__STEP_3__btn__SUBMIT: '提交注册',
-
             /**
-             DROP DOWN LIST
+             * DROP DOWN LIST
              */
             // Country
             dropdown__COUNTRY__Angola: '安哥拉',
@@ -321,9 +241,27 @@ angular.module(
             dropdown__COLLECTION__ALL: '全部',
             dropdown__COLLECTION__WOMEN: '女士',
             dropdown__COLLECTION__ACCESSORIES: '首饰',
-            dropdown__COLLECTION__MEN: '男士'
+            dropdown__COLLECTION__MEN: '男士',
+
+            // Product Category
+            dropdown__PRODUCT_HAT: "帽子",
+            dropdown__PRODUCT_TOP: "上衣",
+            dropdown__PRODUCT_KNIT: "编织衫",
+            dropdown__PRODUCT_SHIRT: "衬衫",
+            dropdown__PRODUCT_DRESS: "连衣裙",
+            dropdown__PRODUCT_JUMPSUIT: "连衣裤",
+            dropdown__PRODUCT_COAT: "大衣",
+            dropdown__PRODUCT_SKIRT: "裙子",
+            dropdown__PRODUCT_PANTS: "裤子",
+            dropdown__PRODUCT_BELT: "腰带",
+            dropdown__PRODUCT_GLOVES: "手套",
+            dropdown__PRODUCT_SHOES: "鞋履",
+            dropdown__PRODUCT_BAG: "手袋"
         },
         'en': {
+            /**
+             * JS files
+             */
             // directives.js
             directives_js__UPLOADING: 'UPLOADING IMAGE',
             directives_js__UPLOAD: 'UPLOAD',
@@ -332,92 +270,9 @@ angular.module(
             // login.js
             login__EMAIL_PATTERN_ERROR: 'email address is not valid！',
 
-            // brand-register.html
-            brand_register__STEP: 'STEP',
-            brand_register__SETP_OF: 'OF',
-            brand_register__STEP_INFORMATION_1: 'ADD USER DETAILS',
-            brand_register__STEP_INFORMATION_2: 'ADD BRAND DETAILS',
-            brand_register__STEP_INFORMATION_3: 'ADD COMPANY DETAILS',
-
-            brand_register__STEP_1__EMAIL_ADDRESS: 'EMAIL ADDRESS',
-            brand_register__STEP_1__EMAIL_ADDRESS_PLACEHOLDER: 'PLEASE ENTER EMAIL ADDRESS *',
-            brand_register__STEP_1__PASSWORD: 'PASSWORD',
-            brand_register__STEP_1__PASSWORD_PLACEHOLDER: 'PLEASE ENTER YOUR PASSWORD *',
-            brand_register__STEP_1__FIRST_NAME_PLACEHOLDER: 'FIRST NAME *',
-            brand_register__STEP_1__LAST_NAME_PLACEHOLDER: 'LAST NAME *',
-            brand_register__STEP_1__DISPLAY_NAME_PLACEHOLDER: 'DISPLAY NAME *',
-            brand_register__STEP_1__TELEPHONE_PLACEHOLDER: 'CONTACT TELEPHONE NUMBER *',
-            brand_register__STEP_1__MOBILE_PLACEHOLDER: 'CONTACT MOBILE NUMBER (OPTIONAL)',
-            brand_register__STEP_1__btn__CANCEL: 'CANCEL',
-            brand_register__STEP_1__btn__ADD_BRAND: 'ADD BRAND',
-
-            brand_register__STEP_2__IMAGE: 'LOOKBOOK / IMAGE',
-//            brand_register__STEP_2__UPLOAD: 'UPLOAD',
-            brand_register__STEP_2__BRAND_NAME_PLACEHOLDER: 'PLEASE ENTER YOUR BRAND NAME *',
-            brand_register__STEP_2__DESIGNER_NAME_PLACEHOLDER: 'DESIGNER NAME *',
-            brand_register__STEP_2__URL_DESC_1: 'This URL will be used for direct access to your Brand',
-            brand_register__STEP_2__URL_DESC_2: '(for authenticated Buyers only)',
-            brand_register__STEP_2__btn__PREVIOUS: 'PREVIOUS',
-            brand_register__STEP_2__btn__ADD_COMPANY: 'ADD COMPANY',
-
-            brand_register__STEP_3__COMPANY_NAME_PLACEHOLDER: 'COMPANY NAME *',
-            brand_register__STEP_3__COMPANY_ADDRESS_PLACEHOLDER: 'COMPANY ADDRESS *',
-            brand_register__STEP_3__COMPANY_COUNTRY_PLACEHOLDER: 'STATE / COUNTRY *',
-            brand_register__STEP_3__COMPANY_ZIP_PLACEHOLDER: 'POSTCODE / ZIP *',
-            brand_register__STEP_3__COMPANY_TELEPHONE_PLACEHOLDER: 'COMPANY TELEPHONE NUMBER *',
-            brand_register__STEP_3__COMPANY_URL_PLACEHOLDER: 'COMPANY WEB PAGE URL *',
-            brand_register__STEP_3__COMPANY_ACCEPT_1: 'On receipt of your application, an invoice will be sent to your email address. Membership access will be granted on payment confirmation.',
-            brand_register__STEP_3__COMPANY_ACCEPT_2: 'I accept the terms and conditions of Project Crossover Online Showrooms web site.',
-            brand_register__STEP_3__btn__PREVIOUS: 'PREVIOUS',
-            brand_register__STEP_3__btn__SUBMIT: 'SUBMIT',
-
-            // buyer-register.html
-            buyer_register__STEP: 'STEP',
-            buyer_register__SETP_OF: 'OF',
-            buyer_register__STEP_INFORMATION_1: 'ADD USER DETAILS',
-            buyer_register__STEP_INFORMATION_2: 'ADD SHOP DETAILS',
-            buyer_register__STEP_INFORMATION_3: 'COMPANY DETAILS',
-
-            buyer_register__STEP_1__EMAIL_ADDRESS: 'EMAIL ADDRESS',
-            buyer_register__STEP_1__EMAIL_ADDRESS_PLACEHOLDER: 'PLEASE ENTER EMAIL ADDRESS *',
-            buyer_register__STEP_1__PASSWORD: 'PASSWORD',
-            buyer_register__STEP_1__PASSWORD_PLACEHOLDER: 'PLEASE ENTER YOUR PASSWORD *',
-            buyer_register__STEP_1__FIRST_NAME_PLACEHOLDER: 'FIRST NAME *',
-            buyer_register__STEP_1__LAST_NAME_PLACEHOLDER: 'LAST NAME *',
-            buyer_register__STEP_1__DISPLAY_NAME_PLACEHOLDER: 'DISPLAY NAME *',
-            buyer_register__STEP_1__TELEPHONE_PLACEHOLDER: 'CONTACT TELEPHONE NUMBER *',
-            buyer_register__STEP_1__MOBILE_PLACEHOLDER: '"CONTACT MOBILE NUMBER (OPTIONAL)',
-            buyer_register__STEP_1__btn__CANCEL: 'CANCEL',
-            buyer_register__STEP_1__btn__ADD_STORE: 'ADD STORE',
-
-            buyer_register__STEP_2__IMAGE: 'SHOP / IMAGE',
-//            buyer_register__STEP_2__UPLOAD: 'UPLOAD',
-            buyer_register__STEP_2__STORE_NAME_PLACEHOLDER: 'PLEASE ENTER YOUR STORE NAME *',
-            buyer_register__STEP_2__STORE_TYPE_PLACEHOLDER: 'PLEASE SELECT STORE TYPE *',
-            buyer_register__STEP_2__STORE_COLLECTION_TYPE: 'COLLECTION TYPE',
-            buyer_register__STEP_2__STORE_BRAND_PLACEHOLDER: 'BRAND CARRIED IN STORE *',
-            buyer_register__STEP_2__STORE_WEBSITE_PLACEHOLDER: 'WEBSITE *',
-            buyer_register__STEP_2__STORE_ADDRESS_PLACEHOLDER: 'STORE ADDRESS *',
-            buyer_register__STEP_2__STORE_COUNTRY_PLACEHOLDER: 'STATE / COUNTRY *',
-            buyer_register__STEP_2__STORE_ZIP_PLACEHOLDER: 'POSTCODE / ZIP *',
-            buyer_register__STEP_2__STORE_TELEPHONE_PLACEHOLDER: 'TELEPHONE NUMBER *',
-            buyer_register__STEP_2__btn__PREVIOUS: 'PREVIOUS',
-            buyer_register__STEP_2__btn__ADD_COMPANY: 'ADD COMPANY',
-
-            buyer_register__STEP_3__COMPANY_NAME_PLACEHOLDER: 'COMPANY NAME *',
-            buyer_register__STEP_3__COMPANY_ADDRESS_PLACEHOLDER: 'COMPANY ADDRESS *',
-            buyer_register__STEP_3__COMPANY_COUNTRY_PLACEHOLDER: 'STATE/COUNTRY *',
-            buyer_register__STEP_3__COMPANY_ZIP_PLACEHOLDER: 'POSTCODE/ZIP *',
-            buyer_register__STEP_3__COMPANY_TELEPHONE_PLACEHOLDER: 'COMPANY TELEPHONE NUMBER *',
-            buyer_register__STEP_3__COMPANY_URL_PLACEHOLDER: 'COMPANY WEB PAGE URL *',
-            buyer_register__STEP_3__COMPANY_ACCEPT_1: 'On receipt of your application, an invoice will be sent to your email address. Membership access will be granted on payment confirmation.',
-            buyer_register__STEP_3__COMPANY_ACCEPT_2: 'I accept the terms and conditions of Project Crossover Online Showrooms web site.',
-            buyer_register__STEP_3__btn__PREVIOUS: 'PREVIOUS',
-            buyer_register__STEP_3__btn__SUBMIT: 'SUBMIT',
-
             /**
-                DROP DOWN LIST
-            */
+             * DROP DOWN LIST
+             */
             // Country
             dropdown__COUNTRY__Angola: 'Angola',
             dropdown__COUNTRY__Afghanistan: 'Afghanistan',
@@ -622,9 +477,22 @@ angular.module(
             dropdown__COLLECTION__ALL: 'ALL',
             dropdown__COLLECTION__WOMEN: 'WOMEN',
             dropdown__COLLECTION__ACCESSORIES: 'ACCESSORIES',
-            dropdown__COLLECTION__MEN: 'MEN'
+            dropdown__COLLECTION__MEN: 'MEN',
 
-            // Collection Season
+            // Product Category
+            dropdown__PRODUCT_HAT: "HAT",
+            dropdown__PRODUCT_TOP: "TOP",
+            dropdown__PRODUCT_KNIT: "KNIT",
+            dropdown__PRODUCT_SHIRT: "衬衫",
+            dropdown__PRODUCT_DRESS: "DRESS",
+            dropdown__PRODUCT_JUMPSUIT: "JUMPSUIT",
+            dropdown__PRODUCT_COAT: "COAT",
+            dropdown__PRODUCT_SKIRT: "SKIRT",
+            dropdown__PRODUCT_PANTS: "PANTS",
+            dropdown__PRODUCT_BELT: "BELT",
+            dropdown__PRODUCT_GLOVES: "GLOVES",
+            dropdown__PRODUCT_SHOES: "SHOES",
+            dropdown__PRODUCT_BAG: "BAG"
 		}
 	}
 );
