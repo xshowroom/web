@@ -23,7 +23,7 @@ class Controller_User extends Controller_Base
         } elseif ($roleType == Business_User::ROLE_BUYER) {
             $this->redirect('/buyer/dashboard');
         }elseif ($roleType == Business_User::ROLE_ADMIN){
-            $this->redirect('/admin/home');
+            $this->redirect('/xsadmin/home');
         }
 
         $this->redirect('/login');

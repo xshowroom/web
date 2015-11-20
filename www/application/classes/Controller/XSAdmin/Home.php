@@ -1,7 +1,7 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
 
-class Controller_Admin_Home extends Controller_Admin_AdminBase
+class Controller_XSAdmin_Home extends Controller_XSAdmin_AdminBase
 {
     public function before()
     {
