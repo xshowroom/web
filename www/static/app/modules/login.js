@@ -58,8 +58,8 @@ angular.module(
            			if ($scope.rememberMe) {
            				$cookies.put('email', $scope.user.email);
            			}
-           			var roles = ['admin', 'brand', 'buyer'];
-           			window.open('/' + roles[res.data] + '/dashboard', '_self');
+
+           			window.open('/user/login', '_self');
         		});
         	};
         }

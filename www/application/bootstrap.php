@@ -159,7 +159,7 @@ Route::set('detail', '<controller>(/<action>)/<id>',
 
 Route::set('default', '(<directory>/)(<controller>(/<action>))',
         array(
-            'directory' => '(api)',
+            'directory' => '(api|admin)',
         ))
         ->defaults(array(
             'controller' => 'home',

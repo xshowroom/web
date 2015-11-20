@@ -8,6 +8,27 @@ class Controller_User extends Controller_Base
 
     }
 
+    public function action_login()
+    {
+        if(!empty($opUser)) {
+            $this->redirect('/login');
+        }
+
+        // redirect by user role_type
+        $roleType = $this->opUser['role_type'];
+
+
+        if($roleType == Business_User::ROLE_BRAND){
+            $this->redirect('/brand/dashboard');
+        } elseif ($roleType == Business_User::ROLE_BUYER) {
+            $this->redirect('/buyer/dashboard');
+        }elseif ($roleType == Business_User::ROLE_ADMIN){
+            $this->redirect('/admin/home');
+        }
+
+        $this->redirect('/login');
+    }
+
     public function action_logout()
     {
         $this->destroy_session();

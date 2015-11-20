@@ -9,7 +9,7 @@ class Controller_Brand extends Controller_BaseReqLogin
 
     public function before()
     {
-        Controller_BaseReqLogin::before();
+        parent::before();
 
         $this->isBrandUser();
 
