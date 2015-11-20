@@ -46,7 +46,8 @@ h2.buyer-register-step {
 
 
 label[for='store-type'],
-label[for='store-country'] {
+label[for='store-country'],
+label[for='company-country'] {
 	position: absolute;
     width: 100%;
     z-index: -1;
@@ -57,16 +58,19 @@ label[for='store-country'] {
     padding-right: 30px;
 }
 label[for='store-type'].has-content,
-label[for='store-country'].has-content{
+label[for='store-country'].has-content,
+label[for='company-country'].has-content{
     color: #555;
 }
 #store-type,
-#store-country {
+#store-country,
+#company-country{
 	background-color: transparent;
 	color: transparent;
 }
 #store-type option,
-#store-country option{
+#store-country option,
+#company-country option{
 	color: #000;
 }
 

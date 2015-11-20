@@ -51,7 +51,7 @@ angular.module(
         	var languageDict = {
         		'en': 'ENGLISH',
         		'zh-CN': '简体中文'
-        	}
+        	};
         	$scope.language = languageDict[$cookies.get('language')];
         	if (!$scope.language) {
         		$cookies.put('language', 'en');
