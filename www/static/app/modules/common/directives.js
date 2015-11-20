@@ -195,9 +195,11 @@ angular.module(
         replace: true,
         scope: {
         	title: '@',
-        	targetModel: '='
+        	targetModel: '=',
+        	renderImage: '@',
+        	afterUploading: '&'
         },
-        link: function ($scope, $element, $attrs, $transclude) {
+        controller: function ($scope, $element, $attrs, $transclude) {
         	$scope.imageId = [
         	    new Date().getTime(),
         	    Math.round(Math.random() *1000)
@@ -217,10 +219,16 @@ angular.module(
                     		alert('上传图片接口出错，请重新上传，如多次失败请联系我们！');
                     		return
                     	}
-                    	$scope.imageOnlineUrl = siteRootUrl + response.data;
-                    	$scope.targetModel = response.data;
-                    	$scope.$apply();
+                    	if (parseInt($attrs.renderImage) !== 0){
+                    		$scope.imageOnlineUrl = siteRootUrl + response.data;
+                    	}
+                    	if ($attrs.targetModel){
+                    		$scope.targetModel = response.data;
+                    		$scope.$apply();
+                    	}
+                    	$scope.afterUploading({url: response.data});
                     	$scope.$emit('uploading.end');
+                    	input.val('');
                     }
                 });
 			};

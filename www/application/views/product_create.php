@@ -36,9 +36,16 @@
                 <div class="col-xs-12">
                 	<h3>PRODUCT IMAGES</h3>
                 </div>
-                <div class="col-xs-2">
-                    <div class="image-uploader" id="cover-image" data-target-model="product.image" ng-class="{'has-error': checkInfo.validation.image}"></div>
-                    <label class="product-cover-label">product COVER</label>
+                <div class="col-xs-12">
+                	<div ng-repeat="url in product.images track by $index" class="product-image product-image-uploaded">
+                		<image ng-src="{{url}}">
+                		<a ng-click="removeProductImage($index);" class="btn btn-type-2">
+                			<span class="glyphicon glyphicon-trash"></span>
+                		</a>
+                	</div>
+                    <div ng-if="product.images.length < 5" class="product-image image-uploader"
+                    	data-render-image='0' data-after-uploading = "addProductImage(url);"
+                    	ng-class="{'has-error': checkInfo.validation.image}"></div>
                 </div>
             </div>
             <div class="row product-inputs">

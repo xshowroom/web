@@ -10,6 +10,45 @@
 	border-bottom: 1px solid #25272c;
 	margin-top: 15px;
 }
+.product-inputs h3 span{
+	color: #878787;
+	margin-left: 15px;
+}
+.product-inputs .product-image{
+	width: 18%;
+	margin-right: 1.9%;
+	height: 260px;
+	float: left;
+	border: 1px solid #ccc;
+	position: relative;
+	text-align: center;
+}
+.product-inputs .product-image.product-image-uploaded > a{
+	display: none;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%,-50%);
+	min-width: auto;
+}
+.product-inputs .product-image.product-image-uploaded:hover > a{
+	display: inline;
+}
+.product-inputs .product-image.product-image-uploaded > img{
+	width: 100%;
+	max-height: 100%;
+	position: absolute;
+	left:0;
+	top:50%;
+	z-index: 0;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+}
+
 #care-instruction{
 	height: 150px;
 	resize: none;

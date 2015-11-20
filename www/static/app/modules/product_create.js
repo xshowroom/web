@@ -15,29 +15,51 @@ angular.module(
 .controller(
     'ProductCreateCtrl',
     [
-     	'$scope', 'Country', 'Product',
-        function ($scope, Country, Product) {
+     	'$scope', '$location',  'Country', 'Product',
+        function ($scope, $location, Country, Product) {
      		$scope.countries = Country.getAll();
      		$scope.categories = Product.getCategories();
      		$scope.sizeRegions = Product.getSizeRegions();
      		
+     		
+     		var referrer = document.referrer;
+     		var urlReg = /\/collection\/\w+$/;
+     		if (!urlReg.test(referrer)){
+     			window.open('/error', '_self');
+     		}
+     		var collectionId = referrer.match(urlReg)[0].split(/\//)[2];
+     		$scope.product = {
+         		collectionId: collectionId,
+         		images: []
+         	};
+     		
+     		
+     		
+     		$scope.addProductImage = function(url){
+     			var siteRootUrl = $location.protocol() + '://' + $location.host() + ":" + 	$location.port() + '/';
+     			$scope.product.images.push(siteRootUrl + url);
+     			$scope.$apply();
+     		};
+     		$scope.removeProductImage = function(index){
+     			$scope.product.images.splice(index, 1);
+     			$scope.$apply();
+     		};
      		$scope.setSizeCodes = function(category, region){
      			if (!category || !region){
      				return;
      			}
      			$scope.sizeCodes = Product.getSizeCodes(category, region)
      		};
-     		var referrer = document.referrer;
-     		var urlReg = /\/collection\/\w+$/;
-     		console.log(urlReg.test(referrer));
-     		if (!urlReg.test(referrer)){
-     			window.open('/error', '_self');
-     		}
-     		var collectionId = referrer.match(urlReg)[0].split(/\//)[2];
-     		$scope.collection = {
-     			collectionId: collectionId
-     			
-     		};
+     		
+     		
+     		
+     		
+     		
+     		
+     		
+     		
+     		
+     		
 //     		$scope.checkInfo = {
 //     			validation: {
 // 				   	'name': false,
