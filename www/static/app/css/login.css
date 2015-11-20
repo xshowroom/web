@@ -32,7 +32,7 @@ section.row{
 .sign-in img.valid-code{
     border: 1px solid #ccc;
     padding: 5px;
-    height: 38px;
+    height: 34px;
     border-radius: 22px;
     cursor: pointer;
 }

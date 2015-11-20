@@ -20,7 +20,7 @@ angular.module(
      		$scope.countries = Country.getAll();
      		$scope.categories = Product.getCategories();
      		$scope.sizeRegions = Product.getSizeRegions();
-     		
+     		$scope.materials = Product.getMaterials();
      		
      		var referrer = document.referrer;
      		var urlReg = /\/collection\/\w+$/;
@@ -48,7 +48,8 @@ angular.module(
      			if (!category || !region){
      				return;
      			}
-     			$scope.sizeCodes = Product.getSizeCodes(category, region)
+     			$scope.sizeCodes = Product.getSizeCodes(category, region);
+     			$scope.product.sizeCodes = {};
      		};
      		
      		
@@ -79,8 +80,8 @@ angular.module(
 // 					'delivery': /\d{4}-\d{2}-\d{2}/
 // 				}
 //     		};
-//     		$scope.create = function(){
-//     			
+     		$scope.create = function(){
+     			console.log($scope.product);
 //   				$scope.errorMsgs = [];
 //     					
 //   				for(var key in $scope.checkInfo.validation){
@@ -111,7 +112,7 @@ angular.module(
 //     	     			console.log(res);
 //     	     		});
 //     			} 
-//     		};
+     		};
         }
     ]
 );

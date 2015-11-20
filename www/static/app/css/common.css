@@ -28,9 +28,10 @@ label{
 .form-control{
 	font-size: 12px;
 	/* padding: 17px; */
-	height: 38px;
-	border-radius: 20px;
+	/* height: 38px; */
+	border-radius: 17px;
 	text-align: center;
+	line-height: 20px;
 }
 /* .checkbox input[type=checkbox], 
 .checkbox-inline input[type=checkbox], 
@@ -123,6 +124,7 @@ a {
 	text-decoration: none;
 	position: relative;
 	text-decoration: none !important;
+	cursor: pointer;
 }
 a:hover,
 a.active {
@@ -497,6 +499,7 @@ to {-o-transform: translateY(-100%);}
 .brand-navigation .user-actions  a,
 .brand-navigation .user-actions  a:hover{
 	color: #25272c !important;
+	cursor: pointer;
 }
 .brand-navigation .user-actions  a:before{
 	content: none;

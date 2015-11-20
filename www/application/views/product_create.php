@@ -95,19 +95,17 @@
                                 	<option ng-repeat="region in sizeRegions" value="{{region}}">{{region}}</option>
                             	</select>
                             </div>
-                             <div class="col-xs-8 col-xs-offset-2">
-                            {{sizeCodes}}
+                            <div class="col-xs-8 col-xs-offset-2 size-codes">
+                            	<label class="checkbox-inline" ng-repeat="code in sizeCodes">
+								  	<input type="checkbox" name="size-code" ng-model="product.sizeCodes[code]"
+								  		ng-true-value="true" ng-false-value="false"> {{code}}
+								</label>
                             </div>
-                           <!--  <div class="col-xs-12">
-                            	<select class="form-control" id="size-region" name="sizeRegion" ng-model="product.sizeRegion">
-                                	<option ng-repeat="region in sizeRegions" value="{{region}}">{{region}}</option>
-                            	</select>
-                            </div> -->
                         </div>
                         <div class="form-group col-xs-12"  ng-class="{'has-error': checkInfo.validation.color}">
                             <label for="category" class="col-xs-2 control-label">Color</label>
                             <div class="col-xs-6">
-                                
+                            	<div class="new-color"><span class="glyphicon glyphicon-plus"></span></div>
                             </div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.madeIn}">
@@ -124,10 +122,7 @@
                             <label for="material" class="col-xs-2 control-label">Material</label>
                             <div class="col-xs-6">
                             	<select class="form-control" id="material" ng-model="product.material">
-                                    <option value="AW15">AW15</option>
-                                    <option value="PRE-SS16">PRE-SS16</option>
-                                    <option value="SS16">SS16</option>
-                                    <option value="AW16">AW16</option>
+                                    <option ng-repeat="material in materials" value="{{material}}">{{material}}</option>
                                 </select>
                             </div>
                         </div>

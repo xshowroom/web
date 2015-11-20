@@ -8,7 +8,7 @@
 	font-weight: bold;
 	padding: 15px 0.5em;
 	border-bottom: 1px solid #25272c;
-	margin-top: 15px;
+	margin: 15px 0;
 }
 .product-inputs h3 span{
 	color: #878787;
@@ -47,6 +47,27 @@
 	-webkit-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
 	-o-transform: translateY(-50%);
+}
+.product-inputs .size-codes{
+	line-height: 40px;
+}
+.product-inputs .size-codes label{
+	margin-right: 10px;
+}
+.product-inputs .size-codes input[type=checkbox]{
+	margin-top: 13px
+}
+.product-inputs .new-color{
+	width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    text-align: center;
+    border-radius: 22px;
+    display: inline-block;
+    font-size: 40px;
+    background: #ccc;
+    color: #fff;
+    padding-top: 20px;
 }
 
 #care-instruction{
