@@ -1,14 +1,19 @@
 <?php defined('SYSPATH') OR die('No direct script access.');
 
 class HTTP_Exception_404 extends Kohana_HTTP_Exception_404 {
+
     public function get_response()
     {
-        // $view = View::factory('errors/404');
+        $view = View::factory('/errors/error_404');
 
-        // Remembering that `$this` is an instance of HTTP_Exception_404
-        // $view->message = $this->getMessage();
+        session_start();
+        $opUser = $_SESSION['opUser'];
 
-        $view = View::factory('error_404');
+        if(!empty($opUser)) {
+            $view->set('user', $opUser);
+            $userService = new Business_User();
+            $view->set('userAttr', $userService->getUserAttr($opUser['id']));
+        }
 
         $response = Response::factory()
             ->status(404)
