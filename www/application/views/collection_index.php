@@ -96,7 +96,7 @@
                 		</li>
                 	</ul> 
                 	<div class="add-new-product">
-                		<a href="#">+ ADD NEW PRODUCT</a>
+                		<a href="/product/create">+ ADD NEW PRODUCT</a>
                 	</div>
                 </div>
                 <div class="col-xs-9 collection-products">

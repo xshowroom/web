@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+.product-inputs{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.product-inputs h3{
+	font-size: 16px;
+	font-weight: bold;
+	padding: 15px 0.5em;
+	border-bottom: 1px solid #25272c;
+	margin-top: 15px;
+}
+#care-instruction{
+	height: 150px;
+	resize: none;
+}
