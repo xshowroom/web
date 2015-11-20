@@ -15,14 +15,14 @@ class Controller_User extends Controller_Base
         }
 
         // redirect by user role_type
-        $roleType = $this->opUser['role_type'];
+        $opUser = $_SESSION['opUser'];
+        $roleType = (int)$opUser['role_type'];
 
-
-        if($roleType == Business_User::ROLE_BRAND){
+        if($roleType === Business_User::ROLE_BRAND){
             $this->redirect('/brand/dashboard');
-        } elseif ($roleType == Business_User::ROLE_BUYER) {
+        } elseif ($roleType === Business_User::ROLE_BUYER) {
             $this->redirect('/buyer/dashboard');
-        }elseif ($roleType == Business_User::ROLE_ADMIN){
+        }elseif ($roleType === Business_User::ROLE_ADMIN){
             $this->redirect('/xsadmin/home');
         }
 
