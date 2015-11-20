@@ -107,6 +107,9 @@ label{
 .btn.btn-type-2:hover{
 	color: #ca7379  !important;
 }
+.btn + .btn{
+	margin-left: 10px;
+}
 .datepicker table .btn{
     border: none;
 }
