@@ -119,7 +119,7 @@
 							</div>
 							<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].shopType}">
 								<label for="store-type" ng-class="{'has-content': user.shopType && user.shopType !=''}">
-									{{ (user.shopType | translate) || '<?= __("buyer_register__STEP_2__STORE_TYPE_PLACEHOLDER");?>' }}
+									{{ user.shopType ? (user.shopType | translate) : '<?= __("buyer_register__STEP_2__STORE_TYPE_PLACEHOLDER");?>' }}
 								</label>
 								<select class="form-control" id="store-type" ng-model="user.shopType" name="shopType">
                                     <option value="dropdown__STORE__DEPARTMENT_SHOP">{{ "dropdown__STORE__DEPARTMENT_SHOP"| translate }}</option>
@@ -162,7 +162,7 @@
 					<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].shopCountry}">
 						<div class="col-xs-6 buyer-register-form-inline-left">
 							<label for="store-country" ng-class="{'has-content': user.shopCountry && user.shopCountry !=''}">
-								{{ (user.shopCountry | translate) || '<?=__("buyer_register__STEP_2__STORE_COUNTRY_PLACEHOLDER");?>' }}
+								{{ user.shopCountry ? (user.shopCountry | translate) : '<?=__("buyer_register__STEP_2__STORE_COUNTRY_PLACEHOLDER");?>' }}
 							</label>
 							<select  class="form-control" id="store-country" name="shopCountry" ng-model="user.shopCountry">
 								<option ng-repeat="country in countries" value="dropdown__COUNTRY__{{country}}">

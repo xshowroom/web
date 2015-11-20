@@ -165,7 +165,7 @@
 					<div class="form-group"  ng-class="{'has-error': step.validation[3].companyCountry}">
 						<div class="col-xs-6">
 							<label for="country" ng-class="{'has-content': user.companyCountry && user.companyCountry !=''}">
-								{{ (user.companyCountry | translate) || '<?= __("brand_register__STEP_3__COMPANY_COUNTRY_PLACEHOLDER");?>' }}
+								{{ user.companyCountry ? (user.companyCountry | translate) : '<?= __("brand_register__STEP_3__COMPANY_COUNTRY_PLACEHOLDER");?>' }}
 							</label>
 							<select  class="form-control" id="country" name="companyCountry" ng-model="user.companyCountry">
 								<option ng-repeat="country in countries" value="dropdown__COUNTRY__{{country}}">
