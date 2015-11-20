@@ -20,7 +20,26 @@ class Controller_BaseReqLogin extends Controller_Base
         $roleType = $this->opUser['role_type'];
 
         if($roleType != Business_User::ROLE_BRAND and $roleType != Business_User::ROLE_BUYER){
-            $this->redirect('/login');
+            $this->redirectLogin();
+        }
+    }
+
+    private function redirectLogin()
+    {
+        $this->redirect('/login');
+    }
+
+    protected function isBrandUser()
+    {
+        if ($this->opUser["role_type"] != Business_User::ROLE_BRAND) {
+            $this->redirectLogin();
+        }
+    }
+
+    protected function isBuyerUser()
+    {
+        if ($this->opUser["role_type"] != Business_User::ROLE_BUYER) {
+            $this->redirectLogin();
         }
     }
 }

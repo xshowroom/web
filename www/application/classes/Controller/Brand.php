@@ -10,6 +10,9 @@ class Controller_Brand extends Controller_BaseReqLogin
     public function before()
     {
         Controller_BaseReqLogin::before();
+
+        $this->isBrandUser();
+
         $this->userService = new Business_User();
         $this->brandService = new Business_Brand();
         $this->collectionService = new Business_Collection();
