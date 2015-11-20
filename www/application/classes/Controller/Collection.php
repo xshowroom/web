@@ -28,4 +28,14 @@ class Controller_Collection extends Controller_BaseReqLogin
         $this->response->body($view);
 
     }
+
+    public function action_add_product()
+    {
+    	// 		echo Request::current()->param('id');
+    	$view = View::factory('product_create');
+    	$view->set('user', $this->opUser);
+    	$view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+    	$this->response->body($view);
+    
+    }
 }

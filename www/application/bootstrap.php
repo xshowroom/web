@@ -149,7 +149,7 @@ Cookie::$salt = 'xshowroom';
 
 Route::set('detail', '<controller>(/<action>)/<id>',
         array(
-                'controller' => '(collection|order)',
+                'controller' => '(collection|order|product)',
                 'id'        => '\d+',
         ))
         ->defaults(array(

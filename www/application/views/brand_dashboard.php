@@ -137,7 +137,7 @@
     </section>
     <section class="row no-vertical-padding">
         <div class="container collection-list">
-            <div class="row">
+        	<div class="row">
                 <div class="col-xs-12">
                     <div class="collection-list-header">
                         <h2 class="collection-list-title">MY COLLECTIONS</h2>
@@ -145,42 +145,28 @@
                     </div>
                 </div>
             </div>
-            <div class="collection-list-content row">
-                <div class="col-xs-3">
-                    <a target="_blank" href="#" class="collection-item">
-                        <img src="/static/app/images/shop-brand-1.png" class="collection-item-image">
-                        <div class="collection-name"><?= $collectionList[0]['name']?></div>
-                    </a>
-                </div>
-                <div class="col-xs-3">
-                    <a target="_blank" href="#" class="collection-item">
-                        <img src="/static/app/images/shop-brand-1.png" class="collection-item-image">
-                        <div class="collection-name"><?= $collectionList[1]['name']?></div>
-                    </a>
-                </div>
-                <div class="col-xs-3">
-                    <a target="_blank" href="#" class="collection-item">
-                        <img src="/static/app/images/shop-brand-1.png" class="collection-item-image">
-                        <div class="collection-name"><?= $collectionList[2]['name']?></div>
-                    </a>
-                </div>
-                <div class="col-xs-3">
-                    <a target="_blank" href="#" class="collection-item">
-                        <img src="/static/app/images/shop-brand-1.png" class="collection-item-image">
-                        <div class="collection-name"><?= $collectionList[3]['name']?></div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="container collection-list">
-            <div class="row">
+        	<?php if (empty($collectionList)) { ?>
+        	 <div class="row">
                 <div class="col-xs-12 text-center empty-warning">
                     <img src="/static/app/images/empty.png">
                     <p>Oops, your collection is empty!</p>
                     <p><a href="/collection/create">Add collections</a> to attract more followers.</p>
                 </div>
             </div>
+            <?php } else {?>
+            <div class="collection-list-content row">
+            	<?php for ($i=0, $count=count($collectionList); $i<$count; $i++) { ?>
+                <div class="col-xs-3">
+                    <a target="_self" href="/collection/<?= $collectionList[$i]['id']?>" class="collection-item">
+                        <img src="/static/app/images/shop-brand-1.png" class="collection-item-image">
+                        <div class="collection-name"><?= $collectionList[$i]['name']?></div>
+                    </a>
+                </div>
+                <?php }?>
+            </div>
+            <?php }?>
         </div>
+        
     </section>
     <section class="row no-vertical-padding">
         <div class="container support">

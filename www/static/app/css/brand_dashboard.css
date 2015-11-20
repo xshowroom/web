@@ -4,8 +4,8 @@
 }
 .order-list .empty-warning,
 .collection-list .empty-warning{
-	padding-top: 30px;
-	padding-bottom: 30px;
+	padding-top: 60px;
+	padding-bottom: 60px;
 }
 .order-list .empty-warning p,
 .collection-list .empty-warning p{

@@ -27,7 +27,7 @@
     </nav>
     <nav class="row brand-navigation">
         <?php echo View::factory('common/global_navigation_top_brand',
-            array('currentPage' =>  'dashboard', 'userAttr'=> $userAttr)); 
+            array('currentPage' =>  'collection', 'userAttr'=> $userAttr)); 
            ?>
     </nav>
     <section class="row uploading">

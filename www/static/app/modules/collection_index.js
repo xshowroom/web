@@ -12,7 +12,7 @@ angular.module(
     ]
 )
 .controller(
-    'CollectionDetailCtrl',
+    'CollectionIndexCtrl',
     [
      	'$scope',
         function ($scope) {

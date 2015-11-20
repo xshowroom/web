@@ -17,13 +17,13 @@
     <script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
     <script type="text/javascript" src="/static/app/modules/collection_index.js"></script>
 </head>
-<body ng-controller="CollectionDetailCtrl" class="container-fluid">
+<body ng-controller="CollectionIndexCtrl" class="container-fluid">
     <nav class="row setting-info">
         <?php echo View::factory('common/global_setting_without_login'); ?>
     </nav>
     <nav class="row brand-navigation">
         <?php echo View::factory('common/global_navigation_top_brand',
-            array('currentPage' =>  'dashboard', 'userAttr'=> $userAttr)); 
+            array('currentPage' =>  'collection', 'userAttr'=> $userAttr)); 
            ?>
     </nav>
     <section class="row no-vertical-padding">
@@ -107,7 +107,7 @@
 								<img src="/static/app/images/shop-brand-1.png" class="product-image"/>
 								<span class="product-info">
 									<span class="product-name">Skull with snake</span>
-									<span class="product-prize">$100</span>
+									<span class="product-price">$100</span>
 								</span>
                  			</a>
                  		</div>
@@ -116,7 +116,7 @@
 								<img src="/static/app/images/shop-brand-1.png" class="product-image">
 								<span class="product-info">
 									<span class="product-name">Skull with snake</span>
-									<span class="product-prize">$100</span>
+									<span class="product-price">$100</span>
 								</span>
                  			</a>
                  		</div>
@@ -125,7 +125,7 @@
 								<img src="/static/app/images/shop-brand-1.png" class="product-image">
 								<span class="product-info">
 									<span class="product-name">Skull with snake</span>
-									<span class="product-prize">$100</span>
+									<span class="product-price">$100</span>
 								</span>
                  			</a>
                  		</div>
@@ -134,7 +134,7 @@
 								<img src="/static/app/images/shop-brand-1.png" class="product-image">
 								<span class="product-info">
 									<span class="product-name">Skull with snake</span>
-									<span class="product-prize">$100</span>
+									<span class="product-price">$100</span>
 								</span>
                  			</a>
                  		</div>
@@ -147,7 +147,7 @@
 								<img src="/static/app/images/shop-brand-1.png" class="product-image">
 								<span class="product-info">
 									<span class="product-name">Skull with snake</span>
-									<span class="product-prize">$100</span>
+									<span class="product-price">$100</span>
 								</span>
                  			</a>
                  		</div>
@@ -156,7 +156,7 @@
 								<img src="/static/app/images/shop-brand-1.png" class="product-image">
 								<span class="product-info">
 									<span class="product-name">Skull with snake</span>
-									<span class="product-prize">$100</span>
+									<span class="product-price">$100</span>
 								</span>
                  			</a>
                  		</div>
@@ -165,7 +165,7 @@
 								<img src="/static/app/images/shop-brand-1.png" class="product-image">
 								<span class="product-info">
 									<span class="product-name">Skull with snake</span>
-									<span class="product-prize">$100</span>
+									<span class="product-price">$100</span>
 								</span>
                  			</a>
                  		</div>
@@ -174,7 +174,7 @@
 								<img src="/static/app/images/shop-brand-1.png" class="product-image">
 								<span class="product-info">
 									<span class="product-name">Skull with snake</span>
-									<span class="product-prize">$100</span>
+									<span class="product-price">$100</span>
 								</span>
                  			</a>
                  		</div>
