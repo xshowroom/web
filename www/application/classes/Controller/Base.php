@@ -6,7 +6,10 @@ class Controller_Base extends Controller
     public function before()
     {
         session_start();
-        I18n::lang($_COOKIE['language']);
+
+        $lang = empty($_COOKIE['language'])?'en':$_COOKIE['language'];
+
+        I18n::lang($lang);
     }
 
     protected function destroy_session()
