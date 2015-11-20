@@ -27,10 +27,10 @@
 	<section class="row">
 		<div class="container">
 			<div class="row" style="min-height:300px;">
-				<h1 class="text-center">404</h1>
-				<h1 class="text-center">PAGE NOT FOUND!</h1>
+				<h1 class="text-center" style="font-size:90px;color: #ca7379;">404</h1>
+				<h2 class="text-center">PAGE NOT FOUND!</h2>
 
-				<h5  class="text-center" style="margin-top:30px;">We will redirect you to XSHOWROOM HOME in <span id="timeTick">100</span> seconds</h5>
+				<h5  class="text-center" style="margin-top:50px;">We will redirect you to XSHOWROOM HOME in <span id="timeTick">10</span> seconds</h5>
 				<h5  class="text-center">If your browser is no response, please <a id='targetPage' href="/home" role="button">CLICK HERE</a>.</h5>
 
 			</div>
