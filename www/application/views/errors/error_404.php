@@ -19,7 +19,7 @@
 </head>
 <body ng-controller="ErrorCtrl" class="container-fluid">
 	<nav class="row setting-info">
-		<?php echo View::factory('common/global_setting_with_login', array('userAttr'=> $userAttr)); ?>
+		<?php echo View::factory('common/global_setting_with_login', array('userAttr'=> $userAttr, 'user'=> $user)); ?>
 	</nav>
 	<nav class="row guest-navigation">
         <?php echo View::factory('common/global_navigation_top_guest'); ?>
@@ -29,11 +29,35 @@
 			<div class="row" style="min-height:300px;">
 				<h1 class="text-center">404</h1>
 				<h1 class="text-center">PAGE NOT FOUND!</h1>
+
+				<h5  class="text-center" style="margin-top:30px;">We will redirect you to XSHOWROOM HOME in <span id="timeTick">100</span> seconds</h5>
+				<h5  class="text-center">If your browser is no response, please <a id='targetPage' href="/home" role="button">CLICK HERE</a>.</h5>
+
 			</div>
+
 		</div>
 	</section>
 	<footer class="row footer-navigation">
         <?php echo View::factory('common/global_navigation_footer'); ?>
 	</footer>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			var s = $("#timeTick");
+			var link = $("#targetPage");
+
+			function gotoPage() {
+				if(s.text() == 0) {
+					window.location.href = link.attr("href");
+					return;
+				}
+				s.text(s.text() - 1);
+			}
+
+			if(s != null && link != null) {
+				window.setInterval(gotoPage, 1000);
+			}
+		});
+	</script>
 </body>
 </html>
