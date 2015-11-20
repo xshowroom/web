@@ -13,6 +13,7 @@ angular.module(
 	    	var effectiveRange = 7 * 24 * 60 * 60 * 1000;
 	    	var expiresDate = new Date(new Date().getTime() + effectiveRange);
 	    	$cookiesProvider.defaults.expires = expiresDate;
+	    	$cookiesProvider.defaults.path = '/';
 	    }
 	]
 )
