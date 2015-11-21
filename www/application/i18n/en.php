@@ -37,6 +37,17 @@ return array_merge(
         'global_navigation_top_guest__CONTACT' => 'CONTACT',
     ),
     /**
+     * global_navigation_top_brand.php
+     */
+    array(
+        'global_navigation_top_brand__DASHBOARD' => 'DASHBOARD',
+        'global_navigation_top_brand__COLLECTION' => 'COLLECTION',
+        'global_navigation_top_brand__ORDER' => 'ORDER',
+        'global_navigation_top_brand__MESSAGE' => 'MESSAGE',
+        'global_navigation_top_brand__PROFILE' => 'MY PROFILE',
+        'global_navigation_top_brand__SIGN_OUT' => 'SIGN OUT',
+    ),
+    /**
      * global_navigation_footer.php
      */
     array(
@@ -281,5 +292,57 @@ return array_merge(
         'buyer_register__STEP_3__COMPANY_ACCEPT_2' => 'I accept the terms and conditions of Project Crossover Online Showrooms web site.',
         'buyer_register__STEP_3__btn__PREVIOUS' => 'PREVIOUS',
         'buyer_register__STEP_3__btn__SUBMIT' => 'SUBMIT',
+    ),
+    /**
+     * brand_profile.php
+     */
+    array(
+        'brand_profile__BASIC_INFO' => 'BASIC INFO',
+        'brand_profile__BRAND_INFO' => 'BRAND INFO',
+        'brand_profile__COMPANY_INFO' => 'COMPANY INFO',
+
+        'brand_profile__EMAIL' => 'E-MAIL （LOGIN NAME）',
+        'brand_profile__FIRST_NAME' => 'FIRST NAME',
+        'brand_profile__LAST_NAME' => 'LAST NAME',
+        'brand_profile__DISPLAY_NAME' => 'DISPLAY NAME',
+        'brand_profile__TELEPHONE' => 'TELEPHONE',
+        'brand_profile__MOBILE' => 'MOBILE PHONE',
+        'brand_profile__REGISTER_DATE' => 'REGISTER DATETIME',
+        'brand_profile__LAST_LOGIN_TIME' => 'LAST LOGIN TIME',
+
+        'brand_profile__COMPANY_NAME' => 'COMPANY NAME',
+        'brand_profile__COMPANY_ADDRESS' => 'COMPANY ADDRESS',
+        'brand_profile__COMPANY_COUNTRY' => 'COMPANY COUNTRY',
+        'brand_profile__COMPANY_ZIP' => 'COMPANY ZIPCODE',
+        'brand_profile__COMPANY_TELEPHONE' => 'COMPANY TELEPHONE',
+        'brand_profile__COMPANY_WEB_URL' => 'COMPANY URL',
+
+        'brand_profile__BRAND_NAME' => 'BRAND NAME',
+        'brand_profile__DESIGNER_NAME' => 'DESIGNER NAME',
+        'brand_profile__BRAND_URL' => 'BRAND URL',
+    ),
+    /**
+     * brand_dashboard.php
+     */
+    array(
+
+    ),
+    /**
+     * brand_collection.php
+     */
+    array(
+
+    ),
+    /**
+     * brand_order.php
+     */
+    array(
+
+    ),
+    /**
+     * brand_message.php.php
+     */
+    array(
+
     )
 );

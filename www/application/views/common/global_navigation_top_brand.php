@@ -1,16 +1,16 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-2">
-			<a href="/home" class="logo-link" target="_self">
+			<a href="<?=URL::site('home');?>" class="logo-link" target="_self">
 				<img class="site-logo" ng-src="/static/app/images/logo-black.png">
 			</a>
 		</div>
 		<div class="col-xs-8">
 			<ul class="main-naviagtions">
-				<li><a href="/brand/dashboard" <?php if ($currentPage == dashboard){?>class="active"<?php }?>>DASHBOARD</a></li>
-				<li><a href="/brand/collection" <?php if ($currentPage == collection){?>class="active"<?php }?>>COLLECTION</a></li>
-				<li><a href="/brand/order" <?php if ($currentPage == order){?>class="active"<?php }?>>ORDER</a></li>
-				<li><a href="/brand/message"  <?php if ($currentPage == message){?>class="active"<?php }?>>MESSAGE</a></li>
+				<li><a href="<?=URL::site('brand/dashboard');?>" <?php if ($currentPage == dashboard){?>class="active"<?php }?>><?=__("global_navigation_top_brand__DASHBOARD");?></a></li>
+				<li><a href="<?=URL::site('brand/collection');?>" <?php if ($currentPage == collection){?>class="active"<?php }?>><?=__("global_navigation_top_brand__COLLECTION");?></a></li>
+				<li><a href="<?=URL::site('brand/order');?>" <?php if ($currentPage == order){?>class="active"<?php }?>><?=__("global_navigation_top_brand__ORDER");?></a></li>
+				<li><a href="<?=URL::site('brand/message');?>"  <?php if ($currentPage == message){?>class="active"<?php }?>><?=__("global_navigation_top_brand__MESSAGE");?></a></li>
 			</ul>
 		</div>
 		<div class="col-xs-2 text-right">
@@ -21,8 +21,8 @@
 				 	<span class="caret"></span>
 				</a>
 				<ul class="dropdown-menu">
-					<li><a href="<?=URL::site('brand/profile');?>">MY PROFILE</a></li>
-					<li><a href="<?=URL::site('user/logout');?>">SIGN OUT</a></li>
+					<li><a href="<?=URL::site('brand/profile');?>"><?=__("global_navigation_top_brand__PROFILE");?></a></li>
+					<li><a href="<?=URL::site('user/logout');?>"><?=__("global_navigation_top_brand__SIGN_OUT");?></a></li>
 				</ul>
 			</div>
 		</div>

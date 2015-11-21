@@ -19,11 +19,6 @@
 	vertical-align: bottom;
 }
 
-.profile-content h2>a {
-	margin-right: 10px;
-	vertical-align: bottom;
-}
-
 .form-group button {
 	margin-bottom: 3px;
 }
@@ -31,8 +26,8 @@
 .form-group img {
 	margin-bottom: 3px;
     text-align: left;
-    max-width: 500px;
-    max-height: 500px;
+    max-width: 400px;
+    max-height: 400px;
 }
 
 .lb_item_name {
