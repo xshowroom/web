@@ -18,6 +18,16 @@ class Controller_Brand extends Controller_BaseReqLogin
         $this->collectionService = new Business_Collection();
     }
 
+    public function action_profile()
+    {
+        $view = View::factory('brand_profile');
+        $view->set('user', $this->opUser);
+        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view->set('brandInfo', $this->brandService->getBrandInfo($this->opUser['id']));
+
+        $this->response->body($view);
+    }
+
     public function action_dashboard()
     {
         $view = View::factory('brand_dashboard');
@@ -30,6 +40,7 @@ class Controller_Brand extends Controller_BaseReqLogin
         
         $this->response->body($view);
     }
+
     public function action_collection()
     {
         $view = View::factory('brand_collection');
@@ -38,6 +49,7 @@ class Controller_Brand extends Controller_BaseReqLogin
         
         $this->response->body($view);
     }
+
     public function action_order()
     {
         $view = View::factory('brand_order');
@@ -45,6 +57,7 @@ class Controller_Brand extends Controller_BaseReqLogin
         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
         $this->response->body($view);
     }
+
     public function action_message()
     {
         $view = View::factory('brand_message');

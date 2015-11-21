@@ -291,7 +291,7 @@ angular.module(
 			    'Gloves', 'Belt', 'Shoes'
 			];
 			var sizeRegions = [
-			    'UK', 'US', 'IT', 'FR', 'DK', 'RU', 'DE', 'AU', 'JP'
+			    'UK', 'US', 'IT', 'FR', 'DK', 'RU', 'DE', 'AU', 'JP', 'CN'
 			];
 		    return {
 		    	getCategories: function(){

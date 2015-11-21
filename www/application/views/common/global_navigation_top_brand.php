@@ -21,8 +21,8 @@
 				 	<span class="caret"></span>
 				</a>
 				<ul class="dropdown-menu">
-					<li><a href="#">MY PROFILE</a></li>
-					<li><a href="/user/logout">SIGN OUT</a></li>
+					<li><a href="<?=URL::site('brand/profile');?>">MY PROFILE</a></li>
+					<li><a href="<?=URL::site('user/logout');?>">SIGN OUT</a></li>
 				</ul>
 			</div>
 		</div>

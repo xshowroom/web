@@ -1,0 +1,47 @@
+.profile {
+    padding-top: 10px !important;
+}
+
+.profile-content h2{
+	border-bottom: 2px solid #ca7379;
+	margin-top: 40px;
+	margin-bottom: 20px;
+	padding-top: 0;
+	padding-bottom: 6px;
+	color: #ca7379;
+	font-weight: 300;
+	font-size: 16px;
+	vertical-align: bottom;
+}
+
+.profile-content h2>img {
+	margin-right: 5px !important;
+	vertical-align: bottom;
+}
+
+.profile-content h2>a {
+	margin-right: 10px;
+	vertical-align: bottom;
+}
+
+.form-group button {
+	margin-bottom: 3px;
+}
+
+.form-group img {
+	margin-bottom: 3px;
+    text-align: left;
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.lb_item_name {
+	width: 180px;
+	font-weight: 300;
+}
+
+.lb_item_field {
+	width: 300px;
+	font-weight: 300;
+}
+
