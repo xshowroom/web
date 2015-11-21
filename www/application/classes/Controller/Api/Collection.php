@@ -37,7 +37,7 @@ class Controller_Api_Collection extends Controller_BaseReqLogin
         echo json_encode(array(
             'status' => $status,
             'msg'      => '',
-            'date' => $res,
+            'data' => $res,
         ));
     }
     
