@@ -18,7 +18,7 @@ class Model_Collection
     {
         $result = DB::select()
                     ->from('collection')
-                    ->where('status', '=', STAT_NORMAL)
+                    ->where('status', '!=', self::TYPE_OF_DELETE)
                     ->execute()
                     ->as_array();
         
@@ -30,7 +30,7 @@ class Model_Collection
         $result = DB::select()
                     ->from('collection')
                     ->where('id', '=', $collectionId)
-                    ->where('status', '=', STAT_NORMAL)
+                    ->where('status', '!=', self::TYPE_OF_DELETE)
                     ->execute()
                     ->as_array();
         
@@ -42,7 +42,7 @@ class Model_Collection
         $result = DB::select()
                     ->from('collection')
                     ->where('user_id', '=', $userId)
-                    ->where('status', '=', STAT_NORMAL)
+                    ->where('status', '!=', self::TYPE_OF_DELETE)
                     ->order_by('id', 'DESC')
                     ->execute()
                     ->as_array();
@@ -131,6 +131,7 @@ class Model_Collection
                     ->from('collection')
                     ->where('user_id', '=', $userId)
                     ->where('name', '=', $collectionName)
+                    ->where('status', '!=', self::TYPE_OF_DELETE)
                     ->execute()
                     ->as_array();
     
@@ -144,6 +145,7 @@ class Model_Collection
                         'status' => $status,
                     ))
                     ->where('id', '=', $collectionId)
+                    ->where('status', '!=', self::TYPE_OF_DELETE)
                     ->execute();
         
         return $result;
