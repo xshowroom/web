@@ -7,7 +7,7 @@ class Controller_BaseReqLogin extends Controller_Base
 
     public function before()
     {
-        Controller_Base::before();
+        parent::before();
 
         $this->opUser = $_SESSION['opUser'];
 

@@ -1,11 +1,12 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Api_Collection extends Controller_Base
+class Controller_Api_Collection extends Controller_BaseReqLogin
 {
     public $collectionService;
 
     public function before()
     {
+        parent::before();
         $this->collectionService = new Business_Collection();
     }
 
@@ -19,7 +20,7 @@ class Controller_Api_Collection extends Controller_Base
     
     public function action_add()
     {
-        $userId     = $_SESSION['opUser']['id'];
+        $userId     = $this->opUser['id'];
         $name       = Request::current()->post('name');
         $category   = Request::current()->post('category');
         $mode       = Request::current()->post('mode');
@@ -36,7 +37,7 @@ class Controller_Api_Collection extends Controller_Base
         echo json_encode(array(
             'status' => $status,
             'msg'      => '',
-            'date' => $res,
+            'data' => $res,
         ));
     }
     

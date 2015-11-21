@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Api_Brand extends Controller_Base
+class Controller_Api_Brand extends Controller_BaseReqLogin
 {
     const CONDITION_SHOW_ALL = 0;
     const CONDITION_SHOW_NEW = 1;

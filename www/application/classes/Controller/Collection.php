@@ -4,11 +4,13 @@
 class Controller_Collection extends Controller_BaseReqLogin
 {
     public $userService;
+    public $collectionService;
 
     public function before()
     {
         parent::before();
         $this->userService = new Business_User();
+        $this->collectionService =new Business_Collection();
     }
 
     public function action_create()
@@ -21,10 +23,14 @@ class Controller_Collection extends Controller_BaseReqLogin
     
     public function action_index()
     {
-// 		echo Request::current()->param('id');
         $view = View::factory('collection_index');
         $view->set('user', $this->opUser);
         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        
+        $userId = $this->opUser['id'];
+        $collectionId = Request::current()->param('id');
+        $view->set('collection', $this->collectionService->getCollectionInfo($userId, $collectionId));
+        
         $this->response->body($view);
 
     }

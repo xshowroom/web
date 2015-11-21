@@ -20,6 +20,17 @@ class Business_Collection
         return $collectionList;
     }
     
+    public function getCollectionInfo($userId, $collectionId)
+    {
+        $collection = $this->collectionModel->getByCollectionId($collectionId);
+        if ($collection['user_id'] != $userId) {
+            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+        
+        return $collection;
+    }
+    
     private function createThreeImage($imagePath)
     {
         $extension = substr(strrchr($imagePath, '.'), 1);
@@ -31,7 +42,6 @@ class Business_Collection
                 // 生成medium图和small图
                 $mediumPathFile = $this->uploadService->resize($realPathFile, 0.75, 'medium');
                 $smallPathFile = $this->uploadService->resize($realPathFile, 0.50, 'small');
-                unlink($imagePath);
             } catch (Exception $e) {
                 $errorInfo = Kohana::message('message', 'IMAGE_ERROR');
                 throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
@@ -46,6 +56,7 @@ class Business_Collection
         list($realPathFile, $mediumPathFile, $smallPathFile) = $this->createThreeImage($imagePath);
         
         $collectionId = $this->collectionModel->addCollection($userId, $name, $category, $mode, $season, $order, $currency, $deadline, $delivery, $description, $realPathFile, $mediumPathFile, $smallPathFile);
+        
         return $collectionId;
     }
     
