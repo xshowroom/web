@@ -16,7 +16,6 @@
 	<div class="row">
 		<div class="col-xs-12 text-center">
 			<ul class="main-naviagtions">
-
 			</ul>
 		</div>
 	</div>

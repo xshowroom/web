@@ -23,7 +23,7 @@
 		<?php echo View::factory('admin_views/admin_setting_with_login'); ?>
 	</nav>
 	<nav class="row guest-navigation"  id="home-page-navigation">
-        <?php echo View::factory('admin_views/admin_navigation_top'); ?>
+        <?php echo View::factory('admin_views/admin_navigation_top_guest'); ?>
 	</nav>
 	<section class="row">
 		<div class="container">

@@ -12,7 +12,7 @@ class Controller_XSAdmin_AdminBase extends Controller_Base
         $this->adminUser = $_SESSION['opUser'];
 
         // redirect to login if no user
-        if(!empty($adminUser)) {
+        if(!empty($this->adminUser) && $this->adminUser['role_type'] != Business_User::ROLE_ADMIN) {
             $this->redirect('/admin/login');
         }
     }
