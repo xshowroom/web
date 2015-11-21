@@ -20,7 +20,7 @@ class Controller_Api_Collection extends Controller_BaseReqLogin
     
     public function action_add()
     {
-        $userId     = $_SESSION['opUser']['id'];
+        $userId     = $this->opUser['id'];
         $name       = Request::current()->post('name');
         $category   = Request::current()->post('category');
         $mode       = Request::current()->post('mode');
