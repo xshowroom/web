@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" >
     <title>XShowroom</title>
-    <link rel="shortcut icon" href="/static/app/resources/images/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/bower_components/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/bower_components/angular-motion/dist/angular-motion.min.css">
