@@ -15,6 +15,8 @@
 	<script type="text/javascript" src="/static/bower_components/angular-cookies/angular-cookies.min.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/i18n.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/services.js"></script>
+	<script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
+	<script type="text/javascript" src="/static/app/modules/login.js"></script>
 </head>
 <body ng-controller="LoginCtrl" class="container-fluid">
 	<nav class="row setting-info">
