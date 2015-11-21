@@ -254,7 +254,7 @@ return array_merge(
         'buyer_register__STEP_1__LAST_NAME_PLACEHOLDER' => 'LAST NAME *',
         'buyer_register__STEP_1__DISPLAY_NAME_PLACEHOLDER' => 'DISPLAY NAME *',
         'buyer_register__STEP_1__TELEPHONE_PLACEHOLDER' => 'CONTACT TELEPHONE NUMBER *',
-        'buyer_register__STEP_1__MOBILE_PLACEHOLDER' => '"CONTACT MOBILE NUMBER (OPTIONAL)',
+        'buyer_register__STEP_1__MOBILE_PLACEHOLDER' => 'CONTACT MOBILE NUMBER (OPTIONAL)',
         'buyer_register__STEP_1__btn__CANCEL' => 'CANCEL',
         'buyer_register__STEP_1__btn__ADD_STORE' => 'ADD STORE',
 

@@ -44,14 +44,27 @@ angular.module(
 				},
 				reg:{
 					1: {
-				    	'email': /^([a-zA-Z0-9])+([a-zA-Z0-9_-])*@([a-zA-Z0-9_-])+\.([a-zA-Z0-9_-])+/
+				    	'email': /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+						'pass': /^\S{6,100}$/,
+						'firstName': /^\S{2,50}$/,
+						'lastName': /^\S{2,50}$/,
+						'displayName': /^\S{6,50}$/,
+						'tel': /^\S{6,20}$/
 				    },
-				    2:{},
-				    3:{}
+				    2:{
+						'shopName': /^\S{3,128}$/,
+						'shopWebsite': /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-@?^=%&amp;/~\+#])?/,
+						'shopTel': /^\S{6,20}$/
+					},
+				    3:{
+						'companyName': /^\S{3,128}$/,
+						'companyTel': /^\S{6,20}$/,
+						'companyWebsite': /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-@?^=%&amp;/~\+#])?/
+					}
 				},
 				duplication: {
 					1: ['email'],
-					2: ['brandName'],
+					2: [],
 					3: []
 				}
 			};
@@ -72,7 +85,7 @@ angular.module(
 				$scope.user.collectionType = collections.join(',');
 				console.log($scope.user.collectionType);
 
-			}
+			};
 			
 			$scope.errorMsgs = [];
 			
@@ -87,13 +100,13 @@ angular.module(
 				for(var key in keys){
 					var value = $scope.user[key];
 					if (!value || value == '') {
-						$scope.errorMsgs.push([key, 'EMPTY ERROR']);
+						$scope.errorMsgs.push([key, 'EMPTY_ERROR']);
 						$scope.step.validation[stepNumber][key] = true;
 						continue;
 					}
 					if($scope.step.reg[stepNumber][key]	
 						&& !$scope.step.reg[stepNumber][key].test(value)){
-						$scope.errorMsgs.push([key, 'PATTERN ERROR']);
+						$scope.errorMsgs.push([key, 'PATTERN_ERROR']);
 						$scope.step.validation[stepNumber][key] = true;
 						continue;
 					}
@@ -111,7 +124,7 @@ angular.module(
 						var key = res.config.params.key;
 						if (res.data.status) {
 							$scope.step.validation[stepNumber][key] = true;
-							$scope.errorMsgs.push([key, 'DUPLICATION ERROR']);
+							$scope.errorMsgs.push([key, 'DUPLICATION_ERROR']);
 						}else{
 							$scope.step.validation[stepNumber][key] = false;
 						}
@@ -122,6 +135,7 @@ angular.module(
 						$scope.register();
 					}
 				});
+
 			};
 			
 			//往前一页
@@ -129,7 +143,7 @@ angular.module(
 				if ($scope.step.stepNumber > 1 && $scope.step.stepNumber <= 3) {
 					$scope.step.stepNumber--;
 				}
-			}
+			};
 			$scope.countries = Country.getAll();
 			$scope.register = function() {
 				var register = User.register($scope.user);

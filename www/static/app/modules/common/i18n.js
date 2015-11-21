@@ -35,6 +35,52 @@ angular.module(
             login__EMAIL_PATTERN_ERROR: 'Email格式错误！',
 
             /**
+             * Error Message
+             */
+            email_EMPTY_ERROR: "请输入您的Email",
+            email_PATTERN_ERROR: "请输入正确的Email",
+            email_DUPLICATION_ERROR: "该Email已经被注册，请换个Email进行注册",
+            pass_EMPTY_ERROR: "请输入您的密码",
+            pass_PATTERN_ERROR: "密码不能小于6位",
+            firstName_EMPTY_ERROR: "请输入您的名字",
+            firstName_PATTERN_ERROR: "请输入正确的名字",
+            lastName_EMPTY_ERROR: "请输入您的姓氏",
+            lastName_PATTERN_ERROR: "请输入正确的姓氏",
+            displayName_EMPTY_ERROR: "请输入您要显示的名字",
+            displayName_PATTERN_ERROR: "请输入正确的显示名",
+            tel_EMPTY_ERROR: "请输入您的电话号码",
+            tel_PATTERN_ERROR: "请输入正确的电话号码",
+
+            brandName_EMPTY_ERROR: "请输入您的品牌名称",
+            brandName_DUPLICATION_ERROR: "该品牌名称已经存在",
+            designerName_EMPTY_ERROR: "请输入您的设计师",
+
+            shopName_EMPTY_ERROR: "请输入商店名称",
+            shopName_PATTERN_ERROR: "请正确输入商店名称",
+            shopType_EMPTY_ERROR: "请选择商店的类型",
+            collectionType_EMPTY_ERROR: "请选择系列的类型",
+            brandList_EMPTY_ERROR: "请输入商店的品牌",
+            shopWebsite_EMPTY_ERROR: "请输入商店的网址",
+            shopWebsite_PATTERN_ERROR: "请正确输入商店的网址，例如(http://www.example.com)",
+            shopAddress_EMPTY_ERROR: "请输入商店的地址",
+            shopCountry_EMPTY_ERROR: "请选择商店所在的国家",
+            shopZipcode_EMPTY_ERROR: "请输入商店的邮编",
+            shopTel_EMPTY_ERROR: "请输入商店的电话",
+            shopTel_PATTERN_ERROR: "请正确输入商店的电话",
+
+            imagePath_EMPTY_ERROR: "请上传图片",
+
+            companyName_EMPTY_ERROR: "请输入公司名称",
+            companyName_PATTERN_ERROR: "请正确输入公司名称",
+            companyAddr_EMPTY_ERROR: "请输入公司地址",
+            companyCountry_EMPTY_ERROR: "请选择公司所在的国家",
+            companyZip_EMPTY_ERROR: "请输入公司的邮编",
+            companyTel_EMPTY_ERROR: "请输入公司的电话",
+            companyTel_PATTERN_ERROR: "请正确输入公司的电话",
+            companyWebsite_EMPTY_ERROR: "请输入公司的网址",
+            companyWebsite_PATTERN_ERROR: "请正确输入公司的网址，例如(http://www.example.com)",
+
+            /**
              * DROP DOWN LIST
              */
             // Country
@@ -269,6 +315,52 @@ angular.module(
 
             // login.js
             login__EMAIL_PATTERN_ERROR: 'email address is not valid！',
+
+            /**
+             * Error Message
+             */
+            email_EMPTY_ERROR: "please input your Email",
+            email_PATTERN_ERROR: "invalid Email",
+            email_DUPLICATION_ERROR: "Email has been registered",
+            pass_EMPTY_ERROR: "please input your password",
+            pass_PATTERN_ERROR: "invalid password (Must contain at least 6 characters)",
+            firstName_EMPTY_ERROR: "please input your first name",
+            firstName_PATTERN_ERROR: "invalid first name",
+            lastName_EMPTY_ERROR: "please input your last name",
+            lastName_PATTERN_ERROR: "invalid last name",
+            displayName_EMPTY_ERROR: "please input your display name",
+            displayName_PATTERN_ERROR: "invalid display name",
+            tel_EMPTY_ERROR: "please input your telephone",
+            tel_PATTERN_ERROR: "invalid telephone",
+
+            brandName_EMPTY_ERROR: "please input your brand name",
+            brandName_DUPLICATION_ERROR: "this brand name is exist",
+            designerName_EMPTY_ERROR: "please input your designers",
+
+            shopName_EMPTY_ERROR: "please input your store name",
+            shopName_PATTERN_ERROR: "invalid store name",
+            shopType_EMPTY_ERROR: "please select store type",
+            collectionType_EMPTY_ERROR: "please select collection type",
+            brandList_EMPTY_ERROR: "please input brand list",
+            shopWebsite_EMPTY_ERROR: "please input store web url",
+            shopWebsite_PATTERN_ERROR: "please input valid url, eg: http://www.example.com",
+            shopAddress_EMPTY_ERROR: "please input store address",
+            shopCountry_EMPTY_ERROR: "please select country",
+            shopZipcode_EMPTY_ERROR: "please input zip code",
+            shopTel_EMPTY_ERROR: "please input telephone",
+            shopTel_PATTERN_ERROR: "invalid telephone",
+
+            imagePath_EMPTY_ERROR: "please upload the picture",
+
+            companyName_EMPTY_ERROR: "please input company name",
+            companyName_PATTERN_ERROR: "invalid company name",
+            companyAddr_EMPTY_ERROR: "please input company address",
+            companyCountry_EMPTY_ERROR: "please select country",
+            companyZip_EMPTY_ERROR: "please input zip code",
+            companyTel_EMPTY_ERROR: "please input telephone",
+            companyTel_PATTERN_ERROR: "invalid telephone",
+            companyWebsite_EMPTY_ERROR: "please input your company website",
+            companyWebsite_PATTERN_ERROR: "please input valid url, eg: http://www.example.com",
 
             /**
              * DROP DOWN LIST
