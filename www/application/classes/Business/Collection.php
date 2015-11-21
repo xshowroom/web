@@ -20,6 +20,17 @@ class Business_Collection
         return $collectionList;
     }
     
+    public function getCollectionInfo($userId, $collectionId)
+    {
+        $collection = $this->collectionModel->getByCollectionId($userId);
+        if ($collection['user_id'] != $userId) {
+            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+        
+        return $collection;
+    }
+    
     private function createThreeImage($imagePath)
     {
         $extension = substr(strrchr($imagePath, '.'), 1);

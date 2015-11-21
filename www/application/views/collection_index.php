@@ -34,27 +34,26 @@
                 </div>
                 <div class="col-xs-9">
                  	<div class="col-xs-12 collection-detail collection-name">
-                 		<h2>COLLECTION NAME</h2>
+                 		<h2><?= $collection['name']?></h2>
                  		<a href="#" class="collection-edit">EDIT</a>
                  	</div>
                  	<div class="col-xs-12 collection-detail">
-                 		<span>Order Mode:</span><span>Pre-Order</span>
+                 		<span>Order Mode:</span><span><?= $collection['mode']?></span>
                  	</div>
                  	<div class="col-xs-12 collection-detail">
-                 		<span>Deadline for Order:</span><span>2016-01-01</span>	
+                 		<span>Deadline for Order:</span><span><?= $collection['deadline']?></span>	
                  	</div>
                  	<div class="col-xs-12 collection-detail">
-                 		<span>Delivery Date:</span><span>2016-01-01</span>	
+                 		<span>Delivery Date:</span><span><?= $collection['delivery_date']?></span>	
                  	</div>
                  	<div class="col-xs-12 collection-detail">
-                 		<span>Min-order:</span><span>$3000</span>
+                 		<span>Min-order:</span><span><?= $collection['mini_order']?></span>
                  	</div>
                  	<div class="col-xs-11 collection-detail">
-                 		<div>Desciprition:</div>
+                 		<div>Description:</div>
                  		<div class="row" ng-class="{'show-all': showAllDesc}">
 	                 		<p class="col-xs-10">
-	                 			This collection is about This collection is about This collection is about This collection is about This collection
-	 							is about This collection is about This collection is about
+	                 			<?= $collection['description']?>
 	                 		</p>
 	                 		<div class="col-xs-2">
 	                 			<a href="#" ng-show="showAllDesc"  ng-click="showAllDesc = !showAllDesc;">HIDE</a>
