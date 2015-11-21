@@ -13,7 +13,7 @@ class Controller_Api_Collection extends Controller_BaseReqLogin
     public function action_list()
     {
         echo json_encode(array(
-            'status' => $status,
+            'status' => STATUS_SUCCESS,
             'msg'      => $msg,
         ));
     }
@@ -35,7 +35,7 @@ class Controller_Api_Collection extends Controller_BaseReqLogin
         $res = $this->collectionService->addCollection($userId, $name, $category, $mode, $season, $order, $currency, $deadline, $delivery, $description, $imagePath);
         
         echo json_encode(array(
-            'status' => $status,
+            'status' => STATUS_SUCCESS,
             'msg'      => '',
             'data' => $res,
         ));
@@ -59,7 +59,7 @@ class Controller_Api_Collection extends Controller_BaseReqLogin
         $res = $this->collectionService->modifyCollection($userId, $collectionId, $name, $category, $mode, $season, $order, $currency, $deadline, $delivery, $description, $imagePath);
         
         echo json_encode(array(
-            'status' => $status,
+            'status' => STATUS_SUCCESS,
             'msg'      => '',
             'date' => $res,
         ));
@@ -73,7 +73,7 @@ class Controller_Api_Collection extends Controller_BaseReqLogin
         $res = $this->collectionService->modifyCollection($userId, $collectionId, $name, $category, $mode, $season, $order, $currency, $deadline, $delivery, $description, $imagePath);
         
         echo json_encode(array(
-            'status' => $status,
+            'status' => STATUS_SUCCESS,
             'msg'      => '',
             'date' => $res,
         ));
@@ -98,7 +98,7 @@ class Controller_Api_Collection extends Controller_BaseReqLogin
         $res = $this->collectionService->updateStatus($userId, $collectionId, Model_Collection::TYPE_OF_ONLINE);
         
         echo json_encode(array(
-            'status' => $status,
+            'status' => STATUS_SUCCESS,
             'msg'      => '',
             'date' => $res,
         ));
@@ -111,7 +111,7 @@ class Controller_Api_Collection extends Controller_BaseReqLogin
         $res = $this->collectionService->updateStatus($userId, $collectionId, Model_Collection::TYPE_OF_CLOSE);
     
         echo json_encode(array(
-            'status' => $status,
+            'status' => STATUS_SUCCESS,
             'msg'      => '',
             'date' => $res,
         ));
