@@ -4,24 +4,22 @@
  */
 class Business_Production
 {
-    public $collectionModel;
     public $productionModel;
 
     public function __construct()
     {
-        $this->collectionModel = new Model_Collection();
         $this->productionModel = new Model_Production();
     }
     
     public function getProductionList($userId, $collectionId)
     {
-        // 验证用户是否拥有该collection
-        $collection = $this->collectionModel->getByCollectionId($collectionId);
-        if ($collection['user_id'] != $userId) {
-            return array();
-        }
-        
         $productionList = $this->productionModel->getByCollectionId($collectionId);
+        foreach ($productionList as $idx => $production) {
+            // 过滤掉不是该用户的产品
+            if ($production['user_id'] != $userId) {
+                unset($productionList[$idx]);
+            }
+        }
         
         return $productionList;
     }
@@ -30,9 +28,10 @@ class Business_Production
     {
         $production = $this->productionModel->getByProductionId($productionId);
         
-        // 验证用户是否有该
+        // 验证用户是否有该产品
         if ($production['user_id'] != $userId) {
-            return array();
+            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
         
         return $production;

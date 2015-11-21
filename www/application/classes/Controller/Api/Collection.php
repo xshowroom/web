@@ -12,9 +12,12 @@ class Controller_Api_Collection extends Controller_BaseReqLogin
 
     public function action_list()
     {
+        $userId     = $this->opUser['id'];
+        $res = $this->collectionService->getAllCollectionList($userId);
+        
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
-            'msg'      => $msg,
+            'msg'    => $msg,
         ));
     }
     
