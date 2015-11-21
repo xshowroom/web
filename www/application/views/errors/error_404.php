@@ -30,7 +30,7 @@
 				<h1 class="text-center" style="font-size:90px;color: #ca7379;">404</h1>
 				<h2 class="text-center">PAGE NOT FOUND!</h2>
 
-				<h5  class="text-center" style="margin-top:50px;">We will redirect you to XSHOWROOM HOME in <span id="timeTick">10</span> seconds</h5>
+				<h5  class="text-center" style="margin-top:50px;">We will redirect you to XSHOWROOM HOME in <span id="timeTick" style="font-size:16px;color: #ca7379;">10</span> seconds</h5>
 				<h5  class="text-center">If your browser is no response, please <a id='targetPage' href="/home" role="button">CLICK HERE</a>.</h5>
 
 			</div>
