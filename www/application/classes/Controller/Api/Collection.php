@@ -67,7 +67,7 @@ class Controller_Api_Collection extends Controller_BaseReqLogin
     
     public function action_delete()
     {
-        $userId     = $_SESSION['opUser']['id'];
+        $userId     = $this->opUser['id'];
         $collectionId = Request::current()->post('id');
         
         $res = $this->collectionService->modifyCollection($userId, $collectionId, $name, $category, $mode, $season, $order, $currency, $deadline, $delivery, $description, $imagePath);
@@ -81,12 +81,39 @@ class Controller_Api_Collection extends Controller_BaseReqLogin
     
     public function action_check()
     {
+        $userId     = $this->opUser['id'];
         $collectionName = Request::current()->post('name');
-        list($status, $msg) = $this->collectionService->checkCollectionName($collectionName);
+        list($status, $msg) = $this->collectionService->checkCollectionName($userId, $collectionName);
         
         echo json_encode(array(
             'status'    => $status,
             'msg'       => __($msg),
+        ));
+    }
+    
+    public function action_enable()
+    {
+        $userId     = $this->opUser['id'];
+        $collectionId = Request::current()->post('id');
+        $res = $this->collectionService->updateStatus($userId, $collectionId, Model_Collection::TYPE_OF_ONLINE);
+        
+        echo json_encode(array(
+            'status' => $status,
+            'msg'      => '',
+            'date' => $res,
+        ));
+    }
+    
+    public function action_close()
+    {
+        $userId     = $this->opUser['id'];
+        $collectionId = Request::current()->post('id');
+        $res = $this->collectionService->updateStatus($userId, $collectionId, Model_Collection::TYPE_OF_CLOSE);
+    
+        echo json_encode(array(
+            'status' => $status,
+            'msg'      => '',
+            'date' => $res,
         ));
     }
 }

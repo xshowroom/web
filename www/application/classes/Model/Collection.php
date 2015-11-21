@@ -125,10 +125,11 @@ class Model_Collection
         return $result;
     }
     
-    public function checkName($collectionName)
+    public function checkName($userId, $collectionName)
     {
         $result = DB::select()
                     ->from('collection')
+                    ->where('user_id', '=', $userId)
                     ->where('name', '=', $collectionName)
                     ->execute()
                     ->as_array();

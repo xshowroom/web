@@ -86,9 +86,9 @@ class Business_Collection
         return $res;
     }
     
-    public function checkCollectionName($collectionName)
+    public function checkCollectionName($userId, $collectionName)
     {
-        $res = $this->collectionModel->checkName($collectionName);
+        $res = $this->collectionModel->checkName($userId, $collectionName);
         if ($res) {
             return array(STATUS_ERROR, "{$key}_existed");
         } else {
@@ -96,8 +96,14 @@ class Business_Collection
         }
     }
     
-    public function updateStatus($collectionId, $status)
+    public function updateStatus($userId, $collectionId, $status)
     {
+        $collection = $this->collectionModel->getByCollectionId($collectionId);
+        if (empty($collection) || $collection['user_id'] != $userId) {
+            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+        
         $res = $this->collectionModel->updateStatus($collectionId, $status);
         return $res;
     }
