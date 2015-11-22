@@ -33,25 +33,24 @@
 			<div class="col-md-9 xs-user-center-content">
 				<h2>MESSAGES</h2>
 				<div>
-					<div class="kd-inbox-message-info">
+					<div class="xs-inbox-message-bar">
 						<ol class="breadcrumb">
 							<li><a href="<?= URL::site('message') ?>">RETURN MESSAGE CENTER</a></li>
-							<li><a id="delete_msg" href="#modalDeleteConfirm" data-toggle="modal" class="kd-inbox-delete-icon">DELETE THIS MESSAGE<input id="msg_id" type="hidden" value="<?= $message['id'] ?>"></a></li>
+							<li><a id="delete_msg" href="#modalDeleteConfirm" data-toggle="modal">DELETE THIS MESSAGE<input id="msg_id" type="hidden" value="<?= $message['id'] ?>"></a></li>
 						</ol>
 					</div>
-					<div class="kd-inbox-message-detail">
+					<div class="xs-inbox-message-detail">
 						<div>
-							<h5>FROM: XSHOWROOM ADMIN&nbsp;&nbsp;&nbsp;DATE: <?= $message['create_datetime'] ?></h5>
+							<h5>FROM: XSHOWROOM ADMIN &nbsp;&nbsp;&nbsp; <?= $message['create_datetime'] ?></h5>
 						</div>
 						<div>
-							<div>
-								<?= $message['msg_body'] ?>
-							</div>
-							<br>
-							<br>
-							<br>
-							<p><a href="<?= URL::site('message') ?>">RETURN MESSAGE CENTER</a></p>
+							<?= $message['msg_body'] ?>
 						</div>
+						<br>
+						<br>
+						<br>
+						<br>
+						<p><a href="<?= URL::site('message') ?>">RETURN MESSAGE CENTER</a></p>
 					</div>
 				</div>
 			</div>
