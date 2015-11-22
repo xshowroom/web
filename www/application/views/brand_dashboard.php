@@ -155,10 +155,12 @@
             </div>
             <?php } else {?>
             <div class="collection-list-content row">
-            	<?php for ($i=0, $count=count($collectionList); $i<$count; $i++) { ?>
+            	<?php
+            		for ($i=0, $count=count($collectionList); $i<$count; $i++) { 
+            	?>
                 <div class="col-xs-3">
                     <a target="_self" href="/collection/<?= $collectionList[$i]['id']?>" class="collection-item">
-                        <img src="/static/app/images/shop-brand-1.png" class="collection-item-image">
+                        <img src="/<?= $collectionList[$i]['cover_image_medium']?>" class="collection-item-image">
                         <div class="collection-name"><?= $collectionList[$i]['name']?></div>
                     </a>
                 </div>
