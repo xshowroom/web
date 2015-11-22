@@ -78,7 +78,7 @@ class Business_Brand
             'category'  => Request::current()->query('category'),
             'season'    => $this->doQuote(Request::current()->query('season')),
             'available' => self::$availableMap[Request::current()->query('available')],
-            'country'   => $this->doQuote(Request::current()->query('country')),
+            'country'   => Request::current()->query('country'),
         );
         
         $userIdList = $this->doFilter($filter);

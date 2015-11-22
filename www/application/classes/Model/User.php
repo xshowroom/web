@@ -285,7 +285,7 @@ class Model_User {
     {
         $result = DB::select('user_id')
                     ->from('user_attr')
-                    ->where('country', 'IN', $country)
+                    ->where('company_country', 'IN', $country)
                     ->execute()
                     ->as_array();
         
