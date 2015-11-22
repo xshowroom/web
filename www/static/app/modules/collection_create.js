@@ -43,7 +43,6 @@ angular.module(
      					
    				for(var key in $scope.checkInfo.validation){
      				var value = $scope.collection[key];
-     				console.log(value);
      				if ((key == "deadline" || key == "delivery") && !value) {
      					$scope.errorMsgs.push([key, 'DATE ERROR']);
      					$scope.checkInfo.validation[key] = true;
@@ -66,7 +65,11 @@ angular.module(
      				Collection.create(
      	     			$scope.collection
      	     		).success(function(res){
-     	     			console.log(res);
+     	     			if (!res.status) {
+     	     				window.open('/brand/collection', '_self');
+     	     			}else{
+     	     				alert(res.msg);
+     	     			}
      	     		});
      			} 
      		};

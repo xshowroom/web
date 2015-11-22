@@ -181,7 +181,7 @@ angular.module(
     return {
     	template: [
     	    '<div>',
-		    	'<img ng-src="{{imageOnlineUrl}}" class="uploaded-image">',
+		    	'<img ng-src="/{{imageOnlineUrl}}" class="uploaded-image">',
     	        '<label for="{{imageId}}">',
     	        	'<span>{{"directives_js__UPLOAD" | translate}}</span>',
     	        	'<span ng-if="title">{{title}}</span>',
@@ -197,7 +197,8 @@ angular.module(
         	title: '@',
         	targetModel: '=',
         	renderImage: '@',
-        	afterUploading: '&'
+        	afterUploading: '&',
+        	imageOnlineUrl: '='
         },
         controller: function ($scope, $element, $attrs, $transclude) {
         	$scope.imageId = [
@@ -205,7 +206,7 @@ angular.module(
         	    Math.round(Math.random() *1000)
         	].join('');
         	
-        	var siteRootUrl = $location.protocol() + '://' + $location.host() + ":" + 	$location.port() + '/';
+//        	var siteRootUrl = $location.protocol() + '://' + $location.host() + ":" + 	$location.port() + '/';
         	
         	var uploadFile = function(files){
 				$scope.$emit('uploading.start');
@@ -220,7 +221,7 @@ angular.module(
                     		return
                     	}
                     	if (parseInt($attrs.renderImage) !== 0){
-                    		$scope.imageOnlineUrl = siteRootUrl + response.data;
+                    		$scope.imageOnlineUrl = '/' + response.data;
                     	}
                     	if ($attrs.targetModel){
                     		$scope.targetModel = response.data;
@@ -228,27 +229,28 @@ angular.module(
                     	}
                     	$scope.afterUploading({url: response.data});
                     	$scope.$emit('uploading.end');
-                    	input.val('');
                     }
                 });
 			};
 			
         	$($element).on('change', '#'+$scope.imageId, function(e){
+        		var self = $(this);
 				var files = e.target.files;
 				if (!files.length){
 					return;
 				}
 				if(!/image\/\w+/.test(files[0].type)){
 					alert('上传文件类型必须为图片！');
-					input.val('');
+					self.val('');
 				    return; 
 				}
 				if(files[0].size / 1024 / 1024 > 5){
 					alert('上传文件大于5MB！');
-					input.val('');
+					self.val('');
 				    return; 
 				}
 				uploadFile(files);
+				self.val('');
 			});
 
         }

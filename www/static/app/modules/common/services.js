@@ -55,6 +55,17 @@ angular.module(
 						},
 						transformRequest: postRequestTransformer
 					});
+		      	},
+		      	findById: function(opts){
+		      		return $http.get('/api/collection/detail', {params: opts});
+		      	},
+		      	modify: function (opts) {
+		      		return $http.post('/api/collection/modify', opts, {
+						headers: {
+							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
+						},
+						transformRequest: postRequestTransformer
+					});
 		      	}
    			};
          }

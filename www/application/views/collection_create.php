@@ -31,7 +31,7 @@
            ?>
     </nav>
     <section class="row uploading">
-        <div class="container">
+        <div class="container collection-create">
             <div class="row">
                 <div class="col-xs-12">
                     <h2 class="collection-create-title">ADD COLLECTION BASIC INFO</h2>
