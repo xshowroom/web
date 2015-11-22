@@ -13,6 +13,7 @@ class Model_Collection
     const TYPE_OF_CLOSE     = 2;
     const TYPE_OF_DELETE    = 3;
     
+    const MODE_OF_PRE_ORDER = 'dropdown__COLLECTION_MODE__PRE_ORDER';
     
     public function getAllList()
     {
@@ -160,7 +161,7 @@ class Model_Collection
             $sql .= " AND category = 'woman' OR category = 'man' OR modify_time >= '". date('Y-m-d', strtotime('-3 month')) ."'";
         } elseif ($filter['show'] == 'new') {
             $sql .= " AND modify_time >= '". date('Y-m-d', strtotime('-3 month')) ."'";
-        } elseif ($filter['show'] == 'woman' || $filter['show'] == 'man') {
+        } elseif ($filter['show'] == 'dropdown__COLLECTION__WOMEN' || $filter['show'] == 'dropdown__COLLECTION__MEN') {
             $sql .= " AND category = '{$filter['show']}' ";
         }
         
