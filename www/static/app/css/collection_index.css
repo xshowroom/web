@@ -46,7 +46,9 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     float: left;
+    max-width: 80%;
     display: inline-block;
+    width: auto;
 }
 .collection-info .collection-detail .show-all p{
     max-height: none;

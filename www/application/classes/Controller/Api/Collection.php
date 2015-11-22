@@ -87,7 +87,7 @@ class Controller_Api_Collection extends Controller_BaseReqLogin
         $userId     = $this->opUser['id'];
         $collectionId = Request::current()->query('id');
         
-        $res = $this->collectionService->modifyCollection($userId, $collectionId, $name, $category, $mode, $season, $order, $currency, $deadline, $delivery, $description, $imagePath);
+        $res = $this->collectionService->updateStatus($userId, $collectionId, Model_Collection::TYPE_OF_DELETE);
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,

@@ -104,6 +104,11 @@ class Business_Collection
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
         
+        if ($status == Model_Collection::TYPE_OF_DELETE && $collection['status'] != Model_Collection::TYPE_OF_DRAFT) {
+            $errorInfo = Kohana::message('message', 'STATUS_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+        
         $res = $this->collectionModel->updateStatus($collectionId, $status);
         return $res;
     }

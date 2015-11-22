@@ -150,4 +150,17 @@ class Model_Collection
         
         return $result;
     }
+    
+    public function getAllSeason()
+    {
+        $result = DB::select()
+                    ->from('collection')
+                    ->where('user_id', '=', $userId)
+                    ->where('name', '=', $collectionName)
+                    ->where('status', '!=', self::TYPE_OF_DELETE)
+                    ->execute()
+                    ->as_array();
+        
+        return empty($result) ? false : true;
+    }
 }
