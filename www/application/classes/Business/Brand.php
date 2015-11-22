@@ -56,12 +56,21 @@ class Business_Brand
         return $userIdList;
     }
     
+    private function doQuote($season)
+    {
+        $res = array_map(function ($val){
+            return "'{$val}'";
+        }, $season);
+        
+        return implode(',', $res);
+    }
+    
     public function getBrandList()
     {
         $filter = array(
             'show'      => Request::current()->query('show'),
             'category'  => Request::current()->query('category'),
-            'season'    => Request::current()->query('season'),
+            'season'    => $this->doQuote(Request::current()->query('season')),
             'available' => self::$availableMap[Request::current()->query('available')],
             'country'   => Request::current()->query('country'),
         );
