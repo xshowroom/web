@@ -20,7 +20,7 @@ class Controller_Brand extends Controller_BaseReqLogin
 
     public function action_profile()
     {
-        $view = View::factory('brand_profile');
+        $view = View::factory('profile');
         $view->set('user', $this->opUser);
         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
         $view->set('brandInfo', $this->brandService->getBrandInfo($this->opUser['id']));

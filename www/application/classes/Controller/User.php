@@ -1,22 +1,16 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
 
-class Controller_User extends Controller_Base
+class Controller_User extends Controller_BaseReqLogin
 {
     public function action_index()
     {
-
+        $this->action_profile();
     }
 
     public function action_login()
     {
-        if(!empty($opUser)) {
-            $this->redirect('/login');
-        }
-
-        // redirect by user role_type
-        $opUser = $_SESSION['opUser'];
-        $roleType = (int)$opUser['role_type'];
+        $roleType = (int)$this->opUser['role_type'];
 
         if($roleType === Business_User::ROLE_BRAND){
             $this->redirect('/brand/dashboard');
@@ -26,7 +20,7 @@ class Controller_User extends Controller_Base
             $this->redirect('/xsadmin/management');
         }
 
-        $this->redirect('/login');
+        $this->redirectLogin();
     }
 
     public function action_logout()
@@ -34,5 +28,16 @@ class Controller_User extends Controller_Base
         $this->destroy_session();
 
         $this->redirect('/home');
+    }
+
+    public function action_profile()
+    {
+        $roleType = (int)$this->opUser['role_type'];
+
+        if($roleType === Business_User::ROLE_BRAND){
+            $this->redirect('/brand/profile');
+        } elseif ($roleType === Business_User::ROLE_BUYER) {
+            $this->redirect('/buyer/profile');
+        }
     }
 }

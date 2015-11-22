@@ -12,7 +12,7 @@ angular.module(
     ]
 )
 .controller(
-    'BrandDashboardCtrl',
+    'UserProfileCtrl',
     [
         '$scope',
         function ($scope) {

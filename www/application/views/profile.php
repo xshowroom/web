@@ -16,9 +16,9 @@
 	<script type="text/javascript" src="/static/app/modules/common/i18n.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/services.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
-	<script type="text/javascript" src="/static/app/modules/brand_profile.js"></script>
+	<script type="text/javascript" src="/static/app/modules/user_profile.js"></script>
 </head>
-<body ng-controller="BrandDashboardCtrl" class="container-fluid">
+<body ng-controller="UserProfileCtrl" class="container-fluid">
 	<nav class="row setting-info">
 		<?php echo View::factory('common/global_setting_without_login'); ?>
 	</nav>

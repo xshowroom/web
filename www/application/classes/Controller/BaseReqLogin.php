@@ -24,7 +24,7 @@ class Controller_BaseReqLogin extends Controller_Base
         }
     }
 
-    private function redirectLogin()
+    protected function redirectLogin()
     {
         $this->redirect('/login');
     }

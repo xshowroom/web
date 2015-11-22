@@ -21,7 +21,7 @@
 				 	<span class="caret"></span>
 				</a>
 				<ul class="dropdown-menu">
-					<li><a href="<?=URL::site('brand/profile');?>"><?=__("global_navigation_top_brand__PROFILE");?></a></li>
+					<li><a href="<?=URL::site('user/profile');?>"><?=__("global_navigation_top_brand__PROFILE");?></a></li>
 					<li><a href="<?=URL::site('user/logout');?>"><?=__("global_navigation_top_brand__SIGN_OUT");?></a></li>
 				</ul>
 			</div>
