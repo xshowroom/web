@@ -90,10 +90,10 @@
                             <label for="currency" class="col-xs-4 control-label">Currency</label>
                             <div class="col-xs-8">
                                   <select class="form-control" id="currency" ng-model="collection.currency">
-                                      <option value="￥">￥ - RMB</option>
-                                      <option value="$">$ - USD</option>
-                                      <option value="￡">￡ - GBP</option>
-                                      <option value="€">€ - EUR</option>
+                                      <option value="￥">RMB - ￥</option>
+                                      <option value="$">USD - $</option>
+                                      <option value="￡">GBP - ￡</option>
+                                      <option value="€">EUR - €</option>
                                   </select>
                             </div>
                         </div>
