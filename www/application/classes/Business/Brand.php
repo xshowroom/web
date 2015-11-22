@@ -35,9 +35,11 @@ class Business_Brand
     {
         $userIdList = array();
         
-        $collectionList = $this->collectionModel->getByFilter($filter);
-        
-        $userIdList = array_column($collectionList, 'user_id');
+        if (!empty($filter['show']) || !empty($filter['season']) || !empty($filter['available'])) {
+            $collectionList = $this->collectionModel->getByFilter($filter);
+            $tempIdList = array_column($collectionList, 'user_id');
+            $userIdList = array_merge($userIdList, $tempIdList);
+        }
         
         if (!empty($filter['category'])) {
             $productinList = $this->productionModel->getByCategory($filter['category']);
@@ -63,10 +65,6 @@ class Business_Brand
             'available' => self::$availableMap[Request::current()->query('available')],
             'country'   => Request::current()->query('country'),
         );
-        
-        if ($filter['show'] == 'all') {
-            return $this->getAllBrand();
-        }
         
         $userIdList = $this->doFilter($filter);
         if (empty($userIdList)) {
