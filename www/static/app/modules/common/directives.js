@@ -206,7 +206,7 @@ angular.module(
         	    Math.round(Math.random() *1000)
         	].join('');
         	
-//        	var siteRootUrl = $location.protocol() + '://' + $location.host() + ":" + 	$location.port() + '/';
+        	var siteRootUrl = $location.protocol() + '://' + $location.host() + ":" + 	$location.port() + '/';
         	
         	var uploadFile = function(files){
 				$scope.$emit('uploading.start');
@@ -221,7 +221,7 @@ angular.module(
                     		return
                     	}
                     	if (parseInt($attrs.renderImage) !== 0){
-                    		$scope.imageOnlineUrl = '/' + response.data;
+                    		$scope.imageOnlineUrl = response.data;
                     	}
                     	if ($attrs.targetModel){
                     		$scope.targetModel = response.data;

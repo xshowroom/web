@@ -63,6 +63,15 @@
                     </div>
                 </div>
             </div>
+            
+            
+            <div class="row">
+                <div class="col-xs-12 text-center empty-warning">
+                    <img src="/static/app/images/order-tip.png">
+                    <p>WELCOME TO XSHOWROOM!<br/>START YOUR BUSINESS NOW!</p>
+                    <span>tips: collection create order</span>
+                </div>
+            </div>
             <div class="order-list-content row">
                 <div class="col-xs-3">
                     <a target="_blank" href="#" class="order-item">
@@ -149,8 +158,8 @@
         	 <div class="row">
                 <div class="col-xs-12 text-center empty-warning">
                     <img src="/static/app/images/empty.png">
-                    <p>Oops, your collection is empty!</p>
-                    <p><a href="/collection/create">Add collections</a> to attract more followers.</p>
+                    <p>OH NO! YOU HAVE NO<br/>COLLECTION!</p>
+                    <a class="btn btn-type-2" href="/collection/create">ADD COLLECTION</a>
                 </div>
             </div>
             <?php } else {?>
