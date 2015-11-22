@@ -56,7 +56,7 @@
 												<p><?= $row['create_datetime'] ?></p>
 											</td>
 											<td class="xs-inbox-delete">
-												<a data-toggle="modal" class="kd-inbox-delete-icon" href="#modalDeleteConfirm">
+												<a data-toggle="modal" class="xs-inbox-delete-icon" href="#modalDeleteConfirm">
 													<p><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></p>
 													<input id="msg_id" type="hidden" value="<?= $row['id'] ?>">
 												</a>
@@ -80,7 +80,7 @@
 
 	<!-- delete confirm -->
 	<div class="modal fade" id="modalDeleteConfirm" tabindex="-1" role="dialog">
-		<div class="modal-dialog  modal-sm">
+		<div class="modal-dialog  modal-xs">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -90,11 +90,34 @@
 					<p> DELETE THIS MESSAGE? </p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">CLOSE</button>
-					<button id='delete_inbox_msg' type="button" class="btn btn-primary">DELETE</button>
+					<button type="button" class="btn  btn-type-1" data-dismiss="modal">CLOSE</button>
+					<button id='delete_inbox_msg' type="button" class="btn btn-type-2">DELETE</button>
 				</div>
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
+
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+			window.message_id = -1;
+
+			$('.xs-inbox-delete-icon').click(function(){
+				window.message_id = $(this).find('#msg_id').val();
+			});
+
+			$('#delete_inbox_msg').click(function(){
+				$.ajax({
+					url : "/ajax/message/delete",
+					async: false,
+					dataType:"json",
+					data:{"id": window.message_id,"rnd": new Date().getTime()}
+				});
+
+				window.location.reload();
+			})
+		});
+
+	</script>
 </body>
 </html>
