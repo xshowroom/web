@@ -189,6 +189,19 @@
             <?php }?>  
         </div>
     </section>
+    <section class="row empty-warning">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-center ">
+                	<img src="/static/app/images/empty.png">
+                	<p>OH NO! YOU HAVE NO<br/>PRODUCTS IN THIS COLLECTION!</p>
+                	<?php if($collection['status'] == 0) {?>
+                	<a class="btn btn-type-2" href="/product/create">ADD PRODUCT</a>
+					<?php }?>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="row collection-product">
         <div class="container">
             <div class="row">
@@ -213,10 +226,12 @@
                 				<span>(3)</span>
                 			</a>
                 		</li>
-                	</ul> 
+                	</ul>
+                	<?php if($collection['status'] == 0) {?>
                 	<div class="add-new-product">
                 		<a href="/product/create">+ ADD NEW PRODUCT</a>
                 	</div>
+                	<?php }?>
                 </div>
                 <div class="col-xs-9 collection-products">
                  	<h3>{{'T-Shirt' | uppercase}}</h3>
