@@ -27,32 +27,30 @@
 	</nav>
 	<section class="row message">
 		<div class="container">
-			<div class="row">
-				<!-- left nav -->
-				<?php echo View::factory('common/global_navigation_user_center'); ?>
+			<!-- left nav -->
+			<?php echo View::factory('common/global_navigation_user_center'); ?>
 
-				<div class="col-md-9 xs-user-center-content">
-					<h2>MESSAGES</h2>
-					<div>
-						<div class="kd-inbox-message-info">
-							<ol class="breadcrumb">
-								<li><a href="<?= URL::site('message') ?>">返回消息中心</a></li>
-								<li><a id="delete_msg" href="#modalDeleteConfirm" data-toggle="modal" class="kd-inbox-delete-icon">删除该消息<input id="msg_id" type="hidden" value="<?= $message['id'] ?>"></a></li>
-							</ol>
+			<div class="col-md-9 xs-user-center-content">
+				<h2>MESSAGES</h2>
+				<div>
+					<div class="kd-inbox-message-info">
+						<ol class="breadcrumb">
+							<li><a href="<?= URL::site('message') ?>">RETURN MESSAGE CENTER</a></li>
+							<li><a id="delete_msg" href="#modalDeleteConfirm" data-toggle="modal" class="kd-inbox-delete-icon">DELETE THIS MESSAGE<input id="msg_id" type="hidden" value="<?= $message['id'] ?>"></a></li>
+						</ol>
+					</div>
+					<div class="kd-inbox-message-detail">
+						<div>
+							<h5>FROM: XSHOWROOM ADMIN&nbsp;&nbsp;&nbsp;DATE: <?= $message['create_datetime'] ?></h5>
 						</div>
-						<div class="kd-inbox-message-detail">
+						<div>
 							<div>
-								<h5>来自： 快答系统&nbsp;&nbsp;&nbsp;日期： <?= $message['create_datetime'] ?></h5>
+								<?= $message['msg_body'] ?>
 							</div>
-							<div>
-								<div>
-									<?= $message['msg_body'] ?>
-								</div>
-								<br>
-								<br>
-								<br>
-								<p><a href="<?= URL::site('message') ?>">返回消息中心</a></p>
-							</div>
+							<br>
+							<br>
+							<br>
+							<p><a href="<?= URL::site('message') ?>">RETURN MESSAGE CENTER</a></p>
 						</div>
 					</div>
 				</div>

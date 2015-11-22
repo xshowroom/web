@@ -28,52 +28,50 @@
 
 	<section class="row message">
 		<div class="container">
-			<div class="row">
-				<!-- left nav -->
-				<?php echo View::factory('common/global_navigation_user_center'); ?>
+			<!-- left nav -->
+			<?php echo View::factory('common/global_navigation_user_center'); ?>
 
-				<div class="col-md-10 xs-user-center-content">
-					<h2>MY MESSAGES</h2>
-					<div>
-						<div class="xs-inbox-message-info">
+			<div class="col-md-10 xs-user-center-content">
+				<h2>MY MESSAGES</h2>
+				<div>
+					<div class="xs-inbox-message-info">
 
-						</div>
-						<div class="table-responsive xs-inbox-message">
-							<table class="table table-hover xs-table">
-								<tbody>
-								<?php foreach($messageList as $row): ?>
-									<?php if((int)$row['status'] === Business_Message::MSG_STATUS_UNREADY): ?>
-										<tr class="xs-inbox-unread">
-									<?php else: ?>
-										<tr class="xs-inbox-read">
-									<?php endif; ?>
-											<td class="xs-inbox-icon">
-												<p><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></p>
-											</td>
-											<td class="xs-inbox-content">
-												<a href="<?= URL::site('message/detail/'.$row['id']); ?>">
-													<p><?= $row['msg_body'] ?></p>
-												</a>
-											</td>
-											<td class="xs-inbox-date  hidden-sm hidden-xs">
-												<p><?= $row['create_datetime'] ?></p>
-											</td>
-											<td class="xs-inbox-delete">
-												<a data-toggle="modal" class="xs-inbox-delete-icon" href="#modalDeleteConfirm">
-													<p><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></p>
-													<input id="msg_id" type="hidden" value="<?= $row['id'] ?>">
-												</a>
-											</td>
-										</tr>
-								<?php endforeach; ?>
-								</tbody>
-							</table>
-						</div>
-						<div>
-
-						</div>
 					</div>
-			</div>
+					<div class="table-responsive xs-inbox-message">
+						<table class="table table-hover xs-table">
+							<tbody>
+							<?php foreach($messageList as $row): ?>
+								<?php if((int)$row['status'] === Business_Message::MSG_STATUS_UNREADY): ?>
+									<tr class="xs-inbox-unread">
+								<?php else: ?>
+									<tr class="xs-inbox-read">
+								<?php endif; ?>
+										<td class="xs-inbox-icon">
+											<p><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></p>
+										</td>
+										<td class="xs-inbox-content">
+											<a href="<?= URL::site('message/detail/'.$row['id']); ?>">
+												<p><?= $row['msg_body'] ?></p>
+											</a>
+										</td>
+										<td class="xs-inbox-date  hidden-sm hidden-xs">
+											<p><?= $row['create_datetime'] ?></p>
+										</td>
+										<td class="xs-inbox-delete">
+											<a data-toggle="modal" class="xs-inbox-delete-icon" href="#modalDeleteConfirm">
+												<p><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></p>
+												<input id="msg_id" type="hidden" value="<?= $row['id'] ?>">
+											</a>
+										</td>
+									</tr>
+							<?php endforeach; ?>
+							</tbody>
+						</table>
+					</div>
+					<div>
+
+					</div>
+				</div>
 		</div>
 	</section>
 
