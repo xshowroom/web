@@ -69,6 +69,9 @@ class Business_Brand
         }
         
         $userIdList = $this->doFilter($filter);
+        if (empty($userIdList)) {
+            return array();
+        }
         
         $brandList = $this->brandModel->getByUserIdList($userIdList);
         
