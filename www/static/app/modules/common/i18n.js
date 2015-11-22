@@ -575,7 +575,7 @@ angular.module(
             dropdown__PRODUCT_HAT: "HAT",
             dropdown__PRODUCT_TOP: "TOP",
             dropdown__PRODUCT_KNIT: "KNIT",
-            dropdown__PRODUCT_SHIRT: "衬衫",
+            dropdown__PRODUCT_SHIRT: "SHIRT",
             dropdown__PRODUCT_DRESS: "DRESS",
             dropdown__PRODUCT_JUMPSUIT: "JUMPSUIT",
             dropdown__PRODUCT_COAT: "COAT",
