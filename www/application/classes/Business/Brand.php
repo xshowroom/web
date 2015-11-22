@@ -48,7 +48,8 @@ class Business_Brand
         }
         
         if (!empty($filter['country'])) {
-            $userAttrList = $this->userModel->getByCountry($filter['country']);
+            $country = explode(',', $filter['country']);
+            $userAttrList = $this->userModel->getByCountry($country);
             $tempIdList = array_column($userAttrList, 'user_id');
             $userIdList = array_merge($userIdList, $tempIdList);
         }
