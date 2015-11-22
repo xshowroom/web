@@ -29,14 +29,8 @@
 	<section class="row message">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-2 hidden-xs hidden-sm" role="navigation">
-					<ul class="nav nav-stacked xs-user-center-slide-nav">
-						<li id="xs-user-center-nav-profile"><a href="#"><i class="icon-leaf"></i>全部消息</a></li>
-					</ul>
-				</div>
-
-				<div class="col-md-10 xs-user-center-content">
-					<h2>我的消息和提醒</h2>
+				<div class="col-md-12 xs-user-center-content">
+					<h2>MY MESSAGES</h2>
 					<div>
 						<div class="xs-inbox-message-info">
 

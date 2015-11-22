@@ -2,6 +2,8 @@
     padding-top: 30px !important;
 }
 
+
+/* inbox message lists */
 .xs-user-center-content h2{
 	border-bottom: 2px solid #ca7379;
 	margin-top: 0;
@@ -14,11 +16,6 @@
 	vertical-align: bottom;
 }
 
-.kd-inbox-message-info>ol {
-	margin-bottom: 1px;
-}
-
-/* inbox message lists */
 .xs-table {
 	table-layout: fixed;
     color: #333333;
@@ -29,11 +26,20 @@
     border-bottom: 1px solid #eeeeee;
 }
 
+.xs-table p {
+    margin: 5px 0 5px 0;
+}
+
+.xs-table i {
+   vertical-align: middle;
+}
+
 .xs-inbox-read p {
     color: #999999;
 }
 
 .xs-inbox-unread p {
+    font-size: 16px;
 	color: #ca7379;
 }
 
