@@ -32,10 +32,17 @@ class Controller_Message extends Controller_BaseReqLogin
     {
         $msg_id = Request::current()->param('id');
 
+
+        $message = $this->messageService->getMessageDetail($this->opUser['id'], $msg_id);
+
+        if (empty($message)) {
+            self::redirect(URL::site("message"));
+        }
+
         $view = View::factory('user_message_detail');
         $view->set('user', $this->opUser);
         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
-        $view->set('message', $this->messageService->getMessageDetail($this->opUser['id'], $msg_id));
+        $view->set('message', $message);
 
         $this->response->body($view);
     }
