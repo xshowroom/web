@@ -157,9 +157,9 @@ class Model_Collection
         $sql = "SELECT user_id FROM collection WHERE status = " . self::TYPE_OF_ONLINE;
         
         if ($filter['show'] == 'new') {
-            $sql .= ' AND modify_time >= ' . date('Y-m-d', strtotime('-3 month'));
+            $sql .= " AND modify_time >= '". date('Y-m-d', strtotime('-3 month')) ."'";
         } elseif ($filter['show'] == 'woman' || $filter['show'] == 'man') {
-            $sql .= " AND category = {$filter['show']} ";
+            $sql .= " AND category = '{$filter['show']}' ";
         }
         
         if (!empty($filter['season'])) {
@@ -167,7 +167,7 @@ class Model_Collection
         }
         
         if (!empty($filter['available'])) {
-            $sql .= " AND deadline <= " . date('Y-m-d', strtotime($filter['available']));
+            $sql .= " AND deadline <= '" . date('Y-m-d', strtotime($filter['available'])) ."'";
         }
         
         $result = DB::query(Database::SELECT, $sql)->execute()->as_array();

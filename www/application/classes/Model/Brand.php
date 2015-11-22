@@ -47,7 +47,7 @@ class Model_Brand
     {
         $result = DB::select()
                     ->from('brand')
-                    ->where('user_id', 'IN', implode(",", $userIdList))
+                    ->where('user_id', 'IN', $userIdList)
                     ->where('status', '=', STAT_NORMAL)
                     ->execute()
                     ->as_array();
