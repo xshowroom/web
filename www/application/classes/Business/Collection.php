@@ -82,7 +82,7 @@ class Business_Collection
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
         
-        $res = $this->updateStatus($collectionId, Model_Collection::TYPE_OF_DELETE);
+        $res = $this->updateStatus($userId, $collectionId, Model_Collection::TYPE_OF_DELETE);
         return $res;
     }
     
@@ -90,7 +90,7 @@ class Business_Collection
     {
         $res = $this->collectionModel->checkName($userId, $collectionName);
         if ($res) {
-            return array(STATUS_ERROR, "{$key}_existed");
+            return array(STATUS_ERROR, "{$collectionName}_existed");
         } else {
             return array(STATUS_SUCCESS, 'check_ok');
         }

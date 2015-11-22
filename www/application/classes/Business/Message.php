@@ -64,8 +64,20 @@ class Business_Message
         return $message;
     }
 
+    /**
+     * @param $userId
+     * @param $messageId
+     * @return bool
+     */
     public function deleteMessage($userId, $messageId)
     {
+        $message = $this->getMessageDetail($userId, $messageId);
+
+        if (empty($message)) {
+            return false;
+        }
+
         $this->messageModel->changeMessageStatus($userId, $messageId, Model_Message::MSG_STATUS_DELETE);
+        return true;
     }
 }
