@@ -25,53 +25,36 @@
 	<nav class="row brand-navigation">
         <?php echo View::factory('common/global_navigation_top_brand', array('currentPage' =>  'message', 'userAttr'=> $userAttr)); ?>
 	</nav>
-
 	<section class="row message">
 		<div class="container">
 			<!-- left nav -->
 			<?php echo View::factory('common/global_navigation_user_center'); ?>
 
-			<div class="col-md-10 xs-user-center-content">
-				<h2>MY MESSAGES</h2>
+			<div class="col-md-9 xs-user-center-content">
+				<h2>MESSAGES</h2>
 				<div>
-					<div class="xs-inbox-message-info">
-
+					<div class="kd-inbox-message-info">
+						<ol class="breadcrumb">
+							<li><a href="<?= URL::site('message') ?>">RETURN MESSAGE CENTER</a></li>
+							<li><a id="delete_msg" href="#modalDeleteConfirm" data-toggle="modal" class="kd-inbox-delete-icon">DELETE THIS MESSAGE<input id="msg_id" type="hidden" value="<?= $message['id'] ?>"></a></li>
+						</ol>
 					</div>
-					<div class="table-responsive xs-inbox-message">
-						<table class="table table-hover xs-table">
-							<tbody>
-							<?php foreach($messageList as $row): ?>
-								<?php if((int)$row['status'] === Business_Message::MSG_STATUS_UNREADY): ?>
-									<tr class="xs-inbox-unread">
-								<?php else: ?>
-									<tr class="xs-inbox-read">
-								<?php endif; ?>
-										<td class="xs-inbox-icon">
-											<p><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></p>
-										</td>
-										<td class="xs-inbox-content">
-											<a href="<?= URL::site('message/detail/'.$row['id']); ?>">
-												<p><?= $row['msg_body'] ?></p>
-											</a>
-										</td>
-										<td class="xs-inbox-date  hidden-sm hidden-xs">
-											<p><?= $row['create_datetime'] ?></p>
-										</td>
-										<td class="xs-inbox-delete">
-											<a data-toggle="modal" class="xs-inbox-delete-icon" href="#modalDeleteConfirm">
-												<p><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></p>
-												<input id="msg_id" type="hidden" value="<?= $row['id'] ?>">
-											</a>
-										</td>
-									</tr>
-							<?php endforeach; ?>
-							</tbody>
-						</table>
-					</div>
-					<div>
-
+					<div class="kd-inbox-message-detail">
+						<div>
+							<h5>FROM: XSHOWROOM ADMIN&nbsp;&nbsp;&nbsp;DATE: <?= $message['create_datetime'] ?></h5>
+						</div>
+						<div>
+							<div>
+								<?= $message['msg_body'] ?>
+							</div>
+							<br>
+							<br>
+							<br>
+							<p><a href="<?= URL::site('message') ?>">RETURN MESSAGE CENTER</a></p>
+						</div>
 					</div>
 				</div>
+			</div>
 		</div>
 	</section>
 

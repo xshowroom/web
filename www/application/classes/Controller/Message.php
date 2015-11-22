@@ -30,12 +30,13 @@ class Controller_Message extends Controller_BaseReqLogin
 
     public function action_detail()
     {
-        $id = Request::current()->param('id');
+        $msg_id = Request::current()->param('id');
 
-        echo $id;
-//        $view = View::factory('user_message_detail');
-//        $view->set('user', $this->opUser);
-//        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
-//        $this->response->body($view);
+        $view = View::factory('user_message_detail');
+        $view->set('user', $this->opUser);
+        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view->set('message', $this->messageService->getMessageDetail($this->opUser['id'], $msg_id));
+
+        $this->response->body($view);
     }
 }
