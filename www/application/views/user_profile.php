@@ -27,7 +27,10 @@
 	</nav>
 	<section class="row profile">
         <div class="container">
-            <div class="col-md-10 container profile-content">
+            <!-- left nav -->
+            <?php echo View::factory('common/global_navigation_user_center'); ?>
+
+            <div class="col-md-10 profile-content">
                 <h2><?=__("brand_profile__BASIC_INFO")?></h2>
                 <div class="form-line">
                     <div class="form-group">

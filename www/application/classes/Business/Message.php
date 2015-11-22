@@ -50,8 +50,11 @@ class Business_Message
     public function getMessageDetail($userId, $messageId)
     {
         $message = $this->messageModel->getMessageById($userId, $messageId);
-        // set message to READ after user get it
-        $this->messageModel->changeMessageStatus($userId, $messageId, Model_Message::MSG_STATUS_READ);
+
+        if((int)$message["status"] === $this::MSG_STATUS_UNREADY ) {
+            // set message to READ after user get it
+            $this->messageModel->changeMessageStatus($userId, $messageId, Model_Message::MSG_STATUS_READ);
+        }
 
         return $message;
     }

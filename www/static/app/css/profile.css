@@ -1,16 +1,16 @@
 .profile {
-    padding-top: 10px !important;
+    padding-top: 30px !important;
 }
 
 .profile-content h2{
 	border-bottom: 2px solid #ca7379;
-	margin-top: 40px;
+	margin-top: 10px;
 	margin-bottom: 20px;
 	padding-top: 0;
 	padding-bottom: 6px;
 	color: #ca7379;
 	font-weight: 300;
-	font-size: 16px;
+	font-size: 17px;
 	vertical-align: bottom;
 }
 
