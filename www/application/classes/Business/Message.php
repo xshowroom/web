@@ -51,6 +51,11 @@ class Business_Message
     {
         $message = $this->messageModel->getMessageById($userId, $messageId);
 
+        if (empty($message))
+        {
+            return null;
+        }
+
         if((int)$message["status"] === $this::MSG_STATUS_UNREADY ) {
             // set message to READ after user get it
             $this->messageModel->changeMessageStatus($userId, $messageId, Model_Message::MSG_STATUS_READ);

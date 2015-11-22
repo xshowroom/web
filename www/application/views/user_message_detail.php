@@ -74,33 +74,10 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn  btn-type-1" data-dismiss="modal"><?=__("user_message__modal__btn_CLOSE")?></button>
-					<button id='delete_inbox_msg' type="button" class="btn btn-type-2"><?=__("user_message__modal__btn_DELETE")?></button>
+					<button id='delete_inbox_msg' type="button" class="btn btn-type-2" ng-click="deleteMessage();"><?=__("user_message__modal__btn_DELETE")?></button>
 				</div>
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
-
-	<script type="text/javascript">
-
-		$(document).ready(function(){
-			window.message_id = -1;
-
-			$('.xs-inbox-delete-icon').click(function(){
-				window.message_id = $(this).find('#msg_id').val();
-			});
-
-			$('#delete_inbox_msg').click(function(){
-				$.ajax({
-					url : "/ajax/message/delete",
-					async: false,
-					dataType:"json",
-					data:{"id": window.message_id,"rnd": new Date().getTime()}
-				});
-
-				window.location.reload();
-			})
-		});
-
-	</script>
 </body>
 </html>
