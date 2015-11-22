@@ -6,6 +6,7 @@ class Controller_Api_Brand extends Controller_BaseReqLogin
 
     public function before()
     {
+        parent::before();
         $this->brandService = new Business_Brand();
     }
 
