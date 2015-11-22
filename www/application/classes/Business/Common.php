@@ -11,10 +11,5 @@ class Business_Collection
         $this->collectionModel = new Model_Collection();
     }
     
-    public function getAllSeason()
-    {
-        $brandList = $this->collectionModel->getAllList();
     
-        return $brandList;
-    }
 }

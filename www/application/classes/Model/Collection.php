@@ -143,6 +143,7 @@ class Model_Collection
         $result = DB::update('collection')
                     ->set(array(
                         'status' => $status,
+                        'modify_time' => date('Y-m-d H:i:s'),
                     ))
                     ->where('id', '=', $collectionId)
                     ->where('status', '!=', self::TYPE_OF_DELETE)
@@ -151,16 +152,28 @@ class Model_Collection
         return $result;
     }
     
-    public function getAllSeason()
+    public function getByFilter($filter)
     {
-        $result = DB::select()
-                    ->from('collection')
-                    ->where('user_id', '=', $userId)
-                    ->where('name', '=', $collectionName)
-                    ->where('status', '!=', self::TYPE_OF_DELETE)
-                    ->execute()
-                    ->as_array();
+        $sql = "SELECT user_id FROM collection WHERE status = " . self::TYPE_OF_ONLINE;
         
-        return empty($result) ? false : true;
+        if ($filter['show'] == 'all') {
+            $sql .= " AND category = 'woman' OR category = 'man' OR modify_time >= '". date('Y-m-d', strtotime('-3 month')) ."'";
+        } elseif ($filter['show'] == 'new') {
+            $sql .= " AND modify_time >= '". date('Y-m-d', strtotime('-3 month')) ."'";
+        } elseif ($filter['show'] == 'woman' || $filter['show'] == 'man') {
+            $sql .= " AND category = '{$filter['show']}' ";
+        }
+        
+        if (!empty($filter['season'])) {
+            $sql .= " AND season IN ({$filter['season']}) ";
+        }
+        
+        if (!empty($filter['available'])) {
+            $sql .= " AND deadline <= '" . date('Y-m-d', strtotime($filter['available'])) ."'";
+        }
+        
+        $result = DB::query(Database::SELECT, $sql)->execute()->as_array();
+        
+        return $result;
     }
 }
