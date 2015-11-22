@@ -66,6 +66,9 @@ angular.module(
 						},
 						transformRequest: postRequestTransformer
 					});
+		      	},
+		      	destroy: function (opts) {
+		      		return $http.get('/api/collection/delete', {params: opts});
 		      	}
    			};
          }

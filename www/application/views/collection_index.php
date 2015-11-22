@@ -67,7 +67,7 @@
                  	</div>
                  	<div class="col-xs-12 collection-action">
                  		<button class="btn btn-type-2">SUBMIT</button>
-                 		<button class="btn btn-type-1">DELETE</button>
+                 		<button class="btn btn-type-1" ng-click="deleteCollection();">DELETE</button>
                  	</div>
                 </div>
             </div>
@@ -168,7 +168,7 @@
                         <div class="form-group col-xs-12">
                             <div class="col-xs-10 col-xs-offset-2">
                             	<button class="btn btn-type-1" ng-click="isEditing = false;">CANCEL</button>
-                                <button class="btn btn-type-2" id="create-btn" ng-click="update()">UPDATE</button>
+                                <button class="btn btn-type-2" id="create-btn" ng-click="updateCollection()">UPDATE</button>
                         	</div>
                         </div>
                     </form>

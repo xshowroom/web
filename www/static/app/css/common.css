@@ -395,6 +395,7 @@ a.active:before{
 	bottom: 0;
 	position: absolute;
 	cursor: pointer;
+	background-color: rgba(0,0,0,0.5);
 }
 .image-uploader label > span{
 	font-size: 14px;
