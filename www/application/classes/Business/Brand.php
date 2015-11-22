@@ -58,6 +58,10 @@ class Business_Brand
     
     private function doQuote($season)
     {
+        if (empty($season)) {
+            return false;
+        }
+        
         $arr = explode(',', $season);
         
         $res = array_map(function ($val){
