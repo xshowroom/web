@@ -39,7 +39,9 @@
                 <div class="col-xs-9">
                  	<div class="col-xs-12 collection-detail collection-name">
                  		<h2><?= $collection['name']?></h2>
+                 		<?php if($collection['status'] == 0) {?>
                  		<a href="#" class="collection-edit" ng-click="isEditing = true;">EDIT</a>
+                 		<?php }?>
                  	</div>
                  	<div class="col-xs-12 collection-detail">
                  		<span>Order Mode:</span><span><?= $collection['mode']?></span>
@@ -66,11 +68,17 @@
                  		</div>
                  	</div>
                  	<div class="col-xs-12 collection-action">
-                 		<button class="btn btn-type-2">SUBMIT</button>
+                 		<?php if($collection['status'] == 0) {?>
+                 		<button class="btn btn-type-2" ng-click="enableCollection();">SUBMIT</button>
                  		<button class="btn btn-type-1" ng-click="deleteCollection();">DELETE</button>
+                 		<?php }?>
+                 		<?php if($collection['status'] == 1) {?>
+                 		<button class="btn btn-type-2" ng-click="closeCollection();">CLOSE</button>
+                 		<?php }?>
                  	</div>
                 </div>
             </div>
+            <?php if($collection['status'] == 0) {?>
             <div class="row collection-create" ng-show="isEditing">
                 <div class="col-xs-2">
                     <div class="image-uploader" id="cover-image" data-image-online-url="collection.image" data-target-model="collection.image"
@@ -172,8 +180,9 @@
                         	</div>
                         </div>
                     </form>
-                </div>            
+                </div>
             </div>
+            <?php }?>  
         </div>
     </section>
     <section class="row collection-product">

@@ -69,6 +69,12 @@ angular.module(
 		      	},
 		      	destroy: function (opts) {
 		      		return $http.get('/api/collection/delete', {params: opts});
+		      	},
+		      	enable: function (opts) {
+		      		return $http.get('/api/collection/enable', {params: opts});
+		      	},
+		      	close: function (opts) {
+		      		return $http.get('/api/collection/close', {params: opts});
 		      	}
    			};
          }
