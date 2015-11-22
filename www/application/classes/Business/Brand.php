@@ -56,13 +56,13 @@ class Business_Brand
         return $userIdList;
     }
     
-    private function doQuote($season)
+    private function doQuote($queryStr)
     {
-        if (empty($season)) {
+        if (empty($queryStr)) {
             return false;
         }
         
-        $arr = explode(',', $season);
+        $arr = explode(',', $queryStr);
         
         $res = array_map(function ($val){
             return "'{$val}'";
@@ -78,7 +78,7 @@ class Business_Brand
             'category'  => Request::current()->query('category'),
             'season'    => $this->doQuote(Request::current()->query('season')),
             'available' => self::$availableMap[Request::current()->query('available')],
-            'country'   => Request::current()->query('country'),
+            'country'   => $this->doQuote(Request::current()->query('country')),
         );
         
         $userIdList = $this->doFilter($filter);
