@@ -32,7 +32,7 @@
 			<?php echo View::factory('common/global_navigation_user_center'); ?>
 
 			<div class="col-md-10 xs-user-center-content">
-				<h2>MY MESSAGES</h2>
+				<h2><?=__("user_message__MY_MESSAGES")?></h2>
 				<div>
 					<div class="xs-inbox-message-info">
 
@@ -85,14 +85,14 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<h4 class="modal-title">CONFIRM</h4>
+					<h4 class="modal-title"><?=__("user_message__modal__DELETE_CONFIRM")?></h4>
 				</div>
 				<div class="modal-body">
-					<p> DELETE THIS MESSAGE? </p>
+					<p><?=__("user_message__modal__DELETE_CONFIRM_DETAIL")?></p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn  btn-type-1" data-dismiss="modal">CLOSE</button>
-					<button id='delete_inbox_msg' type="button" class="btn btn-type-2">DELETE</button>
+					<button type="button" class="btn  btn-type-1" data-dismiss="modal"><?=__("user_message__modal__btn_CLOSE")?></button>
+					<button id='delete_inbox_msg' type="button" class="btn btn-type-2"><?=__("user_message__modal__btn_DELETE")?></button>
 				</div>
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->

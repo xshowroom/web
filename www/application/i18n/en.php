@@ -48,6 +48,13 @@ return array_merge(
         'global_navigation_top_brand__SIGN_OUT' => 'SIGN OUT',
     ),
     /**
+     * global_navigation_user_center.php
+     */
+    array(
+        'global_navigation_user_center__PROFILE' => 'MY PROFILE',
+        'global_navigation_user_center__COLLECTION' => 'MESSAGES',
+    ),
+    /**
      * global_navigation_footer.php
      */
     array(
@@ -101,7 +108,7 @@ return array_merge(
         'home__btn_REGISTER' => 'REGISTER',
 
         'home__HOT_BRANDS' => 'HOT BRANDS',
-        'home__BRAND_PROFILES' => 'BRAND PROFILES',
+        'home__profileS' => 'BRAND PROFILES',
         'home__SSI5_COLLECTION' => 'SSI5 COLLECTION',
 
         'home__TESTOMONIALS' => 'TESTOMONIALS',
@@ -294,32 +301,32 @@ return array_merge(
         'buyer_register__STEP_3__btn__SUBMIT' => 'SUBMIT',
     ),
     /**
-     * brand_profile.php
+     * user_profile.php
      */
     array(
-        'brand_profile__BASIC_INFO' => 'BASIC INFO',
-        'brand_profile__BRAND_INFO' => 'BRAND INFO',
-        'brand_profile__COMPANY_INFO' => 'COMPANY INFO',
+        'profile__BASIC_INFO' => 'BASIC INFO',
+        'profile__BRAND_INFO' => 'BRAND INFO',
+        'profile__COMPANY_INFO' => 'COMPANY INFO',
 
-        'brand_profile__EMAIL' => 'E-MAIL （LOGIN NAME）',
-        'brand_profile__FIRST_NAME' => 'FIRST NAME',
-        'brand_profile__LAST_NAME' => 'LAST NAME',
-        'brand_profile__DISPLAY_NAME' => 'DISPLAY NAME',
-        'brand_profile__TELEPHONE' => 'TELEPHONE',
-        'brand_profile__MOBILE' => 'MOBILE PHONE',
-        'brand_profile__REGISTER_DATE' => 'REGISTER DATETIME',
-        'brand_profile__LAST_LOGIN_TIME' => 'LAST LOGIN TIME',
+        'profile__EMAIL' => 'E-MAIL （LOGIN NAME）',
+        'profile__FIRST_NAME' => 'FIRST NAME',
+        'profile__LAST_NAME' => 'LAST NAME',
+        'profile__DISPLAY_NAME' => 'DISPLAY NAME',
+        'profile__TELEPHONE' => 'TELEPHONE',
+        'profile__MOBILE' => 'MOBILE PHONE',
+        'profile__REGISTER_DATE' => 'REGISTER DATETIME',
+        'profile__LAST_LOGIN_TIME' => 'LAST LOGIN TIME',
 
-        'brand_profile__COMPANY_NAME' => 'COMPANY NAME',
-        'brand_profile__COMPANY_ADDRESS' => 'COMPANY ADDRESS',
-        'brand_profile__COMPANY_COUNTRY' => 'COMPANY COUNTRY',
-        'brand_profile__COMPANY_ZIP' => 'COMPANY ZIPCODE',
-        'brand_profile__COMPANY_TELEPHONE' => 'COMPANY TELEPHONE',
-        'brand_profile__COMPANY_WEB_URL' => 'COMPANY URL',
+        'profile__COMPANY_NAME' => 'COMPANY NAME',
+        'profile__COMPANY_ADDRESS' => 'COMPANY ADDRESS',
+        'profile__COMPANY_COUNTRY' => 'COMPANY COUNTRY',
+        'profile__COMPANY_ZIP' => 'COMPANY ZIPCODE',
+        'profile__COMPANY_TELEPHONE' => 'COMPANY TELEPHONE',
+        'profile__COMPANY_WEB_URL' => 'COMPANY URL',
 
-        'brand_profile__BRAND_NAME' => 'BRAND NAME',
-        'brand_profile__DESIGNER_NAME' => 'DESIGNER NAME',
-        'brand_profile__BRAND_URL' => 'BRAND URL',
+        'profile__BRAND_NAME' => 'BRAND NAME',
+        'profile__DESIGNER_NAME' => 'DESIGNER NAME',
+        'profile__BRAND_URL' => 'BRAND URL',
     ),
     /**
      * brand_dashboard.php
@@ -343,6 +350,16 @@ return array_merge(
      * brand_message.php.php
      */
     array(
+        'user_message__MY_MESSAGES' => 'MY MESSAGES',
 
+        'user_message__MESSAGE_DETAIL' => 'VIEW MESSAGE DETAIL',
+        'user_message__RETURN_MESSAGE_CENTER' => 'RETURN MESSAGE CENTER',
+        'user_message__DELETE_MESSAGE' => 'DELETE THIS MESSAGE',
+        'user_message__MESSAGE_FROM_ADMIN' => 'FROM: XSHOWROOM ADMIN',
+
+        'user_message__modal__DELETE_CONFIRM' => 'DELETE CONFIRM',
+        'user_message__modal__DELETE_CONFIRM_DETAIL' => 'WILL YOU DELETE THIS MESSAGE PERMANENTLY?',
+        'user_message__modal__btn_CLOSE' => 'CLOSE',
+        'user_message__modal__btn_DELETE' => 'DELETE',
     )
 );

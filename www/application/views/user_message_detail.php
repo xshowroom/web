@@ -31,17 +31,17 @@
 			<?php echo View::factory('common/global_navigation_user_center'); ?>
 
 			<div class="col-md-9 xs-user-center-content">
-				<h2>MESSAGES</h2>
+				<h2><?=__("user_message__MESSAGE_DETAIL")?></h2>
 				<div>
 					<div class="xs-inbox-message-bar">
 						<ol class="breadcrumb">
-							<li><a href="<?= URL::site('message') ?>">RETURN MESSAGE CENTER</a></li>
-							<li><a id="delete_msg" href="#modalDeleteConfirm" data-toggle="modal">DELETE THIS MESSAGE<input id="msg_id" type="hidden" value="<?= $message['id'] ?>"></a></li>
+							<li><a href="<?= URL::site('message') ?>"><?=__("user_message__RETURN_MESSAGE_CENTER")?></a></li>
+							<li><a id="delete_msg" href="#modalDeleteConfirm" data-toggle="modal"><?=__("user_message__DELETE_MESSAGE")?><input id="msg_id" type="hidden" value="<?= $message['id'] ?>"></a></li>
 						</ol>
 					</div>
 					<div class="xs-inbox-message-detail">
 						<div>
-							<h5>FROM: XSHOWROOM ADMIN &nbsp;&nbsp;&nbsp; <?= $message['create_datetime'] ?></h5>
+							<h5><?=__("user_message__MESSAGE_FROM_ADMIN")?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?= $message['create_datetime'] ?></h5>
 						</div>
 						<div>
 							<?= $message['msg_body'] ?>
@@ -50,7 +50,7 @@
 						<br>
 						<br>
 						<br>
-						<p><a href="<?= URL::site('message') ?>">RETURN MESSAGE CENTER</a></p>
+						<p><a href="<?= URL::site('message') ?>"><?=__("user_message__RETURN_MESSAGE_CENTER")?></a></p>
 					</div>
 				</div>
 			</div>
@@ -67,14 +67,14 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<h4 class="modal-title">CONFIRM</h4>
+					<h4 class="modal-title"><?=__("user_message__modal__DELETE_CONFIRM")?></h4>
 				</div>
 				<div class="modal-body">
-					<p> DELETE THIS MESSAGE? </p>
+					<p><?=__("user_message__modal__DELETE_CONFIRM_DETAIL")?></p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn  btn-type-1" data-dismiss="modal">CLOSE</button>
-					<button id='delete_inbox_msg' type="button" class="btn btn-type-2">DELETE</button>
+					<button type="button" class="btn  btn-type-1" data-dismiss="modal"><?=__("user_message__modal__btn_CLOSE")?></button>
+					<button id='delete_inbox_msg' type="button" class="btn btn-type-2"><?=__("user_message__modal__btn_DELETE")?></button>
 				</div>
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->

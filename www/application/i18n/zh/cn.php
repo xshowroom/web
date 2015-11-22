@@ -43,9 +43,16 @@ return array_merge(
         'global_navigation_top_brand__DASHBOARD' => '仪表盘',
         'global_navigation_top_brand__COLLECTION' => '系列管理',
         'global_navigation_top_brand__ORDER' => '订单管理',
-        'global_navigation_top_brand__MESSAGE' => '个人消息',
+        'global_navigation_top_brand__MESSAGE' => '消息中心',
         'global_navigation_top_brand__PROFILE' => '个人中心',
         'global_navigation_top_brand__SIGN_OUT' => '退出登录',
+    ),
+    /**
+     * global_navigation_user_center.php
+     */
+    array(
+        'global_navigation_user_center__PROFILE' => '个人信息',
+        'global_navigation_user_center__COLLECTION' => '消息中心',
     ),
     /**
      * global_navigation_footer.php
@@ -294,32 +301,32 @@ return array_merge(
         'buyer_register__STEP_3__btn__SUBMIT' => '提交注册',
     ),
     /**
-     * brand_profile.php
+     * user_profile.php
      */
     array(
-        'brand_profile__BASIC_INFO' => '基本信息',
-        'brand_profile__BRAND_INFO' => '品牌信息',
-        'brand_profile__COMPANY_INFO' => '公司信息',
+        'profile__BASIC_INFO' => '基本信息',
+        'profile__BRAND_INFO' => '品牌信息',
+        'profile__COMPANY_INFO' => '公司信息',
 
-        'brand_profile__EMAIL' => 'E-mail （登录邮箱）',
-        'brand_profile__FIRST_NAME' => '我的名字',
-        'brand_profile__LAST_NAME' => '我的姓氏',
-        'brand_profile__DISPLAY_NAME' => '我的显示名称',
-        'brand_profile__TELEPHONE' => '我的电话号码',
-        'brand_profile__MOBILE' => '我的手机号码',
-        'brand_profile__REGISTER_DATE' => '我的注册日期',
-        'brand_profile__LAST_LOGIN_TIME' => '最后一次登录',
+        'profile__EMAIL' => 'E-mail （登录邮箱）',
+        'profile__FIRST_NAME' => '我的名字',
+        'profile__LAST_NAME' => '我的姓氏',
+        'profile__DISPLAY_NAME' => '我的显示名称',
+        'profile__TELEPHONE' => '我的电话号码',
+        'profile__MOBILE' => '我的手机号码',
+        'profile__REGISTER_DATE' => '我的注册日期',
+        'profile__LAST_LOGIN_TIME' => '最后一次登录',
 
-        'brand_profile__COMPANY_NAME' => '公司名称',
-        'brand_profile__COMPANY_ADDRESS' => '公司详细地址',
-        'brand_profile__COMPANY_COUNTRY' => '公司所在地',
-        'brand_profile__COMPANY_ZIP' => '公司邮政编码',
-        'brand_profile__COMPANY_TELEPHONE' => '公司电话号码',
-        'brand_profile__COMPANY_WEB_URL' => '公司官网地址',
+        'profile__COMPANY_NAME' => '公司名称',
+        'profile__COMPANY_ADDRESS' => '公司详细地址',
+        'profile__COMPANY_COUNTRY' => '公司所在地',
+        'profile__COMPANY_ZIP' => '公司邮政编码',
+        'profile__COMPANY_TELEPHONE' => '公司电话号码',
+        'profile__COMPANY_WEB_URL' => '公司官网地址',
 
-        'brand_profile__BRAND_NAME' => '品牌名称',
-        'brand_profile__DESIGNER_NAME' => '品牌设计师',
-        'brand_profile__BRAND_URL' => '品牌网址',
+        'profile__BRAND_NAME' => '品牌名称',
+        'profile__DESIGNER_NAME' => '品牌设计师',
+        'profile__BRAND_URL' => '品牌网址',
     ),
     /**
      * brand_dashboard.php
@@ -340,9 +347,19 @@ return array_merge(
 
     ),
     /**
-     * brand_message.php.php
+     * user_message.php & user_message_detail.php
      */
     array(
+        'user_message__MY_MESSAGES' => '我收到的消息',
 
+        'user_message__MESSAGE_DETAIL' => '查看消息详情',
+        'user_message__RETURN_MESSAGE_CENTER' => '返回消息中心',
+        'user_message__DELETE_MESSAGE' => '删除这条消息',
+        'user_message__MESSAGE_FROM_ADMIN' => '来自：XSHOWROOM系统管理员',
+
+        'user_message__modal__DELETE_CONFIRM' => '确认删除',
+        'user_message__modal__DELETE_CONFIRM_DETAIL' => '您将永远删除该消息',
+        'user_message__modal__btn_CLOSE' => '取消',
+        'user_message__modal__btn_DELETE' => '删除',
     )
 );
