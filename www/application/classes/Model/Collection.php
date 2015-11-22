@@ -158,7 +158,7 @@ class Model_Collection
         $sql = "SELECT user_id FROM collection WHERE status = " . self::TYPE_OF_ONLINE;
         
         if ($filter['show'] == 'all') {
-            $sql .= " AND category = 'woman' OR category = 'man' OR modify_time >= '". date('Y-m-d', strtotime('-3 month')) ."'";
+            $sql .= " AND category = 'dropdown__COLLECTION__WOMEN' OR category = 'dropdown__COLLECTION__MEN' OR modify_time >= '". date('Y-m-d', strtotime('-3 month')) ."'";
         } elseif ($filter['show'] == 'new') {
             $sql .= " AND modify_time >= '". date('Y-m-d', strtotime('-3 month')) ."'";
         } elseif ($filter['show'] == 'dropdown__COLLECTION__WOMEN' || $filter['show'] == 'dropdown__COLLECTION__MEN') {
