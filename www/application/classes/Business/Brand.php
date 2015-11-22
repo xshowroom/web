@@ -33,28 +33,39 @@ class Business_Brand
     
     private function doFilter($filter)
     {
-        $userIdList = array();
+        $brandList = $this->getAllBrand();
         
+        // 所有的user_id
+        $userIdList = array_column($brandList, 'user_id');
+        
+        // 如果有show查询条件，筛选出相应的user_id
         if (!empty($filter['show']) || !empty($filter['season']) || !empty($filter['available'])) {
             $collectionList = $this->collectionModel->getByFilter($filter);
             $tempIdList = array_column($collectionList, 'user_id');
-            $userIdList = array_merge($userIdList, $tempIdList);
+            $userIdList = array_intersect($userIdList, $tempIdList);
         }
         
+        // 如果有category查询条件，筛选出相应的user_id
         if (!empty($filter['category'])) {
             $productinList = $this->productionModel->getByCategory($filter['category']);
             $tempIdList = array_column($productinList, 'user_id');
-            $userIdList = array_merge($userIdList, $tempIdList);
+            $userIdList = array_intersect($userIdList, $tempIdList);
         }
         
+        // 如果有country查询条件，筛选出相应的user_id
         if (!empty($filter['country'])) {
             $country = explode(',', $filter['country']);
             $userAttrList = $this->userModel->getByCountry($country);
             $tempIdList = array_column($userAttrList, 'user_id');
-            $userIdList = array_merge($userIdList, $tempIdList);
+            $userIdList = array_intersect($userIdList, $tempIdList);
         }
         
-        return $userIdList;
+        $res = array();
+        foreach ($userIdList as $user_id) {
+            $res[] = $brandList[$user_id];
+        }
+
+        return $res;
     }
     
     private function doQuote($queryStr)
@@ -82,14 +93,9 @@ class Business_Brand
             'country'   => Request::current()->query('country'),
         );
         
-        $userIdList = $this->doFilter($filter);
-        if (empty($userIdList)) {
-            return array();
-        }
+        $res = $this->doFilter($filter);
         
-        $brandList = $this->brandModel->getByUserIdList($userIdList);
-        
-        return $brandList;
+        return $res;
     }
     
     public function getBrandInfo($userId)

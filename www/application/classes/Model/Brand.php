@@ -14,7 +14,7 @@ class Model_Brand
                     ->from('brand')
                     ->where('status', '=', STAT_NORMAL)
                     ->execute()
-                    ->as_array();
+                    ->as_array('user_id');
         
         return $result;
     }
