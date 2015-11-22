@@ -4,7 +4,11 @@
  * @author tangxiaotao
  */
 class Business_Message
-{  
+{
+    const MSG_STATUS_DELETE = -1;
+    const MSG_STATUS_UNREADY = 0;
+    const MSG_STATUS_READ =  1;
+
     public $messageModel;
 
     public function __construct()
