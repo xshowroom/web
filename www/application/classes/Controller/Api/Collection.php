@@ -17,7 +17,21 @@ class Controller_Api_Collection extends Controller_BaseReqLogin
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
-            'msg'    => $msg,
+            'msg'   => '',
+            'data'  => $res,
+        ));
+    }
+    
+    public function action_detail()
+    {
+        $userId     = $this->opUser['id'];
+        $collectionId = Request::current()->query('id');
+        $res = $this->collectionService->getCollectionInfo($userId, $collectionId);
+        
+        echo json_encode(array(
+            'status' => STATUS_SUCCESS,
+            'msg'    => '',
+            'data'  => $res,
         ));
     }
     
