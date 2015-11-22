@@ -25,16 +25,61 @@
 	<nav class="row brand-navigation">
         <?php echo View::factory('common/global_navigation_top_brand', array('currentPage' =>  'message', 'userAttr'=> $userAttr)); ?>
 	</nav>
-	<section class="row">
+
+	<section class="row message">
 		<div class="container">
-			<div class="row" style="min-height:300px;">
-				<h1 class="text-center">Personal Message Is Coming Soon!</h1>
-				<h2 class="text-center">Email Address: <?= $user['email'] ?></h2>
-				<h2 class="text-center">Display Name: <?= $userAttr['display_name'] ?></h2>
-				<?php var_dump($user); ?>
+			<div class="row">
+				<div class="col-md-2 hidden-xs hidden-sm" role="navigation">
+					<ul class="nav nav-stacked xs-user-center-slide-nav">
+						<li id="xs-user-center-nav-profile"><a href="#"><i class="icon-leaf"></i>全部消息</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-10 xs-user-center-content">
+					<h2>我的消息和提醒</h2>
+					<div>
+						<div class="xs-inbox-message-info">
+
+						</div>
+						<div class="table-responsive xs-inbox-message">
+							<table class="table table-hover xs-table">
+								<tbody>
+								<?php foreach($messageList as $row): ?>
+									<?php if((int)$row['status'] === 0): ?>
+										<tr class="xs-inbox-unread">
+									<?php else: ?>
+										<tr class="xs-inbox-read">
+									<?php endif; ?>
+											<td class="xs-inbox-icon">
+												<p><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></p>
+											</td>
+											<td class="xs-inbox-content">
+												<a href="<?= URL::site('message/detail/'.$row['id']); ?>">
+													<p><?= $row['msg_body'] ?></p>
+												</a>
+											</td>
+											<td class="xs-inbox-date  hidden-sm hidden-xs">
+												<p><?= $row['create_datetime'] ?></p>
+											</td>
+											<td class="xs-inbox-delete">
+												<a data-toggle="modal" class="kd-inbox-delete-icon" href="#modalDeleteConfirm">
+													<p><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></p>
+													<input id="msg_id" type="hidden" value="<?= $row['id'] ?>">
+												</a>
+											</td>
+										</tr>
+								<?php endforeach; ?>
+								</tbody>
+							</table>
+						</div>
+						<div>
+
+						</div>
+					</div>
 			</div>
 		</div>
 	</section>
+
 	<footer class="row footer-navigation">
         <?php echo View::factory('common/global_navigation_footer'); ?>
 	</footer>

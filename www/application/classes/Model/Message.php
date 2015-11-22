@@ -50,7 +50,8 @@ class Model_Message
                     ->from(Model_Message::$TABLE)
                     ->where('user_id', '=', $userId)
                     ->where('status', '!=', Model_Message::MSG_STATUS_DELETE)
-                    ->execute();
+                    ->execute()
+                    ->as_array();
         
         return $result;
     }

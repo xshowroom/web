@@ -1,0 +1,67 @@
+.message {
+    padding-top: 30px !important;
+}
+
+.xs-user-center-content h2{
+	border-bottom: 2px solid #ca7379;
+	margin-top: 0;
+	margin-bottom: 10px;
+	padding-top: 0;
+	padding-bottom: 6px;
+	color: #ca7379;
+	font-weight: 600;
+	font-size: 20px;
+	vertical-align: bottom;
+}
+
+.kd-inbox-message-info>ol {
+	margin-bottom: 1px;
+}
+
+/* inbox message lists */
+.xs-table {
+	table-layout: fixed;
+    color: #333333;
+}
+
+.xs-table td {
+    border-top: none !important;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.xs-inbox-read p {
+    color: #999999;
+}
+
+.xs-inbox-unread p {
+	color: #ca7379;
+}
+
+.xs-inbox-unread i {
+	color:  #ca7379;
+}
+
+.xs-inbox-icon {
+	width: 60px;
+}
+
+.xs-inbox-content {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.xs-inbox-content p {
+	font-size: 16px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.xs-inbox-date {
+	width: 180px;
+}
+
+.xs-inbox-delete {
+	width: 50px;
+}
