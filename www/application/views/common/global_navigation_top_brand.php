@@ -10,7 +10,7 @@
 				<li><a href="<?=URL::site('brand/dashboard');?>" <?php if ($currentPage == dashboard){?>class="active"<?php }?>><?=__("global_navigation_top_brand__DASHBOARD");?></a></li>
 				<li><a href="<?=URL::site('brand/collection');?>" <?php if ($currentPage == collection){?>class="active"<?php }?>><?=__("global_navigation_top_brand__COLLECTION");?></a></li>
 				<li><a href="<?=URL::site('brand/order');?>" <?php if ($currentPage == order){?>class="active"<?php }?>><?=__("global_navigation_top_brand__ORDER");?></a></li>
-				<li><a href="<?=URL::site('brand/message');?>"  <?php if ($currentPage == message){?>class="active"<?php }?>><?=__("global_navigation_top_brand__MESSAGE");?></a></li>
+				<li><a href="<?=URL::site('message/list');?>"  <?php if ($currentPage == message){?>class="active"<?php }?>><?=__("global_navigation_top_brand__MESSAGE");?></a></li>
 			</ul>
 		</div>
 		<div class="col-xs-2 text-right">

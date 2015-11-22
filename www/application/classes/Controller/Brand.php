@@ -20,7 +20,7 @@ class Controller_Brand extends Controller_BaseReqLogin
 
     public function action_profile()
     {
-        $view = View::factory('profile');
+        $view = View::factory('user_profile');
         $view->set('user', $this->opUser);
         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
         $view->set('brandInfo', $this->brandService->getBrandInfo($this->opUser['id']));
@@ -60,7 +60,7 @@ class Controller_Brand extends Controller_BaseReqLogin
 
     public function action_message()
     {
-        $view = View::factory('brand_message');
+        $view = View::factory('user_message');
         $view->set('user', $this->opUser);
         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
         $this->response->body($view);
