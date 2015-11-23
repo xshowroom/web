@@ -76,8 +76,8 @@ angular.module(
 		      	close: function (opts) {
 		      		return $http.get('/api/collection/close', {params: opts});
 		      	},
-		      	findAll: function(){
-		      		return $http.get('/api/collection/list');
+		      	findAll: function(opts){
+		      		return $http.get('/api/collection/list', {params: opts});
 		      	}
    			};
          }

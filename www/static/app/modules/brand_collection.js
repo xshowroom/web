@@ -18,7 +18,9 @@ angular.module(
         function ($scope, Collection) {
      		$scope.collectionLimit = 2;
      		
-     		Collection.findAll().success(function(res){
+     		Collection.findAll({
+     			detail: 1
+     		}).success(function(res){
      			$scope.collections = res.data;
      			$scope.statusCounter = {};
      			for(var i = 0, len = res.data.length; i < len; i++) {

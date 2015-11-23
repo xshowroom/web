@@ -107,7 +107,7 @@
                         <div class="form-group col-xs-12"  ng-class="{'has-error': checkInfo.validation.color}">
                             <label for="category" class="col-xs-2 control-label">Color</label>
                             <div class="col-xs-6">
-                            	<div class="new-color"><span class="glyphicon glyphicon-plus"></span></div>
+                            	<a class="new-color" ng-click="openColorModal();">+ Add Color</a>
                             </div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.madeIn}">
@@ -156,5 +156,56 @@
     <footer class="row footer-navigation">
         <?php echo View::factory('common/global_navigation_footer'); ?>
     </footer>
+    
+    <div class="modal fade uploading" id="color-modal" tabindex="-1" role="dialog" aria-labelledby="color-modal">
+	  	<div class="modal-dialog" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-header">
+	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	      		</div>
+	      		<div class="modal-body">
+	      			<h4>Standard Color</h4>
+	      			<div class="standard-colors">
+	      				<div ng-repeat="(name, color) in standardColors" class="color-item" ng-class="{'active':currentColors.statndard[name]}">
+		      				<label class="checkbox-inline" ng-style="{'background': color}">
+							  	<input type="checkbox" ng-model="currentColors.statndard[name]" ng-true-value="'{{color}}'" ng-false-value="false">
+							  	<span class="glyphicon glyphicon-ok"></span>
+							</label>
+							<span class="color-name">{{name}}</span>
+						</div>
+						<div class="clearfix"></div>
+	      			</div>
+	      			<h4>Customized Color</h4>
+	      			<div class="customized-colors available-colors">
+	      				<div ng-repeat="color in currentColors.customized track by $index" class="color-item"
+	      					ng-class="{'active': color['selected']}">
+		      				<label class="checkbox-inline" style="{{color['style']}}">
+							  	<input type="checkbox" ng-model="color['selected']" ng-true-value="'true'" ng-false-value="false" ng-change="checkName($event, $index);">
+							  	<span class="glyphicon glyphicon-ok"></span>
+							</label>
+							<input type="text" ng-model="color['name']" class="form-control" placeholder="unnamed_color_{{$index}}">
+							<span class="glyphicon glyphicon-trash" ng-click="currentColors.customized.splice($index, 1);"></span>
+						</div>
+						<div class="clearfix"></div>
+	      			</div>
+	      			<div class="color-actions">
+	      				<!-- <button class="btn btn-default"><i class="fa fa-eyedropper"></i>SELECT</button>
+	      				<div>OR</div> -->
+	      				<label class="btn btn-default">
+	      					<i class="fa fa-camera"></i>
+	      					<span>UPLOAD PATTERN IMAGE</span>
+	      					<input type="file" id="color-file">
+	      				</label>
+	      			</div>
+	      			<div class="add-color-action">
+	      				<button class="btn btn-type-2" ng-click>ADD COLOR</button>
+	      			</div>
+	      			<div class="add-color-tips">
+	      				*You can select serval colors.
+	      			</div>
+	      		</div>
+	    	</div>
+	  	</div>
+	</div>
 </body>
 </html>
