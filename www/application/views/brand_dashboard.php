@@ -158,7 +158,7 @@
         	 <div class="row">
                 <div class="col-xs-12 text-center empty-warning">
                     <img src="/static/app/images/empty.png">
-                    <p>O<?= __("brand_dashboard__COLLECTION_EMPTY_1"); ?><br/><?= __("brand_dashboard__COLLECTION_EMPTY_2"); ?></p>
+                    <p><?= __("brand_dashboard__COLLECTION_EMPTY_1"); ?><br/><?= __("brand_dashboard__COLLECTION_EMPTY_2"); ?></p>
                     <a class="btn btn-type-2" href="/collection/create"><?= __("brand_dashboard__COLLECTION_EMPTY_3"); ?></a>
                 </div>
             </div>

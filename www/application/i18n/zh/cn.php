@@ -345,11 +345,28 @@ return array_merge(
 
         'brand_dashboard__MY_COLLECTIONS' => '我的系列',
         'brand_dashboard__ALL_COLLECTIONS' => '所有系列 >',
-        'brand_dashboard__COLLECTION_EMPTY_1' => '哦，不！ 您从未创建',
+        'brand_dashboard__COLLECTION_EMPTY_1' => '哦，不是吧！ 您从未创建',
         'brand_dashboard__COLLECTION_EMPTY_2' => '商品系列!',
         'brand_dashboard__COLLECTION_EMPTY_3' => '添加系列',
 
         'brand_dashboard__ACCOUNT_MANAGER' => '在XSHOWROOM 我们拥有专属的品牌客户经理来帮助您介绍品牌, 与您共建商品集合, 并帮助您完成订单！'
+    ),
+    /**
+     * collection_create.php
+     */
+    array(
+        'collection_create__BASIC_INFO' => '添加系列基本信息',
+        'collection_create__COLLECTION_COVER' => '系列封面',
+        'collection_create__COLLECTION_NAME' => '系列名称',
+        'collection_create__COLLECTION_CATEGORY' => '系列类型',
+        'collection_create__COLLECTION_MODE' => '售卖模式',
+        'collection_create__COLLECTION_SEASON' => '时尚季',
+        'collection_create__COLLECTION_MINIMUM_ORDER' => '最小订单金额',
+        'collection_create__COLLECTION_CURRENCY' => '结算货币',
+        'collection_create__COLLECTION_DEADLINE' => '下单截至日期',
+        'collection_create__COLLECTION_DELIVERY_DATE' => '发货日期',
+        'collection_create__COLLECTION_DESCRIPTION' => '详细描述',
+        'collection_create__COLLECTION_CREATE' => '创建系列',
     ),
     /**
      * brand_collection.php
