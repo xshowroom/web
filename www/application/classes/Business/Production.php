@@ -6,36 +6,12 @@
 class Business_Production
 {
     public $productionModel;
+    public $uploadService;
 
     public function __construct()
     {
         $this->productionModel = new Model_Production();
-    }
-    
-    /**
-     * 生成大中小三种尺寸的图片
-     * 
-     * @param string $imagePath
-     * @return array
-     */
-    private function createThreeImage($imagePath)
-    {
-        $extension = substr(strrchr($imagePath, '.'), 1);
-        $realPathFile  = 'data/' . date('ymdHis'). substr(microtime(),2,4) . '.' . $extension;
-    
-        if (file_exists($imagePath)){
-            try{
-                copy($imagePath, $realPathFile);
-                // 生成medium图和small图
-                $mediumPathFile = $this->uploadService->resize($realPathFile, 0.75, 'medium');
-                $smallPathFile = $this->uploadService->resize($realPathFile, 0.50, 'small');
-            } catch (Exception $e) {
-                $errorInfo = Kohana::message('message', 'IMAGE_ERROR');
-                throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
-            }
-        }
-    
-        return $realPathFile;
+        $this->uploadService = new Business_Upload();
     }
     
     /**
@@ -49,7 +25,7 @@ class Business_Production
         $colorArr = json_decode($color, true);
         $colorFinalArr = array(); // 怕用引用乱掉，又得调半天
         foreach ($colorArr as $colorName => $colorPath) {
-            $realPathFile = $this->createThreeImage($colorPath);
+            list($realPathFile, $mediumPathFile, $smallPathFile) = $this->uploadService->createThreeImage($colorPath);
             $colorFinalArr[$colorName] = $realPathFile;
         }
         $color = json_encode($colorFinalArr);
@@ -57,7 +33,7 @@ class Business_Production
         $imagePathsArr = json_decode($imagePaths, true);
         $imagePathsFinalArr = array();
         foreach ($imagePathsArr as $imagePath) {
-            $realPathFile = $this->createThreeImage($imagePath);
+            list($realPathFile, $mediumPathFile, $smallPathFile) = $this->uploadService->createThreeImage($imagePath);
             $imagePathsFinalArr[] = $realPathFile;
         }
         $imagePaths = json_encode($imagePathsFinalArr);

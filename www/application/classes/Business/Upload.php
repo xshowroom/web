@@ -80,4 +80,24 @@ class Business_Upload
         
         return $output;
     }
+    
+    public function createThreeImage($imagePath)
+    {
+        $extension = substr(strrchr($imagePath, '.'), 1);
+        $realPathFile  = 'data/' . date('ymdHis'). substr(microtime(),2,4) . '.' . $extension;
+    
+        if (file_exists($imagePath)){
+            try{
+                copy($imagePath, $realPathFile);
+                // 生成medium图和small图
+                $mediumPathFile = $this->uploadService->resize($realPathFile, 0.5, 'medium');
+                $smallPathFile = $this->uploadService->resize($realPathFile, 0.2, 'small');
+            } catch (Exception $e) {
+                $errorInfo = Kohana::message('message', 'IMAGE_ERROR');
+                throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+            }
+        }
+    
+        return array($realPathFile, $mediumPathFile, $smallPathFile);
+    }
 } 
