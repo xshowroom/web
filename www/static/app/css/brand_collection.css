@@ -1,0 +1,106 @@
+@CHARSET "UTF-8";
+.collection-category h3{
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px 0;
+	border-bottom: 1px solid #25272c;
+}
+.collection-category ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.collection-category ul > li{
+	height: 30px;
+}
+.collection-category ul > li > a{
+	color: #878787;
+	font-size: 14px;
+	line-height: 30px;
+	cursor: pointer;
+}
+.collection-category ul > li > a:before{
+	content: none;
+}
+.collection-category ul > li > a span:first-child{
+	display: inline-block;
+	width: 60%;
+	float: left;
+}
+.collection-category ul > li > a span:last-child{
+	display: inline-block;
+	width: 40%;
+	float: left;
+	text-align: right;
+}
+.collection-category .add-new-collection{
+	font-size: 14px;
+	margin-top: 30px;
+}
+.collection-item h3{
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px 0;
+	border-bottom: 1px solid #ddd;
+}
+.collection-item .collection-info{
+	margin: 30px 0;
+	height: 350px;
+	position: relative;
+}
+.collection-item .collection-info > div{
+	height: 100%;
+}
+.collection-item .collection-info .collection-cover {
+	background-color: #ccc;
+}
+.collection-item .collection-info .collection-cover > img{
+	width: 100%;
+	max-height: 100%;
+	position: absolute;
+	left:0;
+	top:50%;
+	z-index: 0;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+}
+.collection-item .collection-info .collection-details {
+	position: absolute;
+    right: 0px;
+    bottom: 0;
+    height: auto;
+}
+.collection-item .collection-info .collection-detail > *{
+	line-height: 35px;
+}
+.collection-item .collection-info .collection-detail span:first-child,
+.collection-item .collection-info .collection-detail div:first-child{
+	color: #878787;
+	margin-right: 0.5em;
+}
+.collection-item .collection-info .collection-detail.collection-description{
+	min-height: 10em;
+}
+.collection-item .collection-info .collection-actions{
+	margin-top: 30px;
+}
+.collection-item .product-gallery{
+	height: 150px;
+}
+.collection-item .product-gallery > div{
+	height: 100%;
+	position: relative;
+}
+.collection-item .product-gallery .product-gallery-action span{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+}
+.collection-item .product-gallery .product-gallery-action.disabled span{
+	color: #878787;
+}

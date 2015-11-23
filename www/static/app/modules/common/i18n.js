@@ -80,6 +80,7 @@ angular.module(
             companyWebsite_EMPTY_ERROR: "请输入公司的网址",
             companyWebsite_PATTERN_ERROR: "请正确输入公司的网址，例如(http://www.example.com)",
 
+            
             /**
              * DROP DOWN LIST
              */
@@ -276,7 +277,14 @@ angular.module(
             dropdown__COUNTRY__Zimbabwe: '津巴布韦',
             dropdown__COUNTRY__Zaire: '扎伊尔',
             dropdown__COUNTRY__Zambia: '赞比亚',
-
+            
+            // Collection Status
+            COLLECTION_STATUS_ALL: '所有',
+            COLLECTION_STATUS_0: '草稿',
+            COLLECTION_STATUS_1: '已提交',
+            COLLECTION_STATUS_2: '已关闭',
+            COLLECTION_STATUS_3: '已删除',
+            
             // Store Type
             dropdown__STORE__ALL: '全部',
             dropdown__STORE__DEPARTMENT_SHOP: '商场',
@@ -373,7 +381,8 @@ angular.module(
             companyTel_PATTERN_ERROR: "invalid telephone",
             companyWebsite_EMPTY_ERROR: "please input your company website",
             companyWebsite_PATTERN_ERROR: "please input valid url, eg: http://www.example.com",
-
+            
+            
             /**
              * DROP DOWN LIST
              */
@@ -570,7 +579,15 @@ angular.module(
             dropdown__COUNTRY__Zimbabwe: 'Zimbabwe',
             dropdown__COUNTRY__Zaire: 'Zaire',
             dropdown__COUNTRY__Zambia: 'Zambia',
-
+            
+            // Collection Status
+            COLLECTION_STATUS_ALL: 'All',
+            COLLECTION_STATUS_0: 'Draft',
+            COLLECTION_STATUS_1: 'Submitted',
+            COLLECTION_STATUS_2: 'Closed',
+            COLLECTION_STATUS_3: 'Deleted',
+            
+            
             // Store Type
             dropdown__STORE__ALL: 'ALL',
             dropdown__STORE__DEPARTMENT_SHOP: 'DEPARTMENT SHOP',

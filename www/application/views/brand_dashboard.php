@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="brand-logo">
-                        <img src="/static/app/images/brand-logo.png">
+                        <img src="/<?= $brandInfo['brand_image']?>">
                     </div>
                     <div class="brand-info">
                         <h3 class="brand-name"><?= $brandInfo['brand_name'] ?></h3>

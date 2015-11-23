@@ -37,10 +37,10 @@
     <section class="row no-vertical-padding uploading">
         <div class="container collection-info">
             <div class="row" ng-show="!isEditing">
-                <div class="col-xs-3">
-                 	<img src="/static/app/images/shop-brand-1.png" class="collection-cover">
+                <div class="col-xs-2 collection-cover">
+                 	<img src="/<?=$collection['cover_image_medium']?>">
                 </div>
-                <div class="col-xs-9">
+                <div class="col-xs-10">
                  	<div class="col-xs-12 collection-detail collection-name">
                  		<h2><?= $collection['name']?></h2>
                  		<?php if($collection['status'] == 0) {?>
