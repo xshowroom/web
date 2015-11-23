@@ -38,5 +38,4 @@ class Controller_Api_Common extends Controller_Base
             'data'      => $data,
         ));
     }
-
 }

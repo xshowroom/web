@@ -48,6 +48,18 @@
 	-moz-transform: translateY(-50%);
 	-o-transform: translateY(-50%);
 }
+.product-inputs .empty-product-image{
+	border: none;
+	background-color: transparent;
+	width: 100%;
+}
+.product-inputs .empty-product-image label{
+	background-color: transparent;
+	color: #878787;
+}
+.product-inputs .empty-product-image.image-uploader label > span:first-child{
+	margin-top: 120px;
+}
 .product-inputs .size-codes{
 	line-height: 40px;
 }

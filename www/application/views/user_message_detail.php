@@ -27,33 +27,30 @@
 	</nav>
 	<section class="row message">
 		<div class="container">
-			<div class="row">
-				<!-- left nav -->
-				<?php echo View::factory('common/global_navigation_user_center'); ?>
+			<!-- left nav -->
+			<?php echo View::factory('common/global_navigation_user_center'); ?>
 
-				<div class="col-md-9 xs-user-center-content">
-					<h2>MESSAGES</h2>
-					<div>
-						<div class="kd-inbox-message-info">
-							<ol class="breadcrumb">
-								<li><a href="<?= URL::site('message') ?>">返回消息中心</a></li>
-								<li><a id="delete_msg" href="#modalDeleteConfirm" data-toggle="modal" class="kd-inbox-delete-icon">删除该消息<input id="msg_id" type="hidden" value="<?= $message['id'] ?>"></a></li>
-							</ol>
+			<div class="col-md-9 xs-user-center-content">
+				<h2><?=__("user_message__MESSAGE_DETAIL")?></h2>
+				<div>
+					<div class="xs-inbox-message-bar">
+						<ol class="breadcrumb">
+							<li><a href="<?= URL::site('message') ?>"><?=__("user_message__RETURN_MESSAGE_CENTER")?></a></li>
+							<li><a id="delete_msg" href="#modalDeleteConfirm" data-toggle="modal"><?=__("user_message__DELETE_MESSAGE")?><input id="msg_id" type="hidden" value="<?= $message['id'] ?>"></a></li>
+						</ol>
+					</div>
+					<div class="xs-inbox-message-detail">
+						<div>
+							<h5><?=__("user_message__MESSAGE_FROM_ADMIN")?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?= $message['create_datetime'] ?></h5>
 						</div>
-						<div class="kd-inbox-message-detail">
-							<div>
-								<h5>来自： 快答系统&nbsp;&nbsp;&nbsp;日期： <?= $message['create_datetime'] ?></h5>
-							</div>
-							<div>
-								<div>
-									<?= $message['msg_body'] ?>
-								</div>
-								<br>
-								<br>
-								<br>
-								<p><a href="<?= URL::site('message') ?>">返回消息中心</a></p>
-							</div>
+						<div>
+							<?= $message['msg_body'] ?>
 						</div>
+						<br>
+						<br>
+						<br>
+						<br>
+						<p><a href="<?= URL::site('message') ?>"><?=__("user_message__RETURN_MESSAGE_CENTER")?></a></p>
 					</div>
 				</div>
 			</div>
@@ -70,40 +67,17 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<h4 class="modal-title">CONFIRM</h4>
+					<h4 class="modal-title"><?=__("user_message__modal__DELETE_CONFIRM")?></h4>
 				</div>
 				<div class="modal-body">
-					<p> DELETE THIS MESSAGE? </p>
+					<p><?=__("user_message__modal__DELETE_CONFIRM_DETAIL")?></p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn  btn-type-1" data-dismiss="modal">CLOSE</button>
-					<button id='delete_inbox_msg' type="button" class="btn btn-type-2">DELETE</button>
+					<button type="button" class="btn  btn-type-1" data-dismiss="modal"><?=__("user_message__modal__btn_CLOSE")?></button>
+					<button id='delete_inbox_msg' type="button" class="btn btn-type-2" ng-click="deleteMessage();"><?=__("user_message__modal__btn_DELETE")?></button>
 				</div>
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
-
-	<script type="text/javascript">
-
-		$(document).ready(function(){
-			window.message_id = -1;
-
-			$('.xs-inbox-delete-icon').click(function(){
-				window.message_id = $(this).find('#msg_id').val();
-			});
-
-			$('#delete_inbox_msg').click(function(){
-				$.ajax({
-					url : "/ajax/message/delete",
-					async: false,
-					dataType:"json",
-					data:{"id": window.message_id,"rnd": new Date().getTime()}
-				});
-
-				window.location.reload();
-			})
-		});
-
-	</script>
 </body>
 </html>

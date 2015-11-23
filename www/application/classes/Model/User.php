@@ -280,4 +280,15 @@ class Model_User {
         
         return empty($result) ? array() : $result[0];
     }
+    
+    public function getByCountry($country)
+    {
+        $result = DB::select('user_id')
+                    ->from('user_attr')
+                    ->where('company_country', 'IN', $country)
+                    ->execute()
+                    ->as_array();
+        
+        return $result;
+    }
 }

@@ -34,7 +34,7 @@
         <div class="container">
             <div class="row product-inputs">
                 <div class="col-xs-12">
-                	<h3>PRODUCT IMAGES</h3>
+                	<h3>PRODUCT IMAGES<span>({{product.images.length}}/5)</span></h3>
                 </div>
                 <div class="col-xs-12">
                 	<div ng-repeat="url in product.images track by $index" class="product-image product-image-uploaded">
@@ -43,8 +43,10 @@
                 			<span class="glyphicon glyphicon-trash"></span>
                 		</a>
                 	</div>
-                    <div ng-if="product.images.length < 5" class="product-image image-uploader"
+                    <div ng-if="product.images.length < 5" class="product-image image-uploader" 
+                    	ng-class="{'empty-product-image': !product.images.length}"
                     	data-render-image='0' data-after-uploading = "addProductImage(url);"
+                    	data-title="{{product.images.length? '': 'You can upload 5 images(jpg, png, gif) for each product.'}}"
                     	ng-class="{'has-error': checkInfo.validation.image}"></div>
                 </div>
             </div>

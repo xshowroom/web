@@ -28,52 +28,50 @@
 
 	<section class="row message">
 		<div class="container">
-			<div class="row">
-				<!-- left nav -->
-				<?php echo View::factory('common/global_navigation_user_center'); ?>
+			<!-- left nav -->
+			<?php echo View::factory('common/global_navigation_user_center'); ?>
 
-				<div class="col-md-10 xs-user-center-content">
-					<h2>MY MESSAGES</h2>
-					<div>
-						<div class="xs-inbox-message-info">
+			<div class="col-md-10 xs-user-center-content">
+				<h2><?=__("user_message__MY_MESSAGES")?></h2>
+				<div>
+					<div class="xs-inbox-message-info">
 
-						</div>
-						<div class="table-responsive xs-inbox-message">
-							<table class="table table-hover xs-table">
-								<tbody>
-								<?php foreach($messageList as $row): ?>
-									<?php if((int)$row['status'] === Business_Message::MSG_STATUS_UNREADY): ?>
-										<tr class="xs-inbox-unread">
-									<?php else: ?>
-										<tr class="xs-inbox-read">
-									<?php endif; ?>
-											<td class="xs-inbox-icon">
-												<p><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></p>
-											</td>
-											<td class="xs-inbox-content">
-												<a href="<?= URL::site('message/detail/'.$row['id']); ?>">
-													<p><?= $row['msg_body'] ?></p>
-												</a>
-											</td>
-											<td class="xs-inbox-date  hidden-sm hidden-xs">
-												<p><?= $row['create_datetime'] ?></p>
-											</td>
-											<td class="xs-inbox-delete">
-												<a data-toggle="modal" class="xs-inbox-delete-icon" href="#modalDeleteConfirm">
-													<p><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></p>
-													<input id="msg_id" type="hidden" value="<?= $row['id'] ?>">
-												</a>
-											</td>
-										</tr>
-								<?php endforeach; ?>
-								</tbody>
-							</table>
-						</div>
-						<div>
-
-						</div>
 					</div>
-			</div>
+					<div class="table-responsive xs-inbox-message">
+						<table class="table table-hover xs-table">
+							<tbody>
+							<?php foreach($messageList as $row): ?>
+								<?php if((int)$row['status'] === Business_Message::MSG_STATUS_UNREADY): ?>
+									<tr class="xs-inbox-unread">
+								<?php else: ?>
+									<tr class="xs-inbox-read">
+								<?php endif; ?>
+										<td class="xs-inbox-icon">
+											<p><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></p>
+										</td>
+										<td class="xs-inbox-content">
+											<a href="<?= URL::site('message/detail/'.$row['id']); ?>">
+												<p><?= $row['msg_body'] ?></p>
+											</a>
+										</td>
+										<td class="xs-inbox-date  hidden-sm hidden-xs">
+											<p><?= $row['create_datetime'] ?></p>
+										</td>
+										<td class="xs-inbox-delete">
+											<a data-toggle="modal" class="xs-inbox-delete-icon" href="#modalDeleteConfirm" ng-click="clickMessage();">
+												<p><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></p>
+												<input id="msg_id" type="hidden" value="<?= $row['id'] ?>">
+											</a>
+										</td>
+									</tr>
+							<?php endforeach; ?>
+							</tbody>
+						</table>
+					</div>
+					<div>
+
+					</div>
+				</div>
 		</div>
 	</section>
 
@@ -87,40 +85,17 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<h4 class="modal-title">CONFIRM</h4>
+					<h4 class="modal-title"><?=__("user_message__modal__DELETE_CONFIRM")?></h4>
 				</div>
 				<div class="modal-body">
-					<p> DELETE THIS MESSAGE? </p>
+					<p><?=__("user_message__modal__DELETE_CONFIRM_DETAIL")?></p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn  btn-type-1" data-dismiss="modal">CLOSE</button>
-					<button id='delete_inbox_msg' type="button" class="btn btn-type-2">DELETE</button>
+					<button type="button" class="btn  btn-type-1" data-dismiss="modal"><?=__("user_message__modal__btn_CLOSE")?></button>
+					<button id='delete_inbox_msg' type="button" class="btn btn-type-2" ng-click="deleteMessage();"><?=__("user_message__modal__btn_DELETE")?></button>
 				</div>
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
-
-	<script type="text/javascript">
-
-		$(document).ready(function(){
-			window.message_id = -1;
-
-			$('.xs-inbox-delete-icon').click(function(){
-				window.message_id = $(this).find('#msg_id').val();
-			});
-
-			$('#delete_inbox_msg').click(function(){
-				$.ajax({
-					url : "/ajax/message/delete",
-					async: false,
-					dataType:"json",
-					data:{"id": window.message_id,"rnd": new Date().getTime()}
-				});
-
-				window.location.reload();
-			})
-		});
-
-	</script>
 </body>
 </html>

@@ -46,7 +46,9 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     float: left;
+    max-width: 80%;
     display: inline-block;
+    width: auto;
 }
 .collection-info .collection-detail .show-all p{
     max-height: none;
@@ -139,6 +141,14 @@ section.row.collection-product{
 	display: inline-block;
 	width: 100%;
 	line-height: 25px;
+}
+.empty-warning{
+	background-color: #fcfcfc;
+	margin-top: 50px;
+}
+.empty-warning p {
+	margin: 30px 0;
+	color: #878787;
 }
 
 

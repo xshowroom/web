@@ -9,9 +9,12 @@
 }
 .order-list .empty-warning p,
 .collection-list .empty-warning p{
-	line-height: 2em;
-	margin: 15px 0;
-	font-size: 16px;
+	color: #878787;
+	margin: 30px 0;
+}
+.order-list .empty-warning span{
+	color: #878787;
+	font-size: 12px;
 }
 .order-list .order-list-header,
 .collection-list .collection-list-header{

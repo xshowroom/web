@@ -7,7 +7,8 @@
 angular.module(
     'xShowroom.collection.index', 
     [
-        'xShowroom.i18n', 'xShowroom.directives'
+        'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services',
+        'ngAnimate', 'mgcrea.ngStrap'
     ]
 )
 .controller(
@@ -20,6 +21,7 @@ angular.module(
      		}).success(function(res){
      			if(!res.status){
      				$scope.collection = {
+     					'id': res.data.id,
      					'name': res.data.name,
      	 				'category': res.data.category,
      	 				'mode': res.data.mode,
@@ -36,60 +38,99 @@ angular.module(
      			};
      		});
      		$scope.checkInfo = {
-         			validation: {
-     				   	'name': false,
-     					'category': false,
-     					'mode': false,
-     					'season': false,
-     					'order': false,
-     					'currency': false,
-     					'deadline': false,
-     					'delivery': false,
-     					'description': false,
-     					'image': false
-     				},
-     				reg:{
-     					'order': /\d+/,
-     					'deadline': /\d{4}-\d{2}-\d{2}/,
-     					'delivery': /\d{4}-\d{2}-\d{2}/
-     				}
-         		};
-         		$scope.update = function(){
-       				$scope.errorMsgs = [];
-         					
-       				for(var key in $scope.checkInfo.validation){
-         				var value = $scope.collection[key];
-         				if ((key == "deadline" || key == "delivery") && !value) {
-         					$scope.errorMsgs.push([key, 'DATE ERROR']);
-         					$scope.checkInfo.validation[key] = true;
-         					continue;
-         				}
-         				if (!value || value == '') {
-         					$scope.errorMsgs.push([key, 'EMPTY ERROR']);
-         					$scope.checkInfo.validation[key] = true;
-         					continue;
-         				}
-         				if($scope.checkInfo.reg[key] && !$scope.checkInfo.reg[key].test(value)){
-         					$scope.errorMsgs.push([key, 'PATTERN ERROR']);
-         					$scope.checkInfo.validation[key] = true;
-         					continue;
-         				}
-         				$scope.checkInfo.validation[key] = false;
+         		validation: {
+     			   	'name': false,
+     				'category': false,
+     				'mode': false,
+     				'season': false,
+     				'order': false,
+     				'currency': false,
+     				'deadline': false,
+     				'delivery': false,
+     				'description': false,
+     				'image': false
+     			},
+     			reg:{
+     				'order': /\d+/,
+     				'deadline': /\d{4}-\d{2}-\d{2}/,
+     				'delivery': /\d{4}-\d{2}-\d{2}/
+     			}
+         	};
+         	$scope.updateCollection = function(){
+       			$scope.errorMsgs = [];
+         				
+       			for(var key in $scope.checkInfo.validation){
+         			var value = $scope.collection[key];
+         			if ((key == "deadline" || key == "delivery") && !value) {
+         				$scope.errorMsgs.push([key, 'DATE ERROR']);
+         				$scope.checkInfo.validation[key] = true;
+         				continue;
+         			}
+         			if (!value || value == '') {
+         				$scope.errorMsgs.push([key, 'EMPTY ERROR']);
+         				$scope.checkInfo.validation[key] = true;
+         				continue;
+         			}
+         			if($scope.checkInfo.reg[key] && !$scope.checkInfo.reg[key].test(value)){
+         				$scope.errorMsgs.push([key, 'PATTERN ERROR']);
+         				$scope.checkInfo.validation[key] = true;
+         				continue;
+         			}
+         			$scope.checkInfo.validation[key] = false;
        				}
        				
-         			if (!$scope.errorMsgs.length){
-         				Collection.modify(
-         	     			$scope.collection
-         	     		).success(function(res){
-         	     			if (!res.status) {
-         	     				window.location.reload();
-         	     			}else{
-         	     				alert(res.msg);
-         	     			}
+         		if (!$scope.errorMsgs.length){
+         			Collection.modify(
+         	   			$scope.collection
+         	    	).success(function(res){
+         	     		if (!res.status) {
+         	     			window.location.reload();
+         	     		}else{
+         	     			alert(res.msg);
          	     		}
-         	     	);
+         	     	});
          		} 
          	};
+         	
+         	$scope.deleteCollection = function(){
+         		if (confirm('确认要删除该Collection?')){
+         			Collection.destroy({
+         				id: collectionId
+         			}).success(function(res){
+         	     		if (!res.status) {
+         	     			window.open('/brand/dashboard', '_self');
+         	     		}else{
+         	     			alert(res.msg);
+         	     		}
+         	     	});
+         		} 
+         	};
+         	$scope.enableCollection = function(){
+         		if (confirm('确认要提交该Collection?')){
+         			Collection.enable({
+         				id: collectionId
+         			}).success(function(res){
+         	     		if (!res.status) {
+         	     			window.location.reload();
+         	     		}else{
+         	     			alert(res.msg);
+         	     		}
+         	     	});
+         		} 
+         	}
+         	$scope.closeCollection = function(){
+         		if (confirm('确认要下线该Collection?')){
+         			Collection.close({
+         				id: collectionId
+         			}).success(function(res){
+         	     		if (!res.status) {
+         	     			window.location.reload();
+         	     		}else{
+         	     			alert(res.msg);
+         	     		}
+         	     	});
+         		} 
+         	}
      	}
     ]
 );

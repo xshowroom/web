@@ -82,7 +82,7 @@ class Business_Collection
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
         
-        $res = $this->updateStatus($collectionId, Model_Collection::TYPE_OF_DELETE);
+        $res = $this->updateStatus($userId, $collectionId, Model_Collection::TYPE_OF_DELETE);
         return $res;
     }
     
@@ -101,6 +101,11 @@ class Business_Collection
         $collection = $this->collectionModel->getByCollectionId($collectionId);
         if (empty($collection) || $collection['user_id'] != $userId) {
             $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+        
+        if ($status == Model_Collection::TYPE_OF_DELETE && $collection['status'] != Model_Collection::TYPE_OF_DRAFT) {
+            $errorInfo = Kohana::message('message', 'STATUS_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
         

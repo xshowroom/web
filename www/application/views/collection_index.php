@@ -6,13 +6,17 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/bower_components/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/bower_components/angular-motion/dist/angular-motion.min.css">
     <link rel="stylesheet" type="text/css" href="/static/app/css/common.css" />
     <link rel="stylesheet" type="text/css" href="/static/app/css/collection_index.css" />
     <link rel="stylesheet" type="text/css" href="/static/app/css/collection_create.css" />
     <script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/static/bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/static/bower_components/angular-animate/angular-animate.min.js"></script>
     <script type="text/javascript" src="/static/bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script type="text/javascript" src="/static/bower_components/angular-strap/dist/angular-strap.min.js"></script>
+    <script type="text/javascript" src="/static/bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
     <script type="text/javascript" src="/static/app/modules/common/i18n.js"></script>
     <script type="text/javascript" src="/static/app/modules/common/services.js"></script>
     <script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
@@ -39,10 +43,12 @@
                 <div class="col-xs-9">
                  	<div class="col-xs-12 collection-detail collection-name">
                  		<h2><?= $collection['name']?></h2>
+                 		<?php if($collection['status'] == 0) {?>
                  		<a href="#" class="collection-edit" ng-click="isEditing = true;">EDIT</a>
+                 		<?php }?>
                  	</div>
                  	<div class="col-xs-12 collection-detail">
-                 		<span>Order Mode:</span><span><?= $collection['mode']?></span>
+                 		<span>Order Mode:</span><span>{{'<?= $collection['mode']?>' | translate}}</span>
                  	</div>
                  	<div class="col-xs-12 collection-detail">
                  		<span>Deadline for Order:</span><span><?= $collection['deadline']?></span>	
@@ -66,11 +72,17 @@
                  		</div>
                  	</div>
                  	<div class="col-xs-12 collection-action">
-                 		<button class="btn btn-type-2">SUBMIT</button>
-                 		<button class="btn btn-type-1">DELETE</button>
+                 		<?php if($collection['status'] == 0) {?>
+                 		<button class="btn btn-type-2" ng-click="enableCollection();">SUBMIT</button>
+                 		<button class="btn btn-type-1" ng-click="deleteCollection();">DELETE</button>
+                 		<?php }?>
+                 		<?php if($collection['status'] == 1) {?>
+                 		<button class="btn btn-type-2" ng-click="closeCollection();">CLOSE</button>
+                 		<?php }?>
                  	</div>
                 </div>
             </div>
+            <?php if($collection['status'] == 0) {?>
             <div class="row collection-create" ng-show="isEditing">
                 <div class="col-xs-2">
                     <div class="image-uploader" id="cover-image" data-image-online-url="collection.image" data-target-model="collection.image"
@@ -89,9 +101,9 @@
                             <label for="category" class="col-xs-4 control-label">Category</label>
                             <div class="col-xs-8">
                                   <select class="form-control" id="category" ng-model="collection.category">
-                                      <option value="Woman">Woman</option>
-                                      <option value="Accessories">Accessories</option>
-                                      <option value="Man">Man</option>
+									  <option value="dropdown__COLLECTION__WOMEN">{{ 'dropdown__COLLECTION__WOMEN' | translate}}</option>
+									  <option value="dropdown__COLLECTION__ACCESSORIES">{{ 'dropdown__COLLECTION__ACCESSORIES' | translate}}</option>
+									  <option value="dropdown__COLLECTION__MEN">{{ 'dropdown__COLLECTION__MEN' | translate}}</option>
                                   </select>
                             </div>
                         </div>
@@ -99,10 +111,10 @@
                             <label for="mode" class="col-xs-4 control-label">Collection Mode</label>
                             <div class="col-xs-8">
                                   <select class="form-control" id="mode" ng-model="collection.mode">
-                                      <option value="Pre-Order">Pre-Order</option>
-                                      <option value="Stock">Stock</option>
-                                      <option value="Re-Order">Re-Order</option>
-                                      <option value="Permanen">Permanen</option>
+									  <option value="dropdown__COLLECTION_MODE__PRE_ORDER">{{ 'dropdown__COLLECTION_MODE__PRE_ORDER' | translate}}</option>
+									  <option value="dropdown__COLLECTION_MODE__STOCK">{{ 'dropdown__COLLECTION_MODE__STOCK' | translate}}</option>
+									  <option value="dropdown__COLLECTION_MODE__RE_ORDER">{{ 'dropdown__COLLECTION_MODE__RE_ORDER' | translate}}</option>
+									  <option value="dropdown__COLLECTION_MODE__PERMANENT">{{ 'dropdown__COLLECTION_MODE__PERMANENT' | translate}}</option>
                                   </select>
                             </div>
                         </div>
@@ -110,10 +122,10 @@
                             <label for="season" class="col-xs-4 control-label">Collection Season</label>
                             <div class="col-xs-8">
                                   <select class="form-control" id="season" ng-model="collection.season">
-                                      <option value="AW15">AW15</option>
-                                      <option value="PRE-SS16">PRE-SS16</option>
-                                      <option value="SS16">SS16</option>
-                                      <option value="AW16">AW16</option>
+									  <option value="dropdown__COLLECTION_SEASON__AW_15">{{ 'dropdown__COLLECTION_SEASON__AW_15' | translate}}</option>
+									  <option value="dropdown__COLLECTION_SEASON__PRE_SS16">{{ 'dropdown__COLLECTION_SEASON__PRE_SS16' | translate}}</option>
+									  <option value="dropdown__COLLECTION_SEASON__SS_16">{{ 'dropdown__COLLECTION_SEASON__SS_16' | translate}}</option>
+									  <option value="dropdown__COLLECTION_SEASON__AW_16">{{ 'dropdown__COLLECTION_SEASON__AW_16' | translate}}</option>
                                   </select>
                             </div>
                         </div>
@@ -168,11 +180,25 @@
                         <div class="form-group col-xs-12">
                             <div class="col-xs-10 col-xs-offset-2">
                             	<button class="btn btn-type-1" ng-click="isEditing = false;">CANCEL</button>
-                                <button class="btn btn-type-2" id="create-btn" ng-click="update()">UPDATE</button>
+                                <button class="btn btn-type-2" id="create-btn" ng-click="updateCollection()">UPDATE</button>
                         	</div>
                         </div>
                     </form>
-                </div>            
+                </div>
+            </div>
+            <?php }?>  
+        </div>
+    </section>
+    <section class="row empty-warning">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-center ">
+                	<img src="/static/app/images/empty.png">
+                	<p>OH NO! YOU HAVE NO<br/>PRODUCTS IN THIS COLLECTION!</p>
+                	<?php if($collection['status'] == 0) {?>
+                	<a class="btn btn-type-2" href="/product/create">ADD PRODUCT</a>
+					<?php }?>
+                </div>
             </div>
         </div>
     </section>
@@ -200,10 +226,12 @@
                 				<span>(3)</span>
                 			</a>
                 		</li>
-                	</ul> 
+                	</ul>
+                	<?php if($collection['status'] == 0) {?>
                 	<div class="add-new-product">
                 		<a href="/product/create">+ ADD NEW PRODUCT</a>
                 	</div>
+                	<?php }?>
                 </div>
                 <div class="col-xs-9 collection-products">
                  	<h3>{{'T-Shirt' | uppercase}}</h3>

@@ -290,19 +290,31 @@ angular.module(
             dropdown__COLLECTION__MEN: '男士',
 
             // Product Category
-            dropdown__PRODUCT_HAT: "帽子",
-            dropdown__PRODUCT_TOP: "上衣",
-            dropdown__PRODUCT_KNIT: "编织衫",
-            dropdown__PRODUCT_SHIRT: "衬衫",
-            dropdown__PRODUCT_DRESS: "连衣裙",
-            dropdown__PRODUCT_JUMPSUIT: "连衣裤",
-            dropdown__PRODUCT_COAT: "大衣",
-            dropdown__PRODUCT_SKIRT: "裙子",
-            dropdown__PRODUCT_PANTS: "裤子",
-            dropdown__PRODUCT_BELT: "腰带",
-            dropdown__PRODUCT_GLOVES: "手套",
-            dropdown__PRODUCT_SHOES: "鞋履",
-            dropdown__PRODUCT_BAG: "手袋"
+            dropdown__PRODUCT_CATEGORY__HAT: "帽子",
+            dropdown__PRODUCT_CATEGORY__TOP: "上衣",
+            dropdown__PRODUCT_CATEGORY__KNIT: "编织衫",
+            dropdown__PRODUCT_CATEGORY__SHIRT: "衬衫",
+            dropdown__PRODUCT_CATEGORY__DRESS: "连衣裙",
+            dropdown__PRODUCT_CATEGORY__JUMPSUIT: "连衣裤",
+            dropdown__PRODUCT_CATEGORY__COAT: "大衣",
+            dropdown__PRODUCT_CATEGORY__SKIRT: "裙子",
+            dropdown__PRODUCT_CATEGORY__PANTS: "裤子",
+            dropdown__PRODUCT_CATEGORY__BELT: "腰带",
+            dropdown__PRODUCT_CATEGORY__GLOVES: "手套",
+            dropdown__PRODUCT_CATEGORY__SHOES: "鞋履",
+            dropdown__PRODUCT_CATEGORY__BAG: "手袋",
+
+            // Collection Mode
+            dropdown__COLLECTION_MODE__PRE_ORDER: '预售',
+            dropdown__COLLECTION_MODE__STOCK: '现货',
+            dropdown__COLLECTION_MODE__RE_ORDER: '补货',
+            dropdown__COLLECTION_MODE__PERMANENT: '常年可定',
+
+            // Collection Season
+            dropdown__COLLECTION_SEASON__AW_15: '15秋冬',
+            dropdown__COLLECTION_SEASON__PRE_SS16: '16早春',
+            dropdown__COLLECTION_SEASON__SS_16: '16春夏',
+            dropdown__COLLECTION_SEASON__AW_16: '16秋冬'
         },
         'en': {
             /**
@@ -572,19 +584,31 @@ angular.module(
             dropdown__COLLECTION__MEN: 'MEN',
 
             // Product Category
-            dropdown__PRODUCT_HAT: "HAT",
-            dropdown__PRODUCT_TOP: "TOP",
-            dropdown__PRODUCT_KNIT: "KNIT",
-            dropdown__PRODUCT_SHIRT: "衬衫",
-            dropdown__PRODUCT_DRESS: "DRESS",
-            dropdown__PRODUCT_JUMPSUIT: "JUMPSUIT",
-            dropdown__PRODUCT_COAT: "COAT",
-            dropdown__PRODUCT_SKIRT: "SKIRT",
-            dropdown__PRODUCT_PANTS: "PANTS",
-            dropdown__PRODUCT_BELT: "BELT",
-            dropdown__PRODUCT_GLOVES: "GLOVES",
-            dropdown__PRODUCT_SHOES: "SHOES",
-            dropdown__PRODUCT_BAG: "BAG"
+            dropdown__PRODUCT_CATEGORY__HAT: "HAT",
+            dropdown__PRODUCT_CATEGORY__TOP: "TOP",
+            dropdown__PRODUCT_CATEGORY__KNIT: "KNIT",
+            dropdown__PRODUCT_CATEGORY__SHIRT: "SHIRT",
+            dropdown__PRODUCT_CATEGORY__DRESS: "DRESS",
+            dropdown__PRODUCT_CATEGORY__JUMPSUIT: "JUMPSUIT",
+            dropdown__PRODUCT_CATEGORY__COAT: "COAT",
+            dropdown__PRODUCT_CATEGORY__SKIRT: "SKIRT",
+            dropdown__PRODUCT_CATEGORY__PANTS: "PANTS",
+            dropdown__PRODUCT_CATEGORY__BELT: "BELT",
+            dropdown__PRODUCT_CATEGORY__GLOVES: "GLOVES",
+            dropdown__PRODUCT_CATEGORY__SHOES: "SHOES",
+            dropdown__PRODUCT_CATEGORY__BAG: "BAG",
+
+            // Collection Mode
+            dropdown__COLLECTION_MODE__PRE_ORDER: 'PRE ORDER',
+            dropdown__COLLECTION_MODE__STOCK: 'STOCK',
+            dropdown__COLLECTION_MODE__RE_ORDER: 'STOCK',
+            dropdown__COLLECTION_MODE__PERMANENT: 'PERMANENT',
+
+            // Collection Season
+            dropdown__COLLECTION_SEASON__AW_15: 'AW15',
+            dropdown__COLLECTION_SEASON__PRE_SS16: 'PRE-SS16',
+            dropdown__COLLECTION_SEASON__SS_16: 'SS16',
+            dropdown__COLLECTION_SEASON__AW_16: 'AW16'
 		}
 	}
 );

@@ -148,4 +148,17 @@ class Model_Production
     
         return $result;
     }
+    
+    public function getByCategory($category)
+    {
+        $result = DB::select('user_id')
+                    ->from('production')
+                    ->where('category', '=', $category)
+                    ->where('status', '=', STAT_NORMAL)
+                    ->execute()
+                    ->as_array();
+        
+        return $result;
+        
+    }
 }

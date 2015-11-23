@@ -52,9 +52,9 @@
                             <label for="category" class="col-xs-4 control-label">Category</label>
                             <div class="col-xs-8">
                                   <select class="form-control" id="category" ng-model="collection.category">
-                                      <option value="Woman">Woman</option>
-                                      <option value="Accessories">Accessories</option>
-                                      <option value="Man">Man</option>
+                                      <option value="dropdown__COLLECTION__WOMEN">{{ 'dropdown__COLLECTION__WOMEN' | translate}}</option>
+                                      <option value="dropdown__COLLECTION__ACCESSORIES">{{ 'dropdown__COLLECTION__ACCESSORIES' | translate}}</option>
+                                      <option value="dropdown__COLLECTION__MEN">{{ 'dropdown__COLLECTION__MEN' | translate}}</option>
                                   </select>
                             </div>
                         </div>
@@ -62,10 +62,10 @@
                             <label for="mode" class="col-xs-4 control-label">Collection Mode</label>
                             <div class="col-xs-8">
                                   <select class="form-control" id="mode" ng-model="collection.mode">
-                                      <option value="Pre-Order">Pre-Order</option>
-                                      <option value="Stock">Stock</option>
-                                      <option value="Re-Order">Re-Order</option>
-                                      <option value="Permanen">Permanen</option>
+                                      <option value="dropdown__COLLECTION_MODE__PRE_ORDER">{{ 'dropdown__COLLECTION_MODE__PRE_ORDER' | translate}}</option>
+                                      <option value="dropdown__COLLECTION_MODE__STOCK">{{ 'dropdown__COLLECTION_MODE__STOCK' | translate}}</option>
+                                      <option value="dropdown__COLLECTION_MODE__RE_ORDER">{{ 'dropdown__COLLECTION_MODE__RE_ORDER' | translate}}</option>
+                                      <option value="dropdown__COLLECTION_MODE__PERMANENT">{{ 'dropdown__COLLECTION_MODE__PERMANENT' | translate}}</option>
                                   </select>
                             </div>
                         </div>
@@ -73,10 +73,10 @@
                             <label for="season" class="col-xs-4 control-label">Collection Season</label>
                             <div class="col-xs-8">
                                   <select class="form-control" id="season" ng-model="collection.season">
-                                      <option value="AW15">AW15</option>
-                                      <option value="PRE-SS16">PRE-SS16</option>
-                                      <option value="SS16">SS16</option>
-                                      <option value="AW16">AW16</option>
+                                      <option value="dropdown__COLLECTION_SEASON__AW_15">{{ 'dropdown__COLLECTION_SEASON__AW_15' | translate}}</option>
+                                      <option value="dropdown__COLLECTION_SEASON__PRE_SS16">{{ 'dropdown__COLLECTION_SEASON__PRE_SS16' | translate}}</option>
+                                      <option value="dropdown__COLLECTION_SEASON__SS_16">{{ 'dropdown__COLLECTION_SEASON__SS_16' | translate}}</option>
+                                      <option value="dropdown__COLLECTION_SEASON__AW_16">{{ 'dropdown__COLLECTION_SEASON__AW_16' | translate}}</option>
                                   </select>
                             </div>
                         </div>
@@ -90,10 +90,10 @@
                             <label for="currency" class="col-xs-4 control-label">Currency</label>
                             <div class="col-xs-8">
                                   <select class="form-control" id="currency" ng-model="collection.currency">
-                                      <option value="￥">￥-RMB</option>
-                                      <option value="$">$-USD</option>
-                                      <option value="￡">￡-GBP</option>
-                                      <option value="€">€-EUR</option>
+                                      <option value="￥">RMB - ￥</option>
+                                      <option value="$">USD - $</option>
+                                      <option value="￡">GBP - ￡</option>
+                                      <option value="€">EUR - €</option>
                                   </select>
                             </div>
                         </div>
