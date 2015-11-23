@@ -90,7 +90,7 @@
                             </div>
                         </div>
                         <div class="form-group col-xs-12"  ng-class="{'has-error': checkInfo.validation.sizeRegion}">
-                            <label for="size-region" class="col-xs-2 control-label">Size</label>
+                            <label for="size-region" class="col-xs-2 control-label">Size Region</label>
                             <div class="col-xs-6">
                             	<select class="form-control" id="size-region" name="sizeRegion" ng-model="product.sizeRegion"
                             		ng-change="setSizeCodes(product.category, product.sizeRegion);">
@@ -105,7 +105,7 @@
                             </div>
                         </div>
                         <div class="form-group col-xs-12"  ng-class="{'has-error': checkInfo.validation.color}">
-                            <label for="category" class="col-xs-2 control-label">Color</label>
+                            <label for="category" class="col-xs-2 control-label">Color Set</label>
                             <div class="col-xs-6">
                             	<a class="new-color" ng-click="openColorModal();">+ Add Color</a>
                             </div>
