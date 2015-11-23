@@ -333,7 +333,23 @@ return array_merge(
      * brand_dashboard.php
      */
     array(
+        'brand_dashboard__BASED_IN' => '所在地',
+        'brand_dashboard__ESTABLISHED' => '成立于',
+        'brand_dashboard__WEBSITE'=> '官网地址',
 
+        'brand_dashboard__MY_ORDERS' => '我的订单',
+        'brand_dashboard__ALL_ORDERS' => '所有订单 >',
+        'brand_dashboard__ORDER_EMPTY_1' => '欢迎来到 XSHOWROOM!',
+        'brand_dashboard__ORDER_EMPTY_2' => '立刻开始您的商业之旅!',
+        'brand_dashboard__ORDER_EMPTY_3' => '温馨提示: 商品系列可以为您带来订单',
+
+        'brand_dashboard__MY_COLLECTIONS' => '我的系列',
+        'brand_dashboard__ALL_COLLECTIONS' => '所有系列 >',
+        'brand_dashboard__COLLECTION_EMPTY_1' => '哦，不！ 您从未创建',
+        'brand_dashboard__COLLECTION_EMPTY_2' => '商品系列!',
+        'brand_dashboard__COLLECTION_EMPTY_3' => '添加系列',
+
+        'brand_dashboard__ACCOUNT_MANAGER' => '在XSHOWROOM 我们拥有专属的品牌客户经理来帮助您介绍品牌, 与您共建商品集合, 并帮助您完成订单！'
     ),
     /**
      * brand_collection.php
