@@ -90,7 +90,7 @@ class Business_Collection
     {
         $res = $this->collectionModel->checkName($userId, $collectionName);
         if ($res) {
-            return array(STATUS_ERROR, "{$key}_existed");
+            return array(STATUS_ERROR, 'name_existed');
         } else {
             return array(STATUS_SUCCESS, 'check_ok');
         }

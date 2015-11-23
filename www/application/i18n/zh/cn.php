@@ -13,6 +13,7 @@ return array_merge(
         'upload_failed' => '上传失败',
         'upload_success' => '上传成功',
         'email_existed' => '该邮箱已被注册',
+        'name_existed' => '名称已经存在',
         'brand_existed' => '该品牌名称已存在',
         'check_ok' => '参数验证成功',
     ),

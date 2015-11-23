@@ -11,7 +11,7 @@ class Controller_Brand extends Controller_BaseReqLogin
     {
         parent::before();
 
-        $this->isBrandUser();
+        $this->checkBrandUser();
 
         $this->userService = new Business_User();
         $this->brandService = new Business_Brand();

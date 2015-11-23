@@ -11,8 +11,7 @@ class Controller_Api_Common extends Controller_Base
     
     public function before()
     {
-        session_start();
-        I18n::lang($_COOKIE['language']);
+        parent::before();
     }
 
     public function action_userInfo()
@@ -25,10 +24,10 @@ class Controller_Api_Common extends Controller_Base
             $data = array();
         } else {
             $data = array(
-                'userId' => $opUser['id'],
-                'email' => $opUser['email'],
-                'displayName' => $opUser['display_name'],
-                'roleType' => $opUser['role_type'],
+                'userId'        => $opUser['id'],
+                'email'         => $opUser['email'],
+                'displayName'   => $opUser['display_name'],
+                'roleType'      => $opUser['role_type'],
                 'lastLoginTime' => $opUser['last_login_time'],
             );
         }
