@@ -15,13 +15,13 @@ class Controller_Api_Product extends Controller_BaseReqLogin
     public function action_list()
     {
         $userId = $_SESSION['opUser']['id'];
-        $collectionId = Request::current()->post('collectionId');
+        $productionId = Request::current()->post('productionId');
         
         $res = $this->productionService->getProductionList($userId, $productionId);
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
-            'msg'    => $msg,
+            'msg'    => '',
             'data'   => $res,
         ));
     }
@@ -37,7 +37,7 @@ class Controller_Api_Product extends Controller_BaseReqLogin
             'status' => STATUS_SUCCESS,
             'msg'    => '',
             'data'   => $res,
-        ))
+        ));
     }
     
     public function action_add()

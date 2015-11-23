@@ -57,7 +57,7 @@ class Business_Production
         $imagePathsArr = json_decode($imagePaths, true);
         $imagePathsFinalArr = array();
         foreach ($imagePathsArr as $imagePath) {
-            $realPathFile = $this->createThreeImage($image);
+            $realPathFile = $this->createThreeImage($imagePath);
             $imagePathsFinalArr[] = $realPathFile;
         }
         $imagePaths = json_encode($imagePathsFinalArr);
