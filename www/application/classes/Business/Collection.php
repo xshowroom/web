@@ -5,17 +5,26 @@
 class Business_Collection
 {  
     public $collectionModel;
+    public $productionModel;
     public $uploadService;
 
     public function __construct()
     {
         $this->collectionModel = new Model_Collection();
+        $this->productionModel = new Model_Production();
         $this->uploadService = new Business_Upload();
     }
     
-    public function getAllCollectionList($userId)
+    public function getAllCollectionList($userId, $detail = 0)
     {
         $collectionList = $this->collectionModel->getListByUserId($userId);
+        
+        if (!empty($detail)) {
+            foreach ($collectionList as $idx => $collection) {
+                $productionList = $this->productionModel->getByCollectionId($collection['id']);
+                $collectionList[$idx]['productions'] = $productionList;
+            }
+        }
         
         return $collectionList;
     }

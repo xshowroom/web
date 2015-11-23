@@ -13,7 +13,8 @@ class Controller_Api_Collection extends Controller_BaseReqLogin
     public function action_list()
     {
         $userId     = $this->opUser['id'];
-        $res = $this->collectionService->getAllCollectionList($userId);
+        $detail     = empty(Request::current()->query('detail')) ? 0 : 1;
+        $res = $this->collectionService->getAllCollectionList($userId, $detail);
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
