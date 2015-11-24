@@ -23,6 +23,8 @@ class Controller_Api_Login extends Controller_Base
         $password    = Request::current()->query('pass');
         $code        = Request::current()->query('code');
 
+        LogUtil::log('test',"test:{$email}:{$password}:{$code}",basename(__FILE__), LogUtil::PLOG_NOTICE);
+
         // 验证码是否正确
         if (!$this->codeService->verify($code)) {
             echo json_encode(array(
