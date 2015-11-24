@@ -51,13 +51,9 @@ angular.module(
 						'tel': /^\S{6,20}$/
 				    },
 				    2:{
-						'shopName': /^\S{3,128}$/,
 						'shopWebsite': /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-@?^=%&amp;/~\+#])?/,
-						'shopTel': /^\S{6,20}$/
 					},
 				    3:{
-						'companyName': /^\S{3,128}$/,
-						'companyTel': /^\S{6,20}$/,
 						'companyWebsite': /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-@?^=%&amp;/~\+#])?/
 					}
 				},
