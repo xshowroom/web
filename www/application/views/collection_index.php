@@ -37,8 +37,10 @@
     <section class="row no-vertical-padding uploading">
         <div class="container collection-info">
             <div class="row" ng-show="!isEditing">
-                <div class="col-xs-2 collection-cover">
-                 	<img src="/<?=$collection['cover_image_medium']?>">
+                <div class="col-xs-2">
+                	<div class="collection-cover">
+                 		<img src="/<?=$collection['cover_image_medium']?>">
+                 	</div>
                 </div>
                 <div class="col-xs-10">
                  	<div class="col-xs-12 collection-detail collection-name">

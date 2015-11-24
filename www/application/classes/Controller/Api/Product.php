@@ -9,15 +9,16 @@ class Controller_Api_Product extends Controller_BaseReqLogin
 
     public function before()
     {
+        parent::before();
         $this->productionService = new Business_Production();
     }
 
     public function action_list()
     {
         $userId = $_SESSION['opUser']['id'];
-        $productionId = Request::current()->post('productionId');
+        $collectionId = Request::current()->post('collectionId');
         
-        $res = $this->productionService->getProductionList($userId, $productionId);
+        $res = $this->productionService->getProductionList($userId, $collectionId);
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,

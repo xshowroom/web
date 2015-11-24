@@ -76,8 +76,8 @@ angular.module(
 		      	close: function (opts) {
 		      		return $http.get('/api/collection/close', {params: opts});
 		      	},
-		      	findAll: function(){
-		      		return $http.get('/api/collection/list');
+		      	findAll: function(opts){
+		      		return $http.get('/api/collection/list', {params: opts});
 		      	}
    			};
          }
@@ -138,7 +138,8 @@ angular.module(
 .service(
     'Product',
     [
-		function () {
+     	'$http',
+		function ($http) {
 			var productSizeTable = {
 				dropdown__PRODUCT_HAT: {
 				    UK: ['6½', '6⅝', '6¾', '6⅞', '7', '7⅛', '7¼', '7⅜', '7½', '7⅝'], 
@@ -316,7 +317,23 @@ angular.module(
 			var sizeRegions = [
 			    'UK', 'US', 'IT', 'FR', 'DK', 'RU', 'DE', 'AU', 'JP', 'CN'
 			];
+			var postRequestTransformer = function(data){
+				var temp = [];
+				for(var i in data){
+					var value = typeof data[i] == 'object' ? JSON.stringify(data[i]) : data[i];
+					temp.push(i + '=' + value);
+				}
+                return temp.join('&');
+            }
 		    return {
+		      	create: function (opts) {
+		      		return $http.post('/api/product/add', opts, {
+						headers: {
+							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
+						},
+						transformRequest: postRequestTransformer
+					});
+		      	},
 		    	getCategories: function(){
 		    		return categories;
 		    	},
