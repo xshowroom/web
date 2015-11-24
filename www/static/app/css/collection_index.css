@@ -125,6 +125,7 @@ section.row.collection-product{
 	position: relative;
 	display: inline-block;
 	width: 100%;
+	margin-bottom: 30px;
 }
 .collection-product .collection-category-content .collection-product-detail:before{
 	content: none;
