@@ -16,15 +16,14 @@ angular.module(
     [
      	'$scope', 'Collection',
         function ($scope, Collection) {
-     		$scope.filter = {
-     			limit: 2,
+     		$scope.filters = {
+     			limit: 4,
      			status: ''
      		};
      		
      		Collection.findAll({
      			detail: 1
      		}).success(function(res){
-     			$scope.collections = res.data;
      			$scope.statusCounter = {};
      			for(var i = 0, len = res.data.length; i < len; i++) {
      				var status = res.data[i].status;
@@ -34,9 +33,19 @@ angular.module(
      					$scope.statusCounter[status] = 1;
      				}
      			}
+     			var collections = res.data;
+     			for (var i = 0, len = collections.length; i < len; i++) {
+     				for (var j = 0, pLen = collections[i].productions.length; j < pLen; j++) {
+     					var urls = collections[i].productions[j]['image_url'];
+     					collections[i].productions[j].image_url = JSON.parse(urls);
+     				}
+     			}
+     			$scope.collections = collections;
+     			console.log($scope.collections)
+
      		});
      		
-     		$scope.deleteCollection = function(collectionId){
+     		/*$scope.deleteCollection = function(collectionId){
          		if (confirm('确认要删除该Collection?')){
          			Collection.destroy({
          				id: collectionId
@@ -76,7 +85,7 @@ angular.module(
          	     		}
          	     	});
          		} 
-         	};
+         	};*/
         }
     ]
 );
