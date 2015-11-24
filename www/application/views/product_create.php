@@ -34,7 +34,7 @@
         <div class="container">
             <div class="row product-inputs">
                 <div class="col-xs-12">
-                	<h3>PRODUCT IMAGES<span>({{product.images..length}}/5)</span></h3>
+                	<h3>PRODUCT IMAGES<span>({{product.images.length}}/5)</span></h3>
                 </div>
                 <div class="col-xs-12">
                 	<div ng-repeat="url in product.image track by $index" class="product-image product-image-uploaded">
