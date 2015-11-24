@@ -24,9 +24,22 @@ class Business_Production
     {
         $colorArr = json_decode($color, true);
         $colorFinalArr = array(); // 怕用引用乱掉，又得调半天
-        foreach ($colorArr as $colorName => $colorPath) {
-            list($realPathFile, $mediumPathFile, $smallPathFile) = $this->uploadService->createThreeImage($colorPath);
-            $colorFinalArr[$colorName] = $realPathFile;
+        foreach ($colorArr as $color) {
+            if ($color['type'] == 0) {
+                $colorFinalArr[] = array(
+                    'name' => $color['name'],
+                    'value' => $color['value'],
+                    'type' => $color['type'],
+                );
+            } else {
+                list($realPathFile, $mediumPathFile, $smallPathFile) = $this->uploadService->createThreeImage($color['value']);
+                $colorFinalArr[] = array(
+                    'name' => $color['name'],
+                    'value' => $realPathFile,
+                    'type' => $color['type'],
+                );
+            }
+            
         }
         $color = json_encode($colorFinalArr);
         
