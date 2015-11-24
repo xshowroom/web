@@ -32,7 +32,7 @@ angular.module(
  					'image': false
  				},
  				reg:{
- 					'order': /\d+/,
+ 					'order': /^\d+$/,
  					'deadline': /\d{4}-\d{2}-\d{2}/,
  					'delivery': /\d{4}-\d{2}-\d{2}/
  				}
@@ -44,17 +44,17 @@ angular.module(
    				for(var key in $scope.checkInfo.validation){
      				var value = $scope.collection[key];
      				if ((key == "deadline" || key == "delivery") && !value) {
-     					$scope.errorMsgs.push([key, 'DATE ERROR']);
+     					$scope.errorMsgs.push([key, 'DATE_ERROR']);
      					$scope.checkInfo.validation[key] = true;
      					continue;
      				}
      				if (!value || value == '') {
-     					$scope.errorMsgs.push([key, 'EMPTY ERROR']);
+     					$scope.errorMsgs.push([key, 'EMPTY_ERROR']);
      					$scope.checkInfo.validation[key] = true;
      					continue;
      				}
      				if($scope.checkInfo.reg[key] && !$scope.checkInfo.reg[key].test(value)){
-     					$scope.errorMsgs.push([key, 'PATTERN ERROR']);
+     					$scope.errorMsgs.push([key, 'PATTERN_ERROR']);
      					$scope.checkInfo.validation[key] = true;
      					continue;
      				}
