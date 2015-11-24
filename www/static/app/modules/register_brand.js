@@ -41,7 +41,6 @@ angular.module(
 						'pass': /^\S{6,100}$/,
 						'firstName': /^\S{2,50}$/,
 						'lastName': /^\S{2,50}$/,
-						'displayName': /^\S{6,50}$/,
 						'tel': /^\S{6,20}$/
 					},
 				    2:{},
