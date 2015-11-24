@@ -37,15 +37,15 @@
                     <div class="brand-info">
                         <h3 class="brand-name"><?= $brandInfo['brand_name'] ?></h3>
                         <div class="brand-detail">
-                            <span >Based in</span>
+                            <span ><?= __("brand_dashboard__BASED_IN"); ?></span>
                             <span>{{ "<?= $userAttr['company_country'] ?>" | translate}}</span>
                         </div>
                         <div class="brand-detail">
-                            <span>Established</span>
+                            <span><?= __("brand_dashboard__ESTABLISHED"); ?></span>
                             <span><?= date('Y', strtotime($user['register_date'])) ?></span>
                         </div>
                         <div class="brand-detail">
-                            <span>Website</span>
+                            <span><?= __("brand_dashboard__WEBSITE"); ?></span>
                             <span><?= $userAttr['company_web_url'] ?></span>    
                         </div>
                     </div>
@@ -58,8 +58,8 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="order-list-header">
-                        <h2 class="order-list-title">MY ORDERS</h2>
-                        <a class="order-list-all-link" href="#">ALL ORDERS ></a>
+                        <h2 class="order-list-title"><?= __("brand_dashboard__MY_ORDERS"); ?></h2>
+                        <a class="order-list-all-link" href="#"><?= __("brand_dashboard__ALL_ORDERS"); ?></a>
                     </div>
                 </div>
             </div>
@@ -68,8 +68,8 @@
             <div class="row">
                 <div class="col-xs-12 text-center empty-warning">
                     <img src="/static/app/images/order-tip.png">
-                    <p>WELCOME TO XSHOWROOM!<br/>START YOUR BUSINESS NOW!</p>
-                    <span>tips: collection create order</span>
+                    <p><?= __("brand_dashboard__ORDER_EMPTY_1"); ?><br/><?= __("brand_dashboard__ORDER_EMPTY_2"); ?></p>
+                    <span><?= __("brand_dashboard__ORDER_EMPTY_3"); ?></span>
                 </div>
             </div>
             <div class="order-list-content row">
@@ -149,8 +149,8 @@
         	<div class="row">
                 <div class="col-xs-12">
                     <div class="collection-list-header">
-                        <h2 class="collection-list-title">MY COLLECTIONS</h2>
-                        <a class="collection-list-all-link" href="#">ALL COLLECTIONS ></a>
+                        <h2 class="collection-list-title"><?= __("brand_dashboard__MY_COLLECTIONS"); ?></h2>
+                        <a class="collection-list-all-link" href="#"><?= __("brand_dashboard__ALL_COLLECTIONS"); ?></a>
                     </div>
                 </div>
             </div>
@@ -158,8 +158,8 @@
         	 <div class="row">
                 <div class="col-xs-12 text-center empty-warning">
                     <img src="/static/app/images/empty.png">
-                    <p>OH NO! YOU HAVE NO<br/>COLLECTION!</p>
-                    <a class="btn btn-type-2" href="/collection/create">ADD COLLECTION</a>
+                    <p><?= __("brand_dashboard__COLLECTION_EMPTY_1"); ?><br/><?= __("brand_dashboard__COLLECTION_EMPTY_2"); ?></p>
+                    <a class="btn btn-type-2" href="/collection/create"><?= __("brand_dashboard__COLLECTION_EMPTY_3"); ?></a>
                 </div>
             </div>
             <?php } else {?>
@@ -184,7 +184,7 @@
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1">
                     <img src="/static/app/images/account-manager.png" class="account-manager-image">
-                    <p>At XSHOWROOM we have Brand Account Manager to help you to introduce the brand, book you in to see the collection, and follow up your order.</p>
+                    <p><?= __("brand_dashboard__ACCOUNT_MANAGER"); ?></p>
                     <button class="btn btn-type-2">MESSAGE</button>
                 </div>
             </div>
