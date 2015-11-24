@@ -147,7 +147,7 @@ Cookie::$salt = 'xshowroom';
  * defaults for the URI.
  */
 
-Route::set('product_create', 'product/create//<id>')
+Route::set('product_create', 'product/create/<id>')
         ->defaults(array(
             'controller' => 'product',
             'action'     => 'create',
