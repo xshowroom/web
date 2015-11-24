@@ -108,9 +108,9 @@
                             <label for="category" class="col-xs-2 control-label">Color Set</label>
                             <div class="col-xs-6 selected-colors">
                             	<div ng-repeat="color in product.color track by $index" class="color-item">
-                            		<div ng-if="color.type == 'standard'" style="background-color:{{color.value}}">
+                            		<div ng-if="color.type == 0" style="background-color:{{color.value}}">
                             		</div>
-                            		<div ng-if="color.type == 'customized'" style="background-image:url(/{{color.value}})"></div>
+                            		<div ng-if="color.type == 1" style="background-image:url(/{{color.value}})"></div>
                             		<div>{{color.name}}</div>
 								</div>
                             	<a class="new-color" ng-click="openColorModal();">+ Add Color</a>

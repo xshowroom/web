@@ -129,7 +129,7 @@ angular.module(
      					colors.push({
          					name: name,
          					value: $scope.currentColors.standard[name],
-         					type: 'standard'
+         					type: 0
          				});
      				}
      			}
@@ -139,7 +139,7 @@ angular.module(
      					colors.push({
          					name: record.name,
          					value: record.value,
-         					type: 'customized'
+         					type: 1
          				});
      				}
      			}
