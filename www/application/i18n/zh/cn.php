@@ -372,7 +372,14 @@ return array_merge(
      * brand_collection.php
      */
     array(
+        'brand_collection__STATUS' => '状态',
+        'brand_collection__ADD_COLLECTION' => '+ 添加系列',
 
+        'brand_collection__COLLECTION_STATUS' => '系列状态:',
+        'brand_collection__COLLECTION_LAST_MODIFY' => '最后修改:',
+        'brand_collection__COLLECTION_DESCRIPTION' => '详细信息:',
+
+        'brand_collection__btn_VIEW' => '查看',
     ),
     /**
      * brand_order.php

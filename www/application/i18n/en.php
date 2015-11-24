@@ -372,7 +372,14 @@ return array_merge(
      * brand_collection.php
      */
     array(
+        'brand_collection__STATUS' => 'STATUS',
+        'brand_collection__ADD_COLLECTION' => '+ ADD COLLECTION',
 
+        'brand_collection__COLLECTION_STATUS' => 'COLLECTION STATUS:',
+        'brand_collection__COLLECTION_LAST_MODIFY' => 'LAST MODIFY:',
+        'brand_collection__COLLECTION_DESCRIPTION' => 'DESCRIPTION:',
+
+        'brand_collection__btn_VIEW' => 'VIEW',
     ),
     /**
      * brand_order.php

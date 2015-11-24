@@ -31,7 +31,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-3 collection-category">
-                	<h3>STATUS</h3>
+                	<h3><?=__("brand_collection__STATUS")?></h3>
                 	<ul>
                 		<li>
                 			<a ng-click="filters.status = ''; filters.limit = 4;">
@@ -47,7 +47,7 @@
                 		</li>
                 	</ul>
                 	<div class="add-new-collection">
-                		<a href="/collection/create">+ ADD COLLECTION</a>
+                		<a href="/collection/create"><?=__("brand_collection__ADD_COLLECTION")?></a>
                 	</div>
                 </div>
             	<div class="col-xs-9">
@@ -59,17 +59,17 @@
             				</a>
             				<div class="col-xs-8 collection-details">
             					<div class="col-xs-12 collection-detail">
-			                 		<span>Collection Status:</span><span>{{('COLLECTION_STATUS_' + collection.status)| translate}}</span>
+			                 		<span><?=__("brand_collection__COLLECTION_STATUS")?></span><span>{{('COLLECTION_STATUS_' + collection.status)| translate}}</span>
 			                 	</div>
 			                 	<div class="col-xs-12 collection-detail">
-			                 		<span>Last Modify:</span><span>{{collection.modify_time}}</span>	
+			                 		<span><?=__("brand_collection__COLLECTION_LAST_MODIFY")?></span><span>{{collection.modify_time}}</span>
 			                 	</div>
 			                 	<div class="col-xs-12 collection-detail collection-description">
-			                 		<div>Description:</div>
+			                 		<div><?=__("brand_collection__COLLECTION_DESCRIPTION")?></div>
 			                 		<div>{{collection.description}}</div>	
 			                 	</div>
 			                 	<div class="col-xs-12 collection-actions">
-			                 		<a class="btn btn-type-2" href="/collection/{{collection.id}}" target="_self">VIEW</a>
+			                 		<a class="btn btn-type-2" href="/collection/{{collection.id}}" target="_self"><?=__("brand_collection__btn_VIEW")?></a>
 			                 		<!-- <button class="btn btn-type-1" ng-click="enableCollection(collection.id);" ng-if="collection.status == '0'">SUBMIT</button>
 			                 		<button class="btn btn-type-1" ng-click="deleteCollection(collection.id);" ng-if="collection.status == '0'">DELETE</button>
 			                 		<button class="btn btn-type-1" ng-click="closeCollection(collection.id);"  ng-if="collection.status == '1'">CLOSE</button> -->
