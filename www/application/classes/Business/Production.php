@@ -124,12 +124,21 @@ class Business_Production
     
     public function getProductionList($userId, $collectionId)
     {
+        $category = trim(Request::current()->post('category'));
+        $priceMin = Request::current()->post('priceMin');
+        $priceMax = Request::current()->post('priceMax');
+
         $productionList = $this->productionModel->getByCollectionId($collectionId);
         foreach ($productionList as $idx => $production) {
-            // 过滤掉不是该用户的产品
-            if ($production['user_id'] != $userId) {
+
+            // 过滤掉不是该用户的产品&&过滤掉不是该类别的产品&&过滤掉不是该价格范围内的产品
+            if ($production['user_id'] != $userId ||
+                (!empty($category) && $production['category'] != $category) ||
+                (!empty($priceMin) && $production['retail_price'] < (int)$priceMin) ||
+                (!empty($priceMax) && $production['retail_price'] > (int)$priceMin)) {
                 unset($productionList[$idx]);
             }
+
         }
         
         return $productionList;
