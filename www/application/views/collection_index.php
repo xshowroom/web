@@ -198,7 +198,7 @@
                 	<img src="/static/app/images/empty.png">
                 	<p>OH NO! YOU HAVE NO<br/>PRODUCTS IN THIS COLLECTION!</p>
                 	<?php if($collection['status'] == 0) {?>
-                	<a class="btn btn-type-2" href="/product/create">ADD PRODUCT</a>
+                	<a class="btn btn-type-2" href="/product/create/<?=$collection['id']?>">ADD PRODUCT</a>
 					<?php }?>
                 </div>
             </div>
@@ -225,7 +225,7 @@
                 	</ul>
                 	<?php if($collection['status'] == 0) {?>
                 	<div class="add-new-product">
-                		<a href="/product/create">+ ADD NEW PRODUCT</a>
+                		<a href="/product/create/<?=$collection['id']?>">+ ADD NEW PRODUCT</a>
                 	</div>
                 	<?php }?>
                 </div>

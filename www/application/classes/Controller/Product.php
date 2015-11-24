@@ -30,19 +30,18 @@ class Controller_Product extends Controller_BaseReqLogin
     
     public function action_create()
     {
-        $id = $this->request->param('id');
+        $collectionId = $this->request->param('id');
 
         if (empty($id)){
             // to do
 
         }
-
-        var_dump($id);
-    	//$view = View::factory('product_create');
-    	//$view->set('user', $this->opUser);
-    	//$view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
-            
-    	//$this->response->body($view);
+    	$view = View::factory('product_create');
+    	$view->set('user', $this->opUser);
+    	$view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+    	$view->set('collectionId', $collectionId);
+    	
+    	$this->response->body($view);
     
     }
 }
