@@ -37,6 +37,9 @@
 	font-size: 14px;
 	margin-top: 30px;
 }
+.collection-item{
+	margin-bottom: 70px;
+}
 .collection-item h3{
 	font-size: 14px;
 	font-weight: bold;
@@ -128,6 +131,9 @@
     position: relative;
     border: 1px solid #ccc;
     cursor: pointer;
+}
+.collection-item .product-gallery .product-list-preview .product-image:before{
+	content: none;
 }
 .collection-item .product-gallery .product-list-preview .product-image:nth-child(5){
     margin-right: 0;

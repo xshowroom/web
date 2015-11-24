@@ -81,9 +81,9 @@
             					<span class="glyphicon glyphicon-chevron-left" ng-click="collection.offset = collection.offset - (collection.offset > 0 ? 1 : 0)"></span>
             				</div>
             				<div class="product-list-preview">
-            					<div class="product-image" ng-repeat="product in collection.productions | limitTo: 5 : collection.offset">
+            					<a ng-href="/product/{{product.id}}" class="product-image" ng-repeat="product in collection.productions | limitTo: 5 : collection.offset">
             						<img ng-src="/{{product.image_url[0]}}">
-            					</div>
+            					</a>
             				</div>
             				<div class="product-gallery-action" ng-class="{'disabled': collection.offset == collection.productions.length - 5 || collection.productions.length <= 5}">
             					<span class="glyphicon glyphicon-chevron-right" ng-click="collection.offset = collection.offset + ((collection.offset < collection.productions.length - 5) ? 1 : 0);"></span>
