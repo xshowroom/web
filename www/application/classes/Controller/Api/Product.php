@@ -9,6 +9,7 @@ class Controller_Api_Product extends Controller_BaseReqLogin
 
     public function before()
     {
+        parent::before();
         $this->productionService = new Business_Production();
     }
 
