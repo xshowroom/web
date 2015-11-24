@@ -41,7 +41,7 @@ return array_merge(
      * global_navigation_top_brand.php
      */
     array(
-        'global_navigation_top_brand__DASHBOARD' => '仪表盘',
+        'global_navigation_top_brand__DASHBOARD' => '全情概览',
         'global_navigation_top_brand__COLLECTION' => '系列管理',
         'global_navigation_top_brand__ORDER' => '订单管理',
         'global_navigation_top_brand__MESSAGE' => '消息中心',
