@@ -302,14 +302,14 @@ angular.module(
 				}
 			};
 			var materials = [
-			    'Acetate',         'Acrylic',           'Aliginate fiber',   'Angora',            'Artificial cotton',
-			    'Bast',            'Blend fiber',       'Braid',             'Cotton',            'Cashmere',
-			    'Cellulose ester', 'Cellulose',         'Down',              'Elastane',          'Filament',
-			    'Flax',            'Fur',               'Fur garment',       'Hemp',              'Jute',
-			    'Man-made fiber',  'Modacrylic',        'Modal',             'Mohair',            'Natural fiber',
+			    'Acetate',         'Acrylic',           'Aliginate_fiber',   'Angora',            'Artificial_cotton',
+			    'Bast',            'Blend_fiber',       'Braid',             'Cotton',            'Cashmere',
+			    'Cellulose_ester', 'Cellulose',         'Down',              'Elastane',          'Filament',
+			    'Flax',            'Fur',               'Fur_garment',       'Hemp',              'Jute',
+			    'Man_made_fiber',  'Modacrylic',        'Modal',             'Mohair',            'Natural_fiber',
 			    'Nylon',           'Polyamide',         'Polymer',           'Polyester',         'Polyethylene',
-			    'Polypropylene',   'Polyester wadding', 'Rayon',             'Regenerated fiber', 'Rabbit',
-			    'Silk',            'Silk wadding',      'Spandex/elastomer', 'Staple',            'Synthetic',
+			    'Polypropylene',   'Polyester_wadding', 'Rayon',             'Regenerated_fiber', 'Rabbit',
+			    'Silk',            'Silk_wadding',      'Spandex_elastomer', 'Staple',            'Synthetic',
 			    'Velvet',          'Viscose',           'Wool',              'Other'
 			];
 			var categories = [
