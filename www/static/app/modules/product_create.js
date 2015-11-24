@@ -30,18 +30,14 @@ angular.module(
      		var collectionId = referrer.match(urlReg)[0].split(/\//)[2];
      		$scope.product = {
          		collectionId: collectionId,
-         		image: []
+         		images: []
          	};
      		
      		$scope.addProductImage = function(url){
      			var siteRootUrl = $location.protocol() + '://' + $location.host() + ":" + 	$location.port() + '/';
-     			$scope.product.image.push(siteRootUrl + url);
+     			$scope.product.images.push(siteRootUrl + url);
      			$scope.$apply();
      		};
-//     		$scope.removeProductImage = function(index){
-//     			$scope.product.images.splice(index, 1);
-//     			$scope.$apply();
-//     		};
      		$scope.setSizeCodes = function(category, region){
      			if (!category || !region){
      				return;
@@ -159,7 +155,7 @@ angular.module(
  					'madeIn': false,
 		            'material': false,
 		            'careIns': false,
-		            'image': false
+		            'images': false
  				},
  				reg:{
  					'wholePrice': /^(0|[1-9][0-9]*)(\.?\d{0,2})?$/,
