@@ -34,8 +34,8 @@ angular.module(
          	};
      		
      		$scope.addProductImage = function(url){
-     			var siteRootUrl = $location.protocol() + '://' + $location.host() + ":" + 	$location.port() + '/';
-     			$scope.product.images.push(siteRootUrl + url);
+//     			var siteRootUrl = $location.protocol() + '://' + $location.host() + ":" + 	$location.port() + '/';
+     			$scope.product.images.push(url);
      			$scope.$apply();
      		};
      		$scope.setSizeCodes = function(category, region){

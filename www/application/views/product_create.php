@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-xs-12">
                 	<div ng-repeat="url in product.images track by $index" class="product-image product-image-uploaded">
-                		<image ng-src="{{url}}">
+                		<image ng-src="/{{url}}">
                 		<a ng-click="product.images.splice($index, 1)" class="btn btn-type-2">
                 			<span class="glyphicon glyphicon-trash"></span>
                 		</a>
