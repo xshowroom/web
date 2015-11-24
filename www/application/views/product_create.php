@@ -90,7 +90,7 @@
                             </div>
                         </div>
                         <div class="form-group col-xs-12"  ng-class="{'has-error': checkInfo.validation.sizeRegion}">
-                            <label for="size-region" class="col-xs-2 control-label">Size</label>
+                            <label for="size-region" class="col-xs-2 control-label">Size Region</label>
                             <div class="col-xs-6">
                             	<select class="form-control" id="size-region" name="sizeRegion" ng-model="product.sizeRegion"
                             		ng-change="setSizeCodes(product.category, product.sizeRegion);">
@@ -105,7 +105,7 @@
                             </div>
                         </div>
                         <div class="form-group col-xs-12"  ng-class="{'has-error': checkInfo.validation.color}">
-                            <label for="category" class="col-xs-2 control-label">Color</label>
+                            <label for="category" class="col-xs-2 control-label">Color Set</label>
                             <div class="col-xs-6">
                             	<a class="new-color" ng-click="openColorModal();">+ Add Color</a>
                             </div>
@@ -157,18 +157,18 @@
         <?php echo View::factory('common/global_navigation_footer'); ?>
     </footer>
     
-    <div class="modal fade uploading" id="color-modal" tabindex="-1" role="dialog" aria-labelledby="color-modal">
+    <div class="modal fade" id="color-modal" tabindex="-1" role="dialog" aria-labelledby="color-modal">
 	  	<div class="modal-dialog" role="document">
 	    	<div class="modal-content">
 	      		<div class="modal-header">
 	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	      		</div>
-	      		<div class="modal-body">
+	      		<div class="modal-body uploading">
 	      			<h4>Standard Color</h4>
 	      			<div class="standard-colors">
-	      				<div ng-repeat="(name, color) in standardColors" class="color-item" ng-class="{'active':currentColors.statndard[name]}">
+	      				<div ng-repeat="(name, color) in standardColors" class="color-item" ng-class="{'active':currentColors.standard[name]}">
 		      				<label class="checkbox-inline" ng-style="{'background': color}">
-							  	<input type="checkbox" ng-model="currentColors.statndard[name]" ng-true-value="'{{color}}'" ng-false-value="false">
+							  	<input type="checkbox" ng-model="currentColors.standard[name]" ng-true-value="'{{color}}'" ng-false-value="false">
 							  	<span class="glyphicon glyphicon-ok"></span>
 							</label>
 							<span class="color-name">{{name}}</span>
@@ -180,7 +180,7 @@
 	      				<div ng-repeat="color in currentColors.customized track by $index" class="color-item"
 	      					ng-class="{'active': color['selected']}">
 		      				<label class="checkbox-inline" style="{{color['style']}}">
-							  	<input type="checkbox" ng-model="color['selected']" ng-true-value="'true'" ng-false-value="false" ng-change="checkName($event, $index);">
+							  	<input type="checkbox" ng-model="color['selected']" ng-true-value="'true'" ng-false-value="false" ng-change="checkColorName($index);">
 							  	<span class="glyphicon glyphicon-ok"></span>
 							</label>
 							<input type="text" ng-model="color['name']" class="form-control" placeholder="unnamed_color_{{$index}}">
@@ -198,7 +198,7 @@
 	      				</label>
 	      			</div>
 	      			<div class="add-color-action">
-	      				<button class="btn btn-type-2" ng-click>ADD COLOR</button>
+	      				<button class="btn btn-type-2" ng-click="setColor();">ADD COLOR</button>
 	      			</div>
 	      			<div class="add-color-tips">
 	      				*You can select serval colors.
