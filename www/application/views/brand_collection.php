@@ -52,7 +52,7 @@
                 </div>
             	<div class="col-xs-9">
             		<div class="collection-item" ng-repeat="collection in collections| filter: {status: filters.status} | limitTo : filters.limit : 0 ">
-            			<h3>{{collection.name| uppercase}} {{collection.category | translate}} (87)</h3>
+            			<h3>{{collection.name| uppercase}} {{collection.category | translate}} ({{collection.productions.length}})</h3>
             			<div class="collection-info">
             				<div class="col-xs-4 collection-cover">
             					<img ng-src="/{{collection.cover_image_medium}}"/>
