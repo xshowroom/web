@@ -63,8 +63,6 @@
                     </div>
                 </div>
             </div>
-            
-            
             <div class="row">
                 <div class="col-xs-12 text-center empty-warning">
                     <img src="/static/app/images/order-tip.png">

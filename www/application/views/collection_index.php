@@ -59,7 +59,7 @@
                  		<span>Delivery Date:</span><span><?= $collection['delivery_date']?></span>	
                  	</div>
                  	<div class="col-xs-12 collection-detail">
-                 		<span>Min-order:</span><span><?= $collection['mini_order']?></span>
+                 		<span>Min-order:</span><span><?= $collection['currency']?><?= $collection['mini_order']?></span>
                  	</div>
                  	<div class="col-xs-11 collection-detail">
                  		<div>Description:</div>
@@ -75,7 +75,7 @@
                  	</div>
                  	<div class="col-xs-12 collection-action">
                  		<?php if($collection['status'] == 0) {?>
-                 		<button class="btn btn-type-2" ng-click="enableCollection();">SUBMIT</button>
+                 		<button class="btn btn-type-2" ng-click="enableCollection();" ng-if="products.length">SUBMIT</button>
                  		<button class="btn btn-type-1" ng-click="deleteCollection();">DELETE</button>
                  		<?php }?>
                  		<?php if($collection['status'] == 1) {?>
@@ -191,7 +191,7 @@
             <?php }?>  
         </div>
     </section>
-    <section class="row empty-warning">
+    <section class="row empty-warning" ng-if="!products.length">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-center ">
@@ -204,28 +204,22 @@
             </div>
         </div>
     </section>
-    <section class="row collection-product">
+    <section class="row collection-product" ng-if="products.length">
         <div class="container">
             <div class="row">
                 <div class="col-xs-3 collection-product-category">
                 	<h3>CATEGORIES</h3>
                 	<ul>
                 		<li>
-                			<a>
-                				<span>T-Shirt</span>
-                				<span>(2)</span>
+                			<a ng-click="filters.category = ''; filters.limit = 8;">
+                				<span>{{'dropdown__PRODUCT_CATEGORY__ALL' | translate}}</span>
+                				<span>{{products.length || 0}}</span>
                 			</a>
                 		</li>
-                		<li>
-                			<a>
-                				<span>Top</span>
-                				<span>(1)</span>
-                			</a>
-                		</li>
-                		<li>
-                			<a>
-                				<span>Dress</span>
-                				<span>(3)</span>
+                		<li ng-repeat="(category, count) in categoryCounter">
+                			<a ng-click="filters.category = category; filters.limit = 8;">
+                				<span>{{category | translate}}</span>
+                				<span>{{count}}</span>
                 			</a>
                 		</li>
                 	</ul>
@@ -236,85 +230,21 @@
                 	<?php }?>
                 </div>
                 <div class="col-xs-9 collection-products">
-                 	<h3>{{'T-Shirt' | uppercase}}</h3>
+                 	<h3>{{ (filters.category == '' ? 'dropdown__PRODUCT_CATEGORY__ALL' : filters.category)  | translate}}</h3>
                  	<div class="collection-category-content">
-                 		<div class="col-xs-3">
-                 			<a  target="_blank" href="#" class="collection-product-detail">
-								<img src="/static/app/images/shop-brand-1.png" class="product-image"/>
+                 		<div class="col-xs-3" ng-repeat="product in products | filter : filters.category | limitTo: filters.limit: 0">
+                 			<a  target="_blank" ng-href="/product/{{product.id}}" class="collection-product-detail">
+								<img ng-src="/{{product.image_url[0]}}" class="product-image"/>
 								<span class="product-info">
-									<span class="product-name">Skull with snake</span>
-									<span class="product-price">$100</span>
-								</span>
-                 			</a>
-                 		</div>
-                 		<div class="col-xs-3">
-                 			<a  target="_blank" href="#" class="collection-product-detail">
-								<img src="/static/app/images/shop-brand-1.png" class="product-image">
-								<span class="product-info">
-									<span class="product-name">Skull with snake</span>
-									<span class="product-price">$100</span>
-								</span>
-                 			</a>
-                 		</div>
-                 		<div class="col-xs-3">
-                 			<a  target="_blank" href="#" class="collection-product-detail">
-								<img src="/static/app/images/shop-brand-1.png" class="product-image">
-								<span class="product-info">
-									<span class="product-name">Skull with snake</span>
-									<span class="product-price">$100</span>
-								</span>
-                 			</a>
-                 		</div>
-                 		<div class="col-xs-3">
-                 			<a  target="_blank" href="#" class="collection-product-detail">
-								<img src="/static/app/images/shop-brand-1.png" class="product-image">
-								<span class="product-info">
-									<span class="product-name">Skull with snake</span>
-									<span class="product-price">$100</span>
+									<span class="product-name">{{product.name}}</span>
+									<span class="product-price">{{collection.currency}}{{product.retail_price}}</span>
 								</span>
                  			</a>
                  		</div>
                  		<div class="clearfix"></div>
-                 	</div>
-                 	<h3>{{'T-Shirt' | uppercase}}</h3>
-                 	<div class="collection-category-content">
-                 		<div class="col-xs-3">
-                 			<a  target="_blank" href="#" class="collection-product-detail">
-								<img src="/static/app/images/shop-brand-1.png" class="product-image">
-								<span class="product-info">
-									<span class="product-name">Skull with snake</span>
-									<span class="product-price">$100</span>
-								</span>
-                 			</a>
+                 		<div class="text-center load-more" ng-if="filters.limit < (categoryCounter[filters.category] || products.length)">
+                 			<button class="btn btn-type-1" ng-click="filters.limit = filters.limit + 8;">LOAD MORE</button>
                  		</div>
-                 		<div class="col-xs-3">
-                 			<a  target="_blank" href="#" class="collection-product-detail">
-								<img src="/static/app/images/shop-brand-1.png" class="product-image">
-								<span class="product-info">
-									<span class="product-name">Skull with snake</span>
-									<span class="product-price">$100</span>
-								</span>
-                 			</a>
-                 		</div>
-                 		<div class="col-xs-3">
-                 			<a  target="_blank" href="#" class="collection-product-detail">
-								<img src="/static/app/images/shop-brand-1.png" class="product-image">
-								<span class="product-info">
-									<span class="product-name">Skull with snake</span>
-									<span class="product-price">$100</span>
-								</span>
-                 			</a>
-                 		</div>
-                 		<div class="col-xs-3">
-                 			<a  target="_blank" href="#" class="collection-product-detail">
-								<img src="/static/app/images/shop-brand-1.png" class="product-image">
-								<span class="product-info">
-									<span class="product-name">Skull with snake</span>
-									<span class="product-price">$100</span>
-								</span>
-                 			</a>
-                 		</div>
-                 		<div class="clearfix"></div>
                  	</div>
                 </div>
             </div>

@@ -114,9 +114,9 @@ section.row.collection-product{
 	font-size: 14px;
 	margin-top: 30px;
 }
-.collection-product .collection-products{
+/* .collection-product .collection-products{
 	min-height: 800px;
-}
+} */
 .collection-product .collection-category-content{
 	padding: 30px 0;
 }
@@ -124,6 +124,7 @@ section.row.collection-product{
 	height: 260px;
 	position: relative;
 	display: inline-block;
+	width: 100%;
 }
 .collection-product .collection-category-content .collection-product-detail:before{
 	content: none;

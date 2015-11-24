@@ -298,6 +298,7 @@ angular.module(
             dropdown__COLLECTION__MEN: '男士',
 
             // Product Category
+            dropdown__PRODUCT_CATEGORY__ALL: "所有",
             dropdown__PRODUCT_CATEGORY__HAT: "帽子",
             dropdown__PRODUCT_CATEGORY__TOP: "上衣",
             dropdown__PRODUCT_CATEGORY__KNIT: "编织衫",
@@ -601,6 +602,7 @@ angular.module(
             dropdown__COLLECTION__MEN: 'MEN',
 
             // Product Category
+            dropdown__PRODUCT_CATEGORY__ALL: "ALL",
             dropdown__PRODUCT_CATEGORY__HAT: "HAT",
             dropdown__PRODUCT_CATEGORY__TOP: "TOP",
             dropdown__PRODUCT_CATEGORY__KNIT: "KNIT",

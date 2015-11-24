@@ -16,7 +16,10 @@ angular.module(
     [
      	'$scope', 'Collection',
         function ($scope, Collection) {
-     		$scope.collectionLimit = 2;
+     		$scope.filter = {
+     			limit: 2,
+     			status: ''
+     		};
      		
      		Collection.findAll({
      			detail: 1

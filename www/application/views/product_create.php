@@ -43,7 +43,7 @@
                 			<span class="glyphicon glyphicon-trash"></span>
                 		</a>
                 	</div>
-                    <div ng-if="product.images.length < 5" class="product-image image-uploader" 
+                    <div ng-show="product.images.length < 5" class="product-image image-uploader" 
                     	ng-class="{'empty-product-image': !product.images.length, 'has-error': checkInfo.validation.images}"
                     	data-render-image='0' data-after-uploading = "addProductImage(url);"
                     	data-title="{{product.images.length? '': 'You can upload 5 images(jpg, png, gif) for each product.'}}">
@@ -67,7 +67,7 @@
                             <div class="col-xs-6">
                                 <select class="form-control" id="category" name="category" ng-model="product.category"
                                 	ng-change="setSizeCodes(product.category, product.sizeRegion);">
-                                	<option ng-repeat="category in categories track by $index" value="{{$index+1}}">{{category}}</option>
+                                	<option ng-repeat="category in categories track by $index" value="dropdown__PRODUCT_CATEGORY__{{category | uppercase}}">{{('dropdown__PRODUCT_CATEGORY__' + category.toUpperCase()) | translate}}</option>
                                 </select>
                             </div>
                         </div>

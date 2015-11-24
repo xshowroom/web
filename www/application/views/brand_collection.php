@@ -34,25 +34,25 @@
                 	<h3>STATUS</h3>
                 	<ul>
                 		<li>
-                			<a>
+                			<a ng-click="filter.status = ''; filter.limit = 2;">
                 				<span>{{'COLLECTION_STATUS_ALL' | translate}}</span>
                 				<span>{{collections.length || 0}}</span>
                 			</a>
                 		</li>
                 		<li ng-if="statusCounter[0]">
-                			<a>
+                			<a ng-click="filter.status = '0'; filter.limit = 2;">
                 				<span>{{'COLLECTION_STATUS_0' | translate}}</span>
                 				<span>{{statusCounter[0] || 0}}</span>
                 			</a>
                 		</li>
                 		<li ng-if="statusCounter[1]">
-                			<a>
+                			<a ng-click="filter.status = '1'; filter.limit = 2;">
                 				<span>{{'COLLECTION_STATUS_1' | translate}}</span>
                 				<span>{{statusCounter[1] || 0}}</span>
                 			</a>
                 		</li>
                 		<li ng-if="statusCounter[2]">
-                			<a>
+                			<a ng-click="filter.status = '2';">
                 				<span>{{'COLLECTION_STATUS_2' | translate}}</span>
                 				<span>{{statusCounter[2] || 0}}</span>
                 			</a>
@@ -63,7 +63,7 @@
                 	</div>
                 </div>
             	<div class="col-xs-9">
-            		<div class="collection-item" ng-repeat="collection in collections | limitTo : collectionLimit : 0">
+            		<div class="collection-item" ng-repeat="collection in collections| filter: {status: filter.status} | limitTo : filter.limit : 0 ">
             			<h3>{{collection.name| uppercase}} {{collection.category | translate}} (87)</h3>
             			<div class="collection-info">
             				<div class="col-xs-4 collection-cover">

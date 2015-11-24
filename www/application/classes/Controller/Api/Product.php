@@ -16,7 +16,7 @@ class Controller_Api_Product extends Controller_BaseReqLogin
     public function action_list()
     {
         $userId = $_SESSION['opUser']['id'];
-        $collectionId = Request::current()->post('collectionId');
+        $collectionId = Request::current()->query('collectionId');
         
         $res = $this->productionService->getProductionList($userId, $collectionId);
         
@@ -30,7 +30,7 @@ class Controller_Api_Product extends Controller_BaseReqLogin
     public function action_detail()
     {
         $userId = $_SESSION['opUser']['id'];
-        $productionId = Request::current()->post('productionId');
+        $productionId = Request::current()->query('productionId');
         
         $res = $this->productionService->getProduction($userId, $productionId);
         

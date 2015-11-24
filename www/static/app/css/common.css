@@ -363,6 +363,7 @@ a.active:before{
     border-radius: 2px;
     background-image: url("/static/app/images/image-uploader-bg.png");
     background-repeat: no-repeat;
+    background-position: center 20%;
     background-position-x: center;
     background-position-y: 20%;
     color: #fff;
@@ -466,7 +467,10 @@ to {-o-transform: translateY(-100%);}
     -moz-animation: rollUp 1s linear infinite;
     -o-animation: rollUp 1s linear infinite;
 }
-
+/* load more */
+.load-more{
+	margin-top: 40px;
+}
 /* brand 通用样式 */
 .brand-navigation{
 	padding-top: 60px;

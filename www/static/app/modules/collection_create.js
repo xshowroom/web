@@ -68,7 +68,7 @@ angular.module(
      	     			if (!res.status) {
      	     				window.open('/brand/collection', '_self');
      	     			}else{
-     	     				alert(res.msg);
+     	     				$scope.errorMsgs.push(['create error', res.msg]);
      	     			}
      	     		});
      			} 

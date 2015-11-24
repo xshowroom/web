@@ -106,7 +106,7 @@ angular.module(
          		} 
          	};
          	$scope.enableCollection = function(){
-         		if (confirm('确认要提交该Collection?')){
+         		if (confirm('确认要提交该Collection么?确认后，将无法对该collection进行修改。')){
          			Collection.enable({
          				id: collectionId
          			}).success(function(res){
@@ -131,6 +131,32 @@ angular.module(
          	     	});
          		} 
          	};
+         	
+         	
+         	Collection.getProductList({
+         		collectionId: collectionId
+     		}).success(function(res){
+     			if(!res.status){
+     				$scope.products = res.data;
+     				$scope.filters = {
+     					category: '',
+     					limit: 8
+     				};
+     				$scope.categoryCounter = {};
+     				for(var i = 0, len = $scope.products.length; i < len; i++){
+     					var category = $scope.products[i].category;
+         				if($scope.categoryCounter[category]){
+         					$scope.categoryCounter[category] += 1;
+         				}else{
+         					$scope.categoryCounter[category] = 1;
+         				}
+         				$scope.products[i].image_url = JSON.parse($scope.products[i].image_url);
+     				}
+     				
+     			}else{
+     				alert(res.msg);
+     			};
+     		});
      	}
     ]
 );
