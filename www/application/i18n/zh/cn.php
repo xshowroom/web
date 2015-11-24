@@ -18,6 +18,13 @@ return array_merge(
         'check_ok' => '参数验证成功',
     ),
     /**
+     * Inbox Message
+     */
+    array(
+        'AUTO_MSG_WELCOME_BRAND' => "欢迎来到XShowroom! 让我们一起开始我们的商业之旅! 您在使用过程中有任何问题，可以通过邮件告诉我们 info@projectcrossover.com",
+        'AUTO_MSG_WELCOME_BUYER' => "欢迎来到XShowroom! 让我们一起开始我们的商业之旅! 您在使用过程中有任何问题，可以通过邮件告诉我们 info@projectcrossover.com"
+    ),
+    /**
      * global_setting_with_login.php
      */
     array(

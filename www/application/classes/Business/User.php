@@ -13,10 +13,12 @@ class Business_User
     const ROLE_BUYER = 2;
     
     public $userModel;
+    public $msgService;
 
     public function __construct()
     {
         $this->userModel = new Model_User();
+        $this->msgService = new Business_Message();
     }
 
     public function login($email, $pass)
@@ -95,12 +97,14 @@ class Business_User
         if (!$userId) {
             return null;
         } else {
+            // generate welcome msg
+            $this->msgService->createMessage($userId, __(Business_Message::AUTO_MSG_WELCOME_BRAND));
+
+            // generate brand info
             $brandName     = Request::current()->post('brandName');
             $designerName  = Request::current()->post('designerName');
             $imagePath     = Request::current()->post('imagePath');
-            //$brandUrl      = WEB_ROOT . '/brand/' . $brandName;
             $brandUrl      = $brandName;
-            //$realPathFile  = UPLOAD_DIR. '/' . $brandName;
 
             $extension = substr(strrchr($imagePath, '.'), 1);
             $realPathFile  = 'data/' . date('ymdHis'). substr(microtime(),2,4) . '.' . $extension;
@@ -130,6 +134,10 @@ class Business_User
         if (!$userId) {
             return null;
         } else {
+            // generate welcome msg
+            $this->msgService->createMessage($userId, __(Business_Message::AUTO_MSG_WELCOME_BRAND));
+
+            // generate buyer info
             $name      = Request::current()->post('shopName');
             $type      = Request::current()->post('shopType');
             $colType   = Request::current()->post('collectionType');

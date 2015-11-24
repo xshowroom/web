@@ -18,6 +18,13 @@ return array_merge(
         'check_ok' => 'ok',
     ),
     /**
+     * Inbox Message
+     */
+    array(
+        'AUTO_MSG_WELCOME_BRAND' => "Welcome to XShowroom! Let's start your business now! Please feel free to contact us if any problem. Mail to: info@projectcrossover.com",
+        'AUTO_MSG_WELCOME_BUYER' => "Welcome to XShowroom! Let's start your business now! Please feel free to contact us if any problem. Mail to: info@projectcrossover.com"
+    ),
+    /**
      * global_setting_with_login.php
      */
     array(
