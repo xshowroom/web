@@ -90,8 +90,8 @@ class Business_Upload
             try{
                 copy($imagePath, $realPathFile);
                 // 生成medium图和small图
-                $mediumPathFile = $this->uploadService->resize($realPathFile, 0.5, 'medium');
-                $smallPathFile = $this->uploadService->resize($realPathFile, 0.2, 'small');
+                $mediumPathFile = $this->resize($realPathFile, 0.5, 'medium');
+                $smallPathFile = $this->resize($realPathFile, 0.2, 'small');
             } catch (Exception $e) {
                 $errorInfo = Kohana::message('message', 'IMAGE_ERROR');
                 throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
