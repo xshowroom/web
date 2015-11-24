@@ -53,6 +53,9 @@
 	background-color: transparent;
 	width: 100%;
 }
+.product-inputs .empty-product-image.has-error{
+	border: 1px solid #a94442;
+}
 .product-inputs .empty-product-image label{
 	background-color: transparent;
 	color: #878787;
@@ -79,8 +82,13 @@
 	height: 150px;
 	resize: none;
 }
+
+/* modal样式 */
 #color-modal .modal-header{
 	border-bottom: none;
+}
+#color-modal .modal-content{
+	overflow: hidden;
 }
 #color-modal .modal-body{
 	margin-top: -38px;
@@ -230,4 +238,28 @@
 	color: #878787;
 	text-align: center;
 	margin-top: 10px;
+}
+#color-modal .uploading-mask{
+	top: -38px;
+	font-size: 15px;
+}
+
+.selected-colors .color-item {
+	display: inline-block;
+	float: left;
+	text-align: center;
+	margin-right: 20px;
+}
+.selected-colors .color-item > div:nth-child(1){
+	width: 45px;
+    height: 45px;
+    border-radius: 4px;
+    border: 1px solid #20affe;
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.selected-colors .color-item > div:nth-child(2){
+	font-size: 12px;
 }

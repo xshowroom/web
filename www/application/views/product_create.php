@@ -34,20 +34,20 @@
         <div class="container">
             <div class="row product-inputs">
                 <div class="col-xs-12">
-                	<h3>PRODUCT IMAGES<span>({{product.images.length}}/5)</span></h3>
+                	<h3>PRODUCT IMAGES<span>({{product.image.length}}/5)</span></h3>
                 </div>
                 <div class="col-xs-12">
-                	<div ng-repeat="url in product.images track by $index" class="product-image product-image-uploaded">
+                	<div ng-repeat="url in product.image track by $index" class="product-image product-image-uploaded">
                 		<image ng-src="{{url}}">
-                		<a ng-click="removeProductImage($index);" class="btn btn-type-2">
+                		<a ng-click="product.image.splice($index, 1)" class="btn btn-type-2">
                 			<span class="glyphicon glyphicon-trash"></span>
                 		</a>
                 	</div>
-                    <div ng-if="product.images.length < 5" class="product-image image-uploader" 
-                    	ng-class="{'empty-product-image': !product.images.length}"
+                    <div ng-if="product.image.length < 5" class="product-image image-uploader" 
+                    	ng-class="{'empty-product-image': !product.image.length, 'has-error': checkInfo.validation.image}"
                     	data-render-image='0' data-after-uploading = "addProductImage(url);"
-                    	data-title="{{product.images.length? '': 'You can upload 5 images(jpg, png, gif) for each product.'}}"
-                    	ng-class="{'has-error': checkInfo.validation.image}"></div>
+                    	data-title="{{product.images.length? '': 'You can upload 5 images(jpg, png, gif) for each product.'}}">
+                    </div>
                 </div>
             </div>
             <div class="row product-inputs">
@@ -59,7 +59,7 @@
                     	<div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.name}">
                             <label for="name" class="col-xs-2 control-label">Product Name</label>
                             <div class="col-xs-6">
-                                  <input type="text" class="form-control" id="name"  name="name" ng-model="product.name">
+                            	<input type="text" class="form-control" id="name"  name="name" ng-model="product.name">
                             </div>
                         </div>
                         <div class="form-group col-xs-12"  ng-class="{'has-error': checkInfo.validation.category}">
@@ -98,15 +98,21 @@
                             	</select>
                             </div>
                             <div class="col-xs-8 col-xs-offset-2 size-codes">
-                            	<label class="checkbox-inline" ng-repeat="code in sizeCodes">
-								  	<input type="checkbox" name="size-code" ng-model="product.sizeCodes[code]"
+                            	<label class="checkbox-inline" ng-repeat="code in sizeCode">
+								  	<input type="checkbox" name="size-code" ng-model="product.sizeCode[code]"
 								  		ng-true-value="true" ng-false-value="false"> {{code}}
 								</label>
                             </div>
                         </div>
                         <div class="form-group col-xs-12"  ng-class="{'has-error': checkInfo.validation.color}">
                             <label for="category" class="col-xs-2 control-label">Color Set</label>
-                            <div class="col-xs-6">
+                            <div class="col-xs-6 selected-colors">
+                            	<div ng-repeat="color in product.color track by $index" class="color-item">
+                            		<div ng-if="color.type == 'standard'" style="background-color:{{color.value}}">
+                            		</div>
+                            		<div ng-if="color.type == 'customized'" style="background-image:url(/{{color.value}})"></div>
+                            		<div>{{color.name}}</div>
+								</div>
                             	<a class="new-color" ng-click="openColorModal();">+ Add Color</a>
                             </div>
                         </div>
@@ -134,7 +140,7 @@
                                   <textarea class="form-control" id="care-instruction" ng-model="product.careIns"></textarea>
                             </div>
                           </div>
-                        <div class="alert col-xs-12" role="alert"  ng-if="errorMsgs.length">
+                        <div class="alert col-xs-10 col-xs-offset-2" role="alert"  ng-if="errorMsgs.length">
 							<ul class="col-xs-6">
 								<li ng-repeat="msg in errorMsgs">
 									<span class="glyphicon glyphicon-remove-sign"></span>
@@ -180,7 +186,7 @@
 	      				<div ng-repeat="color in currentColors.customized track by $index" class="color-item"
 	      					ng-class="{'active': color['selected']}">
 		      				<label class="checkbox-inline" style="{{color['style']}}">
-							  	<input type="checkbox" ng-model="color['selected']" ng-true-value="'true'" ng-false-value="false" ng-change="checkColorName($index);">
+							  	<input type="checkbox" ng-model="color['selected']" ng-true-value="true" ng-false-value="false" ng-change="checkColorName($index);">
 							  	<span class="glyphicon glyphicon-ok"></span>
 							</label>
 							<input type="text" ng-model="color['name']" class="form-control" placeholder="unnamed_color_{{$index}}">

@@ -30,24 +30,24 @@ angular.module(
      		var collectionId = referrer.match(urlReg)[0].split(/\//)[2];
      		$scope.product = {
          		collectionId: collectionId,
-         		images: []
+         		image: []
          	};
      		
      		$scope.addProductImage = function(url){
      			var siteRootUrl = $location.protocol() + '://' + $location.host() + ":" + 	$location.port() + '/';
-     			$scope.product.images.push(siteRootUrl + url);
+     			$scope.product.image.push(siteRootUrl + url);
      			$scope.$apply();
      		};
-     		$scope.removeProductImage = function(index){
-     			$scope.product.images.splice(index, 1);
-     			$scope.$apply();
-     		};
+//     		$scope.removeProductImage = function(index){
+//     			$scope.product.images.splice(index, 1);
+//     			$scope.$apply();
+//     		};
      		$scope.setSizeCodes = function(category, region){
      			if (!category || !region){
      				return;
      			}
-     			$scope.sizeCodes = Product.getSizeCodes(category, region);
-     			$scope.product.sizeCodes = {};
+     			$scope.sizeCode = Product.getSizeCodes(category, region);
+     			$scope.product.sizeCode = {};
      		};
      		$scope.openColorModal = function(){
      			angular.element('#color-modal').modal('show');
@@ -111,7 +111,7 @@ angular.module(
 				self.val('');
 			});
      		
-     		$scope.checkName = function($event, index){
+     		$scope.checkColorName = function(index){
      			var record = $scope.currentColors.customized[index];
      			if (!record.selected){
      				return;
@@ -122,59 +122,78 @@ angular.module(
      			}
      		};
      		
-     		
-     		
-//     		$scope.checkInfo = {
-//     			validation: {
-// 				   	'name': false,
-// 					'category': false,
-// 					'mode': false,
-// 					'season': false,
-// 					'order': false,
-// 					'currency': false,
-// 					'deadline': false,
-// 					'delivery': false,
-// 					'description': false,
-// 					'image': false
-// 				},
-// 				reg:{
-// 					'order': /\d+/,
-// 					'deadline': /\d{4}-\d{2}-\d{2}/,
-// 					'delivery': /\d{4}-\d{2}-\d{2}/
-// 				}
-//     		};
+     		$scope.setColor = function(){
+     			var colors = [];
+     			for(var name in $scope.currentColors.standard){
+     				if($scope.currentColors.standard[name]){
+     					colors.push({
+         					name: name,
+         					value: $scope.currentColors.standard[name],
+         					type: 'standard'
+         				});
+     				}
+     			}
+     			for(var i = 0, len = $scope.currentColors.customized.length; i < len; i++){
+     				var record = $scope.currentColors.customized[i];
+     				if (record.selected){
+     					colors.push({
+         					name: record.name,
+         					value: record.value,
+         					type: 'customized'
+         				});
+     				}
+     			}
+     			$scope.product.color = colors;
+     			angular.element('#color-modal').modal('hide');
+     		};
+     		$scope.checkInfo = {
+     			validation: {
+ 				   	'name': false,
+ 					'category': false,
+ 					'styleNum': false,
+ 					'wholePrice': false,
+ 					'retailPrice': false,
+ 					'sizeRegion': false,
+ 					'sizeCode': false,
+ 					'color': false,
+ 					'madeIn': false,
+		            'material': false,
+		            'careIns': false,
+		            'image': false
+ 				},
+ 				reg:{
+ 					'wholePrice': /^(0|[1-9][0-9]*)(\.?\d{0,2})?$/,
+ 					'retailPrice': /^(0|[1-9][0-9]*)(\.?\d{0,2})?$/
+ 				}
+     		};
      		$scope.create = function(){
-     			console.log($scope.product);
-//   				$scope.errorMsgs = [];
-//     					
-//   				for(var key in $scope.checkInfo.validation){
-//     				var value = $scope.collection[key];
-//     				console.log(value);
-//     				if ((key == "deadline" || key == "delivery") && !value) {
-//     					$scope.errorMsgs.push([key, 'DATE ERROR']);
-//     					$scope.checkInfo.validation[key] = true;
-//     					continue;
-//     				}
-//     				if (!value || value == '') {
-//     					$scope.errorMsgs.push([key, 'EMPTY ERROR']);
-//     					$scope.checkInfo.validation[key] = true;
-//     					continue;
-//     				}
-//     				if($scope.checkInfo.reg[key] && !$scope.checkInfo.reg[key].test(value)){
-//     					$scope.errorMsgs.push([key, 'PATTERN ERROR']);
-//     					$scope.checkInfo.validation[key] = true;
-//     					continue;
-//     				}
-//     				$scope.checkInfo.validation[key] = false;
-//   				}
-//   				
-//     			if (!$scope.errorMsgs.length){
-//     				Collection.create(
-//     	     			$scope.collection
-//     	     		).success(function(res){
-//     	     			console.log(res);
-//     	     		});
-//     			} 
+   				$scope.errorMsgs = [];
+     					
+   				for(var key in $scope.checkInfo.validation){
+     				var value = $scope.product[key];
+     				if (!value || value == '' || angular.equals(value, {})) {
+     					$scope.errorMsgs.push([key, 'EMPTY ERROR']);
+     					$scope.checkInfo.validation[key] = true;
+     					continue;
+     				}
+     				if($scope.checkInfo.reg[key] && !$scope.checkInfo.reg[key].test(value)){
+     					$scope.errorMsgs.push([key, 'PATTERN ERROR']);
+     					$scope.checkInfo.validation[key] = true;
+     					continue;
+     				}
+     				$scope.checkInfo.validation[key] = false;
+   				}
+     			if (!$scope.errorMsgs.length){
+     				Product.create(
+     	     			$scope.product
+     	     		).success(function(res){
+     	     			if (!res.status){
+     	     				window.history.back();
+     	     			}else{
+     	     				$scope.errorMsgs.push(['create error', res.msg]);
+     	     			}
+     	     		});
+     			} 
      		};
         }
     ]

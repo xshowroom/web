@@ -618,7 +618,7 @@ angular.module(
             // Collection Mode
             dropdown__COLLECTION_MODE__PRE_ORDER: 'PRE ORDER',
             dropdown__COLLECTION_MODE__STOCK: 'STOCK',
-            dropdown__COLLECTION_MODE__RE_ORDER: 'STOCK',
+            dropdown__COLLECTION_MODE__RE_ORDER: 'RE ORDER',
             dropdown__COLLECTION_MODE__PERMANENT: 'PERMANENT',
 
             // Collection Season
