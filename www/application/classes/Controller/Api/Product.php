@@ -65,7 +65,7 @@ class Controller_Api_Product extends Controller_BaseReqLogin
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
             'msg'    => '',
-            'date'   => $res,
+            'data'   => $res,
         ));
     }
     
@@ -94,7 +94,7 @@ class Controller_Api_Product extends Controller_BaseReqLogin
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
             'msg'    => '',
-            'date'   => $res,
+            'data'   => $res,
         ));
     }
     
@@ -107,7 +107,7 @@ class Controller_Api_Product extends Controller_BaseReqLogin
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
             'msg'      => '',
-            'date' => $res,
+            'data' => $res,
         ));
     }
     
