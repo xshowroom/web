@@ -297,6 +297,18 @@ angular.module(
             dropdown__COLLECTION__ACCESSORIES: '首饰',
             dropdown__COLLECTION__MEN: '男士',
 
+            // Collection Mode
+            dropdown__COLLECTION_MODE__PRE_ORDER: '预售',
+            dropdown__COLLECTION_MODE__STOCK: '现货',
+            dropdown__COLLECTION_MODE__RE_ORDER: '补货',
+            dropdown__COLLECTION_MODE__PERMANENT: '常年可定',
+
+            // Collection Season
+            dropdown__COLLECTION_SEASON__AW_15: '15秋冬',
+            dropdown__COLLECTION_SEASON__PRE_SS16: '16早春',
+            dropdown__COLLECTION_SEASON__SS_16: '16春夏',
+            dropdown__COLLECTION_SEASON__AW_16: '16秋冬',
+
             // Product Category
             dropdown__PRODUCT_CATEGORY__ALL: "所有",
             dropdown__PRODUCT_CATEGORY__HAT: "帽子",
@@ -313,17 +325,51 @@ angular.module(
             dropdown__PRODUCT_CATEGORY__SHOES: "鞋履",
             dropdown__PRODUCT_CATEGORY__BAG: "手袋",
 
-            // Collection Mode
-            dropdown__COLLECTION_MODE__PRE_ORDER: '预售',
-            dropdown__COLLECTION_MODE__STOCK: '现货',
-            dropdown__COLLECTION_MODE__RE_ORDER: '补货',
-            dropdown__COLLECTION_MODE__PERMANENT: '常年可定',
-
-            // Collection Season
-            dropdown__COLLECTION_SEASON__AW_15: '15秋冬',
-            dropdown__COLLECTION_SEASON__PRE_SS16: '16早春',
-            dropdown__COLLECTION_SEASON__SS_16: '16春夏',
-            dropdown__COLLECTION_SEASON__AW_16: '16秋冬'
+            // Product Material
+            dropdown__PRODUCT_MATERIAL__Acetate: "醋酯纤维",
+            dropdown__PRODUCT_MATERIAL__Acrylic: "腈纶",
+            dropdown__PRODUCT_MATERIAL__Aliginate_fiber: "藻酸纤维",
+            dropdown__PRODUCT_MATERIAL__Angora: "安哥拉山羊毛",
+            dropdown__PRODUCT_MATERIAL__Artificial_cotton: "人造棉",
+            dropdown__PRODUCT_MATERIAL__Bast: "树内皮",
+            dropdown__PRODUCT_MATERIAL__Blend_fiber: "混合纤维",
+            dropdown__PRODUCT_MATERIAL__Braid: "饰带",
+            dropdown__PRODUCT_MATERIAL__Cotton: "棉花、棉",
+            dropdown__PRODUCT_MATERIAL__Cashmere: "山羊绒",
+            dropdown__PRODUCT_MATERIAL__Cellulose_ester: "醋、人造次",
+            dropdown__PRODUCT_MATERIAL__Cellulose: "纤维素",
+            dropdown__PRODUCT_MATERIAL__Down: "羽绒",
+            dropdown__PRODUCT_MATERIAL__Elastane: "氨纶",
+            dropdown__PRODUCT_MATERIAL__Filament: "长纤维",
+            dropdown__PRODUCT_MATERIAL__Flax: "亚麻纤维",
+            dropdown__PRODUCT_MATERIAL__Fur: "毛皮",
+            dropdown__PRODUCT_MATERIAL__Fur_garment: "裘皮",
+            dropdown__PRODUCT_MATERIAL__Hemp: "大麻",
+            dropdown__PRODUCT_MATERIAL__Jute: "黄麻",
+            dropdown__PRODUCT_MATERIAL__Man_made_fiber: "人造纤维",
+            dropdown__PRODUCT_MATERIAL__Modacrylic: "变性腈纶",
+            dropdown__PRODUCT_MATERIAL__Modal: "莫代尔",
+            dropdown__PRODUCT_MATERIAL__Mohair: "马海毛",
+            dropdown__PRODUCT_MATERIAL__Natural_fiber: "天然纤维",
+            dropdown__PRODUCT_MATERIAL__Nylon: "尼龙",
+            dropdown__PRODUCT_MATERIAL__Polyamide: "聚酰胺",
+            dropdown__PRODUCT_MATERIAL__Polymer: "高聚物",
+            dropdown__PRODUCT_MATERIAL__Polyester: "涤纶、聚酯纤维",
+            dropdown__PRODUCT_MATERIAL__Polyethylene: "聚乙烯纤维",
+            dropdown__PRODUCT_MATERIAL__Polypropylene: "丙纶",
+            dropdown__PRODUCT_MATERIAL__Polyester_wadding: "喷胶棉",
+            dropdown__PRODUCT_MATERIAL__Rayon: "人造丝",
+            dropdown__PRODUCT_MATERIAL__Regenerated_fiber: "再生纤维",
+            dropdown__PRODUCT_MATERIAL__Rabbit: "兔毛",
+            dropdown__PRODUCT_MATERIAL__Silk: "蚕丝、丝",
+            dropdown__PRODUCT_MATERIAL__Silk_wadding: "丝绵",
+            dropdown__PRODUCT_MATERIAL__Spandex_elastomer: "弹性纤维",
+            dropdown__PRODUCT_MATERIAL__Staple: "短纤纱",
+            dropdown__PRODUCT_MATERIAL__Synthetic: "合成纤维",
+            dropdown__PRODUCT_MATERIAL__Velvet: "天鹅绒",
+            dropdown__PRODUCT_MATERIAL__Viscose: "粘胶纤维",
+            dropdown__PRODUCT_MATERIAL__Wool: "羊毛",
+            dropdown__PRODUCT_MATERIAL__Other: "其它"
         },
         'en': {
             /**
@@ -601,6 +647,18 @@ angular.module(
             dropdown__COLLECTION__ACCESSORIES: 'ACCESSORIES',
             dropdown__COLLECTION__MEN: 'MEN',
 
+            // Collection Mode
+            dropdown__COLLECTION_MODE__PRE_ORDER: 'PRE ORDER',
+            dropdown__COLLECTION_MODE__STOCK: 'STOCK',
+            dropdown__COLLECTION_MODE__RE_ORDER: 'RE ORDER',
+            dropdown__COLLECTION_MODE__PERMANENT: 'PERMANENT',
+
+            // Collection Season
+            dropdown__COLLECTION_SEASON__AW_15: 'AW15',
+            dropdown__COLLECTION_SEASON__PRE_SS16: 'PRE-SS16',
+            dropdown__COLLECTION_SEASON__SS_16: 'SS16',
+            dropdown__COLLECTION_SEASON__AW_16: 'AW16',
+
             // Product Category
             dropdown__PRODUCT_CATEGORY__ALL: "ALL",
             dropdown__PRODUCT_CATEGORY__HAT: "HAT",
@@ -617,17 +675,52 @@ angular.module(
             dropdown__PRODUCT_CATEGORY__SHOES: "SHOES",
             dropdown__PRODUCT_CATEGORY__BAG: "BAG",
 
-            // Collection Mode
-            dropdown__COLLECTION_MODE__PRE_ORDER: 'PRE ORDER',
-            dropdown__COLLECTION_MODE__STOCK: 'STOCK',
-            dropdown__COLLECTION_MODE__RE_ORDER: 'RE ORDER',
-            dropdown__COLLECTION_MODE__PERMANENT: 'PERMANENT',
+            // Product Material
+            dropdown__PRODUCT_MATERIAL__Acetate: "Acetate",
+            dropdown__PRODUCT_MATERIAL__Acrylic: "Acrylic",
+            dropdown__PRODUCT_MATERIAL__Aliginate_fiber: "Aliginate Fiber",
+            dropdown__PRODUCT_MATERIAL__Angora: "Angora",
+            dropdown__PRODUCT_MATERIAL__Artificial_cotton: "Artificial Cotton",
+            dropdown__PRODUCT_MATERIAL__Bast: "Bast",
+            dropdown__PRODUCT_MATERIAL__Blend_fiber: "Blend Fiber",
+            dropdown__PRODUCT_MATERIAL__Braid: "Braid",
+            dropdown__PRODUCT_MATERIAL__Cotton: "Cotton",
+            dropdown__PRODUCT_MATERIAL__Cashmere: "Cashmere",
+            dropdown__PRODUCT_MATERIAL__Cellulose_ester: "Cellulose Ester",
+            dropdown__PRODUCT_MATERIAL__Cellulose: "Cellulose",
+            dropdown__PRODUCT_MATERIAL__Down: "Down",
+            dropdown__PRODUCT_MATERIAL__Elastane: "Elastane",
+            dropdown__PRODUCT_MATERIAL__Filament: "Filament",
+            dropdown__PRODUCT_MATERIAL__Flax: "Flax",
+            dropdown__PRODUCT_MATERIAL__Fur: "Fur",
+            dropdown__PRODUCT_MATERIAL__Fur_garment: "Fur Garment",
+            dropdown__PRODUCT_MATERIAL__Hemp: "Hemp",
+            dropdown__PRODUCT_MATERIAL__Jute: "Jute",
+            dropdown__PRODUCT_MATERIAL__Man_made_fiber: "Man-made Fiber",
+            dropdown__PRODUCT_MATERIAL__Modacrylic: "Modacrylic",
+            dropdown__PRODUCT_MATERIAL__Modal: "Modal",
+            dropdown__PRODUCT_MATERIAL__Mohair: "Mohair",
+            dropdown__PRODUCT_MATERIAL__Natural_fiber: "Natural Fiber",
+            dropdown__PRODUCT_MATERIAL__Nylon: "Nylon",
+            dropdown__PRODUCT_MATERIAL__Polyamide: "Polyamide",
+            dropdown__PRODUCT_MATERIAL__Polymer: "Polymer",
+            dropdown__PRODUCT_MATERIAL__Polyester: "Polyester",
+            dropdown__PRODUCT_MATERIAL__Polyethylene: "Polyethylene",
+            dropdown__PRODUCT_MATERIAL__Polypropylene: "Polypropylene",
+            dropdown__PRODUCT_MATERIAL__Polyester_wadding: "Polyester Wadding",
+            dropdown__PRODUCT_MATERIAL__Rayon: "Rayon",
+            dropdown__PRODUCT_MATERIAL__Regenerated_fiber: "Regenerated Fiber",
+            dropdown__PRODUCT_MATERIAL__Rabbit: "Rabbit",
+            dropdown__PRODUCT_MATERIAL__Silk: "Silk",
+            dropdown__PRODUCT_MATERIAL__Silk_wadding: "Silk Wadding",
+            dropdown__PRODUCT_MATERIAL__Spandex_elastomer: "Spandex Elastomer",
+            dropdown__PRODUCT_MATERIAL__Staple: "Staple",
+            dropdown__PRODUCT_MATERIAL__Synthetic: "Synthetic",
+            dropdown__PRODUCT_MATERIAL__Velvet: "Velvet",
+            dropdown__PRODUCT_MATERIAL__Viscose: "Viscose",
+            dropdown__PRODUCT_MATERIAL__Wool: "Wool",
+            dropdown__PRODUCT_MATERIAL__Other: "Other"
 
-            // Collection Season
-            dropdown__COLLECTION_SEASON__AW_15: 'AW15',
-            dropdown__COLLECTION_SEASON__PRE_SS16: 'PRE-SS16',
-            dropdown__COLLECTION_SEASON__SS_16: 'SS16',
-            dropdown__COLLECTION_SEASON__AW_16: 'AW16'
-		}
+        }
 	}
 );
