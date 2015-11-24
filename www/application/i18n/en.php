@@ -333,7 +333,40 @@ return array_merge(
      * brand_dashboard.php
      */
     array(
+        'brand_dashboard__BASED_IN' => 'BASED IN',
+        'brand_dashboard__ESTABLISHED' => 'ESTABLISHED',
+        'brand_dashboard__WEBSITE'=> 'WEBSITE',
 
+        'brand_dashboard__MY_ORDERS' => 'MY ORDERS',
+        'brand_dashboard__ALL_ORDERS' => 'ALL ORDERS >',
+        'brand_dashboard__ORDER_EMPTY_1' => 'WELCOME TO XSHOWROOM!',
+        'brand_dashboard__ORDER_EMPTY_2' => 'START YOUR BUSINESS NOW!',
+        'brand_dashboard__ORDER_EMPTY_3' => 'tips: collection create order',
+
+        'brand_dashboard__MY_COLLECTIONS' => 'MY COLLECTIONS',
+        'brand_dashboard__ALL_COLLECTIONS' => 'ALL COLLECTIONS >',
+        'brand_dashboard__COLLECTION_EMPTY_1' => 'OH NO! YOU HAVE NO',
+        'brand_dashboard__COLLECTION_EMPTY_2' => 'COLLECTION!',
+        'brand_dashboard__COLLECTION_EMPTY_3' => 'ADD COLLECTION',
+
+        'brand_dashboard__ACCOUNT_MANAGER' => 'At XSHOWROOM we have Brand Account Manager to help you to introduce the brand, book you in to see the collection, and follow up your order.'
+    ),
+    /**
+     * collection_create.php
+     */
+    array(
+        'collection_create__BASIC_INFO' => 'ADD COLLECTION BASIC INFO',
+        'collection_create__COLLECTION_COVER' => 'Collection Cover',
+        'collection_create__COLLECTION_NAME' => 'Collection Name',
+        'collection_create__COLLECTION_CATEGORY' => 'Collection Category',
+        'collection_create__COLLECTION_MODE' => 'Collection Mode',
+        'collection_create__COLLECTION_SEASON' => 'Collection Season',
+        'collection_create__COLLECTION_MINIMUM_ORDER' => 'Minimum Order',
+        'collection_create__COLLECTION_CURRENCY' => 'Payment Currency',
+        'collection_create__COLLECTION_DEADLINE' => 'Deadline for Order',
+        'collection_create__COLLECTION_DELIVERY_DATE' => 'Delivery Date',
+        'collection_create__COLLECTION_DESCRIPTION' => 'Description',
+        'collection_create__COLLECTION_CREATE' => 'CREATE',
     ),
     /**
      * brand_collection.php

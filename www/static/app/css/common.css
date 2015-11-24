@@ -533,6 +533,7 @@ to {-o-transform: translateY(-100%);}
 }
 .brand-banner .brand-logo img{
 	height: 100%;
+    min-width: 100px;
 }
 .brand-banner .brand-info{
 	color: #fff;

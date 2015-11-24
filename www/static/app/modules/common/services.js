@@ -1,5 +1,5 @@
 angular.module(
-    'xShowroom.services', []
+    'xShowroom.services', ['xShowroom.i18n']
 )
 .service(
 	'User', 
@@ -56,9 +56,6 @@ angular.module(
 						transformRequest: postRequestTransformer
 					});
 		      	},
-		      	findById: function(opts){
-		      		return $http.get('/api/collection/detail', {params: opts});
-		      	},
 		      	modify: function (opts) {
 		      		return $http.post('/api/collection/modify', opts, {
 						headers: {
@@ -70,11 +67,17 @@ angular.module(
 		      	destroy: function (opts) {
 		      		return $http.get('/api/collection/delete', {params: opts});
 		      	},
+		      	findById: function(opts){
+		      		return $http.get('/api/collection/detail', {params: opts});
+		      	},
 		      	enable: function (opts) {
 		      		return $http.get('/api/collection/enable', {params: opts});
 		      	},
 		      	close: function (opts) {
 		      		return $http.get('/api/collection/close', {params: opts});
+		      	},
+		      	findAll: function(opts){
+		      		return $http.get('/api/collection/list', {params: opts});
 		      	}
    			};
          }

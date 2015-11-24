@@ -77,6 +77,7 @@ class Model_Collection
                         'cover_image_medium',
                         'cover_image_small',
                         'create_time',
+                        'modify_time',
                         'status',
                     ))
                     ->values(array(
@@ -93,6 +94,7 @@ class Model_Collection
                         $imageUrl,
                         $imageMediumUrl,
                         $imageSmallUrl,
+                        date('Y-m-d H:i:s'),
                         date('Y-m-d H:i:s'),
                         STAT_NORMAL,
                     ))

@@ -7,7 +7,21 @@
 	content: none;
 }
 .collection-info .collection-cover{
-	height: 280px;
+	height: 250px;
+	position: relative;
+	background-color: #eee;
+}
+.collection-info .collection-cover > img{
+	width: 100%;
+	max-height: 100%;
+	position: absolute;
+	left:0;
+	top:50%;
+	z-index: 0;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
 }
 .collection-info .collection-detail > *{
 	line-height: 35px;

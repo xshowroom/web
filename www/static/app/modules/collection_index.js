@@ -98,7 +98,7 @@ angular.module(
          				id: collectionId
          			}).success(function(res){
          	     		if (!res.status) {
-         	     			window.open('/brand/dashboard', '_self');
+         	     			window.open('/brand/collection', '_self');
          	     		}else{
          	     			alert(res.msg);
          	     		}
@@ -117,7 +117,7 @@ angular.module(
          	     		}
          	     	});
          		} 
-         	}
+         	};
          	$scope.closeCollection = function(){
          		if (confirm('确认要下线该Collection?')){
          			Collection.close({
@@ -130,7 +130,7 @@ angular.module(
          	     		}
          	     	});
          		} 
-         	}
+         	};
      	}
     ]
 );
