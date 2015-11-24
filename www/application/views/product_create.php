@@ -130,7 +130,9 @@
                             <label for="material" class="col-xs-2 control-label">Material</label>
                             <div class="col-xs-6">
                             	<select class="form-control" id="material" ng-model="product.material">
-                                    <option ng-repeat="material in materials" value="{{material}}">{{material}}</option>
+                                    <option ng-repeat="material in materials" value="{{'dropdown__PRODUCT_MATERIAL__' + material}}">
+                                    	{{('dropdown__PRODUCT_MATERIAL__' + material) | translate}}
+                                    </option>
                                 </select>
                             </div>
                         </div>
