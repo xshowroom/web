@@ -369,6 +369,38 @@ return array_merge(
         'collection_create__COLLECTION_CREATE' => '创建系列',
     ),
     /**
+     * collection_index.php
+     */
+    array(
+        'collection_index__EDIT' => '编辑',
+        'collection_index__HIDE' => '隐藏',
+        'collection_index__SHOW_ALL' => '全部显示',
+
+        'collection_index__btn_SUBMIT' => '提交',
+        'collection_index__btn_DELETE' => '删除',
+        'collection_index__btn_CLOSE' => '关闭',
+
+        'collection_index__COLLECTION_COVER' => '系列封面',
+        'collection_index__COLLECTION_NAME' => '系列名称',
+        'collection_index__COLLECTION_CATEGORY' => '系列类型',
+        'collection_index__COLLECTION_MODE' => '售卖模式',
+        'collection_index__COLLECTION_SEASON' => '时尚季',
+        'collection_index__COLLECTION_MINIMUM_ORDER' => '最小订单金额',
+        'collection_index__COLLECTION_CURRENCY' => '结算货币',
+        'collection_index__COLLECTION_DEADLINE' => '下单截至日期',
+        'collection_index__COLLECTION_DELIVERY_DATE' => '发货日期',
+        'collection_index__COLLECTION_DESCRIPTION' => '详细描述',
+
+        'collection_index__btn_CANCEL' => '取消',
+        'collection_index__btn_UPDATE' => '更改',
+
+        'collection_index__NO_PRODUCT_1' => '不是吧! 你还没有',
+        'collection_index__NO_PRODUCT_2' => '在系列中添加商品!',
+
+        'collection_index__CATEGORIES' => '分类',
+        'collection_index__ADD_PRODUCT' => '+ 添加新的商品',
+    ),
+    /**
      * brand_collection.php
      */
     array(

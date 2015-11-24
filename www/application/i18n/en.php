@@ -369,6 +369,38 @@ return array_merge(
         'collection_create__COLLECTION_CREATE' => 'CREATE',
     ),
     /**
+     * collection_index.php
+     */
+    array(
+        'collection_index__EDIT' => 'EDIT',
+        'collection_index__HIDE' => 'HIDE',
+        'collection_index__SHOW_ALL' => 'SHOW ALL',
+
+        'collection_index__btn_SUBMIT' => 'SUBMIT',
+        'collection_index__btn_DELETE' => 'DELETE',
+        'collection_index__btn_CLOSE' => 'CLOSE',
+
+        'collection_index__COLLECTION_COVER' => 'Collection Cover',
+        'collection_index__COLLECTION_NAME' => 'Collection Name',
+        'collection_index__COLLECTION_CATEGORY' => 'Collection Category',
+        'collection_index__COLLECTION_MODE' => 'Collection Mode',
+        'collection_index__COLLECTION_SEASON' => 'Collection Season',
+        'collection_index__COLLECTION_MINIMUM_ORDER' => 'Minimum Order',
+        'collection_index__COLLECTION_CURRENCY' => 'Payment Currency',
+        'collection_index__COLLECTION_DEADLINE' => 'Deadline for Order',
+        'collection_index__COLLECTION_DELIVERY_DATE' => 'Delivery Date',
+        'collection_index__COLLECTION_DESCRIPTION' => 'Description',
+
+        'collection_index__btn_CANCEL' => 'CANCEL',
+        'collection_index__btn_UPDATE' => 'UPDATE',
+
+        'collection_index__NO_PRODUCT_1' => 'OH NO! YOU HAVE NO',
+        'collection_index__NO_PRODUCT_2' => 'PRODUCTS IN THIS COLLECTION!',
+
+        'collection_index__CATEGORIES' => 'CATEGORIES',
+        'collection_index__ADD_PRODUCT' => '+ ADD NEW PRODUCT',
+    ),
+    /**
      * brand_collection.php
      */
     array(
