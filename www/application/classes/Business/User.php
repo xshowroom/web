@@ -104,8 +104,9 @@ class Business_User
             $brandName     = Request::current()->post('brandName');
             $designerName  = Request::current()->post('designerName');
             $imagePath     = Request::current()->post('imagePath');
-            $brandUrl      = $brandName;
+            //$brandUrl      = $brandName;
 
+            $brandUrl = urlencode('brands/' . safeFileName($brandName));
             $extension = substr(strrchr($imagePath, '.'), 1);
             $realPathFile  = 'data/' . date('ymdHis'). substr(microtime(),2,4) . '.' . $extension;
             
@@ -185,5 +186,17 @@ class Business_User
         } else {
             return array(STATUS_SUCCESS, 'check_ok');
         }
+    }
+
+    /**
+     * 将文件名中的非法字符去掉
+     * 
+     * @param $fileName
+     * @return string
+     */
+    public static function safeFileName($fileName) {
+        $find = array("/", "\\", "?", "*", "<", ">", "|", ":", ";");
+        $niceFileName = str_replace($find, '', $fileName);
+        return $niceFileName;
     }
 } 
