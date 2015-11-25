@@ -23,8 +23,6 @@
     <script type="text/javascript" src="/static/app/modules/product_index.js"></script>
 </head>
 <body ng-controller="ProductIndexCtrl" class="container-fluid">
-	<?php var_dump($production)?>
-	<?php var_dump($collection)?>
     <nav class="row setting-info">
         <?php echo View::factory('common/global_setting_without_login'); ?>
     </nav>
