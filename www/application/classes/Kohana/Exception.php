@@ -27,26 +27,40 @@ class Kohana_Exception extends Kohana_Kohana_Exception
      */
     public static function _handler(Exception $e)
     {
-        if ($e->getCode() > 1000)   // 业务异常
-        {
-            $errorMsg = $e->getMessage();
+//         if ($e->getCode() > 1000)   // 业务异常
+//         {
+//             $errorMsg = $e->getMessage();
+//         }
+//         else
+//         {
+//             $errorInfo = Kohana::message('message','STATUS_ERROR');
+//             $errorMsg = $errorInfo['msg'];
+//         }
+        
+        // 处理error code和error message
+        $errorCode = 500;
+        if ($e->getCode() === 404) {
+            $errorCode = 404;
         }
-        else
-        {
+        if ($e->getCode() === 0) {
             $errorInfo = Kohana::message('message','STATUS_ERROR');
             $errorMsg = $errorInfo['msg'];
+        } else {
+            $errorMsg = $e->getMessage();
         }
+        if ($errorCode == 404) {
+            $errorMsg = '您所查找的页面不存在';
+        }
+        $errorMsg = HTML::entities($errorMsg);
         
-        // 返回结果
-        ob_clean();
-            
-        echo json_encode(array(
-            'status' => STATUS_ERROR,
-            'msg' => HTML::entities($errorMsg),
-        ));
+        $view = View::factory('collection_create');
+        $view->set('user', $this->opUser);
+        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view->set('errorCode', $errorCode);
+        $view->set('errorMsg', $errorMsg);
         
-        ob_end_flush();
-        flush();
+        $this->response->body($view);
+
         exit(0);
     }
 }
