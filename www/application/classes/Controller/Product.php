@@ -5,12 +5,14 @@ class Controller_Product extends Controller_BaseReqLogin
 {
     public $userService;
     public $productionService;
+    public $collectionService;
 
     public function before()
     {
         parent::before();
         $this->userService = new Business_User();
         $this->productionService =new Business_Production();
+        $this->collectionService =new Business_Collection();
     }
 
     
@@ -22,8 +24,9 @@ class Controller_Product extends Controller_BaseReqLogin
 
         $userId = $this->opUser['id'];
         $productionId = Request::current()->param('id');
-        $view->set('production', $this->productionService->getProduction($userId, $productionId));
-
+        $production = $this->productionService->getProduction($userId, $productionId);
+        $view->set('production', $production);
+        $view->set('collection', $this->collectionService->getCollectionInfo($userId, $production['collection_id']));
         $this->response->body($view);
 
     }

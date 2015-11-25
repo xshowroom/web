@@ -38,12 +38,12 @@
     <section class="row no-vertical-padding uploading">
         <div class="container collection-info">
             <div class="row" ng-show="!isEditing">
-                <div class="col-xs-2">
+                <div class="col-xs-3">
                 	<div class="collection-cover">
                  		<img src="/<?=$collection['cover_image_medium']?>">
                  	</div>
                 </div>
-                <div class="col-xs-10">
+                <div class="col-xs-9">
                  	<div class="col-xs-12 collection-detail collection-name">
                  		<h2><?= $collection['name']?></h2>
                  		<?php if($collection['status'] == 0) {?>
@@ -87,12 +87,12 @@
             </div>
             <?php if($collection['status'] == 0) {?>
             <div class="row collection-create" ng-show="isEditing">
-                <div class="col-xs-2">
+                <div class="col-xs-3">
                     <div class="image-uploader" id="cover-image" data-image-online-url="collection.image" data-target-model="collection.image"
                     	ng-class="{'has-error': checkInfo.validation.image}"></div>
                     <label class="collection-cover-label"><?=__("collection_index__COLLECTION_COVER")?></label>
                 </div>
-                <div class="col-xs-10">
+                <div class="col-xs-9">
                     <form class="form-horizontal" id="collection-create-form">
                     	<div class="form-group col-xs-6" ng-class="{'has-error': checkInfo.validation.name}">
                             <label for="name" class="col-xs-4 control-label"><?=__("collection_index__COLLECTION_NAME")?></label>

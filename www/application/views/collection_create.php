@@ -37,11 +37,11 @@
                 <div class="col-xs-12">
                     <h2 class="collection-create-title"><?= __("collection_create__BASIC_INFO"); ?></h2>
                 </div>
-                <div class="col-xs-2">
+                <div class="col-xs-3">
                     <div class="image-uploader" id="cover-image" data-target-model="collection.image" ng-class="{'has-error': checkInfo.validation.image}"></div>
                     <label class="collection-cover-label"><?= __("collection_create__COLLECTION_COVER"); ?></label>
                 </div>
-                <div class="col-xs-10">
+                <div class="col-xs-9">
                     <form class="form-horizontal" id="collection-create-form">
                     	<div class="form-group col-xs-6" ng-class="{'has-error': checkInfo.validation.name}">
                             <label for="name" class="col-xs-4 control-label"><?= __("collection_create__COLLECTION_NAME"); ?></label>

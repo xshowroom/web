@@ -44,48 +44,6 @@ angular.module(
      			console.log($scope.collections)
 
      		});
-     		
-     		/*$scope.deleteCollection = function(collectionId){
-         		if (confirm('确认要删除该Collection?')){
-         			Collection.destroy({
-         				id: collectionId
-         			}).success(function(res){
-         	     		if (!res.status) {
-         	     			window.open('/brand/collection', '_self');
-         	     		}else{
-         	     			alert(res.msg);
-         	     		}
-         	     	});
-         		} 
-         	};
-         	
-         	$scope.enableCollection = function(collectionId){
-         		if (confirm('确认要提交该Collection?')){
-         			Collection.enable({
-         				id: collectionId
-         			}).success(function(res){
-         	     		if (!res.status) {
-         	     			window.location.reload();
-         	     		}else{
-         	     			alert(res.msg);
-         	     		}
-         	     	});
-         		} 
-         	};
-         	
-         	$scope.closeCollection = function(collectionId){
-         		if (confirm('确认要下线该Collection?')){
-         			Collection.close({
-         				id: collectionId
-         			}).success(function(res){
-         	     		if (!res.status) {
-         	     			window.location.reload();
-         	     		}else{
-         	     			alert(res.msg);
-         	     		}
-         	     	});
-         		} 
-         	};*/
         }
     ]
 );
