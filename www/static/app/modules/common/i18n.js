@@ -81,6 +81,7 @@ angular.module(
             companyWebsite_PATTERN_ERROR: "请正确输入公司的网址，例如(http://www.example.com)",
 
             collection_name_EMPTY_ERROR: "请输入系列的名字",
+            collection_name_DUPLICATION_ERROR: "系列的名字已经存在",
             collection_category_EMPTY_ERROR: "请选择系列类型",
             collection_mode_EMPTY_ERROR: "请选择售卖模式",
             collection_season_EMPTY_ERROR: "请选择时尚季",
@@ -91,7 +92,6 @@ angular.module(
             collection_delivery_DATE_ERROR: "请正确输入发货日期",
             collection_description_EMPTY_ERROR: "请输入商品描述信息",
             collection_image_EMPTY_ERROR: "请上传系列的封面照片",
-            collection_image_DUPLICATION_ERROR: "系列的名字已经存在",
 
             /**
              * DROP DOWN LIST
@@ -442,6 +442,7 @@ angular.module(
             companyWebsite_PATTERN_ERROR: "please input valid url, eg: http://www.example.com",
 
             collection_name_EMPTY_ERROR: "please input collection name",
+            collection_name_DUPLICATION_ERROR: "collect name is duplicate",
             collection_category_EMPTY_ERROR: "please input collection category",
             collection_mode_EMPTY_ERROR: "please input collection mode",
             collection_season_EMPTY_ERROR: "please input collection season",
@@ -452,7 +453,6 @@ angular.module(
             collection_delivery_DATE_ERROR: "invalid delivery date",
             collection_description_EMPTY_ERROR: "please input collection description",
             collection_image_EMPTY_ERROR: "please upload collection photo",
-            collection_image_DUPLICATION_ERROR: "collect name is duplicate",
 
             /**
              * DROP DOWN LIST
