@@ -46,7 +46,7 @@ angular.module(
         		}
         		
         		login.success(function(res){
-           			if(res.status != 0){
+           			if(res.status){
            				$scope.refreshValidCode();
            				$scope.loginError = {
            		        	hasError: true,

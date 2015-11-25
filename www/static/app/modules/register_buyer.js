@@ -143,11 +143,11 @@ angular.module(
 			$scope.register = function() {
 				var register = User.register($scope.user);
 				register.success(function(res){
-        			if(res.status != 0){
-        				alert(res.msg);
-        				return;
+        			if(res.status){
+        				$scope.errorMsgs.push(['register error', res,msg]);
+        			}else{
+        				window.open('/buyer/dashboard', '_self');
         			}
-        			window.open('/buyer/dashboard', '_self');
         		});
 			};
 			

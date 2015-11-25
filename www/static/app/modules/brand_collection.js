@@ -41,8 +41,6 @@ angular.module(
      				}
      			}
      			$scope.collections = collections;
-     			console.log($scope.collections)
-
      		});
         }
     ]

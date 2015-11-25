@@ -183,11 +183,10 @@ angular.module(
      				Product.create(
      	     			$scope.product
      	     		).success(function(res){
-     	     			console.log(res)
-     	     			if (!res.status){
-     	     				window.history.back();
-     	     			}else{
+     	     			if (res.status){
      	     				$scope.errorMsgs.push(['create error', res.msg]);
+     	     			}else{
+     	     				window.history.back();
      	     			}
      	     		});
      			} 

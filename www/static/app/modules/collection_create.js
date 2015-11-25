@@ -65,10 +65,10 @@ angular.module(
      				Collection.create(
      	     			$scope.collection
      	     		).success(function(res){
-     	     			if (!res.status) {
-     	     				window.open('/brand/collection', '_self');
-     	     			}else{
+     	     			if (res.status) {
      	     				$scope.errorMsgs.push(['create error', res.msg]);
+     	     			}else{
+     	     				window.open('/brand/collection', '_self');
      	     			}
      	     		});
      			} 

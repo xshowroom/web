@@ -83,10 +83,10 @@ angular.module(
          			Collection.modify(
          	   			$scope.collection
          	    	).success(function(res){
-         	     		if (!res.status) {
-         	     			window.location.reload();
-         	     		}else{
+         	     		if (res.status) {
          	     			alert(res.msg);
+         	     		}else{
+         	     			window.location.reload();
          	     		}
          	     	});
          		} 
@@ -97,10 +97,10 @@ angular.module(
          			Collection.destroy({
          				id: collectionId
          			}).success(function(res){
-         	     		if (!res.status) {
-         	     			window.open('/brand/collection', '_self');
-         	     		}else{
+         	     		if (res.status) {
          	     			alert(res.msg);
+         	     		}else{
+         	     			window.open('/brand/collection', '_self');
          	     		}
          	     	});
          		} 
@@ -110,10 +110,10 @@ angular.module(
          			Collection.enable({
          				id: collectionId
          			}).success(function(res){
-         	     		if (!res.status) {
-         	     			window.location.reload();
-         	     		}else{
+         	     		if (res.status) {
          	     			alert(res.msg);
+         	     		}else{
+         	     			window.location.reload();
          	     		}
          	     	});
          		} 
@@ -123,10 +123,10 @@ angular.module(
          			Collection.close({
          				id: collectionId
          			}).success(function(res){
-         	     		if (!res.status) {
-         	     			window.location.reload();
-         	     		}else{
+         	     		if (res.status) {
          	     			alert(res.msg);
+         	     		}else{
+         	     			window.location.reload();
          	     		}
          	     	});
          		} 
@@ -136,26 +136,25 @@ angular.module(
          	Collection.getProductList({
          		collectionId: collectionId
      		}).success(function(res){
-     			if(!res.status){
-     				$scope.products = res.data;
-     				$scope.filters = {
-     					category: '',
-     					limit: 8
-     				};
-     				$scope.categoryCounter = {};
-     				for(var i = 0, len = $scope.products.length; i < len; i++){
-     					var category = $scope.products[i].category;
-         				if($scope.categoryCounter[category]){
-         					$scope.categoryCounter[category] += 1;
-         				}else{
-         					$scope.categoryCounter[category] = 1;
-         				}
-         				$scope.products[i].image_url = JSON.parse($scope.products[i].image_url);
-     				}
-     				
-     			}else{
+     			if(res.status){
      				alert(res.msg);
-     			};
+     				return;
+     			}
+     			$scope.products = res.data;
+ 				$scope.filters = {
+ 					category: '',
+ 					limit: 8
+ 				};
+ 				$scope.categoryCounter = {};
+ 				for(var i = 0, len = $scope.products.length; i < len; i++){
+ 					var category = $scope.products[i].category;
+     				if($scope.categoryCounter[category]){
+     					$scope.categoryCounter[category] += 1;
+     				}else{
+     					$scope.categoryCounter[category] = 1;
+     				}
+     				$scope.products[i].image_url = JSON.parse($scope.products[i].image_url);
+ 				}
      		});
      	}
     ]
