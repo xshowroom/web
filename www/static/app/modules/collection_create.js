@@ -15,8 +15,8 @@ angular.module(
 .controller(
     'CollectionCreateCtrl',
     [
-     	'$scope', 'Collection',
-        function ($scope, Collection) {
+     	'$scope', '$q', 'Collection',
+        function ($scope, $q, Collection) {
      		$scope.collection = {};
      		$scope.checkInfo = {
      			validation: {
@@ -35,12 +35,15 @@ angular.module(
  					'order': /^\d+$/,
  					'deadline': /\d{4}-\d{2}-\d{2}/,
  					'delivery': /\d{4}-\d{2}-\d{2}/
- 				}
+ 				},
+ 				duplication: ['name']
      		};
      		$scope.create = function(){
      			
    				$scope.errorMsgs = [];
-     					
+     			
+   				var promises = [];
+   				
    				for(var key in $scope.checkInfo.validation){
      				var value = $scope.collection[key];
      				if ((key == "deadline" || key == "delivery") && !value) {
@@ -58,20 +61,43 @@ angular.module(
      					$scope.checkInfo.validation[key] = true;
      					continue;
      				}
+     				
+     				if ($scope.checkInfo.duplication.indexOf(key) >= 0){
+    					promises.push(Collection.duplicationCheck({
+    						key: key,
+    						value: value
+    					}));
+    				}
      				$scope.checkInfo.validation[key] = false;
    				}
    				
-     			if (!$scope.errorMsgs.length){
-     				Collection.create(
-     	     			$scope.collection
-     	     		).success(function(res){
-     	     			if (res.status) {
-     	     				$scope.errorMsgs.push(['create error', res.msg]);
-     	     			}else{
-     	     				window.open('/brand/collection', '_self');
-     	     			}
-     	     		});
-     			} 
+				$q.all(promises).then(function(){
+					for(var i = 0; i < arguments[0].length; i++) {
+						var res = arguments[0][i];
+						var key;
+						for (param in res.config.params){
+							key = param;
+							break;
+						}
+						if (res.data.status) {
+							$scope.checkInfo.validation[key] = true;
+							$scope.errorMsgs.push([key, 'DUPLICATION_ERROR']);
+						}else{
+							$scope.checkInfo.validation[key] = false;
+						}
+					}
+					if (!$scope.errorMsgs.length){
+	     				Collection.create(
+	     	     			$scope.collection
+	     	     		).success(function(res){
+	     	     			if (res.status) {
+	     	     				$scope.errorMsgs.push(['create error', res.msg]);
+	     	     			}else{
+	     	     				window.open('/brand/collection', '_self');
+	     	     			}
+	     	     		});
+	     			} 
+				});
      		};
         }
     ]

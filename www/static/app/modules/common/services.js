@@ -81,6 +81,13 @@ angular.module(
 		      	},
 		      	getProductList: function(opts){
 		    		return $http.get('/api/product/list', {params: opts});
+		    	},
+		    	duplicationCheck: function (opts) {
+		    		if (opts.key == 'name'){
+		    			return $http.get('/api/collection/check', {
+		    				params: {name: opts.value}
+		    			});
+		    		}
 		    	}
    			};
          }
