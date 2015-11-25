@@ -27,16 +27,6 @@ class Kohana_Exception extends Kohana_Kohana_Exception
      */
     public static function _handler(Exception $e)
     {
-//         if ($e->getCode() > 1000)   // 业务异常
-//         {
-//             $errorMsg = $e->getMessage();
-//         }
-//         else
-//         {
-//             $errorInfo = Kohana::message('message','STATUS_ERROR');
-//             $errorMsg = $errorInfo['msg'];
-//         }
-        
         // 处理error code和error message
         $errorCode = 500;
         if ($e->getCode() === 404) {
@@ -53,13 +43,11 @@ class Kohana_Exception extends Kohana_Kohana_Exception
         }
         $errorMsg = HTML::entities($errorMsg);
         
-        $view = View::factory('collection_create');
-        $view->set('user', $this->opUser);
-        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view = View::factory('errors/error_404');
         $view->set('errorCode', $errorCode);
         $view->set('errorMsg', $errorMsg);
         
-        $this->response->body($view);
+        echo $view->render();
 
         exit(0);
     }
