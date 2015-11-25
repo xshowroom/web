@@ -18,6 +18,13 @@ return array_merge(
         'check_ok' => '参数验证成功',
     ),
     /**
+     * Inbox Message
+     */
+    array(
+        'AUTO_MSG_WELCOME_BRAND' => "欢迎来到XShowroom! 让我们一起开始我们的商业之旅! 您在使用过程中有任何问题，可以通过邮件告诉我们 info@projectcrossover.com",
+        'AUTO_MSG_WELCOME_BUYER' => "欢迎来到XShowroom! 让我们一起开始我们的商业之旅! 您在使用过程中有任何问题，可以通过邮件告诉我们 info@projectcrossover.com"
+    ),
+    /**
      * global_setting_with_login.php
      */
     array(
@@ -41,7 +48,7 @@ return array_merge(
      * global_navigation_top_brand.php
      */
     array(
-        'global_navigation_top_brand__DASHBOARD' => '仪表盘',
+        'global_navigation_top_brand__DASHBOARD' => '全情概览',
         'global_navigation_top_brand__COLLECTION' => '系列管理',
         'global_navigation_top_brand__ORDER' => '订单管理',
         'global_navigation_top_brand__MESSAGE' => '消息中心',
@@ -369,10 +376,49 @@ return array_merge(
         'collection_create__COLLECTION_CREATE' => '创建系列',
     ),
     /**
+     * collection_index.php
+     */
+    array(
+        'collection_index__EDIT' => '编辑',
+        'collection_index__HIDE' => '隐藏',
+        'collection_index__SHOW_ALL' => '全部显示',
+
+        'collection_index__btn_SUBMIT' => '提交',
+        'collection_index__btn_DELETE' => '删除',
+        'collection_index__btn_CLOSE' => '关闭',
+
+        'collection_index__COLLECTION_COVER' => '系列封面',
+        'collection_index__COLLECTION_NAME' => '系列名称',
+        'collection_index__COLLECTION_CATEGORY' => '系列类型',
+        'collection_index__COLLECTION_MODE' => '售卖模式',
+        'collection_index__COLLECTION_SEASON' => '时尚季',
+        'collection_index__COLLECTION_MINIMUM_ORDER' => '最小订单金额',
+        'collection_index__COLLECTION_CURRENCY' => '结算货币',
+        'collection_index__COLLECTION_DEADLINE' => '下单截至日期',
+        'collection_index__COLLECTION_DELIVERY_DATE' => '发货日期',
+        'collection_index__COLLECTION_DESCRIPTION' => '详细描述',
+
+        'collection_index__btn_CANCEL' => '取消',
+        'collection_index__btn_UPDATE' => '更改',
+
+        'collection_index__NO_PRODUCT_1' => '不是吧! 你还没有',
+        'collection_index__NO_PRODUCT_2' => '在系列中添加商品!',
+
+        'collection_index__CATEGORIES' => '分类',
+        'collection_index__ADD_PRODUCT' => '+ 添加新的商品',
+    ),
+    /**
      * brand_collection.php
      */
     array(
+        'brand_collection__STATUS' => '状态',
+        'brand_collection__ADD_COLLECTION' => '+ 添加系列',
 
+        'brand_collection__COLLECTION_STATUS' => '系列状态:',
+        'brand_collection__COLLECTION_LAST_MODIFY' => '最后修改:',
+        'brand_collection__COLLECTION_DESCRIPTION' => '详细信息:',
+
+        'brand_collection__btn_VIEW' => '查看',
     ),
     /**
      * brand_order.php

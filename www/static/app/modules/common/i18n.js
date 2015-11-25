@@ -80,7 +80,18 @@ angular.module(
             companyWebsite_EMPTY_ERROR: "请输入公司的网址",
             companyWebsite_PATTERN_ERROR: "请正确输入公司的网址，例如(http://www.example.com)",
 
-            
+            collection_name_EMPTY_ERROR: "请输入系列的名字",
+            collection_category_EMPTY_ERROR: "请选择系列类型",
+            collection_mode_EMPTY_ERROR: "请选择售卖模式",
+            collection_season_EMPTY_ERROR: "请选择时尚季",
+            collection_order_EMPTY_ERROR : "请输入最小订单金额",
+            collection_order_PATTERN_ERROR: "请正确输入最小订单金额",
+            collection_currency_EMPTY_ERROR : "请选择结算货币",
+            collection_deadline_DATE_ERROR : "请正确输入下单截止日期",
+            collection_delivery_DATE_ERROR  : "请正确输入发货日期",
+            collection_description_EMPTY_ERROR  : "请输入商品描述信息",
+            collection_image_EMPTY_ERROR  : "请上传系列的封面照片",
+
             /**
              * DROP DOWN LIST
              */
@@ -428,8 +439,19 @@ angular.module(
             companyTel_PATTERN_ERROR: "invalid telephone",
             companyWebsite_EMPTY_ERROR: "please input your company website",
             companyWebsite_PATTERN_ERROR: "please input valid url, eg: http://www.example.com",
-            
-            
+
+            collection_name_EMPTY_ERROR: "please input collection name",
+            collection_category_EMPTY_ERROR: "please input collection category",
+            collection_mode_EMPTY_ERROR: "please input collection mode",
+            collection_season_EMPTY_ERROR: "please input collection season",
+            collection_order_EMPTY_ERROR : "please input minimum order",
+            collection_order_PATTERN_ERROR: "invalid minimum order",
+            collection_currency_EMPTY_ERROR : "please select currency",
+            collection_deadline_DATE_ERROR : "invalid collection deadline date",
+            collection_delivery_DATE_ERROR  : "invalid delivery date",
+            collection_description_EMPTY_ERROR  : "please input collection description",
+            collection_image_EMPTY_ERROR  : "please upload collection photo",
+
             /**
              * DROP DOWN LIST
              */

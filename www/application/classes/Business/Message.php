@@ -5,6 +5,15 @@
  */
 class Business_Message
 {
+    /**
+     * define some messages
+     */
+    const AUTO_MSG_WELCOME_BRAND = 'AUTO_MSG_WELCOME_BRAND';
+    const AUTO_MSG_WELCOME_BUYER = 'AUTO_MSG_WELCOME_BUYER';
+    const AUTO_MSG_ORDER_GENERATE = 'AUTO_MSG_ORDER_GENERATE';
+    const AUTO_MSG_ORDER_STATUS_CHANGE = 'AUTO_MSG_ORDER_STATUS_CHANGE';
+
+    // Message Status
     const MSG_STATUS_DELETE = -1;
     const MSG_STATUS_UNREADY = 0;
     const MSG_STATUS_READ =  1;
