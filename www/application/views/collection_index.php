@@ -236,7 +236,7 @@
                  	<h3>{{ (filters.category == '' ? 'dropdown__PRODUCT_CATEGORY__ALL' : filters.category)  | translate}}</h3>
                  	<div class="collection-category-content">
                  		<div class="col-xs-3" ng-repeat="product in products | filter : filters.category | limitTo: filters.limit: 0">
-                 			<a  target="_blank" ng-href="/product/{{product.id}}" class="collection-product-detail">
+                 			<a  target="_self" ng-href="/product/{{product.id}}" class="collection-product-detail">
 								<img ng-src="/{{product.image_url[0]}}" class="product-image"/>
 								<span class="product-info">
 									<span class="product-name">{{product.name}}</span>

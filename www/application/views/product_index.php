@@ -35,7 +35,7 @@
         <div class="container product-info">
         	<div class="row">
     			<div class="col-xs-12">
-    				<a class="back-to-collection" href="/collection/<?=$production['collection_id']?>">
+    				<a class="back-to-collection" href="/collection/<?=$production['collection_id']?>" target="_self">
     					<span class="glyphicon glyphicon-arrow-left"></span>
     					<span>BACK TO COLLECTION</span>
     				</a>
