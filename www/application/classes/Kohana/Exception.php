@@ -43,7 +43,7 @@ class Kohana_Exception extends Kohana_Kohana_Exception
         }
         $errorMsg = HTML::entities($errorMsg);
         
-        $view = View::factory('errors/error_404');
+        $view = View::factory('errors/error_msg');
         $view->set('errorCode', $errorCode);
         $view->set('errorMsg', $errorMsg);
         
