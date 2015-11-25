@@ -21,7 +21,9 @@
 }
 .collection-create #description{
 	height: 150px;
-	resize: none;
+    resize: none;
+    padding: 10px;
+    text-indent: 0 !important;
 }
 .collection-create #cover-image{
 	width: 100%;

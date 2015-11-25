@@ -80,7 +80,10 @@
 }
 #care-instruction{
 	height: 150px;
-	resize: none;
+    resize: none;
+    padding: 10px;
+    text-indent: 0 !important;
+}
 }
 
 /* modal样式 */

@@ -17,6 +17,7 @@
     <script type="text/javascript" src="/static/bower_components/angular-cookies/angular-cookies.min.js"></script>
     <script type="text/javascript" src="/static/bower_components/angular-strap/dist/angular-strap.min.js"></script>
     <script type="text/javascript" src="/static/bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
+    <script type="text/javascript" src="/static/bower_components/ng-textcomplete/ng-textcomplete.min.js"></script>
     <script type="text/javascript" src="/static/app/modules/common/i18n.js"></script>
     <script type="text/javascript" src="/static/app/modules/common/services.js"></script>
     <script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
@@ -167,7 +168,9 @@
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.description}">
                             <label for="description" class="col-xs-2 control-label">Description</label>
                             <div class="col-xs-10">
-                                  <textarea class="form-control" id="description" ng-model="collection.description"></textarea>
+                            	<textcomplete>
+                                	<textarea class="form-control" id="description" ng-model="collection.description"></textarea>
+                                </textcomplete>
                             </div>
                           </div>
                         <div class="alert col-xs-offset-2" role="alert"  ng-if="errorMsgs.length">
