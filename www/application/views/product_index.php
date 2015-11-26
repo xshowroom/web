@@ -66,8 +66,16 @@
                  		<h2><?= $production['name']?></h2>
                  	</div>
                  	<div class="col-xs-12 product-detail">
-                 		<div>RETAIL PROCE</div>
-                 		<div><?= $collection['currency']?><?= $production['retail_price']?></div>
+                 		<div>CATEGORY</div>
+                 		<div>{{'<?= $production['category']?>'| translate}}</div>
+                 	</div>
+                 	<div class="col-xs-12 product-detail">
+                 		<div>RETAIL PRICE</div>
+                 		<div><?= $collection['currency']?>{{<?= $production['retail_price']?> | number: 2}}</div>
+                 	</div>
+                 	<div class="col-xs-12 product-detail">
+                 		<div>WHOLE PRICE</div>
+                 		<div><?= $collection['currency']?>{{<?= $production['whole_price']?> | number:2}}</div>
                  	</div>
                  	<div class="col-xs-12 product-detail">
                  		<div>SIZE | <?= $production['size_region']?></div>
@@ -106,10 +114,8 @@
                  	</div>
                  	<div class="col-xs-11 product-detail">
                  		<div>CARE INSTRUCTION:</div>
-                 		<div class="row" ng-class="{'show-all': showAllDesc}">
-	                 		<p class="col-xs-10">
-	                 			<?= $production['care_instruction']?>
-	                 		</p>
+                 		<div>
+	                 		<span class="product-care-instruction"><?= ($production['care_instruction'])?></span>
                  		</div>
                  	</div>
                 </div>
