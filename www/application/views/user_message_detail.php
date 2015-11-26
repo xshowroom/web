@@ -29,7 +29,7 @@
 	</nav>
 	<?php } else if ($user["role_type"] == "2"){ ?>
 	<nav class="row user-navigation">
-        <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'message')); ?>
+        <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'message', 'userAttr'=> $userAttr))); ?>
 	</nav>
 	<?php }?>
 	

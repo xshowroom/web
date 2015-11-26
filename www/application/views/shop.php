@@ -28,7 +28,6 @@
 		<?php echo View::factory('common/global_setting_without_login', array('userAttr'=> $userAttr, 'user'=> $user)); ?>
 	</nav>
 	<?php }?>
-	<?php var_dump($user)?>
 	<?php if (empty($user) || $user["role_type"] != "2"){?>
 	<nav class="row guest-navigation">
         <?php echo View::factory('common/global_navigation_top_guest', array('currentPage' =>  'shop')); ?>
