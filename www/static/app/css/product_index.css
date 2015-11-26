@@ -61,14 +61,8 @@
 	color: #878787;
 	margin-right: 0.5em;
 }
-.product-info .product-detail p{
-	overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    float: left;
-    max-width: 80%;
-    display: inline-block;
-    width: auto;
+.product-info .product-detail .product-care-instruction{
+	white-space: pre-line;
 }
 .product-info .product-detail .size-code{
 	margin-right: 15px;

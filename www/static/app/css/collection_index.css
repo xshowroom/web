@@ -66,8 +66,10 @@
 }
 .collection-info .collection-detail .show-all p{
     max-height: none;
-    white-space: inherit;
-    display: inline;
+}
+.collection-info .collection-detail .show-all p > span{
+    white-space: pre-line;
+    color: #25272c;
 }
 .collection-info .collection-action{
 	margin-top: 30px;
