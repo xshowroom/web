@@ -29,7 +29,7 @@
     <nav class="row setting-info">
         <?php echo View::factory('common/global_setting_without_login'); ?>
     </nav>
-    <nav class="row brand-navigation">
+    <nav class="row user-navigation">
         <?php echo View::factory('common/global_navigation_top_brand',
             array('currentPage' =>  'product', 'userAttr'=> $userAttr)); 
            ?>

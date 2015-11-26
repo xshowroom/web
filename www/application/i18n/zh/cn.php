@@ -45,15 +45,16 @@ return array_merge(
         'global_navigation_top_guest__CONTACT' => '联系',
     ),
     /**
-     * global_navigation_top_brand.php
+     * global_navigation_top_brand.php & global_navigation_top_buyer.php
      */
     array(
-        'global_navigation_top_brand__DASHBOARD' => '全情概览',
-        'global_navigation_top_brand__COLLECTION' => '系列管理',
-        'global_navigation_top_brand__ORDER' => '订单管理',
-        'global_navigation_top_brand__MESSAGE' => '消息中心',
-        'global_navigation_top_brand__PROFILE' => '个人中心',
-        'global_navigation_top_brand__SIGN_OUT' => '退出登录',
+        'global_navigation_top_user__DASHBOARD' => '全情概览',
+        'global_navigation_top_user__COLLECTION' => '系列管理',
+        'global_navigation_top_user__ORDER' => '订单管理',
+    	'global_navigation_top_user__SHOP' => '货物集市',
+        'global_navigation_top_user__MESSAGE' => '消息中心',
+        'global_navigation_top_user__PROFILE' => '个人中心',
+        'global_navigation_top_user__SIGN_OUT' => '退出登录',
     ),
     /**
      * global_navigation_user_center.php

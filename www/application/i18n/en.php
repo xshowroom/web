@@ -45,15 +45,16 @@ return array_merge(
         'global_navigation_top_guest__CONTACT' => 'CONTACT',
     ),
     /**
-     * global_navigation_top_brand.php
+     * global_navigation_top_brand.php & global_navigation_top_buyer.php
      */
     array(
-        'global_navigation_top_brand__DASHBOARD' => 'DASHBOARD',
-        'global_navigation_top_brand__COLLECTION' => 'COLLECTION',
-        'global_navigation_top_brand__ORDER' => 'ORDER',
-        'global_navigation_top_brand__MESSAGE' => 'MESSAGE',
-        'global_navigation_top_brand__PROFILE' => 'MY PROFILE',
-        'global_navigation_top_brand__SIGN_OUT' => 'SIGN OUT',
+        'global_navigation_top_user__DASHBOARD' => 'DASHBOARD',
+        'global_navigation_top_user__COLLECTION' => 'COLLECTION',
+        'global_navigation_top_user__ORDER' => 'ORDER',
+    	'global_navigation_top_user__SHOP' => 'SHOP',
+        'global_navigation_top_user__MESSAGE' => 'MESSAGE',
+        'global_navigation_top_user__PROFILE' => 'MY PROFILE',
+        'global_navigation_top_user__SIGN_OUT' => 'SIGN OUT',
     ),
     /**
      * global_navigation_user_center.php

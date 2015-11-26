@@ -472,56 +472,56 @@ to {-o-transform: translateY(-100%);}
 	margin-top: 40px;
 }
 /* brand 通用样式 */
-.brand-navigation{
+.user-navigation{
 	padding-top: 60px;
 	padding-bottom: 30px;
 	background-color: #fafafa;
 }
-.brand-navigation .main-naviagtions{
+.user-navigation .main-naviagtions{
 	list-style: none;
     margin: 55px 0 0 0;
     padding: 0;
 }
-.brand-navigation .main-naviagtions > li{
+.user-navigation .main-naviagtions > li{
 	display: inline-block;
 	margin-right: 3em;
 }
-.brand-navigation .main-naviagtions > li > a{
+.user-navigation .main-naviagtions > li > a{
 	color: #25272c;
 	font-size: 14px;
     font-weight: 200;
 }
-.brand-navigation .main-naviagtions > li > a:hover,
-.brand-navigation .main-naviagtions > li > a.active{
+.user-navigation .main-naviagtions > li > a:hover,
+.user-navigation .main-naviagtions > li > a.active{
 	color: #25272c !important;
 }
-.brand-navigation .main-naviagtions > li > a:before{
+.user-navigation .main-naviagtions > li > a:before{
 	background-color: #25272c;
 }
-.brand-navigation .user-actions{
+.user-navigation .user-actions{
 	margin-top: 49px;
 }
 
-.brand-navigation .user-actions  a,
-.brand-navigation .user-actions  a:hover{
+.user-navigation .user-actions  a,
+.user-navigation .user-actions  a:hover{
 	color: #25272c !important;
 	cursor: pointer;
 }
-.brand-navigation .user-actions  a:before{
+.user-navigation .user-actions  a:before{
 	content: none;
 }
-.brand-navigation .user-actions  a > span{
+.user-navigation .user-actions  a > span{
 	margin-left: 10px;
 	display: inline-block;
 }
-.brand-navigation .user-actions  a > img{
+.user-navigation .user-actions  a > img{
 	vertical-align: bottom;
 }
-.brand-navigation .user-actions .dropdown-menu{
+.user-navigation .user-actions .dropdown-menu{
 	right: 0;
 	margin-top: 10px;
 }
-.brand-navigation .user-actions .dropdown-menu li{
+.user-navigation .user-actions .dropdown-menu li{
 	text-align: right;
 }
 .brand-banner{
