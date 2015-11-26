@@ -22,9 +22,15 @@
 	<nav class="row setting-info">
 		<?php echo View::factory('common/global_setting_without_login'); ?>
 	</nav>
+	<?php if ($user["role_type"] == "1"){?>
 	<nav class="row user-navigation">
-        <?php echo View::factory('common/global_navigation_top_brand', array('currentPage' => '', 'userAttr'=> $userAttr)); ?>
+        <?php echo View::factory('common/global_navigation_top_brand', array('currentPage' =>  'message', 'userAttr'=> $userAttr)); ?>
 	</nav>
+	<?php } else if ($user["role_type"] == "2"){ ?>
+	<nav class="row user-navigation">
+        <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'message')); ?>
+	</nav>
+	<?php }?>
 	<section class="row profile">
         <div class="container">
             <!-- left nav -->

@@ -11,7 +11,7 @@ class Controller_Buyer extends Controller_BaseReqLogin
     {
         parent::before();
 
-        $this->checkBrandUser();
+        $this->checkBuyerUser();
 
         $this->userService = new Business_User();
 //         $this->brandService = new Business_Brand();

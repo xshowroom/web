@@ -15,7 +15,7 @@
 				<?php } else{ ?>
 				<div class="user-logined">
 					<span><?= __("global_setting_with_login__WELCOME")?> </span>
-					<a href="/<?= ['admin', 'brand', 'buyer'][$user['role_type']]?>/dashboard"><?= $userAttr['display_name'] ?></a>
+					<a href="/<?= ['', 'brand', 'buyer'][$user['role_type']]?>/dashboard"><?= $userAttr['display_name'] ?></a>
 					<span> | </span>
 					<a href="/user/logout" target="_self"><?= __("global_setting_with_login__LOGOUT")?></a>
 				</div>

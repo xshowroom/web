@@ -19,9 +19,15 @@
 	<script type="text/javascript" src="/static/app/modules/shop.js"></script>
 </head>
 <body ng-controller="ShopCtrl" class="container-fluid">
+	<?php if (empty($user)){?>
 	<nav class="row setting-info">
 		<?php echo View::factory('common/global_setting_with_login', array('userAttr'=> $userAttr, 'user'=> $user)); ?>
 	</nav>
+	<?php } else { ?>
+	<nav class="row setting-info">
+		<?php echo View::factory('common/global_setting_without_login', array('userAttr'=> $userAttr, 'user'=> $user)); ?>
+	</nav>
+	<?php }?>
 	<?php var_dump($user)?>
 	<?php if (empty($user) || $user["role_type"] != "2"){?>
 	<nav class="row guest-navigation">
@@ -29,7 +35,7 @@
 	</nav>
 	<?php } else if ($user["role_type"] == "2"){ ?>
 	<nav class="row user-navigation">
-        <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'shop')); ?>
+        <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); ?>
 	</nav>
 	<?php }?>
 	<section class="row">

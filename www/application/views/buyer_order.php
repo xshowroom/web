@@ -22,7 +22,7 @@
 		<?php echo View::factory('common/global_setting_without_login'); ?>
 	</nav>
 	<nav class="row user-navigation">
-        <?php echo View::factory('common/global_navigation_top_brand',
+        <?php echo View::factory('common/global_navigation_top_buyer',
         	array('currentPage' =>  'order', 'userAttr'=> $userAttr)); 
        	?>
 	</nav>
