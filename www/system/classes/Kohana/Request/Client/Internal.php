@@ -104,14 +104,21 @@ class Kohana_Request_Client_Internal extends Request_Client {
 		}
 		catch (HTTP_Exception $e)
 		{
-			// Store the request context in the Exception
-			if ($e->request() === NULL)
+		    if (Kohana::$environment === Kohana::PRODUCTION)
 			{
-				$e->request($request);
+				$response = Kohana_Exception::_handler($e);
 			}
+			else
+			{
+				// Store the request context in the Exception
+				if ($e->request() === NULL)
+				{
+					$e->request($request);
+				}
 
-			// Get the response via the Exception
-			$response = $e->get_response();
+				// Get the response via the Exception
+				$response = $e->get_response();
+			}
 		}
 		catch (Exception $e)
 		{

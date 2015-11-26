@@ -2,7 +2,6 @@
 /**
  * 自定义异常
  * 
- * @libin17
  */
 class Kohana_Exception extends Kohana_Kohana_Exception
 {
