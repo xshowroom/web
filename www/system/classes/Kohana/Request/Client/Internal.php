@@ -104,10 +104,10 @@ class Kohana_Request_Client_Internal extends Request_Client {
 		}
 		catch (HTTP_Exception $e)
 		{
-		    if (Kohana::$environment === Kohana::PRODUCTION)
-			{
-				$response = Kohana_Exception::_handler($e);
-			}
+		    if ($e->getCode() == '404')
+		    {
+		        $response = Kohana_Exception::_handler($e);
+		    }
 			else
 			{
 				// Store the request context in the Exception
