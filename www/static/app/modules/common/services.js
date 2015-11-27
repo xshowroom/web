@@ -355,7 +355,10 @@ angular.module(
 		    	},
 		    	getMaterials: function(){
 		    		return materials;
-		    	}
+		    	},
+		    	destroy: function (opts) {
+		      		return $http.get('/api/product/delete', {params: opts});
+		      	},
 			};
 		}
 	]

@@ -118,6 +118,9 @@
 	                 		<span class="product-care-instruction"><?= ($production['care_instruction'])?></span>
                  		</div>
                  	</div>
+                 	<div class="col-xs-12 product-action">
+                 		<button class="btn btn-type-2" ng-click="deleteProduct(<?=$production['id']?>, <?=$collection['id']?>);">DELETE</button>
+                 	</div>
                 </div>
             </div>
         </div>
