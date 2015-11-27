@@ -1,5 +1,11 @@
+@font-face
+{
+	font-family: MontserratRegular;
+	src: url(/static/app/fonts/Montserrat-Regular.woff);
+}
+
 body {
-	font-family: Helvetica, 'Microsoft Yahei', sans-serif;
+	font-family: MontserratRegular, Helvetica, "Microsoft Yahei", sans-serif !important;
 	color: #25272c;
 }
 
