@@ -12,6 +12,8 @@ class Controller_Home extends Controller_Base
             $view->set('user', $opUser);
             $userService = new Business_User();
             $view->set('userAttr', $userService->getUserAttr($opUser['id']));
+
+            self::redirect('/user');
         }
         $this->response->body($view);
     }

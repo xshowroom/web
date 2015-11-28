@@ -5,7 +5,7 @@ class Controller_User extends Controller_BaseReqLogin
 {
     public function action_index()
     {
-        $this->action_profile();
+        $this->action_login();
     }
 
     public function action_login()
