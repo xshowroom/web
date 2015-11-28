@@ -123,7 +123,7 @@
                  		</div>
                  	</div>
                  	<div class="col-xs-12 product-action">
-                 		<button class="btn btn-type-2" ng-click="deleteProduct(<?=$production['id']?>, <?=$collection['id']?>);"><?=__("product_index__PRODUCT_btn_DELETE")?></button>
+                 		<button class="btn btn-type-2" data-toggle="modal" data-target="#modalDeleteConfirm"><?=__("product_index__PRODUCT_btn_DELETE")?></button>
                  	</div>
                 </div>
             </div>
@@ -132,5 +132,24 @@
     <footer class="row footer-navigation">
         <?php echo View::factory('common/global_navigation_footer'); ?>
     </footer>
+
+    <!-- delete confirm -->
+    <div class="modal fade" id="modalDeleteConfirm" tabindex="-1" role="dialog">
+	    <div class="modal-dialog  modal-xs">
+		    <div class="modal-content">
+			    <div class="modal-header">
+				    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				    <h4 class="modal-title"><?=__("product_index__modal__DELETE_CONFIRM")?></h4>
+			    </div>
+			    <div class="modal-body">
+				    <p><?=__("product_index__modal__DELETE_DETAIL")?></p>
+			    </div>
+			    <div class="modal-footer">
+				    <button type="button" class="btn  btn-type-1" data-dismiss="modal"><?=__("product_index__modal__DELETE_btn_CANCEL")?></button>
+				    <button type="button" class="btn btn-type-2" ng-click="deleteProduct(<?=$production['id']?>, <?=$collection['id']?>);"><?=__("product_index__modal__DELETE_btn_DELETE")?></button>
+			    </div>
+		    </div><!-- /.modal-content -->
+	    </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 </body>
 </html>

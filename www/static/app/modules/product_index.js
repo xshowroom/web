@@ -21,19 +21,16 @@ angular.module(
         	};
         	
         	$scope.deleteProduct = function(productId, collectionId){
-        		if (confirm('确认要删除该Product?')){
-         			Product.destroy({
-         				id: productId
-         			}).success(function(res){
-         	     		if (res.status) {
-         	     			alert(res.msg);
-         	     		}else{
-         	     			window.open('/collection/' + collectionId, '_self');
-         	     		}
-         	     	});
-         		} 
+				Product.destroy({
+					id: productId
+				}).success(function(res){
+					if (res.status) {
+						alert(res.msg);
+					}else{
+						window.open('/collection/' + collectionId, '_self');
+					}
+				});
         	}
-        	
         }
     ]
 );
