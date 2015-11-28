@@ -77,7 +77,7 @@
             				</div>
             			</div>
             			<div class="product-gallery" ng-init="collection.offset = 0;" ng-if="collection.productions.length">
-            				<div class="product-gallery-action" ng-class="{'disabled': collection.offset == 0}">
+            				<div class="product-gallery-action" ng-if="collection.productions.length > 5" ng-class="{'disabled': collection.offset == 0}" >
             					<span class="glyphicon glyphicon-chevron-left" ng-click="collection.offset = collection.offset - (collection.offset > 0 ? 1 : 0)"></span>
             				</div>
             				<div class="product-list-preview">
@@ -85,7 +85,8 @@
             						<img ng-src="/{{product.image_url[0]}}">
             					</a>
             				</div>
-            				<div class="product-gallery-action" ng-class="{'disabled': collection.offset == collection.productions.length - 5 || collection.productions.length <= 5}">
+            				<div class="product-gallery-action" ng-if="collection.productions.length > 5" 
+            					ng-class="{'disabled': collection.offset == collection.productions.length - 5 || collection.productions.length <= 5}">
             					<span class="glyphicon glyphicon-chevron-right" ng-click="collection.offset = collection.offset + ((collection.offset < collection.productions.length - 5) ? 1 : 0);"></span>
             				</div>
             			</div>

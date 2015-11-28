@@ -5,7 +5,7 @@
 }
 
 body {
-	font-family: MontserratRegular, Helvetica, "Microsoft Yahei", sans-serif !important;
+	font-family: MontserratRegular, "Microsoft Yahei", Helvetica, sans-serif !important;
 	color: #25272c;
 }
 
@@ -29,6 +29,7 @@ section.row.no-vertical-padding{
 }
 label{
 	font-size: 12px;
+	white-space: nowrap;
 	/* line-height: 40px !important; */
 }
 .form-control{
@@ -404,6 +405,7 @@ a.active:before{
 	cursor: pointer;
 	background-color: rgba(0,0,0,0.5);
 	margin: 0;
+	white-space: normal;
 }
 .image-uploader label > span{
 	font-size: 14px;
@@ -497,13 +499,13 @@ to {-o-transform: translateY(-100%);}
 	font-size: 14px;
     font-weight: 200;
 }
-.user-navigation .main-naviagtions > li > a:hover,
+/* .user-navigation .main-naviagtions > li > a:hover,
 .user-navigation .main-naviagtions > li > a.active{
 	color: #25272c !important;
-}
-.user-navigation .main-naviagtions > li > a:before{
+} */
+/* .user-navigation .main-naviagtions > li > a:before{
 	background-color: #25272c;
-}
+} */
 .user-navigation .user-actions{
 	margin-top: 49px;
 }
@@ -524,8 +526,9 @@ to {-o-transform: translateY(-100%);}
 	vertical-align: bottom;
 }
 .user-navigation .user-actions .dropdown-menu{
-	right: 0;
-	margin-top: 10px;
+	right: -5px;
+    margin-top: 10px;
+    left: auto;
 }
 .user-navigation .user-actions .dropdown-menu li{
 	text-align: right;

@@ -5,7 +5,7 @@
 				<img class="site-logo" ng-src="/static/app/images/logo-black.png">
 			</a>
 		</div>
-		<div class="col-xs-8">
+		<div class="col-xs-7">
 			<ul class="main-naviagtions">
 				<li><a href="<?=URL::site('brand/dashboard');?>" <?php if ($currentPage == 'dashboard'){?>class="active"<?php }?>><?=__("global_navigation_top_user__DASHBOARD");?></a></li>
 				<li><a href="<?=URL::site('brand/collection');?>" <?php if ($currentPage == 'collection'){?>class="active"<?php }?>><?=__("global_navigation_top_user__COLLECTION");?></a></li>
@@ -13,7 +13,7 @@
 				<li><a href="<?=URL::site('message/list');?>"  <?php if ($currentPage == 'message'){?>class="active"<?php }?>><?=__("global_navigation_top_user__MESSAGE");?></a></li>
 			</ul>
 		</div>
-		<div class="col-xs-2 text-right">
+		<div class="col-xs-3 text-right">
 			<div class="dropdown user-actions">
 				<a type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<img ng-src="/static/app/images/user-action.png">

@@ -185,7 +185,7 @@
 							  	<input type="checkbox" ng-model="currentColors.standard[name]" ng-true-value="'{{color}}'" ng-false-value="false">
 							  	<span class="glyphicon glyphicon-ok"></span>
 							</label>
-							<span class="color-name">{{name}}</span>
+							<div class="color-name">{{name}}</div>
 						</div>
 						<div class="clearfix"></div>
 	      			</div>

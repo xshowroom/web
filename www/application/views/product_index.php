@@ -48,7 +48,8 @@
                  		<img ng-src="/{{productCover || '<?=$images[0]?>'}}">
                  	</div>
                  	<div class="product-gallery" ng-init="images = {offset: 0, urls: <?= strtr($production['image_url'], array('"'=>'\''))?>};">
-	            		<div class="product-gallery-action" ng-class="{'disabled': images.offset == 0}">
+	            		<div class="product-gallery-action" ng-if="images.urls.length > 3" 
+	            			ng-class="{'disabled': images.offset == 0}" >
 	            			<span class="glyphicon glyphicon-chevron-left" ng-click="images.offset = images.offset - (images.offset > 0 ? 1 : 0)"></span>
 	            		</div>
 	            		<div class="product-list-preview">
@@ -56,7 +57,8 @@
 	            				<img ng-src="/{{url}}">
 	            			</a>
 	            		</div>
-	            		<div class="product-gallery-action" ng-class="{'disabled': images.offset == images.urls.length - 3 || images.urls.length <= 3}">
+	            		<div class="product-gallery-action" ng-if="images.urls.length > 3" 
+	            			ng-class="{'disabled': images.offset == images.urls.length - 3 || images.urls.length <= 3}">
 	            			<span class="glyphicon glyphicon-chevron-right" ng-click="images.offset = images.offset + ((images.offset < images.urls.length - 3) ? 1 : 0);"></span>
 	            		</div>
 	            	</div>
