@@ -408,7 +408,12 @@ return array_merge(
 
         'collection_index__CATEGORIES' => '分类',
         'collection_index__ADD_PRODUCT' => '+ 添加新的商品',
-        'collection_index__btn_LOAD_MORE' => '加载更多'
+        'collection_index__btn_LOAD_MORE' => '加载更多',
+
+        'collection_index__modal__SUBMIT_CONFIRM' => '确认提交?',
+        'collection_index__modal__SUBMIT_DETAIL' => '你确认要提交这个商品系列吗? (一旦提交就无法对该系列再修改)',
+        'collection_index__modal__btn_CLOSE' => '关闭',
+        'collection_index__modal__btn_SUBMIT' => '提交'
     ),
     /**
      * product_create.php

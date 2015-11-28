@@ -76,7 +76,7 @@
                  	</div>
                  	<div class="col-xs-12 collection-action">
                  		<?php if($collection['status'] == 0) {?>
-                 		<button class="btn btn-type-2" ng-click="enableCollection();" ng-if="products.length"><?=__("collection_index__btn_SUBMIT")?></button>
+                 		<button class="btn btn-type-2" data-toggle="modal" data-target="#modalConfirm" ng-if="products.length"><?=__("collection_index__btn_SUBMIT")?></button>
                  		<button class="btn btn-type-1" ng-click="deleteCollection();"><?=__("collection_index__btn_DELETE")?></button>
                  		<?php }?>
                  		<?php if($collection['status'] == 1) {?>
@@ -263,14 +263,14 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title"><?=__("collection__modal__SUBMIT_CONFIRM")?></h4>
+                    <h4 class="modal-title"><?=__("collection_index__modal__SUBMIT_CONFIRM")?></h4>
                 </div>
                 <div class="modal-body">
-                    <p><?=__("collection__modal__SUBMIT_DETAIL")?></p>
+                    <p><?=__("collection_index__modal__SUBMIT_DETAIL")?></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn  btn-type-1" data-dismiss="modal"><?=__("collection__modal__btn_CLOSE")?></button>
-                    <button type="button" class="btn btn-type-2" ng-click="deleteMessage();"><?=__("collection__modal__btn_SUBMIT")?></button>
+                    <button type="button" class="btn  btn-type-1" data-dismiss="modal"><?=__("collection_index__modal__btn_CLOSE")?></button>
+                    <button type="button" class="btn btn-type-2" ng-click="enableCollection();"><?=__("collection_index__modal__btn_SUBMIT")?></button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
