@@ -65,6 +65,10 @@ class Business_Message
             return null;
         }
 
+        if ((int)$message["status"] === $this::MSG_STATUS_DELETE ) {
+            return null;
+        }
+        
         if((int)$message["status"] === $this::MSG_STATUS_UNREADY ) {
             // set message to READ after user get it
             $this->messageModel->changeMessageStatus($userId, $messageId, Model_Message::MSG_STATUS_READ);
