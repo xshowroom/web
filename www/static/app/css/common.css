@@ -6,7 +6,7 @@
 
 body {
 	font-family: MontserratRegular, "Microsoft Yahei", Helvetica, sans-serif !important;
-	color: #25272c;
+	color: #666;
 }
 
 /* 默认bootstrap样式覆盖 */
@@ -278,7 +278,7 @@ a.active:before{
 }
 .guest-navigation .main-naviagtions > li > a{
 	color: #000;
-	font-size: 14px;
+	font-size: 12px;
     font-weight: 200;
 }
 /* 页尾导航 */
@@ -377,13 +377,10 @@ a.active:before{
 }
 /* image uploader样式 */
 .image-uploader{
-	background-color: #ccc;
-    border-radius: 2px;
-    background-image: url("/static/app/images/image-uploader-bg.png");
-    background-repeat: no-repeat;
-    background-position: center 20%;
-    background-position-x: center;
-    background-position-y: 20%;
+	border-radius: 2px;
+	background: #eee url("/static/app/images/image-uploader-bg.png") no-repeat center 40%;
+	background-position-x: center;
+    background-position-y: 40%;
     color: #fff;
     position: relative;
 }
@@ -414,18 +411,18 @@ a.active:before{
 	bottom: 0;
 	position: absolute;
 	cursor: pointer;
-	background-color: rgba(0,0,0,0.3);
+	background-color: rgba(30,30,30,0.1);
 	margin: 0;
 	white-space: normal;
 }
 .image-uploader label > span{
-	font-size: 14px;
+	font-size: 11px;
     width: 100%;
     text-align: center;
     display: inline-block;
 }
 .image-uploader label > span:first-child{
-	margin-top: 65%;
+	margin-top: 70%;
 }
 /* uploading 遮罩 */
 .uploading-mask {
@@ -555,7 +552,7 @@ to {-o-transform: translateX(0);}
 }
 /* brand 通用样式 */
 .user-navigation{
-	padding-top: 60px;
+	padding-top: 40px;
 	padding-bottom: 30px;
 	background-color: #fafafa;
 }
@@ -570,7 +567,7 @@ to {-o-transform: translateX(0);}
 }
 .user-navigation .main-naviagtions > li > a{
 	color: #25272c;
-	font-size: 14px;
+	font-size: 12px;
     font-weight: 200;
 }
 /* .user-navigation .main-naviagtions > li > a:hover,
@@ -634,10 +631,9 @@ to {-o-transform: translateX(0);}
 }
 .brand-banner .brand-info .brand-detail > span{
     line-height: 20px;
-    font-size: 14px;
+    font-size: 12px;
     display:inline-block;
     min-width: 100px;
 }
 .brand-banner .brand-info .brand-detail > span + span{
-   	font-weight: bold;
 }
