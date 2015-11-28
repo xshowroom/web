@@ -5,13 +5,12 @@
 }
 .product-inputs h3{
 	font-size: 16px;
-	font-weight: bold;
-	padding: 15px 0.5em;
-	border-bottom: 1px solid #25272c;
+	padding: 10px 0.5em;
+	border-bottom: 1px solid #999;
 	margin: 15px 0;
 }
 .product-inputs h3 span{
-	color: #878787;
+	color: #ccc;
 	margin-left: 15px;
 }
 .product-inputs .product-image{
@@ -23,6 +22,7 @@
 	position: relative;
 	text-align: center;
 }
+
 .product-inputs .product-image.product-image-uploaded > a{
 	display: none;
 	position: absolute;
@@ -58,10 +58,10 @@
 }
 .product-inputs .empty-product-image label{
 	background-color: transparent;
-	color: #878787;
+	color: #ccc;
 }
 .product-inputs .empty-product-image.image-uploader label > span:first-child{
-	margin-top: 120px;
+	margin-top: 150px;
 }
 .product-inputs .size-codes{
 	line-height: 40px;
@@ -78,6 +78,11 @@
 #product-create-form .form-control{
 	text-align: left;
 }
+
+#product-create-form .control-label {
+	font-weight: 400;
+}
+
 #care-instruction{
 	height: 150px;
     resize: none;
@@ -122,8 +127,8 @@
 	margin-right: 0;
 }
 #color-modal .modal-body .standard-colors .color-item .checkbox-inline{
-	width: 30px;
-	height: 30px;
+	width: 40px;
+	height: 40px;
 	margin: 0;
 	padding: 0;
 	border-radius: 4px;
@@ -152,7 +157,7 @@
 	display: inline;
 }
 #color-modal .modal-body .standard-colors .color-item .color-name{
-	font-size: 12px;
+	font-size: 10px;
 	color: #ccc;
 }
 #color-modal .modal-body .standard-colors .color-item.active .color-name{
@@ -164,6 +169,11 @@
 	width: 100%;
 	margin: 10px 0;
 }
+
+#color-modal .modal-body .customized-colors .color-item input{
+	margin-left: 5px;
+}
+
 #color-modal .modal-body .customized-colors .color-item .checkbox-inline{
 	width: 15%;
 	height: 45px;
@@ -214,13 +224,20 @@
 
 #color-modal .modal-body .color-actions .btn{
 	background-color: #f1f1f1;
-	color: #878787;
+	color: #999;
 	width: 100%;
 	outline: none;
+	height: 40px;
+	line-height: 26px;
 }
 #color-modal .modal-body .color-actions .btn i{
 	margin-right: 5px;
 }
+
+#color-modal .modal-body .color-actions .btn span {
+	font-size: 11px;
+}
+
 #color-modal .modal-body .color-actions .btn input{
 	visibility: hidden;
 	width: 0;

@@ -421,9 +421,11 @@ a.active:before{
     text-align: center;
     display: inline-block;
 }
+
 .image-uploader label > span:first-child{
-	margin-top: 70%;
+	margin-top: 75%;
 }
+
 /* uploading 遮罩 */
 .uploading-mask {
     position: absolute;
