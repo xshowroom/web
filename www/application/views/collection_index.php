@@ -66,7 +66,7 @@
                  		<div><?=__("collection_index__COLLECTION_DESCRIPTION")?>:</div>
                  		<div class="row" ng-class="{'show-all': showAllDesc}">
 	                 		<p class="col-xs-10">
-	                 			<span>{{showAllDesc ? "<?= $collection['description']?>" : "<?= $collection['description']?>".split("\n")[0]}}</span> 
+	                 			<span><?= $collection['description']?></span>
 	                 		</p>
 	                 		<div class="col-xs-2">
 	                 			<a href="#" ng-show="showAllDesc"  ng-click="showAllDesc = !showAllDesc;"><?=__("collection_index__HIDE")?></a>
