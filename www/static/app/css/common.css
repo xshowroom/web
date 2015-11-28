@@ -508,7 +508,7 @@ to {-o-transform: translateX(0);}
     height: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    z-index: 999;
+    z-index: 9;
     position: absolute;
     left: 0;
     top: 0;
