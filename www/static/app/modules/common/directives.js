@@ -268,7 +268,7 @@ angular.module(
             	      	'<div class="uploading-content">',
             	       		'<span class="glyphicon glyphicon-arrow-up"></span>',
             	      	    '<span>' + $filter('translate')("directives_js__UPLOADING") + '</span>',
-            	       	    '<span class="glyphicon glyphicon-arrow-up"></span>',
+//            	       	    '<span class="glyphicon glyphicon-arrow-up"></span>',
             	       '</div>',
             	    '</div>'
             	].join('');

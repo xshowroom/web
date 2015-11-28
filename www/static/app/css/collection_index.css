@@ -49,8 +49,8 @@
     top: -2px;
 }
 
-.collection-info .collection-detail span:first-child,
-.collection-info .collection-detail div:first-child{
+.collection-info .collection-detail > span:first-child,
+.collection-info .collection-detail > div:first-child{
 	color: #878787;
 	margin-right: 0.5em;
 }
