@@ -409,6 +409,33 @@ return array_merge(
         'collection_index__ADD_PRODUCT' => '+ ADD NEW PRODUCT',
     ),
     /**
+     * product_create.php
+     */
+    array(
+        'product_create__PRODUCT_IMAGES' => 'PRODUCT IMAGES',
+        'product_create__PRODUCT_IMAGES_REQ' => 'You can upload 5 images(jpg, png, gif) for each product.',
+        'product_create__PRODUCT_INFO' => 'PRODUCT INFO',
+        'product_create__PRODUCT_NAME' => 'PRODUCT NAME',
+        'product_create__PRODUCT_CATEGORY' => 'PRODUCT CATEGORY',
+        'product_create__PRODUCT_STYLE_NUMBER' => 'STYLE NUMBER',
+        'product_create__PRODUCT_WHOLESALE_PRICE' => 'WHOLESALE PRICE',
+        'product_create__PRODUCT_RETAIL_PRICE' => 'RETAIL PRICE',
+        'product_create__PRODUCT_SIZE_REGION' => 'SIZE REGION',
+        'product_create__PRODUCT_COLOR_SET' => 'COLOR SET',
+        'product_create__PRODUCT_ADD_COLOR' => '+ Add Color',
+        'product_create__PRODUCT_MADE_IN' => 'MADE IN',
+        'product_create__PRODUCT_MATERIAL' => 'MATERIAL',
+        'product_create__PRODUCT_CARE_INSTRUCTION' => 'CARE INSTRUCTION',
+
+        'product_create__PRODUCT_btn_SAVE' => 'SAVE',
+
+        'product_create__PRODUCT_color_STANDARD_COLOR' => 'STANDARD COLOR',
+        'product_create__PRODUCT_color_CUSTOMIZED_COLOR' => 'CUSTOMIZED COLOR',
+        'product_create__PRODUCT_color_UPLOAD_IMAGE' => 'UPLOAD PATTERN IMAGE',
+        'product_create__PRODUCT_color_btn_ADD_COLOR' => 'ADD COLOR',
+        'product_create__PRODUCT_color_DESCRITION' => '* You can select several colors.',
+    ),
+    /**
      * brand_collection.php
      */
     array(

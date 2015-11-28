@@ -409,6 +409,34 @@ return array_merge(
         'collection_index__ADD_PRODUCT' => '+ 添加新的商品',
     ),
     /**
+     * product_create.php
+     */
+    array(
+        'product_create__PRODUCT_IMAGES' => '产品图片',
+        'product_create__PRODUCT_IMAGES_REQ' => '您可以为每个产品上传最多5张图片(jpg, png, gif)',
+        'product_create__PRODUCT_INFO' => '产品信息',
+        'product_create__PRODUCT_NAME' => '产品名称',
+        'product_create__PRODUCT_CATEGORY' => '产品类别',
+        'product_create__PRODUCT_STYLE_NUMBER' => '产品货号',
+        'product_create__PRODUCT_WHOLESALE_PRICE' => '批发价格',
+        'product_create__PRODUCT_RETAIL_PRICE' => '建议零售价',
+        'product_create__PRODUCT_SIZE_REGION' => '尺码地区',
+        'product_create__PRODUCT_COLOR_SET' => '产品色彩',
+        'product_create__PRODUCT_ADD_COLOR' => '+ 添加色彩',
+        'product_create__PRODUCT_MADE_IN' => '产品产地',
+        'product_create__PRODUCT_MATERIAL' => '产品材质',
+        'product_create__PRODUCT_CARE_INSTRUCTION' => '护理指导',
+
+        'product_create__PRODUCT_btn_SAVE' => '保存',
+
+        'product_create__PRODUCT_color_STANDARD_COLOR' => '标准色彩',
+        'product_create__PRODUCT_color_CUSTOMIZED_COLOR' => '自定义色彩',
+        'product_create__PRODUCT_color_UPLOAD_IMAGE' => '上传色彩图片',
+        'product_create__PRODUCT_color_btn_ADD_COLOR' => '添加色彩',
+        'product_create__PRODUCT_color_DESCRITION' => '* 你可以选好几个色彩',
+    ),
+    /**
+    /**
      * brand_collection.php
      */
     array(
