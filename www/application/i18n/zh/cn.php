@@ -415,7 +415,7 @@ return array_merge(
         'collection_index__modal__SUBMIT_btn_CANCEL' => '取消',
         'collection_index__modal__SUBMIT_btn_SUBMIT' => '提交',
 
-        'collection_index__modal__DELETE_CONFIRM' => '删除确认?',
+        'collection_index__modal__DELETE_CONFIRM' => '确认删除?',
         'collection_index__modal__DELETE_DETAIL' => '你确认要删除这个产品系列吗? ',
         'collection_index__modal__DELETE_btn_CANCEL' => '取消',
         'collection_index__modal__DELETE_btn_DELETE' => '删除',
@@ -469,6 +469,11 @@ return array_merge(
         'product_index__PRODUCT_CARE_INSTRUCTION' => '产品护理指南:',
 
         'product_index__PRODUCT_btn_DELETE' => '删除产品',
+
+        'product_index__modal__DELETE_CONFIRM' => '确认删除?',
+        'product_index__modal__DELETE_DETAIL' => '你确认要删除这个产品吗? ',
+        'product_index__modal__DELETE_btn_CANCEL' => '取消',
+        'product_index__modal__DELETE_btn_DELETE' => '删除',
     ),
     /**
     /**

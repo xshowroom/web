@@ -415,12 +415,12 @@ return array_merge(
         'collection_index__modal__SUBMIT_btn_CANCEL' => 'CANCEL',
         'collection_index__modal__SUBMIT_btn_SUBMIT' => 'SUBMIT',
 
-        'collection_index__modal__DELETE_CONFIRM' => 'DELETE SUBMIT?',
+        'collection_index__modal__DELETE_CONFIRM' => 'CONFIRM DELETE?',
         'collection_index__modal__DELETE_DETAIL' => 'Do you confirm to delete this collection? ',
         'collection_index__modal__DELETE_btn_CANCEL' => 'CANCEL',
         'collection_index__modal__DELETE_btn_DELETE' => 'DELETE',
 
-        'collection_index__modal__CLOSE_CONFIRM' => 'CLOSE SUBMIT?',
+        'collection_index__modal__CLOSE_CONFIRM' => 'CONFIRM CLOSE?',
         'collection_index__modal__CLOSE_DETAIL' => 'Do you confirm to close this collection? (buyers will not see this collection once you close it)',
         'collection_index__modal__CLOSE_btn_CANCEL' => 'CANCEL',
         'collection_index__modal__CLOSE_btn_CLOSE' => 'CLOSE'
@@ -469,6 +469,11 @@ return array_merge(
         'product_index__PRODUCT_CARE_INSTRUCTION' => 'CARE INSTRUCTION:',
 
         'product_index__PRODUCT_btn_DELETE' => 'DELETE',
+
+        'product_index__modal__DELETE_CONFIRM' => 'CONFIRM DELETE?',
+        'product_index__modal__DELETE_DETAIL' => 'Do you confirm to delete this product? ',
+        'product_index__modal__DELETE_btn_CANCEL' => 'CANCEL',
+        'product_index__modal__DELETE_btn_DELETE' => 'DELETE',
     ),
     /**
      * brand_collection.php
