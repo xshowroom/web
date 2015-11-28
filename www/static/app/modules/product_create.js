@@ -168,12 +168,12 @@ angular.module(
    				for(var key in $scope.checkInfo.validation){
      				var value = $scope.product[key];
      				if (!value || value == '' || angular.equals(value, {})) {
-     					$scope.errorMsgs.push([key, 'EMPTY ERROR']);
+     					$scope.errorMsgs.push([key, 'EMPTY_ERROR']);
      					$scope.checkInfo.validation[key] = true;
      					continue;
      				}
      				if($scope.checkInfo.reg[key] && !$scope.checkInfo.reg[key].test(value)){
-     					$scope.errorMsgs.push([key, 'PATTERN ERROR']);
+     					$scope.errorMsgs.push([key, 'PATTERN_ERROR']);
      					$scope.checkInfo.validation[key] = true;
      					continue;
      				}

@@ -93,6 +93,22 @@ angular.module(
             collection_description_EMPTY_ERROR: "请输入商品描述信息",
             collection_image_EMPTY_ERROR: "请上传系列的封面照片",
 
+            product_name_EMPTY_ERROR: '请输入产品名称',
+            product_category_EMPTY_ERROR: '请选择产品类别',
+            product_styleNum_EMPTY_ERROR: '请输入产品货号',
+            product_wholePrice_EMPTY_ERROR: '请输入产品批发价格',
+            product_wholePrice_PATTERN_ERROR: '请正确输入产品批发价格',
+            product_retailPrice_EMPTY_ERROR: '请输入产品零售价格',
+            product_retailPrice_PATTERN_ERROR: '请正确输入产品零售价格',
+            product_sizeRegion_EMPTY_ERROR: '请选择产品尺码地区',
+            product_sizeCode_EMPTY_ERROR: '请选择产品尺码',
+            product_color_EMPTY_ERROR: '请选择产品颜色',
+            product_madeIn_EMPTY_ERROR: '请选择产品产地',
+            product_material_EMPTY_ERROR: '请选择产品材质',
+            product_careIns_EMPTY_ERROR: '请输入产品护理指导',
+            product_images_EMPTY_ERROR: '请上传产品图片',
+
+
             /**
              * DROP DOWN LIST
              */
@@ -453,6 +469,22 @@ angular.module(
             collection_delivery_DATE_ERROR: "invalid delivery date",
             collection_description_EMPTY_ERROR: "please input collection description",
             collection_image_EMPTY_ERROR: "please upload collection photo",
+
+            product_name_EMPTY_ERROR: 'please input product name',
+            product_category_EMPTY_ERROR: 'please input product category',
+            product_styleNum_EMPTY_ERROR: 'please input product style number',
+            product_wholePrice_EMPTY_ERROR: 'please input product whole price',
+            product_wholePrice_PATTERN_ERROR: 'invalid product whole price',
+            product_retailPrice_EMPTY_ERROR: 'please input product retail price',
+            product_retailPrice_PATTERN_ERROR: 'invalid product retail price',
+            product_sizeRegion_EMPTY_ERROR: 'please select size region ',
+            product_sizeCode_EMPTY_ERROR: 'please select product size',
+            product_color_EMPTY_ERROR: 'please select product color set',
+            product_madeIn_EMPTY_ERROR: 'please select product made in',
+            product_material_EMPTY_ERROR: 'please select product material',
+            product_careIns_EMPTY_ERROR: 'please input care instruction',
+            product_images_EMPTY_ERROR: 'please upload product images ',
+
 
             /**
              * DROP DOWN LIST
