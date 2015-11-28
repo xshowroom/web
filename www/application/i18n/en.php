@@ -412,8 +412,13 @@ return array_merge(
 
         'collection_index__modal__SUBMIT_CONFIRM' => 'CONFIRM SUBMIT?',
         'collection_index__modal__SUBMIT_DETAIL' => 'Do you confirm to submit this collection? (you cannot make changes of this collection after submitted)',
-        'collection_index__modal__btn_CLOSE' => 'CLOSE',
-        'collection_index__modal__btn_SUBMIT' => 'SUBMIT'
+        'collection_index__modal__SUBMIT_btn_CLOSE' => 'CLOSE',
+        'collection_index__modal__SUBMIT_btn_SUBMIT' => 'SUBMIT',
+
+        'collection_index__modal__DELETE_CONFIRM' => 'DELETE SUBMIT?',
+        'collection_index__modal__DELETE_DETAIL' => 'Do you confirm to delete this collection? ',
+        'collection_index__modal__DELETE_btn_CLOSE' => 'CLOSE',
+        'collection_index__modal__DELETE_btn_DELETE' => 'DELETE'
     ),
     /**
      * product_create.php

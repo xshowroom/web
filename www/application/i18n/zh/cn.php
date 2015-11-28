@@ -412,8 +412,13 @@ return array_merge(
 
         'collection_index__modal__SUBMIT_CONFIRM' => '确认提交?',
         'collection_index__modal__SUBMIT_DETAIL' => '你确认要提交这个商品系列吗? (一旦提交就无法对该系列再修改)',
-        'collection_index__modal__btn_CLOSE' => '关闭',
-        'collection_index__modal__btn_SUBMIT' => '提交'
+        'collection_index__modal__SUBMIT_btn_CLOSE' => '关闭',
+        'collection_index__modal__SUBMIT_btn_SUBMIT' => '提交',
+
+        'collection_index__modal__DELETE_CONFIRM' => '删除确认?',
+        'collection_index__modal__DELETE_DETAIL' => '你确认要删除这个产品系列吗? ',
+        'collection_index__modal__DELETE_btn_CLOSE' => '关闭',
+        'collection_index__modal__DELETE_btn_DELETE' => '删除'
     ),
     /**
      * product_create.php

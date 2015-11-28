@@ -76,8 +76,8 @@
                  	</div>
                  	<div class="col-xs-12 collection-action">
                  		<?php if($collection['status'] == 0) {?>
-                 		<button class="btn btn-type-2" data-toggle="modal" data-target="#modalConfirm" ng-if="products.length"><?=__("collection_index__btn_SUBMIT")?></button>
-                 		<button class="btn btn-type-1" ng-click="deleteCollection();"><?=__("collection_index__btn_DELETE")?></button>
+                 		<button class="btn btn-type-2" data-toggle="modal" data-target="#modalSubmitConfirm" ng-if="products.length"><?=__("collection_index__btn_SUBMIT")?></button>
+                 		<button class="btn btn-type-1" data-toggle="modal" data-target="#modalDeleteConfirm"><?=__("collection_index__btn_DELETE")?></button>
                  		<?php }?>
                  		<?php if($collection['status'] == 1) {?>
                  		<button class="btn btn-type-2" ng-click="closeCollection();"><?=__("collection_index__btn_CLOSE")?></button>
@@ -257,8 +257,8 @@
         <?php echo View::factory('common/global_navigation_footer'); ?>
     </footer>
 
-    <!-- confirm -->
-    <div class="modal fade" id="modalConfirm" tabindex="-1" role="dialog">
+    <!-- submit confirm -->
+    <div class="modal fade" id="modalSubmitConfirm" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-xs">
             <div class="modal-content">
                 <div class="modal-header">
@@ -269,8 +269,28 @@
                     <p><?=__("collection_index__modal__SUBMIT_DETAIL")?></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn  btn-type-1" data-dismiss="modal"><?=__("collection_index__modal__btn_CLOSE")?></button>
-                    <button type="button" class="btn btn-type-2" ng-click="enableCollection();"><?=__("collection_index__modal__btn_SUBMIT")?></button>
+                    <button type="button" class="btn  btn-type-1" data-dismiss="modal"><?=__("collection_index__modal__SUBMIT_btn_CLOSE")?></button>
+                    <button type="button" class="btn btn-type-2" ng-click="enableCollection();"><?=__("collection_index__modal__SUBMIT_btn_SUBMIT")?></button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+    <!-- delete confirm -->
+    <div class="modal fade" id="modalDeleteConfirm" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-xs">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title"><?=__("collection_index__modal__DELETE_CONFIRM")?></h4>
+                </div>
+                <div class="modal-body">
+                    <p><?=__("collection_index__modal__DELETE_DETAIL")?></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn  btn-type-1" data-dismiss="modal"><?=__("collection_index__modal__DELETE_btn_CLOSE")?></button>
+                    <button type="button" class="btn btn-type-2" ng-click="deleteCollection();"><?=__("collection_index__modal__DELETE_btn_DELETE")?></button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
