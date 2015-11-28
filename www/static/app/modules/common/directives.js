@@ -209,7 +209,6 @@ angular.module(
         	var siteRootUrl = $location.protocol() + '://' + $location.host() + ":" + 	$location.port() + '/';
         	
         	var uploadFile = function(files){
-				$scope.$emit('uploading.start');
 				uiUploader.removeAll();
 				uiUploader.addFiles(files);
                 uiUploader.startUpload({
@@ -234,6 +233,7 @@ angular.module(
 			};
 			
         	$($element).on('change', '#'+$scope.imageId, function(e){
+        		$scope.$emit('uploading.start');
         		var self = $(this);
 				var files = e.target.files;
 				if (!files.length){

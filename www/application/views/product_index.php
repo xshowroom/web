@@ -124,9 +124,11 @@
 	                 		<span class="product-care-instruction"><?= ($production['care_instruction'])?></span>
                  		</div>
                  	</div>
+                 	<?php if ($collection['status'] == '0'){?>
                  	<div class="col-xs-12 product-action">
                  		<button class="btn btn-type-2" data-toggle="modal" data-target="#modalDeleteConfirm"><?=__("product_index__PRODUCT_btn_DELETE")?></button>
                  	</div>
+                 	<?php }?>
                 </div>
             </div>
         </div>

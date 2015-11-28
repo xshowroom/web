@@ -36,7 +36,7 @@
     </nav>
     <section class="row no-vertical-padding">
         <div class="container">
-            <div class="row product-inputs">
+            <div class="row product-inputs uploading">
                 <div class="col-xs-12">
                 	<h3><?=__("product_create__PRODUCT_IMAGES");?><span>({{product.images.length}}/5)</span></h3>
                 </div>

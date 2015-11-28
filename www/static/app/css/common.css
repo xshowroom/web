@@ -40,6 +40,13 @@ label{
 	text-align: center;
 	line-height: 20px;
 }
+select.form-control{
+	appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    background: url("/static/app/images/select-arrow.png") no-repeat scroll 95% center transparent;
+}
+select::-ms-expand { display: none; }
 /* .checkbox input[type=checkbox], 
 .checkbox-inline input[type=checkbox], 
 .radio input[type=radio], 
