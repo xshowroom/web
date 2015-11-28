@@ -5,13 +5,12 @@
 }
 .product-inputs h3{
 	font-size: 16px;
-	font-weight: bold;
-	padding: 15px 0.5em;
-	border-bottom: 1px solid #25272c;
+	padding: 10px 0.5em;
+	border-bottom: 1px solid #999;
 	margin: 15px 0;
 }
 .product-inputs h3 span{
-	color: #878787;
+	color: #ccc;
 	margin-left: 15px;
 }
 .product-inputs .product-image{
@@ -23,6 +22,7 @@
 	position: relative;
 	text-align: center;
 }
+
 .product-inputs .product-image.product-image-uploaded > a{
 	display: none;
 	position: absolute;
@@ -48,6 +48,21 @@
 	-moz-transform: translateY(-50%);
 	-o-transform: translateY(-50%);
 }
+.product-inputs .empty-product-image{
+	border: none;
+	background-color: transparent;
+	width: 100%;
+}
+.product-inputs .empty-product-image.has-error{
+	border: 1px solid #a94442;
+}
+.product-inputs .empty-product-image label{
+	background-color: transparent;
+	color: #ccc;
+}
+.product-inputs .empty-product-image.image-uploader label > span:first-child{
+	margin-top: 150px;
+}
 .product-inputs .size-codes{
 	line-height: 40px;
 }
@@ -58,19 +73,212 @@
 	margin-top: 13px
 }
 .product-inputs .new-color{
-	width: 100px;
-    height: 100px;
-    border: 1px solid #ccc;
-    text-align: center;
-    border-radius: 22px;
-    display: inline-block;
-    font-size: 40px;
-    background: #ccc;
-    color: #fff;
-    padding-top: 20px;
+	line-height: 34px
+}
+#product-create-form .form-control{
+	text-align: left;
+}
+
+#product-create-form .control-label {
+	font-weight: 400;
 }
 
 #care-instruction{
 	height: 150px;
-	resize: none;
+    resize: none;
+    padding: 10px;
+    text-indent: 0 !important;
+}
+
+/* modal样式 */
+#color-modal .modal-header{
+	border-bottom: none;
+}
+#color-modal .modal-content{
+	overflow: hidden;
+}
+#color-modal .modal-body{
+	margin-top: -38px;
+}
+#color-modal .modal-body h4{
+	font-size: 16px;
+	margin: 0;
+	border-bottom: 1px solid #ccc;
+	padding: 10px 0;
+}
+#color-modal .modal-dialog{
+	width: 350px;
+}
+#color-modal .modal-header .close{
+	z-index: 9;
+	position: relative;
+}
+/* 标准色 */
+#color-modal .modal-body .standard-colors{
+	margin-bottom: 15px;
+}
+#color-modal .modal-body .standard-colors .color-item{
+	width: 20%;
+	margin: 10px 0 5px 0;
+	float: left;
+	text-align: center;
+}
+#color-modal .modal-body .standard-colors .color-item:nth-child(5n){
+	margin-right: 0;
+}
+#color-modal .modal-body .standard-colors .color-item .checkbox-inline{
+	width: 40px;
+	height: 40px;
+	margin: 0;
+	padding: 0;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	position: relative;
+}
+#color-modal .modal-body .standard-colors .color-item.active .checkbox-inline{
+	border-color: #20affe;
+}
+#color-modal .modal-body .standard-colors .color-item .checkbox-inline > input{
+	visibility: hidden;
+}
+#color-modal .modal-body .standard-colors .color-item .checkbox-inline .glyphicon{
+	color: #fff;
+    background-color: #00a659;
+    padding: 3px;
+    border-radius: 10px;
+    position: absolute;
+    right: -6px;
+    bottom: -6px;
+    top: auto;
+    border: 2px solid #fff;
+    display: none;
+}
+#color-modal .modal-body .standard-colors .color-item.active .checkbox-inline .glyphicon{
+	display: inline;
+}
+#color-modal .modal-body .standard-colors .color-item .color-name{
+	font-size: 10px;
+	color: #ccc;
+}
+#color-modal .modal-body .standard-colors .color-item.active .color-name{
+	color: #25272c;
+}
+
+/* 自定义颜色 */
+#color-modal .modal-body .customized-colors .color-item{
+	width: 100%;
+	margin: 10px 0;
+}
+
+#color-modal .modal-body .customized-colors .color-item input{
+	margin-left: 5px;
+}
+
+#color-modal .modal-body .customized-colors .color-item .checkbox-inline{
+	width: 15%;
+	height: 45px;
+	margin: 0;
+	padding: 0;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	position: relative;
+	background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#color-modal .modal-body .customized-colors .color-item.active .checkbox-inline{
+	border-color: #20affe;
+}
+#color-modal .modal-body .customized-colors .color-item .checkbox-inline > input{
+	visibility: hidden;
+}
+#color-modal .modal-body .customized-colors .color-item .checkbox-inline .glyphicon{
+	color: #fff;
+    background-color: #00a659;
+    padding: 3px;
+    border-radius: 10px;
+    position: absolute;
+    right: -6px;
+    bottom: -6px;
+    top: auto;
+    border: 2px solid #fff;
+    display: none;
+}
+#color-modal .modal-body .customized-colors .color-item.active .checkbox-inline .glyphicon{
+	display: inline;
+}
+#color-modal .modal-body .customized-colors .color-item .form-control{
+	width: 75%;
+	display: inline-block;
+	text-align: left;
+}
+#color-modal .modal-body .customized-colors .color-item .glyphicon-trash{
+	color: #878787;
+}
+
+/* action */
+#color-modal .modal-body .color-actions{
+	margin: 10px 0;
+	text-align: center;
+}
+
+#color-modal .modal-body .color-actions .btn{
+	background-color: #f1f1f1;
+	color: #999;
+	width: 100%;
+	outline: none;
+	height: 40px;
+	line-height: 26px;
+}
+#color-modal .modal-body .color-actions .btn i{
+	margin-right: 5px;
+}
+
+#color-modal .modal-body .color-actions .btn span {
+	font-size: 11px;
+}
+
+#color-modal .modal-body .color-actions .btn input{
+	visibility: hidden;
+	width: 0;
+    height: 0;
+}
+#color-modal .modal-body .color-actions > div{
+	color: #878787;
+	font-size: 12px;
+	margin: 5px 0;
+}
+#color-modal .modal-body .add-color-action{
+	text-align: center;
+	margin-top: 30px;
+}
+#color-modal .modal-body .add-color-tips{
+	font-size: 12px;
+	color: #878787;
+	text-align: center;
+	margin-top: 10px;
+}
+#color-modal .uploading-mask{
+	top: -38px;
+	font-size: 15px;
+}
+
+.selected-colors .color-item {
+	display: inline-block;
+	float: left;
+	text-align: center;
+	margin-right: 20px;
+}
+.selected-colors .color-item > div:nth-child(1){
+	width: 45px;
+    height: 45px;
+    border-radius: 4px;
+    border: 1px solid #20affe;
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.selected-colors .color-item > div:nth-child(2){
+	font-size: 12px;
 }

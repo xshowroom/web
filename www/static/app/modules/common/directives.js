@@ -181,7 +181,7 @@ angular.module(
     return {
     	template: [
     	    '<div>',
-		    	'<img ng-src="{{imageOnlineUrl}}" class="uploaded-image">',
+		    	'<img ng-src="/{{imageOnlineUrl}}" class="uploaded-image">',
     	        '<label for="{{imageId}}">',
     	        	'<span>{{"directives_js__UPLOAD" | translate}}</span>',
     	        	'<span ng-if="title">{{title}}</span>',
@@ -197,7 +197,8 @@ angular.module(
         	title: '@',
         	targetModel: '=',
         	renderImage: '@',
-        	afterUploading: '&'
+        	afterUploading: '&',
+        	imageOnlineUrl: '='
         },
         controller: function ($scope, $element, $attrs, $transclude) {
         	$scope.imageId = [
@@ -208,7 +209,6 @@ angular.module(
         	var siteRootUrl = $location.protocol() + '://' + $location.host() + ":" + 	$location.port() + '/';
         	
         	var uploadFile = function(files){
-				$scope.$emit('uploading.start');
 				uiUploader.removeAll();
 				uiUploader.addFiles(files);
                 uiUploader.startUpload({
@@ -220,7 +220,7 @@ angular.module(
                     		return
                     	}
                     	if (parseInt($attrs.renderImage) !== 0){
-                    		$scope.imageOnlineUrl = siteRootUrl + response.data;
+                    		$scope.imageOnlineUrl = response.data;
                     	}
                     	if ($attrs.targetModel){
                     		$scope.targetModel = response.data;
@@ -228,27 +228,29 @@ angular.module(
                     	}
                     	$scope.afterUploading({url: response.data});
                     	$scope.$emit('uploading.end');
-                    	input.val('');
                     }
                 });
 			};
 			
         	$($element).on('change', '#'+$scope.imageId, function(e){
+        		$scope.$emit('uploading.start');
+        		var self = $(this);
 				var files = e.target.files;
 				if (!files.length){
 					return;
 				}
 				if(!/image\/\w+/.test(files[0].type)){
 					alert('上传文件类型必须为图片！');
-					input.val('');
+					self.val('');
 				    return; 
 				}
 				if(files[0].size / 1024 / 1024 > 5){
 					alert('上传文件大于5MB！');
-					input.val('');
+					self.val('');
 				    return; 
 				}
 				uploadFile(files);
+				self.val('');
 			});
 
         }
@@ -266,7 +268,7 @@ angular.module(
             	      	'<div class="uploading-content">',
             	       		'<span class="glyphicon glyphicon-arrow-up"></span>',
             	      	    '<span>' + $filter('translate')("directives_js__UPLOADING") + '</span>',
-            	       	    '<span class="glyphicon glyphicon-arrow-up"></span>',
+//            	       	    '<span class="glyphicon glyphicon-arrow-up"></span>',
             	       '</div>',
             	    '</div>'
             	].join('');
@@ -275,6 +277,29 @@ angular.module(
         	$scope.$on("uploading.end", function(){
         		$element.find(".uploading-mask").remove();
         	})
+        }
+    };
+}])
+.directive('imageLink', [function () {
+    return {
+        transclude: false,
+        restrict: 'C',
+        replace: false,
+        link: function ($scope, $element, $attrs, $transclude) {
+        	$element.on("mouseenter", function(){
+        		var imageUrl = $(this).children("img").attr("src");
+        		var template = [
+        	    	'<div class="image-link-mask" style="background-image: url(' + imageUrl +');">',
+        	        	'<div>',
+        	            	'<a class="btn btn-type-1" href=' + $attrs.href + '><i class="fa fa-search"></i></a>',
+        	            '</div>',
+        	        '</div>'
+        	    ].join('');
+        		$element.append(template);
+        	});
+        	$element.on("mouseleave", function(){
+        		$element.find(".image-link-mask").remove();
+        	});
         }
     };
 }]);

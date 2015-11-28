@@ -37,7 +37,7 @@ class Model_Message
     {
         $result = DB::update(Model_Message::$TABLE)
                     ->set(array('status'=>$status))
-                    ->where('$user_id', '=', $userId)
+                    ->where('user_id', '=', $userId)
                     ->where('id', '=', $messageId)
                     ->execute();
 
@@ -50,7 +50,8 @@ class Model_Message
                     ->from(Model_Message::$TABLE)
                     ->where('user_id', '=', $userId)
                     ->where('status', '!=', Model_Message::MSG_STATUS_DELETE)
-                    ->execute();
+                    ->execute()
+                    ->as_array();
         
         return $result;
     }
@@ -59,7 +60,7 @@ class Model_Message
     {
         $result = DB::select()
                     ->from(Model_Message::$TABLE)
-                    ->where('$user_id', '=', $userId)
+                    ->where('user_id', '=', $userId)
                     ->where('id', '=', $messageId)
                     ->execute();
         

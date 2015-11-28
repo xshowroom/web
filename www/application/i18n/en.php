@@ -5,7 +5,7 @@ return array_merge(
      * API Message
      */
     array(
-        'not_login' => 'username & password mismatch',
+        'not_login' => 'invalid username or password',
         'logged_in' => 'logged in',
         'image_err' => 'validation code is not correct',
         'register_failed' => 'register failed',
@@ -13,8 +13,16 @@ return array_merge(
         'upload_failed' => 'upload failed',
         'upload_success' => 'upload success',
         'email_existed' => 'email existed',
+        'name_existed' => 'name existed',
         'brand_existed' => 'brand name has already been resisted',
         'check_ok' => 'ok',
+    ),
+    /**
+     * Inbox Message
+     */
+    array(
+        'AUTO_MSG_WELCOME_BRAND' => "Welcome to XShowroom! Let's start your business now! Please feel free to contact us if any problem. Mail to: info@projectcrossover.com",
+        'AUTO_MSG_WELCOME_BUYER' => "Welcome to XShowroom! Let's start your business now! Please feel free to contact us if any problem. Mail to: info@projectcrossover.com"
     ),
     /**
      * global_setting_with_login.php
@@ -35,6 +43,25 @@ return array_merge(
         'global_navigation_top_guest__DISCOVER' => 'DISCOVER',
         'global_navigation_top_guest__PRESS' => 'PRESS',
         'global_navigation_top_guest__CONTACT' => 'CONTACT',
+    ),
+    /**
+     * global_navigation_top_brand.php & global_navigation_top_buyer.php
+     */
+    array(
+        'global_navigation_top_user__DASHBOARD' => 'DASHBOARD',
+        'global_navigation_top_user__COLLECTION' => 'COLLECTION',
+        'global_navigation_top_user__ORDER' => 'ORDER',
+    	'global_navigation_top_user__SHOP' => 'SHOP',
+        'global_navigation_top_user__MESSAGE' => 'MESSAGE',
+        'global_navigation_top_user__PROFILE' => 'MY PROFILE',
+        'global_navigation_top_user__SIGN_OUT' => 'SIGN OUT',
+    ),
+    /**
+     * global_navigation_user_center.php
+     */
+    array(
+        'global_navigation_user_center__PROFILE' => 'MY PROFILE',
+        'global_navigation_user_center__COLLECTION' => 'MESSAGES',
     ),
     /**
      * global_navigation_footer.php
@@ -90,7 +117,7 @@ return array_merge(
         'home__btn_REGISTER' => 'REGISTER',
 
         'home__HOT_BRANDS' => 'HOT BRANDS',
-        'home__BRAND_PROFILES' => 'BRAND PROFILES',
+        'home__profileS' => 'BRAND PROFILES',
         'home__SSI5_COLLECTION' => 'SSI5 COLLECTION',
 
         'home__TESTOMONIALS' => 'TESTOMONIALS',
@@ -281,5 +308,207 @@ return array_merge(
         'buyer_register__STEP_3__COMPANY_ACCEPT_2' => 'I accept the terms and conditions of Project Crossover Online Showrooms web site.',
         'buyer_register__STEP_3__btn__PREVIOUS' => 'PREVIOUS',
         'buyer_register__STEP_3__btn__SUBMIT' => 'SUBMIT',
+    ),
+    /**
+     * user_profile.php
+     */
+    array(
+        'profile__BASIC_INFO' => 'BASIC INFO',
+        'profile__BRAND_INFO' => 'BRAND INFO',
+        'profile__COMPANY_INFO' => 'COMPANY INFO',
+
+        'profile__EMAIL' => 'E-MAIL （LOGIN NAME）',
+        'profile__FIRST_NAME' => 'FIRST NAME',
+        'profile__LAST_NAME' => 'LAST NAME',
+        'profile__DISPLAY_NAME' => 'DISPLAY NAME',
+        'profile__TELEPHONE' => 'TELEPHONE',
+        'profile__MOBILE' => 'MOBILE PHONE',
+        'profile__REGISTER_DATE' => 'REGISTER DATETIME',
+        'profile__LAST_LOGIN_TIME' => 'LAST LOGIN TIME',
+
+        'profile__COMPANY_NAME' => 'COMPANY NAME',
+        'profile__COMPANY_ADDRESS' => 'COMPANY ADDRESS',
+        'profile__COMPANY_COUNTRY' => 'COMPANY COUNTRY',
+        'profile__COMPANY_ZIP' => 'COMPANY ZIPCODE',
+        'profile__COMPANY_TELEPHONE' => 'COMPANY TELEPHONE',
+        'profile__COMPANY_WEB_URL' => 'COMPANY URL',
+
+        'profile__BRAND_NAME' => 'BRAND NAME',
+        'profile__DESIGNER_NAME' => 'DESIGNER NAME',
+        'profile__BRAND_URL' => 'BRAND URL',
+    ),
+    /**
+     * brand_dashboard.php
+     */
+    array(
+        'brand_dashboard__BASED_IN' => 'BASED IN',
+        'brand_dashboard__ESTABLISHED' => 'ESTABLISHED',
+        'brand_dashboard__WEBSITE'=> 'WEBSITE',
+
+        'brand_dashboard__MY_ORDERS' => 'MY ORDERS',
+        'brand_dashboard__ALL_ORDERS' => 'ALL ORDERS >',
+        'brand_dashboard__ORDER_EMPTY_1' => 'WELCOME TO XSHOWROOM!',
+        'brand_dashboard__ORDER_EMPTY_2' => 'START YOUR BUSINESS NOW!',
+        'brand_dashboard__ORDER_EMPTY_3' => 'tips: collection create order',
+
+        'brand_dashboard__MY_COLLECTIONS' => 'MY COLLECTIONS',
+        'brand_dashboard__ALL_COLLECTIONS' => 'ALL COLLECTIONS >',
+        'brand_dashboard__COLLECTION_EMPTY_1' => 'OH NO! YOU HAVE NO',
+        'brand_dashboard__COLLECTION_EMPTY_2' => 'COLLECTION!',
+        'brand_dashboard__COLLECTION_EMPTY_3' => 'ADD COLLECTION',
+
+        'brand_dashboard__ACCOUNT_MANAGER' => 'At XSHOWROOM we have Brand Account Manager to help you to introduce the brand, book you in to see the collection, and follow up your order.',
+         'brand_dashboard__ACCOUNT_MANAGER_CONTRACT' => 'CONTRACT US'
+    ),
+    /**
+     * collection_create.php
+     */
+    array(
+        'collection_create__BASIC_INFO' => 'ADD COLLECTION BASIC INFO',
+        'collection_create__COLLECTION_COVER' => 'Collection Cover',
+        'collection_create__COLLECTION_NAME' => 'Collection Name',
+        'collection_create__COLLECTION_CATEGORY' => 'Collection Category',
+        'collection_create__COLLECTION_MODE' => 'Collection Mode',
+        'collection_create__COLLECTION_SEASON' => 'Collection Season',
+        'collection_create__COLLECTION_MINIMUM_ORDER' => 'Minimum Order',
+        'collection_create__COLLECTION_CURRENCY' => 'Payment Currency',
+        'collection_create__COLLECTION_DEADLINE' => 'Deadline for Order',
+        'collection_create__COLLECTION_DELIVERY_DATE' => 'Delivery Date',
+        'collection_create__COLLECTION_DESCRIPTION' => 'Description',
+        'collection_create__COLLECTION_CREATE' => 'CREATE',
+    ),
+    /**
+     * collection_index.php
+     */
+    array(
+        'collection_index__EDIT' => 'EDIT',
+        'collection_index__HIDE' => 'HIDE',
+        'collection_index__SHOW_ALL' => 'SHOW ALL',
+
+        'collection_index__btn_SUBMIT' => 'SUBMIT',
+        'collection_index__btn_DELETE' => 'DELETE',
+        'collection_index__btn_CLOSE' => 'CLOSE',
+
+        'collection_index__COLLECTION_COVER' => 'Collection Cover',
+        'collection_index__COLLECTION_NAME' => 'Collection Name',
+        'collection_index__COLLECTION_CATEGORY' => 'Collection Category',
+        'collection_index__COLLECTION_MODE' => 'Collection Mode',
+        'collection_index__COLLECTION_SEASON' => 'Collection Season',
+        'collection_index__COLLECTION_MINIMUM_ORDER' => 'Minimum Order',
+        'collection_index__COLLECTION_CURRENCY' => 'Payment Currency',
+        'collection_index__COLLECTION_DEADLINE' => 'Deadline for Order',
+        'collection_index__COLLECTION_DELIVERY_DATE' => 'Delivery Date',
+        'collection_index__COLLECTION_DESCRIPTION' => 'Description',
+
+        'collection_index__btn_CANCEL' => 'CANCEL',
+        'collection_index__btn_UPDATE' => 'UPDATE',
+
+        'collection_index__NO_PRODUCT_1' => 'OH NO! YOU HAVE NO',
+        'collection_index__NO_PRODUCT_2' => 'PRODUCTS IN THIS COLLECTION!',
+
+        'collection_index__CATEGORIES' => 'CATEGORIES',
+        'collection_index__ADD_PRODUCT' => '+ ADD NEW PRODUCT',
+        'collection_index__btn_LOAD_MORE' => 'LOAD MORE',
+        'collection_index__btn_ADD_PRODUCT' => 'ADD NEW PRODUCT',
+
+        'collection_index__modal__SUBMIT_CONFIRM' => 'CONFIRM SUBMIT?',
+        'collection_index__modal__SUBMIT_DETAIL' => 'Do you confirm to submit this collection? (you cannot make changes of this collection after submitted)',
+        'collection_index__modal__SUBMIT_btn_CANCEL' => 'CANCEL',
+        'collection_index__modal__SUBMIT_btn_SUBMIT' => 'SUBMIT',
+
+        'collection_index__modal__DELETE_CONFIRM' => 'CONFIRM DELETE?',
+        'collection_index__modal__DELETE_DETAIL' => 'Do you confirm to delete this collection? ',
+        'collection_index__modal__DELETE_btn_CANCEL' => 'CANCEL',
+        'collection_index__modal__DELETE_btn_DELETE' => 'DELETE',
+
+        'collection_index__modal__CLOSE_CONFIRM' => 'CONFIRM CLOSE?',
+        'collection_index__modal__CLOSE_DETAIL' => 'Do you confirm to close this collection? (buyers will not see this collection once you close it)',
+        'collection_index__modal__CLOSE_btn_CANCEL' => 'CANCEL',
+        'collection_index__modal__CLOSE_btn_CLOSE' => 'CLOSE'
+    ),
+    /**
+     * product_create.php
+     */
+    array(
+        'product_create__PRODUCT_IMAGES' => 'PRODUCT IMAGES',
+        'product_create__PRODUCT_IMAGES_REQ' => 'You can upload 5 images(jpg, png, gif) for each product.',
+        'product_create__PRODUCT_INFO' => 'PRODUCT INFO',
+        'product_create__PRODUCT_NAME' => 'PRODUCT NAME',
+        'product_create__PRODUCT_CATEGORY' => 'PRODUCT CATEGORY',
+        'product_create__PRODUCT_STYLE_NUMBER' => 'STYLE NUMBER',
+        'product_create__PRODUCT_WHOLESALE_PRICE' => 'WHOLESALE PRICE',
+        'product_create__PRODUCT_RETAIL_PRICE' => 'RETAIL PRICE',
+        'product_create__PRODUCT_SIZE_REGION' => 'SIZE REGION',
+        'product_create__PRODUCT_COLOR_SET' => 'COLOR SET',
+        'product_create__PRODUCT_ADD_COLOR' => '+ Add Color',
+        'product_create__PRODUCT_MADE_IN' => 'MADE IN',
+        'product_create__PRODUCT_MATERIAL' => 'MATERIAL',
+        'product_create__PRODUCT_CARE_INSTRUCTION' => 'CARE INSTRUCTION',
+
+        'product_create__PRODUCT_btn_SAVE' => 'SAVE',
+
+        'product_create__PRODUCT_color_STANDARD_COLOR' => 'STANDARD COLOR',
+        'product_create__PRODUCT_color_CUSTOMIZED_COLOR' => 'CUSTOMIZED COLOR',
+        'product_create__PRODUCT_color_UPLOAD_IMAGE' => 'UPLOAD PATTERN IMAGE',
+        'product_create__PRODUCT_color_btn_ADD_COLOR' => 'ADD COLOR',
+        'product_create__PRODUCT_color_DESCRITION' => '* You can select several colors.',
+    ),
+    /**
+     * product_index.php
+     */
+    array(
+        'product_index__BACK_COLLECTION' => 'BACK TO COLLECTION',
+
+        'product_index__PRODUCT_CATEGORY' => 'PRODUCT CATEGORY',
+        'product_index__PRODUCT_STYLE_NUMBER' => 'STYLE NUMBER',
+        'product_index__PRODUCT_WHOLESALE_PRICE' => 'WHOLESALE PRICE',
+        'product_index__PRODUCT_RETAIL_PRICE' => 'RETAIL PRICE',
+        'product_index__PRODUCT_SIZE' => 'SIZE',
+        'product_index__PRODUCT_COLOR' => 'COLOR',
+        'product_index__PRODUCT_MADE_IN' => 'MADE IN',
+        'product_index__PRODUCT_MATERIAL' => 'MATERIAL',
+        'product_index__PRODUCT_CARE_INSTRUCTION' => 'CARE INSTRUCTION:',
+
+        'product_index__PRODUCT_btn_DELETE' => 'DELETE',
+
+        'product_index__modal__DELETE_CONFIRM' => 'CONFIRM DELETE?',
+        'product_index__modal__DELETE_DETAIL' => 'Do you confirm to delete this product? ',
+        'product_index__modal__DELETE_btn_CANCEL' => 'CANCEL',
+        'product_index__modal__DELETE_btn_DELETE' => 'DELETE',
+    ),
+    /**
+     * brand_collection.php
+     */
+    array(
+        'brand_collection__STATUS' => 'STATUS',
+        'brand_collection__ADD_COLLECTION' => '+ ADD COLLECTION',
+
+        'brand_collection__COLLECTION_STATUS' => 'COLLECTION STATUS:',
+        'brand_collection__COLLECTION_LAST_MODIFY' => 'LAST MODIFY:',
+        'brand_collection__COLLECTION_DESCRIPTION' => 'DESCRIPTION:',
+
+        'brand_collection__btn_VIEW' => 'VIEW',
+    ),
+    /**
+     * brand_order.php
+     */
+    array(
+
+    ),
+    /**
+     * brand_message.php.php
+     */
+    array(
+        'user_message__MY_MESSAGES' => 'MY MESSAGES',
+
+        'user_message__MESSAGE_DETAIL' => 'VIEW MESSAGE DETAIL',
+        'user_message__RETURN_MESSAGE_CENTER' => '<<< RETURN MESSAGE CENTER',
+        'user_message__DELETE_MESSAGE' => 'DELETE THIS MESSAGE',
+        'user_message__MESSAGE_FROM_ADMIN' => 'FROM: XSHOWROOM ADMIN',
+
+        'user_message__modal__DELETE_CONFIRM' => 'DELETE CONFIRM',
+        'user_message__modal__DELETE_CONFIRM_DETAIL' => 'WILL YOU DELETE THIS MESSAGE PERMANENTLY?',
+        'user_message__modal__btn_CLOSE' => 'CLOSE',
+        'user_message__modal__btn_DELETE' => 'DELETE',
     )
 );

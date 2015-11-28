@@ -13,6 +13,7 @@ class Model_Collection
     const TYPE_OF_CLOSE     = 2;
     const TYPE_OF_DELETE    = 3;
     
+    const MODE_OF_PRE_ORDER = 'dropdown__COLLECTION_MODE__PRE_ORDER';
     
     public function getAllList()
     {
@@ -47,7 +48,7 @@ class Model_Collection
                     ->execute()
                     ->as_array();
         
-        return empty($result) ? array() : $result[0];
+        return empty($result) ? array() : $result;
     }
     
     /**
@@ -76,6 +77,7 @@ class Model_Collection
                         'cover_image_medium',
                         'cover_image_small',
                         'create_time',
+                        'modify_time',
                         'status',
                     ))
                     ->values(array(
@@ -92,6 +94,7 @@ class Model_Collection
                         $imageUrl,
                         $imageMediumUrl,
                         $imageSmallUrl,
+                        date('Y-m-d H:i:s'),
                         date('Y-m-d H:i:s'),
                         STAT_NORMAL,
                     ))
@@ -143,10 +146,36 @@ class Model_Collection
         $result = DB::update('collection')
                     ->set(array(
                         'status' => $status,
+                        'modify_time' => date('Y-m-d H:i:s'),
                     ))
                     ->where('id', '=', $collectionId)
                     ->where('status', '!=', self::TYPE_OF_DELETE)
                     ->execute();
+        
+        return $result;
+    }
+    
+    public function getByFilter($filter)
+    {
+        $sql = "SELECT user_id FROM collection WHERE status = " . self::TYPE_OF_ONLINE;
+        
+        if ($filter['show'] == 'all') {
+            $sql .= " AND category = 'dropdown__COLLECTION__WOMEN' OR category = 'dropdown__COLLECTION__MEN' OR modify_time >= '". date('Y-m-d', strtotime('-3 month')) ."'";
+        } elseif ($filter['show'] == 'new') {
+            $sql .= " AND modify_time >= '". date('Y-m-d', strtotime('-3 month')) ."'";
+        } elseif ($filter['show'] == 'dropdown__COLLECTION__WOMEN' || $filter['show'] == 'dropdown__COLLECTION__MEN') {
+            $sql .= " AND category = '{$filter['show']}' ";
+        }
+        
+        if (!empty($filter['season'])) {
+            $sql .= " AND season IN ({$filter['season']}) ";
+        }
+        
+        if (!empty($filter['available'])) {
+            $sql .= " AND deadline <= '" . date('Y-m-d', strtotime($filter['available'])) ."'";
+        }
+        
+        $result = DB::query(Database::SELECT, $sql)->execute()->as_array();
         
         return $result;
     }

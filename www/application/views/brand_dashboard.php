@@ -22,7 +22,7 @@
     <nav class="row setting-info">
         <?php echo View::factory('common/global_setting_without_login'); ?>
     </nav>
-    <nav class="row brand-navigation">
+    <nav class="row user-navigation">
         <?php echo View::factory('common/global_navigation_top_brand',
             array('currentPage' =>  'dashboard', 'userAttr'=> $userAttr)); 
            ?>
@@ -32,20 +32,20 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="brand-logo">
-                        <img src="/static/app/images/brand-logo.png">
+                        <img src="/<?= $brandInfo['brand_image']?>">
                     </div>
                     <div class="brand-info">
                         <h3 class="brand-name"><?= $brandInfo['brand_name'] ?></h3>
                         <div class="brand-detail">
-                            <span >Based in</span>
+                            <span ><?= __("brand_dashboard__BASED_IN"); ?></span>
                             <span>{{ "<?= $userAttr['company_country'] ?>" | translate}}</span>
                         </div>
                         <div class="brand-detail">
-                            <span>Established</span>
+                            <span><?= __("brand_dashboard__ESTABLISHED"); ?></span>
                             <span><?= date('Y', strtotime($user['register_date'])) ?></span>
                         </div>
                         <div class="brand-detail">
-                            <span>Website</span>
+                            <span><?= __("brand_dashboard__WEBSITE"); ?></span>
                             <span><?= $userAttr['company_web_url'] ?></span>    
                         </div>
                     </div>
@@ -58,12 +58,19 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="order-list-header">
-                        <h2 class="order-list-title">MY ORDERS</h2>
-                        <a class="order-list-all-link" href="#">ALL ORDERS ></a>
+                        <h2 class="order-list-title"><?= __("brand_dashboard__MY_ORDERS"); ?></h2>
+                        <a class="order-list-all-link" href="#"><?= __("brand_dashboard__ALL_ORDERS"); ?></a>
                     </div>
                 </div>
             </div>
-            <div class="order-list-content row">
+            <div class="row">
+                <div class="col-xs-12 text-center empty-warning">
+                    <img src="/static/app/images/order-tip.png">
+                    <p><?= __("brand_dashboard__ORDER_EMPTY_1"); ?><br/><?= __("brand_dashboard__ORDER_EMPTY_2"); ?></p>
+                    <span><?= __("brand_dashboard__ORDER_EMPTY_3"); ?></span>
+                </div>
+            </div>
+            <div class="order-list-content row" ng-if="false">
                 <div class="col-xs-3">
                     <a target="_blank" href="#" class="order-item">
                         <div class="order-images">
@@ -140,8 +147,8 @@
         	<div class="row">
                 <div class="col-xs-12">
                     <div class="collection-list-header">
-                        <h2 class="collection-list-title">MY COLLECTIONS</h2>
-                        <a class="collection-list-all-link" href="#">ALL COLLECTIONS ></a>
+                        <h2 class="collection-list-title"><?= __("brand_dashboard__MY_COLLECTIONS"); ?></h2>
+                        <a class="collection-list-all-link" href="/brand/collection"><?= __("brand_dashboard__ALL_COLLECTIONS"); ?></a>
                     </div>
                 </div>
             </div>
@@ -149,16 +156,18 @@
         	 <div class="row">
                 <div class="col-xs-12 text-center empty-warning">
                     <img src="/static/app/images/empty.png">
-                    <p>Oops, your collection is empty!</p>
-                    <p><a href="/collection/create">Add collections</a> to attract more followers.</p>
+                    <p><?= __("brand_dashboard__COLLECTION_EMPTY_1"); ?><br/><?= __("brand_dashboard__COLLECTION_EMPTY_2"); ?></p>
+                    <a class="btn btn-type-2" href="/collection/create"><?= __("brand_dashboard__COLLECTION_EMPTY_3"); ?></a>
                 </div>
             </div>
             <?php } else {?>
             <div class="collection-list-content row">
-            	<?php for ($i=0, $count=count($collectionList); $i<$count; $i++) { ?>
+            	<?php
+            		for ($i=0, $count=count($collectionList); $i<$count; $i++) { 
+            	?>
                 <div class="col-xs-3">
-                    <a target="_self" href="/collection/<?= $collectionList[$i]['id']?>" class="collection-item">
-                        <img src="/static/app/images/shop-brand-1.png" class="collection-item-image">
+                    <a target="_self" href="/collection/<?= $collectionList[$i]['id']?>" class="collection-item image-link">
+                        <img src="/<?= $collectionList[$i]['cover_image_medium']?>" class="collection-item-image">
                         <div class="collection-name"><?= $collectionList[$i]['name']?></div>
                     </a>
                 </div>
@@ -173,8 +182,8 @@
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1">
                     <img src="/static/app/images/account-manager.png" class="account-manager-image">
-                    <p>At XSHOWROOM we have Brand Account Manager to help you to introduce the brand, book you in to see the collection, and follow up your order.</p>
-                    <button class="btn btn-type-2">MESSAGE</button>
+                    <p><?= __("brand_dashboard__ACCOUNT_MANAGER"); ?></p>
+                    <button class="btn btn-type-2"><?= __("brand_dashboard__ACCOUNT_MANAGER_CONTRACT"); ?></button>
                 </div>
             </div>
         </div>

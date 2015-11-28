@@ -87,6 +87,7 @@ if (isset($_SERVER['KOHANA_ENV']))
 {
     Kohana::$environment = constant('Kohana::'.strtoupper($_SERVER['KOHANA_ENV']));
 }
+Kohana::$environment = Kohana::PRODUCTION;
 
 /**
  * Initialize Kohana, setting the default options.
@@ -147,9 +148,16 @@ Cookie::$salt = 'xshowroom';
  * defaults for the URI.
  */
 
+Route::set('product_create', 'product/create/<id>')
+        ->defaults(array(
+            'controller' => 'product',
+            'action'     => 'create',
+            'id'        => '\d+',
+        ));
+
 Route::set('detail', '<controller>(/<action>)/<id>',
         array(
-                'controller' => '(collection|order|product)',
+                'controller' => '(collection|order|product|message)',
                 'id'        => '\d+',
         ))
         ->defaults(array(

@@ -9,14 +9,14 @@ angular.module(
     'xShowroom.collection.create', 
     [
         'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services',
-        'ngAnimate', 'mgcrea.ngStrap'
+        'ngAnimate', 'mgcrea.ngStrap', 'ngTextcomplete'
     ]
 )
 .controller(
     'CollectionCreateCtrl',
     [
-     	'$scope', 'Collection',
-        function ($scope, Collection) {
+     	'$scope', '$q', 'Collection',
+        function ($scope, $q, Collection) {
      		$scope.collection = {};
      		$scope.checkInfo = {
      			validation: {
@@ -32,43 +32,72 @@ angular.module(
  					'image': false
  				},
  				reg:{
- 					'order': /\d+/,
+ 					'order': /^\d+$/,
  					'deadline': /\d{4}-\d{2}-\d{2}/,
  					'delivery': /\d{4}-\d{2}-\d{2}/
- 				}
+ 				},
+ 				duplication: ['name']
      		};
      		$scope.create = function(){
      			
    				$scope.errorMsgs = [];
-     					
+     			
+   				var promises = [];
+   				
    				for(var key in $scope.checkInfo.validation){
      				var value = $scope.collection[key];
-     				console.log(value);
      				if ((key == "deadline" || key == "delivery") && !value) {
-     					$scope.errorMsgs.push([key, 'DATE ERROR']);
+     					$scope.errorMsgs.push([key, 'DATE_ERROR']);
      					$scope.checkInfo.validation[key] = true;
      					continue;
      				}
      				if (!value || value == '') {
-     					$scope.errorMsgs.push([key, 'EMPTY ERROR']);
+     					$scope.errorMsgs.push([key, 'EMPTY_ERROR']);
      					$scope.checkInfo.validation[key] = true;
      					continue;
      				}
      				if($scope.checkInfo.reg[key] && !$scope.checkInfo.reg[key].test(value)){
-     					$scope.errorMsgs.push([key, 'PATTERN ERROR']);
+     					$scope.errorMsgs.push([key, 'PATTERN_ERROR']);
      					$scope.checkInfo.validation[key] = true;
      					continue;
      				}
+     				
+     				if ($scope.checkInfo.duplication.indexOf(key) >= 0){
+    					promises.push(Collection.duplicationCheck({
+    						key: key,
+    						value: value
+    					}));
+    				}
      				$scope.checkInfo.validation[key] = false;
    				}
    				
-     			if (!$scope.errorMsgs.length){
-     				Collection.create(
-     	     			$scope.collection
-     	     		).success(function(res){
-     	     			console.log(res);
-     	     		});
-     			} 
+				$q.all(promises).then(function(){
+					for(var i = 0; i < arguments[0].length; i++) {
+						var res = arguments[0][i];
+						var key;
+						for (param in res.config.params){
+							key = param;
+							break;
+						}
+						if (res.data.status) {
+							$scope.checkInfo.validation[key] = true;
+							$scope.errorMsgs.push([key, 'DUPLICATION_ERROR']);
+						}else{
+							$scope.checkInfo.validation[key] = false;
+						}
+					}
+					if (!$scope.errorMsgs.length){
+	     				Collection.create(
+	     	     			$scope.collection
+	     	     		).success(function(res){
+	     	     			if (res.status) {
+	     	     				$scope.errorMsgs.push(['create error', res.msg]);
+	     	     			}else{
+	     	     				window.open('/collection/'+res.data, '_self');
+	     	     			}
+	     	     		});
+	     			} 
+				});
      		};
         }
     ]

@@ -41,13 +41,9 @@ angular.module(
 						'pass': /^\S{6,100}$/,
 						'firstName': /^\S{2,50}$/,
 						'lastName': /^\S{2,50}$/,
-						'displayName': /^\S{6,50}$/,
-						'tel': /^\S{6,20}$/
 					},
 				    2:{},
 				    3:{
-						'companyName': /^\S{3,128}$/,
-						'companyTel': /^\S{6,20}$/,
 						'companyWebsite': /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-@?^=%&amp;/~\+#])?/
 					}
 				},
@@ -118,11 +114,11 @@ angular.module(
 			$scope.register = function() {
 				var register = User.register($scope.user);
 				register.success(function(res){
-        			if(res.status != 0){
-        				alert(res.msg);
-        				return;
+        			if(res.status){
+        				$scope.errorMsgs.push(['register error', res,msg]);
+        			}else{
+        				window.open('/brand/dashboard', '_self');
         			}
-        			window.open('/brand/dashboard', '_self');
         		});
 			};
 		}

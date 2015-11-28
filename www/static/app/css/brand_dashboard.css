@@ -1,6 +1,6 @@
 .order-list,
 .collection-list{
-	padding: 30px 0 0 0;
+	padding: 10px 0 0 0;
 }
 .order-list .empty-warning,
 .collection-list .empty-warning{
@@ -9,9 +9,12 @@
 }
 .order-list .empty-warning p,
 .collection-list .empty-warning p{
-	line-height: 2em;
-	margin: 15px 0;
-	font-size: 16px;
+	color: #878787;
+	margin: 30px 0;
+}
+.order-list .empty-warning span{
+	color: #878787;
+	font-size: 12px;
 }
 .order-list .order-list-header,
 .collection-list .collection-list-header{
@@ -21,12 +24,15 @@
 .collection-list .collection-list-header .collection-list-title{
 	font-size: 18px;
 	display: inline-block;
-	text-indent: 2em;
-	margin-right: 2em;
+	text-indent: 1em;
+	margin-right: 1em;
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
 .order-list .order-list-header .order-list-all-link,
 .collection-list .collection-list-header .collection-list-all-link{
 	color: #878787;
+	font-size: 11px;
 }
 .order-list .order-list-content,
 .collection-list .collection-list-content{
@@ -68,40 +74,48 @@
     display: inline-block;
     position: relative;
     width: 100%;
-    box-shadow: 0px 3px 3px #ddd;
+    box-shadow: 0 0 1px 0 #999;
+    background-color: #fff;
 }
 .collection-list .collection-list-content .collection-item .collection-item-image{
 	width: 100%;
-	height: 100%;
+	max-height: 100%;
+	position: absolute;
+	left:0;
+	top:50%;
+	z-index: 0;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
 }
 .collection-list .collection-list-content .collection-item  .collection-name {
     position: absolute;
     bottom: 0;
     width: 100%;
     background: rgba(255,255,255,0.8);
-    height: 120px;
+    height: 80px;
     color: #25272c;
-    line-height: 120px;
+    line-height: 80px;
     text-align: center;
-    font-weight: bold;
+    z-index: 99;
 }
 .support{
 	padding-top: 50px;
 	padding-bottom: 80px;
 }
 .support .account-manager-image{
-	widht: 80px;
+	width: 80px;
 	height: 80px;
 	border-radius: 40px;
 	float: left;
 }
 .support p{
 	color: #878787;
-    font-size: 14px;
+    font-size: 11px;
     float: left;
     width: 70%;
-    margin-left: 30px;
-    margin-right: 50px;
+	margin: 25px 5px 0 10px;
 }
 .support .btn{
     margin-top: 35px;

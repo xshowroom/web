@@ -1,0 +1,94 @@
+.message {
+    padding-top: 20px !important;
+}
+
+
+/* inbox message lists */
+.xs-user-center-content h2{
+	border-bottom: 2px solid #ca7379;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	padding-top: 0;
+	padding-bottom: 6px;
+	color: #ca7379;
+	font-weight: 300;
+	font-size: 17px;
+	vertical-align: bottom;
+}
+
+.xs-table {
+	table-layout: fixed;
+    color: #333333;
+}
+
+.xs-table td {
+    border-top: none !important;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.xs-table p {
+    margin: 5px 0 5px 0;
+}
+
+.xs-table i {
+   vertical-align: middle;
+}
+
+.xs-inbox-read p {
+    color: #999999;
+}
+
+.xs-inbox-unread p {
+    font-size: 16px;
+	color: #ca7379;
+}
+
+.xs-inbox-unread i {
+	color:  #ca7379;
+}
+
+.xs-inbox-icon {
+	width: 60px;
+}
+
+.xs-inbox-content {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.xs-inbox-content p {
+	font-size: 16px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.xs-inbox-date {
+	width: 180px;
+}
+
+.xs-inbox-delete {
+	width: 50px;
+}
+
+/*  message detail */
+.xs-inbox-message-bar a {
+	color: #888888
+}
+
+.xs-inbox-message-detail {
+	margin-left: 15px;
+	font-weight: 300;
+	font-size: 16px;
+	color: #555555;
+}
+
+.xs-inbox-message-detail>div {
+	padding-bottom: 15px;
+}
+
+.xs-inbox-message-detail h5 {
+	color: #999999;
+	padding-bottom: 20px;
+}

@@ -22,7 +22,7 @@
 	<nav class="row setting-info">
 		<?php echo View::factory('common/global_setting_with_login', array('userAttr'=> $userAttr, 'user'=> $user)); ?>
 	</nav>
-	<nav class="row guest-navigation"  id="home-page-navigation">
+	<nav class="row guest-navigation">
         <?php echo View::factory('common/global_navigation_top_guest', array('currentPage' =>  'guide')); ?>
 	</nav>
 	<section class="row no-vertical-padding">

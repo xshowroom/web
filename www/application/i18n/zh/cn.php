@@ -13,8 +13,16 @@ return array_merge(
         'upload_failed' => '上传失败',
         'upload_success' => '上传成功',
         'email_existed' => '该邮箱已被注册',
+        'name_existed' => '名称已经存在',
         'brand_existed' => '该品牌名称已存在',
         'check_ok' => '参数验证成功',
+    ),
+    /**
+     * Inbox Message
+     */
+    array(
+        'AUTO_MSG_WELCOME_BRAND' => "欢迎来到XShowroom! 让我们一起开始我们的商业之旅! 您在使用过程中有任何问题，可以通过邮件告诉我们 info@projectcrossover.com",
+        'AUTO_MSG_WELCOME_BUYER' => "欢迎来到XShowroom! 让我们一起开始我们的商业之旅! 您在使用过程中有任何问题，可以通过邮件告诉我们 info@projectcrossover.com"
     ),
     /**
      * global_setting_with_login.php
@@ -35,6 +43,25 @@ return array_merge(
         'global_navigation_top_guest__DISCOVER' => '探索',
         'global_navigation_top_guest__PRESS' => '资讯',
         'global_navigation_top_guest__CONTACT' => '联系',
+    ),
+    /**
+     * global_navigation_top_brand.php & global_navigation_top_buyer.php
+     */
+    array(
+        'global_navigation_top_user__DASHBOARD' => '全情概览',
+        'global_navigation_top_user__COLLECTION' => '系列管理',
+        'global_navigation_top_user__ORDER' => '订单管理',
+    	'global_navigation_top_user__SHOP' => '货物集市',
+        'global_navigation_top_user__MESSAGE' => '消息中心',
+        'global_navigation_top_user__PROFILE' => '个人中心',
+        'global_navigation_top_user__SIGN_OUT' => '退出登录',
+    ),
+    /**
+     * global_navigation_user_center.php
+     */
+    array(
+        'global_navigation_user_center__PROFILE' => '个人信息',
+        'global_navigation_user_center__COLLECTION' => '消息中心',
     ),
     /**
      * global_navigation_footer.php
@@ -237,7 +264,7 @@ return array_merge(
         'brand_register__STEP_3__btn__SUBMIT' => '提交注册',
     ),
     /**
-     * register_brand.php
+     * register_buyer.php
      */
     array(
         'buyer_register__STEP' => '步骤',
@@ -281,5 +308,208 @@ return array_merge(
         'buyer_register__STEP_3__COMPANY_ACCEPT_2' => 'I accept the terms and conditions of Project Crossover Online Showrooms web site.',
         'buyer_register__STEP_3__btn__PREVIOUS' => '上一步',
         'buyer_register__STEP_3__btn__SUBMIT' => '提交注册',
+    ),
+    /**
+     * user_profile.php
+     */
+    array(
+        'profile__BASIC_INFO' => '基本信息',
+        'profile__BRAND_INFO' => '品牌信息',
+        'profile__COMPANY_INFO' => '公司信息',
+
+        'profile__EMAIL' => 'E-mail （登录邮箱）',
+        'profile__FIRST_NAME' => '我的名字',
+        'profile__LAST_NAME' => '我的姓氏',
+        'profile__DISPLAY_NAME' => '我的显示名称',
+        'profile__TELEPHONE' => '我的电话号码',
+        'profile__MOBILE' => '我的手机号码',
+        'profile__REGISTER_DATE' => '我的注册日期',
+        'profile__LAST_LOGIN_TIME' => '最后一次登录',
+
+        'profile__COMPANY_NAME' => '公司名称',
+        'profile__COMPANY_ADDRESS' => '公司详细地址',
+        'profile__COMPANY_COUNTRY' => '公司所在地',
+        'profile__COMPANY_ZIP' => '公司邮政编码',
+        'profile__COMPANY_TELEPHONE' => '公司电话号码',
+        'profile__COMPANY_WEB_URL' => '公司官网地址',
+
+        'profile__BRAND_NAME' => '品牌名称',
+        'profile__DESIGNER_NAME' => '品牌设计师',
+        'profile__BRAND_URL' => '品牌网址',
+    ),
+    /**
+     * brand_dashboard.php
+     */
+    array(
+        'brand_dashboard__BASED_IN' => '所在地',
+        'brand_dashboard__ESTABLISHED' => '成立于',
+        'brand_dashboard__WEBSITE'=> '官网地址',
+
+        'brand_dashboard__MY_ORDERS' => '我的订单',
+        'brand_dashboard__ALL_ORDERS' => '所有订单 >',
+        'brand_dashboard__ORDER_EMPTY_1' => '欢迎来到 XSHOWROOM!',
+        'brand_dashboard__ORDER_EMPTY_2' => '立刻开始您的商业之旅!',
+        'brand_dashboard__ORDER_EMPTY_3' => '温馨提示: 商品系列可以为您带来订单',
+
+        'brand_dashboard__MY_COLLECTIONS' => '我的系列',
+        'brand_dashboard__ALL_COLLECTIONS' => '所有系列 >',
+        'brand_dashboard__COLLECTION_EMPTY_1' => '哦，不是吧！ 您从未创建',
+        'brand_dashboard__COLLECTION_EMPTY_2' => '商品系列!',
+        'brand_dashboard__COLLECTION_EMPTY_3' => '添加系列',
+
+        'brand_dashboard__ACCOUNT_MANAGER' => '在XSHOWROOM 我们拥有专属的品牌客户经理来帮助您介绍品牌, 与您共建商品集合, 并帮助您完成订单！',
+        'brand_dashboard__ACCOUNT_MANAGER_CONTRACT' => '联系我们'
+    ),
+    /**
+     * collection_create.php
+     */
+    array(
+        'collection_create__BASIC_INFO' => '添加系列基本信息',
+        'collection_create__COLLECTION_COVER' => '系列封面',
+        'collection_create__COLLECTION_NAME' => '系列名称',
+        'collection_create__COLLECTION_CATEGORY' => '系列类型',
+        'collection_create__COLLECTION_MODE' => '售卖模式',
+        'collection_create__COLLECTION_SEASON' => '时尚季',
+        'collection_create__COLLECTION_MINIMUM_ORDER' => '最小订单金额',
+        'collection_create__COLLECTION_CURRENCY' => '结算货币',
+        'collection_create__COLLECTION_DEADLINE' => '下单截至日期',
+        'collection_create__COLLECTION_DELIVERY_DATE' => '发货日期',
+        'collection_create__COLLECTION_DESCRIPTION' => '详细描述',
+        'collection_create__COLLECTION_CREATE' => '创建系列',
+    ),
+    /**
+     * collection_index.php
+     */
+    array(
+        'collection_index__EDIT' => '编辑',
+        'collection_index__HIDE' => '隐藏',
+        'collection_index__SHOW_ALL' => '全部显示',
+
+        'collection_index__btn_SUBMIT' => '提交',
+        'collection_index__btn_DELETE' => '删除',
+        'collection_index__btn_CLOSE' => '关闭',
+
+        'collection_index__COLLECTION_COVER' => '系列封面',
+        'collection_index__COLLECTION_NAME' => '系列名称',
+        'collection_index__COLLECTION_CATEGORY' => '系列类型',
+        'collection_index__COLLECTION_MODE' => '售卖模式',
+        'collection_index__COLLECTION_SEASON' => '时尚季',
+        'collection_index__COLLECTION_MINIMUM_ORDER' => '最小订单金额',
+        'collection_index__COLLECTION_CURRENCY' => '结算货币',
+        'collection_index__COLLECTION_DEADLINE' => '下单截至日期',
+        'collection_index__COLLECTION_DELIVERY_DATE' => '发货日期',
+        'collection_index__COLLECTION_DESCRIPTION' => '详细描述',
+
+        'collection_index__btn_CANCEL' => '取消',
+        'collection_index__btn_UPDATE' => '更改',
+
+        'collection_index__NO_PRODUCT_1' => '不是吧! 你还没有',
+        'collection_index__NO_PRODUCT_2' => '在系列中添加商品!',
+
+        'collection_index__CATEGORIES' => '分类',
+        'collection_index__ADD_PRODUCT' => '+ 添加新的商品',
+        'collection_index__btn_LOAD_MORE' => '加载更多',
+        'collection_index__btn_ADD_PRODUCT' => '添加新的商品',
+
+        'collection_index__modal__SUBMIT_CONFIRM' => '确认提交?',
+        'collection_index__modal__SUBMIT_DETAIL' => '你确认要提交这个商品系列吗? (一旦提交就无法对该系列再修改)',
+        'collection_index__modal__SUBMIT_btn_CANCEL' => '取消',
+        'collection_index__modal__SUBMIT_btn_SUBMIT' => '提交',
+
+        'collection_index__modal__DELETE_CONFIRM' => '确认删除?',
+        'collection_index__modal__DELETE_DETAIL' => '你确认要删除这个产品系列吗? ',
+        'collection_index__modal__DELETE_btn_CANCEL' => '取消',
+        'collection_index__modal__DELETE_btn_DELETE' => '删除',
+
+        'collection_index__modal__CLOSE_CONFIRM' => '确认关闭?',
+        'collection_index__modal__CLOSE_DETAIL' => '你确认要关闭这个产品系列吗? (你关闭后，买手就无法在平台上浏览到这个系列)',
+        'collection_index__modal__CLOSE_btn_CANCEL' => '取消',
+        'collection_index__modal__CLOSE_btn_CLOSE' => '关闭'
+    ),
+    /**
+     * product_create.php
+     */
+    array(
+        'product_create__PRODUCT_IMAGES' => '产品图片',
+        'product_create__PRODUCT_IMAGES_REQ' => '您可以为每个产品上传最多5张图片(jpg, png, gif)',
+        'product_create__PRODUCT_INFO' => '产品信息',
+        'product_create__PRODUCT_NAME' => '产品名称',
+        'product_create__PRODUCT_CATEGORY' => '产品类别',
+        'product_create__PRODUCT_STYLE_NUMBER' => '产品货号',
+        'product_create__PRODUCT_WHOLESALE_PRICE' => '批发价格',
+        'product_create__PRODUCT_RETAIL_PRICE' => '建议零售价',
+        'product_create__PRODUCT_SIZE_REGION' => '尺码地区',
+        'product_create__PRODUCT_COLOR_SET' => '产品色彩',
+        'product_create__PRODUCT_ADD_COLOR' => '+ 添加色彩',
+        'product_create__PRODUCT_MADE_IN' => '产品产地',
+        'product_create__PRODUCT_MATERIAL' => '产品材质',
+        'product_create__PRODUCT_CARE_INSTRUCTION' => '护理指导',
+
+        'product_create__PRODUCT_btn_SAVE' => '保存',
+
+        'product_create__PRODUCT_color_STANDARD_COLOR' => '标准色彩',
+        'product_create__PRODUCT_color_CUSTOMIZED_COLOR' => '自定义色彩',
+        'product_create__PRODUCT_color_UPLOAD_IMAGE' => '上传色彩图片',
+        'product_create__PRODUCT_color_btn_ADD_COLOR' => '添加色彩',
+        'product_create__PRODUCT_color_DESCRITION' => '* 你可以选多个色彩',
+    ),
+    /**
+     * product_index.php
+     */
+    array(
+        'product_index__BACK_COLLECTION' => '回到产品系列',
+
+        'product_index__PRODUCT_CATEGORY' => '产品类别',
+        'product_index__PRODUCT_STYLE_NUMBER' => '产品货号',
+        'product_index__PRODUCT_WHOLESALE_PRICE' => '产品批发价',
+        'product_index__PRODUCT_RETAIL_PRICE' => '产品零售价',
+        'product_index__PRODUCT_SIZE' => '尺码',
+        'product_index__PRODUCT_COLOR' => '色彩',
+        'product_index__PRODUCT_MADE_IN' => '产品产地',
+        'product_index__PRODUCT_MATERIAL' => '产品材质',
+        'product_index__PRODUCT_CARE_INSTRUCTION' => '产品护理指南:',
+
+        'product_index__PRODUCT_btn_DELETE' => '删除产品',
+
+        'product_index__modal__DELETE_CONFIRM' => '确认删除?',
+        'product_index__modal__DELETE_DETAIL' => '你确认要删除这个产品吗? ',
+        'product_index__modal__DELETE_btn_CANCEL' => '取消',
+        'product_index__modal__DELETE_btn_DELETE' => '删除',
+    ),
+    /**
+    /**
+     * brand_collection.php
+     */
+    array(
+        'brand_collection__STATUS' => '状态',
+        'brand_collection__ADD_COLLECTION' => '+ 添加系列',
+
+        'brand_collection__COLLECTION_STATUS' => '系列状态:',
+        'brand_collection__COLLECTION_LAST_MODIFY' => '最后修改:',
+        'brand_collection__COLLECTION_DESCRIPTION' => '详细信息:',
+
+        'brand_collection__btn_VIEW' => '查看',
+    ),
+    /**
+     * brand_order.php
+     */
+    array(
+
+    ),
+    /**
+     * user_message.php & user_message_detail.php
+     */
+    array(
+        'user_message__MY_MESSAGES' => '我收到的消息',
+
+        'user_message__MESSAGE_DETAIL' => '查看消息详情',
+        'user_message__RETURN_MESSAGE_CENTER' => '<<< 返回消息中心',
+        'user_message__DELETE_MESSAGE' => '删除这条消息',
+        'user_message__MESSAGE_FROM_ADMIN' => '来自：XSHOWROOM系统管理员',
+
+        'user_message__modal__DELETE_CONFIRM' => '确认删除',
+        'user_message__modal__DELETE_CONFIRM_DETAIL' => '您将永远删除该消息',
+        'user_message__modal__btn_CLOSE' => '取消',
+        'user_message__modal__btn_DELETE' => '删除',
     )
 );

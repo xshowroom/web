@@ -1,6 +1,12 @@
+@font-face
+{
+	font-family: MontserratRegular;
+	src: url(/static/app/fonts/Montserrat-Regular.woff);
+}
+
 body {
-	font-family: Helvetica, 'Microsoft Yahei', sans-serif;
-	color: #25272c;
+	font-family: MontserratRegular, "Microsoft Yahei", Helvetica, sans-serif !important;
+	color: #666;
 }
 
 /* 默认bootstrap样式覆盖 */
@@ -23,6 +29,7 @@ section.row.no-vertical-padding{
 }
 label{
 	font-size: 12px;
+	white-space: nowrap;
 	/* line-height: 40px !important; */
 }
 .form-control{
@@ -33,6 +40,13 @@ label{
 	text-align: center;
 	line-height: 20px;
 }
+select.form-control{
+	appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    background: url("/static/app/images/select-arrow.png") no-repeat scroll 95% center transparent;
+}
+select::-ms-expand { display: none; }
 /* .checkbox input[type=checkbox], 
 .checkbox-inline input[type=checkbox], 
 .radio input[type=radio], 
@@ -125,6 +139,7 @@ a {
 	position: relative;
 	text-decoration: none !important;
 	cursor: pointer;
+	overflow: hidden;
 }
 a:hover,
 a.active {
@@ -178,6 +193,9 @@ a.active:before{
     color: #aaa;
     font-size: 12px;
     font-weight: 200;
+}
+.setting-info .locale-settings{
+	height: 40px;
 }
 .setting-info .locale-settings .dropdown{
 	display: inline-block;
@@ -260,7 +278,7 @@ a.active:before{
 }
 .guest-navigation .main-naviagtions > li > a{
 	color: #000;
-	font-size: 14px;
+	font-size: 12px;
     font-weight: 200;
 }
 /* 页尾导航 */
@@ -359,12 +377,10 @@ a.active:before{
 }
 /* image uploader样式 */
 .image-uploader{
-	background-color: #ccc;
-    border-radius: 2px;
-    background-image: url("/static/app/images/image-uploader-bg.png");
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: 20%;
+	border-radius: 2px;
+	background: #eee url("/static/app/images/image-uploader-bg.png") no-repeat center 40%;
+	background-position-x: center;
+    background-position-y: 40%;
     color: #fff;
     position: relative;
 }
@@ -395,16 +411,21 @@ a.active:before{
 	bottom: 0;
 	position: absolute;
 	cursor: pointer;
+	background-color: rgba(30,30,30,0.1);
+	margin: 0;
+	white-space: normal;
 }
 .image-uploader label > span{
-	font-size: 14px;
+	font-size: 11px;
     width: 100%;
     text-align: center;
     display: inline-block;
 }
+
 .image-uploader label > span:first-child{
-	margin-top: 65%;
+	margin-top: 75%;
 }
+
 /* uploading 遮罩 */
 .uploading-mask {
     position: absolute;
@@ -464,58 +485,129 @@ to {-o-transform: translateY(-100%);}
     -moz-animation: rollUp 1s linear infinite;
     -o-animation: rollUp 1s linear infinite;
 }
+/*image line */
+@keyframes slideIn
+{
+from {transform: translateX(-100%);}
+to {transform: translateX(0);}
+}
 
+@-moz-keyframes slideIn /* Firefox */
+{
+from {-moz-transform: translateX(-100%);}
+to {-moz-transform: translateX(0);}
+}
+
+@-webkit-keyframes slideIn /* Safari 和 Chrome */
+{
+from {-webkit-transform: translateX(-100%);}
+to {-webkit-transform: translateX(0);;}
+}
+
+@-o-keyframes slideIn /* Opera */
+{
+from {-o-transform: translateX(-100%);}
+to {-o-transform: translateX(0);}
+}
+.image-link-mask {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 9;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-size: contain;
+    padding: 10px;
+    cursor: normal;
+    animation: slideIn .3s linear 1;
+    -webkit-animation: slideIn .3s linear 1;
+    -moz-animation: slideIn .3s linear 1;
+    -o-animation: slideIn .3s linear 1;
+}
+.image-link-mask > div{
+    background-color: rgba(255,255,255,0.85);
+    text-align: center;
+    height: 100%;
+}
+.image-link-mask > div > a{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    min-width: 40px !important;
+    width: 40px;
+    line-height: 38px;
+    color: #25272c !important; 
+    border-color: #25272c !important; 
+    font-size: 16px;
+    cursor: pointer;
+}
+.image-link-mask > div > a:hover{
+    border-color: #ca7379 !important; 
+}
+
+
+
+/* load more */
+.load-more{
+	margin-top: 40px;
+}
 /* brand 通用样式 */
-.brand-navigation{
-	padding-top: 60px;
+.user-navigation{
+	padding-top: 40px;
 	padding-bottom: 30px;
 	background-color: #fafafa;
 }
-.brand-navigation .main-naviagtions{
+.user-navigation .main-naviagtions{
 	list-style: none;
     margin: 55px 0 0 0;
     padding: 0;
 }
-.brand-navigation .main-naviagtions > li{
+.user-navigation .main-naviagtions > li{
 	display: inline-block;
 	margin-right: 3em;
 }
-.brand-navigation .main-naviagtions > li > a{
+.user-navigation .main-naviagtions > li > a{
 	color: #25272c;
-	font-size: 14px;
+	font-size: 12px;
     font-weight: 200;
 }
-.brand-navigation .main-naviagtions > li > a:hover,
-.brand-navigation .main-naviagtions > li > a.active{
+/* .user-navigation .main-naviagtions > li > a:hover,
+.user-navigation .main-naviagtions > li > a.active{
 	color: #25272c !important;
-}
-.brand-navigation .main-naviagtions > li > a:before{
+} */
+/* .user-navigation .main-naviagtions > li > a:before{
 	background-color: #25272c;
-}
-.brand-navigation .user-actions{
+} */
+.user-navigation .user-actions{
 	margin-top: 49px;
 }
 
-.brand-navigation .user-actions  a,
-.brand-navigation .user-actions  a:hover{
+.user-navigation .user-actions  a,
+.user-navigation .user-actions  a:hover{
 	color: #25272c !important;
 	cursor: pointer;
 }
-.brand-navigation .user-actions  a:before{
+.user-navigation .user-actions  a:before{
 	content: none;
 }
-.brand-navigation .user-actions  a > span{
+.user-navigation .user-actions  a > span{
 	margin-left: 10px;
 	display: inline-block;
 }
-.brand-navigation .user-actions  a > img{
+.user-navigation .user-actions  a > img{
 	vertical-align: bottom;
 }
-.brand-navigation .user-actions .dropdown-menu{
-	right: 0;
-	margin-top: 10px;
+.user-navigation .user-actions .dropdown-menu{
+	right: -5px;
+    margin-top: 10px;
+    left: auto;
 }
-.brand-navigation .user-actions .dropdown-menu li{
+.user-navigation .user-actions .dropdown-menu li{
 	text-align: right;
 }
 .brand-banner{
@@ -531,6 +623,7 @@ to {-o-transform: translateY(-100%);}
 }
 .brand-banner .brand-logo img{
 	height: 100%;
+    min-width: 100px;
 }
 .brand-banner .brand-info{
 	color: #fff;
@@ -544,10 +637,9 @@ to {-o-transform: translateY(-100%);}
 }
 .brand-banner .brand-info .brand-detail > span{
     line-height: 20px;
-    font-size: 14px;
+    font-size: 12px;
     display:inline-block;
     min-width: 100px;
 }
 .brand-banner .brand-info .brand-detail > span + span{
-   	font-weight: bold;
 }

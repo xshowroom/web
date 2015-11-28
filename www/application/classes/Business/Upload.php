@@ -63,13 +63,26 @@ class Business_Upload
     public function resize($filename, $percent, $suffix = 'medium')
     {
         // 获取新的尺寸
-        list($width, $height) = getimagesize($filename);
+        list($width, $height, $type) = getimagesize($filename);
         $new_width = $width * $percent;
         $new_height = $height * $percent;
         
         // 重新取样
         $image_p = imagecreatetruecolor($new_width, $new_height);
-        $image = imagecreatefromjpeg($filename);
+        switch ($type) {
+            case 1:
+                $image = imagecreatefromgif($filename);
+                break;
+            case 2:
+                $image = imagecreatefromjpeg($filename);
+                break;
+            case 3:
+                $image = imagecreatefrompng($filename);
+                break;
+            default:
+                $image = imagecreatefromjpeg($filename);
+                break;
+        }
         imagecopyresampled($image_p, $image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
         
         $temp = pathinfo($filename);
@@ -79,5 +92,25 @@ class Business_Upload
         imagejpeg($image_p, $output, 100);
         
         return $output;
+    }
+    
+    public function createThreeImage($imagePath)
+    {
+        $extension = substr(strrchr($imagePath, '.'), 1);
+        $realPathFile  = 'data/' . date('ymdHis'). substr(microtime(),2,4) . '.' . $extension;
+    
+        if (file_exists($imagePath)){
+            try{
+                copy($imagePath, $realPathFile);
+                // 生成medium图和small图
+                $mediumPathFile = $this->resize($realPathFile, 0.5, 'medium');
+                $smallPathFile = $this->resize($realPathFile, 0.2, 'small');
+            } catch (Exception $e) {
+                $errorInfo = Kohana::message('message', 'IMAGE_ERROR');
+                throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+            }
+        }
+    
+        return array($realPathFile, $mediumPathFile, $smallPathFile);
     }
 } 
