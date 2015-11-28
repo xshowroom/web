@@ -362,4 +362,17 @@ angular.module(
 			};
 		}
 	]
+)
+.service(
+	'Message',
+	[
+		'$http',
+		function ($http) {
+			return {
+				destroy: function (opts) {
+					return $http.get('/api/message/delete', {params: opts});
+				}
+			};
+		}
+	]
 );

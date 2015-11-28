@@ -17,6 +17,7 @@
 	<script type="text/javascript" src="/static/app/modules/common/services.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
 	<script type="text/javascript" src="/static/app/modules/user_message.js"></script>
+	<script>var messageId =<?= $message['id'] ?></script>
 </head>
 <body ng-controller="UserMessageCtrl" class="container-fluid">
 	<nav class="row setting-info">
@@ -29,7 +30,7 @@
 	</nav>
 	<?php } else if ($user["role_type"] == "2"){ ?>
 	<nav class="row user-navigation">
-        <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'message', 'userAttr'=> $userAttr))); ?>
+        <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'message', 'userAttr'=> $userAttr)); ?>
 	</nav>
 	<?php }?>
 	
@@ -44,7 +45,7 @@
 					<div class="xs-inbox-message-bar">
 						<ol class="breadcrumb">
 							<li><a href="<?= URL::site('message') ?>"><?=__("user_message__RETURN_MESSAGE_CENTER")?></a></li>
-							<li><a id="delete_msg" href="#modalDeleteConfirm" data-toggle="modal"><?=__("user_message__DELETE_MESSAGE")?><input id="msg_id" type="hidden" value="<?= $message['id'] ?>"></a></li>
+							<li><a id="delete_msg" href="#modalDeleteConfirm" data-toggle="modal"><?=__("user_message__DELETE_MESSAGE")?></a></li>
 						</ol>
 					</div>
 					<div class="xs-inbox-message-detail">

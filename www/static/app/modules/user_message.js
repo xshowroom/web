@@ -14,21 +14,19 @@ angular.module(
 .controller(
     'UserMessageCtrl',
     [
-        '$scope',
-        function ($scope){
+        '$scope','Message',
+        function ($scope, Message){
             $scope.clickMessage=function(){
-                window.message_id = $(this).find('#msg_id').val();
+                messageId = $(this).find('#msg_id').val();
             };
 
             $scope.deleteMessage=function(){
-                $.ajax({
-                    url : "/ajax/message/delete",
-                    async: false,
-                    dataType:"json",
-                    data:{"id": window.message_id,"rnd": new Date().getTime()}
+                Message.destroy({
+                    id: messageId,
+                    rnd: new Date().getTime()
+                }).success(function(res){
+                    window.location.reload();
                 });
-
-                window.location.reload();
             }
         }
     ]

@@ -17,6 +17,7 @@
 	<script type="text/javascript" src="/static/app/modules/common/services.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
 	<script type="text/javascript" src="/static/app/modules/user_message.js"></script>
+	<script>var messageId = -1</script>
 </head>
 <body ng-controller="UserMessageCtrl" class="container-fluid">
 	<nav class="row setting-info">
