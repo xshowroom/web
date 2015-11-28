@@ -16,8 +16,8 @@ angular.module(
     [
         '$scope',
         function ($scope){
-            $scope.clickMessage=function(){
-                window.message_id = $(this).find('#msg_id').val();
+            $scope.clickMessage=function(message_id){
+                $scope.message_id = message_id;
             };
 
             $scope.deleteMessage=function(){
@@ -25,7 +25,7 @@ angular.module(
                     url : "/ajax/message/delete",
                     async: false,
                     dataType:"json",
-                    data:{"id": window.message_id,"rnd": new Date().getTime()}
+                    data:{"id": $scope.message_id,"rnd": new Date().getTime()}
                 });
 
                 window.location.reload();
