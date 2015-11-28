@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8" >
 	<title>XShowroom</title>
-	
 	<link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="/static/bower_components/font-awesome/css/font-awesome.min.css" />
 	<link rel="stylesheet" type="text/css" href="/static/app/css/common.css" />
@@ -18,10 +17,7 @@
 	<script type="text/javascript" src="/static/app/modules/error.js"></script>
 </head>
 <body ng-controller="ErrorCtrl" class="container-fluid">
-	<nav class="row setting-info">
-		<?php echo View::factory('common/global_setting_with_login', array('userAttr'=> $userAttr, 'user'=> $user)); ?>
-	</nav>
-	<nav class="row guest-navigation">
+	<nav class="row guest-navigation" style="padding-top: 25px;">
         <?php echo View::factory('common/global_navigation_top_guest'); ?>
 	</nav>
 	<section class="row">
