@@ -685,10 +685,10 @@ angular.module(
             
             // Collection Status
             COLLECTION_STATUS_ALL: 'All',
-            COLLECTION_STATUS_0: 'Draft',
-            COLLECTION_STATUS_1: 'Submitted',
-            COLLECTION_STATUS_2: 'Closed',
-            COLLECTION_STATUS_3: 'Deleted',
+            COLLECTION_STATUS_0: 'DRAFT',
+            COLLECTION_STATUS_1: 'SUBMITTED',
+            COLLECTION_STATUS_2: 'CLOSED',
+            COLLECTION_STATUS_3: 'DELETED',
             
             
             // Store Type

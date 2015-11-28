@@ -201,7 +201,7 @@
                 	<img src="/static/app/images/empty.png">
                 	<p><?=__("collection_index__NO_PRODUCT_1")?><br/><?=__("collection_index__NO_PRODUCT_2")?></p>
                 	<?php if($collection['status'] == 0) {?>
-                	<a class="btn btn-type-2" href="/product/create/<?=$collection['id']?>"><?=__("collection_index__ADD_PRODUCT")?></a>
+                	<a class="btn btn-type-2" href="/product/create/<?=$collection['id']?>"><?=__("collection_index__btn_ADD_PRODUCT")?></a>
 					<?php }?>
                 </div>
             </div>

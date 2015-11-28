@@ -409,6 +409,7 @@ return array_merge(
         'collection_index__CATEGORIES' => 'CATEGORIES',
         'collection_index__ADD_PRODUCT' => '+ ADD NEW PRODUCT',
         'collection_index__btn_LOAD_MORE' => 'LOAD MORE',
+        'collection_index__btn_ADD_PRODUCT' => 'ADD NEW PRODUCT',
 
         'collection_index__modal__SUBMIT_CONFIRM' => 'CONFIRM SUBMIT?',
         'collection_index__modal__SUBMIT_DETAIL' => 'Do you confirm to submit this collection? (you cannot make changes of this collection after submitted)',
