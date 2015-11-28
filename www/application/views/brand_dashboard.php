@@ -183,7 +183,7 @@
                 <div class="col-xs-10 col-xs-offset-1">
                     <img src="/static/app/images/account-manager.png" class="account-manager-image">
                     <p><?= __("brand_dashboard__ACCOUNT_MANAGER"); ?></p>
-                    <button class="btn btn-type-2">MESSAGE</button>
+                    <button class="btn btn-type-2"><?= __("brand_dashboard__ACCOUNT_MANAGER_CONTRACT"); ?></button>
                 </div>
             </div>
         </div>

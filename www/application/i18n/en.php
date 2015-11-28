@@ -357,7 +357,8 @@ return array_merge(
         'brand_dashboard__COLLECTION_EMPTY_2' => 'COLLECTION!',
         'brand_dashboard__COLLECTION_EMPTY_3' => 'ADD COLLECTION',
 
-        'brand_dashboard__ACCOUNT_MANAGER' => 'At XSHOWROOM we have Brand Account Manager to help you to introduce the brand, book you in to see the collection, and follow up your order.'
+        'brand_dashboard__ACCOUNT_MANAGER' => 'At XSHOWROOM we have Brand Account Manager to help you to introduce the brand, book you in to see the collection, and follow up your order.',
+         'brand_dashboard__ACCOUNT_MANAGER_CONTRACT' => 'CONTRACT US'
     ),
     /**
      * collection_create.php
