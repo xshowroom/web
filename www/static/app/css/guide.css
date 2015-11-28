@@ -26,14 +26,14 @@
 /* row of banner */
 .guide-banner{
 	background-color: #000;
-	height: 400px;
-	padding-top: 100px;
-	padding-bottom: 100px;
+	height: 300px;
+	padding-top: 60px;
+	padding-bottom: 60px;
 	text-align: center;
 }
 .guide-banner span{
 	color: #fff;
-	font-size: 72px;
+	font-size: 60px;
 }
 /* row of solution */
 .guide-solution {
