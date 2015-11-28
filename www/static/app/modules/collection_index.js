@@ -93,43 +93,37 @@ angular.module(
          	};
          	
          	$scope.deleteCollection = function(){
-         		if (confirm('确认要删除该Collection?')){
-         			Collection.destroy({
-         				id: collectionId
-         			}).success(function(res){
-         	     		if (res.status) {
-         	     			alert(res.msg);
-         	     		}else{
-         	     			window.open('/brand/collection', '_self');
-         	     		}
-         	     	});
-         		} 
+				Collection.destroy({
+					id: collectionId
+				}).success(function(res){
+					if (res.status) {
+						alert(res.msg);
+					}else{
+						window.open('/brand/collection', '_self');
+					}
+				});
          	};
          	$scope.enableCollection = function(){
-         		if (confirm('确认要提交该Collection么?确认后，将无法对该collection进行修改。')){
-         			Collection.enable({
-         				id: collectionId
-         			}).success(function(res){
-         	     		if (res.status) {
-         	     			alert(res.msg);
-         	     		}else{
-         	     			window.location.reload();
-         	     		}
-         	     	});
-         		} 
+				Collection.enable({
+					id: collectionId
+				}).success(function(res){
+					if (res.status) {
+						alert(res.msg);
+					}else{
+						window.location.reload();
+					}
+				});
          	};
          	$scope.closeCollection = function(){
-         		if (confirm('确认要下线该Collection?')){
-         			Collection.close({
-         				id: collectionId
-         			}).success(function(res){
-         	     		if (res.status) {
-         	     			alert(res.msg);
-         	     		}else{
-         	     			window.location.reload();
-         	     		}
-         	     	});
-         		} 
+				Collection.close({
+					id: collectionId
+				}).success(function(res){
+					if (res.status) {
+						alert(res.msg);
+					}else{
+						window.location.reload();
+					}
+				});
          	};
          	
          	

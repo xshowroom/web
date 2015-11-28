@@ -412,13 +412,18 @@ return array_merge(
 
         'collection_index__modal__SUBMIT_CONFIRM' => 'CONFIRM SUBMIT?',
         'collection_index__modal__SUBMIT_DETAIL' => 'Do you confirm to submit this collection? (you cannot make changes of this collection after submitted)',
-        'collection_index__modal__SUBMIT_btn_CLOSE' => 'CLOSE',
+        'collection_index__modal__SUBMIT_btn_CANCEL' => 'CANCEL',
         'collection_index__modal__SUBMIT_btn_SUBMIT' => 'SUBMIT',
 
         'collection_index__modal__DELETE_CONFIRM' => 'DELETE SUBMIT?',
         'collection_index__modal__DELETE_DETAIL' => 'Do you confirm to delete this collection? ',
-        'collection_index__modal__DELETE_btn_CLOSE' => 'CLOSE',
-        'collection_index__modal__DELETE_btn_DELETE' => 'DELETE'
+        'collection_index__modal__DELETE_btn_CANCEL' => 'CANCEL',
+        'collection_index__modal__DELETE_btn_DELETE' => 'DELETE',
+
+        'collection_index__modal__CLOSE_CONFIRM' => 'CLOSE SUBMIT?',
+        'collection_index__modal__CLOSE_DETAIL' => 'Do you confirm to close this collection? (buyers will not see this collection once you close it)',
+        'collection_index__modal__CLOSE_btn_CANCEL' => 'CANCEL',
+        'collection_index__modal__CLOSE_btn_CLOSE' => 'CLOSE'
     ),
     /**
      * product_create.php

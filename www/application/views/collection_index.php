@@ -80,7 +80,7 @@
                  		<button class="btn btn-type-1" data-toggle="modal" data-target="#modalDeleteConfirm"><?=__("collection_index__btn_DELETE")?></button>
                  		<?php }?>
                  		<?php if($collection['status'] == 1) {?>
-                 		<button class="btn btn-type-2" ng-click="closeCollection();"><?=__("collection_index__btn_CLOSE")?></button>
+                 		<button class="btn btn-type-2" data-toggle="modal" data-target="#modalCloseConfirm"><?=__("collection_index__btn_CLOSE")?></button>
                  		<?php }?>
                  	</div>
                 </div>
@@ -269,7 +269,7 @@
                     <p><?=__("collection_index__modal__SUBMIT_DETAIL")?></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn  btn-type-1" data-dismiss="modal"><?=__("collection_index__modal__SUBMIT_btn_CLOSE")?></button>
+                    <button type="button" class="btn  btn-type-1" data-dismiss="modal"><?=__("collection_index__modal__SUBMIT_btn_CANCEL")?></button>
                     <button type="button" class="btn btn-type-2" ng-click="enableCollection();"><?=__("collection_index__modal__SUBMIT_btn_SUBMIT")?></button>
                 </div>
             </div><!-- /.modal-content -->
@@ -289,8 +289,27 @@
                     <p><?=__("collection_index__modal__DELETE_DETAIL")?></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn  btn-type-1" data-dismiss="modal"><?=__("collection_index__modal__DELETE_btn_CLOSE")?></button>
+                    <button type="button" class="btn  btn-type-1" data-dismiss="modal"><?=__("collection_index__modal__DELETE_btn_CANCEL")?></button>
                     <button type="button" class="btn btn-type-2" ng-click="deleteCollection();"><?=__("collection_index__modal__DELETE_btn_DELETE")?></button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- close confirm -->
+    <div class="modal fade" id="modalCloseConfirm" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-xs">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title"><?=__("collection_index__modal__CLOSE_CONFIRM")?></h4>
+                </div>
+                <div class="modal-body">
+                    <p><?=__("collection_index__modal__CLOSE_DETAIL")?></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn  btn-type-1" data-dismiss="modal"><?=__("collection_index__modal__CLOSE_btn_CANCEL")?></button>
+                    <button type="button" class="btn btn-type-2" ng-click="closeCollection();"><?=__("collection_index__modal__CLOSE_btn_CLOSE")?></button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
