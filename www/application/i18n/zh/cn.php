@@ -436,6 +436,24 @@ return array_merge(
         'product_create__PRODUCT_color_DESCRITION' => '* 你可以选好几个色彩',
     ),
     /**
+     * product_index.php
+     */
+    array(
+        'product_index__BACK_COLLECTION' => '回到产品系列',
+
+        'product_index__PRODUCT_CATEGORY' => '产品类别',
+        'product_index__PRODUCT_STYLE_NUMBER' => '产品货号',
+        'product_index__PRODUCT_WHOLESALE_PRICE' => '产品批发价',
+        'product_index__PRODUCT_RETAIL_PRICE' => '产品零售价',
+        'product_index__PRODUCT_SIZE' => '尺码',
+        'product_index__PRODUCT_COLOR' => '色彩',
+        'product_index__PRODUCT_MADE_IN' => '产品产地',
+        'product_index__PRODUCT_MATERIAL' => '产品材质',
+        'product_index__PRODUCT_CARE_INSTRUCTION' => '产品护理指南:',
+
+        'product_index__PRODUCT_btn_DELETE' => '删除产品',
+    ),
+    /**
     /**
      * brand_collection.php
      */

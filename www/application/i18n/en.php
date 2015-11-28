@@ -436,6 +436,24 @@ return array_merge(
         'product_create__PRODUCT_color_DESCRITION' => '* You can select several colors.',
     ),
     /**
+     * product_index.php
+     */
+    array(
+        'product_index__BACK_COLLECTION' => 'BACK TO COLLECTION',
+
+        'product_index__PRODUCT_CATEGORY' => 'PRODUCT CATEGORY',
+        'product_index__PRODUCT_STYLE_NUMBER' => 'STYLE NUMBER',
+        'product_index__PRODUCT_WHOLESALE_PRICE' => 'WHOLESALE PRICE',
+        'product_index__PRODUCT_RETAIL_PRICE' => 'RETAIL PRICE',
+        'product_index__PRODUCT_SIZE' => 'SIZE',
+        'product_index__PRODUCT_COLOR' => 'COLOR',
+        'product_index__PRODUCT_MADE_IN' => 'MADE IN',
+        'product_index__PRODUCT_MATERIAL' => 'MATERIAL',
+        'product_index__PRODUCT_CARE_INSTRUCTION' => 'CARE INSTRUCTION:',
+
+        'product_index__PRODUCT_btn_DELETE' => 'DELETE',
+    ),
+    /**
      * brand_collection.php
      */
     array(

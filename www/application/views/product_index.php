@@ -37,7 +37,7 @@
     			<div class="col-xs-12">
     				<a class="back-to-collection" href="/collection/<?=$production['collection_id']?>" target="_self">
     					<span class="glyphicon glyphicon-arrow-left"></span>
-    					<span>BACK TO COLLECTION</span>
+    					<span><?=__("product_index__BACK_COLLECTION")?></span>
     				</a>
     			</div>
     		</div>
@@ -66,19 +66,23 @@
                  		<h2><?= $production['name']?></h2>
                  	</div>
                  	<div class="col-xs-12 product-detail">
-                 		<div>CATEGORY</div>
+                 		<div><?=__("product_index__PRODUCT_CATEGORY")?></div>
                  		<div>{{'<?= $production['category']?>'| translate}}</div>
                  	</div>
+	                <div class="col-xs-12 product-detail">
+		                <div><?=__("product_index__PRODUCT_STYLE_NUMBER")?></div>
+		                <div><?= $production['style_num']?></div>
+	                </div>
                  	<div class="col-xs-12 product-detail">
-                 		<div>RETAIL PRICE</div>
+                 		<div><?=__("product_index__PRODUCT_WHOLESALE_PRICE")?></div>
                  		<div><?= $collection['currency']?>{{<?= $production['retail_price']?> | number: 2}}</div>
                  	</div>
                  	<div class="col-xs-12 product-detail">
-                 		<div>WHOLE PRICE</div>
+                 		<div><?=__("product_index__PRODUCT_RETAIL_PRICE")?></div>
                  		<div><?= $collection['currency']?>{{<?= $production['whole_price']?> | number:2}}</div>
                  	</div>
                  	<div class="col-xs-12 product-detail">
-                 		<div>SIZE | <?= $production['size_region']?></div>
+                 		<div><?=__("product_index__PRODUCT_SIZE")?> | <?= $production['size_region']?></div>
                  		<?php $sizesCodes = json_decode($production['size_code']);?>
                  		<div>
 	                 		<?php foreach($sizesCodes as $code => $value){?>
@@ -89,7 +93,7 @@
                  		</div>
                  	</div>
                  	<div class="col-xs-12 product-detail">
-                 		<div>COLOR</div>
+                 		<div><?=__("product_index__PRODUCT_COLOR")?></div>
                  		<?php $colors = json_decode($production['color']);?>
                  		<div>
 	                 		<?php foreach($colors as $color){?>
@@ -105,21 +109,21 @@
                  		</div>
                  	</div>
                  	<div class="col-xs-12 product-detail">
-                 		<div>MADE IN</div>
+                 		<div><?=__("product_index__PRODUCT_MADE_IN")?></div>
                  		<div>{{'<?= $production['made_in']?>' | translate}}</div>
                  	</div>
                  	<div class="col-xs-12 product-detail">
-                 		<div>MATERIAL</div>
+                 		<div><?=__("product_index__PRODUCT_MATERIAL")?></div>
                  		<div>{{'<?= $production['material']?>' | translate}}</div>
                  	</div>
                  	<div class="col-xs-11 product-detail">
-                 		<div>CARE INSTRUCTION:</div>
+                 		<div><?=__("product_index__PRODUCT_CARE_INSTRUCTION")?></div>
                  		<div>
 	                 		<span class="product-care-instruction"><?= ($production['care_instruction'])?></span>
                  		</div>
                  	</div>
                  	<div class="col-xs-12 product-action">
-                 		<button class="btn btn-type-2" ng-click="deleteProduct(<?=$production['id']?>, <?=$collection['id']?>);">DELETE</button>
+                 		<button class="btn btn-type-2" ng-click="deleteProduct(<?=$production['id']?>, <?=$collection['id']?>);"><?=__("product_index__PRODUCT_btn_DELETE")?></button>
                  	</div>
                 </div>
             </div>
