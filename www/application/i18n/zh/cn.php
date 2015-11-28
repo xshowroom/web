@@ -408,6 +408,7 @@ return array_merge(
 
         'collection_index__CATEGORIES' => '分类',
         'collection_index__ADD_PRODUCT' => '+ 添加新的商品',
+        'collection_index__btn_LOAD_MORE' => '加载更多'
     ),
     /**
      * product_create.php
@@ -434,7 +435,7 @@ return array_merge(
         'product_create__PRODUCT_color_CUSTOMIZED_COLOR' => '自定义色彩',
         'product_create__PRODUCT_color_UPLOAD_IMAGE' => '上传色彩图片',
         'product_create__PRODUCT_color_btn_ADD_COLOR' => '添加色彩',
-        'product_create__PRODUCT_color_DESCRITION' => '* 你可以选好几个色彩',
+        'product_create__PRODUCT_color_DESCRITION' => '* 你可以选多个色彩',
     ),
     /**
      * product_index.php

@@ -201,7 +201,7 @@
                 	<img src="/static/app/images/empty.png">
                 	<p><?=__("collection_index__NO_PRODUCT_1")?><br/><?=__("collection_index__NO_PRODUCT_2")?></p>
                 	<?php if($collection['status'] == 0) {?>
-                	<a class="btn btn-type-2" href="/product/create/<?=$collection['id']?>">ADD PRODUCT</a>
+                	<a class="btn btn-type-2" href="/product/create/<?=$collection['id']?>"><?=__("collection_index__ADD_PRODUCT")?></a>
 					<?php }?>
                 </div>
             </div>
@@ -246,7 +246,7 @@
                  		</div>
                  		<div class="clearfix"></div>
                  		<div class="text-center load-more" ng-if="filters.limit < (categoryCounter[filters.category] || products.length)">
-                 			<button class="btn btn-type-1" ng-click="filters.limit = filters.limit + 8;">LOAD MORE</button>
+                 			<button class="btn btn-type-1" ng-click="filters.limit = filters.limit + 8;"><?=__("collection_index__btn_LOAD_MORE")?></button>
                  		</div>
                  	</div>
                 </div>
@@ -256,5 +256,24 @@
     <footer class="row footer-navigation">
         <?php echo View::factory('common/global_navigation_footer'); ?>
     </footer>
+
+    <!-- confirm -->
+    <div class="modal fade" id="modalConfirm" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-xs">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title"><?=__("collection__modal__SUBMIT_CONFIRM")?></h4>
+                </div>
+                <div class="modal-body">
+                    <p><?=__("collection__modal__SUBMIT_DETAIL")?></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn  btn-type-1" data-dismiss="modal"><?=__("collection__modal__btn_CLOSE")?></button>
+                    <button type="button" class="btn btn-type-2" ng-click="deleteMessage();"><?=__("collection__modal__btn_SUBMIT")?></button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 </body>
 </html>

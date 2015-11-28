@@ -408,6 +408,7 @@ return array_merge(
 
         'collection_index__CATEGORIES' => 'CATEGORIES',
         'collection_index__ADD_PRODUCT' => '+ ADD NEW PRODUCT',
+        'collection_index__btn_LOAD_MORE' => 'LOAD MORE'
     ),
     /**
      * product_create.php
