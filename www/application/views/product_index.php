@@ -103,7 +103,7 @@
 	                 			<?php if ($color->type == 0) {?>
 	                 			<div style="background-color: <?=$color->value?>"></div>
 	                 			<?php } else if ($color->type == 1){?>
-	                 			<div style="background-image: url(/<?=$color->value?>)"></div>
+	                 			<div style="background-image: <?=URL::site($color->value)?>"</div>
 	                 			<?php }?>
 	                 			<div><?=$color->name?></div>
 	                 		</div>
