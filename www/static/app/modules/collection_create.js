@@ -93,7 +93,7 @@ angular.module(
 	     	     			if (res.status) {
 	     	     				$scope.errorMsgs.push(['create error', res.msg]);
 	     	     			}else{
-	     	     				window.open('/brand/collection', '_self');
+	     	     				window.open('/collection/'+res.data, '_self');
 	     	     			}
 	     	     		});
 	     			} 
