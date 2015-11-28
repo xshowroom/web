@@ -279,4 +279,27 @@ angular.module(
         	})
         }
     };
+}])
+.directive('imageLink', [function () {
+    return {
+        transclude: false,
+        restrict: 'C',
+        replace: false,
+        link: function ($scope, $element, $attrs, $transclude) {
+        	$element.on("mouseenter", function(){
+        		var imageUrl = $(this).children("img").attr("src");
+        		var template = [
+        	    	'<div class="image-link-mask" style="background-image: url(' + imageUrl +');">',
+        	        	'<div>',
+        	            	'<a class="btn btn-type-1" href=' + $attrs.href + '><i class="fa fa-search"></i></a>',
+        	            '</div>',
+        	        '</div>'
+        	    ].join('');
+        		$element.append(template);
+        	});
+        	$element.on("mouseleave", function(){
+        		$element.find(".image-link-mask").remove();
+        	});
+        }
+    };
 }]);

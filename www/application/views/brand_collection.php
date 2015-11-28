@@ -54,7 +54,7 @@
             		<div class="collection-item" ng-repeat="collection in collections| filter: {status: filters.status} | limitTo : filters.limit : 0 ">
             			<h3>{{collection.name| uppercase}} {{collection.category | translate}} ({{collection.productions.length}})</h3>
             			<div class="collection-info">
-            				<a class="col-xs-4 collection-cover" ng-href="/collection/{{collection.id}}">
+            				<a class="col-xs-4 collection-cover image-link" ng-href="/collection/{{collection.id}}">
             					<img ng-src="/{{collection.cover_image_medium}}"/>
             				</a>
             				<div class="col-xs-8 collection-details">
