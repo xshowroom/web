@@ -30,9 +30,6 @@
 		<div class="container">
 			<div class="row" style="min-height:300px;">
 				<h1 class="text-center">Personal Order Is Coming Soon!</h1>
-				<h2 class="text-center">Email Address: <?= $user['email'] ?></h2>
-				<h2 class="text-center">Display Name: <?= $userAttr['display_name'] ?></h2>
-				<?php var_dump($user); ?>
 			</div>
 		</div>
 	</section>
