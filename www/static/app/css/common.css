@@ -132,6 +132,7 @@ a {
 	position: relative;
 	text-decoration: none !important;
 	cursor: pointer;
+	overflow: hidden;
 }
 a:hover,
 a.active {
@@ -185,6 +186,9 @@ a.active:before{
     color: #aaa;
     font-size: 12px;
     font-weight: 200;
+}
+.setting-info .locale-settings{
+	height: 40px;
 }
 .setting-info .locale-settings .dropdown{
 	display: inline-block;
@@ -403,7 +407,7 @@ a.active:before{
 	bottom: 0;
 	position: absolute;
 	cursor: pointer;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.3);
 	margin: 0;
 	white-space: normal;
 }
@@ -475,6 +479,69 @@ to {-o-transform: translateY(-100%);}
     -moz-animation: rollUp 1s linear infinite;
     -o-animation: rollUp 1s linear infinite;
 }
+/*image line */
+@keyframes slideIn
+{
+from {transform: translateX(-100%);}
+to {transform: translateX(0);}
+}
+
+@-moz-keyframes slideIn /* Firefox */
+{
+from {-moz-transform: translateX(-100%);}
+to {-moz-transform: translateX(0);}
+}
+
+@-webkit-keyframes slideIn /* Safari 和 Chrome */
+{
+from {-webkit-transform: translateX(-100%);}
+to {-webkit-transform: translateX(0);;}
+}
+
+@-o-keyframes slideIn /* Opera */
+{
+from {-o-transform: translateX(-100%);}
+to {-o-transform: translateX(0);}
+}
+.image-link-mask {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 9;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-size: contain;
+    padding: 10px;
+    cursor: normal;
+    animation: slideIn .3s linear 1;
+    -webkit-animation: slideIn .3s linear 1;
+    -moz-animation: slideIn .3s linear 1;
+    -o-animation: slideIn .3s linear 1;
+}
+.image-link-mask > div{
+    background-color: rgba(255,255,255,0.85);
+    text-align: center;
+    height: 100%;
+}
+.image-link-mask > div > a{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    min-width: auto !important;
+    width: 40px;
+    line-height: 38px;
+    color: #25272c !important; 
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+
 /* load more */
 .load-more{
 	margin-top: 40px;

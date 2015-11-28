@@ -96,6 +96,7 @@
     line-height: 120px;
     text-align: center;
     font-weight: bold;
+    z-index: 99;
 }
 .support{
 	padding-top: 50px;
