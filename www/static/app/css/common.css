@@ -40,6 +40,13 @@ label{
 	text-align: center;
 	line-height: 20px;
 }
+
+.form-control:focus {
+	outline: none;
+	border-color: #ca7379;
+	box-shadow: 0 0 5px rgba(202, 115, 121, 0.5);
+}
+
 select.form-control{
 	appearance:none;
     -moz-appearance:none;
