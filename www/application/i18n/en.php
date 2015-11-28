@@ -5,7 +5,7 @@ return array_merge(
      * API Message
      */
     array(
-        'not_login' => 'username & password mismatch',
+        'not_login' => 'invalid username or password',
         'logged_in' => 'logged in',
         'image_err' => 'validation code is not correct',
         'register_failed' => 'register failed',

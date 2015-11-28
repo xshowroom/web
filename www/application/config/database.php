@@ -22,7 +22,7 @@ return array
                 'hostname'   => 'localhost:3306',// 10.42.3.33:6008
                 'database'   => 'xshowroom',
                 'username'   => 'root',
-                'password'   => '123456',
+                'password'   => 'shiliang',
                 'persistent' => false,
             ),
             'table_prefix' => '',
