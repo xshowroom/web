@@ -17,7 +17,7 @@ angular.module(
         '$scope','Message',
         function ($scope, Message){
             $scope.clickMessage=function(){
-                messageId = $(this).find('#msg_id').val();
+                messageId = angular.element('#msg_id').val();
             };
 
             $scope.deleteMessage=function(){
