@@ -440,7 +440,7 @@ return array_merge(
         'product_create__PRODUCT_RETAIL_PRICE' => '建议零售价',
         'product_create__PRODUCT_SIZE_REGION' => '尺码地区',
         'product_create__PRODUCT_COLOR_SET' => '产品色彩',
-        'product_create__PRODUCT_ADD_COLOR' => '+ 添加色彩',
+        'product_create__PRODUCT_ADD_COLOR' => '编辑',
         'product_create__PRODUCT_MADE_IN' => '产品产地',
         'product_create__PRODUCT_MATERIAL' => '产品材质',
         'product_create__PRODUCT_CARE_INSTRUCTION' => '护理指导',
@@ -450,7 +450,7 @@ return array_merge(
         'product_create__PRODUCT_color_STANDARD_COLOR' => '标准色彩',
         'product_create__PRODUCT_color_CUSTOMIZED_COLOR' => '自定义色彩',
         'product_create__PRODUCT_color_UPLOAD_IMAGE' => '上传色彩图片',
-        'product_create__PRODUCT_color_btn_ADD_COLOR' => '添加色彩',
+        'product_create__PRODUCT_color_btn_ADD_COLOR' => '确认',
         'product_create__PRODUCT_color_DESCRITION' => '* 你可以选多个色彩',
     ),
     /**

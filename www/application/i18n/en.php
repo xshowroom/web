@@ -440,7 +440,7 @@ return array_merge(
         'product_create__PRODUCT_RETAIL_PRICE' => 'RETAIL PRICE',
         'product_create__PRODUCT_SIZE_REGION' => 'SIZE REGION',
         'product_create__PRODUCT_COLOR_SET' => 'COLOR SET',
-        'product_create__PRODUCT_ADD_COLOR' => '+ Add Color',
+        'product_create__PRODUCT_ADD_COLOR' => 'EDIT',
         'product_create__PRODUCT_MADE_IN' => 'MADE IN',
         'product_create__PRODUCT_MATERIAL' => 'MATERIAL',
         'product_create__PRODUCT_CARE_INSTRUCTION' => 'CARE INSTRUCTION',
@@ -450,7 +450,7 @@ return array_merge(
         'product_create__PRODUCT_color_STANDARD_COLOR' => 'STANDARD COLOR',
         'product_create__PRODUCT_color_CUSTOMIZED_COLOR' => 'CUSTOMIZED COLOR',
         'product_create__PRODUCT_color_UPLOAD_IMAGE' => 'UPLOAD PATTERN IMAGE',
-        'product_create__PRODUCT_color_btn_ADD_COLOR' => 'ADD COLOR',
+        'product_create__PRODUCT_color_btn_ADD_COLOR' => 'OK',
         'product_create__PRODUCT_color_DESCRITION' => '* You can select several colors.',
     ),
     /**

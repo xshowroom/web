@@ -171,11 +171,11 @@
         <?php echo View::factory('common/global_navigation_footer'); ?>
     </footer>
     
-    <div class="modal fade" id="color-modal" tabindex="-1" role="dialog" aria-labelledby="color-modal">
+    <div class="modal fade" id="color-modal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="color-modal">
 	  	<div class="modal-dialog" role="document">
 	    	<div class="modal-content">
 	      		<div class="modal-header">
-	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        		<button type="button" class="close" ng-click="setColor();" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	      		</div>
 	      		<div class="modal-body uploading">
 	      			<h4><?=__("product_create__PRODUCT_color_STANDARD_COLOR");?></h4>
