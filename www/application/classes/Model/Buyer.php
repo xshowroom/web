@@ -8,15 +8,14 @@
  */
 class Model_Buyer
 {
-    public function getBrandList($userId)
+    public function getAuthList($userId)
     {
-        $result = DB::select('brand_id')
+        $result = DB::select()
                     ->from('buyer_brand_map')
                     ->where('user_id', '=', $userId)
                     ->where('status', '=', Model_Brand::STATUS_NORMAL)
                     ->execute()
-                    ->as_array()
-                    ->get('brand_id');
+                    ->as_array();
         
         return $result;
     }
