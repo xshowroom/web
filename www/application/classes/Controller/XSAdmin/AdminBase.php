@@ -1,7 +1,7 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
 
-class Controller_XSAdmin_AdminBase extends Controller_Base
+class Controller_Xsadmin_AdminBase extends Controller_Base
 {
     public $adminUser;
 
