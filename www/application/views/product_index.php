@@ -43,7 +43,7 @@
     			</div>
     		</div>
             <div class="row" ng-show="!isEditing">
-                <div class="col-xs-3">
+                <div class="col-xs-5">
                 	<div class="product-cover">
                 		<?php $images = json_decode($production['image_url']);?>
                  		<img ng-src="/{{productCover || '<?=$images[0]?>'}}">
@@ -64,7 +64,7 @@
 	            		</div>
 	            	</div>
                 </div>
-                <div class="col-xs-9">
+                <div class="col-xs-7">
                  	<div class="col-xs-12 product-detail product-name">
                  		<h2><?= $production['name']?></h2>
                  	</div>
