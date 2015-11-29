@@ -34,13 +34,13 @@
                 	<h3><?=__("brand_collection__STATUS")?></h3>
                 	<ul>
                 		<li>
-                			<a ng-click="filters.status = ''; filters.limit = 4;">
+                			<a ng-click="filters.status = ''; filters.limit = 4;"  ng-class="{'active': filters.status == ''}">
                 				<span>{{'COLLECTION_STATUS_ALL' | translate}}</span>
                 				<span>{{collections.length || 0}}</span>
                 			</a>
                 		</li>
                 		<li ng-repeat="(status,count) in statusCounter">
-                			<a ng-click="filters.status = status; filters.limit = 4;">
+                			<a ng-click="filters.status = status; filters.limit = 4;"  ng-class="{'active': filters.status == status}">
                 				<span>{{('COLLECTION_STATUS_' + status) | translate}}</span>
                 				<span>{{count}}</span>
                 			</a>

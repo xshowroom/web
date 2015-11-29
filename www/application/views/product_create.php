@@ -111,13 +111,13 @@
                         <div class="form-group col-xs-12"  ng-class="{'has-error': checkInfo.validation.color}">
                             <label for="category" class="col-xs-2 control-label"><?=__("product_create__PRODUCT_COLOR_SET");?></label>
                             <div class="col-xs-6 selected-colors">
-                            	<div ng-repeat="color in product.color track by $index" class="color-item">
+                            	<div ng-repeat="color in product.color track by $index" class="color-item col-xs-2">
                             		<div ng-if="color.type == 0" style="background-color:{{color.value}}">
                             		</div>
                             		<div ng-if="color.type == 1" style="background-image:url(/{{color.value}})"></div>
                             		<div>{{color.name}}</div>
 								</div>
-                            	<a class="new-color" ng-click="openColorModal();"><?=__("product_create__PRODUCT_ADD_COLOR");?></a>
+                            	<a class="new-color col-xs-4" ng-click="openColorModal();"><?=__("product_create__PRODUCT_ADD_COLOR");?></a>
                             </div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.madeIn}">
@@ -211,6 +211,15 @@
 	      					<input type="file" id="color-file">
 	      				</label>
 	      			</div>
+	      			<div class="alert" role="alert"  ng-if="colorErrorMsg.length">
+						<ul>
+							<li ng-repeat="msg in colorErrorMsg">
+								<span class="glyphicon glyphicon-remove-sign"></span>
+								<span>第{{msg.index + 1}}个自定义颜色{{msg.msg}}</span>
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
 	      			<div class="add-color-action">
 	      				<button class="btn btn-type-2" ng-click="setColor();"><?=__("product_create__PRODUCT_color_btn_ADD_COLOR");?></button>
 	      			</div>

@@ -14,6 +14,7 @@
     <script type="text/javascript" src="/static/bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="/static/bower_components/angular-animate/angular-animate.min.js"></script>
     <script type="text/javascript" src="/static/bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script type="text/javascript" src="/static/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
     <script type="text/javascript" src="/static/bower_components/angular-strap/dist/angular-strap.min.js"></script>
     <script type="text/javascript" src="/static/bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
     <script type="text/javascript" src="/static/bower_components/ng-textcomplete/ng-textcomplete.min.js"></script>

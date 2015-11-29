@@ -8,7 +8,7 @@ angular.module(
     'xShowroom.collection.index', 
     [
         'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services',
-        'ngAnimate', 'mgcrea.ngStrap', 'ngTextcomplete'
+        'ngAnimate', 'mgcrea.ngStrap', 'ngTextcomplete', 'ngSanitize'
     ]
 )
 .controller(

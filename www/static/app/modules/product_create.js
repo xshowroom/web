@@ -68,6 +68,7 @@ angular.module(
      		
 			
         	$element.on('change', '#color-file', function(e){
+        		$scope.$emit('uploading.start');
         		var self = $(this);
 				var files = e.target.files;
 				if (!files.length){
@@ -83,7 +84,6 @@ angular.module(
 					self.val('');
 				    return; 
 				}
-				$scope.$emit('uploading.start');
 				uiUploader.removeAll();
 				uiUploader.addFiles(files);
                 uiUploader.startUpload({
@@ -98,7 +98,8 @@ angular.module(
                     		name: undefined,
                     		value: response.data,
                     		type: 'url',
-                    		style: 'background-image: url(/' + response.data + ');'
+                    		style: 'background-image: url(/' + response.data + ');',
+                    		selected: true
                     	});
                     	$scope.$apply();
                     	$scope.$emit('uploading.end');
@@ -120,6 +121,7 @@ angular.module(
      		
      		$scope.setColor = function(){
      			var colors = [];
+     			$scope.colorErrorMsg = [];
      			for(var name in $scope.currentColors.standard){
      				if($scope.currentColors.standard[name]){
      					colors.push({
@@ -131,16 +133,23 @@ angular.module(
      			}
      			for(var i = 0, len = $scope.currentColors.customized.length; i < len; i++){
      				var record = $scope.currentColors.customized[i];
-     				if (record.selected){
+     				if (record.selected && record.name){
      					colors.push({
          					name: record.name,
          					value: record.value,
          					type: 1
          				});
+     				}else{
+     					$scope.colorErrorMsg.push({
+     						index: i,
+     						msg: 'unnamed error'
+     					});
      				}
      			}
-     			$scope.product.color = colors;
-     			angular.element('#color-modal').modal('hide');
+     			if (!$scope.colorErrorMsg.length){
+     				$scope.product.color = colors;
+         			angular.element('#color-modal').modal('hide');
+     			}
      		};
      		$scope.checkInfo = {
      			validation: {

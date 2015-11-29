@@ -250,7 +250,7 @@
 }
 #color-modal .modal-body .add-color-action{
 	text-align: center;
-	margin-top: 30px;
+	/* margin-top: 30px; */
 }
 #color-modal .modal-body .add-color-tips{
 	font-size: 12px;
@@ -264,10 +264,11 @@
 }
 
 .selected-colors .color-item {
-	display: inline-block;
+	/* display: inline-block;
 	float: left;
 	text-align: center;
-	margin-right: 20px;
+	margin-right: 20px; */
+	margin-bottom: 10px;
 }
 .selected-colors .color-item > div:nth-child(1){
 	width: 45px;
@@ -281,4 +282,10 @@
 }
 .selected-colors .color-item > div:nth-child(2){
 	font-size: 12px;
+    white-space: nowrap;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-left: -15px;
+    margin-right: -15px;
 }

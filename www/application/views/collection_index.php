@@ -15,6 +15,7 @@
     <script type="text/javascript" src="/static/bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="/static/bower_components/angular-animate/angular-animate.min.js"></script>
     <script type="text/javascript" src="/static/bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script type="text/javascript" src="/static/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
     <script type="text/javascript" src="/static/bower_components/angular-strap/dist/angular-strap.min.js"></script>
     <script type="text/javascript" src="/static/bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
     <script type="text/javascript" src="/static/bower_components/ng-textcomplete/ng-textcomplete.min.js"></script>
@@ -66,7 +67,7 @@
                  		<div><?=__("collection_index__COLLECTION_DESCRIPTION")?>:</div>
                  		<div class="row" ng-class="{'show-all': showAllDesc}">
 	                 		<p class="col-xs-10">
-	                 			<span><?= $collection['description']?></span>
+	                 			<span ng-bind-html="showAllDesc ? '<?=$collection['description']?>' : '<?=$collection['description']?>'.split('\n')[0]"></span>
 	                 		</p>
 	                 		<div class="col-xs-2">
 	                 			<a href="#" ng-show="showAllDesc"  ng-click="showAllDesc = !showAllDesc;"><?=__("collection_index__HIDE")?></a>
@@ -214,13 +215,13 @@
                 	<h3><?=__("collection_index__CATEGORIES")?></h3>
                 	<ul>
                 		<li>
-                			<a ng-click="filters.category = ''; filters.limit = 8;">
+                			<a ng-click="filters.category = ''; filters.limit = 8;"  ng-class="{'active': filters.category == ''}">
                 				<span>{{'dropdown__PRODUCT_CATEGORY__ALL' | translate}}</span>
                 				<span>{{products.length || 0}}</span>
                 			</a>
                 		</li>
                 		<li ng-repeat="(category, count) in categoryCounter">
-                			<a ng-click="filters.category = category; filters.limit = 8;">
+                			<a ng-click="filters.category = category; filters.limit = 8;" ng-class="{'active': filters.category == category}">
                 				<span>{{category | translate}}</span>
                 				<span>{{count}}</span>
                 			</a>
@@ -236,7 +237,7 @@
                  	<h3>{{ (filters.category == '' ? 'dropdown__PRODUCT_CATEGORY__ALL' : filters.category)  | translate}}</h3>
                  	<div class="collection-category-content">
                  		<div class="col-xs-3" ng-repeat="product in products | filter : filters.category | limitTo: filters.limit: 0">
-                 			<a  target="_self" ng-href="/product/{{product.id}}" class="collection-product-detail">
+                 			<a  target="_self" ng-href="/product/{{product.id}}" class="collection-product-detail image-link">
 								<img ng-src="/{{product.image_url[0]}}" class="product-image"/>
 								<span class="product-info">
 									<span class="product-name">{{product.name}}</span>

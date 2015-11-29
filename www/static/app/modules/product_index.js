@@ -8,7 +8,7 @@
 angular.module(
     'xShowroom.product.index',
     [
-        'xShowroom.i18n', 'xShowroom.directives'
+        'xShowroom.i18n', 'xShowroom.directives', 'ngSanitize'
     ]
 )
 .controller(
