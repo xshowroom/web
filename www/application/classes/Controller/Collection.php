@@ -4,12 +4,14 @@
 class Controller_Collection extends Controller_BaseReqLogin
 {
     public $userService;
+    public $buyerService;
     public $collectionService;
 
     public function before()
     {
         parent::before();
         $this->userService = new Business_User();
+        $this->buyerService = new Business_Buyer();
         $this->collectionService =new Business_Collection();
     }
 
@@ -29,10 +31,14 @@ class Controller_Collection extends Controller_BaseReqLogin
         
         $userId = $this->opUser['id'];
         $collectionId = Request::current()->param('id');
-        $view->set('collection', $this->collectionService->getCollectionInfo($userId, $collectionId));
+        
+        if ($this->opUser['role_type'] == Business_User::ROLE_BRAND) {
+            $view->set('collection', $this->collectionService->getCollectionInfo($userId, $collectionId));
+        } else {
+            $view->set('collection', $this->buyerService->getCollectionInfo($userId, $collectionId));
+        }
         
         $this->response->body($view);
-
     }
 
 }

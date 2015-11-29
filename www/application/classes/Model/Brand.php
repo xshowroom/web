@@ -60,6 +60,18 @@ class Model_Brand
         
         return $result;
     }
+    
+    public function getByBrandIdList($brandList)
+    {
+        $result = DB::select()
+                    ->from('brand')
+                    ->where('id', 'IN', $brandList)
+                    ->where('status', '=', STAT_NORMAL)
+                    ->execute()
+                    ->as_array();
+    
+        return $result;
+    }
 
     public function addApplication($userId, $brandId)
     {
@@ -81,7 +93,7 @@ class Model_Brand
         return $result[0];
     }
 
-    public funtion checkAuth($userId, $brandId)
+    public function checkAuth($userId, $brandId)
     {
         $result = DB::select()
                     ->from('buyer_brand_map')

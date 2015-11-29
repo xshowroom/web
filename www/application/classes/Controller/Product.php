@@ -4,6 +4,7 @@
 class Controller_Product extends Controller_BaseReqLogin
 {
     public $userService;
+    public $buyerService;
     public $productionService;
     public $collectionService;
 
@@ -11,6 +12,7 @@ class Controller_Product extends Controller_BaseReqLogin
     {
         parent::before();
         $this->userService = new Business_User();
+        $this->buyerService = new Business_Buyer();
         $this->productionService =new Business_Production();
         $this->collectionService =new Business_Collection();
     }
@@ -24,9 +26,15 @@ class Controller_Product extends Controller_BaseReqLogin
 
         $userId = $this->opUser['id'];
         $productionId = Request::current()->param('id');
-        $production = $this->productionService->getProduction($userId, $productionId);
+        if ($this->opUser['role_type'] == Business_User::ROLE_BRAND) {
+            $production = $this->productionService->getProduction($userId, $productionId);
+            $collection = $this->collectionService->getCollectionInfo($userId, $production['collection_id']);
+        } else {
+            $production = $this->buyerService->getProduction($userId, $productionId);
+            $collection = $this->buyerService->getCollectionInfo($userId, $production['collection_id']);
+        }
         $view->set('production', $production);
-        $view->set('collection', $this->collectionService->getCollectionInfo($userId, $production['collection_id']));
+        $view->set('collection', $collection);
         $this->response->body($view);
 
     }
