@@ -124,7 +124,7 @@
 							<div class="form-group col-xs-12">
 								<span class="form-control brand-register-text-center" name="generated-url">
 									www.xshowroom.com/{{!user.brandName || user.brandName == '' ? 'Brandname' : user.brandName}} </span>
-								<p class="text-center help-block small">
+								<p class="text-center help-block">
 									<?= __("brand_register__STEP_2__URL_DESC_1");?><br>
 									<?= __("brand_register__STEP_2__URL_DESC_2");?>
 								</p>
@@ -192,7 +192,7 @@
 					</div>
 					<div class="form-group">
 						<div class="col-xs-12">
-							<p class="text-center help-block small"><?= __("brand_register__STEP_3__COMPANY_ACCEPT_1");?></p>
+							<p class="text-center help-block"><?= __("brand_register__STEP_3__COMPANY_ACCEPT_1");?></p>
 						</div>
 					</div>
 					<div class="form-group">

@@ -239,7 +239,7 @@
 					</div>
 					<div class="form-group">
 						<div class="col-xs-12">
-							<p class="text-center help-block small"><?= __("buyer_register__STEP_3__COMPANY_ACCEPT_1");?></p>
+							<p class="text-center help-block"><?= __("buyer_register__STEP_3__COMPANY_ACCEPT_1");?></p>
 						</div>
 					</div>
 					<div class="form-group">

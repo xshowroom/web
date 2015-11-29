@@ -247,8 +247,8 @@ return array_merge(
         'brand_register__STEP_2__IMAGE' => 'LOOKBOOK / IMAGE',
         'brand_register__STEP_2__BRAND_NAME_PLACEHOLDER' => 'PLEASE ENTER YOUR BRAND NAME *',
         'brand_register__STEP_2__DESIGNER_NAME_PLACEHOLDER' => 'DESIGNER NAME *',
-        'brand_register__STEP_2__URL_DESC_1' => 'This URL will be used for direct access to your Brand',
-        'brand_register__STEP_2__URL_DESC_2' => '(for authenticated Buyers only)',
+        'brand_register__STEP_2__URL_DESC_1' => 'This URL will be used for direct access to your brand',
+        'brand_register__STEP_2__URL_DESC_2' => '(for authenticated buyers only)',
         'brand_register__STEP_2__btn__PREVIOUS' => 'PREVIOUS',
         'brand_register__STEP_2__btn__ADD_COMPANY' => 'ADD COMPANY',
 

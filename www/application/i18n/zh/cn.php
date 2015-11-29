@@ -168,7 +168,7 @@ return array_merge(
         'guide__benefits_MINIMISE_ORDER_ERROR_DESC' => '线上订货平台使用便利，后台预设起订量，自动避免订货错误',
         'guide__benefits_UNLIMITED_UPLOAD' => '无限上传空间',
         'guide__benefits_UNLIMITED_UPLOAD_DESC' => '享受无限上传空间，上传品牌最新系列高清资料',
-        'guide__benefits_24_7_SHOWROOM' => '24/7订货',
+        'guide__benefits_24_7_SHOWROOM' => '24/7 订货',
         'guide__benefits_24_7_SHOWROOM_DESC' => '买手享受全年无休时时订货',
         'guide__benefits_24_7_ACCESS_TO_ORDER_HISTORY' => '24/7接收订货资讯',
         'guide__benefits_24_7_ACCESS_TO_ORDER_HISTORY_DESC' => '品牌可24小时浏览买手订货信息',

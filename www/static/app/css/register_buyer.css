@@ -4,7 +4,7 @@ section.row{
 }
 
 h2.buyer-register-step {
-	font-size: 20px;
+	font-size: 16px;
 	margin-bottom: 50px;
 	margin-top: 0;
 	text-indent: 2.5em;
@@ -36,6 +36,11 @@ h2.buyer-register-step {
 	position: relative;
 }
 
+.help-block {
+	font-size: 11px;
+	color: #999;
+	margin-top: 15px;
+}
 
 .buyer-register-form-inline-left {
 	padding-left: 0;

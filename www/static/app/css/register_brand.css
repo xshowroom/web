@@ -4,7 +4,7 @@ section.row{
 }
 
 h2.brand-register-step {
-	font-size: 20px;
+	font-size: 16px;
 	margin-bottom: 50px;
 	margin-top: 0;
 	text-indent: 2.5em;
@@ -37,12 +37,18 @@ h2.brand-register-step {
 	margin-bottom: 0;
 }
 
-/* .brand-register-lookbook-upload label {
-	line-height: 100% !important;
-	margin-top: 10px;
-	color: #60b8e4;
-	cursor: pointer;
-} */
+.help-block {
+	font-size: 11px;
+	color: #999;
+	margin-top: 15px;
+}
+
+	/* .brand-register-lookbook-upload label {
+        line-height: 100% !important;
+        margin-top: 10px;
+        color: #60b8e4;
+        cursor: pointer;
+    } */
 
 /* #lookbook-upload {
 	visibility: hidden;
