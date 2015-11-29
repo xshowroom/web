@@ -194,7 +194,7 @@
 	      				<div ng-repeat="color in currentColors.customized track by $index" class="color-item"
 	      					ng-class="{'active': color['selected']}">
 		      				<label class="checkbox-inline" style="{{color['style']}}">
-							  	<input type="checkbox" ng-model="color['selected']" ng-true-value="true" ng-false-value="false" ng-change="checkColorName($index);">
+							  	<input type="checkbox" ng-model="color['selected']" ng-true-value="true" ng-false-value="false"><!--  ng-change="checkColorName($index);" -->
 							  	<span class="glyphicon glyphicon-ok"></span>
 							</label>
 							<input type="text" ng-model="color['name']" class="form-control" placeholder="unnamed_color_{{$index}}">

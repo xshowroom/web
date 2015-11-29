@@ -68,7 +68,7 @@
 					</div>
 					<div class="brand-list-content row">
 						<div class="col-xs-3">
-							<a target="_blank" href="#" class="brand-item">
+							<a target="_blank" href="#" class="brand-item image-link">
 								<img src="/static/app/images/shop-brand-1.png" class="brand-item-image">
 								<span class="brand-item-name">
 									<span>BRAND A</span>

@@ -108,16 +108,16 @@ angular.module(
 				self.val('');
 			});
      		
-     		$scope.checkColorName = function(index){
-     			var record = $scope.currentColors.customized[index];
-     			if (!record.selected){
-     				return;
-     			}else if(!record.name){
-     				alert('请先填写该颜色名称！');
-     				record.selected = false;
-     				return;
-     			}
-     		};
+//     		$scope.checkColorName = function(index){
+//     			var record = $scope.currentColors.customized[index];
+//     			if (!record.selected){
+//     				return;
+//     			}else if(!record.name){
+//     				alert('请先填写该颜色名称！');
+//     				record.selected = false;
+//     				return;
+//     			}
+//     		};
      		
      		$scope.setColor = function(){
      			var colors = [];

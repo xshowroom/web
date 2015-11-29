@@ -59,19 +59,20 @@
     text-align: center;
     line-height: 45px;
     color: #222;
-    transform: translateY(100%);
+    z-index: 99;
+   /*  transform: translateY(100%);
    	-webkit-transform: translateY(100%);
     -moz-transform: translateY(100%);
    	-o-transform: translateY(100%);
     transition: all .3s linear;
 	-webkit-transition: all .3s linear;
 	-moz-transition: all .3s linear;
-	-o-transition: all .3s linear;
+	-o-transition: all .3s linear; */
     
 }
-.brand-list .brand-list-content .brand-item:hover .brand-item-name{
+/* .brand-list .brand-list-content .brand-item:hover .brand-item-name{
 	transform: translateY(0);
 	-webkit-transform: translateY(0);
     -moz-transform: translateY(0);
    	-o-transform: translateY(0);
-}
+} */

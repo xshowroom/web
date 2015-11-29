@@ -36,6 +36,8 @@
             array('currentPage' =>  'collection', 'userAttr'=> $userAttr)); 
         ?>
     </nav>
+    
+    <?php if ($collection['user_id'] == $userAttr['user_id']) {?>
     <section class="row no-vertical-padding uploading">
         <div class="container collection-info">
             <div class="row" ng-show="!isEditing">
@@ -65,9 +67,9 @@
                  	</div>
                  	<div class="col-xs-11 collection-detail">
                  		<div><?=__("collection_index__COLLECTION_DESCRIPTION")?>:</div>
-                 		<div class="row" ng-class="{'show-all': showAllDesc}" ng-init="description = '<?=$collection['description']?>'">
-                 			<p class="col-xs-10" ng-if="!showAllDesc">{{description.split("\n")[0]}}</p>
-	                 		<p class="col-xs-10" ng-if="showAllDesc" >{{description}}</p>
+                 		<div class="row" ng-class="{'show-all': showAllDesc}">
+                 			<p class="col-xs-10" ng-if="!showAllDesc">{{collection.description.split("\n")[0]}}</p>
+	                 		<p class="col-xs-10" ng-if="showAllDesc" >{{collection.description}}</p>
 	                 		<div class="col-xs-2">
 	                 			<a href="#" ng-show="showAllDesc"  ng-click="showAllDesc = !showAllDesc;"><?=__("collection_index__HIDE")?></a>
 	                 			<a href="#" ng-show="!showAllDesc" ng-click="showAllDesc = !showAllDesc;"><?=__("collection_index__SHOW_ALL")?></a>
@@ -207,6 +209,7 @@
             </div>
         </div>
     </section>
+    <?php }?>
     <section class="row collection-product" ng-if="products.length">
         <div class="container">
             <div class="row">
@@ -256,7 +259,7 @@
     <footer class="row footer-navigation">
         <?php echo View::factory('common/global_navigation_footer'); ?>
     </footer>
-
+	<?php if ($collection['user_id'] == $userAttr['user_id']) {?>
     <!-- submit confirm -->
     <div class="modal fade" id="modalSubmitConfirm" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-xs">
@@ -314,5 +317,7 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+    
+    <?php }?>
 </body>
 </html>
