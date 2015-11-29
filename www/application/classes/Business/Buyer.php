@@ -20,7 +20,7 @@ class Business_Buyer
     public function validateAuth($userId, $brandUserId)
     {
         $authList = $this->buyerModel->getAuthList($userId);
-        foreach ($authBrandList as $row) {
+        foreach ($authList as $row) {
             $brandIdList[] = $row['brand_id'];
         }
         $brandist = $this->brandModel->getByBrandIdList(array_values($brandIdList));
