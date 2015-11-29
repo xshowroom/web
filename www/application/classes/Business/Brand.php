@@ -95,6 +95,10 @@ class Business_Brand
         
         $res = $this->doFilter($filter);
         
+        $pageSize = emRequest::current()->query('pageSize');
+        $offset = Request::current()->query('offset');
+        $res = array_slice($res, $offset, $pageSize);
+        
         return $res;
     }
     
