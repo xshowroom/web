@@ -142,7 +142,7 @@ angular.module(
      				}else{
      					$scope.colorErrorMsg.push({
      						index: i,
-     						msg: 'unnamed error'
+     						msg: 'unnamed_error'
      					});
      				}
      			}
