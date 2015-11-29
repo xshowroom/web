@@ -65,8 +65,9 @@
                  	</div>
                  	<div class="col-xs-11 collection-detail">
                  		<div><?=__("collection_index__COLLECTION_DESCRIPTION")?>:</div>
-                 		<div class="row" ng-class="{'show-all': showAllDesc}">
-	                 		<p class="col-xs-10">{{collection.description}}</p>
+                 		<div class="row" ng-class="{'show-all': showAllDesc}" ng-init="description = '<?=$collection['description']?>'">
+                 			<p class="col-xs-10" ng-if="!showAllDesc">{{description.split("\n")[0]}}</p>
+	                 		<p class="col-xs-10" ng-if="showAllDesc" >{{description}}</p>
 	                 		<div class="col-xs-2">
 	                 			<a href="#" ng-show="showAllDesc"  ng-click="showAllDesc = !showAllDesc;"><?=__("collection_index__HIDE")?></a>
 	                 			<a href="#" ng-show="!showAllDesc" ng-click="showAllDesc = !showAllDesc;"><?=__("collection_index__SHOW_ALL")?></a>
