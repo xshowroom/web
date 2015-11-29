@@ -171,7 +171,7 @@
         <?php echo View::factory('common/global_navigation_footer'); ?>
     </footer>
     
-    <div class="modal fade" id="color-modal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="color-modal">
+    <div class="modal fade" id="color-modal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-labelledby="color-modal">
 	  	<div class="modal-dialog" role="document">
 	    	<div class="modal-content">
 	      		<div class="modal-header">
