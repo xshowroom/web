@@ -117,7 +117,7 @@ return array_merge(
         'home__btn_REGISTER' => 'REGISTER',
 
         'home__HOT_BRANDS' => 'HOT BRANDS',
-        'home__profileS' => 'BRAND PROFILES',
+        'home__BRAND_PROFILES' => 'BRAND PROFILES',
         'home__SSI5_COLLECTION' => 'SSI5 COLLECTION',
 
         'home__TESTOMONIALS' => 'TESTOMONIALS',
