@@ -67,6 +67,7 @@
 }
 .collection-info .collection-detail .show-all p{
     max-height: none;
+    white-space: pre-line;
 }
 .collection-info .collection-detail .show-all p > span{
     white-space: pre-line;
