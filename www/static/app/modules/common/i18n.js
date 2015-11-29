@@ -107,6 +107,7 @@ angular.module(
             product_material_EMPTY_ERROR: '请选择产品材质',
             product_careIns_EMPTY_ERROR: '请输入产品护理指导',
             product_images_EMPTY_ERROR: '请上传产品图片',
+            product_add_image_unnamed_error: '上传的色彩图片未命名',
 
 
             /**
@@ -484,7 +485,7 @@ angular.module(
             product_material_EMPTY_ERROR: 'please select product material',
             product_careIns_EMPTY_ERROR: 'please input care instruction',
             product_images_EMPTY_ERROR: 'please upload product images ',
-
+            product_add_image_unnamed_error: 'input the name for upload color',
 
             /**
              * DROP DOWN LIST

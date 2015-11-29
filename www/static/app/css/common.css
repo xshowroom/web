@@ -197,7 +197,7 @@ a.active:before{
 	height: 40px;
     background: #000;
     color: #aaa;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 200;
 }
 .setting-info .locale-settings{
@@ -601,6 +601,7 @@ to {-o-transform: translateX(0);}
 	background-color: #25272c;
 } */
 .user-navigation .user-actions{
+	font-size: 12px;
 	margin-top: 49px;
 }
 

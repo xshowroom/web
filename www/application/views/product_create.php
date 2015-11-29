@@ -215,7 +215,7 @@
 						<ul>
 							<li ng-repeat="msg in colorErrorMsg">
 								<span class="glyphicon glyphicon-remove-sign"></span>
-								<span>第{{msg.index + 1}}个自定义颜色{{msg.msg}}</span>
+								<span>#{{msg.index + 1}} {{('product_add_image_' + msg.msg) | translate}}</span>
 							</li>
 						</ul>
 						<div class="clearfix"></div>

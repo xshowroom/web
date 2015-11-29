@@ -212,9 +212,14 @@ to {opacity: 1;}
 }
 .home-showcase .showcase-item .showcase-collection,
 .home-showcase .showcase-item .showcase-identity{
-	font-size: 14px;
+	font-size: 11px;
 	margin-top: 15px;
 }
+
+.showcase-collection, .showcase-identity {
+	color: #999;
+}
+
 .home-subscribe{
 	background-image: url('../images/home-subscibe.png');
 	height: 340px;

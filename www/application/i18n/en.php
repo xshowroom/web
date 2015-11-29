@@ -117,7 +117,7 @@ return array_merge(
         'home__btn_REGISTER' => 'REGISTER',
 
         'home__HOT_BRANDS' => 'HOT BRANDS',
-        'home__profileS' => 'BRAND PROFILES',
+        'home__BRAND_PROFILES' => 'BRAND PROFILES',
         'home__SSI5_COLLECTION' => 'SSI5 COLLECTION',
 
         'home__TESTOMONIALS' => 'TESTOMONIALS',
@@ -247,8 +247,8 @@ return array_merge(
         'brand_register__STEP_2__IMAGE' => 'LOOKBOOK / IMAGE',
         'brand_register__STEP_2__BRAND_NAME_PLACEHOLDER' => 'PLEASE ENTER YOUR BRAND NAME *',
         'brand_register__STEP_2__DESIGNER_NAME_PLACEHOLDER' => 'DESIGNER NAME *',
-        'brand_register__STEP_2__URL_DESC_1' => 'This URL will be used for direct access to your Brand',
-        'brand_register__STEP_2__URL_DESC_2' => '(for authenticated Buyers only)',
+        'brand_register__STEP_2__URL_DESC_1' => 'This URL will be used for direct access to your brand',
+        'brand_register__STEP_2__URL_DESC_2' => '(for authenticated buyers only)',
         'brand_register__STEP_2__btn__PREVIOUS' => 'PREVIOUS',
         'brand_register__STEP_2__btn__ADD_COMPANY' => 'ADD COMPANY',
 
@@ -502,7 +502,7 @@ return array_merge(
         'user_message__MY_MESSAGES' => 'MY MESSAGES',
 
         'user_message__MESSAGE_DETAIL' => 'VIEW MESSAGE DETAIL',
-        'user_message__RETURN_MESSAGE_CENTER' => '<<< RETURN MESSAGE CENTER',
+        'user_message__RETURN_MESSAGE_CENTER' => 'RETURN MESSAGE CENTER',
         'user_message__DELETE_MESSAGE' => 'DELETE THIS MESSAGE',
         'user_message__MESSAGE_FROM_ADMIN' => 'FROM: XSHOWROOM ADMIN',
 

@@ -168,7 +168,7 @@ return array_merge(
         'guide__benefits_MINIMISE_ORDER_ERROR_DESC' => '线上订货平台使用便利，后台预设起订量，自动避免订货错误',
         'guide__benefits_UNLIMITED_UPLOAD' => '无限上传空间',
         'guide__benefits_UNLIMITED_UPLOAD_DESC' => '享受无限上传空间，上传品牌最新系列高清资料',
-        'guide__benefits_24_7_SHOWROOM' => '24/7订货',
+        'guide__benefits_24_7_SHOWROOM' => '24/7 订货',
         'guide__benefits_24_7_SHOWROOM_DESC' => '买手享受全年无休时时订货',
         'guide__benefits_24_7_ACCESS_TO_ORDER_HISTORY' => '24/7接收订货资讯',
         'guide__benefits_24_7_ACCESS_TO_ORDER_HISTORY_DESC' => '品牌可24小时浏览买手订货信息',
@@ -503,7 +503,7 @@ return array_merge(
         'user_message__MY_MESSAGES' => '我收到的消息',
 
         'user_message__MESSAGE_DETAIL' => '查看消息详情',
-        'user_message__RETURN_MESSAGE_CENTER' => '<<< 返回消息中心',
+        'user_message__RETURN_MESSAGE_CENTER' => '返回消息中心',
         'user_message__DELETE_MESSAGE' => '删除这条消息',
         'user_message__MESSAGE_FROM_ADMIN' => '来自：XSHOWROOM系统管理员',
 
