@@ -601,6 +601,7 @@ to {-o-transform: translateX(0);}
 	background-color: #25272c;
 } */
 .user-navigation .user-actions{
+	font-size: 12px;
 	margin-top: 49px;
 }
 
