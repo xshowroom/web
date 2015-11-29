@@ -229,7 +229,7 @@
                 			</a>
                 		</li>
                 	</ul>
-                	<?php if($collection['status'] == 0) {?>
+                	<?php if($collection['status'] == 0 && $collection['user_id'] == $userAttr['user_id']) {?>
                 	<div class="add-new-product">
                 		<a href="/product/create/<?=$collection['id']?>"><?=__("collection_index__ADD_PRODUCT")?></a>
                 	</div>
