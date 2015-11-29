@@ -142,7 +142,6 @@ select::-ms-expand { display: none; }
 }
 a {
 	color: #ca7379;
-	text-decoration: none;
 	position: relative;
 	text-decoration: none !important;
 	cursor: pointer;
@@ -321,6 +320,17 @@ a.active:before{
 .footer-navigation ul > li > span{
 	color: #888;
 	font-size: 12px;
+}
+
+/*用户中心的侧边导航*/
+.xs-user-center-slide-nav {
+	margin-top: 25px;
+}
+
+.xs-user-center-slide-nav > li > a{
+    color: #25272c;
+    font-size: 12px;
+    font-weight: 200;
 }
 
 /* filter过滤器通用样式 */
@@ -527,7 +537,7 @@ to {-o-transform: translateX(0);}
     top: 0;
     background-size: contain;
     padding: 10px;
-    cursor: normal;
+    cursor: default;
     animation: slideIn .3s linear 1;
     -webkit-animation: slideIn .3s linear 1;
     -moz-animation: slideIn .3s linear 1;

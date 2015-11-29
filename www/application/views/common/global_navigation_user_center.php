@@ -1,5 +1,5 @@
 <div class="col-md-2 hidden-xs hidden-sm" role="navigation">
-	<ul class="nav nav-stacked kd-user-center-slide-nav">
+	<ul class="nav nav-stacked xs-user-center-slide-nav">
 		<li id="kd-user-center-nav-profile">
 			<a href="<?=URL::site('user/profile');?>" <?php if ($currentPage == 'profile'){?>class="active"<?php }?>><?=__("global_navigation_user_center__PROFILE");?></a>
 		</li>
