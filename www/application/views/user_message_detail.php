@@ -37,15 +37,15 @@
 	<section class="row message">
 		<div class="container">
 			<!-- left nav -->
-			<?php echo View::factory('common/global_navigation_user_center'); ?>
+			<?php echo View::factory('common/global_navigation_user_center', array('currentPage' =>  'message')); ?>
 
 			<div class="col-md-9 xs-user-center-content">
 				<h2><?=__("user_message__MESSAGE_DETAIL")?></h2>
 				<div>
 					<div class="xs-inbox-message-bar">
 						<ol class="breadcrumb">
-							<li><a href="<?= URL::site('message') ?>"><?=__("user_message__RETURN_MESSAGE_CENTER")?></a></li>
-							<li><a id="delete_msg" href="#modalDeleteConfirm" data-toggle="modal"><?=__("user_message__DELETE_MESSAGE")?></a></li>
+							<li><a href="<?= URL::site('message') ?>"><i class="glyphicon glyphicon-arrow-left" aria-hidden="true"></i> <?=__("user_message__RETURN_MESSAGE_CENTER")?></a></li>
+							<li><a id="delete_msg" href="#modalDeleteConfirm" data-toggle="modal"><i class="glyphicon glyphicon-trash" aria-hidden="true"></i> <?=__("user_message__DELETE_MESSAGE")?></a></li>
 						</ol>
 					</div>
 					<div class="xs-inbox-message-detail">
@@ -55,8 +55,6 @@
 						<div>
 							<?= $message['msg_body'] ?>
 						</div>
-						<br>
-						<br>
 						<br>
 						<br>
 						<p><a href="<?= URL::site('message') ?>"><?=__("user_message__RETURN_MESSAGE_CENTER")?></a></p>

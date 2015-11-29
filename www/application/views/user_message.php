@@ -53,22 +53,24 @@
 								<?php else: ?>
 									<tr class="xs-inbox-read">
 								<?php endif; ?>
-										<td class="xs-inbox-icon">
-											<p><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></p>
+										<td class="xs-inbox-row xs-inbox-icon">
+											<p>
+												<i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>
+											</p>
 										</td>
-										<td class="xs-inbox-content">
+										<td class="xs-inbox-row xs-inbox-content">
 											<a href="<?= URL::site('message/detail/'.$row['id']); ?>">
 												<p><?= $row['msg_body'] ?></p>
 											</a>
 										</td>
-										<td class="xs-inbox-date  hidden-sm hidden-xs">
+										<td class="xs-inbox-row xs-inbox-date hidden-sm hidden-xs">
 											<p><?= $row['create_datetime'] ?></p>
 										</td>
-										<td class="xs-inbox-delete">
-											<a data-toggle="modal" class="xs-inbox-delete-icon" href="#modalDeleteConfirm" ng-click="clickMessage();">
-												<p><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></p>
+										<td class="xs-inbox-row xs-inbox-delete ">
+											<p data-toggle="modal" class="xs-inbox-delete-icon" href="#modalDeleteConfirm" ng-click="clickMessage();">
+												<i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
 												<input id="msg_id" type="hidden" value="<?= $row['id'] ?>">
-											</a>
+											</p>
 										</td>
 									</tr>
 							<?php endforeach; ?>

@@ -17,70 +17,60 @@
 }
 
 .xs-table {
+	font-size: 12px;
+	font-weight: 200;
 	table-layout: fixed;
     color: #333333;
 }
 
-.xs-table td {
-    border-top: none !important;
-    border-bottom: 1px solid #eeeeee;
+.xs-inbox-row {
+	border-top: none !important;
+	border-bottom: 1px solid #eeeeee;
+    padding: 16px 7px 16px 7px !important;
 }
 
-.xs-table p {
-    margin: 5px 0 5px 0;
-}
-
-.xs-table i {
-   vertical-align: middle;
-}
-
-.xs-inbox-read p {
-    color: #999999;
-}
-
-.xs-inbox-unread p {
-    font-size: 16px;
-	color: #ca7379;
-}
-
-.xs-inbox-unread i {
-	color:  #ca7379;
-}
-
-.xs-inbox-icon {
-	width: 60px;
-}
-
-.xs-inbox-content {
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+.xs-inbox-row p {
+	color: #999;
+	margin: 0;
 }
 
 .xs-inbox-content p {
-	font-size: 16px;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
 
+.xs-inbox-icon {
+	width: 30px;
+}
+
 .xs-inbox-date {
-	width: 180px;
+	width: 150px;
 }
 
 .xs-inbox-delete {
 	width: 50px;
+	cursor: pointer;
 }
+
+.xs-inbox-unread p {
+    font-size: 13px;
+	color: #ca7379;
+}
+
 
 /*  message detail */
 .xs-inbox-message-bar a {
-	color: #888888
+	font-size: 12px;
+	font-weight: 200;
+	color: #888
 }
 
 .xs-inbox-message-detail {
+	line-height: 2em;
 	margin-left: 15px;
-	font-weight: 300;
-	font-size: 16px;
+	font-size: 13px;
+	font-weight: 200;
 	color: #555555;
 }
 
@@ -89,6 +79,7 @@
 }
 
 .xs-inbox-message-detail h5 {
-	color: #999999;
-	padding-bottom: 20px;
+	color: #cccccc;
+	font-size: 12px;
+	font-weight: 200;
 }

@@ -503,7 +503,7 @@ return array_merge(
         'user_message__MY_MESSAGES' => '我收到的消息',
 
         'user_message__MESSAGE_DETAIL' => '查看消息详情',
-        'user_message__RETURN_MESSAGE_CENTER' => '<<< 返回消息中心',
+        'user_message__RETURN_MESSAGE_CENTER' => '返回消息中心',
         'user_message__DELETE_MESSAGE' => '删除这条消息',
         'user_message__MESSAGE_FROM_ADMIN' => '来自：XSHOWROOM系统管理员',
 

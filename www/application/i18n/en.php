@@ -502,7 +502,7 @@ return array_merge(
         'user_message__MY_MESSAGES' => 'MY MESSAGES',
 
         'user_message__MESSAGE_DETAIL' => 'VIEW MESSAGE DETAIL',
-        'user_message__RETURN_MESSAGE_CENTER' => '<<< RETURN MESSAGE CENTER',
+        'user_message__RETURN_MESSAGE_CENTER' => 'RETURN MESSAGE CENTER',
         'user_message__DELETE_MESSAGE' => 'DELETE THIS MESSAGE',
         'user_message__MESSAGE_FROM_ADMIN' => 'FROM: XSHOWROOM ADMIN',
 
