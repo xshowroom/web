@@ -6,11 +6,13 @@
 class Business_Production
 {
     public $productionModel;
+    public $collectionModel;
     public $uploadService;
 
     public function __construct()
     {
         $this->productionModel = new Model_Production();
+        $this->collectionModel = new Model_Collection();
         $this->uploadService = new Business_Upload();
     }
     
@@ -19,9 +21,15 @@ class Business_Production
      * 
      * @return int
      */
-    public function addProduction($userId, $name, $category, $collection, $styleNum, $wholePrice, $rtlPrice, 
+    public function addProduction($userId, $name, $category, $collectionId, $styleNum, $wholePrice, $rtlPrice, 
                                   $sizeRegion, $sizeCode, $color, $madeIn, $material, $careIns, $imagePaths)
     {
+        $collection = $this->collectionModel->getByCollectionId($collectionId);
+        if ($collection['status'] != Model_Collection::TYPE_OF_DRAFT) {
+            $errorInfo = Kohana::message('message', 'STATUS_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+        
         $colorArr = json_decode($color, true);
         $colorFinalArr = array(); // 怕用引用乱掉，又得调半天
         foreach ($colorArr as $color) {
@@ -50,7 +58,7 @@ class Business_Production
             $imagePathsFinalArr[] = $realPathFile;
         }
         $imagePaths = json_encode($imagePathsFinalArr);
-        $productionId = $this->productionModel->addProduction($userId, $name, $category, $collection, $styleNum, $wholePrice, $rtlPrice, $sizeRegion, $sizeCode, $color, $madeIn, $material, $careIns, $imagePaths);
+        $productionId = $this->productionModel->addProduction($userId, $name, $category, $collectionId, $styleNum, $wholePrice, $rtlPrice, $sizeRegion, $sizeCode, $color, $madeIn, $material, $careIns, $imagePaths);
         return $productionId;
     }
     
@@ -59,19 +67,19 @@ class Business_Production
      *
      * @return int
      */
-    public function modifyProduction($userId, $productionId, $name, $category, $collection, $styleNum, $wholePrice, $rtlPrice,
+    public function modifyProduction($userId, $productionId, $name, $category, $collectionId, $styleNum, $wholePrice, $rtlPrice,
                                      $sizeRegion, $sizeCode, $color, $madeIn, $material, $careIns, $imagePaths)
     {
         $production = $this->productionModel->getByProductionId($productionId);
         
         if (empty($production) ||
             $production['user_id'] != $userId ||
-            $production['collection_id'] != $collection) {
+            $production['collection_id'] != $collectionId) {
             $errorInfo = Kohana::message('message', 'AUTH_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
         
-        $res = $this->productionModel->updateProduction($userId, $productionId, $name, $category, $collection, $styleNum, $wholePrice, $rtlPrice, $sizeRegion, $sizeCode, $color, $madeIn, $material, $careIns, $imagePaths);
+        $res = $this->productionModel->updateProduction($userId, $productionId, $name, $category, $collectionId, $styleNum, $wholePrice, $rtlPrice, $sizeRegion, $sizeCode, $color, $madeIn, $material, $careIns, $imagePaths);
         return $res;
     }
     
@@ -90,7 +98,13 @@ class Business_Production
             $errorInfo = Kohana::message('message', 'AUTH_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
-    
+        
+        $collection = $this->collectionModel->getByCollectionId($production['collection_id']);
+        if ($status == Model_Collection::TYPE_OF_DELETE && $collection['status'] != Model_Collection::TYPE_OF_DRAFT) {
+            $errorInfo = Kohana::message('message', 'STATUS_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+        
         $res = $this->productionModel->updateStatus($productionId, $status);
         return $res;
     }
