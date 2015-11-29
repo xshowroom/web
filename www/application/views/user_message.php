@@ -36,7 +36,7 @@
 	<section class="row message">
 		<div class="container">
 			<!-- left nav -->
-			<?php echo View::factory('common/global_navigation_user_center'); ?>
+			<?php echo View::factory('common/global_navigation_user_center', array('currentPage' =>  'message')); ?>
 
 			<div class="col-md-10 xs-user-center-content">
 				<h2><?=__("user_message__MY_MESSAGES")?></h2>

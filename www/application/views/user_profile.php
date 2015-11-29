@@ -24,17 +24,17 @@
 	</nav>
 	<?php if ($user["role_type"] == "1"){?>
 	<nav class="row user-navigation">
-        <?php echo View::factory('common/global_navigation_top_brand', array('currentPage' =>  'message', 'userAttr'=> $userAttr)); ?>
+        <?php echo View::factory('common/global_navigation_top_brand', array('currentPage' =>  'profile', 'userAttr'=> $userAttr)); ?>
 	</nav>
 	<?php } else if ($user["role_type"] == "2"){ ?>
 	<nav class="row user-navigation">
-        <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'message', 'userAttr'=> $userAttr)); ?>
+        <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'profile', 'userAttr'=> $userAttr)); ?>
 	</nav>
 	<?php }?>
 	<section class="row profile">
         <div class="container">
             <!-- left nav -->
-            <?php echo View::factory('common/global_navigation_user_center'); ?>
+            <?php echo View::factory('common/global_navigation_user_center', array('currentPage' =>  'profile')); ?>
 
             <div class="col-md-10 profile-content">
                 <h2><?=__("profile__BASIC_INFO")?></h2>
