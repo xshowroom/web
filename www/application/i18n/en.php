@@ -110,10 +110,10 @@ return array_merge(
 
         'home__BRANDS' => 'BRANDS',
         'home__BRANDS_DESC' => 'Showcase your collection to the best stores in China. Expand and connect with new possibilities.',
-        'home__BUYERS' => 'RETAILERS',
+        'home__BUYERS' => 'BUYERS',
         'home__BUYERS_DESC' => 'Discover new and exciting brands and explore their collections.',
 
-        'home__btn_SOLUTION' => 'SOLUTION',
+        'home__btn_SOLUTION' => 'LEARN',
         'home__btn_REGISTER' => 'REGISTER',
 
         'home__HOT_BRANDS' => 'HOT BRANDS',
@@ -220,7 +220,7 @@ return array_merge(
         'login__REQUEST_MEMBERSHIP' => 'REQUEST MEMBERSHIP',
         'login__REQUEST_MEMBERSHIP_DESC' => 'X SHOWROOM IS OPEN TO SELECTED BRANDS. AGENCIES AND BUYERS TO PARTICIPATE. PLEASE REGISTER ONLINE',
         'login__REQUEST_BRAND' => 'FOR BRANDS',
-        'login__REQUEST_BUYER' => 'FOR BUYER',
+        'login__REQUEST_BUYER' => 'FOR BUYERS',
     ),
     /**
      * register_brand.php
