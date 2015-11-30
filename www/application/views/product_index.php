@@ -122,7 +122,7 @@
                  	<div class="col-xs-11 product-detail">
                  		<div><?=__("product_index__PRODUCT_CARE_INSTRUCTION")?></div>
                  		<div>
-	                 		<span class="product-care-instruction" ng-init="instruction = '<?=$production['care_instruction']?>';">{{instruction}}</span>
+	                 		<span class="product-care-instruction"><?=htmlentities($production['care_instruction'])?></span>
                  		</div>
                  	</div>
                  	<?php if ($collection['status'] == '0'){?>
