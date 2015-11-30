@@ -15,8 +15,8 @@ angular.module(
 .controller(
     'ProductCreateCtrl',
     [
-     	'$scope', '$location', '$element', 'Country', 'Product', 'uiUploader',
-        function ($scope, $location, $element, Country, Product, uiUploader) {
+     	'$scope', '$location', '$filter', '$element', 'Country', 'Product', 'uiUploader',
+        function ($scope, $location, $filter, $element, Country, Product, uiUploader) {
      		$scope.countries = Country.getAll();
      		$scope.categories = Product.getCategories();
      		$scope.sizeRegions = Product.getSizeRegions();
@@ -47,7 +47,6 @@ angular.module(
      		};
      		$scope.openColorModal = function(){
      			angular.element('#color-modal').modal('show');
-//     			$scope.currentColors = angular.copy($scope.product.color);
      		};
      		$scope.currentColors = {
          		standard: {},
@@ -72,16 +71,27 @@ angular.module(
         		var self = $(this);
 				var files = e.target.files;
 				if (!files.length){
+					$scope.$emit('uploading.end');
 					return;
 				}
+				var error = {
+					index: -1
+				}
+				$scope.colorErrorMsg = [];
 				if(!/image\/\w+/.test(files[0].type)){
-					alert('上传文件类型必须为图片！');
+					error.msg = 'format_error';
+					$scope.colorErrorMsg.push(error);
+					$scope.$apply();
 					self.val('');
+					$scope.$emit('uploading.end');
 				    return; 
 				}
 				if(files[0].size / 1024 / 1024 > 2){
-					alert('上传文件大于2MB！');
+					error.msg = 'size_error';
+					$scope.colorErrorMsg.push(error);
+					$scope.$apply();
 					self.val('');
+					$scope.$emit('uploading.end');
 				    return; 
 				}
 				uiUploader.removeAll();
@@ -91,7 +101,10 @@ angular.module(
                     onCompleted: function(file, response) {
                     	response = JSON.parse(response);
                     	if(response.status != 0){
-                    		alert('上传图片接口出错，请重新上传，如多次失败请联系我们！');
+                    		error.msg = 'response_error';
+        					$scope.colorErrorMsg.push(error);
+        					$scope.$apply();
+        					$scope.$emit('uploading.end');
                     		return
                     	}
                     	$scope.currentColors.customized.push({
@@ -107,6 +120,15 @@ angular.module(
                 });
 				self.val('');
 			});
+        	
+        	$scope.removeCustomizedColor = function(index){
+        		$scope.currentColors.customized.splice(index, 1);
+        		for(var i = 0, len = $scope.colorErrorMsg.length; i < len; i++){
+        			if($scope.colorErrorMsg[i].index == index){
+        				$scope.colorErrorMsg.splice(i--, 1);
+        			}
+        		}
+        	}
      		
 //     		$scope.checkColorName = function(index){
 //     			var record = $scope.currentColors.customized[index];

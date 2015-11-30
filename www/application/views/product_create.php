@@ -194,11 +194,11 @@
 	      				<div ng-repeat="color in currentColors.customized track by $index" class="color-item"
 	      					ng-class="{'active': color['selected']}">
 		      				<label class="checkbox-inline" style="{{color['style']}}">
-							  	<input type="checkbox" ng-model="color['selected']" ng-true-value="true" ng-false-value="false"><!--  ng-change="checkColorName($index);" -->
+							  	<!--  <input type="checkbox" ng-model="color['selected']" ng-true-value="true" ng-false-value="false" ng-change="checkColorName($index);"> -->
 							  	<span class="glyphicon glyphicon-ok"></span>
 							</label>
 							<input type="text" ng-model="color['name']" class="form-control" placeholder="unnamed_color_{{$index}}">
-							<span class="glyphicon glyphicon-trash" ng-click="currentColors.customized.splice($index, 1);"></span>
+							<span class="glyphicon glyphicon-trash" ng-click="removeCustomizedColor($index)"></span>
 						</div>
 						<div class="clearfix"></div>
 	      			</div>
@@ -215,7 +215,7 @@
 						<ul>
 							<li ng-repeat="msg in colorErrorMsg">
 								<span class="glyphicon glyphicon-remove-sign"></span>
-								<span>#{{msg.index + 1}} {{('product_add_image_' + msg.msg) | translate}}</span>
+								<span>#{{msg.index + 1}} {{('product_add_image_' + msg.msg) }}</span>
 							</li>
 						</ul>
 						<div class="clearfix"></div>

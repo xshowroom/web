@@ -51,7 +51,7 @@
                 	</div>
                 </div>
             	<div class="col-xs-9">
-            		<div class="collection-item" ng-repeat="collection in collections| filter: {status: filters.status} | limitTo : filters.limit : 0 ">
+            		<div class="collection-item" ng-repeat-start="collection in collections| filter: {status: filters.status} | limitTo : filters.limit : 0 ">
             			<h3>{{collection.name| uppercase}} {{collection.category | translate}} ({{collection.productions.length}})</h3>
             			<div class="collection-info">
             				<a class="col-xs-4 collection-cover image-link" ng-href="/collection/{{collection.id}}">
@@ -91,7 +91,7 @@
             				</div>
             			</div>
             		</div>
-            		<div class="clearfix"></div>
+            		<div class="clearfix" ng-repeat-end></div>
                  	<div class="text-center load-more" ng-if="filters.limit < (statusCounter[filters.status] || collections.length)">
                  		<button class="btn btn-type-1" ng-click="filters.limit = filters.limit + 4;">LOAD MORE</button>
                  	</div>

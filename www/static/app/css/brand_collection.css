@@ -51,15 +51,15 @@ section.row{
 }
 .collection-item .collection-info{
 	margin: 30px 0;
-	height: 350px;
+	min-height: 350px;
 	position: relative;
 }
 .collection-item .collection-info > div{
-	height: 100%;
+	min-height: 350px;
 }
 .collection-item .collection-info .collection-cover {
 	background-color: #fff;
-    height: 100%;
+    height: 350px;
     display: inline-block;
 	box-shadow:0 0 1px 0 #aaa;
 }
@@ -79,11 +79,12 @@ section.row{
 	-o-transform: translateY(-50%);
 }
 .collection-item .collection-info .collection-details {
-	position: absolute;
-    right: 0;
-    bottom: 0;
-    height: auto;
-	font-size: 11px;
+	/* position: absolute; */
+    /* right: 0;
+    bottom: 0; 
+    height: auto;*/
+    font-size: 12px;
+    padding-bottom: 80px;
 }
 .collection-item .collection-info .collection-detail > *{
 	line-height: 35px;
@@ -96,8 +97,16 @@ section.row{
 .collection-item .collection-info .collection-detail.collection-description{
 	min-height: 10em;
 }
-.collection-item .collection-info .collection-actions{
+.collection-item .collection-info .collection-detail.collection-description > div:nth-child(2){
+	white-space: pre-line;
+}
+.collection-item .collection-info .collection-detail > *{
 	margin-top: 15px;
+}
+
+.collection-item .collection-info .collection-actions{
+	position: absolute;
+	bottom: 0;
 }
 .collection-item .product-gallery{
 	height: 150px;
