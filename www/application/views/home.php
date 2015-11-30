@@ -239,21 +239,6 @@
 			</div>
 		</div>
 	</section>
-	<section class="row home-subscribe">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 text-center">
-					<div><span class="glyphicon glyphicon-envelope"></span></div>
-					<h3>SUBSCRIBE</h3>
-					<p>Set the latest news & updates from X Showroom</p>
-					<div class="subscribe-submit">
-						<input class="form-control" type="text" placeholder="YOUR EMAIL ADDRESS"/>
-						<button class="btn btn-type-2">SUBSCRIBE</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 	<footer class="row footer-navigation">
         <?php echo View::factory('common/global_navigation_footer'); ?>
 	</footer>
