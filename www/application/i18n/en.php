@@ -130,10 +130,10 @@ return array_merge(
      */
     array(
         'guide__SOLUTIONS_FOR_BRANDS' => 'SOLUTIONS FOR BRANDS',
-        'guide__SOLUTIONS_FOR_RETAILERS' => 'SOLUTIONS FOR RETAILERS',
+        'guide__SOLUTIONS_FOR_RETAILERS' => 'SOLUTIONS FOR BUYERS',
         'guide__X_SHOWROOM_FASHION_ACCESS' => 'X SHOWROOM FASHION ACCESS',
         'guide__SOLUTION_BRAND' => 'BRAND',
-        'guide__SOLUTION_RETAILER' => 'RETAILER',
+        'guide__SOLUTION_RETAILER' => 'BUYER',
         'guide__SUBSCRIPTION' => 'SUBSCRIPTION',
 
         'guide__brand_left_INTRODUCE' => 'Are you interested in exploring the market with the an online showroom who will help you reach your potential? Market your brand to buyers in China with us. With X SHOWROOM, you can take advantage of the extensive experience of the staff who in partnership with Project Crossover, offer the Shanghai and London showroom along with the online showroom as digital presence for your brand to streamline the wholesale process. You can be sure the visibility of your collection and products will continually increase with us through the 1000 buyers already registered.',
