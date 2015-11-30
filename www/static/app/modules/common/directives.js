@@ -177,7 +177,7 @@ angular.module(
         }
     };
 }])
-.directive('imageUploader', ['uiUploader', '$location', function (uiUploader, $location) {
+.directive('imageUploader', ['uiUploader', '$location', '$timeout', function (uiUploader, $location, $timeout) {
     return {
     	template: [
     	    '<div>',
@@ -208,16 +208,23 @@ angular.module(
         	
         	var siteRootUrl = $location.protocol() + '://' + $location.host() + ":" + 	$location.port() + '/';
         	
+        	$scope.timeout = null;
         	var uploadFile = function(files){
 				uiUploader.removeAll();
 				uiUploader.addFiles(files);
                 uiUploader.startUpload({
                     url: '/api/upload/image',
                     onCompleted: function(file, response) {
+                    	if (!$scope.timeout){
+                    		alert('上传图片超时，请重新上传！');
+                    		$scope.$emit('uploading.end');
+                    		return;
+                    	}
                     	response = JSON.parse(response);
                     	if(response.status != 0){
                     		alert('上传图片接口出错，请重新上传，如多次失败请联系我们！');
-                    		return
+                    		$scope.$emit('uploading.end');
+                    		return;
                     	}
                     	if (parseInt($attrs.renderImage) !== 0){
                     		$scope.imageOnlineUrl = response.data;
@@ -228,6 +235,8 @@ angular.module(
                     	}
                     	$scope.afterUploading({url: response.data});
                     	$scope.$emit('uploading.end');
+                    	$timeout.cancel($scope.timeout);
+                    	$scope.timeout = null;
                     }
                 });
 			};
@@ -249,6 +258,10 @@ angular.module(
 					self.val('');
 				    return; 
 				}
+				$scope.timeout = $timeout(function(){
+					$scope.timeout = null;
+	    		}, 60000, true);
+				$scope.$apply();
 				uploadFile(files);
 				self.val('');
 			});

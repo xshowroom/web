@@ -175,7 +175,7 @@
 	  	<div class="modal-dialog" role="document">
 	    	<div class="modal-content">
 	      		<div class="modal-header">
-	        		<button type="button" class="close" ng-click="setColor();" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        		<button type="button" class="close" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
 	      		</div>
 	      		<div class="modal-body uploading">
 	      			<h4><?=__("product_create__PRODUCT_color_STANDARD_COLOR");?></h4>

@@ -15,8 +15,8 @@ angular.module(
 .controller(
     'ProductCreateCtrl',
     [
-     	'$scope', '$location', '$filter', '$element', 'Country', 'Product', 'uiUploader',
-        function ($scope, $location, $filter, $element, Country, Product, uiUploader) {
+     	'$scope', '$location', '$filter', '$element', '$timeout', 'Country', 'Product', 'uiUploader',
+        function ($scope, $location, $filter, $element, $timeout, Country, Product, uiUploader) {
      		$scope.countries = Country.getAll();
      		$scope.categories = Product.getCategories();
      		$scope.sizeRegions = Product.getSizeRegions();
@@ -78,6 +78,10 @@ angular.module(
 					index: -1
 				}
 				$scope.colorErrorMsg = [];
+				var timeout = $timeout(function(){
+					timeout = null;
+        		}, 500, true);
+        		
 				if(!/image\/\w+/.test(files[0].type)){
 					error.msg = 'format_error';
 					$scope.colorErrorMsg.push(error);
@@ -99,13 +103,20 @@ angular.module(
                 uiUploader.startUpload({
                     url: '/api/upload/image',
                     onCompleted: function(file, response) {
+                    	if (!timeout) {
+                    		error.msg = 'size_error';
+            				$scope.colorErrorMsg.push(error);
+            				$scope.$apply();
+            				$scope.$emit('uploading.end');
+            				return;
+                    	}
                     	response = JSON.parse(response);
-                    	if(response.status != 0){
+                    	if (response.status != 0) {
                     		error.msg = 'response_error';
         					$scope.colorErrorMsg.push(error);
         					$scope.$apply();
         					$scope.$emit('uploading.end');
-                    		return
+                    		return;
                     	}
                     	$scope.currentColors.customized.push({
                     		name: undefined,
@@ -116,6 +127,8 @@ angular.module(
                     	});
                     	$scope.$apply();
                     	$scope.$emit('uploading.end');
+                    	$timeout.cancel(timeout);
+                    	timeout = null;
                     }
                 });
 				self.val('');
