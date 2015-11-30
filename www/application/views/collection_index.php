@@ -198,7 +198,7 @@
             <?php }?>  
         </div>
     </section>
-    <section class="row empty-warning" ng-if="!products.length">
+    <section class="row empty-warning" ng-if="products && !products.length">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-center ">
