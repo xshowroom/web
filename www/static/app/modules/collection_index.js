@@ -128,7 +128,8 @@ angular.module(
          	
          	
          	Collection.getProductList({
-         		collectionId: collectionId
+         		collectionId: collectionId,
+         		timestamp: new Date().getTime()
      		}).success(function(res){
      			if(res.status){
      				alert(res.msg);
