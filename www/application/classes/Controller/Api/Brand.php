@@ -13,7 +13,7 @@ class Controller_Api_Brand extends Controller_BaseReqLogin
     public function action_list()
     {
         $res = $this->brandService->getBrandList();
-        
+       
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
             'msg'    => '',

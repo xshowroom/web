@@ -41,16 +41,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-3">
-					<div class="row filter-condition" data-type="radio" data-title="show"
-						selected="setFilters(name, conditions)" data-conditions="conditions.show"></div>
-					<div class="row filter-condition" data-type="radio" data-title="category"
-						selected="setFilters(name, conditions)" data-conditions="conditions.category"></div>
-					<div class="row filter-condition" data-type="checkbox" data-title="season" data-has-clear-all="true"
-						selected="setFilters(name, conditions)" data-conditions="conditions.season"></div>
-					<div class="row filter-condition" data-type="radio" data-title="available"
-						selected="setFilters(name, conditions)" data-conditions="conditions.available"></div>
-					<div class="row filter-condition" data-type="checkbox" data-title="country" data-has-clear-all="true"
-						selected="setFilters(name, conditions)" data-conditions="conditions.country"></div>
+					<div class="row filter-condition" ng-repeat="(title, content) in conditions" data-type="{{content.type}}" data-title="{{title}}" 
+						selected="setFilters(name, conditions)" data-conditions="content.values"></div>
 				</div>			
 				<div class="col-xs-9 brand-list">
 					<div class="row">
@@ -67,67 +59,11 @@
 						</div>
 					</div>
 					<div class="brand-list-content row">
-						<div class="col-xs-3">
-							<a target="_blank" href="#" class="brand-item image-link">
-								<img src="/static/app/images/shop-brand-1.png" class="brand-item-image">
+						<div class="col-xs-3" ng-repeat="brand in brands.content">
+							<a target="_self" ng-href="/{{brand.brand_name}}" class="brand-item image-link">
+								<img ng-src="/{{brand.brand_image}}" class="brand-item-image">
 								<span class="brand-item-name">
-									<span>BRAND A</span>
-								</span>
-							</a>
-						</div>
-						<div class="col-xs-3">
-							<a target="_blank" href="#" class="brand-item">
-								<img src="/static/app/images/shop-brand-1.png" class="brand-item-image">
-								<span class="brand-item-name">
-									<span>BRAND A</span>
-								</span>
-							</a>
-						</div>
-						<div class="col-xs-3">
-							<a target="_blank" href="#" class="brand-item">
-								<img src="/static/app/images/shop-brand-1.png" class="brand-item-image">
-								<span class="brand-item-name">
-									<span>BRAND A</span>
-								</span>
-							</a>
-						</div>
-						<div class="col-xs-3">
-							<a target="_blank" href="#" class="brand-item">
-								<img src="/static/app/images/shop-brand-1.png" class="brand-item-image">
-								<span class="brand-item-name">
-									<span>BRAND A</span>
-								</span>
-							</a>
-						</div>
-						<div class="col-xs-3">
-							<a target="_blank" href="#" class="brand-item">
-								<img src="/static/app/images/shop-brand-1.png" class="brand-item-image">
-								<span class="brand-item-name">
-									<span>BRAND A</span>
-								</span>
-							</a>
-						</div>
-						<div class="col-xs-3">
-							<a target="_blank" href="#" class="brand-item">
-								<img src="/static/app/images/shop-brand-1.png" class="brand-item-image">
-								<span class="brand-item-name">
-									<span>BRAND A</span>
-								</span>
-							</a>
-						</div>
-						<div class="col-xs-3">
-							<a target="_blank" href="#" class="brand-item">
-								<img src="/static/app/images/shop-brand-1.png" class="brand-item-image">
-								<span class="brand-item-name">
-									<span>BRAND A</span>
-								</span>
-							</a>
-						</div>
-						<div class="col-xs-3">
-							<a target="_blank" href="#" class="brand-item">
-								<img src="/static/app/images/shop-brand-1.png" class="brand-item-image">
-								<span class="brand-item-name">
-									<span>BRAND A</span>
+									<span>{{brand.brand_name}}</span>
 								</span>
 							</a>
 						</div>

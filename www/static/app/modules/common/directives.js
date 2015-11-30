@@ -125,7 +125,7 @@ angular.module(
 				'<ul class="col-xs-12 filter-list filter-{{type}}-list">',
 					'<li ng-repeat="item in conditions | limitTo: limit" ng-click="toggle(item)" ng-class="{\'active\': isActive(item)}">',
 						'<span class="filter-selector glyphicon" ng-class="{\'glyphicon-ok\': isActive(item)}"></span>',
-						'<span>{{item.label|uppercase}}</span>',
+						'<span>{{item | translate}}</span>',
 					'</li>',
 				'</ul>',
 				'<span class="col-xs-12 filter-more" ng-click="showMore()" ng-if="limit < conditions.length">More</span>',

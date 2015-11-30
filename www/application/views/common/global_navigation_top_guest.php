@@ -4,6 +4,7 @@
 			<a href="#" class="share-link"><i class="fa fa-facebook"></i></a>
 			<a href="#" class="share-link"><i class="fa fa-weibo"></i></a>
 			<a href="#" class="share-link"><i class="fa fa-instagram"></i></a>
+			<a href="#" class="share-link"><i class="fa fa-wechat"></i></a>
 		</div>
 	</div>
 	<div class="row">

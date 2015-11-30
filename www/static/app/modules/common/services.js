@@ -25,12 +25,61 @@ angular.module(
 						transformRequest: postRequestTransformer
 					});
 		      	},
-//		      	getUserInfo: function(){
-//		      		return $http.get('/api/common/userInfo');
-//		      	},
 		      	duplicationCheck: function (opts) {
 		    		return $http.get('/api/register/checkParam', {params: opts});
 		    	}
+   			};
+         }
+    ]
+)
+.service(
+	'Brand', 
+	[
+	    '$http',
+		function ($http) {
+		    return {
+		    	findAll: function (opts) {
+		    		return $http.get('/api/brand/list', {params: opts});
+		      	},
+		      	getConditions: function(){
+		      		return {
+		         		show: {
+		         			type: 'radio',
+		         			values: [
+		         			    'dropdown__SHOW__ALL', 'dropdown__SHOW__WHATS_NEW',
+		         			    'dropdown__SHOW__WOMEN', 'dropdown__SHOW__MEN'
+		         		    ]
+		         		},
+		         		category: {
+		         			type: 'radio',
+		         			values: [
+		         			    'dropdown__COLLECTION__WOMEN', 'dropdown__COLLECTION__MEN', 'dropdown__COLLECTION__ACCESSORIES',
+		         		        'dropdown__COLLECTION__LIFESTYLE', 'dropdown__COLLECTION__OTHERS'
+		         		    ]
+		         		},
+		    		    season:{
+		    		    	type: 'checkbox',
+		    		        values: [
+		    		            'dropdown__COLLECTION_SEASON__AW_15', 'dropdown__COLLECTION_SEASON__PRE_SS16',
+		    		            'dropdown__COLLECTION_SEASON__SS_16', 'dropdown__COLLECTION_SEASON__AW_16'
+		    		        ]
+		    		    },
+		    		    available: {
+		    		    	type: 'radio',
+		    		        values: [
+		    		            'dropdown__AVAILABLE__LAST_DAY', 'dropdown__AVAILABLE__1_WEEK', 'dropdown__AVAILABLE__4_WEEK',
+		    		            'dropdown__AVAILABLE__8_WEEK', 'dropdown__AVAILABLE__12_WEEK'
+		    		        ]
+		    		    },
+		    			country: {
+		    		    	type: 'checkbox',
+		    		        values: [
+		    		            'dropdown__COUNTRY__Austria', 'dropdown__COUNTRY__Belgium', 'dropdown__COUNTRY__Canada',
+		    		            'dropdown__COUNTRY__China', 'dropdown__COUNTRY__Denmark'
+		    		        ]
+		    		    }
+		      		};
+		      	}
    			};
          }
     ]

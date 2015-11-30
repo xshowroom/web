@@ -307,6 +307,20 @@ angular.module(
             dropdown__COUNTRY__Zaire: '扎伊尔',
             dropdown__COUNTRY__Zambia: '赞比亚',
             
+            
+            // Show
+            dropdown__SHOW__ALL: 'ALL',
+            dropdown__SHOW__WHATS_NEW: 'WHAT\'S NEW',
+            dropdown__SHOW__WOMEN: 'WOMEN',
+            dropdown__SHOW__MEN: 'MEN',
+            
+            // Available
+            dropdown__AVAILABLE__LAST_DAY: 'LAST DAY TO ORDER',
+            dropdown__AVAILABLE__1_WEEK: 'UP TP 1 WEEK',
+            dropdown__AVAILABLE__4_WEEK: 'UP TP 4 WEEK',
+            dropdown__AVAILABLE__8_WEEK: 'UP TP 8 WEEK',
+            dropdown__AVAILABLE__12_WEEK: 'UP TP 12 WEEK',
+            
             // Collection Status
             COLLECTION_STATUS_ALL: '所有',
             COLLECTION_STATUS_0: '草稿',
@@ -685,6 +699,20 @@ angular.module(
             dropdown__COUNTRY__Zimbabwe: 'Zimbabwe',
             dropdown__COUNTRY__Zaire: 'Zaire',
             dropdown__COUNTRY__Zambia: 'Zambia',
+            
+            // Show
+            dropdown__SHOW__ALL: 'ALL',
+            dropdown__SHOW__WHATS_NEW: 'WHAT\'S NEW',
+            dropdown__SHOW__WOMEN: 'WOMEN',
+            dropdown__SHOW__MEN: 'MEN',
+            
+            // Available
+            dropdown__AVAILABLE__LAST_DAY: 'LAST DAY TO ORDER',
+            dropdown__AVAILABLE__1_WEEK: 'UP TP 1 WEEK',
+            dropdown__AVAILABLE__4_WEEK: 'UP TP 4 WEEK',
+            dropdown__AVAILABLE__8_WEEK: 'UP TP 8 WEEK',
+            dropdown__AVAILABLE__12_WEEK: 'UP TP 12 WEEK',
+            
             
             // Collection Status
             COLLECTION_STATUS_ALL: 'All',
