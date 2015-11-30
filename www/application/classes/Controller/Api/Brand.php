@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Api_Brand extends Controller_BaseReqLogin
+class Controller_Api_Brand extends Controller_Base
 {
     public $brandService;
 
