@@ -1,50 +1,47 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-3">
-			<h3><?= __("global_navigation_footer__LOCATION")?></h3>
-			<p>
-				PROJECT CROSSOVER LTD.,<br />654 FINCHLEY ROAD, LONDON<br />NW11 7NT
-			</p>
+			<h3>GUIDE</h3>
 			<ul>
-				<li><span>D: +(44) 20 7637 9977</span></li>
-				<li><span>M: +(44) 780 595 7320</span></li>
-				<li><span>info@projectcrossover.com</span></li>
-			</ul>
-		</div>
-		<div class="col-xs-3">
-			<h3><?= __("global_navigation_footer__HELP")?></h3>
-			<ul>
-				<li><a href="#"><?= __("global_navigation_footer__HELP__HOW_TO_BUY")?></a></li>
-				<li><a href="#"><?= __("global_navigation_footer__HELP__GENERAL_INFORMATION")?></a></li>
-				<li><a href="#"><?= __("global_navigation_footer__HELP__PAYMENT")?></a></li>
-				<li><a href="#"><?= __("global_navigation_footer__HELP__SHIPPING")?></a></li>
-				<li><a href="#"><?= __("global_navigation_footer__HELP__RETURNS")?></a></li>
-				<li><a href="#"><?= __("global_navigation_footer__HELP__EXCHANGE")?></a></li>
-				<li><a href="#"><?= __("global_navigation_footer__HELP__GIFT_CARD")?></a></li>
-				<li><a href="#"><?= __("global_navigation_footer__HELP__MY_ACCOUNT")?></a></li>
-				<li><a href="#"><?= __("global_navigation_footer__HELP__WATCHES")?></a></li>
-			</ul>
-		</div>
-		<div class="col-xs-3">
-			<h3><?= __("global_navigation_footer__POLICIES")?></h3>
-			<ul>
-				<li><a href="#"><?= __("global_navigation_footer__POLICIES__ENVIRONMENT_POLICY")?></a></li>
-				<li><a href="#"><?= __("global_navigation_footer__POLICIES__ANIMAL_WELFARE")?></a></li>
-				<li><a href="#"><?= __("global_navigation_footer__POLICIES__PRIVACY_POLICY")?></a></li>
-				<li><a href="#"><?= __("global_navigation_footer__POLICIES__PURCHASE_CONDITIONS")?></a></li>
-				<li><a href="#"><?= __("global_navigation_footer__POLICIES__GIFT_CARD_CONDITIONS")?></a></li>
-				<li><a href="#"><?= __("global_navigation_footer__POLICIES__WARRANTY_ON_WATCHES")?></a></li>
+				<li><a href="#">FOR DESIGNERS</a></li>
+				<li><a href="#">FOR BUYERS</a></li>
+				<li><a href="#">FOR SHOWROOMS</a></li>
 			</ul>
 		</div>
 		<div class="col-xs-3">
 			<h3><?= __("global_navigation_footer__COMPANY")?></h3>
 			<ul>
-				<li><a href="#"><?= __("global_navigation_footer__COMPANY__ABOUT_US")?></a></li>
-				<li><a href="#"><?= __("global_navigation_footer__COMPANY__DISCOVER")?></a></li>
-				<li><a href="#"><?= __("global_navigation_footer__COMPANY__PRESS")?></a></li>
-				<li><a href="#"><?= __("global_navigation_footer__COMPANY__LICENSE")?></a></li>
-				<li><a href="#"><?= __("global_navigation_footer__COMPANY__CONTACT")?></a></li>
+				<li><a href="#">PRESS</a></li>
+				<li><a href="#">DISCOVERY</a></li>
+				<li><a href="#">ABOUT US</a></li>
+				<li><a href="#">CAREER</a></li>
 			</ul>
+		</div>
+		<div class="col-xs-3">
+			<h3><?= __("global_navigation_footer__HELP")?></h3>
+			<ul>
+				<li><a href="#">CONTACT US</a></li>
+				<li><a href="#">PRIVACY & COOKIES</li>
+				<li><a href="#">Q & A</a></li>
+				<li><a href="#">TERMS OF SERVICE</a></li>
+			</ul>
+		</div>
+		<div class="col-xs-3">
+			<div class="share-links">
+				<a href="#" class="share-link"><i class="fa fa-facebook"></i></a>
+				<a href="#" class="share-link"><i class="fa fa-weibo"></i></a>
+				<a href="#" class="share-link"><i class="fa fa-instagram"></i></a>
+				<a href="#" class="share-link"><i class="fa fa-wechat"></i></a>
+			</div>
+			<h3>SUBSCRIBE</h3>
+			<form class="subscribe">
+				<span>SIGN UP AND GET LATEST NEWS</span>
+				<input type="text" placeholder="YOUR EMAIL ADDRESS"/>
+				<button class="btn">SUBSCRIBE</button>
+			</form>
+			<span class="copyright">
+				@2015 XSHOWROOM. ALL RIGHTS RESERVED
+			</span>
 		</div>
 	</div>
 </div>

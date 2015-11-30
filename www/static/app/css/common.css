@@ -260,15 +260,18 @@ a.active:before{
 .logo-link:before{
 	content: none;
 }
+.share-link {
+    display: inline-block;
+    color: #878787;
+    margin: 0 5px;
+    line-height: 35px;
+}
 /* 无用户导航 */
 .guest-navigation{
 	background-color: #fafafa;
 }
 .guest-navigation .share-link {
-    display: inline-block;
     color: #666;
-    margin: 0 5px;
-    line-height: 35px;
 }
 .guest-navigation .site-logo{
 	/* margin-top: -10px; */
@@ -321,7 +324,41 @@ a.active:before{
 	color: #888;
 	font-size: 12px;
 }
-
+.footer-navigation .share-links{
+	margin-top: 20px;
+	margin-bottom: 0;
+}
+.footer-navigation .share-links .share-link{
+	line-height: 14px;
+	padding-bottom:10px;
+	margin-left: 0;
+}
+.footer-navigation .share-links + h3{
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+.footer-navigation .subscribe > *{
+	font-size: 12px;
+	font-weight: normal;
+	margin: 10px 0;
+	display: block;
+}
+.footer-navigation .subscribe span{
+	color: #888;
+}
+.footer-navigation .subscribe input{
+	padding: 5px;
+}
+.footer-navigation .subscribe .btn{
+	background-color: #000;
+	color: #fff;
+	border-radius: 0;
+}
+.footer-navigation .copyright{
+	font-size: 12px;
+	font-weight: normal;
+	color: #888;
+}
 /*用户中心的侧边导航*/
 .xs-user-center-slide-nav {
 	margin-top: 25px;

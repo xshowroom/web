@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>XShowroom</title>
 	<link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/static/bower_components/font-awesome/css/font-awesome.min.css" />
 	<link rel="stylesheet" type="text/css" href="/static/app/css/common.css" />
 	<link rel="stylesheet" type="text/css" href="/static/app/css/register_buyer.css" />
 	<link rel="shortcut icon" href="/favicon.ico" />
