@@ -67,33 +67,28 @@ return array_merge(
      * global_navigation_footer.php
      */
     array(
-        'global_navigation_footer__LOCATION' => '地址',
-
-        'global_navigation_footer__HELP' => '帮助',
-        'global_navigation_footer__HELP__HOW_TO_BUY' => '如何购买',
-        'global_navigation_footer__HELP__GENERAL_INFORMATION' => '信息概览',
-        'global_navigation_footer__HELP__PAYMENT' => '支付方式',
-        'global_navigation_footer__HELP__SHIPPING' => '物流派送',
-        'global_navigation_footer__HELP__RETURNS' => '退货流程',
-        'global_navigation_footer__HELP__EXCHANGE' => '换货流程',
-        'global_navigation_footer__HELP__GIFT_CARD' => '礼品卡',
-        'global_navigation_footer__HELP__MY_ACCOUNT' => '我的账户',
-        'global_navigation_footer__HELP__WATCHES' => '访问网站',
-
-        'global_navigation_footer__POLICIES' => '政策',
-        'global_navigation_footer__POLICIES__ENVIRONMENT_POLICY' => '环境政策',
-        'global_navigation_footer__POLICIES__ANIMAL_WELFARE' => '动物保护',
-        'global_navigation_footer__POLICIES__PRIVACY_POLICY' => '隐私策略',
-        'global_navigation_footer__POLICIES__PURCHASE_CONDITIONS' => '购买要求',
-        'global_navigation_footer__POLICIES__GIFT_CARD_CONDITIONS' => '礼品卡要求',
-        'global_navigation_footer__POLICIES__WARRANTY_ON_WATCHES' => '查看担保',
+        'global_navigation_footer__GUIDE' => '指导',
+        'global_navigation_footer__GUIDE__FOR_DESIGNERS' => '设计师必读',
+        'global_navigation_footer__GUIDE__FOR_BUYERS' => '买手必读',
+        'global_navigation_footer__GUIDE__FOR_SHOWROOMS' => 'SHOWROOM必读',
 
         'global_navigation_footer__COMPANY' => '公司',
+        'global_navigation_footer__COMPANY__PRESS' => '出版物',
+        'global_navigation_footer__COMPANY__DISCOVERY' => '探索',
         'global_navigation_footer__COMPANY__ABOUT_US' => '关于我们',
-        'global_navigation_footer__COMPANY__DISCOVER' => '探索',
-        'global_navigation_footer__COMPANY__PRESS' => '咨询',
-        'global_navigation_footer__COMPANY__LICENSE' => '许可',
-        'global_navigation_footer__COMPANY__CONTACT' => '联系',
+        'global_navigation_footer__COMPANY__CAREER' => '职业生涯',
+
+        'global_navigation_footer__HELP' => '帮助',
+        'global_navigation_footer__HELP__CONTACT_US' => '联系我们',
+        'global_navigation_footer__HELP__PRIVACY_COOKIES' => '隐私 & 记录',
+        'global_navigation_footer__HELP__Q_A' => 'Q & A',
+        'global_navigation_footer__HELP__TERMS_OF_SERVICE' => '服务条款',
+
+        'global_navigation_footer__SUBSCRIBE' => '订阅',
+        'global_navigation_footer__SUBSCRIBE__SIGN_IP' => '注册并获得最新资讯',
+        'global_navigation_footer__SUBSCRIBE__EMAIL' => '您的电子邮箱',
+        'global_navigation_footer__SUBSCRIBE__BUTTON' => '订阅',
+        'global_navigation_footer__SUBSCRIBE__LICENSE' => '@2015 XSHOWROOM. 版权所有',
     ),
     /**
      * Home.php

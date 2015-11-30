@@ -67,33 +67,28 @@ return array_merge(
      * global_navigation_footer.php
      */
     array(
-        'global_navigation_footer__LOCATION' => 'LOCATION',
-
-        'global_navigation_footer__HELP' => 'HELP',
-        'global_navigation_footer__HELP__HOW_TO_BUY' => 'HOW TO BUY',
-        'global_navigation_footer__HELP__GENERAL_INFORMATION' => 'GENERAL INFORMATION',
-        'global_navigation_footer__HELP__PAYMENT' => 'PAYMENT',
-        'global_navigation_footer__HELP__SHIPPING' => 'SHIPPING',
-        'global_navigation_footer__HELP__RETURNS' => 'RETURNS',
-        'global_navigation_footer__HELP__EXCHANGE' => 'EXCHANGE',
-        'global_navigation_footer__HELP__GIFT_CARD' => 'GIFT CARD',
-        'global_navigation_footer__HELP__MY_ACCOUNT' => 'MY ACCOUNT',
-        'global_navigation_footer__HELP__WATCHES' => 'WATCHES',
-
-        'global_navigation_footer__POLICIES' => 'POLICIES',
-        'global_navigation_footer__POLICIES__ENVIRONMENT_POLICY' => 'ENVIRONMENT POLICY',
-        'global_navigation_footer__POLICIES__ANIMAL_WELFARE' => 'ANIMAL WELFARE',
-        'global_navigation_footer__POLICIES__PRIVACY_POLICY' => 'PRIVACY POLICY',
-        'global_navigation_footer__POLICIES__PURCHASE_CONDITIONS' => 'PURCHASE CONDITIONS',
-        'global_navigation_footer__POLICIES__GIFT_CARD_CONDITIONS' => 'GIFT CARD CONDITIONS',
-        'global_navigation_footer__POLICIES__WARRANTY_ON_WATCHES' => 'WARRANTY ON WATCHES',
+        'global_navigation_footer__GUIDE' => 'GUIDE',
+        'global_navigation_footer__GUIDE__FOR_DESIGNERS' => 'FOR DESIGNERS',
+        'global_navigation_footer__GUIDE__FOR_BUYERS' => 'BUYERS',
+        'global_navigation_footer__GUIDE__FOR_SHOWROOMS' => 'FOR SHOWROOMS',
 
         'global_navigation_footer__COMPANY' => 'COMPANY',
-        'global_navigation_footer__COMPANY__ABOUT_US' => 'ABOUT US',
-        'global_navigation_footer__COMPANY__DISCOVER' => 'DISCOVER',
         'global_navigation_footer__COMPANY__PRESS' => 'PRESS',
-        'global_navigation_footer__COMPANY__LICENSE' => 'LICENSE',
-        'global_navigation_footer__COMPANY__CONTACT' => 'CONTACT',
+        'global_navigation_footer__COMPANY__DISCOVERY' => 'DISCOVERY',
+        'global_navigation_footer__COMPANY__ABOUT_US' => 'ABOUT US',
+        'global_navigation_footer__COMPANY__CAREER' => 'CAREER',
+
+        'global_navigation_footer__HELP' => 'HELP',
+        'global_navigation_footer__HELP__CONTACT_US' => 'CONTACT US',
+        'global_navigation_footer__HELP__PRIVACY_COOKIES' => 'PRIVACY & COOKIES',
+        'global_navigation_footer__HELP__Q_A' => 'Q & A',
+        'global_navigation_footer__HELP__TERMS_OF_SERVICE' => 'TERMS OF SERVICE',
+
+        'global_navigation_footer__SUBSCRIBE' => 'SUBSCRIBE',
+        'global_navigation_footer__SUBSCRIBE__SIGN_IP' => 'SIGN UP AND GET LATEST NEWS',
+        'global_navigation_footer__SUBSCRIBE__EMAIL' => 'YOUR EMAIL ADDRESS',
+        'global_navigation_footer__SUBSCRIBE__BUTTON' => 'SUBSCRIBE',
+        'global_navigation_footer__SUBSCRIBE__LICENSE' => '@2015 XSHOWROOM. ALL RIGHTS RESERVED',
     ),
     /**
      * Home.php
