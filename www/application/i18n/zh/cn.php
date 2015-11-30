@@ -113,7 +113,7 @@ return array_merge(
         'home__BUYERS' => '时尚买手',
         'home__BUYERS_DESC' => '作为时尚买手入驻买手圈，挖掘最新最赞的设计师品牌，采购最新系列',
 
-        'home__btn_SOLUTION' => '解决方案',
+        'home__btn_SOLUTION' => '学习资料',
         'home__btn_REGISTER' => '申请入驻',
 
         'home__HOT_BRANDS' => '热门品牌',
