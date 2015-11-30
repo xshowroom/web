@@ -99,10 +99,13 @@ section.row{
 }
 .collection-item .collection-info .collection-detail.collection-description > div:nth-child(2){
 	white-space: pre-line;
+    max-height: 140px;
+    overflow: hidden;
+    margin-top: 0;
 }
-.collection-item .collection-info .collection-detail > *{
+/* .collection-item .collection-info .collection-detail > *{
 	margin-top: 15px;
-}
+} */
 
 .collection-item .collection-info .collection-actions{
 	position: absolute;
