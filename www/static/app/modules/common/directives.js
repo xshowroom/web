@@ -251,11 +251,13 @@ angular.module(
 				if(!/image\/\w+/.test(files[0].type)){
 					alert('上传文件类型必须为图片！');
 					self.val('');
+					$scope.$emit('uploading.end');
 				    return; 
 				}
 				if(files[0].size / 1024 / 1024 > 5){
 					alert('上传文件大于5MB！');
 					self.val('');
+					$scope.$emit('uploading.end');
 				    return; 
 				}
 				$scope.timeout = $timeout(function(){
