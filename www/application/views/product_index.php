@@ -98,9 +98,9 @@
                  	<div class="col-xs-12 product-detail">
                  		<div><?=__("product_index__PRODUCT_COLOR")?></div>
                  		<?php $colors = json_decode($production['color']);?>
-                 		<div>
+                 		<div class="row">
 	                 		<?php foreach($colors as $color){?>
-	                 		<div class="available-color">
+	                 		<div class="available-color col-xs-3">
 	                 			<?php if ($color->type == 0) {?>
 	                 			<div style="background-color: <?=$color->value?>"></div>
 	                 			<?php } else if ($color->type == 1){?>
