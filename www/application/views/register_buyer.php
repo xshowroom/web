@@ -131,24 +131,24 @@
 								id="collection-type" ng-class="{'has-error': step.validation[2].collectionType}">
 								<label><?= __("buyer_register__STEP_2__STORE_COLLECTION_TYPE");?>*</label><br>
 								<div>
-									<label for="collection-type-women" class="checkbox-inline">
-										<input type="checkbox" id="collection-type-women" name="collectionType" ng-model="collectionType.women"  ng-change="setCollection('dropdown__COLLECTION__WOMEN')">
+									<label class="checkbox-inline">
+										<input type="checkbox" name="collectionType" ng-model="collectionType.women" ng-change="setCollection('dropdown__COLLECTION__WOMEN')">
 										{{ "dropdown__COLLECTION__WOMEN"| translate }}
 									</label>
-									<label for="collection-type-accessories" class="checkbox-inline">
-										<input type="checkbox" id="collection-type-accessories" name="collectionType" ng-model="collectionType.accessories"  ng-change="setCollection('dropdown__COLLECTION__ACCESSORIES')">
-										{{ "dropdown__COLLECTION__ACCESSORIES"| translate }}
-									</label>
 									<label for="collection-type-men" class="checkbox-inline">
-										<input type="checkbox" id="collection-type-men" name="collectionType" ng-model="collectionType.men" ng-change="setCollection('dropdown__COLLECTION__MEN')">
+										<input type="checkbox" name="collectionType" ng-model="collectionType.man" ng-change="setCollection('dropdown__COLLECTION__MEN')">
 										{{ "dropdown__COLLECTION__MEN"| translate }}
 									</label>
-									<label for="collection-type-men" class="checkbox-inline">
-										<input type="checkbox" id="collection-type-lifestyle" name="collectionType" ng-model="collectionType.lifestyle" ng-change="setCollection('dropdown__COLLECTION__LIFESTYLE')">
+									<label class="checkbox-inline">
+										<input type="checkbox" name="collectionType" ng-model="collectionType.accessories" ng-change="setCollection('dropdown__COLLECTION__ACCESSORIES')">
+										{{ "dropdown__COLLECTION__ACCESSORIES"| translate }}
+									</label>
+									<label class="checkbox-inline">
+										<input type="checkbox" name="collectionType" ng-model="collectionType.lifestyle" ng-change="setCollection('dropdown__COLLECTION__LIFESTYLE')">
 										{{ "dropdown__COLLECTION__LIFESTYLE"| translate }}
 									</label>
-									<label for="collection-type-men" class="checkbox-inline">
-										<input type="checkbox" id="collection-type-others" name="collectionType" ng-model="collectionType.others" ng-change="setCollection('dropdown__COLLECTION__OTHERS')">
+									<label class="checkbox-inline">
+										<input type="checkbox" name="collectionType" ng-model="collectionType.others" ng-change="setCollection('dropdown__COLLECTION__OTHERS')">
 										{{ "dropdown__COLLECTION__OTHERS"| translate }}
 									</label>
 								</div>

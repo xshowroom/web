@@ -98,6 +98,9 @@ label[for='company-country'].has-content{
 }
 #buyer-register .buyer-register-checkbox-group label.checkbox-inline{
 	line-height: 22px;
+	margin-left: 0;
+	width: 33%;
+	float: left;
 }
 #buyer-register .buyer-register-checkbox input[type='checkbox']{
 	margin-top: 1px;

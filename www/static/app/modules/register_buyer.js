@@ -78,8 +78,6 @@ angular.module(
 					collections.push(value);
 				}
 				$scope.user.collectionType = collections.join(',');
-				console.log($scope.user.collectionType);
-
 			};
 			
 			$scope.errorMsgs = [];
