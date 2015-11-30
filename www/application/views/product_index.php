@@ -100,7 +100,7 @@
                  		<?php $colors = json_decode($production['color']);?>
                  		<div class="row">
 	                 		<?php foreach($colors as $color){?>
-	                 		<div class="available-color col-xs-4">
+	                 		<div class="available-color col-xs-3">
 	                 			<?php if ($color->type == 0) {?>
 	                 			<div style="background-color: <?=$color->value?>"></div>
 	                 			<?php } else if ($color->type == 1){?>
