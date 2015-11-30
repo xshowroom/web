@@ -143,6 +143,14 @@
 										<input type="checkbox" id="collection-type-men" name="collectionType" ng-model="collectionType.men" ng-change="setCollection('dropdown__COLLECTION__MEN')">
 										{{ "dropdown__COLLECTION__MEN"| translate }}
 									</label>
+									<label for="collection-type-men" class="checkbox-inline">
+										<input type="checkbox" id="collection-type-lifestyle" name="collectionType" ng-model="collectionType.lifestyle" ng-change="setCollection('dropdown__COLLECTION__LIFESTYLE')">
+										{{ "dropdown__COLLECTION__LIFESTYLE"| translate }}
+									</label>
+									<label for="collection-type-men" class="checkbox-inline">
+										<input type="checkbox" id="collection-type-others" name="collectionType" ng-model="collectionType.others" ng-change="setCollection('dropdown__COLLECTION__OTHERS')">
+										{{ "dropdown__COLLECTION__OTHERS"| translate }}
+									</label>
 								</div>
 							</div>
 						</div>
