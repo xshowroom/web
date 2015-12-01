@@ -132,19 +132,22 @@ class Business_Production
         $priceMax = Request::current()->post('priceMax');
 
         $productionList = $this->productionModel->getByCollectionId($collectionId);
+        
+        // 过滤并且添加字段        
+        $realProductionList = array();
         foreach ($productionList as $idx => $production) {
-
             // 过滤掉不是该用户的产品&&过滤掉不是该类别的产品&&过滤掉不是该价格范围内的产品
-            if ($production['user_id'] != $userId ||
-                (!empty($category) && $production['category'] != $category) ||
-                (!empty($priceMin) && $production['retail_price'] < (int)$priceMin) ||
-                (!empty($priceMax) && $production['retail_price'] > (int)$priceMin)) {
-                unset($productionList[$idx]);
+            if ($production['user_id'] == $userId &&
+                (empty($category) || $production['category'] == $category) &&
+                (empty($priceMin) || $production['retail_price'] >= (int)$priceMin) &&
+                (empty($priceMax) || $production['retail_price'] <= (int)$priceMax)) {
+                $realProductionList[] = $this->getFormedProdution($productionList[$idx]);
             }
-
+                
+            unset($productionList[$idx]);         
         }
         
-        return $productionList;
+        return $realProductionList;
     }
     
     public function getProduction($userId, $productionId)
@@ -157,6 +160,24 @@ class Business_Production
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
         
+        $realProduction = $this->getFormedProdution($production);
+
+        return $realProduction;
+    }
+
+    public function getFormedProdution($production)
+    {
+        $imageUrlList = $production['image_url'];
+        $mediumImageUrlList = $smallImageUrlList = array();
+        foreach ($imageUrlList as $url) {
+            list($filename, $extension) = explode('.', $url);
+            $mediumImageUrlList[] = $filename . '_medium' . $extension;
+            $smallImageUrlList[] = $filename . '_small' . $extension;
+        }
+
+        $production['medium_image_url'] = $mediumImageUrlList;
+        $production['small_image_url'] = $smallImageUrlList;
+
         return $production;
     }
     
