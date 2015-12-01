@@ -230,7 +230,7 @@ angular.module(
      	     			if (res.status){
      	     				$scope.errorMsgs.push(['create error', res.msg]);
      	     			}else{
-//     	     				window.history.back();
+     	     				window.history.back();
      	     			}
      	     		});
      			} 
