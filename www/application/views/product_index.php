@@ -45,10 +45,9 @@
             <div class="row" ng-show="!isEditing">
                 <div class="col-xs-5">
                 	<div class="product-cover">
-                		<?php $images = json_decode($production['image_url']);?>
-                 		<img ng-src="/{{productCover || '<?=$images[0]?>'}}">
+                 		<img ng-src="/{{productCover || '<?=$production['image_url'][0]?>'}}">
                  	</div>
-                 	<div class="product-gallery" ng-init="images = {offset: 0, urls: <?= strtr($production['image_url'], array('"'=>'\''))?>};">
+                 	<div class="product-gallery" ng-init="images = {offset: 0, urls: <?= strtr(json_encode($production['image_url']), array('"'=>'\''))?>};">
 	            		<div class="product-gallery-action" ng-if="images.urls.length > 3" 
 	            			ng-class="{'disabled': images.offset == 0}" >
 	            			<span class="glyphicon glyphicon-chevron-left" ng-click="images.offset = images.offset - (images.offset > 0 ? 1 : 0)"></span>

@@ -148,7 +148,6 @@ angular.module(
      				}else{
      					$scope.categoryCounter[category] = 1;
      				}
-     				$scope.products[i].image_url = JSON.parse($scope.products[i].image_url);
  				}
      		});
      	}
