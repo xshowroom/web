@@ -214,7 +214,7 @@
 						<ul>
 							<li ng-repeat="msg in colorErrorMsg">
 								<span class="glyphicon glyphicon-remove-sign"></span>
-								<span>#{{msg.index + 1}} {{('product_add_image_' + msg.msg) | translate }}</span>
+								<span>{{('product_add_image_' + msg.msg) | translate }}</span>
 							</li>
 						</ul>
 						<div class="clearfix"></div>
