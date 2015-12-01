@@ -4,25 +4,17 @@ angular.module(
 .service(
 	'User', 
 	[
-	    '$http',
-		function ($http) {
-	    	var postRequestTransformer = function(data){
-				var temp = [];
-				for(var i in data){
-					temp.push(i + '=' + data[i]);
-				}
-                return temp.join('&');
-            }
+	    '$http', '$httpParamSerializer',
+		function ($http,  $httpParamSerializer) {
 		    return {
 		    	login: function (opts) {
 		    		return $http.get('/api/login', {params: opts});
 		      	},
 		      	register: function (opts) {
-		      		return $http.post('/api/register', opts, {
+		      		return $http.post('/api/register', $httpParamSerializer(opts), {
 						headers: {
 							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
-						},
-						transformRequest: postRequestTransformer
+						}
 					});
 		      	},
 		      	duplicationCheck: function (opts) {
@@ -87,30 +79,21 @@ angular.module(
 .service(
 	'Collection', 
 	[
-	    '$http',
-		function ($http) {
-	    	var postRequestTransformer = function(data){
-				var temp = [];
-				for(var i in data){
-					temp.push(i + '=' + data[i]);
-				}
-                return temp.join('&');
-            }
+	    '$http', '$httpParamSerializer',
+		function ($http, $httpParamSerializer) {
 		    return {
 		      	create: function (opts) {
-		      		return $http.post('/api/collection/add', opts, {
+		      		return $http.post('/api/collection/add', $httpParamSerializer(opts), {
 						headers: {
 							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
-						},
-						transformRequest: postRequestTransformer
+						}
 					});
 		      	},
 		      	modify: function (opts) {
-		      		return $http.post('/api/collection/modify', opts, {
+		      		return $http.post('/api/collection/modify', $httpParamSerializer(opts), {
 						headers: {
 							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
-						},
-						transformRequest: postRequestTransformer
+						}
 					});
 		      	},
 		      	destroy: function (opts) {
@@ -197,8 +180,8 @@ angular.module(
 .service(
     'Product',
     [
-     	'$http',
-		function ($http) {
+     	'$http', '$httpParamSerializer',
+		function ($http, $httpParamSerializer) {
 			var productSizeTable = {
 				dropdown__PRODUCT_CATEGORY__HAT: {
 				    UK: ['6½', '6⅝', '6¾', '6⅞', '7', '7⅛', '7¼', '7⅜', '7½', '7⅝'], 
@@ -376,21 +359,17 @@ angular.module(
 			var sizeRegions = [
 			    'UK', 'US', 'IT', 'FR', 'DK', 'RU', 'DE', 'AU', 'JP', 'CN'
 			];
-			var postRequestTransformer = function(data){
-				var temp = [];
-				for(var i in data){
-					var value = typeof data[i] == 'object' ? JSON.stringify(data[i]) : data[i];
-					temp.push(i + '=' + value);
-				}
-                return temp.join('&');
-            }
 		    return {
 		      	create: function (opts) {
 		      		return $http.post('/api/product/add', opts, {
 						headers: {
 							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
 						},
-						transformRequest: postRequestTransformer
+						transformRequest: function(data){
+							var options = angular.copy(data);
+							options.color = JSON.stringify(options.color);
+							return $httpParamSerializer(options);
+						}
 					});
 		      	},
 		    	getCategories: function(){

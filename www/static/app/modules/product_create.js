@@ -80,7 +80,7 @@ angular.module(
 				$scope.colorErrorMsg = [];
 				var timeout = $timeout(function(){
 					timeout = null;
-        		}, 500, true);
+        		}, 30000, true);
         		
 				if(!/image\/\w+/.test(files[0].type)){
 					error.msg = 'format_error';
@@ -230,7 +230,7 @@ angular.module(
      	     			if (res.status){
      	     				$scope.errorMsgs.push(['create error', res.msg]);
      	     			}else{
-     	     				window.history.back();
+//     	     				window.history.back();
      	     			}
      	     		});
      			} 
