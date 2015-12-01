@@ -132,7 +132,6 @@ class Business_Production
         $priceMax = Request::current()->post('priceMax');
 
         $productionList = $this->productionModel->getByCollectionId($collectionId);
-        
         // 过滤并且添加字段        
         $realProductionList = array();
         foreach ($productionList as $idx => $production) {
@@ -141,7 +140,7 @@ class Business_Production
                 (empty($category) || $production['category'] == $category) &&
                 (empty($priceMin) || $production['retail_price'] >= (int)$priceMin) &&
                 (empty($priceMax) || $production['retail_price'] <= (int)$priceMax)) {
-                $realProductionList[] = $this->getFormedProdution($productionList[$idx]);
+                $realProductionList[] = $this->getFormedProdution($production);
             }
                 
             unset($productionList[$idx]);         
@@ -167,17 +166,18 @@ class Business_Production
 
     public function getFormedProdution($production)
     {
-        $imageUrlList = $production['image_url'];
+        $imageUrlList = json_decode($production['image_url'],true);
         $mediumImageUrlList = $smallImageUrlList = array();
         foreach ($imageUrlList as $url) {
             list($filename, $extension) = explode('.', $url);
-            $mediumImageUrlList[] = $filename . '_medium' . $extension;
-            $smallImageUrlList[] = $filename . '_small' . $extension;
+            $mediumImageUrlList[] = $filename . '_medium.' . $extension;
+            $smallImageUrlList[] = $filename . '_small.' . $extension;
         }
 
         $production['medium_image_url'] = $mediumImageUrlList;
         $production['small_image_url'] = $smallImageUrlList;
-
+	$production['image_url'] = $imageUrlList;
+	
         return $production;
     }
     
