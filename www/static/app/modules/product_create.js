@@ -104,7 +104,7 @@ angular.module(
                     url: '/api/upload/image',
                     onCompleted: function(file, response) {
                     	if (!timeout) {
-                    		error.msg = 'size_error';
+                    		error.msg = 'timeout_error';
             				$scope.colorErrorMsg.push(error);
             				$scope.$apply();
             				$scope.$emit('uploading.end');
