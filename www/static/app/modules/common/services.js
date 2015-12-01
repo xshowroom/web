@@ -367,7 +367,6 @@ angular.module(
 						},
 						transformRequest: function(data){
 							var options = angular.copy(data);
-							console.log(data)
 							options.color = JSON.stringify(options.color);
 							options.images = JSON.stringify(options.images);
 							return $httpParamSerializer(options);
