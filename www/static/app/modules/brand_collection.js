@@ -36,8 +36,8 @@ angular.module(
      			var collections = res.data;
      			for (var i = 0, len = collections.length; i < len; i++) {
      				for (var j = 0, pLen = collections[i].productions.length; j < pLen; j++) {
-     					var urls = collections[i].productions[j]['image_url'];
-     					collections[i].productions[j].image_url = JSON.parse(urls);
+     					var urls = collections[i].productions[j]['medium_image_url'];
+     					collections[i].productions[j].image_url = urls;
      				}
      			}
      			$scope.collections = collections;
