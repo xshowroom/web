@@ -7,12 +7,14 @@ class Business_Collection
     public $collectionModel;
     public $productionModel;
     public $uploadService;
+    public $productionService;
 
     public function __construct()
     {
         $this->collectionModel = new Model_Collection();
         $this->productionModel = new Model_Production();
         $this->uploadService = new Business_Upload();
+        $this->productionService = new Business_Production();
     }
     
     public function getAllCollectionList($userId, $detail = 0)
@@ -22,7 +24,11 @@ class Business_Collection
         if (!empty($detail)) {
             foreach ($collectionList as $idx => $collection) {
                 $productionList = $this->productionModel->getByCollectionId($collection['id']);
-                $collectionList[$idx]['productions'] = $productionList;
+                $realProductionList = array();
+                foreach ($productionList as $production) {
+                    $realProductionList[] = $this->productionService->getFormedProdution($production);
+                }
+                $collectionList[$idx]['productions'] = $realProductionList;
             }
         }
         

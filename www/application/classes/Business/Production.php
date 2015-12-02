@@ -166,7 +166,7 @@ class Business_Production
 
     public function getFormedProdution($production)
     {
-        $imageUrlList = json_decode($production['image_url'],true);
+        $imageUrlList = json_decode($production['image_url'], true);
         $mediumImageUrlList = $smallImageUrlList = array();
         foreach ($imageUrlList as $url) {
             list($filename, $extension) = explode('.', $url);
@@ -176,7 +176,7 @@ class Business_Production
 
         $production['medium_image_url'] = $mediumImageUrlList;
         $production['small_image_url'] = $smallImageUrlList;
-	$production['image_url'] = $imageUrlList;
+	    $production['image_url'] = $imageUrlList;
 	
         return $production;
     }

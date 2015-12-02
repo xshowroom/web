@@ -47,8 +47,8 @@ class Business_Brand
         
         // 如果有category查询条件，筛选出相应的user_id
         if (!empty($filter['category'])) {
-            $productinList = $this->productionModel->getByCategory($filter['category']);
-            $tempIdList = array_column($productinList, 'user_id');
+            $productionList = $this->productionModel->getByCategory($filter['category']);
+            $tempIdList = array_column($productionList, 'user_id');
             $userIdList = array_intersect($userIdList, $tempIdList);
         }
         

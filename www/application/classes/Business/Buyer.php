@@ -8,6 +8,7 @@ class Business_Buyer
     public $buyerModel;
     public $collectionModel;
     public $productionModel;
+    public $productionService;
     
     public function __construct()
     {
@@ -15,6 +16,7 @@ class Business_Buyer
         $this->buyerModel = new Model_Buyer();
         $this->collectionModel = new Model_Collection();
         $this->productionModel = new Model_Production();
+        $this->productionService = new Business_Production();
     }
     
     public function validateAuth($userId, $brandUserId)
@@ -51,6 +53,8 @@ class Business_Buyer
         // 判断用户是否有该品牌的权限
         $this->validateAuth($userId, $production['user_id']);
         
-        return $production;
+        $realProduction = $this->productionService->getFormedProdution($production);
+
+        return $realProduction;
     }
 }
