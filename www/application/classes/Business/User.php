@@ -106,7 +106,7 @@ class Business_User
             $imagePath     = Request::current()->post('imagePath');
             //$brandUrl      = $brandName;
 
-            $brandUrl = urlencode('brands/' . safeFileName($brandName));
+            $brandUrl = urlencode('brands/' . $this->safeFileName($brandName));
             $extension = substr(strrchr($imagePath, '.'), 1);
             $realPathFile  = 'data/' . date('ymdHis'). substr(microtime(),2,4) . '.' . $extension;
             
