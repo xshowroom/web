@@ -242,7 +242,7 @@
                  	<div class="collection-category-content">
                  		<div class="col-xs-3" ng-repeat="product in products | filter : filters.category | limitTo: filters.limit: 0">
                  			<a  target="_self" ng-href="/product/{{product.id}}" class="collection-product-detail image-link">
-								<img ng-src="/{{product.image_url[0]}}" class="product-image"/>
+								<img ng-src="/{{product.medium_image_url[0]}}" class="product-image"/>
 								<span class="product-info">
 									<span class="product-name">{{product.name}}</span>
 									<span class="product-price">{{collection.currency}}{{product.retail_price}}</span>
