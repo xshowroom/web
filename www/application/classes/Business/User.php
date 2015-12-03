@@ -14,11 +14,13 @@ class Business_User
     
     public $userModel;
     public $msgService;
+    public $shopService;
 
     public function __construct()
     {
         $this->userModel = new Model_User();
         $this->msgService = new Business_Message();
+        $this->shopService = new Business_Shop();
     }
 
     public function login($email, $pass)
@@ -135,22 +137,7 @@ class Business_User
         if (!$userId) {
             return null;
         } else {
-            // generate welcome msg
-            $this->msgService->createMessage($userId, __(Business_Message::AUTO_MSG_WELCOME_BRAND));
-
-            // generate buyer info
-            $name      = Request::current()->post('shopName');
-            $type      = Request::current()->post('shopType');
-            $colType   = Request::current()->post('collectionType');
-            $brandList = Request::current()->post('brandList');
-            $website   = Request::current()->post('shopWebsite');
-            $address   = Request::current()->post('shopAddress');
-            $country   = Request::current()->post('shopCountry');
-            $zipcode   = Request::current()->post('shopZipcode');
-            $tel       = Request::current()->post('shopTel');
-            
-            $shopId = $this->userModel->addShopInfo($userId, $name, $type, $colType, $brandList,
-                                                    $website, $address, $country, $zipcode, $tel);
+            $shopId = $this->shopService->realAddShop($userId);
             return $shopId;
         }
     }
