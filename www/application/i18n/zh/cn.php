@@ -88,7 +88,7 @@ return array_merge(
         'global_navigation_footer__SUBSCRIBE__SIGN_IP' => '注册并获得最新资讯',
         'global_navigation_footer__SUBSCRIBE__EMAIL' => '您的电子邮箱',
         'global_navigation_footer__SUBSCRIBE__BUTTON' => '订阅',
-        'global_navigation_footer__SUBSCRIBE__LICENSE' => '@2015 XSHOWROOM. 版权所有',
+        'global_navigation_footer__SUBSCRIBE__LICENSE' => '©2015 XSHOWROOM. 版权所有',
     ),
     /**
      * Home.php
@@ -115,7 +115,7 @@ return array_merge(
         'home__BRAND_PROFILES' => '品牌介绍',
         'home__SSI5_COLLECTION' => '2015春夏系列',
 
-        'home__TESTOMONIALS' => 'XShowroom人物',
+        'home__TESTIMONIALS' => 'XShowroom人物',
         'home__FEATURED' => '圈内点评',
         'home__people_BUYER' => '时尚买手',
         'home__people_DESIGNER' => '品牌设计师',

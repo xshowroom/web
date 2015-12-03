@@ -203,7 +203,7 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<h3><?=__("home__TESTOMONIALS")?></h3>
+					<h3><?=__("home__TESTIMONIALS")?></h3>
 					<p><?=__("home__FEATURED")?></p>
 				</div>
 			</div>
