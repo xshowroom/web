@@ -2,19 +2,21 @@
 
 class Controller_Api_Buyer extends Controller_BaseReqLogin
 {
-    public $brandService;
+    public $buyerService;
 
     public function before()
     {
         parent::before();
-        $this->brandService = new Business_Brand();
+        $this->buyerService = new Business_Buyer();
     }
 
     public function action_apply()
     {
         $userId  = $this->opUser['id'];
+        $shopId  = (int)trim(Request::current()->query('shopId'));
         $brandId = (int)trim(Request::current()->query('brandId'));
-        $res = $this->brandService->apply($userId, $brandId);
+        
+        $res = $this->buyerService->apply($userId, $shopId, $brandId);
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
@@ -26,8 +28,10 @@ class Controller_Api_Buyer extends Controller_BaseReqLogin
     public function action_checkAuth()
     {
         $userId  = $this->opUser['id'];
+        $shopId  = (int)trim(Request::current()->query('shopId'));
         $brandId = (int)trim(Request::current()->query('brandId'));
-        $res = $this->brandService->checkAuth($userId, $brandId);
+        
+        $res = $this->buyerService->checkAuth($userId, $shopId, $brandId);
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,

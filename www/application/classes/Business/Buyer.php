@@ -57,4 +57,42 @@ class Business_Buyer
 
         return $realProduction;
     }
+
+    public function apply($userId, $shopId, $brandId)
+    {
+        $brand = $this->brandModel->getByUserId($brandId);
+        // 品牌不存在或已删除
+        if (empty($brand) || $brand['status'] != STAT_NORMAL) {
+            $errorInfo = Kohana::message('message', 'STATUS_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+
+        $auth = $this->buyerModel->getAuthList($userId);
+        // 用户有shop已经申请过权限
+        if (!empty($auth)) {
+            $errorInfo = Kohana::message('message', 'STATUS_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+
+        $res = $this->buyerModel->apply($userId, $shopId, $brandId);
+        return $res;
+    }
+
+    public function checkAuth($userId, $shopId, $brandId)
+    {
+        $res = $this->buyerModel->checkAuth($userId, $shopId, $brandId);
+        return $res;
+    }
+
+    public function listByAuthStatus($status)
+    {
+        $res = $this->buyerModel->listByAuthStatus($status);
+        return $res;
+    }
+
+    public function updateAuthStatus($userId, $shopId, $brandId, $adminId, $status)
+    {
+        $res = $this->buyerModel->updateAuthStatus($userId, $shopId, $brandId, $adminId, $status);
+        return $res;
+    }
 }

@@ -116,22 +116,4 @@ class Business_Brand
         $brandList = $this->brandModel->getByName($name);
         return $brandList;
     }
-
-    public function apply($userId, $brandId)
-    {
-        $brand = $this->brandModel->getByUserId($brandId);
-        if (empty($brand) || $brand['status'] != STAT_NORMAL) {
-            $errorInfo = Kohana::message('message', 'STATUS_ERROR');
-            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
-        }
-
-        $res = $this->brandModel->apply($userId, $brandId);
-        return $res;
-    }
-
-    public function checkAuth($userId, $brandId)
-    {
-        $res = $this->brandModel->checkAuth($userId, $brandId);
-        return $res;
-    }
 }
