@@ -104,6 +104,7 @@ class Model_Shop
                         'country' => $country,
                         'zip' => $zipcode,
                         'telephone' => $tel,
+                        'update_time' => date('Y-m-d H:i:s'),
                     ))
                     ->where('id', '=', $shopId)
                     ->where('user_id', '=', $userId)

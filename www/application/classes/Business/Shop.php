@@ -66,7 +66,7 @@ class Business_Shop
         return $shopId;
     }
 
-    public function realUpdateShop($userId, shopId)
+    public function realUpdateShop($userId, $shopId)
     {
         // generate buyer info
         $name      = Request::current()->post('shopName');

@@ -32,7 +32,7 @@ class Model_Buyer
                     ->columns(array(
                         'user_id',
                         'shop_id',
-                        'op_user_id'
+                        'op_user_id',
                         'brand_id',
                         'update_time',
                         'status',
