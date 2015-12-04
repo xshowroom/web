@@ -6,6 +6,42 @@
  */
 class Model_Shop
 {    
+    public function getById($shopId)
+    {
+        $result = DB::select()
+                    ->from('shop')
+                    ->where('id', '=', $shopId)
+                    ->where('status', '!=', STAT_DELETED)
+                    ->execute()
+                    ->as_array();
+        
+        return empty($result) ? array() : $result[0];
+    }
+
+    public function getByUserId($userId)
+    {
+        $result = DB::select()
+                    ->from('shop')
+                    ->where('user_id', '=', $userId)
+                    ->where('status', '!=', STAT_DELETED)
+                    ->execute()
+                    ->as_array();
+        
+        return empty($result) ? array() : $result[0];
+    }
+
+    public function updateStatus($shopId, $status)
+    {
+        $result = DB::update('shop')
+                    ->set(array(
+                        'status' => $status,
+                    ))
+                    ->where('id', '=', $shopId)
+                    ->execute();
+        
+        return $result;
+    }
+
     /**
      * 增加商铺信息
      * 
@@ -53,5 +89,26 @@ class Model_Shop
                     ->execute();
         
         return $result[0];
+    }
+
+    public function updateShopInfo($userId, $shopId, $name, $type, $colType, $brandList, $website, $address, $country, $zipcode, $tel)
+    {
+        $result = DB::update('shop')
+                    ->set(array(
+                        'name' => $name,
+                        'type' => $type,
+                        'collection_type' => $colType,
+                        'brand_list' => $brandLsit,
+                        'website' => $website,
+                        'address' => $address,
+                        'country' => $country,
+                        'zip' => $zipcode,
+                        'telephone' => $tel,
+                    ))
+                    ->where('id', '=', $shopId)
+                    ->where('user_id', '=', $userId)
+                    ->execute();
+
+        return $result;
     }
 }

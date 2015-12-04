@@ -32,6 +32,7 @@ class Model_Buyer
                     ->columns(array(
                         'user_id',
                         'shop_id',
+                        'op_user_id'
                         'brand_id',
                         'update_time',
                         'status',
@@ -39,6 +40,7 @@ class Model_Buyer
                     ->values(array(
                         $userId,
                         $shopId,
+                        $userId,
                         $brandId,
                         date('Y-m-d H:i:s'),
                         self::STATUS_APPLYING,
@@ -77,17 +79,32 @@ class Model_Buyer
         return $result;
     }
 
-    public function updateAuthStatus($userId, $shopId, $brandId, $adminId, $status)
+    public function updateAuthStatus($userId, $shopId, $brandId, $opUserId, $status)
     {
         $result = DB::update('buyer_brand_map')
                     ->set(array(
-                        'op_admin_id' => $adminId,
+                        'op_user_id' => $opUserId,
                         'update_time' => date('Y-m-d H:i:s'),
                         'status'      => $status,
                     ))
                     ->where('user_id', '=', $userId)
                     ->where('shop_id', '=', $shopId)
                     ->where('brand_id', '=', $brandId)
+                    ->execute();
+
+        return $result;
+    }
+
+    public function updateAuthStatusByShop($userId, $shopId, $opUserId, $status)
+    {
+        $result = DB::update('buyer_brand_map')
+                    ->set(array(
+                        'op_user_id' => $opUserId,
+                        'update_time' => date('Y-m-d H:i:s'),
+                        'status'      => $status,
+                    ))
+                    ->where('user_id', '=', $userId)
+                    ->where('shop_id', '=', $shopId)
                     ->execute();
 
         return $result;

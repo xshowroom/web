@@ -90,9 +90,15 @@ class Business_Buyer
         return $res;
     }
 
-    public function updateAuthStatus($userId, $shopId, $brandId, $adminId, $status)
+    public function updateAuthStatus($userId, $shopId, $brandId, $opUserId, $status)
     {
-        $res = $this->buyerModel->updateAuthStatus($userId, $shopId, $brandId, $adminId, $status);
+        $res = $this->buyerModel->updateAuthStatus($userId, $shopId, $brandId, $opUserId, $status);
+        return $res;
+    }
+
+    public function updateAuthStatusByShop($userId, $shopId, $opUserId, $status)
+    {
+        $res = $this->buyerModel->updateAuthStatusByShop($userId, $shopId, $opUserId, $status);
         return $res;
     }
 }

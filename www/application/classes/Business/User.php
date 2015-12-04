@@ -98,37 +98,36 @@ class Business_User
         $userId = $this->addCommonInfo();
         if (!$userId) {
             return null;
-        } else {
-            // generate welcome msg
-            $this->msgService->createMessage($userId, __(Business_Message::AUTO_MSG_WELCOME_BRAND));
+        } 
+        // generate welcome msg
+        $this->msgService->createMessage($userId, __(Business_Message::AUTO_MSG_WELCOME_BRAND));
 
-            // generate brand info
-            $brandName     = Request::current()->post('brandName');
-            $designerName  = Request::current()->post('designerName');
-            $imagePath     = Request::current()->post('imagePath');
-            //$brandUrl      = $brandName;
+        // generate brand info
+        $brandName     = Request::current()->post('brandName');
+        $designerName  = Request::current()->post('designerName');
+        $imagePath     = Request::current()->post('imagePath');
+        //$brandUrl      = $brandName;
 
-            $brandUrl = urlencode('brands/' . $this->safeFileName($brandName));
-            $extension = substr(strrchr($imagePath, '.'), 1);
-            $realPathFile  = 'data/' . date('ymdHis'). substr(microtime(),2,4) . '.' . $extension;
-            
-            $brandExist = $this->checkBrand($brandName);
-            if ($brandExist) {
-                return null;
-            }
-            
-            if (file_exists($imagePath)){
-                try{
-                    copy($imagePath, $realPathFile);
-                    unlink($imagePath);
-                } catch (Exception $e) {
-                    return null;
-                }                
-            }
-
-            $brandId = $this->userModel->addBrandInfo($userId, $brandName, $designerName, $brandUrl, $realPathFile);
-            return $brandId;
+        $brandUrl = urlencode('brands/' . $this->safeFileName($brandName));
+        $extension = substr(strrchr($imagePath, '.'), 1);
+        $realPathFile  = 'data/' . date('ymdHis'). substr(microtime(),2,4) . '.' . $extension;
+        
+        $brandExist = $this->checkBrand($brandName);
+        if ($brandExist) {
+            return null;
         }
+        
+        if (file_exists($imagePath)){
+            try{
+                copy($imagePath, $realPathFile);
+                unlink($imagePath);
+            } catch (Exception $e) {
+                return null;
+            }                
+        }
+
+        $brandId = $this->userModel->addBrandInfo($userId, $brandName, $designerName, $brandUrl, $realPathFile);
+        return $brandId;
     }
     
     public function addBuyerUser()
@@ -136,10 +135,11 @@ class Business_User
         $userId = $this->addCommonInfo();
         if (!$userId) {
             return null;
-        } else {
-            $shopId = $this->shopService->realAddShop($userId);
-            return $shopId;
         }
+        // generate welcome msg
+        $this->msgService->createMessage($userId, __(Business_Message::AUTO_MSG_WELCOME_BRAND));
+        $shopId = $this->shopService->realAddShop($userId);
+        return $shopId;
     }
     
     public function checkEmail($email)
@@ -170,9 +170,9 @@ class Business_User
 
         if ($res) {
             return array(STATUS_ERROR, "{$key}_existed");
-        } else {
-            return array(STATUS_SUCCESS, 'check_ok');
         }
+        
+        return array(STATUS_SUCCESS, 'check_ok');
     }
 
     /**
