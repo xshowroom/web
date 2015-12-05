@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="xShowroom.login">
+<html ng-app="xShowroom.admin.shop">
 <head>
 	<meta charset="UTF-8" >
 	<title>XShowroom</title>
@@ -16,36 +16,19 @@
 	<script type="text/javascript" src="/static/app/modules/common/i18n.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/services.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
+	<script type="text/javascript" src="/static/app/modules/admin_shop_mgr.js"></script>
 </head>
-<body ng-controller="LoginCtrl" class="container-fluid">
+<body ng-controller="AdminShopMgrCtrl" class="container-fluid">
 	<nav class="row setting-info">
 		<?php echo View::factory('admin_views/admin_setting_with_login', array('user'=> $user)); ?>
 	</nav>
 	<nav class="row guest-navigation"  id="home-page-navigation">
-        <?php echo View::factory('admin_views/admin_navigation_top_login', array('currentPage' => 'statistics')); ?>
+        <?php echo View::factory('admin_views/admin_navigation_top_login', array('currentPage' => 'shops')); ?>
 	</nav>
 	<section class="row">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-3">
-					<article class="left-box text-left">
-						<h2> REGISTER USER</h2>
-						<p>642</p>
-						<h2> REGISTER BRAND</h2>
-						<p>45</p>
-						<h2> REGISTER BUYER</h2>
-						<p>521</p>
-						<h2> TOTAL ORDER</h2>
-						<p>2462</p>
-					</article>
-				</div>
-				<div class="col-xs-9">
-					<article class="text-left">
-						<div>
-							<h2>please take actions:</h2>
-						</div>
-					</article>
-				</div>
+				Shop manager
 			</div>
 		</div>
 	</section>

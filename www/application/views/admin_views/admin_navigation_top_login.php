@@ -7,7 +7,7 @@
 				</li>
 				<li><a href="<?=URL::site('xsadmin/management/statistics');?>" <?php if ($currentPage == 'statistics'){?>class="active"<?php }?>>STATISTICS</a></li>
 				<li><a href="<?=URL::site('xsadmin/management/users');?>" <?php if ($currentPage == 'users'){?>class="active"<?php }?>>USER MANAGE</a></li>
-				<li><a href="<?=URL::site('xsadmin/management/access');?>" <?php if ($currentPage == 'access'){?>class="active"<?php }?>>ACCESS MANAGE</a></li>
+				<li><a href="<?=URL::site('xsadmin/management/shops');?>" <?php if ($currentPage == 'shops'){?>class="active"<?php }?>>SHOP MANAGE</a></li>
 				<li><a href="<?=URL::site('xsadmin/management/orders');?>" <?php if ($currentPage == 'orders'){?>class="active"<?php }?>>ORDER MANAGE</a></li>
 			</ul>
 		</div>

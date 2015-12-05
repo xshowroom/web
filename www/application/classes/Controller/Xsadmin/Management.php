@@ -26,4 +26,28 @@ class Controller_Xsadmin_Management extends Controller_XSAdmin_AdminBase
 
         $this->response->body($view);
     }
+
+    public function action_users()
+    {
+        $view = View::factory('admin_views/user_mgr');
+        $view->set('user', $this->adminUser);
+
+        $this->response->body($view);
+    }
+
+    public function action_shops()
+    {
+        $view = View::factory('admin_views/shop_mgr');
+        $view->set('user', $this->adminUser);
+
+        $this->response->body($view);
+    }
+
+    public function action_orders()
+    {
+        $view = View::factory('admin_views/order_mgr');
+        $view->set('user', $this->adminUser);
+
+        $this->response->body($view);
+    }
 }

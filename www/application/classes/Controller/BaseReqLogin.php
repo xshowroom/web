@@ -17,9 +17,10 @@ class Controller_BaseReqLogin extends Controller_Base
         }
 
         // redirect to login if user role is wrong
-        $roleType = $this->opUser['role_type'];
+        $roleType = (int)$this->opUser['role_type'];
+        $arrowUserType = array(Business_User::ROLE_ADMIN, Business_User::ROLE_BRAND, Business_User::ROLE_BUYER);
 
-        if($roleType != Business_User::ROLE_BRAND && $roleType != Business_User::ROLE_BUYER){
+        if(! in_array($roleType, $arrowUserType,TRUE)){
             $this->redirectLogin();
         }
     }
