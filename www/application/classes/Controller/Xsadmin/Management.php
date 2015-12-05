@@ -22,7 +22,15 @@ class Controller_Xsadmin_Management extends Controller_XSAdmin_AdminBase
     public function action_statistics()
     {
         $view = View::factory('admin_views/statistics');
+
+        $brand_count = $this->userService->countUserByRole(Business_User::ROLE_BRAND);
+        $buyer_count = $this->userService->countUserByRole(Business_User::ROLE_BUYER);
+        $all_user_count = $this->userService->countAllUser();
+
         $view->set('user', $this->adminUser);
+        $view->set('brand_count', $brand_count);
+        $view->set('buyer_count', $buyer_count);
+        $view->set('all_user_count', $all_user_count);
 
         $this->response->body($view);
     }

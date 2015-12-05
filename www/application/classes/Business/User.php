@@ -175,6 +175,19 @@ class Business_User
         return array(STATUS_SUCCESS, 'check_ok');
     }
 
+    public function countUserByRole($roleType)
+    {
+        return $this->userModel->countUserByRole($roleType);
+    }
+
+    public function countAllUser()
+    {
+        $brand_count = $this->userModel->countUserByRole(Business_User::ROLE_BRAND);
+        $buyer_count = $this->userModel->countUserByRole(Business_User::ROLE_BUYER);
+
+        return $brand_count + $buyer_count;
+    }
+
     /**
      * 将文件名中的非法字符去掉
      * 

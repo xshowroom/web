@@ -242,4 +242,14 @@ class Model_User {
         
         return $result;
     }
+
+    public function countUserByRole($roleType)
+    {
+        $result = DB::select(DB::expr('COUNT(id) AS USER_COUNT'))
+                    ->from('user')
+                    ->where('role_type', '=', $roleType)
+                    ->execute();
+
+        return empty($result) ? 0 : (int)$result[0]['USER_COUNT'];
+    }
 }

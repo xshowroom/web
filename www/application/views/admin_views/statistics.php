@@ -28,15 +28,15 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-3">
-					<article class="left-box text-left">
-						<h2> REGISTER USER</h2>
-						<p>642</p>
-						<h2> REGISTER BRAND</h2>
-						<p>45</p>
-						<h2> REGISTER BUYER</h2>
-						<p>521</p>
-						<h2> TOTAL ORDER</h2>
-						<p>2462</p>
+					<article class="left-box text-left statistics-left-box">
+						<h2>TOTAL BRAND</h2>
+						<p><span class="glyphicon glyphicon-user" aria-hidden="true"></span><?=$brand_count?></p>
+						<h2>TOTAL BUYER</h2>
+						<p><span class="glyphicon glyphicon-user" aria-hidden="true"></span><?=$buyer_count?></p>
+						<h2>TOTAL USERS</h2>
+						<p><span class="glyphicon glyphicon-user" aria-hidden="true"></span><?=$all_user_count?></p>
+						<h2>TOTAL ORDERS</h2>
+						<p><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>2462</p>
 					</article>
 				</div>
 				<div class="col-xs-9">

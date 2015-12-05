@@ -18,3 +18,13 @@ section.row{
     font-weight: 200;
 	margin-bottom: 30px;
 }
+
+/* Admin Statistics */
+.statistics-left-box {
+	margin-top: 20px;
+}
+
+.statistics-left-box span {
+	margin-right: 20px;
+	margin-top: 10px;
+}
