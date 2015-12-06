@@ -28,7 +28,48 @@
 	<section class="row">
 		<div class="container">
 			<div class="row">
-				User manager
+				<h2>PENDING USERS</h2>
+				<table class="table table-hover xs-table">
+					<tbody>
+					<?php foreach($pending_use_list as $row): ?>
+						<tr>
+							<td class="xs-row" style="width: 60px;">
+								<p><?= $row['id'] ?></p>
+							</td>
+							<td class="xs-row">
+								<a href="<?= URL::site('message/detail/'.$row['id']); ?>">
+									<p><?= $row['email'] ?></p>
+								</a>
+							</td>
+							<td class="xs-row" style="width: 100px;">
+								<p>
+									<?php if($row['role_type'] == Business_User::ROLE_BRAND): ?>
+									<?='BRAND'?>
+									<?php elseif($row['role_type'] == Business_User::ROLE_BUYER): ?>
+									<?='BUYER'?>
+									<?php endif ?>
+								</p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['modify_date'] ?></p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['register_date'] ?></p>
+							</td>
+							<td class="xs-row xs-row-action" style="width: 100px;">
+								<a>
+									<p>ALLOW</p>
+								</a>
+							</td>
+							<td class="xs-row xs-row-action" style="width: 100px;">
+								<a>
+									<p>REJECT</p>
+								</a>
+							</td>
+						</tr>
+					<?php endforeach; ?>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</section>

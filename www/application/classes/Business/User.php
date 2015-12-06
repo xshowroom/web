@@ -11,7 +11,16 @@ class Business_User
     const ROLE_ADMIN = 0;
     const ROLE_BRAND = 1;
     const ROLE_BUYER = 2;
-    
+
+    /**
+     * User Status
+     */
+    const STATUS_USER_PENDING = -1;
+    const STATUS_USER_NORMAL = 0;
+    const STATUS_USER_SUSPENDED = 1;
+    const STATUS_USER_DELETED = 2;
+
+
     public $userModel;
     public $msgService;
     public $shopService;
@@ -186,6 +195,11 @@ class Business_User
         $buyer_count = $this->userModel->countUserByRole(Business_User::ROLE_BUYER);
 
         return $brand_count + $buyer_count;
+    }
+
+    public function listPendingUsers()
+    {
+        return $this->userModel->listUsersByStatus(Business_User::STATUS_USER_PENDING);
     }
 
     /**

@@ -39,6 +39,7 @@ class Controller_Xsadmin_Management extends Controller_XSAdmin_AdminBase
     {
         $view = View::factory('admin_views/user_mgr');
         $view->set('user', $this->adminUser);
+        $view->set('pending_use_list', $this->userService->listPendingUsers());
 
         $this->response->body($view);
     }

@@ -16,24 +16,6 @@
 	vertical-align: bottom;
 }
 
-.xs-table {
-	font-size: 12px;
-	font-weight: 200;
-	table-layout: fixed;
-    color: #333333;
-}
-
-.xs-inbox-row {
-	border-top: none !important;
-	border-bottom: 1px solid #eeeeee;
-    padding: 16px 7px 16px 7px !important;
-}
-
-.xs-inbox-row p {
-	color: #999;
-	margin: 0;
-}
-
 .xs-inbox-content p {
 	white-space: nowrap;
 	overflow: hidden;

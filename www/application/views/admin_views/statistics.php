@@ -41,8 +41,9 @@
 				</div>
 				<div class="col-xs-9">
 					<article class="text-left">
+						<h2>STATISTICS FOR XSHOWROOM</h2>
 						<div>
-							<h2>please take actions:</h2>
+
 						</div>
 					</article>
 				</div>

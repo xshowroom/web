@@ -11,6 +11,11 @@ class Model_User {
     const TYPE_USER_BRAND = 1;
     const TYPE_USER_BUYER = 2;
 
+    const STATUS_USER_PENDING = -1;
+    const STATUS_USER_NORMAL = 0;
+    const STATUS_USER_SUSPENDED = 1;
+    const STATUS_USER_DELETED = 2;
+
     /**
      * 查询单个用户信息
      * 
@@ -251,5 +256,17 @@ class Model_User {
                     ->execute();
 
         return empty($result) ? 0 : (int)$result[0]['USER_COUNT'];
+    }
+
+    public function listUsersByStatus($status)
+    {
+        $result = DB::select()
+                    ->from('user')
+                    ->where('status', '=', $status)
+                    ->where('role_type', '<>', Model_User::TYPE_USER_ADMIN)
+                    ->execute()
+                    ->as_array();
+
+        return $result;
     }
 }

@@ -698,3 +698,22 @@ to {-o-transform: translateX(0);}
 }
 .brand-banner .brand-info .brand-detail > span + span{
 }
+
+/* table & row */
+.xs-table {
+	font-size: 12px;
+	font-weight: 200;
+	table-layout: fixed;
+	color: #333333;
+}
+
+.xs-row {
+	border-top: none !important;
+	border-bottom: 1px solid #eeeeee;
+	padding: 16px 7px 16px 7px !important;
+}
+
+.xs-row p {
+	color: #999;
+	margin: 0;
+}
