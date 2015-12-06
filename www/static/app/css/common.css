@@ -707,6 +707,12 @@ to {-o-transform: translateX(0);}
 	color: #333333;
 }
 
+.xs-table-th {
+	color: #555;
+	border-top: none !important;
+	border-bottom: 1px solid rgba(202, 115, 121, 0.20);
+}
+
 .xs-row {
 	border-top: none !important;
 	border-bottom: 1px solid #eeeeee;

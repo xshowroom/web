@@ -45,6 +45,11 @@ class Business_User
         return $user;
     }
 
+    public function getUserById($userId)
+    {
+        return $this->userModel->getById($userId);
+    }
+
     public function getUserAttr($userId)
     {
         return $this->userModel->getAttrByUserId($userId);

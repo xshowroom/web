@@ -8,7 +8,7 @@
 angular.module(
     'xShowroom.user.profile',
     [
-        'xShowroom.i18n', 'xShowroom.directives'
+        'ngCookies', 'xShowroom.i18n', 'xShowroom.directives'
     ]
 )
 .controller(

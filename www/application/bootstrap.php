@@ -157,21 +157,27 @@ Route::set('product_create', 'product/create/<id>')
 
 Route::set('detail', '<controller>(/<action>)/<id>',
         array(
-                'controller' => '(collection|order|product|message)',
-                'id'        => '\d+',
+            'controller' => '(collection|order|product|message)',
+            'id'        => '\d+',
         ))
         ->defaults(array(
-                'controller' => 'collection',
-                'action'     => 'index',
+            'controller' => 'collection',
+            'action'     => 'index',
+        ));
+
+Route::set('admin_with_id', '<directory>/<controller>/<action>/<id>',
+        array(
+            'directory' => 'xsadmin',
+            'controller' => 'management',
+            'action' => '(user_detail|shop_detail|order_detail)',
+            'id'        => '\d+',
         ));
 
 Route::set('default', '(<directory>/)(<controller>(/<action>))',
-        array(
-            'directory' => '(api|xsadmin)',
-        ))
-        ->defaults(array(
-            'controller' => 'home',
-            'action'     => 'index',
-        ));
-        
-
+    array(
+        'directory' => '(api|xsadmin)',
+    ))
+    ->defaults(array(
+        'controller' => 'home',
+        'action'     => 'index',
+    ));

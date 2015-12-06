@@ -4,6 +4,8 @@
 class Controller_Xsadmin_Management extends Controller_XSAdmin_AdminBase
 {
     public $userService;
+    public $brandService;
+    public $buyerService;
     public $collectionService;
 
     public function before()
@@ -11,6 +13,8 @@ class Controller_Xsadmin_Management extends Controller_XSAdmin_AdminBase
         parent::before();
 
         $this->userService = new Business_User();
+        $this->brandService = new Business_Brand();
+        $this->buyerService = new Business_Buyer();
         $this->collectionService =new Business_Collection();
     }
 
@@ -40,6 +44,18 @@ class Controller_Xsadmin_Management extends Controller_XSAdmin_AdminBase
         $view = View::factory('admin_views/user_mgr');
         $view->set('user', $this->adminUser);
         $view->set('pending_use_list', $this->userService->listPendingUsers());
+
+        $this->response->body($view);
+    }
+
+    public function action_user_detail()
+    {
+        $userId = $this->request->param('id');
+
+        $view = View::factory('admin_views/user_detail');
+        $view->set('user',$this->userService->getUserById($userId));
+        $view->set('userAttr', $this->userService->getUserAttr($userId));
+        $view->set('brandInfo', $this->brandService->getBrandInfo($userId));
 
         $this->response->body($view);
     }

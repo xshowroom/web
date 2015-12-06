@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="xShowroom.admin.order">
+<html ng-app="xShowroom.admin">
 <head>
 	<meta charset="UTF-8" >
 	<title>XShowroom</title>

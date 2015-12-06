@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="/static/bower_components/font-awesome/css/font-awesome.min.css" />
 	<link rel="stylesheet" type="text/css" href="/static/app/css/common.css" />
 	<link rel="stylesheet" type="text/css" href="/static/app/css/admin.css" />
+	<link rel="stylesheet" type="text/css" href="/static/app/css/profile.css" />
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -28,63 +29,10 @@
 	<section class="row">
 		<div class="container">
 			<div class="row">
-				<h2>PENDING USERS</h2>
-				<table class="table table-hover xs-table">
-					<tbody>
-					<tr>
-						<th class="xs-table-th" style="width: 60px;">ID</th>
-						<th class="xs-table-th">EMAIL ADDRESS</th>
-						<th class="xs-table-th" style="width: 150px;">TYPE</th>
-						<th class="xs-table-th" style="width: 200px;">REGISTER DATE</th>
-						<th class="xs-table-th" style="width: 200px;">LAST LOGIN</th>
-						<th class="xs-table-th" style="width: 100px;">PROFILE</th>
-						<th class="xs-table-th" style="width: 100px;">ALLOW</th>
-						<th class="xs-table-th" style="width: 100px;">REJECT</th>
-					</tr>
-					<?php foreach($pending_use_list as $row): ?>
-						<tr>
-							<td class="xs-row">
-								<p><?= $row['id'] ?></p>
-							</td>
-							<td class="xs-row">
-								<a href="<?=URL::site('xsadmin/management/user_detail/'.$row['id']);?>" target="_blank">
-									<p><?= $row['email'] ?></p>
-								</a>
-							</td>
-							<td class="xs-row">
-								<p>
-									<?php if($row['role_type'] == Business_User::ROLE_BRAND): ?>
-									<?='BRAND'?>
-									<?php elseif($row['role_type'] == Business_User::ROLE_BUYER): ?>
-									<?='BUYER'?>
-									<?php endif ?>
-								</p>
-							</td>
-							<td class="xs-row">
-								<p><?= $row['register_date'] ?></p>
-							</td>
-							<td class="xs-row">
-								<p><?= $row['last_login_time'] ?></p>
-							</td>
-							<td class="xs-row xs-row-action">
-								<a href="<?=URL::site('xsadmin/management/user_detail/'.$row['id']);?>" target="_blank">
-									<p>PROFILE</p>
-								</a>
-							</td>
-							<td class="xs-row xs-row-action">
-								<a href="#">
-									<p>ALLOW</p>
-								</a>
-							</td>
-							<td class="xs-row xs-row-action">
-								<a href="#">
-									<p>REJECT</p>
-								</a>
-							</td>
-						</tr>
-					<?php endforeach; ?>
-					</tbody>
-				</table>
+				<?php echo View::factory(
+					'template/t_user_profile',
+					array('user' => $user, 'userAttr' => $userAttr, 'brandInfo'=> $brandInfo, 'buyerInfo'=> $buyerInfo));
+				?>
 			</div>
 		</div>
 	</section>

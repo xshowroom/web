@@ -1,7 +1,7 @@
 angular.module(
-    'xShowroom.admin.user',
+    'xShowroom.admin',
     [
-        'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services'
+        'ngCookies', 'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services'
     ]
 )
 .controller(
