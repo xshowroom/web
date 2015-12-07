@@ -16,7 +16,6 @@
 	<script type="text/javascript" src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/static/bower_components/angular/angular.min.js"></script>
 	<script type="text/javascript" src="/static/bower_components/angular-cookies/angular-cookies.min.js"></script>
-	<script type="text/javascript" src="/static/bower_components/angular-scroll-complete/angular-scroll-complete.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/i18n.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/services.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
@@ -43,7 +42,7 @@
 		})
 	</script>
 </head>
-<body ng-controller="HomeCtrl" class="container-fluid"  when-scrolled="restartCounter()" percent="{{kpiPercent}}">
+<body ng-controller="HomeCtrl" class="container-fluid">
 	<nav class="row setting-info">
 		<?php echo View::factory('common/global_setting_with_login', array('userAttr'=> $userAttr, 'user'=> $user)); ?>
 	</nav>

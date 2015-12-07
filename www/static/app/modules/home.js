@@ -8,15 +8,41 @@
 angular.module(
     'xShowroom.home', 
     [
-        'xShowroom.i18n', 'xShowroom.directives'
+        'xShowroom.i18n', 'xShowroom.directives'/*, 'angular-scroll-complete'*/
     ]
 )
 .controller(
     'HomeCtrl',
     [
-     	'$scope',
-        function ($scope) {
-     	
+     	'$scope', '$element', '$timeout',
+        function ($scope, $element, $timeout) {
+     		$scope.isCounterInited = false;
+     		
+     		$scope.counter= {
+     			buyer: 1214,
+     			brand: 121,
+     			product: 3571,
+     			order: 52291
+     		};
+     		$scope.tempCounter= {
+         		buyer: 1214,
+         		brand: 121,
+         		product: 3571,
+         		order: 52291
+         	};
+     		$timeout(function(){
+     			var bodyHeight = $element.height();
+     			var postion = $element.find('.home-kpi').offset().top;
+     			$scope.kpiPercent = Math.round(postion / bodyHeight * 100);
+     			$scope.$apply();
+     			console.log(bodyHeight, postion);
+     		}, 500, true);
+     		
+     		$scope.restartCounter = function(){
+     			$scope.isCounterInited = true;
+     			console.log(123)
+     		}
+     		
         }
     ]
 );
