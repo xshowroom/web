@@ -157,14 +157,16 @@ class Model_Collection
     
     public function getByFilter($filter)
     {
-        $sql = "SELECT user_id FROM collection WHERE status = " . self::TYPE_OF_ONLINE;
+        $sql = "SELECT * FROM collection WHERE status = " . self::TYPE_OF_ONLINE;
         
-        if ($filter['show'] == 'all') {
-            $sql .= " AND category = 'dropdown__COLLECTION__WOMEN' OR category = 'dropdown__COLLECTION__MEN' OR modify_time >= '". date('Y-m-d', strtotime('-3 month')) ."'";
-        } elseif ($filter['show'] == 'new') {
-            $sql .= " AND modify_time >= '". date('Y-m-d', strtotime('-3 month')) ."'";
-        } elseif ($filter['show'] == 'dropdown__COLLECTION__WOMEN' || $filter['show'] == 'dropdown__COLLECTION__MEN') {
-            $sql .= " AND category = '{$filter['show']}' ";
+        if (!empty($filter['show'])) {
+            if ($filter['show'] == 'all') {
+                $sql .= " AND category = 'dropdown__COLLECTION__WOMEN' OR category = 'dropdown__COLLECTION__MEN' OR modify_time >= '". date('Y-m-d', strtotime('-3 month')) ."'";
+            } elseif ($filter['show'] == 'new') {
+                $sql .= " AND modify_time >= '". date('Y-m-d', strtotime('-3 month')) ."'";
+            } elseif ($filter['show'] == 'dropdown__COLLECTION__WOMEN' || $filter['show'] == 'dropdown__COLLECTION__MEN') {
+                $sql .= " AND category = '{$filter['show']}' ";
+            }
         }
         
         if (!empty($filter['season'])) {
@@ -176,6 +178,19 @@ class Model_Collection
         }
         
         $result = DB::query(Database::SELECT, $sql)->execute()->as_array();
+        
+        return $result;
+    }
+    
+    public function getListBySeason($userId, $season)
+    {
+        $result = DB::select()
+                    ->from('collection')
+                    ->where('user_id', '=', $userId)
+                    ->where('season', '=', $season)
+                    ->where('status', '!=', self::TYPE_OF_DELETE)
+                    ->execute()
+                    ->as_array();
         
         return $result;
     }

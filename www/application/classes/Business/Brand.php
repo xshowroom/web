@@ -98,7 +98,7 @@ class Business_Brand
         $pageSize = Request::current()->query('pageSize');
         $pageSize = empty($pageSize) ? 0 : $pageSize;
         $offset = Request::current()->query('offset');
-        $pageSize = empty($offset) ? 0 : $offset;
+        $offset = empty($offset) ? 0 : $offset;
         $res = array_slice($res, $offset, $pageSize);
         
         return $res;
@@ -114,6 +114,13 @@ class Business_Brand
     public function queryBrand($name)
     {
         $brandList = $this->brandModel->getByName($name);
+        
+        $pageSize = Request::current()->query('pageSize');
+        $pageSize = empty($pageSize) ? 0 : $pageSize;
+        $offset = Request::current()->query('offset');
+        $offset = empty($offset) ? 0 : $offset;
+        $brandList = array_slice($brandList, $offset, $pageSize);
+        
         return $brandList;
     }
 }

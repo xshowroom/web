@@ -99,6 +99,18 @@ class Model_Production
         return $result;
     }
     
+    public function getByCollectionIdList($collectionIdList)
+    {
+        $result = DB::select()
+                    ->from('production')
+                    ->where('collection_id', 'IN', $collectionIdList)
+                    ->where('status', '=', STAT_NORMAL)
+                    ->execute()
+                    ->as_array();
+        
+        return $result;
+    }
+    
     public function getByProductionId($productionId)
     {
         $result = DB::select()

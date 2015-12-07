@@ -134,4 +134,30 @@ class Controller_Api_Collection extends Controller_BaseReqLogin
             'data' => $res,
         ));
     }
+    
+    public function action_search()
+    {
+        $userId = $this->opUser['id'];
+        $res = $this->collectionService->getCollectionList($userId);
+        
+        echo json_encode(array(
+            'status' => STATUS_SUCCESS,
+            'msg'      => '',
+            'data' => $res,
+        ));
+    }
+    
+    public function action_img()
+    {
+        $userId = $this->opUser['id'];
+        $season = Request::current()->query('season');
+        
+        $res = $this->collectionService->getAllCollectionImg($userId, $season);
+        
+        echo json_encode(array(
+            'status' => STATUS_SUCCESS,
+            'msg'      => '',
+            'data' => $res,
+        ));
+    }
 }

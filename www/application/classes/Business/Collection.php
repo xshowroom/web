@@ -4,6 +4,13 @@
  */
 class Business_Collection
 {  
+    public static $availableMap = array(
+        '+1 day',
+        '+1 week',
+        '+4 week',
+        '+8 week',
+    );
+    
     public $collectionModel;
     public $productionModel;
     public $uploadService;
@@ -33,6 +40,55 @@ class Business_Collection
         }
         
         return $collectionList;
+    }
+    
+    private function doFilter($filter)
+    {
+        // 如果有show查询条件，筛选出相应的user_id
+        if (!empty($filter['status']) || !empty($filter['season'])) {
+            $collectionList = $this->collectionModel->getByFilter($filter);
+        }
+        
+        foreach ($collectionList as $idx => $collection) {
+            if (strtotime($collection['deadline']) <= strtotime(date('Y-m-d'))) {
+                unset($collectionList[$idx]);
+            }
+        }
+        
+        return $collectionList;
+    }
+    
+    private function doQuote($queryStr)
+    {
+        if (empty($queryStr)) {
+            return false;
+        }
+    
+        $arr = explode(',', $queryStr);
+    
+        $res = array_map(function ($val){
+            return "'{$val}'";
+        }, $arr);
+    
+            return implode(',', $res);
+    }
+    
+    public function getCollectionList()
+    {
+        $filter = array(
+            'status'    => Request::current()->query('status'),
+            'season'    => $this->doQuote(Request::current()->query('season')),
+        );
+        
+        $res = $this->doFilter($filter);
+        
+        $pageSize = Request::current()->query('pageSize');
+        $pageSize = empty($pageSize) ? 0 : $pageSize;
+        $offset = Request::current()->query('offset');
+        $pageSize = empty($offset) ? 0 : $offset;
+        $res = array_slice($res, $offset, $pageSize);
+        
+        return $res;
     }
     
     public function getCollectionInfo($userId, $collectionId)
@@ -106,5 +162,21 @@ class Business_Collection
         
         $res = $this->collectionModel->updateStatus($collectionId, $status);
         return $res;
+    }
+    
+    public function getAllCollectionImg($userId, $season)
+    {
+        $collectionList = $this->collectionModel->getListBySeason($userId, $season);
+        
+        foreach ($collectionList as $idx => $collection) {
+            $productionList = $this->productionModel->getByCollectionId($collection['id']);
+            $realProductionList = array();
+            foreach ($productionList as $production) {
+                $realProductionList[] = $this->productionService->getFormedProdution($production);
+            }
+            $collectionList[$idx]['productions'] = $realProductionList;
+        }
+        
+        return $collectionList;
     }
 }
