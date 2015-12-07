@@ -68,8 +68,9 @@ angular.module(
 	    		country: {
 	    		   	type: 'checkbox',
 	    		    values: [
-	    		        'dropdown__COUNTRY__Austria', 'dropdown__COUNTRY__Belgium', 'dropdown__COUNTRY__Canada',
-	    		        'dropdown__COUNTRY__China', 'dropdown__COUNTRY__Denmark'
+						'dropdown__COUNTRY__UnitedKiongdom', 'dropdown__COUNTRY__France', 'dropdown__COUNTRY__Italy',
+						'dropdown__COUNTRY__China', 'dropdown__COUNTRY__Germany', 'dropdown__COUNTRY__Japan',
+						'dropdown__COUNTRY__Spain', 'dropdown__COUNTRY__UnitedStatesofAmerica'
 	    		    ]
 	    		}
 	      	};
