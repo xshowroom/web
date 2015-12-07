@@ -16,6 +16,7 @@
 	<script type="text/javascript" src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/static/bower_components/angular/angular.min.js"></script>
 	<script type="text/javascript" src="/static/bower_components/angular-cookies/angular-cookies.min.js"></script>
+	<script type="text/javascript" src="/static/bower_components/angular-scroll-complete/angular-scroll-complete.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/i18n.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/services.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
@@ -42,7 +43,7 @@
 		})
 	</script>
 </head>
-<body ng-controller="HomeCtrl" class="container-fluid">
+<body ng-controller="HomeCtrl" class="container-fluid"  when-scrolled="restartCounter()" percent="{{kpiPercent}}">
 	<nav class="row setting-info">
 		<?php echo View::factory('common/global_setting_with_login', array('userAttr'=> $userAttr, 'user'=> $user)); ?>
 	</nav>
@@ -99,19 +100,19 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-3 kpi-item">
-					<div class="kpi-number">1214</div>
+					<div class="kpi-number">{{tempCounter.buyer}}</div>
 					<div class="kpi-name"><?=__("home__XSHOWROOM_BUYER_COUNT")?></div>
 				</div>
 				<div class="col-xs-3 kpi-item">
-					<div class="kpi-number">121</div>
+					<div class="kpi-number">{{tempCounter.brand}}</div>
 					<div class="kpi-name"><?=__("home__XSHOWROOM_BRANDS_COUNT")?></div>
 				</div>
 				<div class="col-xs-3 kpi-item">
-					<div class="kpi-number">3571</div>
+					<div class="kpi-number">{{tempCounter.product}}</div>
 					<div class="kpi-name"><?=__("home__XSHOWROOM_PRODUCTS_COUNT")?></div>
 				</div>
 				<div class="col-xs-3 kpi-item">
-					<div class="kpi-number">52291</div>
+					<div class="kpi-number">{{tempCounter.order}}</div>
 					<div class="kpi-name"><?=__("home__XSHOWROOM_ORDERS_COUNT")?></div>
 				</div>
 			</div>
@@ -128,7 +129,7 @@
 							</h3>
 							<p><?=__("home__BRANDS_DESC")?></p>
 							<div>
-								<a href="/guide#/brand" class="btn btn-type-1">VIEW MORE</a>
+								<a href="/guide#/brand" class="btn btn-type-1"><?=__("home__btn_VIEW_MORE")?></a>
 							</div>
 						</div>
 					</div>
@@ -139,30 +140,30 @@
 							<h3>
 								<span><?=__("home__BRANDS")?></span>
 							</h3>
-							<p>Do you have your own store? Whether you choose to sell online or in store, sign up as a buyer on X SHOWROOM and view the collections that our brands have available.</p>
+							<p><?=__("home__BUYERS_DESC")?></p>
 							<div>
-								<a href="/guide#/buyer" class="btn btn-type-1">VIEW MORE</a>
+								<a href="/guide#/buyer" class="btn btn-type-1"><?=__("home__btn_VIEW_MORE")?></a>
 							</div>
 						</div>
 					</div>
 					<div class="col-xs-6">
 						<a href="/register/brand" class="register-link brand-register-link">
-							<h4>BRANDS</h4>
+							<h4><?=__("home__BRANDS")?></h4>
 							<div>
 								<img src="/static/app/images/common-icon-star-white.png"/>
-								<span>REGISTER FOR BRAND</span>
+								<span><?=__("home__btn_REGISTER")?></span>
 							</div>
-							<p>Showcase your collection to the best stores in China. Expand and connect with new possibilities.</p>
+							<p><?=__("home__BRANDS_DESC")?></p>
 						</a>
 					</div>
 					<div class="col-xs-6">
 						<a href="/register/buyer" class="register-link buyer-register-link">
-							<h4>BUYERS</h4>
+							<h4><?=__("home__BRANDS")?></h4>
 							<div>
 								<img src="/static/app/images/common-icon-gift-white.png"/>
-								<span>REGISTER FOR BUYER</span>
+								<span><?=__("home__btn_REGISTER")?></span>
 							</div>
-							<p>Discover new and exciting brands and explore their collections.</p>
+							<p><?=__("home__BUYERS_DESC")?></p>
 						</a>
 					</div>
 				</div>
