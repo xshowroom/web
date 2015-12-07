@@ -83,7 +83,6 @@ angular.module(
 		      	getShopConditions: function(){
 		      		return {
 		         		show: conditions.show,
-		         		category: conditions.category,
 		    		    season: conditions.season,
 		    		    available: conditions.available,
 		    			country: conditions.country
