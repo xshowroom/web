@@ -130,9 +130,57 @@
 	<section class="row no-vertical-padding">
 		<div class="container-fluid home-introduction">
 			<div class="row">
+				<div class="col-xs-7">
+					<div class="col-xs-12 brand-introduction introduction-item">
+						<div class="introduction-content">
+							<h3>
+								<span><?=__("home__BRANDS")?></span>
+							</h3>
+							<p><?=__("home__BRANDS_DESC")?></p>
+							<div>
+								<a href="/guide#/brand" class="btn btn-type-1">VIEW MORE</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-5">
+					<div class="col-xs-12 buyer-introduction introduction-item">
+						<div class="introduction-content">
+							<h3>
+								<span><?=__("home__BRANDS")?></span>
+							</h3>
+							<p>Do you have your own store? Whether you choose to sell online or in store, sign up as a buyer on X SHOWROOM and view the collections that our brands have available.</p>
+							<div>
+								<a href="/guide#/buyer" class="btn btn-type-1">VIEW MORE</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<a href="/register/brand" class="register-link brand-register-link">
+							<h4>BRANDS</h4>
+							<div>
+								<img src="/static/app/images/common-icon-star-white.png"/>
+								<span>REGISTER FOR BRAND</span>
+							</div>
+							<p>Showcase your collection to the best stores in China. Expand and connect with new possibilities.</p>
+						</a>
+					</div>
+					<div class="col-xs-6">
+						<a href="/register/buyer" class="register-link buyer-register-link">
+							<h4>BUYERS</h4>
+							<div>
+								<img src="/static/app/images/common-icon-gift-white.png"/>
+								<span>REGISTER FOR BUYER</span>
+							</div>
+							<p>Discover new and exciting brands and explore their collections.</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="row">
 				<div class="col-xs-offset-1 col-xs-5 text-center introduction-item">
 					<h3>
-						<img src="/static/app/images/common-icon-star.png"/>
+						
 						<span><?=__("home__BRANDS")?></span>
 					</h3>
 					<p><?=__("home__BRANDS_DESC")?></p>
@@ -160,7 +208,7 @@
 						<a class="btn btn-type-1" href="/register/buyer" target="_self"><?=__("home__btn_REGISTER")?></a>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</section>
 	<section class="row no-vertical-padding">
