@@ -183,7 +183,7 @@ Route::set('default', '(<directory>/)(<controller>(/<action>))',
         'action'     => 'index',
     ));
     
-Route::set('default', '<brand_url>',
+Route::set('brand', '<brand_url>',
     array(
         'brand_url' => '.*',
     ))
