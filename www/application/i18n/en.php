@@ -107,6 +107,7 @@ return array_merge(
         'home__BRANDS_DESC' => 'Showcase your collection to the best stores in China. Expand and connect with new possibilities.',
         'home__BUYERS' => 'BUYERS',
         'home__BUYERS_DESC' => 'Discover new and exciting brands and explore their collections.',
+        'home__btn_VIEW_MORE' => 'VIEW MORE',
 
         'home__btn_SOLUTION' => 'LEARN',
         'home__btn_REGISTER' => 'REGISTER',

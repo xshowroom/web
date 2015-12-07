@@ -128,7 +128,7 @@
 							</h3>
 							<p><?=__("home__BRANDS_DESC")?></p>
 							<div>
-								<a href="/guide#/brand" class="btn btn-type-1">VIEW MORE</a>
+								<a href="/guide#/brand" class="btn btn-type-1"><?=__("home__btn_VIEW_MORE")?></a>
 							</div>
 						</div>
 					</div>
@@ -139,30 +139,30 @@
 							<h3>
 								<span><?=__("home__BRANDS")?></span>
 							</h3>
-							<p>Do you have your own store? Whether you choose to sell online or in store, sign up as a buyer on X SHOWROOM and view the collections that our brands have available.</p>
+							<p><?=__("home__BUYERS_DESC")?></p>
 							<div>
-								<a href="/guide#/buyer" class="btn btn-type-1">VIEW MORE</a>
+								<a href="/guide#/buyer" class="btn btn-type-1"><?=__("home__btn_VIEW_MORE")?></a>
 							</div>
 						</div>
 					</div>
 					<div class="col-xs-6">
 						<a href="/register/brand" class="register-link brand-register-link">
-							<h4>BRANDS</h4>
+							<h4><?=__("home__BRANDS")?></h4>
 							<div>
 								<img src="/static/app/images/common-icon-star-white.png"/>
-								<span>REGISTER FOR BRAND</span>
+								<span><?=__("home__btn_REGISTER")?></span>
 							</div>
-							<p>Showcase your collection to the best stores in China. Expand and connect with new possibilities.</p>
+							<p><?=__("home__BRANDS_DESC")?></p>
 						</a>
 					</div>
 					<div class="col-xs-6">
 						<a href="/register/buyer" class="register-link buyer-register-link">
-							<h4>BUYERS</h4>
+							<h4><?=__("home__BRANDS")?></h4>
 							<div>
 								<img src="/static/app/images/common-icon-gift-white.png"/>
-								<span>REGISTER FOR BUYER</span>
+								<span><?=__("home__btn_REGISTER")?></span>
 							</div>
-							<p>Discover new and exciting brands and explore their collections.</p>
+							<p><?=__("home__BUYERS_DESC")?></p>
 						</a>
 					</div>
 				</div>
