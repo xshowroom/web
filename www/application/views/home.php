@@ -78,10 +78,10 @@
 	<section class="row no-vertical-padding home-banner">
 		<div class="container-fluid banner-content">
 			<div id="home-banner" class="nivoSlider">
-				<img src="/static/app/images/home-banner/4.FABITORIA --SS16 MUSEUM.jpg" alt="home-banner-1.jpg" title="#banner-content-1"/>
-				<img src="/static/app/images/home-banner/7.FOREVER UNIQUE -- SS16 MOROCCAN AFFAIR.jpg" alt="home-banner-2.jpg" title="#banner-content-2"/>
-				<img src="/static/app/images/home-banner/10.MING -- SS16  ONCE THERE WAS.jpg" alt="home-banner-3.jpg" title="#banner-content-3"/>
-                <img src="/static/app/images/home-banner/14.YUZZO LONDON --SS16 COLLECTION.jpg" alt="home-banner-4.jpg" title="#banner-content-4"/>
+				<img src="/static/app/images/home-banner/4.FABITORIA --SS16 MUSEUM.jpg" title="#banner-content-1"/>
+				<img src="/static/app/images/home-banner/7.FOREVER UNIQUE -- SS16 MOROCCAN AFFAIR.jpg" title="#banner-content-2"/>
+				<img src="/static/app/images/home-banner/10.MING -- SS16  ONCE THERE WAS.jpg" title="#banner-content-3"/>
+                <img src="/static/app/images/home-banner/14.YUZZO LONDON --SS16 COLLECTION.jpg" title="#banner-content-4"/>
 			</div>
 			<div id="banner-content-1" class="nivo-html-caption">
 			    <h2>FABITORIA</h2>
