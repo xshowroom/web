@@ -3,14 +3,9 @@
  * @author shenpeipei
  */
 class Business_Collection
-{  
-    public static $availableMap = array(
-        '+1 day',
-        '+1 week',
-        '+4 week',
-        '+8 week',
-    );
+{
     
+    public $brandModel;
     public $collectionModel;
     public $productionModel;
     public $uploadService;
@@ -18,6 +13,7 @@ class Business_Collection
 
     public function __construct()
     {
+        $this->brandModel = new Model_Brand();
         $this->collectionModel = new Model_Collection();
         $this->productionModel = new Model_Production();
         $this->uploadService = new Business_Upload();
@@ -89,6 +85,21 @@ class Business_Collection
         $res = array_slice($res, $offset, $pageSize);
         
         return $res;
+    }
+    
+    public function getCollectionStatInfo()
+    {
+        $collectionList = $this->getCollectionList();
+        $collectionIdList = array_column($collectionList, 'id');
+        
+        $productionList = $this->productionModel->getByCollectionIdList($collectionIdList);
+        foreach ($productionList as $production) {
+            $collectionList[$production['collection_id']]['production'][$production['category']] = array(
+                'id' => (int)$production['id'],
+                'name' => $production['name'],
+                'image' => $production['image_url'],
+            );
+        }
     }
     
     public function getCollectionInfo($userId, $collectionId)
@@ -164,19 +175,18 @@ class Business_Collection
         return $res;
     }
     
-    public function getAllCollectionImg($userId, $season)
+    public function getAllCollectionImg($userId, $brandId, $season)
     {
-        $collectionList = $this->collectionModel->getListBySeason($userId, $season);
+        $brandInfo = $this->brandModel->getById($brandId);
         
-        foreach ($collectionList as $idx => $collection) {
-            $productionList = $this->productionModel->getByCollectionId($collection['id']);
-            $realProductionList = array();
-            foreach ($productionList as $production) {
-                $realProductionList[] = $this->productionService->getFormedProdution($production);
-            }
-            $collectionList[$idx]['productions'] = $realProductionList;
+        $collectionList = $this->collectionModel->getListBySeason($brandInfo['user_id'], $season);
+        foreach ($collectionList as $collection) {
+            $collectionImgList[] = array(
+                'id' => (int)$collection['id'],
+                'cover_image' => $collection['cover_image'],
+            );
         }
         
-        return $collectionList;
+        return $collectionImgList;
     }
 }

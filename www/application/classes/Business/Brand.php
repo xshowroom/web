@@ -5,10 +5,11 @@
 class Business_Brand
 {
     public static $availableMap = array(
-        '+1 day',
-        '+1 week',
-        '+4 week',
-        '+8 week',
+        'dropdown__AVAILABLE__LAST_DAY' => '+1 day',
+        'dropdown__AVAILABLE__1_WEEK' => '+1 week',
+        'dropdown__AVAILABLE__4_WEEK' => '+4 week',
+        'dropdown__AVAILABLE__8_WEEK' => '+8 week',
+        'dropdown__AVAILABLE__12_WEEK' => '+12 week',
     );
     
     public $brandModel;
@@ -33,7 +34,12 @@ class Business_Brand
     
     private function doFilter($filter)
     {
-        $brandList = $this->getAllBrand();
+        // 如果有query查询条件
+        if (!empty($filter['query'])) {
+            $brandList = $this->queryBrand($filter['query']);
+        } else {
+            $brandList = $this->getAllBrand();
+        }
         
         // 所有的user_id
         $userIdList = array_column($brandList, 'user_id');
@@ -91,6 +97,7 @@ class Business_Brand
             'season'    => $this->doQuote(Request::current()->query('season')),
             'available' => self::$availableMap[Request::current()->query('available')],
             'country'   => Request::current()->query('country'),
+            'query'     => Request::current()->query('query'),
         );
         
         $res = $this->doFilter($filter);
@@ -114,12 +121,6 @@ class Business_Brand
     public function queryBrand($name)
     {
         $brandList = $this->brandModel->getByName($name);
-        
-        $pageSize = Request::current()->query('pageSize');
-        $pageSize = empty($pageSize) ? 0 : $pageSize;
-        $offset = Request::current()->query('offset');
-        $offset = empty($offset) ? 0 : $offset;
-        $brandList = array_slice($brandList, $offset, $pageSize);
         
         return $brandList;
     }

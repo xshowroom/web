@@ -149,10 +149,10 @@ class Controller_Api_Collection extends Controller_BaseReqLogin
     
     public function action_img()
     {
-        $userId = $this->opUser['id'];
+        $brandId = Request::current()->query('id');
         $season = Request::current()->query('season');
         
-        $res = $this->collectionService->getAllCollectionImg($userId, $season);
+        $res = $this->collectionService->getAllCollectionImg($brandId, $season);
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,

@@ -17,4 +17,9 @@ class Controller_Home extends Controller_Base
         }
         $this->response->body($view);
     }
+    
+    public function action_brand()
+    {
+        echo Request::current()->param('brand_url');
+    }
 }

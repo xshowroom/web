@@ -161,10 +161,10 @@ class Model_Collection
         
         if (!empty($filter['show'])) {
             if ($filter['show'] == 'all') {
-                $sql .= " AND category = 'dropdown__COLLECTION__WOMEN' OR category = 'dropdown__COLLECTION__MEN' OR modify_time >= '". date('Y-m-d', strtotime('-3 month')) ."'";
+                $sql .= " AND category = 'dropdown__COLLECTION__WOMEN' OR category = 'dropdown__COLLECTION__MEN' OR category = 'dropdown__COLLECTION__ACCESSORIES' OR modify_time >= '". date('Y-m-d', strtotime('-3 month')) ."'";
             } elseif ($filter['show'] == 'new') {
                 $sql .= " AND modify_time >= '". date('Y-m-d', strtotime('-3 month')) ."'";
-            } elseif ($filter['show'] == 'dropdown__COLLECTION__WOMEN' || $filter['show'] == 'dropdown__COLLECTION__MEN') {
+            } elseif ($filter['show'] == 'dropdown__COLLECTION__WOMEN' || $filter['show'] == 'dropdown__COLLECTION__MEN' || $filter['show'] == 'dropdown__COLLECTION__ACCESSORIES') {
                 $sql .= " AND category = '{$filter['show']}' ";
             }
         }
@@ -177,7 +177,11 @@ class Model_Collection
             $sql .= " AND deadline <= '" . date('Y-m-d', strtotime($filter['available'])) ."'";
         }
         
-        $result = DB::query(Database::SELECT, $sql)->execute()->as_array();
+        if (!empty($filter['status'])) {
+            $sql .= " AND mode = '{$filter['status']}' ";
+        }
+        
+        $result = DB::query(Database::SELECT, $sql)->execute()->as_array('id');
         
         return $result;
     }

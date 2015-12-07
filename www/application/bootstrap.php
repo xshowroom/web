@@ -165,6 +165,12 @@ Route::set('detail', '<controller>(/<action>)/<id>',
             'action'     => 'index',
         ));
 
+Route::set('brand', '(<controller>(/<action>))/<brand_url>')
+        ->defaults(array(
+            'controller' => 'home',
+            'action'     => 'brand',
+        ));
+        
 Route::set('admin_with_id', '<directory>/<controller>/<action>/<id>',
         array(
             'directory' => 'xsadmin',

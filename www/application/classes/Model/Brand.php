@@ -19,6 +19,18 @@ class Model_Brand
         return $result;
     }
     
+    public function getById($id)
+    {
+        $result = DB::select()
+                    ->from('brand')
+                    ->where('id', '=', $id)
+                    ->where('status', '=', STAT_NORMAL)
+                    ->execute()
+                    ->as_array();
+        
+        return empty($result) ? array() : $result[0];
+    }
+    
     public function getByName($name)
     {
         $result = DB::select()
@@ -62,7 +74,7 @@ class Model_Brand
                     ->where('id', 'IN', $brandList)
                     ->where('status', '=', STAT_NORMAL)
                     ->execute()
-                    ->as_array();
+                    ->as_array('user_id');
     
         return $result;
     }
