@@ -107,6 +107,7 @@ return array_merge(
         'home__BRANDS_DESC' => '将您的品牌展示给中国最棒的买手店，与买手圈的顶尖买手们建立合作',
         'home__BUYERS' => '时尚买手',
         'home__BUYERS_DESC' => '作为时尚买手入驻买手圈，挖掘最新最赞的设计师品牌，采购最新系列',
+        'home__btn_VIEW_MORE' => '了解详情',
 
         'home__btn_SOLUTION' => '学习资料',
         'home__btn_REGISTER' => '申请入驻',
