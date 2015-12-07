@@ -67,7 +67,7 @@ class Business_Buyer
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
 
-        $auth = $this->buyerModel->getAuthList($userId);
+        $auth = $this->buyerModel->getAuthListByUserAndBrand($userId, $brandId);
         // 用户有shop已经申请过权限
         if (!empty($auth)) {
             $errorInfo = Kohana::message('message', 'STATUS_ERROR');
@@ -81,6 +81,12 @@ class Business_Buyer
     public function checkAuth($userId, $shopId, $brandId)
     {
         $res = $this->buyerModel->checkAuth($userId, $shopId, $brandId);
+        return $res;
+    }
+
+    public function getAuthList($userId)
+    {
+        $res = $this->buyerModel->getAuthListByUser($userId);
         return $res;
     }
 

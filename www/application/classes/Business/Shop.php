@@ -109,6 +109,12 @@ class Business_Shop
             $errorInfo = Kohana::message('message', 'AUTH_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
+
+        $shopList = $this->shopModel->getByUserId($userId);
+        if (count($shopList) <= 1) {
+            $errorInfo = Kohana::message('message', 'STATUS_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
         
         $res = $this->updateStatus($userId, $shopId, STAT_DELETED);
 
