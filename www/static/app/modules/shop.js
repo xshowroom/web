@@ -42,6 +42,12 @@ angular.module(
      			if (isRefresh){
      				$scope.brands.offset = 0;
      			}
+     			if(options.season){
+     				options.season = options.season.join(',');
+     			}
+     			if(options.country){
+     				options.country = options.country.join(',');
+     			}
      			Brand.findAll(options).success(function(res){
      				if (res.status){
      					alert(res.msg);
