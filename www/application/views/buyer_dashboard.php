@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  ng-app="xShowroom.brand.dashboard">
+<html  ng-app="xShowroom.buyer.dashboard">
 <head>
     <meta charset="UTF-8" >
     <title>XShowroom</title>
@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/bower_components/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/app/css/common.css" />
-    <link rel="stylesheet" type="text/css" href="/static/app/css/brand_dashboard.css" />
+    <link rel="stylesheet" type="text/css" href="/static/app/css/buyer_dashboard.css" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -16,9 +16,9 @@
     <script type="text/javascript" src="/static/app/modules/common/i18n.js"></script>
     <script type="text/javascript" src="/static/app/modules/common/services.js"></script>
     <script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
-    <script type="text/javascript" src="/static/app/modules/brand_dashboard.js"></script>
+    <script type="text/javascript" src="/static/app/modules/buyer_dashboard.js"></script>
 </head>
-<body ng-controller="BrandDashboardCtrl" class="container-fluid">
+<body ng-controller="BuyerDashboardCtrl" class="container-fluid">
     <nav class="row setting-info">
         <?php echo View::factory('common/global_setting_without_login'); ?>
     </nav>
@@ -27,26 +27,24 @@
             array('currentPage' =>  'dashboard', 'userAttr'=> $userAttr)); 
         ?>
     </nav>
+    <?php var_dump($userAttr)?>
+    <?php var_dump($user)?>
     <section class="row no-vertical-padding">
         <div class="container brand-banner">
             <div class="row">
                 <div class="col-xs-12">
                     <div class="brand-logo">
-                        <img src="/<?= $brandInfo['brand_image']?>">
+                        <img src="/<?= $userAttr['display_name']?>">
                     </div>
                     <div class="brand-info">
-                        <h3 class="brand-name"><?= $brandInfo['brand_name'] ?></h3>
+                        <h3 class="brand-name"><?= $userAttr['display_name'] ?></h3>
                         <div class="brand-detail">
-                            <span ><?= __("brand_dashboard__BASED_IN"); ?></span>
+                            <span >Interested brands</span>
                             <span>{{ "<?= $userAttr['company_country'] ?>" | translate}}</span>
                         </div>
                         <div class="brand-detail">
-                            <span><?= __("brand_dashboard__ESTABLISHED"); ?></span>
-                            <span><?= date('Y', strtotime($user['register_date'])) ?></span>
-                        </div>
-                        <div class="brand-detail">
-                            <span><?= __("brand_dashboard__WEBSITE"); ?></span>
-                            <span><?= $userAttr['company_web_url'] ?></span>    
+                            <span>Last time visit</span>
+                            <span><?= date('Y', strtotime($user['last_login_time'])) ?></span>
                         </div>
                     </div>
                 </div>
@@ -54,19 +52,53 @@
         </div>
     </section>
     <section class="row no-vertical-padding">
+        <div class="container brand-list">
+        	<div class="row">
+                <div class="col-xs-12">
+                    <div class="brand-list-header">
+                        <h2 class="brand-list-title">MY BRANDS</h2>
+                        <a class="brand-list-all-link" href="/buyer/brand">ALL BRANDS ></a>
+                    </div>
+                </div>
+            </div>
+        	<?php if (empty($collectionList)) { ?>
+        	 <div class="row">
+                <div class="col-xs-12 text-center empty-warning">
+                    <img src="/static/app/images/empty.png">
+                    <p>Welcome to XShowroom!<br/>Start your business with <a href="/shop">Explore Brands</a>.</p>
+                </div>
+            </div>
+            <?php } else {?>
+            <div class="brand-list-content row">
+            	<?php
+            		for ($i=0, $count=count($collectionList); $i<$count; $i++) { 
+            	?>
+                <div class="col-xs-3">
+                    <a target="_self" href="/collection/<?= $collectionList[$i]['id']?>" class="collection-item">
+                        <img src="/<?= $collectionList[$i]['cover_image_medium']?>" class="collection-item-image">
+                        <div class="collection-name"><?= $collectionList[$i]['name']?></div>
+                    </a>
+                </div>
+                <?php }?>
+            </div>
+            <?php }?>
+        </div>
+        
+    </section>
+    <section class="row no-vertical-padding">
         <div class="container order-list">
             <div class="row">
                 <div class="col-xs-12">
                     <div class="order-list-header">
-                        <h2 class="order-list-title"><?= __("brand_dashboard__MY_ORDERS"); ?></h2>
-                        <a class="order-list-all-link" href="#"><?= __("brand_dashboard__ALL_ORDERS"); ?></a>
+                        <h2 class="order-list-title">MY ORDERS</h2>
+                        <a class="order-list-all-link" href="#">ALL ORDERS ></a>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12 text-center empty-warning">
-                    <img src="/static/app/images/order-tip.png">
-                    <p><?= __("brand_dashboard__ORDER_EMPTY_1"); ?><br/><?= __("brand_dashboard__ORDER_EMPTY_2"); ?></p>
+                    <img src="/static/app/images/empty.png">
+                    <p>Cannot find what you like?<br/>More and more brands are joining us. <a href="/shop">Explore Now.</a></p>
                     <span><?= __("brand_dashboard__ORDER_EMPTY_3"); ?></span>
                 </div>
             </div>
@@ -143,39 +175,38 @@
         </div>
     </section>
     <section class="row no-vertical-padding">
-        <div class="container collection-list">
-        	<div class="row">
+        <div class="container store-list">
+            <div class="row">
                 <div class="col-xs-12">
-                    <div class="collection-list-header">
-                        <h2 class="collection-list-title"><?= __("brand_dashboard__MY_COLLECTIONS"); ?></h2>
-                        <a class="collection-list-all-link" href="/brand/collection"><?= __("brand_dashboard__ALL_COLLECTIONS"); ?></a>
+                    <div class="store-list-header">
+                        <h2 class="store-list-title">My Stores</h2>
+                        <a class="store-list-all-link" href="#">ALL STORES ></a>
                     </div>
                 </div>
             </div>
-        	<?php if (empty($collectionList)) { ?>
-        	 <div class="row">
-                <div class="col-xs-12 text-center empty-warning">
-                    <img src="/static/app/images/empty.png">
-                    <p><?= __("brand_dashboard__COLLECTION_EMPTY_1"); ?><br/><?= __("brand_dashboard__COLLECTION_EMPTY_2"); ?></p>
-                    <a class="btn btn-type-2" href="/collection/create"><?= __("brand_dashboard__COLLECTION_EMPTY_3"); ?></a>
+            <div class="store-list-content row">
+                <div class="col-xs-12">
+                    <div class="store-item">
+                    	<div class="store-item-header">
+                    		<span class="store-name">Store Name A</span>
+                    		<span class="store-location">Shanghai, China</span>
+                    		<a class="pull-right">Edit</a>
+                    	</div>
+                        <div class="store-item-body">
+                        	<div class="store-photo image-link">
+                        		<img src="/static/app/images/shop-brand-1.png" class="order-item-image">
+                        	</div>
+                            <div class="store-details">
+	                            <div>Brands</div>
+	                            <div>brand a, brand a, brand a, brand a, brand a</div>
+	                            <div>About Store</div>
+	                            <div>This is the introduction of your first store. This is the introduction of your first store. This is the introduction of your first store.</div>
+	                        </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <?php } else {?>
-            <div class="collection-list-content row">
-            	<?php
-            		for ($i=0, $count=count($collectionList); $i<$count; $i++) { 
-            	?>
-                <div class="col-xs-3">
-                    <a target="_self" href="/collection/<?= $collectionList[$i]['id']?>" class="collection-item">
-                        <img src="/<?= $collectionList[$i]['cover_image_medium']?>" class="collection-item-image">
-                        <div class="collection-name"><?= $collectionList[$i]['name']?></div>
-                    </a>
-                </div>
-                <?php }?>
-            </div>
-            <?php }?>
         </div>
-        
     </section>
     <section class="row no-vertical-padding">
         <div class="container support">

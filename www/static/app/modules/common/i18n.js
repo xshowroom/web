@@ -317,10 +317,10 @@ angular.module(
             
             // Available
             dropdown__AVAILABLE__LAST_DAY: 'LAST DAY TO ORDER',
-            dropdown__AVAILABLE__1_WEEK: 'UP TP 1 WEEK',
-            dropdown__AVAILABLE__4_WEEK: 'UP TP 4 WEEK',
-            dropdown__AVAILABLE__8_WEEK: 'UP TP 8 WEEK',
-            dropdown__AVAILABLE__12_WEEK: 'UP TP 12 WEEK',
+            dropdown__AVAILABLE__1_WEEK: 'UP TO 1 WEEK',
+            dropdown__AVAILABLE__4_WEEK: 'UP TO 4 WEEK',
+            dropdown__AVAILABLE__8_WEEK: 'UP TO 8 WEEK',
+            dropdown__AVAILABLE__12_WEEK: 'UP TO 12 WEEK',
             
             // Collection Status
             COLLECTION_STATUS_ALL: '所有',
@@ -711,10 +711,10 @@ angular.module(
             
             // Available
             dropdown__AVAILABLE__LAST_DAY: 'LAST DAY TO ORDER',
-            dropdown__AVAILABLE__1_WEEK: 'UP TP 1 WEEK',
-            dropdown__AVAILABLE__4_WEEK: 'UP TP 4 WEEK',
-            dropdown__AVAILABLE__8_WEEK: 'UP TP 8 WEEK',
-            dropdown__AVAILABLE__12_WEEK: 'UP TP 12 WEEK',
+            dropdown__AVAILABLE__1_WEEK: 'UP TO 1 WEEK',
+            dropdown__AVAILABLE__4_WEEK: 'UP TO 4 WEEK',
+            dropdown__AVAILABLE__8_WEEK: 'UP TO 8 WEEK',
+            dropdown__AVAILABLE__12_WEEK: 'UP TO 12 WEEK',
             
             
             // Collection Status

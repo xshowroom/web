@@ -16,7 +16,9 @@ angular.module(
     [
      	'$scope', '$timeout', 'Brand',
         function ($scope, $timeout, Brand) {
-     		
+     		$scope.hasFilter = function(){
+     			return !angular.equals($scope.filters, {});
+     		}
      		
      		$scope.filterTimeout = null;
      		
@@ -64,7 +66,7 @@ angular.module(
      			};
      			$scope.filters = {};
      			
-     			$scope.conditions = Brand.getConditions();
+     			$scope.conditions = Brand.getShopConditions();
      			getNewBrands(true);
      		};
      		

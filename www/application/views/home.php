@@ -173,30 +173,30 @@
 			</div>
 			<div class="row"> 
 				<div class="col-xs-3 showcase-item">
-					<div class="showcase-image">
+					<a class="showcase-image image-link">
 						<img src="/static/app/images/home-hot-brands-1.png"/>
-					</div>
+					</a>
 					<div class="showcase-name">PAPER LONDON</div>
 					<div class="showcase-collection"><?=__("home__SSI5_COLLECTION")?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
-					<div class="showcase-image">
+					<a class="showcase-image image-link">
 						<img src="/static/app/images/home-hot-brands-2.png"/>
-					</div>
+					</a>
 					<div class="showcase-name">MAYA MAYAGAL</div>
 					<div class="showcase-collection"><?=__("home__SSI5_COLLECTION")?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
-					<div class="showcase-image">
+					<a class="showcase-image image-link">
 						<img src="/static/app/images/home-hot-brands-3.png"/>
-					</div>
+					</a>
 					<div class="showcase-name">PPQ</div>
 					<div class="showcase-collection"><?=__("home__SSI5_COLLECTION")?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
-					<div class="showcase-image">
+					<a class="showcase-image image-link">
 						<img src="/static/app/images/home-hot-brands-4.png"/>
-					</div>
+					</a>
 					<div class="showcase-name">MUUBAA</div>
 					<div class="showcase-collection"><?=__("home__SSI5_COLLECTION")?></div>
 				</div>
@@ -209,30 +209,30 @@
 			</div>
 			<div class="row"> 
 				<div class="col-xs-3 showcase-item">
-					<div class="showcase-image">
+					<a class="showcase-image image-link">
 						<img src="/static/app/images/home-testomonial-1.png"/>
-					</div>
+					</a>
 					<div class="showcase-name">LILA SIMPSON</div>
 					<div class="showcase-identity"><?=__("home__people_BUYER")?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
-					<div class="showcase-image">
+					<a class="showcase-image image-link">
 						<img src="/static/app/images/home-testomonial-2.png"/>
-					</div>
+					</a>
 					<div class="showcase-name">JOHNSON SMITH</div>
 					<div class="showcase-identity"><?=__("home__people_BUYER")?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
-					<div class="showcase-image">
+					<a class="showcase-image image-link">
 						<img src="/static/app/images/home-testomonial-3.png"/>
-					</div>
+					</a>
 					<div class="showcase-name">BARNET MOLLY</div>
 					<div class="showcase-identity"><?=__("home__people_DESIGNER")?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
-					<div class="showcase-image">
+					<a class="showcase-image image-link">
 						<img src="/static/app/images/home-testomonial-4.png"/>
-					</div>
+					</a>
 					<div class="showcase-name">JUDY WINTER</div>
 					<div class="showcase-identity"><?=__("home__people_BUYER")?></div>
 				</div>

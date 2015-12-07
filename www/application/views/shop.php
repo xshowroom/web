@@ -48,12 +48,12 @@
 					<div class="row">
 						<div class=" col-xs-12">
 							<div class="brand-list-header">
-								<span class="brand-list-title">ALL BRANDS</span>
+								<span class="brand-list-title" ng-cloak>{{hasFilter() ? 'FILTERED BRANDS' : 'ALL BRANDS'}}</span>
 								<div class="input-group">
 									<span class="input-group-addon">
 										<span class="glyphicon glyphicon-search"></span>
 									</span>
-									<input type="text" class="form-control" id="brand-keyword" placeholder="SEARCH BRAND">
+									<input type="text" class="form-control" id="brand-keyword" ng-model='keyword' placeholder="SEARCH BRAND" ng-change="setFilters('keyword', keyword)">
 								</div>
 							</div>
 						</div>

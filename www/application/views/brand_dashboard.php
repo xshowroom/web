@@ -65,7 +65,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 text-center empty-warning">
-                    <img src="/static/app/images/order-tip.png">
+                    <img src="/static/app/images/empty.png">
                     <p><?= __("brand_dashboard__ORDER_EMPTY_1"); ?><br/><?= __("brand_dashboard__ORDER_EMPTY_2"); ?></p>
                     <span><?= __("brand_dashboard__ORDER_EMPTY_3"); ?></span>
                 </div>
