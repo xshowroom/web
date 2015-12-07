@@ -16,6 +16,8 @@
 	<script type="text/javascript" src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/static/bower_components/angular/angular.min.js"></script>
 	<script type="text/javascript" src="/static/bower_components/angular-cookies/angular-cookies.min.js"></script>
+	<script type="text/javascript" src="/static/bower_components/others/jquery.countdown.min.js"></script>
+	<script type="text/javascript" src="/static/bower_components/others/jquery.waypoints.min.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/i18n.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/services.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
@@ -39,7 +41,31 @@
 			    nextText: 'Next',                 // Next directionNav text
 			    randomStart: false             // Start on a random slide
 			});
-		})
+
+			function counter_number(variable) {
+				if($(variable).length) {
+					$(variable).waypoint(function() {
+						$({countNum: $(variable).text()}).animate({countNum: $(variable).attr('data-counter')}, {
+							duration: 2000,
+							easing:'linear',
+							step: function() {
+								$(variable).text(Math.floor(this.countNum));
+							},
+							complete: function() {
+								$(variable).text(this.countNum);
+							}
+						});
+					}, {
+						triggerOnce: true,
+						offset: 'bottom-in-view'
+					});
+				}
+			}
+			counter_number('.counter-1');
+			counter_number('.counter-2');
+			counter_number('.counter-3');
+			counter_number('.counter-4');
+		});
 	</script>
 </head>
 <body ng-controller="HomeCtrl" class="container-fluid">
@@ -99,19 +125,19 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-3 kpi-item">
-					<div class="kpi-number">{{tempCounter.buyer}}</div>
+					<div class="kpi-number counter-1" data-counter="{{counter.buyer}}">{{tempCounter.buyer}}</div>
 					<div class="kpi-name"><?=__("home__XSHOWROOM_BUYER_COUNT")?></div>
 				</div>
 				<div class="col-xs-3 kpi-item">
-					<div class="kpi-number">{{tempCounter.brand}}</div>
+					<div class="kpi-number counter-2" data-counter="{{counter.brand}}">{{tempCounter.brand}}</div>
 					<div class="kpi-name"><?=__("home__XSHOWROOM_BRANDS_COUNT")?></div>
 				</div>
 				<div class="col-xs-3 kpi-item">
-					<div class="kpi-number">{{tempCounter.product}}</div>
+					<div class="kpi-number counter-3" data-counter="{{counter.product}}">{{tempCounter.product}}</div>
 					<div class="kpi-name"><?=__("home__XSHOWROOM_PRODUCTS_COUNT")?></div>
 				</div>
 				<div class="col-xs-3 kpi-item">
-					<div class="kpi-number">{{tempCounter.order}}</div>
+					<div class="kpi-number counter-4" data-counter="{{counter.order}}">{{tempCounter.order}}</div>
 					<div class="kpi-name"><?=__("home__XSHOWROOM_ORDERS_COUNT")?></div>
 				</div>
 			</div>

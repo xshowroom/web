@@ -19,16 +19,16 @@ angular.module(
      		$scope.isCounterInited = false;
      		
      		$scope.counter= {
-     			buyer: 1214,
-     			brand: 121,
+     			buyer: 1181,
+     			brand: 219,
      			product: 3571,
      			order: 52291
      		};
      		$scope.tempCounter= {
-         		buyer: 1214,
-         		brand: 121,
-         		product: 3571,
-         		order: 52291
+         		buyer: 0,
+         		brand: 0,
+         		product: 0,
+         		order: 0
          	};
      		$timeout(function(){
      			var bodyHeight = $element.height();

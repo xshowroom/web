@@ -21,7 +21,7 @@
     <script type="text/javascript" src="/static/app/modules/common/services.js"></script>
     <script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
     <script type="text/javascript" src="/static/app/modules/product_create.js"></script>
-     <script>
+    <script>
         var collectionId = <?=$collectionId?>;
     </script>
 </head>
