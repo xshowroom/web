@@ -164,12 +164,6 @@ Route::set('detail', '<controller>(/<action>)/<id>',
             'controller' => 'collection',
             'action'     => 'index',
         ));
-
-Route::set('brand', '(<controller>(/<action>))/<brand_url>')
-        ->defaults(array(
-            'controller' => 'home',
-            'action'     => 'brand',
-        ));
         
 Route::set('admin_with_id', '<directory>/<controller>/<action>/<id>',
         array(
@@ -178,12 +172,22 @@ Route::set('admin_with_id', '<directory>/<controller>/<action>/<id>',
             'action' => '(user_detail|shop_detail|order_detail)',
             'id'        => '\d+',
         ));
-
+        
 Route::set('default', '(<directory>/)(<controller>(/<action>))',
     array(
         'directory' => '(api|xsadmin)',
+        'controller' => '(Brand|Buyer|Collection|Common|Image|Message|Product|Register|Shop|Upload|User|Guide|Home|Login)'
     ))
     ->defaults(array(
         'controller' => 'home',
         'action'     => 'index',
+    ));
+    
+Route::set('default', '<brand_url>',
+    array(
+        'brand_url' => '.*',
+    ))
+    ->defaults(array(
+        'controller' => 'home',
+        'action'     => 'brand',
     ));
