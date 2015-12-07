@@ -52,48 +52,38 @@
 	<section class="row no-vertical-padding home-banner">
 		<div class="container-fluid banner-content">
 			<div id="home-banner" class="nivoSlider">
-				<img src="/static/app/images/home-banner-1.jpg" alt="home-banner-1.jpg" title="#banner-content-1"/>
-				<img src="/static/app/images/home-banner-2.jpg" alt="home-banner-2.jpg" title="#banner-content-2"/>
-				<img src="/static/app/images/home-banner-3.jpg" alt="home-banner-3.jpg" title="#banner-content-3"/>
-                <img src="/static/app/images/home-banner-4.jpg" alt="home-banner-4.jpg" title="#banner-content-4"/>
-                <img src="/static/app/images/home-banner-5.jpg" alt="home-banner-5.jpg" title="#banner-content-5"/>
-
+				<img src="/static/app/images/home-banner/4.FABITORIA --SS16 MUSEUM.jpg" alt="home-banner-1.jpg" title="#banner-content-1"/>
+				<img src="/static/app/images/home-banner/7.FOREVER UNIQUE -- SS16 MOROCCAN AFFAIR.jpg" alt="home-banner-2.jpg" title="#banner-content-2"/>
+				<img src="/static/app/images/home-banner/10.MING -- SS16  ONCE THERE WAS.jpg" alt="home-banner-3.jpg" title="#banner-content-3"/>
+                <img src="/static/app/images/home-banner/14.YUZZO LONDON --SS16 COLLECTION.jpg" alt="home-banner-4.jpg" title="#banner-content-4"/>
 			</div>
 			<div id="banner-content-1" class="nivo-html-caption">
-			    <h2>FINLAY & CO</h2>
-			    <p>SPRING SUMMER 2015</p>
+			    <h2>FABITORIA</h2>
+			    <p>SS16 MUSEUM</p>
 			    <div>
 					<a href="/guide#/retailer" class="btn btn-type-1"><?=__("home__LEARN_MORE")?></a>
 					<a class="btn btn-type-2"><?=__("home__CONTRACT_US")?></a>
 				</div>
 			</div>
 			<div id="banner-content-2" class="nivo-html-caption">
-			    <h2>Hello World</h2>
-			    <p>This is a test text</p>
+			    <h2>FOREVER UNIQUE</h2>
+			    <p>SS16 MOROCCAN AFFAIR</p>
 			    <div>
 					<a href="/guide#/retailer" class="btn btn-type-1"><?=__("home__LEARN_MORE")?></a>
 					<a class="btn btn-type-2"><?=__("home__CONTRACT_US")?></a>
 				</div>
 			</div>
 			<div id="banner-content-3" class="nivo-html-caption">
-			    <h2>YOUR BRAND</h2>
-			    <p>YOUR COLLECTION </p>
+			    <h2>MING</h2>
+			    <p>SS16  ONCE THERE WAS</p>
 			    <div>
 					<a href="/guide#/retailer" class="btn btn-type-1"><?=__("home__LEARN_MORE")?></a>
 					<a class="btn btn-type-2"><?=__("home__CONTRACT_US")?></a>
 				</div>
 			</div>
             <div id="banner-content-4" class="nivo-html-caption">
-                <h2>YOUR BRAND</h2>
-                <p>YOUR COLLECTION </p>
-                <div>
-                    <a href="/guide#/retailer" class="btn btn-type-1"><?=__("home__LEARN_MORE")?></a>
-                    <a class="btn btn-type-2"><?=__("home__CONTRACT_US")?></a>
-                </div>
-            </div>
-            <div id="banner-content-5" class="nivo-html-caption">
-                <h2>YOUR BRAND</h2>
-                <p>YOUR COLLECTION </p>
+                <h2>YUZZO LONDON</h2>
+                <p>SS16 COLLECTION</p>
                 <div>
                     <a href="/guide#/retailer" class="btn btn-type-1"><?=__("home__LEARN_MORE")?></a>
                     <a class="btn btn-type-2"><?=__("home__CONTRACT_US")?></a>

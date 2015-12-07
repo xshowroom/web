@@ -14,11 +14,24 @@ class Model_Buyer
     const STATUS_STOP       = 1;
     const STATUS_DELETED    = 2;
 
-    public function getAuthList($userId)
+    public function getAuthListByUser($userId)
     {
         $result = DB::select()
                     ->from('buyer_brand_map')
                     ->where('user_id', '=', $userId)
+                    ->where('status', '=', self::STATUS_NORMAL)
+                    ->execute()
+                    ->as_array();
+        
+        return $result;
+    }
+
+    public function getAuthListByUserAndBrand($userId, $brandId)
+    {
+        $result = DB::select()
+                    ->from('buyer_brand_map')
+                    ->where('user_id', '=', $userId)
+                    ->where('brand_id', '=', $brandId)
                     ->where('status', '=', self::STATUS_NORMAL)
                     ->execute()
                     ->as_array();

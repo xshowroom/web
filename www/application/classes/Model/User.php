@@ -125,7 +125,7 @@ class Model_User {
                         $password,
                         $roleType,
                         date('Y-m-d H:i:s'),
-                        STAT_NORMAL,
+                        STATUS_USER_PENDING,
                     ))
                     ->execute();
         

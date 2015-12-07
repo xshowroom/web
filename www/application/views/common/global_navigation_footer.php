@@ -28,9 +28,9 @@
 		</div>
 		<div class="col-xs-3">
 			<div class="share-links">
-				<a href="#" class="share-link"><i class="fa fa-facebook"></i></a>
-				<a href="#" class="share-link"><i class="fa fa-weibo"></i></a>
-				<a href="#" class="share-link"><i class="fa fa-instagram"></i></a>
+				<a href="https://www.facebook.com/xshowroom" target="_blank" class="share-link"><i class="fa fa-facebook"></i></a>
+				<a href="http://weibo.com/xshowroom" target="_blank" class="share-link"><i class="fa fa-weibo"></i></a>
+				<a href="https://www.instagram.com/xshowroomlondon" target="_blank" class="share-link"><i class="fa fa-instagram"></i></a>
 				<a href="#" class="share-link"><i class="fa fa-wechat"></i></a>
 			</div>
 			<h3><?=__("global_navigation_footer__SUBSCRIBE")?></h3>
