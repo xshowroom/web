@@ -44,7 +44,7 @@ class Controller_Api_Buyer extends Controller_BaseReqLogin
     {
         $userId  = $this->opUser['id'];
         
-        $res = $this->buyerService->getAuthListByUser($userId);
+        $res = $this->buyerService->getAuthList($userId);
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
@@ -59,9 +59,20 @@ class Controller_Api_Buyer extends Controller_BaseReqLogin
         $res = $this->buyerService->getBrandList($userId);
          
         echo json_encode(array(
-                'status' => STATUS_SUCCESS,
-                'msg'    => '',
-                'data'   => $res,
+            'status' => STATUS_SUCCESS,
+            'msg'    => '',
+            'data'   => $res,
+        ));
+    }
+    
+    public function action_getCollectionList()
+    {
+        $brandId = Request::current()->query('brandId');
+        $res = $this->buyerService->getCollectionList($brandId);
+        echo json_encode(array(
+            'status' => STATUS_SUCCESS,
+            'msg'    => '',
+            'data'   => $res,
         ));
     }
 }

@@ -11,6 +11,7 @@ class Business_Buyer
     public $productionModel;
     public $productionService;
     public $brandService;
+    public $collectionService;
     
     public function __construct()
     {
@@ -20,12 +21,13 @@ class Business_Buyer
         $this->collectionModel = new Model_Collection();
         $this->productionModel = new Model_Production();
         $this->brandService = new Business_Brand();
+        $this->collectionService = new Business_Collection();
         $this->productionService = new Business_Production();
     }
     
     public function validateAuth($userId, $brandUserId)
     {
-        $authList = $this->buyerModel->getAuthListByUser($userId);
+        $authList = $this->getAuthList($userId);
         $brandIdList = array_column($authList, 'brand_id');
 
         $brandList = $this->brandModel->getByBrandIdList(array_values($brandIdList));
@@ -44,9 +46,9 @@ class Business_Buyer
         return $brandList;
     }
     
-    public function getAllBrandList($userId)
+    public function getAuthBrandList($userId)
     {
-        $authBrandList = $this->buyerModel->getAuthListByUser($userId);
+        $authBrandList = $this->getAuthList($userId);
         $brandIdList = array_column($authBrandList, 'brand_id');
         
         $brandList = $this->brandModel->getByBrandIdList($brandIdList);
@@ -70,6 +72,12 @@ class Business_Buyer
         }
         
         return $res;
+    }
+    
+    public function getCollectionList($brandId)
+    {
+        $collectionStatList = $this->collectionService->getCollectionStatInfo($brandId);
+        return $collectionStatList;
     }
     
     public function getStoreList($userId)

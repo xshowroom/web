@@ -38,11 +38,13 @@ class Business_Collection
         return $collectionList;
     }
     
-    private function doFilter($filter)
+    private function doFilter($userId, $filter)
     {
         // 如果有show查询条件，筛选出相应的user_id
         if (!empty($filter['status']) || !empty($filter['season'])) {
             $collectionList = $this->collectionModel->getByFilter($filter);
+        } else {
+            $collectionList = $this->getAllCollectionList($userId);
         }
         
         foreach ($collectionList as $idx => $collection) {
@@ -69,14 +71,14 @@ class Business_Collection
             return implode(',', $res);
     }
     
-    public function getCollectionList()
+    public function getCollectionList($userId)
     {
         $filter = array(
             'status'    => Request::current()->query('status'),
             'season'    => $this->doQuote(Request::current()->query('season')),
         );
         
-        $res = $this->doFilter($filter);
+        $res = $this->doFilter($userId, $filter);
         
         $pageSize = Request::current()->query('pageSize');
         $pageSize = empty($pageSize) ? 0 : $pageSize;
@@ -87,9 +89,11 @@ class Business_Collection
         return $res;
     }
     
-    public function getCollectionStatInfo()
+    public function getCollectionStatInfo($brandId)
     {
-        $collectionList = $this->getCollectionList();
+        $brandInfo = $this->brandModel->getById($brandId);
+        
+        $collectionList = $this->getCollectionList($brandInfo['user_id']);
         $collectionIdList = array_column($collectionList, 'id');
         
         $productionList = $this->productionModel->getByCollectionIdList($collectionIdList);
@@ -100,6 +104,8 @@ class Business_Collection
                 'image' => $production['image_url'],
             );
         }
+        
+        return $collectionList;
     }
     
     public function getCollectionInfo($userId, $collectionId)
@@ -175,7 +181,7 @@ class Business_Collection
         return $res;
     }
     
-    public function getAllCollectionImg($userId, $brandId, $season)
+    public function getAllCollectionImg($brandId, $season)
     {
         $brandInfo = $this->brandModel->getById($brandId);
         
@@ -184,9 +190,12 @@ class Business_Collection
             $collectionImgList[] = array(
                 'id' => (int)$collection['id'],
                 'cover_image' => $collection['cover_image'],
+                'cover_image_medium' => $collection['cover_image_medium'],
+                'cover_image_small' => $collection['cover_image_small'],
             );
         }
         
         return $collectionImgList;
     }
+    
 }
