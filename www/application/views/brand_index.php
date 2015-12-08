@@ -28,40 +28,47 @@
             array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); 
         ?>
     </nav>
-    <?php var_dump($brandAttr)?>
-    <?php var_dump($brandInfo)?>
     <section class="row no-vertical-padding">
         <div class="container">
             <div class="row brand-preview">
-            	<div class="col-xs-5">
+            	<div class="col-xs-4">
 	            	<h2 class="brand-name"><?=$brandInfo['brand_name']?></h2>
 	            	<div class="brand-info">
 	            		<span>Based in</span>
-	            		<span>Spain</span>
+	            		<span>{{ "<?= $brandAttr['company_country'] ?>" | translate}}</span>
 	            	</div>
 	            	<div class="brand-info">
-	            		<span>Established</span>
-	            		<span><?= date('Y', strtotime($brandInfo['register_date'])) ?></span>
+	            		<span>Designer</span>
+	            		<span><?=$brandInfo['designer_name']?></span>
 	            	</div>
 	            	<div class="brand-info">
 	            		<span>Website</span>
-	            		<span>www.diarte.com</span>
+	            		<span><?=$brandAttr['company_web_url']?></span>
 	            	</div>
-	            	<div class="brand-info brand-about">
+	            	<!-- <div class="brand-info brand-about">
 	            		<span>About</span>
 	            		<span>This collection is about.This collection is about.This collection is aboutThis collection is about.This collection is about.This collection is about</span>
 	            		<span class="pull-right">
 	                 		<a href="#" ng-show="showAllDesc"  ng-click="showAllDesc = !showAllDesc;">HIDE</a>
 	                 		<a href="#" ng-show="!showAllDesc" ng-click="showAllDesc = !showAllDesc;">SHOW ALL</a>
 	                 	</<span>
-	            	</div>
+	            	</div> -->
             	</div>
             	<div class="col-xs-3">
             		<div class="brand-cover">
             			<img class="" src="/static/app/images/brand-logo.png"/>
             		</div>
             	</div>
-            	<div class="col-xs-4">
+            	<div class="col-xs-5">
+            		<div class="dropdown season-filter">
+						<span type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						 	<span>当前季节：{{selectedSeason | translate}}</span>
+						 	<span class="caret"></span>
+						</span>
+						<ul class="dropdown-menu">
+							<li ng-repeat="season in seasons" ng-click="setSeason(season);">{{season | translate}}</li>
+						</ul>
+					</div>
             		<div class="collection-cover">
             			<img src="/static/app/images/brand-logo.png"/>
             		</div>

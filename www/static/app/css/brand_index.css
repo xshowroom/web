@@ -2,6 +2,23 @@
 .user-navigation{
 	background-color: #fff;
 }
+.dropdown.season-filter {
+    margin-bottom: 30px;
+    text-align: right;
+    cursor: pointer;
+}
+.dropdown.season-filter > ul{
+	right: 0;
+    left: auto;
+    text-align: right;
+    min-width: 120px;
+    padding: 5px;
+}
+.dropdown.season-filter > ul > li{
+	line-height: 30px;
+	cursor: pointer;
+	padding-right: 10px;
+}
 .brand-preview{
 	background-color: #fcfcfc;
 	padding: 30px;

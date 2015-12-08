@@ -94,6 +94,9 @@ angular.module(
 		         		status: conditions.status,
 		    		    available: conditions.available
 		      		};
+		      	},
+		      	getSeason: function(){
+		      		return conditions.season.values;
 		      	}
    			};
          }
