@@ -139,6 +139,7 @@
 	position: relative;
 	width: 25%;
 	text-align: center;
+	overflow: hidden;
 }
 .store-list .store-item .store-item-body .store-photo > img{
 	height: 100%;
