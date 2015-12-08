@@ -4,8 +4,8 @@
 class Controller_Buyer extends Controller_BaseReqLogin
 {
     public $userService;
-    public $brandService;
-    public $collectionService;
+    public $buyerService;
+//     public $collectionService;
 
     public function before()
     {
@@ -14,7 +14,7 @@ class Controller_Buyer extends Controller_BaseReqLogin
         $this->checkBuyerUser();
 
         $this->userService = new Business_User();
-//         $this->brandService = new Business_Brand();
+        $this->buyerService = new Business_Buyer();
 //         $this->collectionService = new Business_Collection();
     }
 
@@ -32,18 +32,21 @@ class Controller_Buyer extends Controller_BaseReqLogin
         $view = View::factory('buyer_dashboard');
         $view->set('user', $this->opUser);
         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view->set('authBrandList', []);
+        
         
         $this->response->body($view);
     }
-
-//     public function action_collection()
-//     {
-//         $view = View::factory('buyer_collection');
-//         $view->set('user', $this->opUser);
-//         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
-        
-//         $this->response->body($view);
-//     }
+    
+    public function action_brand()
+    {
+    	$view = View::factory('buyer_brand');
+    	$view->set('user', $this->opUser);
+    	$view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+    	$view->set('authBrandList', array_slice($this->buyerService->getAllBrandList($this->opUser['id']), 0, 4));
+    
+    	$this->response->body($view);
+    }
 
     public function action_order()
     {

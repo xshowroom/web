@@ -27,8 +27,6 @@
             array('currentPage' =>  'dashboard', 'userAttr'=> $userAttr)); 
         ?>
     </nav>
-    <?php var_dump($userAttr)?>
-    <?php var_dump($user)?>
     <section class="row no-vertical-padding">
         <div class="container brand-banner">
             <div class="row">
@@ -61,7 +59,8 @@
                     </div>
                 </div>
             </div>
-        	<?php if (empty($collectionList)) { ?>
+            <?php var_dump($authBrandList)?>
+        	<?php if (empty($authBrandList)) { ?>
         	 <div class="row">
                 <div class="col-xs-12 text-center empty-warning">
                     <img src="/static/app/images/empty.png">
@@ -71,19 +70,18 @@
             <?php } else {?>
             <div class="brand-list-content row">
             	<?php
-            		for ($i=0, $count=count($collectionList); $i<$count; $i++) { 
+            		for ($i=0, $count=count($authBrandList); $i<$count; $i++) { 
             	?>
                 <div class="col-xs-3">
-                    <a target="_self" href="/collection/<?= $collectionList[$i]['id']?>" class="collection-item">
-                        <img src="/<?= $collectionList[$i]['cover_image_medium']?>" class="collection-item-image">
-                        <div class="collection-name"><?= $collectionList[$i]['name']?></div>
+                    <a target="_self" href="/brand/<?= $authBrandList[$i]['id']?>" class="brand-item">
+                        <img src="/<?= $authBrandList[$i]['cover_image_medium']?>" class="brand-item-image">
+                        <div class="brand-name"><?= $authBrandList[$i]['name']?></div>
                     </a>
                 </div>
                 <?php }?>
             </div>
             <?php }?>
         </div>
-        
     </section>
     <section class="row no-vertical-padding">
         <div class="container order-list">
