@@ -160,13 +160,13 @@ to {opacity: 1;}
  }
 .home-introduction .brand-introduction {
     height: 700px;
-    background-image: url(/static/app/images/home-introduction-image-1.png);
+    background-image: url(/static/app/images/home-introduction-image-1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .home-introduction .buyer-introduction{
 	height: 400px;
-	background-image: url(/static/app/images/home-introduction-image-2.png);
+	background-image: url(/static/app/images/home-introduction-image-2.jpg);
 	background-repeat: no-repeat;
     background-size: cover;
 }
