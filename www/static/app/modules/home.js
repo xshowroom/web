@@ -18,30 +18,30 @@ angular.module(
         function ($scope, $element, $timeout) {
      		$scope.isCounterInited = false;
      		
-     		$scope.counter= {
+     		$scope.counter = {
      			buyer: 1181,
      			brand: 219,
      			product: 3571,
      			order: 52291
      		};
-     		$scope.tempCounter= {
+     		$scope.tempCounter = {
          		buyer: 0,
          		brand: 0,
          		product: 0,
          		order: 0
          	};
-     		$timeout(function(){
-     			var bodyHeight = $element.height();
-     			var postion = $element.find('.home-kpi').offset().top;
-     			$scope.kpiPercent = Math.round(postion / bodyHeight * 100);
-     			$scope.$apply();
-     			console.log(bodyHeight, postion);
-     		}, 500, true);
-     		
-     		$scope.restartCounter = function(){
-     			$scope.isCounterInited = true;
-     			console.log(123)
-     		}
+//     		$timeout(function(){
+//     			var bodyHeight = $element.height();
+//     			var postion = $element.find('.home-kpi').offset().top;
+//     			$scope.kpiPercent = Math.round(postion / bodyHeight * 100);
+//     			$scope.$apply();
+//     			console.log(bodyHeight, postion);
+//     		}, 500, true);
+//     		
+//     		$scope.restartCounter = function(){
+//     			$scope.isCounterInited = true;
+//     			console.log(123)
+//     		}
      		
         }
     ]
