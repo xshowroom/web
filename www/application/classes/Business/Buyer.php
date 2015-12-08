@@ -10,6 +10,7 @@ class Business_Buyer
     public $collectionModel;
     public $productionModel;
     public $productionService;
+    public $brandService;
     
     public function __construct()
     {
@@ -18,19 +19,17 @@ class Business_Buyer
         $this->shopModel  = new Model_Shop();
         $this->collectionModel = new Model_Collection();
         $this->productionModel = new Model_Production();
+        $this->brandService = new Business_Brand();
         $this->productionService = new Business_Production();
     }
     
     public function validateAuth($userId, $brandUserId)
     {
-        $authList = $this->buyerModel->getAuthList($userId);
-        foreach ($authList as $row) {
-            $brandIdList[] = $row['brand_id'];
-        }
-        $brandist = $this->brandModel->getByBrandIdList(array_values($brandIdList));
-        foreach ($brandist as $brand) {
-            $brandUserIdList[] = $brand['user_id'];
-        }
+        $authList = $this->buyerModel->getAuthListByUser($userId);
+        $brandIdList = array_column($authList, 'brand_id');
+
+        $brandList = $this->brandModel->getByBrandIdList(array_values($brandIdList));
+        $brandUserIdList = array_column($brandList, 'user_id');
         
         if (!in_array($brandUserId, $brandUserIdList)) {
             $errorInfo = Kohana::message('message', 'AUTH_ERROR');
@@ -54,80 +53,21 @@ class Business_Buyer
         return $brandList;
     }
     
-    private function doFilter($userId, $filter)
+    public function getBrandList($userId)
     {
-        $authBrandList = $this->getAllBrandList($userId);
+        // 获取筛选条件下的所有brand
+        $brandList = $this->brandService->getBrandList();
         
-        // 所有的user_id
-        $userIdList = array_column($authBrandList, 'user_id');
+        // 获取我拥有的权限的brand
+        $authBrandList = $this->buyerModel->getAuthListByUser($userId);
+        $brandIdList = array_column($authBrandList, 'brand_id');
         
-        // 如果有query查询条件
-        if (!empty($filter['query'])) {
-            $brandList = $this->brandModel->getByName($filter['query']);
-            $tempIdList = array_column($brandList, 'user_id');
-            $userIdList = array_intersect($userIdList, $tempIdList);
+        // 过滤下
+        foreach ($brandList as $brand) {
+            if (in_array($brand['id'], $brandIdList)) {
+                $res[] = $brand;
+            }
         }
-        
-        // 如果有show查询条件，筛选出相应的user_id
-        if (!empty($filter['show'])) {
-            $collectionList = $this->shopModel->getByFilter($filter);
-            $tempIdList = array_column($collectionList, 'user_id');
-            $userIdList = array_intersect($userIdList, $tempIdList);
-        }
-        
-        // 如果有category查询条件，筛选出相应的user_id
-//         if (!empty($filter['category'])) {
-//             $productionList = $this->productionModel->getByCategory($filter['category']);
-//             $tempIdList = array_column($productionList, 'user_id');
-//             $userIdList = array_intersect($userIdList, $tempIdList);
-//         }
-        
-        // 如果有country查询条件，筛选出相应的user_id
-//         if (!empty($filter['country'])) {
-//             $country = explode(',', $filter['country']);
-//             $userAttrList = $this->userModel->getByCountry($country);
-//             $tempIdList = array_column($userAttrList, 'user_id');
-//             $userIdList = array_intersect($userIdList, $tempIdList);
-//         }
-        
-        $res = array();
-        foreach ($userIdList as $user_id) {
-            $res[] = $authBrandList[$user_id];
-        }
-
-        return $res;
-    }
-    
-    private function doQuote($queryStr)
-    {
-        if (empty($queryStr)) {
-            return false;
-        }
-        
-        $arr = explode(',', $queryStr);
-        
-        $res = array_map(function ($val){
-            return "'{$val}'";
-        }, $arr);
-        
-        return implode(',', $res);
-    }
-    
-    public function getBrandList()
-    {
-        $filter = array(
-            'show'      => Request::current()->query('show'),
-            'country'   => Request::current()->query('country'),
-            'query'     => Request::current()->query('query'),
-        );
-        
-        $res = $this->doFilter($filter);
-        
-        $pageSize = Request::current()->query('pageSize');
-        $pageSize = empty($pageSize) ? 0 : $pageSize;
-        $offset = Request::current()->query('offset');
-        $offset = empty($offset) ? 0 : $offset;
-        $res = array_slice($res, $offset, $pageSize);
         
         return $res;
     }

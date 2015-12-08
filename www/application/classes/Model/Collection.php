@@ -160,9 +160,9 @@ class Model_Collection
         $sql = "SELECT * FROM collection WHERE status = " . self::TYPE_OF_ONLINE;
         
         if (!empty($filter['show'])) {
-            if ($filter['show'] == 'all') {
+            if ($filter['show'] == 'dropdown__SHOW__ALL') {
                 $sql .= " AND category = 'dropdown__COLLECTION__WOMEN' OR category = 'dropdown__COLLECTION__MEN' OR category = 'dropdown__COLLECTION__ACCESSORIES' OR modify_time >= '". date('Y-m-d', strtotime('-3 month')) ."'";
-            } elseif ($filter['show'] == 'new') {
+            } elseif ($filter['show'] == 'dropdown__SHOW__WHATS__NEW') {
                 $sql .= " AND modify_time >= '". date('Y-m-d', strtotime('-3 month')) ."'";
             } elseif ($filter['show'] == 'dropdown__COLLECTION__WOMEN' || $filter['show'] == 'dropdown__COLLECTION__MEN' || $filter['show'] == 'dropdown__COLLECTION__ACCESSORIES') {
                 $sql .= " AND category = '{$filter['show']}' ";
