@@ -16,8 +16,14 @@ angular.module(
     [
      	'$scope', 'Brand',
         function ($scope, Brand) {
-     		var init = function(){
+     		$scope.setSeason = function (season) {
+     			$scope.selectedSeason = season;
+     		};
+     		
+     		var init = function () {
      			$scope.conditions = Brand.getIndexConditions();
+     			$scope.seasons = Brand.getSeason();
+     			$scope.selectedSeason = $scope.seasons[0];
      		};
      		
      		init();
