@@ -31,18 +31,15 @@
         <div class="container brand-banner">
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="brand-logo">
-                        <img src="/<?= $userAttr['display_name']?>">
-                    </div>
                     <div class="brand-info">
                         <h3 class="brand-name"><?= $userAttr['display_name'] ?></h3>
                         <div class="brand-detail">
                             <span >Interested brands</span>
-                            <span>{{ "<?= $userAttr['company_country'] ?>" | translate}}</span>
+                            <span></span>
                         </div>
                         <div class="brand-detail">
                             <span>Last time visit</span>
-                            <span><?= date('Y', strtotime($user['last_login_time'])) ?></span>
+                            <span><?= date('Y-m-d h:i:s', strtotime($user['last_login_time'])) ?></span>
                         </div>
                     </div>
                 </div>
