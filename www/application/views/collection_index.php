@@ -27,7 +27,7 @@
         var collectionId = <?=$collection['id']?>;
     </script>
 </head>
-<body ng-controller="CollectionIndexCtrl" class="container-fluid">
+<body ng-controller="CollectionIndexCtrl" class="container-fluid" ng-cloak>
     <nav class="row setting-info">
         <?php echo View::factory('common/global_setting_without_login'); ?>
     </nav>
