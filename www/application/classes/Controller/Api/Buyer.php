@@ -52,4 +52,16 @@ class Controller_Api_Buyer extends Controller_BaseReqLogin
             'data'   => $res,
         ));
     }
+    
+    public function action_getBrandList()
+    {
+        $userId  = $this->opUser['id'];
+        $res = $this->buyerService->getBrandList($userId);
+         
+        echo json_encode(array(
+                'status' => STATUS_SUCCESS,
+                'msg'    => '',
+                'data'   => $res,
+        ));
+    }
 }

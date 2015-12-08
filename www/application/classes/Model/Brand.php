@@ -38,7 +38,7 @@ class Model_Brand
                     ->where('brand_name', 'like', '%'.$name.'%')
                     ->where('status', '=', STAT_NORMAL)
                     ->execute()
-                    ->as_array();
+                    ->as_array('user_id');
         
         return $result;
     }
