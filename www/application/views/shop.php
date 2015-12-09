@@ -60,7 +60,7 @@
 					</div>
 					<div class="brand-list-content row">
 						<div class="col-xs-3" ng-repeat="brand in brands.content">
-							<a target="_self" ng-href="/{{brand.brand_name}}" class="brand-item image-link">
+							<a target="_self" ng-href="/brands/{{brand.brand_name}}" class="brand-item image-link">
 								<img ng-src="/{{brand.brand_image}}" class="brand-item-image">
 								<span class="brand-item-name">
 									<span>{{brand.brand_name}}</span>

@@ -43,6 +43,18 @@ class Model_Brand
         return $result;
     }
     
+    public function getByUrl($url)
+    {
+        $result = DB::select()
+                    ->from('brand')
+                    ->where('brand_url', '=', $url)
+                    ->where('status', '=', STAT_NORMAL)
+                    ->execute()
+                    ->as_array();
+        
+        return empty($result) ? array() : $result[0];
+    }
+    
     public function getByUserId($userId)
     {
         $result = DB::select()

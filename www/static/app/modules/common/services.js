@@ -97,6 +97,9 @@ angular.module(
 		      	},
 		      	getSeason: function(){
 		      		return conditions.season.values;
+		      	},
+		      	getCoversBySeason: function (opts) {
+		    		return $http.get('/api/guest/coverImgList', {params: opts});
 		      	}
    			};
          }

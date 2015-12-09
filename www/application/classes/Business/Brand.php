@@ -124,4 +124,10 @@ class Business_Brand
         
         return $brandList;
     }
+    
+    public function getBrandInfoByUrl($url)
+    {
+        $brandInfo = $this->brandModel->getByName($name);
+        return $brandInfo;
+    }
 }

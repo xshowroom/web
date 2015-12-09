@@ -50,6 +50,9 @@ class Business_Buyer
     {
         $authBrandList = $this->getAuthList($userId);
         $brandIdList = array_column($authBrandList, 'brand_id');
+        if (empty($brandIdList)) {
+            return array();
+        }
         
         $brandList = $this->brandModel->getByBrandIdList($brandIdList);
         return $brandList;

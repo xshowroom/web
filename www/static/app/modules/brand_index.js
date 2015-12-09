@@ -18,12 +18,28 @@ angular.module(
         function ($scope, Brand) {
      		$scope.setSeason = function (season) {
      			$scope.selectedSeason = season;
+     			$scope.refreshCovers(season)
      		};
+     		
+     		$scope.refreshCovers = function(season){
+     			Brand.getCoversBySeason({
+     				brandId: $scope.brandId,
+     				season: season
+     			}).success(function(res){
+     				console.log(res.status, arguments);
+     				if (res.status) {
+     					alert('接口获取数据失败，请检查！');
+     					return;
+     				}
+     			});
+     		}
+     		
      		
      		var init = function () {
      			$scope.conditions = Brand.getIndexConditions();
      			$scope.seasons = Brand.getSeason();
      			$scope.selectedSeason = $scope.seasons[0];
+     			$scope.refreshCovers($scope.selectedSeason);
      		};
      		
      		init();

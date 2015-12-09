@@ -70,7 +70,7 @@
             		for ($i=0, $count=count($authBrandList); $i<$count; $i++) { 
             	?>
                 <div class="col-xs-3">
-                    <a target="_self" href="/brand/<?= $authBrandList[$i]['id']?>" class="brand-item">
+                    <a target="_self" href="/brands/<?= $authBrandList[$i]['id']?>" class="brand-item">
                         <img src="/<?= $authBrandList[$i]['cover_image_medium']?>" class="brand-item-image">
                         <div class="brand-name"><?= $authBrandList[$i]['name']?></div>
                     </a>

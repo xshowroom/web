@@ -3,18 +3,18 @@
 
 class Controller_Home extends Controller_Base
 {
-	public $userService;
-	
-	public function before()
-	{
-		parent::before();
-		$this->userService = new Business_User();
-	}
-	
+    public $userService;
+    
+    public function before()
+    {
+        parent::before();
+        $this->userService = new Business_User();
+    }
+    
     public function action_index()
     {
         $view = View::factory('home');
-     	$opUser = $_SESSION['opUser'];
+         $opUser = $_SESSION['opUser'];
 
         if(!empty($opUser)) {
             $view->set('user', $opUser);
@@ -43,6 +43,9 @@ class Controller_Home extends Controller_Base
 		    $view->set('brandAttr', $this->userService->getUserAttr($brandInfo['user_id']));
 
 	    }
-    	$this->response->body($view);
+
+        
+        $this->response->body($view);
+
     }
 }

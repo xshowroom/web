@@ -19,7 +19,7 @@
     <script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
     <script type="text/javascript" src="/static/app/modules/brand_index.js"></script>
 </head>
-<body ng-controller="BrandIndexCtrl" class="container-fluid">
+<body ng-controller="BrandIndexCtrl" class="container-fluid"  ng-init="brandId = <?=$brandInfo['id']?>;">
     <nav class="row setting-info">
         <?php echo View::factory('common/global_setting_without_login'); ?>
     </nav>
@@ -106,7 +106,26 @@
             	<div class="col-xs-3">
 					<div class="row filter-condition" ng-repeat="(title, content) in conditions" data-type="{{content.type}}" data-title="{{title}}" 
 						selected="setFilters(name, conditions)" data-conditions="content.values"></div>
-				</div>			
+				</div>
+				<div class="col-xs-9 collection-list">
+					<div class="row">
+						<div class=" col-xs-12">
+							<div class="collection-list-header">
+								<span class="collection-list-title" ng-cloak>{{hasFilter() ? 'FILTERED collectionS' : 'ALL COLLECTIONS'}}</span>
+							</div>
+						</div>
+					</div>
+					<div class="collection-list-content row">
+						<div class="col-xs-3" ng-repeat="collection in collections.content">
+							<a target="_self" ng-href="/{{collection.collection_name}}" class="collection-item image-link">
+								<img ng-src="/{{collection.collection_image}}" class="collection-item-image">
+								<span class="collection-item-name">
+									<span>{{collection.collection_name}}</span>
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
             </div>
         </div>
     </section>
