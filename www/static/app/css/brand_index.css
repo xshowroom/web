@@ -1,5 +1,6 @@
 @CHARSET "UTF-8";
-.user-navigation{
+.user-navigation,
+.guest-navigation{
 	background-color: #fff;
 }
 .dropdown.season-filter {

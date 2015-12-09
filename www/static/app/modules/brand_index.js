@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'BrandIndexCtrl',
     [
-     	'$scope', 'Brand',
-        function ($scope, Brand) {
+     	'$scope', 'Brand', 'Buyer',
+        function ($scope, Brand, Buyer) {
      		$scope.setSeason = function (season) {
      			$scope.selectedSeason = season;
      			$scope.refreshCovers(season)
@@ -26,7 +26,6 @@ angular.module(
      				brandId: $scope.brandId,
      				season: season
      			}).success(function(res){
-     				console.log(res.status, arguments);
      				if (typeof(res) != 'object' || res.status) {
      					alert('获取Collection Cover数据失败，请检查！');
      					return;
@@ -44,7 +43,7 @@ angular.module(
      		}
      		
      		var checkAuth = function(){
-     			Brand.checkAuth({
+     			Buyer.checkAuth({
      				brandId: $scope.brandId
      			}).success(function(res){
      				if (typeof(res) != 'object' || res.status) {

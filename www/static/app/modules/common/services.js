@@ -32,7 +32,13 @@ angular.module(
 		    return {
 		      	getShopList: function (opts) {
 		    		return $http.get('/api/register/checkParam', {params: opts});
-		    	}
+		    	},
+		    	checkAuth: function(opts){
+		      		return $http.get('/api/buyer/checkAuth', {params: opts});
+		      	},
+		      	applyAuth: function(opts){
+		      		return $http.get('/api/buyer/checkAuth', {params: opts});
+		      	}
    			};
          }
     ]
@@ -113,12 +119,6 @@ angular.module(
 		      	},
 		      	getCoversBySeason: function (opts) {
 		    		return $http.get('/api/guest/coverImgList', {params: opts});
-		      	},
-		      	checkAuth: function(opts){
-		      		return $http.get('/api/buyer/checkAuth', {params: opts});
-		      	},
-		      	applyAuth: function(opts){
-		      		return $http.get('/api/buyer/checkAuth', {params: opts});
 		      	}
    			};
          }

@@ -20,14 +20,24 @@
     <script type="text/javascript" src="/static/app/modules/brand_index.js"></script>
 </head>
 <body ng-controller="BrandIndexCtrl" class="container-fluid"  ng-init="brandId = <?=$brandInfo['id']?>;">
-    <nav class="row setting-info">
-        <?php echo View::factory('common/global_setting_without_login'); ?>
-    </nav>
-    <nav class="row user-navigation">
-        <?php echo View::factory('common/global_navigation_top_buyer',
-            array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); 
-        ?>
-    </nav>
+   	<?php if (empty($user)){?>
+	<nav class="row setting-info">
+		<?php echo View::factory('common/global_setting_with_login', array('userAttr'=> $userAttr, 'user'=> $user)); ?>
+	</nav>
+	<?php } else { ?>
+	<nav class="row setting-info">
+		<?php echo View::factory('common/global_setting_without_login', array('userAttr'=> $userAttr, 'user'=> $user)); ?>
+	</nav>
+	<?php }?>
+	<?php if (empty($user) || $user["role_type"] != "2"){?>
+	<nav class="row guest-navigation">
+        <?php echo View::factory('common/global_navigation_top_guest', array('currentPage' =>  'shop')); ?>
+	</nav>
+	<?php } else if ($user["role_type"] == "2"){ ?>
+	<nav class="row user-navigation">
+        <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); ?>
+	</nav>
+	<?php }?>
     <section class="row no-vertical-padding">
         <div class="container">
             <div class="row brand-preview">
@@ -56,7 +66,7 @@
             	</div>
             	<div class="col-xs-3">
             		<div class="brand-cover">
-            			<img class="" src="/static/app/images/brand-logo.png"/>
+            			<img ng-src="/{{selectedCover.cover_image_medium}}"/>
             		</div>
             	</div>
             	<div class="col-xs-5">
@@ -69,32 +79,8 @@
 							<li ng-repeat="season in seasons" ng-click="setSeason(season);">{{season | translate}}</li>
 						</ul>
 					</div>
-            		<div class="collection-cover">
-            			<img src="/static/app/images/brand-logo.png"/>
-            		</div>
-            		<div class="collection-cover">
-            			<img src="/static/app/images/brand-logo.png"/>
-            		</div>
-            		<div class="collection-cover">
-            			<img src="/static/app/images/brand-logo.png"/>
-            		</div>
-            		<div class="collection-cover">
-            			<img src="/static/app/images/brand-logo.png"/>
-            		</div>
-            		<div class="collection-cover">
-            			<img src="/static/app/images/brand-logo.png"/>
-            		</div>
-            		<div class="collection-cover">
-            			<img src="/static/app/images/brand-logo.png"/>
-            		</div>
-            		<div class="collection-cover">
-            			<img src="/static/app/images/brand-logo.png"/>
-            		</div>
-            		<div class="collection-cover">
-            			<img src="/static/app/images/brand-logo.png"/>
-            		</div>
-            		<div class="collection-cover">
-            			<img src="/static/app/images/brand-logo.png"/>
+            		<div class="collection-cover" ng-repeat="cover in covers|limitTo: 18" ng-click="setSelectedCover(cover);">
+            			<img ng-src="/{{cover.cover_image_small}}"/>
             		</div>
             	</div>
             </div>
@@ -110,7 +96,11 @@
 				<div class="col-xs-9 collection-list" ng-if="!hasAuth">
 					<div class="has-no-auth">
 						<p>You do not have access to BRAND B. Apply</br>privilege to view all his collection.</p>
-						<button class="btn btn-type-1" ng-click="applyAuth();">APPLY</button>
+						<?php if (empty($user)) {?>
+							<a class="btn btn-type-1" href="/login">APPLY</a>
+						<?php }else{?>
+							<button class="btn btn-type-1" ng-click="applyAuth();">APPLY</button>
+						<?php }?>
 					</div>
 					<div class="row">
 						<div class=" col-xs-12">
