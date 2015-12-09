@@ -127,7 +127,7 @@ class Business_Brand
     
     public function getBrandInfoByUrl($url)
     {
-        $brandInfo = $this->brandModel->getByName($name);
+        $brandInfo = $this->brandModel->getByUrl($url);
         return $brandInfo;
     }
 }
