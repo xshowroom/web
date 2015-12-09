@@ -176,7 +176,7 @@ Route::set('admin_with_id', '<directory>/<controller>/<action>/<id>',
 Route::set('default', '(<directory>/)(<controller>(/<action>))',
     array(
         'directory' => '(api|xsadmin)',
-        'controller' => '(brand|buyer|collection|common|image|message|product|register|shop|upload|user|guide|home|login)'
+        'controller' => '(brand|buyer|collection|common|image|message|product|register|shop|upload|user|guide|home|login|management)'
     ))
     ->defaults(array(
         'controller' => 'home',
