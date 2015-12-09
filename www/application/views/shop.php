@@ -48,7 +48,7 @@
 					<div class="row">
 						<div class=" col-xs-12">
 							<div class="brand-list-header">
-								<span class="brand-list-title" ng-cloak>{{hasFilter() ? ("filter_head__ALL_BRAND"|translate) : ("filter_head__FILTERED_BRAND"|translate)}}</span>
+								<span class="brand-list-title" ng-cloak>{{hasFilter() ? ("filter_head__FILTERED_BRAND"|translate) : ("filter_head__ALL_BRAND"|translate)}}</span>
 								<div class="input-group">
 									<span class="input-group-addon">
 										<span class="glyphicon glyphicon-search"></span>
