@@ -28,15 +28,15 @@
 	<?php }?>
 	<?php if (empty($user)){?>
 	<nav class="row guest-navigation">
-        <?php echo View::factory('common/global_navigation_top_guest', array('currentPage' =>  'shop')); ?>
+        <?php echo View::factory('common/global_navigation_top_guest'); ?>
 	</nav>
 	<?php } else if ($user["role_type"] == "1"){ ?>
 	<nav class="row user-navigation">
-        <?php echo View::factory('common/global_navigation_top_brand', array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); ?>
+        <?php echo View::factory('common/global_navigation_top_brand', array('userAttr'=> $userAttr)); ?>
 	</nav>
 	<?php } else if ($user["role_type"] == "2"){ ?>
 	<nav class="row user-navigation">
-        <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); ?>
+        <?php echo View::factory('common/global_navigation_top_buyer', array('userAttr'=> $userAttr)); ?>
 	</nav>
 	<?php }?>
 	<section class="row">
