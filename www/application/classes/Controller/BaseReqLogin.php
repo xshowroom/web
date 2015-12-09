@@ -12,7 +12,7 @@ class Controller_BaseReqLogin extends Controller_Base
         $this->opUser = $_SESSION['opUser'];
 
         // redirect to login if no user
-        if(empty( $this->opUser)) {
+        if(empty($this->opUser)) {
             $this->redirectLogin();
         }
 
