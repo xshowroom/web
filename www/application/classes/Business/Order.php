@@ -66,7 +66,7 @@ class Business_Order
         return $res;
     }
 
-    public function createOrder($userId, $collectionId, $productionDetail, $comments, $description);
+    public function createOrder($userId, $collectionId, $productionDetail, $comments, $description)
     {
         // item_amount && total_num
         $shippingAmount = $itemAmount = $totalNum = 0;
