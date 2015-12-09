@@ -173,21 +173,20 @@ Route::set('admin_with_id', '<directory>/<controller>/<action>/<id>',
             'id'        => '\d+',
         ));
         
+Route::set('brand', 'brands/<brand_url>',
+        array(
+                'brand_url' => '.*',
+        ))
+        ->defaults(array(
+                'controller' => 'home',
+                'action'     => 'brand',
+        ));
+        
 Route::set('default', '(<directory>/)(<controller>(/<action>))',
     array(
         'directory' => '(api|xsadmin)',
-        'controller' => '(brand|buyer|collection|common|image|message|product|register|shop|upload|user|guide|home|login|management)'
     ))
     ->defaults(array(
         'controller' => 'home',
         'action'     => 'index',
-    ));
-    
-Route::set('brand', '<brand_url>',
-    array(
-        'brand_url' => '.*',
-    ))
-    ->defaults(array(
-        'controller' => 'home',
-        'action'     => 'brand',
     ));

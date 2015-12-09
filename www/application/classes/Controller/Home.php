@@ -3,18 +3,18 @@
 
 class Controller_Home extends Controller_Base
 {
-	public $userService;
-	
-	public function before()
-	{
-		parent::before();
-		$this->userService = new Business_User();
-	}
-	
+    public $userService;
+    
+    public function before()
+    {
+        parent::before();
+        $this->userService = new Business_User();
+    }
+    
     public function action_index()
     {
         $view = View::factory('home');
-     	$opUser = $_SESSION['opUser'];
+         $opUser = $_SESSION['opUser'];
 
         if(!empty($opUser)) {
             $view->set('user', $opUser);
@@ -27,24 +27,14 @@ class Controller_Home extends Controller_Base
     
     public function action_brand()
     {
-    	$brandName = Request::current()->param('brand_url');
-    	$view = View::factory('brand_index');
-    	
-    	$opUser = $_SESSION['opUser'];
-
-	    if(!empty($opUser)) {
-		    $view->set('user', $opUser);
-		    $view->set('userAttr', $this->userService->getUserAttr($opUser['id']));
-
-
-		    $brandService = new Business_Brand();
-		    $brandInfo = $brandService->queryBrand($brandName)[0];
-		    $view->set('brandInfo', $brandInfo);
-		    $view->set('brandAttr', $this->userService->getUserAttr($brandInfo['user_id']));
-
-		    // $buyerService = new Business_Buyer();
-			// $hasAuth = $buyerService.getAuthList($opUser['id']);
-	    }
-    	$this->response->body($view);
+        $brandUrl = Request::current()->param('brand_url');
+        $view = View::factory('brand_index');
+        
+        $brandService = new Business_Brand();
+        $brandInfo = $brandService->getBrandInfoByUrl($brandUrl);
+        $view->set('brandInfo', $brandInfo);
+        $view->set('brandAttr', $this->userService->getUserAttr($brandInfo['user_id']));
+        
+        $this->response->body($view);
     }
 }
