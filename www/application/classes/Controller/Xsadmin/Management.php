@@ -1,7 +1,7 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
 
-class Controller_Xsadmin_Management extends Controller_XSAdmin_AdminBase
+class Controller_Xsadmin_Management extends Controller_Xsadmin_AdminBase
 {
     public $userService;
     public $brandService;
