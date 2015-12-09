@@ -31,18 +31,20 @@ class Controller_Home extends Controller_Base
     	$view = View::factory('brand_index');
     	
     	$opUser = $_SESSION['opUser'];
-    	$view->set('user', $opUser);
-        $view->set('userAttr', $this->userService->getUserAttr($opUser['id']));
-        
-        
-    	$brandService = new Business_Brand();
-    	$brandInfo = $brandService->queryBrand($brandName)[0];
-    	$view->set('brandInfo', $brandInfo);
-    	$view->set('brandAttr', $this->userService->getUserAttr($brandInfo['user_id']));
-    	
-    	$buyerService = new Business_Buyer();
-//     	$hasAuth = $buyerService.getAuthList($opUser['id']);
-    	
+
+	    if(!empty($opUser)) {
+		    $view->set('user', $opUser);
+		    $view->set('userAttr', $this->userService->getUserAttr($opUser['id']));
+
+
+		    $brandService = new Business_Brand();
+		    $brandInfo = $brandService->queryBrand($brandName)[0];
+		    $view->set('brandInfo', $brandInfo);
+		    $view->set('brandAttr', $this->userService->getUserAttr($brandInfo['user_id']));
+
+		    // $buyerService = new Business_Buyer();
+			// $hasAuth = $buyerService.getAuthList($opUser['id']);
+	    }
     	$this->response->body($view);
     }
 }
