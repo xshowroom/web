@@ -17,9 +17,28 @@
 	<script type="text/javascript" src="/static/app/modules/error.js"></script>
 </head>
 <body ng-controller="ErrorCtrl" class="container-fluid">
-	<nav class="row guest-navigation" style="padding-top: 25px;">
-        <?php echo View::factory('common/global_navigation_top_guest'); ?>
+	<?php if (empty($user)){?>
+	<nav class="row setting-info">
+		<?php echo View::factory('common/global_setting_with_login', array('userAttr'=> $userAttr, 'user'=> $user)); ?>
 	</nav>
+	<?php } else { ?>
+	<nav class="row setting-info">
+		<?php echo View::factory('common/global_setting_without_login', array('userAttr'=> $userAttr, 'user'=> $user)); ?>
+	</nav>
+	<?php }?>
+	<?php if (empty($user)){?>
+	<nav class="row guest-navigation">
+        <?php echo View::factory('common/global_navigation_top_guest', array('currentPage' =>  'shop')); ?>
+	</nav>
+	<?php } else if ($user["role_type"] == "1"){ ?>
+	<nav class="row user-navigation">
+        <?php echo View::factory('common/global_navigation_top_brand', array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); ?>
+	</nav>
+	<?php } else if ($user["role_type"] == "2"){ ?>
+	<nav class="row user-navigation">
+        <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); ?>
+	</nav>
+	<?php }?>
 	<section class="row">
 		<div class="container">
 			<div class="row" style="min-height:300px;">
