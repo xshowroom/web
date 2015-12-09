@@ -69,7 +69,7 @@ class Model_Buyer
                     ->from('buyer_brand_map')
                     ->where('user_id', '=', $userId)
                     ->where('brand_id', '=', $brandId)
-                    ->where('status', '=', self::STAT_NORMAL)
+                    ->where('status', '=', self::STATUS_NORMAL)
                     ->execute()
                     ->as_array();
 
@@ -79,7 +79,7 @@ class Model_Buyer
     public function listByAuthStatus($status)
     {
         $result = DB::select()
-                    ->form('buyer_brand_map')
+                    ->from('buyer_brand_map')
                     ->where('status', '=', $status)
                     ->execute()
                     ->as_array();
