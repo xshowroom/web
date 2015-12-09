@@ -107,22 +107,26 @@
 					<div class="row filter-condition" ng-repeat="(title, content) in conditions" data-type="{{content.type}}" data-title="{{title}}" 
 						selected="setFilters(name, conditions)" data-conditions="content.values"></div>
 				</div>
-				<div class="col-xs-9 collection-list">
+				<div class="col-xs-9 collection-list" ng-if="!hasAuth">
+					<div class="has-no-auth">
+						<p>You do not have access to BRAND B. Apply</br>privilege to view all his collection.</p>
+						<button class="btn btn-type-1" ng-click="applyAuth();">APPLY</button>
+					</div>
 					<div class="row">
 						<div class=" col-xs-12">
 							<div class="collection-list-header">
-								<span class="collection-list-title" ng-cloak>{{hasFilter() ? 'FILTERED collectionS' : 'ALL COLLECTIONS'}}</span>
+								<span class="collection-list-title">COLLECTIONS</span>
 							</div>
 						</div>
 					</div>
 					<div class="collection-list-content row">
-						<div class="col-xs-3" ng-repeat="collection in collections.content">
-							<a target="_self" ng-href="/{{collection.collection_name}}" class="collection-item image-link">
-								<img ng-src="/{{collection.collection_image}}" class="collection-item-image">
-								<span class="collection-item-name">
-									<span>{{collection.collection_name}}</span>
-								</span>
+						<div class="col-xs-3" ng-repeat="category in ['dress', 'top', 'shirt', 'skirt']">
+							<a target="_self" href="#" class="collection-item">
+								<img ng-src="/static/app/images/mock-{{category}}.png" class="collection-item-image">
 							</a>
+							<div class="collection-item-name">
+								<span>{{('dropdown__PRODUCT_CATEGORY__' + (category|uppercase)) | translate}}</span>
+							</div>
 						</div>
 					</div>
 				</div>

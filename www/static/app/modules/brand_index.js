@@ -27,15 +27,31 @@ angular.module(
      				season: season
      			}).success(function(res){
      				console.log(res.status, arguments);
-     				if (res.status) {
-     					alert('接口获取数据失败，请检查！');
+     				if (typeof(res) != 'object' || res.status) {
+     					alert('获取Collection Cover数据失败，请检查！');
      					return;
      				}
      			});
+     		};
+     		
+     		$scope.applyAuth = function(){
+     			
      		}
+     		
+     		var checkAuth = function(){
+     			Brand.checkAuth({
+     				brandId: $scope.brandId
+     			}).success(function(res){
+     				if (typeof(res) != 'object' || res.status) {
+     					alert('获取Auth数据失败，请检查！');
+     					return;
+     				}
+     			});
+     		};
      		
      		
      		var init = function () {
+     			checkAuth();
      			$scope.conditions = Brand.getIndexConditions();
      			$scope.seasons = Brand.getSeason();
      			$scope.selectedSeason = $scope.seasons[0];
