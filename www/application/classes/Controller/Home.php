@@ -38,12 +38,10 @@ class Controller_Home extends Controller_Base
 
 
 		    $brandService = new Business_Brand();
-		    $brandInfo = $brandService->queryBrand($brandName)[0];
+		    $brandInfo = $brandService->getBrandInfoByUrl($brandUrl);
 		    $view->set('brandInfo', $brandInfo);
 		    $view->set('brandAttr', $this->userService->getUserAttr($brandInfo['user_id']));
 
-		    // $buyerService = new Business_Buyer();
-			// $hasAuth = $buyerService.getAuthList($opUser['id']);
 	    }
     	$this->response->body($view);
     }

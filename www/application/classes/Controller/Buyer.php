@@ -34,7 +34,7 @@ class Controller_Buyer extends Controller_BaseReqLogin
         $view = View::factory('buyer_dashboard');
         $view->set('user', $this->opUser);
         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
-        $view->set('authBrandList', array_slice($this->buyerService->getAllBrandList($this->opUser['id']), 0, 4));        
+        $view->set('authBrandList', array_slice($this->buyerService->getAuthBrandList($this->opUser['id']), 0, 4));
         
         $this->response->body($view);
     }
