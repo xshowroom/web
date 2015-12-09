@@ -90,7 +90,7 @@
         <div class="container">
             <div class="row">
             	<div class="col-xs-3">
-					<div class="row filter-condition" ng-repeat="(title, content) in conditions" data-type="{{content.type}}" data-title="{{title}}" 
+					<div class="row filter-condition" ng-repeat="(title, content) in conditions" data-type="{{content.type}}" data-title="{{title | translate}}"
 						selected="setFilters(name, conditions)" data-conditions="content.values"></div>
 				</div>
 				<div class="col-xs-9 collection-list" ng-if="!hasAuth">

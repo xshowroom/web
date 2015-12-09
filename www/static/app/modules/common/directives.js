@@ -119,7 +119,7 @@ angular.module(
 				'<div class="col-xs-12">',
 					'<div class="filter-header">',
 						'<span class="filter-name">{{title|uppercase}}</span>',
-						'<span class="filter-clear-all" ng-click="clearAll()" ng-if="hasClearAll && selectedConditions.length">CLEAR ALL</span>',
+						'<span class="filter-clear-all" ng-click="clearAll()" ng-if="hasClearAll && selectedConditions.length">{{"filter__CLEAR_ALL" | translate}}</span>',
 					'</div>',
 				'</div>',
 				'<ul class="col-xs-12 filter-list filter-{{type}}-list">',
@@ -128,7 +128,7 @@ angular.module(
 						'<span>{{item | translate}}</span>',
 					'</li>',
 				'</ul>',
-				'<span class="col-xs-12 filter-more" ng-click="showMore()" ng-if="limit < conditions.length">More</span>',
+				'<span class="col-xs-12 filter-more" ng-click="showMore()" ng-if="limit < conditions.length">{{"filter__SHOW_MORE" | translate}}</span>',
             ].join('');
             return html;
         },

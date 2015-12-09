@@ -310,17 +310,17 @@ angular.module(
             
             
             // Show
-            dropdown__SHOW__ALL: 'ALL',
-            dropdown__SHOW__WHATS_NEW: 'WHAT\'S NEW',
-            dropdown__SHOW__WOMEN: 'WOMEN',
-            dropdown__SHOW__MEN: 'MEN',
+            dropdown__SHOW__ALL: '所有产品',
+            dropdown__SHOW__WHATS_NEW: '最新发布',
+            dropdown__SHOW__WOMEN: '女士品牌',
+            dropdown__SHOW__MEN: '男士品牌',
             
             // Available
-            dropdown__AVAILABLE__LAST_DAY: 'LAST DAY TO ORDER',
-            dropdown__AVAILABLE__1_WEEK: 'UP TO 1 WEEK',
-            dropdown__AVAILABLE__4_WEEK: 'UP TO 4 WEEK',
-            dropdown__AVAILABLE__8_WEEK: 'UP TO 8 WEEK',
-            dropdown__AVAILABLE__12_WEEK: 'UP TO 12 WEEK',
+            dropdown__AVAILABLE__LAST_DAY: '最后1天下单',
+            dropdown__AVAILABLE__1_WEEK: '1 周后下线',
+            dropdown__AVAILABLE__4_WEEK: '4 周后下线',
+            dropdown__AVAILABLE__8_WEEK: '8 周后下线',
+            dropdown__AVAILABLE__12_WEEK: '12 周后下线',
             
             // Collection Status
             COLLECTION_STATUS_ALL: '所有',
@@ -350,10 +350,10 @@ angular.module(
             dropdown__COLLECTION_MODE__PERMANENT: '常年可定',
 
             // Collection Season
-            dropdown__COLLECTION_SEASON__AW_15: '15秋冬',
-            dropdown__COLLECTION_SEASON__PRE_SS16: '16早春',
-            dropdown__COLLECTION_SEASON__SS_16: '16春夏',
-            dropdown__COLLECTION_SEASON__AW_16: '16秋冬',
+            dropdown__COLLECTION_SEASON__AW_15: '15 秋冬',
+            dropdown__COLLECTION_SEASON__PRE_SS16: '16 早春',
+            dropdown__COLLECTION_SEASON__SS_16: '16 春夏',
+            dropdown__COLLECTION_SEASON__AW_16: '16 秋冬',
 
             // Product Category
             dropdown__PRODUCT_CATEGORY__ALL: "所有",
@@ -415,7 +415,24 @@ angular.module(
             dropdown__PRODUCT_MATERIAL__Velvet: "天鹅绒",
             dropdown__PRODUCT_MATERIAL__Viscose: "粘胶纤维",
             dropdown__PRODUCT_MATERIAL__Wool: "羊毛",
-            dropdown__PRODUCT_MATERIAL__Other: "其它"
+            dropdown__PRODUCT_MATERIAL__Other: "其它",
+
+            /**
+             * filters in service.js
+             */
+            filter_head__ALL_BRAND:"所有品牌",
+            filter_head__FILTERED_BRAND:"筛选品牌",
+            filter_head__SEARCH_BRAND:"搜索品牌",
+
+            filter_title__SHOW: "品牌展示",
+            filter_title__SEASON: "时尚季",
+            filter_title__AVAILABLE: "订货期限",
+            filter_title__COUNTRY: "品牌国家",
+            filter_title__STATUS: "售卖模式",
+            filter_title__CATEGORY:"系列类型",
+
+            filter__CLEAR_ALL: "清除",
+            filter__SHOW_MORE: "更多"
         },
         'en': {
             /**
@@ -812,8 +829,24 @@ angular.module(
             dropdown__PRODUCT_MATERIAL__Velvet: "Velvet",
             dropdown__PRODUCT_MATERIAL__Viscose: "Viscose",
             dropdown__PRODUCT_MATERIAL__Wool: "Wool",
-            dropdown__PRODUCT_MATERIAL__Other: "Other"
+            dropdown__PRODUCT_MATERIAL__Other: "Other",
 
+            /**
+             * filters in service.js
+             */
+            filter_head__ALL_BRAND:"ALL BRAND",
+            filter_head__FILTERED_BRAND:"FILTERED BRAND",
+            filter_head__SEARCH_BRAND:"SEARCH BRAND",
+
+            filter_title__SHOW: "SHOW",
+            filter_title__SEASON: "SEASON",
+            filter_title__AVAILABLE: "AVAILABLE",
+            filter_title__COUNTRY: "COUNTRY",
+            filter_title__MODE: "COLLECTION MODE",
+            filter_title__CATEGORY:"COLLECTION CATEGORY",
+
+            filter__CLEAR_ALL: "CLEAR ALL",
+            filter__SHOW_MORE: "MORE"
         }
 	}
 );

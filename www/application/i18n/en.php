@@ -52,6 +52,7 @@ return array_merge(
         'global_navigation_top_user__COLLECTION' => 'COLLECTION',
         'global_navigation_top_user__ORDER' => 'ORDER',
     	'global_navigation_top_user__SHOP' => 'SHOP',
+        'global_navigation_top_user__CART' => 'CART',
         'global_navigation_top_user__MESSAGE' => 'MESSAGE',
         'global_navigation_top_user__PROFILE' => 'MY PROFILE',
         'global_navigation_top_user__SIGN_OUT' => 'SIGN OUT',
@@ -61,7 +62,7 @@ return array_merge(
      */
     array(
         'global_navigation_user_center__PROFILE' => 'MY PROFILE',
-        'global_navigation_user_center__COLLECTION' => 'MESSAGES',
+        'global_navigation_user_center__MESSAGES' => 'MESSAGES',
     ),
     /**
      * global_navigation_footer.php

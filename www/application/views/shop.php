@@ -41,19 +41,19 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-3">
-					<div class="row filter-condition" ng-repeat="(title, content) in conditions" data-type="{{content.type}}" data-title="{{title}}" 
+					<div class="row filter-condition" ng-repeat="(title, content) in conditions" data-type="{{content.type}}" data-title="{{ title | translate }}"
 						data-has-clear-all="true" selected="setFilters(name, conditions)" data-conditions="content.values"></div>
 				</div>			
 				<div class="col-xs-9 brand-list">
 					<div class="row">
 						<div class=" col-xs-12">
 							<div class="brand-list-header">
-								<span class="brand-list-title" ng-cloak>{{hasFilter() ? 'FILTERED BRANDS' : 'ALL BRANDS'}}</span>
+								<span class="brand-list-title" ng-cloak>{{hasFilter() ? ("filter_head__ALL_BRAND"|translate) : ("filter_head__FILTERED_BRAND"|translate)}}</span>
 								<div class="input-group">
 									<span class="input-group-addon">
 										<span class="glyphicon glyphicon-search"></span>
 									</span>
-									<input type="text" class="form-control" id="brand-keyword" ng-model='keyword' placeholder="SEARCH BRAND" ng-change="setFilters('keyword', keyword)">
+									<input type="text" class="form-control" id="brand-keyword" ng-model='keyword' placeholder="{{'filter_head__SEARCH_BRAND'|translate}}" ng-change="setFilters('keyword', keyword)">
 								</div>
 							</div>
 						</div>

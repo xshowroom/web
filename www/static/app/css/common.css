@@ -381,7 +381,6 @@ a.active:before{
 }
 .filter-condition .filter-name{
 	font-size: 14px;
-	font-weight: bold;
 	color: #333;
 }
 .filter-condition .filter-clear-all{

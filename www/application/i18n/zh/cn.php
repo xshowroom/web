@@ -51,7 +51,8 @@ return array_merge(
         'global_navigation_top_user__DASHBOARD' => '全情概览',
         'global_navigation_top_user__COLLECTION' => '系列管理',
         'global_navigation_top_user__ORDER' => '订单管理',
-    	'global_navigation_top_user__SHOP' => '货物集市',
+        'global_navigation_top_user__SHOP' => '商品集市',
+        'global_navigation_top_user__CART' => '购物车',
         'global_navigation_top_user__MESSAGE' => '消息中心',
         'global_navigation_top_user__PROFILE' => '个人中心',
         'global_navigation_top_user__SIGN_OUT' => '退出登录',
@@ -61,7 +62,7 @@ return array_merge(
      */
     array(
         'global_navigation_user_center__PROFILE' => '个人信息',
-        'global_navigation_user_center__COLLECTION' => '消息中心',
+        'global_navigation_user_center__MESSAGES' => '消息中心',
     ),
     /**
      * global_navigation_footer.php
