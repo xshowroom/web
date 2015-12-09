@@ -7,8 +7,8 @@ angular.module(
 .controller(
     'AdminShopMgrCtrl',
     [
-        '$scope','AdminShopMgr',
-        function ($scope, AdminShopMgr){
+        '$scope',
+        function ($scope){
 
         }
     ]

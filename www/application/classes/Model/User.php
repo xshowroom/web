@@ -11,6 +11,7 @@ class Model_User {
     const TYPE_USER_BRAND = 1;
     const TYPE_USER_BUYER = 2;
 
+    const STATUS_USER_REJECTED = -2;
     const STATUS_USER_PENDING = -1;
     const STATUS_USER_NORMAL = 0;
     const STATUS_USER_SUSPENDED = 1;

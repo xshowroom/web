@@ -7,8 +7,8 @@ angular.module(
 .controller(
     'AdminUserMgrCtrl',
     [
-        '$scope','AdminUserMgr',
-        function ($scope, AdminUserMgr){
+        '$scope',
+        function ($scope){
 
         }
     ]
