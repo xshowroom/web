@@ -63,12 +63,11 @@ class Model_Buyer
         return $result[0];
     }
 
-    public function checkAuth($userId, $shopId, $brandId)
+    public function checkAuth($userId, $brandId)
     {
         $result = DB::select()
                     ->from('buyer_brand_map')
                     ->where('user_id', '=', $userId)
-                    ->where('shop_id', '=', $shopId)
                     ->where('brand_id', '=', $brandId)
                     ->where('status', '=', self::STAT_NORMAL)
                     ->execute()

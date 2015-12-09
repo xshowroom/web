@@ -28,10 +28,10 @@ class Controller_Api_Buyer extends Controller_BaseReqLogin
     public function action_checkAuth()
     {
         $userId  = $this->opUser['id'];
-        $shopId  = (int)trim(Request::current()->query('shopId'));
+        //$shopId  = (int)trim(Request::current()->query('shopId'));
         $brandId = (int)trim(Request::current()->query('brandId'));
         
-        $res = $this->buyerService->checkAuth($userId, $shopId, $brandId);
+        $res = $this->buyerService->checkAuth($userId, $brandId);
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
@@ -46,6 +46,18 @@ class Controller_Api_Buyer extends Controller_BaseReqLogin
         
         $res = $this->buyerService->getAuthList($userId);
         
+        echo json_encode(array(
+            'status' => STATUS_SUCCESS,
+            'msg'    => '',
+            'data'   => $res,
+        ));
+    }
+
+    public function action_getAuthedStoreList()
+    {
+        $userId = $this->opUser['id'];
+        $res = $this->buyerService->getAuthedStoreList($userId);
+
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
             'msg'    => '',

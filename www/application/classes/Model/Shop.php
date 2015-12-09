@@ -18,6 +18,18 @@ class Model_Shop
         return empty($result) ? array() : $result[0];
     }
 
+    public function getByIdList($shopIdList)
+    {
+        $result = DB::select()
+                    ->from('shop')
+                    ->where('id', 'IN', $shopIdList)
+                    ->where('status', '=', STAT_NORMAL)
+                    ->execute()
+                    ->as_array();
+        
+        return $result;
+    }
+
     public function getByUserId($userId)
     {
         $result = DB::select()

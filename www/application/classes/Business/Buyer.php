@@ -85,6 +85,16 @@ class Business_Buyer
         $shopList = $this->shopModel->getByUserId($userId);
         return $shopList;
     }
+
+    public function getAuthedStoreList($userId)
+    {
+        $shopList = $this->buyerModel->getAuthListByUser($userId);
+        $shopIdList = array_column($shopList, 'shop_id');
+
+        $authedShopList = $this->shopModel->getByIdList($shopIdList);
+
+        return $authedShopList;
+    }
     
     public function getCollectionInfo($userId, $collectionId)
     {
@@ -128,9 +138,9 @@ class Business_Buyer
         return $res;
     }
 
-    public function checkAuth($userId, $shopId, $brandId)
+    public function checkAuth($userId, $brandId)
     {
-        $res = $this->buyerModel->checkAuth($userId, $shopId, $brandId);
+        $res = $this->buyerModel->checkAuth($userId, $brandId);
         return $res;
     }
 

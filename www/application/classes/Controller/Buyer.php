@@ -5,7 +5,8 @@ class Controller_Buyer extends Controller_BaseReqLogin
 {
     public $userService;
     public $buyerService;
-//     public $collectionService;
+    // public $brandService;
+    // public $collectionService;
 
     public function before()
     {
@@ -15,7 +16,8 @@ class Controller_Buyer extends Controller_BaseReqLogin
 
         $this->userService = new Business_User();
         $this->buyerService = new Business_Buyer();
-//         $this->collectionService = new Business_Collection();
+        // $this->brandService = new Business_Brand();
+        // $this->collectionService = new Business_Collection();
     }
 
     public function action_profile()
@@ -32,8 +34,7 @@ class Controller_Buyer extends Controller_BaseReqLogin
         $view = View::factory('buyer_dashboard');
         $view->set('user', $this->opUser);
         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
-        $view->set('authBrandList', []);
-        
+        $view->set('authBrandList', array_slice($this->buyerService->getAllBrandList($this->opUser['id']), 0, 4));        
         
         $this->response->body($view);
     }
@@ -43,7 +44,9 @@ class Controller_Buyer extends Controller_BaseReqLogin
     	$view = View::factory('buyer_brand');
     	$view->set('user', $this->opUser);
     	$view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
-    	$view->set('authBrandList', array_slice($this->buyerService->getAllBrandList($this->opUser['id']), 0, 4));
+        
+        // $brandUrl = Request::current()->param('url');
+        // $view->set('brandInfo', $this->brandService->getBrandInfoByUrl($brandUrl));
     
     	$this->response->body($view);
     }
