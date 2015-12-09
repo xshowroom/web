@@ -140,7 +140,18 @@ class Business_Buyer
 
     public function checkAuth($userId, $brandId)
     {
-        $res = $this->buyerModel->checkAuth($userId, $brandId);
+        $res = $this->getRelation($userId, $brandId);
+
+        if (empty($res)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public function getRelation($userId, $brandId)
+    {
+        $res = $this->buyerModel->getRelation($userId, $brandId);
         return $res;
     }
 

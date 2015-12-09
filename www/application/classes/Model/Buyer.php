@@ -63,7 +63,7 @@ class Model_Buyer
         return $result[0];
     }
 
-    public function checkAuth($userId, $brandId)
+    public function getRelation($userId, $brandId)
     {
         $result = DB::select()
                     ->from('buyer_brand_map')
@@ -73,11 +73,7 @@ class Model_Buyer
                     ->execute()
                     ->as_array();
 
-        if (!empty($result)) {
-            return true;
-        } else {
-            return false;
-        }
+        return $result;
     }
 
     public function listByAuthStatus($status)

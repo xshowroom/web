@@ -43,7 +43,7 @@ class Controller_Product extends Controller_BaseReqLogin
     {
         $collectionId = $this->request->param('id');
 
-        if (empty($id)){
+        if (empty($id)) {
             // to do
 
         }

@@ -24,12 +24,14 @@ class Business_User
     public $userModel;
     public $msgService;
     public $shopService;
+    public $uploadService;
 
     public function __construct()
     {
         $this->userModel = new Model_User();
         $this->msgService = new Business_Message();
         $this->shopService = new Business_Shop();
+        $this->uploadService = new Business_Upload();
     }
 
     public function login($email, $pass)
@@ -123,22 +125,23 @@ class Business_User
         //$brandUrl      = $brandName;
 
         $brandUrl = urlencode('brands/' . $this->safeFileName($brandName));
-        $extension = substr(strrchr($imagePath, '.'), 1);
-        $realPathFile  = 'data/' . date('ymdHis'). substr(microtime(),2,4) . '.' . $extension;
+        //$extension = substr(strrchr($imagePath, '.'), 1);
+        //$realPathFile  = 'data/' . date('ymdHis'). substr(microtime(),2,4) . '.' . $extension;
         
         $brandExist = $this->checkBrand($brandName);
         if ($brandExist) {
             return null;
         }
         
-        if (file_exists($imagePath)){
+        /*if (file_exists($imagePath)){
             try{
                 copy($imagePath, $realPathFile);
                 unlink($imagePath);
             } catch (Exception $e) {
                 return null;
             }                
-        }
+        }*/
+        list($realPathFile, $mediumPathFile, $smallPathFile) = $this->uploadService->createThreeImage($imagePath); 
 
         $brandId = $this->userModel->addBrandInfo($userId, $brandName, $designerName, $brandUrl, $realPathFile);
         return $brandId;
