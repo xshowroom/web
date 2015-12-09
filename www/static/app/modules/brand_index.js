@@ -31,7 +31,12 @@ angular.module(
      					alert('获取Collection Cover数据失败，请检查！');
      					return;
      				}
+     				$scope.covers = res.data;
+     				$scope.selectedCover = res.data[0];
      			});
+     		};
+     		$scope.setSelectedCover = function(cover){
+     			$scope.selectedCover = cover;
      		};
      		
      		$scope.applyAuth = function(){
@@ -46,6 +51,7 @@ angular.module(
      					alert('获取Auth数据失败，请检查！');
      					return;
      				}
+     				$scope.hasAuth = res.data;
      			});
      		};
      		
