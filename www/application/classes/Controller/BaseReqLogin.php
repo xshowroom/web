@@ -12,15 +12,15 @@ class Controller_BaseReqLogin extends Controller_Base
         $this->opUser = $_SESSION['opUser'];
 
         // redirect to login if no user
-        if(!empty($opUser)) {
+        if(empty($this->opUser)) {
             $this->redirectLogin();
         }
 
         // redirect to login if user role is wrong
         $roleType = (int)$this->opUser['role_type'];
-        $arrowUserType = array(Business_User::ROLE_ADMIN, Business_User::ROLE_BRAND, Business_User::ROLE_BUYER);
+        $allowedUserType = array(Business_User::ROLE_ADMIN, Business_User::ROLE_BRAND, Business_User::ROLE_BUYER);
 
-        if(! in_array($roleType, $arrowUserType,TRUE)){
+        if(! in_array($roleType, $allowedUserType, TRUE)){
             $this->redirectLogin();
         }
     }
