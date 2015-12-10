@@ -15,9 +15,8 @@ class Controller_Api_Guest extends Controller_Base
     public function action_coverImgList()
     {
         $brandId = Request::current()->query('brandId');
-        $season = Request::current()->query('season');
         
-        $res = $this->collectionService->getAllCollectionImg($brandId, $season);
+        $res = $this->collectionService->getAllCollectionImg($brandId);
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
