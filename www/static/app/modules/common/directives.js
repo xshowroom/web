@@ -118,7 +118,7 @@ angular.module(
             var html = [
 				'<div class="col-xs-12">',
 					'<div class="filter-header">',
-						'<span class="filter-name">{{title|uppercase}}</span>',
+						'<span class="filter-name">{{("filter_title__" + (title|uppercase))|translate}}</span>',
 						'<span class="filter-clear-all" ng-click="clearAll()" ng-if="hasClearAll && selectedConditions.length">{{"filter__CLEAR_ALL" | translate}}</span>',
 					'</div>',
 				'</div>',
@@ -156,7 +156,7 @@ angular.module(
             		$scope.selectedConditions[0] = item;
             	}
                 $scope.selected({
-                	name: $scope.title,
+                	name: $scope.title.split(),
                 	conditions: $scope.selectedConditions
                 });
             };

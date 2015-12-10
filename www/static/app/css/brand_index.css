@@ -195,3 +195,18 @@
 .support .btn{
     margin-top: 35px;
 }
+
+
+.modal-content{
+	border-radius: 0;
+	text-align: center;
+	padding: 30px;
+}
+.modal-content .btn.btn-type-1{
+	color: #222;
+	border-color: #222;
+	margin-top: 15px;
+}
+.modal-content .btn.btn-type-1:hover{
+	border-color: #ca7379;
+}

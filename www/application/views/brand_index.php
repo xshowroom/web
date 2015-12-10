@@ -99,7 +99,7 @@
 						<?php if (empty($user)) {?>
 							<a class="btn btn-type-1" href="/login">APPLY</a>
 						<?php }else{?>
-							<button class="btn btn-type-1" ng-click="applyAuth();">APPLY</button>
+							<button class="btn btn-type-1" data-toggle="modal" data-target="#auth-store-modal">APPLY</button>
 						<?php }?>
 					</div>
 					<div class="row">
@@ -134,8 +134,29 @@
             </div>
         </div>
     </section>
+    {{selectedAuthStore || 123}}
     <footer class="row footer-navigation">
         <?php echo View::factory('common/global_navigation_footer'); ?>
     </footer>
+    
+    <div class="modal fade" id="auth-store-modal" tabindex="-1" role="dialog" aria-labelledby="auth-store-modal">
+	  	<div class="modal-dialog" role="document">
+		    <div class="modal-content">
+	      		<div class="modal-body">
+		       		<h4>SELECT THE SHOP TO AUTHORIZE</h4>
+		       		<p>Please select the shop to authorize the brand.</p>
+		       		<div>
+		       			<div class="radio" ng-repeat="store in stores">
+							<label><input type="radio" name="authStore" value="{{store.id}}" ng-model="selectedAuthStore">{{store.name}}</label>
+						</div>
+		       		</div>
+		       		<div>
+		       			<button class="btn btn-type-1" data-dismiss="modal">CANCEL</button>
+		       			<button class="btn btn-type-1" ng-click="applyAuth()">OK</button>
+		       		</div>
+	      		</div>
+	    	</div>
+		</div>
+	</div>
 </body>
 </html>

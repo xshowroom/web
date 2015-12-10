@@ -34,13 +34,14 @@ angular.module(
      				$scope.selectedCover = res.data[0];
      			});
      		};
+     		
      		$scope.setSelectedCover = function(cover){
      			$scope.selectedCover = cover;
      		};
      		
      		$scope.applyAuth = function(){
-     			
-     		}
+     			console.log($scope.selectedAuthStore);
+     		};
      		
      		var checkAuth = function(){
      			Buyer.checkAuth({
@@ -54,11 +55,22 @@ angular.module(
      			});
      		};
      		
+     		var getStoreList = function(){
+     			Buyer.getStoreList().success(function(res){
+     				if (typeof(res) != 'object' || res.status) {
+     					alert('获取Store数据失败，请检查！');
+     					return;
+     				}
+     				$scope.stores = res.data;
+     				$scope.selectedAuthStore = null;
+     			});
+     		};
      		
      		var init = function () {
      			checkAuth();
+     			getStoreList();
      			$scope.conditions = Brand.getIndexConditions();
-     			$scope.seasons = Brand.getSeason();
+     			$scope.seasons = Brand.getSeasons();
      			$scope.selectedSeason = $scope.seasons[0];
      			$scope.refreshCovers($scope.selectedSeason);
      		};

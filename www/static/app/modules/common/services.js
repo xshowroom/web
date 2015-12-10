@@ -38,6 +38,9 @@ angular.module(
 		      	},
 		      	applyAuth: function(opts){
 		      		return $http.get('/api/buyer/checkAuth', {params: opts});
+		      	},
+		      	getStoreList: function(opts){
+		      		return $http.get('/api/buyer/getStoreList', {params: opts});
 		      	}
    			};
          }
@@ -49,42 +52,42 @@ angular.module(
 	    '$http',
 		function ($http) {
 	    	var conditions = {
-				filter_title__MODE: {
+				mode: {
 	    			type: 'radio',
 	         		values: [
 	         		    'dropdown__COLLECTION_MODE__PRE_ORDER', 'dropdown__COLLECTION_MODE__STOCK',
 	                    'dropdown__COLLECTION_MODE__RE_ORDER', 'dropdown__COLLECTION_MODE__PERMANENT'
 	         		]
 	    		},
-				filter_title__SHOW: {
+				show: {
 	         		type: 'radio',
 	         		values: [
 	         		    'dropdown__SHOW__ALL', 'dropdown__SHOW__WHATS_NEW',
 	         		    'dropdown__SHOW__WOMEN', 'dropdown__SHOW__MEN'
 	         		]
 	         	},
-				filter_title__CATEGORY: {
+				category: {
 	         		type: 'radio',
 	         		values: [
 	         		    'dropdown__COLLECTION__WOMEN', 'dropdown__COLLECTION__MEN', 'dropdown__COLLECTION__ACCESSORIES',
 	         	        'dropdown__COLLECTION__LIFESTYLE', 'dropdown__COLLECTION__OTHERS'
 	         	    ]
 	         	},
-				filter_title__SEASON:{
+				season:{
 	    		  	type: 'checkbox',
 	    		    values: [
 	    		        'dropdown__COLLECTION_SEASON__AW_15', 'dropdown__COLLECTION_SEASON__PRE_SS16',
 	    		        'dropdown__COLLECTION_SEASON__SS_16', 'dropdown__COLLECTION_SEASON__AW_16'
 	    		    ]
 	    		},
-				filter_title__AVAILABLE: {
+				available: {
 	    		  	type: 'radio',
 	    		    values: [
 	    		        'dropdown__AVAILABLE__LAST_DAY', 'dropdown__AVAILABLE__1_WEEK', 'dropdown__AVAILABLE__4_WEEK',
 	    		        'dropdown__AVAILABLE__8_WEEK', 'dropdown__AVAILABLE__12_WEEK'
 	    		    ]
 	    		},
-				filter_title__COUNTRY: {
+				country: {
 	    		   	type: 'checkbox',
 	    		    values: [
 						'dropdown__COUNTRY__UnitedKiongdom', 'dropdown__COUNTRY__France', 'dropdown__COUNTRY__Italy',
@@ -102,20 +105,20 @@ angular.module(
 		      	},
 		      	getShopConditions: function(){
 		      		return {
-						filter_title__SHOW: conditions.filter_title__SHOW,
-						filter_title__SEASON: conditions.filter_title__SEASON,
-						filter_title__AVAILABLE: conditions.filter_title__AVAILABLE,
-						filter_title__COUNTRY: conditions.filter_title__COUNTRY
+		      			show: conditions.show,
+						season: conditions.season,
+						available: conditions.available,
+						country: conditions.country
 		      		};
 		      	},
 		      	getIndexConditions: function(){
 		      		return {
-						filter_title__MODE: conditions.filter_title__MODE,
-						filter_title__AVAILABLE: conditions.filter_title__AVAILABLE
+						mode: conditions.mode,
+						available: conditions.available
 		      		};
 		      	},
-		      	getSeason: function(){
-		      		return conditions.filter_title__SEASON.values;
+		      	getSeasons: function(){
+		      		return conditions.season.values;
 		      	},
 		      	getCoversBySeason: function (opts) {
 		    		return $http.get('/api/guest/coverImgList', {params: opts});
