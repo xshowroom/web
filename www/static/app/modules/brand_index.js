@@ -16,7 +16,7 @@ angular.module(
     [
      	'$scope', 'Brand', 'Buyer',
         function ($scope, Brand, Buyer) {
-     		$scope.setSeason = function (season) {
+     		$scope.selectSeason = function (season) {
      			$scope.selectedSeason = season;
      			$scope.refreshCovers(season)
      		};
@@ -35,12 +35,25 @@ angular.module(
      			});
      		};
      		
-     		$scope.setSelectedCover = function(cover){
+     		$scope.selectCover = function(cover){
      			$scope.selectedCover = cover;
      		};
      		
+     		$scope.selectStore = function(store){
+     			$scope.selectedStore = store;
+     		};
+     		
      		$scope.applyAuth = function(){
-     			console.log($scope.selectedAuthStore);
+     			Buyer.applyAuth({
+     				shopId: $scope.selectedStore.id,
+     				brandId: $scope.brandId
+     			}).success(function(res){
+     				if (typeof(res) != 'object' || res.status) {
+     					alert('获取Auth数据失败，请检查！');
+     					return;
+     				}
+     			});
+     			$('#auth-store-modal').modal('hide');
      		};
      		
      		var checkAuth = function(){
@@ -62,7 +75,7 @@ angular.module(
      					return;
      				}
      				$scope.stores = res.data;
-     				$scope.selectedAuthStore = null;
+     				$scope.selectedStore = null;
      			});
      		};
      		

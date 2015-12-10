@@ -180,11 +180,14 @@
                 </div>
             </div>
             <div class="store-list-content row">
+            	<?php
+            		for ($i=0, $count=count($storeList); $i<$count; $i++) { 
+            	?>
                 <div class="col-xs-12">
                     <div class="store-item">
                     	<div class="store-item-header">
-                    		<span class="store-name">Store Name A</span>
-                    		<span class="store-location">Shanghai, China</span>
+                    		<span class="store-name"><?=$storeList[$i]['name']?></span>
+                    		<span class="store-location"><?=$storeList[$i]['address']?>, {{'<?=$storeList[$i]['country']?>' | translate}}</span>
                     		<a class="pull-right">Edit</a>
                     	</div>
                         <div class="store-item-body">
@@ -193,13 +196,14 @@
                         	</div>
                             <div class="store-details">
 	                            <div>Brands</div>
-	                            <div>brand a, brand a, brand a, brand a, brand a</div>
+	                            <div><?=$storeList[$i]['brand_list']?></div>
 	                            <div>About Store</div>
 	                            <div>This is the introduction of your first store. This is the introduction of your first store. This is the introduction of your first store.</div>
 	                        </div>
                         </div>
                     </div>
                 </div>
+                <?php }?>
             </div>
         </div>
     </section>

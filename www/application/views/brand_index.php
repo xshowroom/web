@@ -76,10 +76,10 @@
 						 	<span class="caret"></span>
 						</span>
 						<ul class="dropdown-menu">
-							<li ng-repeat="season in seasons" ng-click="setSeason(season);">{{season | translate}}</li>
+							<li ng-repeat="season in seasons" ng-click="selectSeason(season);">{{season | translate}}</li>
 						</ul>
 					</div>
-            		<div class="collection-cover" ng-repeat="cover in covers|limitTo: 18" ng-click="setSelectedCover(cover);">
+            		<div class="collection-cover" ng-repeat="cover in covers|limitTo: 18" ng-click="selectCover(cover);">
             			<img ng-src="/{{cover.cover_image_small}}"/>
             		</div>
             	</div>
@@ -134,7 +134,6 @@
             </div>
         </div>
     </section>
-    {{selectedAuthStore || 123}}
     <footer class="row footer-navigation">
         <?php echo View::factory('common/global_navigation_footer'); ?>
     </footer>
@@ -146,8 +145,8 @@
 		       		<h4>SELECT THE SHOP TO AUTHORIZE</h4>
 		       		<p>Please select the shop to authorize the brand.</p>
 		       		<div>
-		       			<div class="radio" ng-repeat="store in stores">
-							<label><input type="radio" name="authStore" value="{{store.id}}" ng-model="selectedAuthStore">{{store.name}}</label>
+		       			<div class="radio" ng-repeat="store in stores track by $index">
+							<label><input type="radio" name="authStore" ng-value="store" ng-click="selectStore(store)">{{store.name}}</label>
 						</div>
 		       		</div>
 		       		<div>

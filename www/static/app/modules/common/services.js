@@ -37,7 +37,7 @@ angular.module(
 		      		return $http.get('/api/buyer/checkAuth', {params: opts});
 		      	},
 		      	applyAuth: function(opts){
-		      		return $http.get('/api/buyer/checkAuth', {params: opts});
+		      		return $http.get('/api/buyer/apply', {params: opts});
 		      	},
 		      	getStoreList: function(opts){
 		      		return $http.get('/api/buyer/getStoreList', {params: opts});
