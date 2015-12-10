@@ -41,6 +41,10 @@ class Business_Brand
             $brandList = $this->getAllBrand();
         }
         
+        if (empty($brandList)) {
+            return array();
+        }
+        
         // 所有的user_id
         $userIdList = array_column($brandList, 'user_id');
         
