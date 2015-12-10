@@ -428,11 +428,9 @@ angular.module(
             filter_title__SEASON: "时尚季",
             filter_title__AVAILABLE: "订货期限",
             filter_title__COUNTRY: "品牌国家",
-            filter_title__STATUS: "售卖模式",
-            filter_title__CATEGORY:"系列类型",
+            filter_title__MODE: "售卖模式",
+            filter_title__CATEGORY:"系列类型"
 
-            filter__CLEAR_ALL: "清除",
-            filter__SHOW_MORE: "更多"
         },
         'en': {
             /**
