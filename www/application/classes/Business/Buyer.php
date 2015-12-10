@@ -125,9 +125,9 @@ class Business_Buyer
 
     public function apply($userId, $shopId, $brandId)
     {
-        $brand = $this->brandModel->getByUserId($brandId);
+        $brand = $this->brandModel->getByUserId($userId);
         // 品牌不存在或已删除
-        if (empty($brand) || $brand['status'] != STAT_NORMAL) {
+        if (empty($brand)) {
             $errorInfo = Kohana::message('message', 'STATUS_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
