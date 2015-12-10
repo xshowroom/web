@@ -39,7 +39,22 @@ class Controller_Api_Buyer extends Controller_BaseReqLogin
             'data'   => $res,
         ));
     }
-
+	
+    public function action_getStoreList()
+    {
+    	$userId  = $this->opUser['id'];
+    	
+    	$res = array();
+    	array_push($res, $this->buyerService->getStoreList($userId));
+    
+    	echo json_encode(array(
+    			'status' => STATUS_SUCCESS,
+    			'msg'    => '',
+    			'data'   => $res,
+    	));
+    }
+    
+    
     public function action_getAuthList()
     {
         $userId  = $this->opUser['id'];
