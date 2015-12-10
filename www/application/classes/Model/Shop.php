@@ -39,7 +39,7 @@ class Model_Shop
                     ->execute()
                     ->as_array();
         
-        return empty($result) ? array() : $result[0];
+        return $result;
     }
 
     public function updateStatus($shopId, $status)

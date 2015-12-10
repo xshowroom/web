@@ -36,8 +36,7 @@ class Controller_Buyer extends Controller_BaseReqLogin
         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
         $view->set('authBrandList', array_slice($this->buyerService->getAuthBrandList($this->opUser['id']), 0, 4));
         
-        $storeList = array();
-        array_push($storeList, $this->buyerService->getStoreList($this->opUser['id']));
+        $storeList = $this->buyerService->getStoreList($this->opUser['id']);
         $view->set('storeList', array_slice($storeList, 0, 2));
         
         $this->response->body($view);
