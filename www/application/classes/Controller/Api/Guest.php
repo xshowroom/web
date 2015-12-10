@@ -25,4 +25,19 @@ class Controller_Api_Guest extends Controller_Base
             'data' => $res,
         ));
     }
+    
+    public function action_checkAuth()
+    {
+        $userId  = $this->opUser['id'];
+        //$shopId  = (int)trim(Request::current()->query('shopId'));
+        $brandId = (int)trim(Request::current()->query('brandId'));
+    
+        $res = $this->buyerService->checkAuth($userId, $brandId);
+    
+        echo json_encode(array(
+                'status' => STATUS_SUCCESS,
+                'msg'    => '',
+                'data'   => $res,
+        ));
+    }
 }

@@ -56,7 +56,6 @@
                     </div>
                 </div>
             </div>
-            <?php var_dump($authBrandList)?>
         	<?php if (empty($authBrandList)) { ?>
         	 <div class="row">
                 <div class="col-xs-12 text-center empty-warning">
