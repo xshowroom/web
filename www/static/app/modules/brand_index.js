@@ -69,7 +69,7 @@ angular.module(
      			$scope.filters[name] = condition
      			
      			$scope.filterTimeout = $timeout(function(){
-     				refreshCollectionList(true);
+     				$scope.refreshCollectionList(true);
      			}, 500, true);
      		};
      		
