@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html ng-app="xShowroom.product.index">
+<html ng-app="xShowroom.product.index"
+	ng-init="hasAuth=<?=$hasAuth ? 'true': 'false'?>;">
 <head>
     <meta charset="UTF-8" >
     <title>XShowroom</title>
@@ -27,12 +28,17 @@
     <nav class="row setting-info">
         <?php echo View::factory('common/global_setting_without_login'); ?>
     </nav>
-    <nav class="row user-navigation">
-        <?php echo View::factory('common/global_navigation_top_brand',
-            array('currentPage' =>  'collection', 'userAttr'=> $userAttr)); 
-        ?>
-    </nav>
-    <section class="row no-vertical-padding uploading">
+   <?php if ($user["role_type"] == "1"){?>
+	<nav class="row guest-navigation">
+        <?php echo View::factory('common/global_navigation_top_brand', array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); ?>
+	</nav>
+	<?php } else if ($user["role_type"] == "2"){ ?>
+	<nav class="row user-navigation">
+        <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); ?>
+	</nav>
+	<?php }?>
+	
+    <section class="row no-vertical-padding uploading" ng-cloak>
         <div class="container product-info">
         	<div class="row">
     			<div class="col-xs-12">
@@ -60,6 +66,25 @@
 	            		<div class="product-gallery-action" ng-if="images.urls.length > 3" 
 	            			ng-class="{'disabled': images.offset == images.urls.length - 3 || images.urls.length <= 3}">
 	            			<span class="glyphicon glyphicon-chevron-right" ng-click="images.offset = images.offset + ((images.offset < images.urls.length - 3) ? 1 : 0);"></span>
+	            		</div>
+	            	</div>
+	            	<div class="collection-info">
+	            		<h5><?=$collection['name']?></h5>
+	            		<div>
+	            			<span>Order Mode:</span>
+	            			<span>{{'<?=$collection['mode']?>' | translate}}</span>
+	            		</div>
+	            		<div>
+	            			<span>Deadline for Order:</span>
+	            			<span><?=$collection['deadline']?></span>
+	            		</div>
+	            		<div>
+	            			<span>Delivery Date:</span>
+	            			<span><?=$collection['delivery_date']?></span>
+	            		</div>
+	            		<div>
+	            			<span>Min-order:</span>
+	            			<span><?=$collection['currency']?><?=$collection['mini_order']?></span>
 	            		</div>
 	            	</div>
                 </div>
@@ -124,9 +149,14 @@
 	                 		<span class="product-care-instruction"><?=htmlentities($production['care_instruction'])?></span>
                  		</div>
                  	</div>
-                 	<?php if ($collection['status'] == '0'){?>
+                 	<?php if ($collection['status'] == '0' && $hasAuth){?>
                  	<div class="col-xs-12 product-action">
                  		<button class="btn btn-type-2" data-toggle="modal" data-target="#modalDeleteConfirm"><?=__("product_index__PRODUCT_btn_DELETE")?></button>
+                 	</div>
+                 	<?php } else{?>
+                 	<div class="col-xs-12 product-action">
+                 		<button class="btn btn-type-2">ADD TO CART</button>
+                 		<button class="btn btn-type-1">VIEW CART</button>
                  	</div>
                  	<?php }?>
                 </div>

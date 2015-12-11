@@ -100,7 +100,7 @@
 
 .product-info .product-gallery{
 	margin-top: 20px;
-	height: 80px;
+	height: 200px;
 }
 .product-info .product-gallery > div{
 	height: 100%;
@@ -154,4 +154,14 @@
 	-webkit-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
 	-o-transform: translateY(-50%);
+}
+.collection-info{
+	text-align: center;
+}
+.collection-info h5{
+	font-size: 24px;
+	margin-bottom: 30px;
+}
+.collection-info div{
+	line-height: 2em;
 }
