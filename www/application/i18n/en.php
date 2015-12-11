@@ -52,6 +52,7 @@ return array_merge(
         'global_navigation_top_user__COLLECTION' => 'COLLECTION',
         'global_navigation_top_user__ORDER' => 'ORDER',
     	'global_navigation_top_user__BRAND' => 'SHOP',
+        'global_navigation_top_user__LOOKBOOK' => 'LOOKBOOK',
         'global_navigation_top_user__CART' => 'CART',
         'global_navigation_top_user__STORE' => 'STORE',
         'global_navigation_top_user__MESSAGE' => 'MESSAGE',
