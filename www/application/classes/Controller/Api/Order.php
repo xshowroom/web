@@ -24,7 +24,7 @@ class Controller_Api_Order extends Controller_BaseReqLogin
         ));
     }
 
-    public function getFromCart()
+    public function action_getFromCart()
     {
         $userId = $this->opUser['id'];
         $productionId = Request::current()->post('productionId');
@@ -38,11 +38,11 @@ class Controller_Api_Order extends Controller_BaseReqLogin
         ));
     }
 
-    public function getListFromCart()
+    public function action_getListFromCart()
     {
         $userId = $this->opUser['id'];
 
-        $res = $this->orderService->getProductionListFromCart($userIds);       
+        $res = $this->orderService->getProductionListFromCart($userId);
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
@@ -51,7 +51,7 @@ class Controller_Api_Order extends Controller_BaseReqLogin
         ));
     }
 
-    public function deleteFromCart()
+    public function action_deleteFromCart()
     {
         $userId = $this->opUser['id'];
         $productionId = Request::current()->post('productionId');

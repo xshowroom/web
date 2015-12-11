@@ -33,11 +33,6 @@ class Business_Order
     {
         $productionInCart = $this->orderModel->getProductionFromCart($userId, $productionId);
 
-        if (empty($productionInCart)) {
-            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
-            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
-        }
-
         return $productionInCart;
     }
 
