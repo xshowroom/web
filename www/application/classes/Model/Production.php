@@ -106,7 +106,7 @@ class Model_Production
                     ->where('collection_id', 'IN', $collectionIdList)
                     ->where('status', '=', STAT_NORMAL)
                     ->execute()
-                    ->as_array();
+                    ->as_array('id');
         
         return $result;
     }

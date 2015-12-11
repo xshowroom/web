@@ -46,7 +46,7 @@ class Model_Collection
                     ->where('status', '!=', self::TYPE_OF_DELETE)
                     ->order_by('id', 'DESC')
                     ->execute()
-                    ->as_array();
+                    ->as_array('id');
         
         return $result;
     }

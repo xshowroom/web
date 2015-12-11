@@ -94,21 +94,24 @@ class Business_Collection
         $brandInfo = $this->brandModel->getById($brandId);
         
         $collectionList = $this->getCollectionList($brandInfo['user_id']);
-        $collectionIdList = array_column($collectionList, 'id');
+        foreach ($collectionList as $collection) {
+            $resCollectionList[$collection['id']] = $collection;
+        }
+        $collectionIdList = array_column($resCollectionList, 'id');
         if (empty($collectionIdList)) {
             return array();
         }
         
         $productionList = $this->productionModel->getByCollectionIdList($collectionIdList);
         foreach ($productionList as $production) {
-            $collectionList[$production['collection_id']]['production'][$production['category']] = array(
+            $resCollectionList[$production['collection_id']]['production'][$production['category']][] = array(
                 'id' => (int)$production['id'],
                 'name' => $production['name'],
                 'image' => $production['image_url'],
             );
         }
         
-        return $collectionList;
+        return $resCollectionList;
     }
     
     public function getCollectionInfo($userId, $collectionId)
