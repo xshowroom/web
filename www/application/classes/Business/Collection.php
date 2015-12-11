@@ -95,6 +95,9 @@ class Business_Collection
         
         $collectionList = $this->getCollectionList($brandInfo['user_id']);
         $collectionIdList = array_column($collectionList, 'id');
+        if (empty($collectionIdList)) {
+            return array();
+        }
         
         $productionList = $this->productionModel->getByCollectionIdList($collectionIdList);
         foreach ($productionList as $production) {
