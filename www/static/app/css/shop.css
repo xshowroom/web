@@ -60,3 +60,10 @@
     color: #222;
     z-index: 99;
 }
+.brand-list .empty-warning{
+	margin-top: 80px;
+}
+
+.brand-list .empty-warning p{
+	margin-top: 30px;
+}
