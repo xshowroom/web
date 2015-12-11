@@ -336,7 +336,8 @@ angular.module(
             dropdown__STORE__ONLINE_SHOP: '网店',
 
             // Collection Type
-            dropdown__COLLECTION__ALL: '全部',
+            dropdown__COLLECTION__ALL: '所有产品',
+            dropdown__COLLECTION__WHATS_NEW: '最新发布',
             dropdown__COLLECTION__WOMEN: '女士',
             dropdown__COLLECTION__ACCESSORIES: '首饰',
             dropdown__COLLECTION__MEN: '男士',
@@ -750,6 +751,7 @@ angular.module(
 
             // Collection Type
             dropdown__COLLECTION__ALL: 'ALL',
+            dropdown__COLLECTION__WHATS_NEW: 'WHAT\'S NEW',
             dropdown__COLLECTION__WOMEN: 'WOMEN',
             dropdown__COLLECTION__ACCESSORIES: 'ACCESSORIES',
             dropdown__COLLECTION__MEN: 'MEN',
