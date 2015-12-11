@@ -41,6 +41,9 @@ angular.module(
 		      	},
 		      	getStoreList: function(opts){
 		      		return $http.get('/api/buyer/getStoreList', {params: opts});
+		      	},
+		      	getMyBrandList: function(opts){
+		      		return $http.get('/api/buyer/getBrandList', {params: opts});
 		      	}
    			};
          }
@@ -113,8 +116,13 @@ angular.module(
 		      	},
 		      	getIndexConditions: function(){
 		      		return {
-//						mode: conditions.mode,
 						available: conditions.available
+		      		};
+		      	},
+		      	getMyBrandConditions: function(){
+		      		return {
+		      			show: conditions.show,
+						country: conditions.country
 		      		};
 		      	},
 		      	getCoversBySeason: function (opts) {
