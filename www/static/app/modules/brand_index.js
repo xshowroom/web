@@ -29,11 +29,10 @@ angular.module(
      			$scope.selectedStore = store;
      		};
      		
-     		$scope.refreshCovers = function(season){
+     		$scope.refreshCovers = function(){
      			$scope.seasons = [];
      			Brand.getCoversBySeason({
-     				brandId: $scope.brandId,
-     				season: season
+     				brandId: $scope.brandId
      			}).success(function(res){
      				if (typeof(res) != 'object' || res.status) {
      					alert('获取Cover数据失败，请检查！');
@@ -98,6 +97,11 @@ angular.module(
      			});
      		};
      		
+     		$scope.parseImageUrl = function(urlStr){
+     			var urls = JSON.parse(urlStr);
+     			return urls[0];
+     		};
+     		
      		var checkAuth = function(){
      			if ($scope.isGuest){
      				$scope.authCode = -2;
@@ -141,8 +145,7 @@ angular.module(
          		};
      			$scope.filters = {};
      			$scope.conditions = Brand.getIndexConditions();
-     			$scope.refreshCovers($scope.selectedSeason);
-     			
+     			$scope.refreshCovers();
      		};
      		
      		init();

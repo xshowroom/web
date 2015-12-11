@@ -120,9 +120,39 @@
 							</div>
 						</div>
 					</div>
-					<div class="brand-list-action text-center row" ng-if="hasNext">
-		                 <button class="btn btn-type-1" ng-click="refreshCollectionList()"><?=__("collection_index__btn_LOAD_MORE")?></button>
-		            </div>
+				</div>
+				<div class="col-xs-9 collection-list">
+					<div class="row"  ng-if="!collections.content.length">
+						<div class=" col-xs-12">
+							<div class="collection-list-header">
+								<span class="collection-list-title">COLLECTIONS</span>
+							</div>
+							 <div class="col-xs-12 text-center empty-warning">
+			                    <img src="/static/app/images/empty.png">
+			                    <p>No brand matches your conditions!<br/>Start your business with changing conditons.</p>
+			                </div>
+						</div>
+					</div>
+					<div class="row" ng-repeat-start="collection in collections.content">
+						<div class=" col-xs-12">
+							<div class="collection-list-header">
+								<a class="collection-list-title" ng-href="/collection/{{collection.id}}">{{collection.name}}</a>
+							</div>
+						</div>
+					</div>
+					<div class="collection-list-content row" ng-repeat-end>
+						<div class="col-xs-3" ng-repeat="(category, detail) in collection.production">
+							<a target="_self" href="/collection/{{collection.id}}#?category={{category}}" class="collection-item">
+								<img ng-src="/{{parseImageUrl(detail[0].image)}}" class="collection-item-image">
+							</a>
+							<div class="collection-item-name">
+								<span>{{category | translate}}({{detail.length}})</span>
+							</div>
+						</div>
+					</div>
+					<div class="collection-list-action text-center row" ng-if="hasNext">
+			            <button class="btn btn-type-1" ng-click="refreshCollectionList()"><?=__("collection_index__btn_LOAD_MORE")?></button>
+			        </div>
 				</div>
             </div>
         </div>
