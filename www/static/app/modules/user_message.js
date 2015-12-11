@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'UserMessageCtrl',
     [
-        '$scope','Message',
-        function ($scope, Message){
+        '$scope',
+        function ($scope){
             $scope.clickMessage=function(){
                 messageId = angular.element('#msg_id').val();
             };

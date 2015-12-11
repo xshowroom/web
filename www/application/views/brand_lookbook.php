@@ -15,7 +15,7 @@
 	<script type="text/javascript" src="/static/app/modules/common/i18n.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/services.js"></script>
 	<script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
-	<script type="text/javascript" src="/static/app/modules/brand_dashboard.js"></script>
+	<script type="text/javascript" src="/static/app/modules/brand_lookbook.js"></script>
 </head>
 <body ng-controller="BrandLookbookCtrl" class="container-fluid">
 	<nav class="row setting-info">
@@ -23,7 +23,7 @@
 	</nav>
 	<nav class="row user-navigation">
         <?php echo View::factory('common/global_navigation_top_brand',
-        	array('currentPage' =>  'order', 'userAttr'=> $userAttr)); 
+        	array('currentPage' =>  'lookbook', 'userAttr'=> $userAttr));
        	?>
 	</nav>
 	<section class="row">

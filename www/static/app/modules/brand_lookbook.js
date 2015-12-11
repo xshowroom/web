@@ -14,12 +14,8 @@ angular.module(
 .controller(
     'BrandLookbookCtrl',
     [
-     	'$scope',
+        '$scope',
         function ($scope) {
-     		$scope.filters = {
-     			limit: 4,
-     			status: ''
-     		};
 
         }
     ]
