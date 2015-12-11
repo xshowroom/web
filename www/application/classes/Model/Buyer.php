@@ -73,7 +73,7 @@ class Model_Buyer
                     ->execute()
                     ->as_array();
 
-        return $result;
+        return empty($result) ? array() : $result[0];
     }
 
     public function listByAuthStatus($status)
