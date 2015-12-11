@@ -49,7 +49,7 @@ class Business_Brand
         $userIdList = array_column($brandList, 'user_id');
         
         // 如果有show查询条件，筛选出相应的user_id
-        if (!empty($filter['show']) || !empty($filter['season']) || !empty($filter['available'])) {
+        if ((!empty($filter['show']) && $filter['show'] != 'dropdown__COLLECTION__ALL')|| !empty($filter['season']) || !empty($filter['available'])) {
             $collectionList = $this->collectionModel->getByFilter($filter);
             $tempIdList = array_column($collectionList, 'user_id');
             $userIdList = array_intersect($userIdList, $tempIdList);
