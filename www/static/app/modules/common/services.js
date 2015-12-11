@@ -62,7 +62,7 @@ angular.module(
 				show: {
 	         		type: 'radio',
 	         		values: [
-	         		    'dropdown__COLLECTION__ALL', 'dropdown__COLLECTION__WHATS_NEW',
+	         		    'dropdown__COLLECTION__WHATS_NEW',
 	         		    'dropdown__COLLECTION__WOMEN', 'dropdown__COLLECTION__MEN'
 	         		]
 	         	},
