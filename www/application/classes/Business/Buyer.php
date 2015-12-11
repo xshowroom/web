@@ -82,7 +82,7 @@ class Business_Buyer
     public function getCollectionList($brandId)
     {
         $collectionStatList = $this->collectionService->getCollectionStatInfo($brandId);
-        return $collectionStatList;
+        return array_values($collectionStatList);
     }
     
     public function getStoreList($userId)
