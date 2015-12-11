@@ -135,8 +135,9 @@ class Business_Buyer
         $auth = $this->buyerModel->getAuthListByUserAndBrand($userId, $brandId);
         // 用户有shop已经申请过权限
         if (!empty($auth)) {
-            $errorInfo = Kohana::message('message', 'STATUS_ERROR');
-            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+//             $errorInfo = Kohana::message('message', 'STATUS_ERROR');
+//             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+            return -1;
         }
 
         $res = $this->buyerModel->apply($userId, $shopId, $brandId);
@@ -148,10 +149,10 @@ class Business_Buyer
         $res = $this->getRelation($userId, $brandId);
 
         if (empty($res)) {
-            return false;
+            return -2;
         }
 
-        return true;
+        return (int)$res['status'];
     }
 
     public function getRelation($userId, $brandId)
