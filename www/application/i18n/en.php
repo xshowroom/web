@@ -54,8 +54,11 @@ return array_merge(
     	'global_navigation_top_user__BRAND' => 'SHOP',
         'global_navigation_top_user__LOOKBOOK' => 'LOOKBOOK',
         'global_navigation_top_user__CART' => 'CART',
-        'global_navigation_top_user__STORE' => 'STORE',
+        'global_navigation_top_user__MY_BRANDS' => 'MY BRANDS',
         'global_navigation_top_user__MESSAGE' => 'MESSAGE',
+
+        'global_navigation_top_user__BUYER_MY_BRAND' => 'MY BRAND',
+        'global_navigation_top_user__BUYER_MY_STORE' => 'MY STORE',
         'global_navigation_top_user__PROFILE' => 'MY PROFILE',
         'global_navigation_top_user__SIGN_OUT' => 'SIGN OUT',
     ),

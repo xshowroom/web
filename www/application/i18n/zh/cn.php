@@ -54,8 +54,11 @@ return array_merge(
         'global_navigation_top_user__BRAND' => '商品集市',
         'global_navigation_top_user__LOOKBOOK' => '产品目录',
         'global_navigation_top_user__CART' => '购物车',
-        'global_navigation_top_user__STORE' => '我的店铺',
+        'global_navigation_top_user__MY_BRANDS' => '我的品牌',
         'global_navigation_top_user__MESSAGE' => '消息中心',
+
+        'global_navigation_top_user__BUYER_MY_BRAND' => '我的品牌',
+        'global_navigation_top_user__BUYER_MY_STORE' => '我的商店',
         'global_navigation_top_user__PROFILE' => '个人中心',
         'global_navigation_top_user__SIGN_OUT' => '退出登录',
     ),

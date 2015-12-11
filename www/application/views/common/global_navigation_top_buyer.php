@@ -9,9 +9,9 @@
 			<ul class="main-naviagtions">
 				<li><a href="<?=URL::site('buyer/dashboard');?>" <?php if ($currentPage == 'dashboard'){?>class="active"<?php }?>><?=__("global_navigation_top_user__DASHBOARD");?></a></li>
 				<li><a href="<?=URL::site('shop');?>" <?php if ($currentPage == 'shop'){?>class="active"<?php }?>><?=__("global_navigation_top_user__BRAND");?></a></li>
+				<li><a href="<?=URL::site('buyer/brand');?>" <?php if ($currentPage == 'my_brands'){?>class="active"<?php }?>><?=__("global_navigation_top_user__MY_BRANDS");?></a></li>
+				<li><a href="<?=URL::site('buyer/cart');?>" <?php if ($currentPage == 'cart'){?>class="active"<?php }?>><?=__("global_navigation_top_user__CART");?></a></li>
 				<li><a href="<?=URL::site('buyer/order');?>" <?php if ($currentPage == 'order'){?>class="active"<?php }?>><?=__("global_navigation_top_user__ORDER");?></a></li>
-				<li><a href="#" <?php if ($currentPage == 'cart'){?>class="active"<?php }?>><?=__("global_navigation_top_user__CART");?></a></li>
-				<li><a href="<?=URL::site('buyer/store');?>" <?php if ($currentPage == 'brand'){?>class="active"<?php }?>><?=__("global_navigation_top_user__STORE");?></a></li>
 				<li><a href="<?=URL::site('message/list');?>"  <?php if ($currentPage == 'message'){?>class="active"<?php }?>><?=__("global_navigation_top_user__MESSAGE");?></a></li>
 			</ul>
 		</div>
@@ -23,6 +23,8 @@
 				 	<span class="caret"></span>
 				</a>
 				<ul class="dropdown-menu">
+					<li><a href="<?=URL::site('buyer/brand');?>"><?=__("global_navigation_top_user__BUYER_MY_BRAND");?></a></li>
+					<li><a href="<?=URL::site('buyer/store');?>"><?=__("global_navigation_top_user__BUYER_MY_STORE");?></a></li>
 					<li><a href="<?=URL::site('user/profile');?>"><?=__("global_navigation_top_user__PROFILE");?></a></li>
 					<li><a href="<?=URL::site('user/logout');?>"><?=__("global_navigation_top_user__SIGN_OUT");?></a></li>
 				</ul>
