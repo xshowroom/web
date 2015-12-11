@@ -86,7 +86,7 @@
             </div>
         </div>
     </section>
-     <section class="row">
+    <section class="row">
         <div class="container">
             <div class="row">
             	<div class="col-xs-3">
