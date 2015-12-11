@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html ng-app="xShowroom.collection.index" ng-init="collectionId = <?=$collection['id']?>;">
+<html ng-app="xShowroom.collection.index" 
+	ng-init="collectionId=<?=$collection['id']?>; hasAuth=<?=$collection['user_id'] == $userAttr['user_id'] ? 'true': 'false'?>;">
 <head>
     <meta charset="UTF-8" >
     <title>XShowroom</title>
@@ -25,15 +26,18 @@
     <script type="text/javascript" src="/static/app/modules/collection_index.js"></script>
 </head>
 <body ng-controller="CollectionIndexCtrl" class="container-fluid" ng-cloak>
-    <nav class="row setting-info">
-        <?php echo View::factory('common/global_setting_without_login'); ?>
-    </nav>
-    <nav class="row user-navigation">
-        <?php echo View::factory('common/global_navigation_top_brand',
-            array('currentPage' =>  'collection', 'userAttr'=> $userAttr)); 
-        ?>
-    </nav>
-    
+	<nav class="row setting-info">
+		<?php echo View::factory('common/global_setting_without_login'); ?>
+	</nav>
+	<?php if ($user["role_type"] == "1"){?>
+	<nav class="row guest-navigation">
+        <?php echo View::factory('common/global_navigation_top_brand', array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); ?>
+	</nav>
+	<?php } else if ($user["role_type"] == "2"){ ?>
+	<nav class="row user-navigation">
+        <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); ?>
+	</nav>
+	<?php }?>
     <?php if ($collection['user_id'] == $userAttr['user_id']) {?>
     <section class="row no-vertical-padding uploading">
         <div class="container collection-info">
@@ -68,8 +72,8 @@
                  			<p class="col-xs-10" ng-if="!showAllDesc">{{collection.description.split("\n")[0]}}</p>
 	                 		<p class="col-xs-10" ng-if="showAllDesc" >{{collection.description}}</p>
 	                 		<div class="col-xs-2">
-	                 			<a href="#" ng-show="showAllDesc"  ng-click="showAllDesc = !showAllDesc;"><?=__("collection_index__HIDE")?></a>
-	                 			<a href="#" ng-show="!showAllDesc" ng-click="showAllDesc = !showAllDesc;"><?=__("collection_index__SHOW_ALL")?></a>
+	                 			<a ng-show="showAllDesc"  ng-click="showAllDesc = !showAllDesc;"><?=__("collection_index__HIDE")?></a>
+	                 			<a ng-show="!showAllDesc" ng-click="showAllDesc = !showAllDesc;"><?=__("collection_index__SHOW_ALL")?></a>
 	                 		</div>
                  		</div>
                  	</div>
@@ -208,6 +212,46 @@
             </div>
         </div>
     </section>
+    <?php } else { ?>
+    <section class="row no-vertical-padding uploading">
+        <div class="container collection-info">
+            <div class="row" ng-show="!isEditing">
+                <div class="col-xs-3">
+                	<div class="collection-cover">
+                 		<img src="/<?=$collection['cover_image_medium']?>">
+                 	</div>
+                </div>
+                <div class="col-xs-9">
+                 	<div class="col-xs-12 collection-detail collection-name">
+                 		<h2><?= $collection['name']?></h2>
+                 	</div>
+                 	<div class="col-xs-12 collection-detail">
+                 		<span><?=__("collection_index__COLLECTION_MODE")?>:</span><span>{{'<?= $collection['mode']?>' | translate}}</span>
+                 	</div>
+                 	<div class="col-xs-12 collection-detail">
+                 		<span><?=__("collection_index__COLLECTION_DEADLINE")?>:</span><span><?= $collection['deadline']?></span>
+                 	</div>
+                 	<div class="col-xs-12 collection-detail">
+                 		<span><?=__("collection_index__COLLECTION_DELIVERY_DATE")?>:</span><span><?= $collection['delivery_date']?></span>
+                 	</div>
+                 	<div class="col-xs-12 collection-detail">
+                 		<span><?=__("collection_index__COLLECTION_MINIMUM_ORDER")?>:</span><span><?= $collection['currency']?><?= $collection['mini_order']?></span>
+                 	</div>
+                 	<div class="col-xs-11 collection-detail">
+                 		<div><?=__("collection_index__COLLECTION_DESCRIPTION")?>:</div>
+                 		<div class="row" ng-class="{'show-all': showAllDesc}">
+                 			<p class="col-xs-10" ng-if="!showAllDesc"><?=htmlentities(explode('\n', $collection['description'])[0]); ?></p>
+	                 		<p class="col-xs-10" ng-if="showAllDesc" ><?=htmlentities($collection['description'])?></p>
+	                 		<div class="col-xs-2">
+	                 			<a ng-show="showAllDesc"  ng-click="showAllDesc = !showAllDesc;"><?=__("collection_index__HIDE")?></a>
+	                 			<a ng-show="!showAllDesc" ng-click="showAllDesc = !showAllDesc;"><?=__("collection_index__SHOW_ALL")?></a>
+	                 		</div>
+                 		</div>
+                 	</div>
+                </div>
+            </div>
+        </div>
+    </section>
     <?php }?>
     <section class="row collection-product" ng-if="products.length">
         <div class="container">
@@ -316,7 +360,6 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-    
     <?php }?>
 </body>
 </html>

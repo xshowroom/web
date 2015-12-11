@@ -16,27 +16,30 @@ angular.module(
     [
      	'$scope', 'Collection', 
         function ($scope, Collection) {
-     		Collection.findById({
-     			id: $scope.collectionId
-     		}).success(function(res){
-     			if(!res.status){
-     				$scope.collection = {
-     					'id': res.data.id,
-     					'name': res.data.name,
-     	 				'category': res.data.category,
-     	 				'mode': res.data.mode,
-     	 				'season': res.data.season,
-     	 				'order': res.data.mini_order,
-     	 				'currency': res.data.currency,
-     	 				'deadline': res.data.deadline.split(/\s/)[0],
-     	 				'delivery': res.data.delivery_date,
-     	 				'description': res.data.description,
-     	 				'image': res.data.cover_image	
- 					};
-     			}else{
-     				alert(res.msg);
-     			};
-     		});
+     		if ($scope.hasAuth){
+     			Collection.findById({
+         			id: $scope.collectionId
+         		}).success(function(res){
+         			if(!res.status){
+         				$scope.collection = {
+         					'id': res.data.id,
+         					'name': res.data.name,
+         	 				'category': res.data.category,
+         	 				'mode': res.data.mode,
+         	 				'season': res.data.season,
+         	 				'order': res.data.mini_order,
+         	 				'currency': res.data.currency,
+         	 				'deadline': res.data.deadline.split(/\s/)[0],
+         	 				'delivery': res.data.delivery_date,
+         	 				'description': res.data.description,
+         	 				'image': res.data.cover_image	
+     					};
+         			}else{
+         				alert(res.msg);
+         			};
+         		});
+     		}
+     		
      		$scope.checkInfo = {
          		validation: {
      			   	'name': false,
