@@ -135,9 +135,8 @@ class Business_Production
         // 过滤并且添加字段        
         $realProductionList = array();
         foreach ($productionList as $idx => $production) {
-            // 过滤掉不是该用户的产品&&过滤掉不是该类别的产品&&过滤掉不是该价格范围内的产品
-            if ($production['user_id'] == $userId &&
-                (empty($category) || $production['category'] == $category) &&
+            // 过滤掉不是该类别的产品&&过滤掉不是该价格范围内的产品
+            if ((empty($category) || $production['category'] == $category) &&
                 (empty($priceMin) || $production['retail_price'] >= (int)$priceMin) &&
                 (empty($priceMax) || $production['retail_price'] <= (int)$priceMax)) {
                 $realProductionList[] = $this->getFormedProdution($production);
