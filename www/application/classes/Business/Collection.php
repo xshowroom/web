@@ -92,8 +92,15 @@ class Business_Collection
     public function getCollectionStatInfo($brandId)
     {
         $brandInfo = $this->brandModel->getById($brandId);
+        if (empty($brandInfo)) {
+            return array();
+        }
         
         $collectionList = $this->getCollectionList($brandInfo['user_id']);
+        if (empty($collection)) {
+            return array();
+        }
+        
         foreach ($collectionList as $collection) {
             $resCollectionList[$collection['id']] = $collection;
         }
