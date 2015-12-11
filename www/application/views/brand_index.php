@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="xShowroom.brand.index">
+<html ng-app="xShowroom.brand.index" ng-init="brandId = <?=$brandInfo['id']?>;">
 <head>
     <meta charset="UTF-8" >
     <title>XShowroom</title>
@@ -19,7 +19,7 @@
     <script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
     <script type="text/javascript" src="/static/app/modules/brand_index.js"></script>
 </head>
-<body ng-controller="BrandIndexCtrl" class="container-fluid"  ng-init="brandId = <?=$brandInfo['id']?>;">
+<body ng-controller="BrandIndexCtrl" class="container-fluid"  ng-cloak>
    	<?php if (empty($user)){?>
 	<nav class="row setting-info">
 		<?php echo View::factory('common/global_setting_with_login', array('userAttr'=> $userAttr, 'user'=> $user)); ?>
@@ -79,7 +79,7 @@
 							<li ng-repeat="season in seasons" ng-click="selectSeason(season);">{{season | translate}}</li>
 						</ul>
 					</div>
-            		<div class="collection-cover" ng-repeat="cover in covers|limitTo: 18" ng-click="selectCover(cover);">
+            		<div class="collection-cover" ng-repeat="cover in covers[selectedSeason]|limitTo: 18" ng-click="selectCover(cover);">
             			<img ng-src="/{{cover.cover_image_small}}"/>
             		</div>
             	</div>
