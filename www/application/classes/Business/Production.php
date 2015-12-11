@@ -151,13 +151,7 @@ class Business_Production
     public function getProduction($userId, $productionId)
     {
         $production = $this->productionModel->getByProductionId($productionId);
-        
-        // 验证用户是否有该产品
-        if ($production['user_id'] != $userId) {
-            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
-            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
-        }
-        
+
         $realProduction = $this->getFormedProdution($production);
 
         return $realProduction;

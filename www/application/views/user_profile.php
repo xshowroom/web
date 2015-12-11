@@ -38,7 +38,7 @@
 
             <div class="col-md-10">
                 <?php echo View::factory(
-                    'template/t_user_profile',
+                    'templates/t_user_profile',
                     array('user' => $user, 'userAttr' => $userAttr, 'brandInfo'=> $brandInfo, 'buyerInfo'=> $buyerInfo));
                 ?>
             </div>
