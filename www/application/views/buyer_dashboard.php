@@ -70,7 +70,7 @@
             	?>
                 <div class="col-xs-3">
                     <a target="_self" href="/brands/<?= $authBrandList[$i]['brand_url']?>" class="brand-item image-link">
-                        <img src="/<?= $authBrandList[$i]['cover_image_medium']?>" class="brand-item-image">
+                        <img src="/<?= $authBrandList[$i]['brand_image']?>" class="brand-item-image">
                         <div class="brand-name"><?= $authBrandList[$i]['name']?></div>
                     </a>
                 </div>
