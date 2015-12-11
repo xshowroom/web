@@ -14,32 +14,8 @@ angular.module(
 .controller(
     'CollectionIndexCtrl',
     [
-     	'$scope', 'Collection', 
-        function ($scope, Collection) {
-     		if ($scope.hasAuth){
-     			Collection.findById({
-         			id: $scope.collectionId
-         		}).success(function(res){
-         			if(!res.status){
-         				$scope.collection = {
-         					'id': res.data.id,
-         					'name': res.data.name,
-         	 				'category': res.data.category,
-         	 				'mode': res.data.mode,
-         	 				'season': res.data.season,
-         	 				'order': res.data.mini_order,
-         	 				'currency': res.data.currency,
-         	 				'deadline': res.data.deadline.split(/\s/)[0],
-         	 				'delivery': res.data.delivery_date,
-         	 				'description': res.data.description,
-         	 				'image': res.data.cover_image	
-     					};
-         			}else{
-         				alert(res.msg);
-         			};
-         		});
-     		}
-     		
+     	'$scope', '$location', 'Collection', 
+        function ($scope, $location, Collection) {
      		$scope.checkInfo = {
          		validation: {
      			   	'name': false,
@@ -80,7 +56,7 @@ angular.module(
          				continue;
          			}
          			$scope.checkInfo.validation[key] = false;
-       				}
+       			}
        				
          		if (!$scope.errorMsgs.length){
          			Collection.modify(
@@ -129,30 +105,66 @@ angular.module(
 				});
          	};
          	
+         	var initCollection = function(){
+         		Collection.findById({
+         			id: $scope.collectionId
+         		}).success(function(res){
+         			if(!res.status){
+         				$scope.collection = {
+         					'id': res.data.id,
+         					'name': res.data.name,
+         	 				'category': res.data.category,
+         	 				'mode': res.data.mode,
+         	 				'season': res.data.season,
+         	 				'order': res.data.mini_order,
+         	 				'currency': res.data.currency,
+         	 				'deadline': res.data.deadline.split(/\s/)[0],
+         	 				'delivery': res.data.delivery_date,
+         	 				'description': res.data.description,
+         	 				'image': res.data.cover_image	
+     					};
+         			}else{
+         				alert(res.msg);
+         			};
+         		});
+         	};
          	
-         	Collection.getProductList({
-         		collectionId: $scope.collectionId,
-         		timestamp: new Date().getTime()
-     		}).success(function(res){
-     			if(res.status){
-     				alert(res.msg);
-     				return;
-     			}
-     			$scope.products = res.data;
- 				$scope.filters = {
- 					category: '',
- 					limit: 8
- 				};
- 				$scope.categoryCounter = {};
- 				for(var i = 0, len = $scope.products.length; i < len; i++){
- 					var category = $scope.products[i].category;
-     				if($scope.categoryCounter[category]){
-     					$scope.categoryCounter[category] += 1;
-     				}else{
-     					$scope.categoryCounter[category] = 1;
+         	var initProducts = function(){
+         		Collection.getProductList({
+             		collectionId: $scope.collectionId,
+             		timestamp: new Date().getTime()
+         		}).success(function(res){
+         			if(res.status){
+         				alert(res.msg);
+         				return;
+         			}
+         			$scope.products = res.data;
+     				$scope.categoryCounter = {};
+     				for(var i = 0, len = $scope.products.length; i < len; i++){
+     					var category = $scope.products[i].category;
+         				if($scope.categoryCounter[category]){
+         					$scope.categoryCounter[category] += 1;
+         				}else{
+         					$scope.categoryCounter[category] = 1;
+         				}
      				}
- 				}
-     		});
+         		});
+         	};
+         	
+         	
+         	var init = function (){
+     			if ($scope.hasAuth){
+     				initCollection
+     			}
+     			$scope.filters = {
+     				category: $location.search().category || '',
+     				limit: 8
+     			};
+     			initProducts();
+     		};
+     		
+     		init();
+         	
      	}
     ]
 );
