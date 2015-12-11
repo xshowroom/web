@@ -117,9 +117,9 @@ angular.module(
 						available: conditions.available
 		      		};
 		      	},
-		      	getSeasons: function(){
-		      		return conditions.season.values;
-		      	},
+//		      	getSeasons: function(){
+//		      		return conditions.season.values;
+//		      	},
 		      	getCoversBySeason: function (opts) {
 		    		return $http.get('/api/guest/coverImgList', {params: opts});
 		      	}

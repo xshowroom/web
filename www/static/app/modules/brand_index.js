@@ -18,10 +18,19 @@ angular.module(
         function ($scope, Brand, Buyer) {
      		$scope.selectSeason = function (season) {
      			$scope.selectedSeason = season;
-     			$scope.refreshCovers(season)
+     			$scope.selectedCover = $scope.covers[season][0];
+     		};
+     		
+     		$scope.selectCover = function(cover){
+     			$scope.selectedCover = cover;
+     		};
+     		
+     		$scope.selectStore = function(store){
+     			$scope.selectedStore = store;
      		};
      		
      		$scope.refreshCovers = function(season){
+     			$scope.seasons = [];
      			Brand.getCoversBySeason({
      				brandId: $scope.brandId,
      				season: season
@@ -31,16 +40,13 @@ angular.module(
      					return;
      				}
      				$scope.covers = res.data;
-     				$scope.selectedCover = res.data[0];
+     				for (var season in $scope.covers){
+     					$scope.seasons.push(season);
+     				}
+     				console.log($scope.seasons)
+     				$scope.selectedSeason = $scope.seasons[0];
+     				$scope.selectedCover = res.data[$scope.selectedSeasons][0];
      			});
-     		};
-     		
-     		$scope.selectCover = function(cover){
-     			$scope.selectedCover = cover;
-     		};
-     		
-     		$scope.selectStore = function(store){
-     			$scope.selectedStore = store;
      		};
      		
      		$scope.applyAuth = function(){
@@ -83,8 +89,8 @@ angular.module(
      			checkAuth();
      			getStoreList();
      			$scope.conditions = Brand.getIndexConditions();
-     			$scope.seasons = Brand.getSeasons();
-     			$scope.selectedSeason = $scope.seasons[0];
+//     			$scope.seasons = Brand.getSeasons();
+//     			$scope.selectedSeason = $scope.seasons[0];
      			$scope.refreshCovers($scope.selectedSeason);
      		};
      		
