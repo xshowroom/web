@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'BuyerBrandCtrl',
     [
-     	'$scope', '$timeout', 'Brand',
-        function ($scope, $timeout, Brand) {
+     	'$scope', '$timeout', 'Brand', 'Buyer',
+        function ($scope, $timeout, Brand, Buyer) {
      		$scope.hasFilter = function(){
      			return !angular.equals($scope.filters, {});
      		}
@@ -30,19 +30,24 @@ angular.module(
      			$scope.filters[name] = condition
      			
      			$scope.filterTimeout = $timeout(function(){
-         			getNewBrands(true);
+     				$scope.getNewBrands(true);
      			}, 500, true);
      		};
      		
-     		var getNewBrands = function(isRefresh){
+     		$scope.getNewBrands = function(isRefresh){
+     			$scope.brands.offset += isRefresh ? -$scope.brands.offset : $scope.brands.pageSize;
+     			
      			var options = angular.copy($scope.filters);
      			options.pageSize = $scope.brands.pageSize;
      			options.offset = $scope.brands.offset;
      			
-     			if (isRefresh){
-     				$scope.brands.offset = 0;
+     			if(options.season){
+     				options.season = options.season.join(',');
      			}
-     			Brand.findAll(options).success(function(res){
+     			if(options.country){
+     				options.country = options.country.join(',');
+     			}
+     			Buyer.getMyBrandList(options).success(function(res){
      				if (res.status){
      					alert(res.msg);
      					return;
@@ -54,6 +59,7 @@ angular.module(
      						$scope.brands.content.push(res.data[i])
      					}
      				}
+     				$scope.hasNext = res.data.length == $scope.brands.pageSize;
          		});
      		};
      		
@@ -66,8 +72,8 @@ angular.module(
      			};
      			$scope.filters = {};
      			
-     			$scope.conditions = Brand.getShopConditions();
-     			getNewBrands(true);
+     			$scope.conditions = Brand.getMyBrandConditions();
+     			$scope.getNewBrands(true);
      		};
      		
      		init();
