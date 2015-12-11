@@ -20,24 +20,24 @@
     <script type="text/javascript" src="/static/app/modules/brand_index.js"></script>
 </head>
 <body ng-controller="BrandIndexCtrl" class="container-fluid"  ng-cloak>
-   	<?php if (empty($user)){?>
+   	<?php if(empty($user)): ?>
 	<nav class="row setting-info">
 		<?php echo View::factory('common/global_setting_with_login', array('userAttr'=> $userAttr, 'user'=> $user)); ?>
 	</nav>
-	<?php } else { ?>
+	<?php else: ?>
 	<nav class="row setting-info">
 		<?php echo View::factory('common/global_setting_without_login', array('userAttr'=> $userAttr, 'user'=> $user)); ?>
 	</nav>
-	<?php }?>
-	<?php if (empty($user) || $user["role_type"] != "2"){?>
+	<?php endif; ?>
+	<?php if(empty($user) || $user["role_type"] != Business_User::ROLE_BUYER): ?>
 	<nav class="row guest-navigation">
         <?php echo View::factory('common/global_navigation_top_guest', array('currentPage' =>  'shop')); ?>
 	</nav>
-	<?php } else if ($user["role_type"] == "2"){ ?>
+	<?php elseif ($user["role_type"] == Business_User::ROLE_BUYER): ?>
 	<nav class="row user-navigation">
         <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); ?>
 	</nav>
-	<?php }?>
+	<?php endif; ?>
     <section class="row no-vertical-padding">
         <div class="container">
             <div class="row brand-preview">

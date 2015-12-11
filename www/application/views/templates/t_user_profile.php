@@ -63,6 +63,7 @@
         </div>
     </div>
 
+    <?php if($user['role_type'] == Business_User::ROLE_BRAND): ?>
     <h2><?=__("profile__BRAND_INFO")?></h2>
     <div class="form-line">
         <div class="form-group">
@@ -81,4 +82,5 @@
             <img src="<?= URL::site($brandInfo['brand_image']) ?>"/>
         </div>
     </div>
+    <?php endif; ?>
 </div>

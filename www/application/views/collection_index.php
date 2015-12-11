@@ -29,16 +29,16 @@
 	<nav class="row setting-info">
 		<?php echo View::factory('common/global_setting_without_login'); ?>
 	</nav>
-	<?php if ($user["role_type"] == "1"){?>
+	<?php if($user["role_type"] == Business_User::ROLE_BRAND): ?>
 	<nav class="row user-navigation">
         <?php echo View::factory('common/global_navigation_top_brand', array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); ?>
 	</nav>
-	<?php } else if ($user["role_type"] == "2"){ ?>
+	<?php elseif ($user["role_type"] == Business_User::ROLE_BUYER): ?>
 	<nav class="row user-navigation">
         <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); ?>
 	</nav>
-	<?php }?>
-    <?php if ($collection['user_id'] == $userAttr['user_id']) {?>
+	<?php endif; ?>
+    <?php if($collection['user_id'] == $userAttr['user_id']): ?>
     <section class="row no-vertical-padding uploading">
         <div class="container collection-info">
             <div class="row" ng-show="!isEditing">
@@ -199,7 +199,7 @@
             <?php }?>  
         </div>
     </section>
-    <?php } else { ?>
+    <?php else: ?>
     <section class="row no-vertical-padding uploading">
         <div class="container collection-info">
             <div class="row" ng-show="!isEditing">
@@ -239,7 +239,7 @@
             </div>
         </div>
     </section>
-    <?php }?>
+    <?php endif; ?>
     <section class="row collection-product">
         <div class="container">
             <div class="row">
