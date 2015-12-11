@@ -38,7 +38,7 @@
 	</nav>
 	<?php }?>
 	<section class="row">
-		<div class="container">
+		<div class="container" ng-cloak>
 			<div class="row">
 				<div class="col-xs-3">
 					<div class="row filter-condition" ng-repeat="(title, content) in conditions" data-type="{{content.type}}" data-title="{{title}}"
@@ -58,7 +58,13 @@
 							</div>
 						</div>
 					</div>
-					<div class="brand-list-content row">
+					<div class="row"  ng-if="!brands.content.length">
+		                <div class="col-xs-12 text-center empty-warning">
+		                    <img src="/static/app/images/empty.png">
+		                    <p>No brand matches your conditions!<br/>Start your business with changing conditons.</p>
+		                </div>
+		            </div>
+					<div class="brand-list-content row" ng-if="brands.content.length">
 						<div class="col-xs-3" ng-repeat="brand in brands.content">
 							<a target="_self" ng-href="/brands/{{brand.brand_url}}" class="brand-item image-link">
 								<img ng-src="/{{brand.brand_image}}" class="brand-item-image">
@@ -68,6 +74,10 @@
 							</a>
 						</div>
 					</div>
+					<div class="brand-list-action text-center row" ng-if="hasNext">
+		                 <button class="btn btn-type-1" ng-click="getNewBrands()"><?=__("collection_index__btn_LOAD_MORE")?></button>
+		            </div>
+					
 				</div>
 			</div>		
 		</div>
