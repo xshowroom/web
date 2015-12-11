@@ -56,7 +56,6 @@
                     </div>
                 </div>
             </div>
-            <?php var_dump($authBrandList)?>
         	<?php if (empty($authBrandList)) { ?>
         	 <div class="row">
                 <div class="col-xs-12 text-center empty-warning">
@@ -70,7 +69,7 @@
             		for ($i=0, $count=count($authBrandList); $i<$count; $i++) { 
             	?>
                 <div class="col-xs-3">
-                    <a target="_self" href="/brands/<?= $authBrandList[$i]['id']?>" class="brand-item">
+                    <a target="_self" href="/brands/<?= $authBrandList[$i]['brand_url']?>" class="brand-item">
                         <img src="/<?= $authBrandList[$i]['cover_image_medium']?>" class="brand-item-image">
                         <div class="brand-name"><?= $authBrandList[$i]['name']?></div>
                     </a>
