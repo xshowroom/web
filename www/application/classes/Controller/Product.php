@@ -35,6 +35,7 @@ class Controller_Product extends Controller_BaseReqLogin
         }
         $view->set('production', $production);
         $view->set('collection', $collection);
+        $view->set('hasAuth', $collection['user_id'] == $userId);
         $this->response->body($view);
 
     }
