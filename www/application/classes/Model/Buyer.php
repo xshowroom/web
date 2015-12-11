@@ -69,7 +69,7 @@ class Model_Buyer
                     ->from('buyer_brand_map')
                     ->where('user_id', '=', $userId)
                     ->where('brand_id', '=', $brandId)
-                    ->where('status', '=', self::STATUS_NORMAL)
+                    ->where('status', '!=', self::STATUS_DELETED)
                     ->execute()
                     ->as_array();
 
