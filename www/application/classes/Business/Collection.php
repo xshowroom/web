@@ -35,7 +35,7 @@ class Business_Collection
             }
         }
         
-        return $collectionList;
+        return array_values($collectionList);
     }
     
     private function doFilter($userId, $filter)
