@@ -52,6 +52,7 @@ return array_merge(
         'global_navigation_top_user__COLLECTION' => '系列管理',
         'global_navigation_top_user__ORDER' => '订单管理',
         'global_navigation_top_user__BRAND' => '商品集市',
+        'global_navigation_top_user__LOOKBOOK' => '产品目录',
         'global_navigation_top_user__CART' => '购物车',
         'global_navigation_top_user__STORE' => '我的店铺',
         'global_navigation_top_user__MESSAGE' => '消息中心',
