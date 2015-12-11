@@ -17,7 +17,7 @@ angular.module(
      	'$scope', 'Collection', 
         function ($scope, Collection) {
      		Collection.findById({
-     			id: collectionId
+     			id: $scope.collectionId
      		}).success(function(res){
      			if(!res.status){
      				$scope.collection = {
@@ -94,7 +94,7 @@ angular.module(
          	
          	$scope.deleteCollection = function(){
 				Collection.destroy({
-					id: collectionId
+					id: $scope.collectionId
 				}).success(function(res){
 					if (res.status) {
 						alert(res.msg);
@@ -105,7 +105,7 @@ angular.module(
          	};
          	$scope.enableCollection = function(){
 				Collection.enable({
-					id: collectionId
+					id: $scope.collectionId
 				}).success(function(res){
 					if (res.status) {
 						alert(res.msg);
@@ -116,7 +116,7 @@ angular.module(
          	};
          	$scope.closeCollection = function(){
 				Collection.close({
-					id: collectionId
+					id: $scope.collectionId
 				}).success(function(res){
 					if (res.status) {
 						alert(res.msg);
@@ -128,7 +128,7 @@ angular.module(
          	
          	
          	Collection.getProductList({
-         		collectionId: collectionId,
+         		collectionId: $scope.collectionId,
          		timestamp: new Date().getTime()
      		}).success(function(res){
      			if(res.status){

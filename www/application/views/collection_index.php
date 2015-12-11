@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="xShowroom.collection.index">
+<html ng-app="xShowroom.collection.index" ng-init="collectionId = <?=$collection['id']?>;">
 <head>
     <meta charset="UTF-8" >
     <title>XShowroom</title>
@@ -23,9 +23,6 @@
     <script type="text/javascript" src="/static/app/modules/common/services.js"></script>
     <script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
     <script type="text/javascript" src="/static/app/modules/collection_index.js"></script>
-    <script>
-        var collectionId = <?=$collection['id']?>;
-    </script>
 </head>
 <body ng-controller="CollectionIndexCtrl" class="container-fluid" ng-cloak>
     <nav class="row setting-info">
