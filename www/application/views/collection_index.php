@@ -199,19 +199,6 @@
             <?php }?>  
         </div>
     </section>
-    <section class="row empty-warning" ng-if="products && !products.length">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 text-center ">
-                	<img src="/static/app/images/empty.png">
-                	<p><?=__("collection_index__NO_PRODUCT_1")?><br/><?=__("collection_index__NO_PRODUCT_2")?></p>
-                	<?php if($collection['status'] == 0) {?>
-                	<a class="btn btn-type-2" href="/product/create/<?=$collection['id']?>"><?=__("collection_index__btn_ADD_PRODUCT")?></a>
-					<?php }?>
-                </div>
-            </div>
-        </div>
-    </section>
     <?php } else { ?>
     <section class="row no-vertical-padding uploading">
         <div class="container collection-info">
@@ -253,7 +240,7 @@
         </div>
     </section>
     <?php }?>
-    <section class="row collection-product" ng-if="products.length">
+    <section class="row collection-product">
         <div class="container">
             <div class="row">
                 <div class="col-xs-3 collection-product-category">
@@ -280,6 +267,14 @@
                 </div>
                 <div class="col-xs-9 collection-products">
                  	<h3>{{ (filters.category == '' ? 'dropdown__PRODUCT_CATEGORY__ALL' : filters.category)  | translate}}</h3>
+				    <div class="text-center empty-warning">
+				      	<img src="/static/app/images/empty.png">
+				      	<?php if($collection['status'] == 0 && $collection['user_id'] == $userAttr['user_id']) {?>
+				       	<p><?=__("collection_index__NO_PRODUCT_1")?><br/><?=__("collection_index__NO_PRODUCT_2")?></p>
+				       	<?php }else{ ?>
+				       	<p>不是吧！该系列中没有任何产品！</p>
+				       	<?php }?>
+				    </div>
                  	<div class="collection-category-content">
                  		<div class="col-xs-3" ng-repeat="product in products | filter : filters.category | limitTo: filters.limit: 0">
                  			<a  target="_self" ng-href="/product/{{product.id}}" class="collection-product-detail image-link">
