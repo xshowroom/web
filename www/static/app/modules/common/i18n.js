@@ -706,7 +706,7 @@ angular.module(
             dropdown__COUNTRY__Uganda: 'Uganda',
             dropdown__COUNTRY__Ukraine: 'Ukraine',
             dropdown__COUNTRY__UnitedArabEmirates: 'UnitedArabEmirates',
-            dropdown__COUNTRY__UnitedKiongdom: 'UnitedKiongdom',
+            dropdown__COUNTRY__UnitedKiongdom: 'UnitedKingdom',
             dropdown__COUNTRY__UnitedStatesofAmerica: 'UnitedStatesofAmerica',
             dropdown__COUNTRY__Uruguay: 'Uruguay',
             dropdown__COUNTRY__Uzbekistan: 'Uzbekistan',

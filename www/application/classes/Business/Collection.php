@@ -181,13 +181,13 @@ class Business_Collection
         return $res;
     }
     
-    public function getAllCollectionImg($brandId, $season)
+    public function getAllCollectionImg($brandId)
     {
         $brandInfo = $this->brandModel->getById($brandId);
         
-        $collectionList = $this->collectionModel->getListBySeason($brandInfo['user_id'], $season);
+        $collectionList = $this->collectionModel->getListByUserId($brandInfo['user_id']);
         foreach ($collectionList as $collection) {
-            $collectionImgList[] = array(
+            $collectionImgList[$collection['season']][] = array(
                 'id' => (int)$collection['id'],
                 'cover_image' => $collection['cover_image'],
                 'cover_image_medium' => $collection['cover_image_medium'],

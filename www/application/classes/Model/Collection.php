@@ -48,7 +48,7 @@ class Model_Collection
                     ->execute()
                     ->as_array();
         
-        return empty($result) ? array() : $result;
+        return $result;
     }
     
     /**
