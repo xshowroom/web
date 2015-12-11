@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="xShowroom.brand.index" ng-init="brandId = <?=$brandInfo['id']?>;">
+<html ng-app="xShowroom.brand.index" ng-init="brandId = <?=$brandInfo['id']?>; isGuest = <?=empty($user) ? 'true' : 'false'?>;">
 <head>
     <meta charset="UTF-8" >
     <title>XShowroom</title>
@@ -93,13 +93,14 @@
 					<div class="row filter-condition" ng-repeat="(title, content) in conditions" data-type="{{content.type}}" data-title="{{title}}"
 						selected="setFilters(name, conditions)" data-conditions="content.values"></div>
 				</div>
-				<div class="col-xs-9 collection-list" ng-if="!hasAuth">
+				<div class="col-xs-9 collection-list" ng-if="authCode==-2 || authCode==-1">
 					<div class="has-no-auth">
 						<p>You do not have access to BRAND B. Apply</br>privilege to view all his collection.</p>
 						<?php if (empty($user)) {?>
 							<a class="btn btn-type-1" href="/login">APPLY</a>
 						<?php }else{?>
-							<button class="btn btn-type-1" data-toggle="modal" data-target="#auth-store-modal">APPLY</button>
+							<button class="btn btn-type-1" ng-if="authCode==-1">APPLIED</button>
+							<button class="btn btn-type-2" ng-if="authCode==-2" data-toggle="modal" data-target="#auth-store-modal">APPLY</button>
 						<?php }?>
 					</div>
 					<div class="row">

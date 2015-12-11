@@ -43,7 +43,6 @@ angular.module(
      				for (var season in $scope.covers){
      					$scope.seasons.push(season);
      				}
-     				console.log($scope.seasons)
      				$scope.selectedSeason = $scope.seasons[0];
      				$scope.selectedCover = res.data[$scope.selectedSeasons][0];
      			});
@@ -58,11 +57,16 @@ angular.module(
      					alert('获取Auth数据失败，请检查！');
      					return;
      				}
+     				$scope.authCode = -1;
      			});
      			$('#auth-store-modal').modal('hide');
      		};
      		
      		var checkAuth = function(){
+     			if ($scope.isGuest){
+     				$scope.authCode = -2;
+     				return;
+     			}
      			Buyer.checkAuth({
      				brandId: $scope.brandId
      			}).success(function(res){
@@ -70,11 +74,14 @@ angular.module(
      					alert('获取Auth数据失败，请检查！');
      					return;
      				}
-     				$scope.hasAuth = res.data;
+     				$scope.authCode = res.data;
      			});
      		};
      		
      		var getStoreList = function(){
+     			if ($scope.isGuest){
+     				return;
+     			}
      			Buyer.getStoreList().success(function(res){
      				if (typeof(res) != 'object' || res.status) {
      					alert('获取Store数据失败，请检查！');
@@ -89,8 +96,6 @@ angular.module(
      			checkAuth();
      			getStoreList();
      			$scope.conditions = Brand.getIndexConditions();
-//     			$scope.seasons = Brand.getSeasons();
-//     			$scope.selectedSeason = $scope.seasons[0];
      			$scope.refreshCovers($scope.selectedSeason);
      		};
      		
