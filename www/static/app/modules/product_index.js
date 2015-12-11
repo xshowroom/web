@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'ProductIndexCtrl',
     [
-        '$scope', 'Product',
-        function ($scope, Product) {
+        '$scope', 'Product', 'Order',
+        function ($scope, Product, Order) {
         	$scope.setProductCover = function (url) {
         		$scope.productCover = url;
         	};
@@ -30,7 +30,19 @@ angular.module(
 						window.open('/collection/' + collectionId, '_self');
 					}
 				});
-        	}
+        	};
+        	
+        	$scope.addProductToCart = function(productId){
+        		Order.addProductToCart({
+        			productionId: productId
+        		}).success(function(res){
+        			if (typeof(res) != 'object' || res.status) {
+     					alert('获取Cover数据失败，请检查！');
+     					return;
+     				}
+        		});
+        	};
+        	
         }
     ]
 );

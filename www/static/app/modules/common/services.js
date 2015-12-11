@@ -2,6 +2,26 @@ angular.module(
     'xShowroom.services', ['xShowroom.i18n']
 )
 .service(
+	'Order', 
+	[
+	    '$http', '$httpParamSerializer',
+		function ($http,  $httpParamSerializer) {
+		    return {
+		    	addProductToCart:function (opts) {
+		    		return $http.post('/api/order/addToCart', $httpParamSerializer(opts), {
+						headers: {
+							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
+						}
+					});
+		    	},
+		      	removeProductFromCart:function (opts) {
+		    		return $http.get('/api/order/addToCart', {params: opts});
+		      	}
+   			};
+         }
+    ]
+)
+.service(
 	'User', 
 	[
 	    '$http', '$httpParamSerializer',
