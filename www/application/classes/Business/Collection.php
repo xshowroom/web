@@ -97,7 +97,7 @@ class Business_Collection
         }
         
         $collectionList = $this->getCollectionList($brandInfo['user_id']);
-        if (empty($collection)) {
+        if (empty($collectionList)) {
             return array();
         }
         
