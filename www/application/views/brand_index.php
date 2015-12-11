@@ -99,8 +99,8 @@
 						<?php if (empty($user)) {?>
 							<a class="btn btn-type-1" href="/login">APPLY</a>
 						<?php }else{?>
-							<button class="btn btn-type-1" ng-if="authCode==-1">APPLIED</button>
-							<button class="btn btn-type-2" ng-if="authCode==-2" data-toggle="modal" data-target="#auth-store-modal">APPLY</button>
+							<button class="btn btn-type-2 auth-applied" ng-if="authCode==-1">APPLIED</button>
+							<button class="btn btn-type-1" ng-if="authCode==-2" data-toggle="modal" data-target="#auth-store-modal">APPLY</button>
 						<?php }?>
 					</div>
 					<div class="row">

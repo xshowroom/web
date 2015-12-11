@@ -110,6 +110,11 @@
 .collection-list .has-no-auth > .btn.btn-type-1:hover{
 	border-color: #ca7379;
 }
+
+.collection-list .has-no-auth > .btn.auth-applied{
+	margin-top: 15px;
+	cursor: not-allowed;
+}
 .collection-list .collection-list-header{
 	border-bottom: 1px solid #e3e3e3;
 	padding-top: 10px;
