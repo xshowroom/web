@@ -68,7 +68,7 @@ class Business_Buyer
         $brandIdList = array_column($authBrandList, 'brand_id');
         
         // 过滤下
-        $res[] = null;
+        $res[] = array();
 
         foreach ($brandList as $brand) {
             if (in_array($brand['id'], $brandIdList)) {
