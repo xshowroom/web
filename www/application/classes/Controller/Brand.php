@@ -54,6 +54,16 @@ class Controller_Brand extends Controller_BaseReqLogin
         $this->response->body($view);
     }
 
+    public function action_lookbook()
+    {
+        $view = View::factory('brand_lookbook');
+        $view->set('user', $this->opUser);
+        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view->set('brandInfo', $this->brandService->getBrandInfo($this->opUser['id']));
+
+        $this->response->body($view);
+    }
+
     public function action_order()
     {
         $view = View::factory('brand_order');
