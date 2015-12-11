@@ -142,7 +142,7 @@
 					</div>
 					<div class="collection-list-content row" ng-repeat-end>
 						<div class="col-xs-3" ng-repeat="(category, detail) in collection.production">
-							<a target="_self" href="/collection/{{collection.id}}#?category={{category}}" class="collection-item">
+							<a target="_self" href="/collection/{{collection.id}}#?category={{category}}" class="collection-item image-link">
 								<img ng-src="/{{parseImageUrl(detail[0].image)}}" class="collection-item-image">
 							</a>
 							<div class="collection-item-name">
