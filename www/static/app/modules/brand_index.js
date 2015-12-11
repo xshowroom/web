@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'BrandIndexCtrl',
     [
-     	'$scope', 'Brand', 'Buyer',
-        function ($scope, Brand, Buyer) {
+     	'$scope', '$timeout', 'Brand', 'Buyer',
+        function ($scope, $timeout, Brand, Buyer) {
      		$scope.selectSeason = function (season) {
      			$scope.selectedSeason = season;
      			$scope.selectedCover = $scope.covers[season][0];
@@ -36,7 +36,7 @@ angular.module(
      				season: season
      			}).success(function(res){
      				if (typeof(res) != 'object' || res.status) {
-     					alert('获取Collection Cover数据失败，请检查！');
+     					alert('获取Cover数据失败，请检查！');
      					return;
      				}
      				$scope.covers = res.data;
@@ -44,7 +44,7 @@ angular.module(
      					$scope.seasons.push(season);
      				}
      				$scope.selectedSeason = $scope.seasons[0];
-     				$scope.selectedCover = res.data[$scope.selectedSeasons][0];
+     				$scope.selectedCover = res.data[$scope.selectedSeason][0];
      			});
      		};
      		
@@ -54,12 +54,48 @@ angular.module(
      				brandId: $scope.brandId
      			}).success(function(res){
      				if (typeof(res) != 'object' || res.status) {
-     					alert('获取Auth数据失败，请检查！');
+     					alert('申请Auth失败，请检查！');
      					return;
      				}
      				$scope.authCode = -1;
      			});
      			$('#auth-store-modal').modal('hide');
+     		};
+     		
+     		$scope.setFilters = function(name, condition){
+     			if($scope.filterTimeout){
+     				$timeout.cancel($scope.filterTimeout);
+     				$scope.filterTimeout = null;
+     			}
+     			$scope.filters[name] = condition
+     			
+     			$scope.filterTimeout = $timeout(function(){
+     				refreshCollectionList(true);
+     			}, 500, true);
+     		};
+     		
+     		$scope.refreshCollectionList = function(isRefresh){
+     			$scope.collections.offset += isRefresh ? -$scope.collections.offset : $scope.collections.pageSize;
+     			
+     			var options = angular.copy($scope.filters);
+     			options.pageSize = $scope.collections.pageSize;
+     			options.offset = $scope.collections.offset;
+     			options.brandId = $scope.brandId;
+     			
+     			Brand.getCollectionList(options).success(function(res){
+     				if (typeof(res) != 'object' || res.status) {
+     					alert('获取Collection数据失败，请检查！');
+     					return;
+     				}
+     				if(isRefresh){
+     					$scope.collections.content = res.data;
+     				}else{
+     					for(var i = 0, len = res.data.length; i < len; i++) {
+     						$scope.collections.content.push(res.data[i])
+     					}
+     				}
+     				$scope.hasNext = res.data.length == $scope.collections.pageSize;
+     			});
      		};
      		
      		var checkAuth = function(){
@@ -75,6 +111,9 @@ angular.module(
      					return;
      				}
      				$scope.authCode = res.data;
+     				if (res.data == 0){
+     					$scope.refreshCollectionList(true);
+         			}
      			});
      		};
      		
@@ -95,8 +134,15 @@ angular.module(
      		var init = function () {
      			checkAuth();
      			getStoreList();
+     			$scope.collections = {
+         			pageSize: 4,
+         			offset: 0,
+         			content: []
+         		};
+     			$scope.filters = {};
      			$scope.conditions = Brand.getIndexConditions();
      			$scope.refreshCovers($scope.selectedSeason);
+     			
      		};
      		
      		init();

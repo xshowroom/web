@@ -77,7 +77,6 @@
 					<div class="brand-list-action text-center row" ng-if="hasNext">
 		                 <button class="btn btn-type-1" ng-click="getNewBrands()"><?=__("collection_index__btn_LOAD_MORE")?></button>
 		            </div>
-					
 				</div>
 			</div>		
 		</div>

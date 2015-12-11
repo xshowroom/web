@@ -113,15 +113,15 @@ angular.module(
 		      	},
 		      	getIndexConditions: function(){
 		      		return {
-						mode: conditions.mode,
+//						mode: conditions.mode,
 						available: conditions.available
 		      		};
 		      	},
-//		      	getSeasons: function(){
-//		      		return conditions.season.values;
-//		      	},
 		      	getCoversBySeason: function (opts) {
 		    		return $http.get('/api/guest/coverImgList', {params: opts});
+		      	},
+		      	getCollectionList: function (opts){
+		      		return $http.get('/api/buyer/getCollectionList', {params: opts});
 		      	}
    			};
          }
