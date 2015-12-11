@@ -27,11 +27,23 @@
         	array('currentPage' =>  'lookbook', 'userAttr'=> $userAttr));
        	?>
 	</nav>
-	<section class="row">
+	<section class="row lookbook">
 		<div class="container">
-			<div class="row lookbook-content">
-				<h2><?=__("global_navigation_top_user__LOOKBOOK")?></h2>
-
+			<div class="row lookbook-season">
+				<h2><?=__("global_navigation_top_user__LOOKBOOK")?> - {{ 'dropdown__COLLECTION_SEASON__AW_16' | translate}}</h2>
+				<p>TBD: 添加照片</p>
+			</div>
+			<div class="row lookbook-season">
+				<h2><?=__("global_navigation_top_user__LOOKBOOK")?> - {{ 'dropdown__COLLECTION_SEASON__SS_16' | translate}}</h2>
+				<p>TBD: 添加照片</p>
+			</div>
+			<div class="row lookbook-season">
+				<h2><?=__("global_navigation_top_user__LOOKBOOK")?> - {{ 'dropdown__COLLECTION_SEASON__PRE_SS16' | translate}}</h2>
+				<p>TBD: 添加照片</p>
+			</div>
+			<div class="row lookbook-season">
+				<h2><?=__("global_navigation_top_user__LOOKBOOK")?> - {{ 'dropdown__COLLECTION_SEASON__AW_15' | translate}}</h2>
+				<p>TBD: 添加照片</p>
 			</div>
 		</div>
 	</section>
