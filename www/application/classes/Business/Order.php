@@ -87,7 +87,7 @@ class Business_Order
             );
         }
 
-        return $res;
+        return array_values($res);
     }
 
     public function deleteFromCart($userId, $productionId)
