@@ -29,7 +29,7 @@
         <?php echo View::factory('common/global_setting_without_login'); ?>
     </nav>
    <?php if ($user["role_type"] == Business_User::ROLE_BRAND): ?>
-	<nav class="row guest-navigation">
+	<nav class="row user-navigation">
         <?php echo View::factory('common/global_navigation_top_brand', array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); ?>
 	</nav>
 	<?php elseif ($user["role_type"] == Business_User::ROLE_BUYER): ?>
