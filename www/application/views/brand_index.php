@@ -44,15 +44,15 @@
             	<div class="col-xs-4">
 	            	<h2 class="brand-name"><?=$brandInfo['brand_name']?></h2>
 	            	<div class="brand-info">
-	            		<span>Based in</span>
+	            		<span><?=__("brand_info__BASE_IN");?></span>
 	            		<span>{{ "<?= $brandAttr['company_country'] ?>" | translate}}</span>
 	            	</div>
 	            	<div class="brand-info">
-	            		<span>Designer</span>
+	            		<span><?=__("brand_info__DESIGNER");?></span>
 	            		<span><?=$brandInfo['designer_name']?></span>
 	            	</div>
 	            	<div class="brand-info">
-	            		<span>Website</span>
+	            		<span><?=__("brand_info__WEBSITE");?></span>
 	            		<span><?=$brandAttr['company_web_url']?></span>
 	            	</div>
 	            	<!-- <div class="brand-info brand-about">
@@ -72,7 +72,7 @@
             	<div class="col-xs-5">
             		<div class="dropdown season-filter">
 						<span type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						 	<span>当前季节：{{selectedSeason | translate}}</span>
+						 	<span>{{selectedSeason | translate}}</span>
 						 	<span class="caret"></span>
 						</span>
 						<ul class="dropdown-menu">
@@ -96,12 +96,12 @@
 				<div class="col-xs-9 collection-list" ng-if="authCode==-2 || authCode==-1">
 					<div class="has-no-auth">
 						<p>You do not have access to BRAND B. Apply</br>privilege to view all his collection.</p>
-						<?php if (empty($user)) {?>
+						<?php if (empty($user)): ?>
 							<a class="btn btn-type-1" href="/login">APPLY</a>
-						<?php }else{?>
+						<?php else: ?>
 							<button class="btn btn-type-2 auth-applied" ng-if="authCode==-1">APPLIED</button>
 							<button class="btn btn-type-1" ng-if="authCode==-2" data-toggle="modal" data-target="#auth-store-modal">APPLY</button>
-						<?php }?>
+						<?php endif; ?>
 					</div>
 					<div class="row">
 						<div class=" col-xs-12">
@@ -129,7 +129,7 @@
 							</div>
 							 <div class="col-xs-12 text-center empty-warning">
 			                    <img src="/static/app/images/empty.png">
-			                    <p>No brand matches your conditions!<br/>Start your business with changing conditons.</p>
+								 <p><?=__("brand_filter__NO_COLLECTION_1");?><br/><?=__("brand_filter__NO_COLLECTION_2");?></p>
 			                </div>
 						</div>
 					</div>

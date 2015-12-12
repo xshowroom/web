@@ -493,10 +493,22 @@ return array_merge(
         'brand_collection__btn_VIEW' => '查看',
     ),
     /**
-     * brand_order.php
+     * buyer_brand.php, shop.php
      */
     array(
+        'brand_filter__NO_BRAND_1' => '没找到符合条件的品牌！',
+        'brand_filter__NO_BRAND_2' => '更改搜索条件去发现更多的品牌',
+    ),
+    /**
+     * brand_index.php
+     */
+    array(
+        'brand_info__BASE_IN' => '品牌国家',
+        'brand_info__DESIGNER' => '设计师',
+        'brand_info__WEBSITE' => '官网网址',
 
+        'brand_filter__NO_COLLECTION_1' => '没找到符合条件的商品系列！',
+        'brand_filter__NO_COLLECTION_2' => '更改搜索条件去发现更多的商品系列',
     ),
     /**
      * user_message.php & user_message_detail.php

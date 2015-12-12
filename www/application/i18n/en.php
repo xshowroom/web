@@ -492,10 +492,22 @@ return array_merge(
         'brand_collection__btn_VIEW' => 'VIEW',
     ),
     /**
-     * brand_order.php
+     * buyer_brand.php, shop.php
      */
     array(
+        'brand_filter__NO_BRAND_1' => 'NO BRAND MATCHES YOUR CONDITIONS!',
+        'brand_filter__NO_BRAND_2' => 'CHANGING YOUR SEARCH CONDITIONS TO VIEW MORE BRANDS',
+    ),
+    /**
+     * brand_index.php
+     */
+    array(
+        'brand_info__BASE_IN' => 'BASE IN',
+        'brand_info__DESIGNER' => 'DESIGNER',
+        'brand_info__WEBSITE' => 'WEB SITE',
 
+        'brand_filter__NO_COLLECTION_1' => 'NO COLLECTION MATCHES YOUR CONDITIONS!',
+        'brand_filter__NO_COLLECTION_2' => 'CHANGING YOUR SEARCH CONDITIONS TO VIEW MORE COLLECTIONS',
     ),
     /**
      * brand_message.php.php

@@ -61,7 +61,7 @@
 					<div class="row"  ng-if="!brands.content.length">
 		                <div class="col-xs-12 text-center empty-warning">
 		                    <img src="/static/app/images/empty.png">
-		                    <p>No brand matches your conditions!<br/>Start your business with changing conditons.</p>
+		                    <p><?=__("brand_filter__NO_BRAND_1");?><br/><?=__("brand_filter__NO_BRAND_2");?></p>
 		                </div>
 		            </div>
 					<div class="brand-list-content row" ng-if="brands.content.length">
