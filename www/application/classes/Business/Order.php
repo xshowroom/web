@@ -50,15 +50,19 @@ class Business_Order
         
         $res = array();
         foreach ($productionListInCart as $productionInCart) {
+            
             // 获取collection信息和brand信息
             $collectionId = $productionInCart['collection_id'];
+            
             // 避免重复获取
             if (empty($res[$collectionId])) {
                 $collection = $this->collectionService->getCollectionInfo($userId, $collectionId);
+               
                 // 防止collection信息为空
                 if (empty($collection)) {
                     return null;
                 }
+
                 $res[$collectionId]['collectionInfo'] = $collection;
 
                 $brand = $this->brandService->getBrandInfo($collection['user_id']);
@@ -66,14 +70,21 @@ class Business_Order
                 if (empty($brand)) {
                     return null;
                 }
+
                 $res[$collectionId]['brandName'] = $brand['brand_name'];
             }
             
             $production = $this->productionService->getProduction($userId, $productionInCart['production_id']);
+            
             if(empty($production)) {
                 return null;
             }
-            $res[$collectionId]['productions'][] = $production;
+
+            $res[$collectionId]['productions'][] = array(
+                'id' => $production['id'],
+                'name' => $production['name'],
+                'small_image_url' => $production['small_image_url'],
+            );
         }
 
         return $res;
