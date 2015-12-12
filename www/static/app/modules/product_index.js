@@ -52,9 +52,9 @@ angular.module(
         			productionId: productId
         		}).success(function(res){
         			if (typeof(res) != 'object' || res.status) {
+        				$modal({title: 'Error Info', content: 'remove product from cart失败，请检查！', show: true});
      					return;
      				}
-        			$modal({title: 'Error Info', content: 'remove product from cart失败，请检查！', show: true});
         			$scope.isInCart = false;
         		});
         	};
