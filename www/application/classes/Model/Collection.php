@@ -172,7 +172,7 @@ class Model_Collection
         }
         
         if (!empty($filter['available'])) {
-            $sql .= " AND deadline >= '" . date('Y-m-d', strtotime($filter['available'])) ."'";
+            $sql .= " AND deadline BETWEEN '".date('Y-m-d')."' AND '".date('Y-m-d', strtotime($filter['available']))."' ";
         }
         
         if (!empty($filter['status'])) {
