@@ -51,6 +51,20 @@ class Controller_Api_Order extends Controller_BaseReqLogin
         ));
     }
 
+    public function action_getListFromCartByCollection()
+    {
+        $userId = $this->opUser['id'];
+        $collectionId = Request::current()->post('collectionId');
+
+        $res = $this->orderService->getListFromCartByCollection($userId);
+        
+        echo json_encode(array(
+            'status' => STATUS_SUCCESS,
+            'msg'   => '',
+            'data'  => $res,
+        ));
+    }
+
     public function action_deleteFromCart()
     {
         $userId = $this->opUser['id'];

@@ -90,6 +90,40 @@ class Business_Order
         return array_values($res);
     }
 
+    public function getListFromCartByCollection($userId, $collectionId)
+    {
+        $collection = $this->collectionService->getCollectionInfo($userId, $collectionId);
+        if (empty($collection)) {
+            return null;
+        }
+        $deadline = $collection['deadline'];
+
+        $productionListInCart = $this->orderModel->getProductionListFromCart($userId);
+
+        $res = array();
+        foreach ($productionListInCart as $productionInCart) {
+            if ($productionInCart['collection_id'] == $collectionId) {
+                $production = $this->productionService->getProduction($userId, $productionInCart['production_id']);
+                if (empty($production)) {
+                    return null;
+                }
+
+                $res[] = array(
+                    'name' => $production['name'],
+                    'styleNum' => $production['style_num'],
+                    'wholePrice' => $production['whole_price'],
+                    'retailPrice' => $production['retail_price'],
+                    'sizeRegion' => $production['size_region'],
+                    'sizeCode' => $production['size_code'],
+                    'color' => $production['color'],
+                );
+            }
+        }
+
+        return $res;
+
+    }
+
     public function deleteFromCart($userId, $productionId)
     {
         $production = $this->productionService->getProduction($userId, $productionId);
