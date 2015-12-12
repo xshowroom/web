@@ -54,7 +54,7 @@ class Business_Order
             $collectionId = $productionInCart['collection_id'];
             // 避免重复获取
             if (empty($res[$collectionId])) {
-                $collection = $this->collectionService->getCollectionInfo($userId, $collectionId)
+                $collection = $this->collectionService->getCollectionInfo($userId, $collectionId);
                 // 防止collection信息为空
                 if (empty($collection)) {
                     return null;
