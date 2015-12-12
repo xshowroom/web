@@ -80,12 +80,6 @@ class Business_Collection
         
         $res = $this->doFilter($userId, $filter);
         
-        $pageSize = Request::current()->query('pageSize');
-        $pageSize = empty($pageSize) ? 0 : $pageSize;
-        $offset = Request::current()->query('offset');
-        $offset = empty($offset) ? 0 : $offset;
-        $res = array_slice($res, $offset, $pageSize);
-        
         return $res;
     }
     
@@ -107,6 +101,10 @@ class Business_Collection
         $collectionIdList = array_column($resCollectionList, 'id');
         
         $productionList = $this->productionModel->getByCollectionIdList($collectionIdList);
+        if (empty($productionList)) {
+            return array();
+        }
+        
         foreach ($productionList as $production) {
             $resCollectionList[$production['collection_id']]['production'][$production['category']][] = array(
                 'id' => (int)$production['id'],
@@ -115,7 +113,20 @@ class Business_Collection
             );
         }
         
-        return $resCollectionList;
+        // 过滤掉没有production的collection
+        foreach ($resCollectionList as $collection) {
+            if (!empty($collection['production'])) {
+                $res[] = $collection;
+            }
+        }
+        
+        $pageSize = Request::current()->query('pageSize');
+        $pageSize = empty($pageSize) ? 0 : $pageSize;
+        $offset = Request::current()->query('offset');
+        $offset = empty($offset) ? 0 : $offset;
+        $res = array_slice($res, $offset, $pageSize);
+        
+        return $res;
     }
     
     public function getCollectionInfo($userId, $collectionId)
