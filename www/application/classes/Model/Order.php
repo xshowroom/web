@@ -135,7 +135,7 @@ class Model_Order
     {
         $result = DB::update('order')
                     ->set(array(
-                        'status' => $status,
+                        'order_status' => $status,
                     ))
                     ->where('order_id', '=', $orderId)
                     ->execute();
