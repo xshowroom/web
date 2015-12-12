@@ -511,6 +511,31 @@ return array_merge(
         'brand_filter__NO_COLLECTION_2' => '更改搜索条件去发现更多的商品系列',
     ),
     /**
+     * buyer_dashboard.php
+     */
+    array(
+        'buyer_dashboard__INTERESTED' => '感兴趣的品牌',
+        'buyer_dashboard__LAST_VISIT'=> '最后访问时间',
+
+        'buyer_dashboard__MY_BRANDS' => '我的品牌',
+        'buyer_dashboard__ALL_BRANDS' => '所有品牌 >',
+        'buyer_dashboard__BRANDS_EMPTY_1' => '欢迎来到SHOWROOM!',
+        'buyer_dashboard__BRANDS_EMPTY_2' => '您可以从这里开始',
+        'buyer_dashboard__BRANDS_EMPTY_3' => '浏览品牌',
+
+        'buyer_dashboard__MY_ORDERS' => '我的订单',
+        'buyer_dashboard__ALL_ORDERS' => '所有订单 >',
+        'buyer_dashboard__ORDER_EMPTY_1' => '欢迎来到SHOWROOM!',
+        'buyer_dashboard__ORDER_EMPTY_2' => '您还没有创建订单，你可以先',
+        'buyer_dashboard__ORDER_EMPTY_3' => '浏览品牌',
+
+        'buyer_dashboard__MY_STORES' => '我的店铺',
+        'buyer_dashboard__ALL_STORES' => '所有店铺 >',
+
+        'buyer_dashboard__ACCOUNT_MANAGER' => '在XSHOWROOM 我们拥有专属的品牌客户经理来帮助您介绍品牌, 与您共建商品集合, 并帮助您完成订单！',
+        'buyer_dashboard__ACCOUNT_MANAGER_CONTRACT' => '联系我们'
+    ),
+    /**
      * user_message.php & user_message_detail.php
      */
     array(
