@@ -73,7 +73,7 @@ class Model_Order
 
     public function addOrder($order)
     {
-        $result = DB::insert('buyer_brand_map')
+        $result = DB::insert('order')
                     ->columns(array(
                         'order_id',
                         'buyer_id',

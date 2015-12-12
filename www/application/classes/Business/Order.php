@@ -105,7 +105,7 @@ class Business_Order
     {
         // item_amount && total_num
         $shippingAmount = $itemAmount = $totalNum = 0;
-        $detail = json_decode($productionDetail);
+        $detail = json_decode($productionDetail, true);
         foreach ($detail as $productionId => $items) {
             $production = $this->productionService->getProduction($userId, $productionId);
             foreach ($items as $item) {
@@ -116,15 +116,15 @@ class Business_Order
 
         $totalAmount = $shippingAmount + $itemAmount;
 
-        $collection = $this->getCollectionInfo($userId, $collectionId); 
+        $collection = $this->collectionService->getCollectionInfo($userId, $collectionId); 
 
         if ($collection['mini_order'] > $totalAmount) { // 要不要加shipAmount
             $errorInfo = Kohana::message('message', 'AUTH_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
 
-        $relation = $this->buyerService->getRelation($userId, $brandId);
-        $shop = $this->shopService->getShopById($userId, $shopId);
+        $relation = $this->buyerService->getRelation($userId, $collection['user_id']);
+        $shop = $this->shopService->getShopById($userId, $relation['shop_id']);
 
         $order = array(
             'orderId' => $this->getOrderId(),
