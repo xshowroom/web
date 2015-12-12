@@ -124,7 +124,7 @@ class Model_Order
         $result = DB::select()
                     ->from('order')
                     ->where('id', '=', $orderId)
-                    ->where('status', '==', STAT_NORMAL)
+                    ->where('status', '=', STAT_NORMAL)
                     ->execute()
                     ->as_array();
         
