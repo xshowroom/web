@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="xShowroom.product.index"
-	ng-init="hasAuth=<?=$hasAuth ? 'true': 'false'?>;">
+	ng-init="hasAuth=<?=$hasAuth ? 'true': 'false'?>;productId = <?=$production['id']?>;">
 <head>
     <meta charset="UTF-8" >
     <title>XShowroom</title>
@@ -155,8 +155,9 @@
                  	</div>
                  	<?php } else{?>
                  	<div class="col-xs-12 product-action">
-                 		<button class="btn btn-type-2" ng-click="addProductToCart(<?=$production['id']?>)">ADD TO CART</button>
-                 		<button class="btn btn-type-1">VIEW CART</button>
+                 		<button class="btn btn-type-2" ng-if="isInCart" ng-click="removeProductFromCart(<?=$production['id']?>)">REMOVE FROM CART</button>
+                 		<button class="btn btn-type-2" ng-if="!isInCart" ng-click="addProductToCart(<?=$production['id']?>)">ADD TO CART</button>
+                 		<a href="/buyer/cart" target="_self" class="btn btn-type-1">VIEW CART</a>
                  	</div>
                  	<?php }?>
                 </div>
