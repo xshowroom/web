@@ -137,6 +137,8 @@ class Business_Order
 
     public function createOrder($userId, $collectionId, $productionDetail, $comments, $description)
     {
+        // 需要从购物车删除的产品id列表
+        $productionIds = array();
         // item_amount && total_num
         $shippingAmount = $itemAmount = $totalNum = 0;
         $detail = json_decode($productionDetail, true);
@@ -146,6 +148,7 @@ class Business_Order
                 $totalNum = $totalNum + $item['buy_num'];
                 $itemAmount = $itemAmount + $item['buy_num'] * $production['retail_price']; // 批发价还是零售价
             }
+            $productionIds[] = $productionId;
         }
 
         $totalAmount = $shippingAmount + $itemAmount;
@@ -178,6 +181,10 @@ class Business_Order
         );
 
         $res = $this->orderModel->addOrder($order);
+
+        foreach ($productionIds as $productionId) {
+            $this->deleteFromCart($userId, $productionId);
+        }
 
         return $order['orderId'];
         
