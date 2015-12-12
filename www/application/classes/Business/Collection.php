@@ -41,7 +41,7 @@ class Business_Collection
     private function doFilter($userId, $filter)
     {
         // 如果有show查询条件，筛选出相应的user_id
-        if (!empty($filter['status']) || !empty($filter['season'])) {
+        if (!empty($filter['mode']) || !empty($filter['season'])) {
             $collectionList = $this->collectionModel->getByFilter($filter);
         } else {
             $collectionList = $this->getAllCollectionList($userId);
@@ -74,10 +74,10 @@ class Business_Collection
     public function getCollectionList($userId)
     {
         $filter = array(
-            'status'    => Request::current()->query('status'),
+            'mode'    => Request::current()->query('mode'),
             'season'    => $this->doQuote(Request::current()->query('season')),
         );
-        
+
         $res = $this->doFilter($userId, $filter);
         
         return $res;

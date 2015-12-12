@@ -175,8 +175,8 @@ class Model_Collection
             $sql .= " AND deadline BETWEEN '".date('Y-m-d')."' AND '".date('Y-m-d', strtotime($filter['available']))."' ";
         }
         
-        if (!empty($filter['status'])) {
-            $sql .= " AND mode = '{$filter['status']}' ";
+        if (!empty($filter['mode'])) {
+            $sql .= " AND mode = '{$filter['mode']}' ";
         }
         
         $result = DB::query(Database::SELECT, $sql)->execute()->as_array('id');
