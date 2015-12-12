@@ -114,8 +114,9 @@ class Controller_Api_Order extends Controller_BaseReqLogin
     {
         $userId = $this->opUser['id'];
         $status = Request::current()->post('status');
+        $status = Request::current()->post('type');
 
-        $res = $this->orderService->getOrderList($userId, $status);       
+        $res = $this->orderService->getOrderList($userId, $status, $type);       
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,

@@ -154,4 +154,28 @@ class Model_Order
         
         return $result;
     }
+
+    public function getByBuyerId($buyerId)
+    {
+        $result = DB::select()
+                    ->from('order')
+                    ->where('buyer_id', '=', $buyerId)
+                    ->where('status', '=', STAT_NORMAL)
+                    ->execute()
+                    ->as_array();
+        
+        return empty($result) ? array() : $result[0];
+    }
+
+    public function getByBrandId($brandId)
+    {
+        $result = DB::select()
+                    ->from('order')
+                    ->where('brand_id', '=', $brandId)
+                    ->where('status', '=', STAT_NORMAL)
+                    ->execute()
+                    ->as_array();
+        
+        return empty($result) ? array() : $result[0];
+    }
 }
