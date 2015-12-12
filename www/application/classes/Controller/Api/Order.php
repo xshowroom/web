@@ -27,7 +27,7 @@ class Controller_Api_Order extends Controller_BaseReqLogin
     public function action_getFromCart()
     {
         $userId = $this->opUser['id'];
-        $productionId = Request::current()->post('productionId');
+        $productionId = Request::current()->query('productionId');
 
         $res = $this->orderService->getProductionFromCart($userId, $productionId);       
 
@@ -54,7 +54,7 @@ class Controller_Api_Order extends Controller_BaseReqLogin
     public function action_getListFromCartByCollection()
     {
         $userId = $this->opUser['id'];
-        $collectionId = Request::current()->post('collectionId');
+        $collectionId = Request::current()->query('collectionId');
 
         $res = $this->orderService->getListFromCartByCollection($userId, $collectionId);
         
