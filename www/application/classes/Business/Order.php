@@ -202,7 +202,7 @@ class Business_Order
     public function getOrder($userId, $orderId)
     {
         $order = $this->orderModel->getById($orderId);
-        if ($order['user_id'] != $userId) {
+        if ($order['buyer_id'] != $userId) {
             $errorInfo = Kohana::message('message', 'AUTH_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
