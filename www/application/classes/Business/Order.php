@@ -24,7 +24,14 @@ class Business_Order
         $production = $this->productionService->getProduction($userId, $productionId);
         $collectionId = $production['collection_id'];
 
-        $res = $this->orderModel->addToCart($userId, $collectionId, $productionId);
+        $productInCart = $this->getProductionFromCart($userId, $productionId);
+
+        $res = null;
+
+        if (!empty($productInCart))
+        {
+            $res = $this->orderModel->addToCart($userId, $collectionId, $productionId);
+        }
 
         return $res;
     }
