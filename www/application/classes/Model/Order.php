@@ -38,7 +38,7 @@ class Model_Order
     {
         $result = DB::select()
                     ->from('cart')
-                    ->where('user_id', '=', $userId)
+                    ->where('buyer_id', '=', $userId)
                     ->where('production_id', '=', $productionId)
                     ->where('status', '=', STAT_NORMAL)
                     ->execute()
