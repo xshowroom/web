@@ -153,7 +153,7 @@
                  	<div class="col-xs-12 product-action">
                  		<button class="btn btn-type-2" data-toggle="modal" data-target="#modalDeleteConfirm"><?=__("product_index__PRODUCT_btn_DELETE")?></button>
                  	</div>
-                 	<?php } else{?>
+                 	<?php } else if (!$hasAuth){?>
                  	<div class="col-xs-12 product-action">
                  		<button class="btn btn-type-2" ng-if="isInCart" ng-click="removeProductFromCart(<?=$production['id']?>)">REMOVE FROM CART</button>
                  		<button class="btn btn-type-2" ng-if="!isInCart" ng-click="addProductToCart(<?=$production['id']?>)">ADD TO CART</button>
