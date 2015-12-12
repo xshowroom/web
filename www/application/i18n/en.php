@@ -506,8 +506,22 @@ return array_merge(
         'brand_info__DESIGNER' => 'DESIGNER',
         'brand_info__WEBSITE' => 'WEB SITE',
 
+        'brand_filter__COLLECTIONS' => 'COLLECTIONS',
         'brand_filter__NO_COLLECTION_1' => 'NO COLLECTION MATCHES YOUR CONDITIONS!',
         'brand_filter__NO_COLLECTION_2' => 'CHANGING YOUR SEARCH CONDITIONS TO VIEW MORE COLLECTIONS',
+
+        'brand_access__NO_PRIVILEGE_1' => 'YOU DO NOT HAVE ACCESS TO THIS BRAND.',
+        'brand_access__NO_PRIVILEGE_2' => 'APPLY PRIVILEGE TO VIEW ALL HIS COLLECTION.',
+
+        'brand_access__btn_APPLY' => 'APPLY',
+
+        'brand_access__INFO_APPLIED' => 'SYSTEM ADMIN IS NOW REVIEWING YOUR APPLICATION.',
+        'brand_access__btn_APPLIED' => 'APPLIED',
+
+        'brand_store_application__TITLE' => 'SELECT THE STORE TO AUTHORIZE',
+        'brand_store_application__BODY' => 'Please select the store to authorize the brand.',
+        'brand_store_application__btn_APPLY' => 'APPLY',
+        'brand_store_application__btn_CANCEL' => 'CANCEL',
     ),
     /**
      * buyer_dashboard.php

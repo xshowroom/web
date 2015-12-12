@@ -95,18 +95,22 @@
 				</div>
 				<div class="col-xs-9 collection-list" ng-if="authCode==-2 || authCode==-1">
 					<div class="has-no-auth">
-						<p>You do not have access to BRAND B. Apply</br>privilege to view all his collection.</p>
 						<?php if (empty($user)): ?>
-							<a class="btn btn-type-1" href="/login">APPLY</a>
+							<p><?=__("brand_access__NO_PRIVILEGE_1")?></br><?=__("brand_access__NO_PRIVILEGE_2")?></p>
+							<a class="btn btn-type-1" href="<?URL::site('login')?>"><?=__("brand_access__btn_APPLY")?></a>
 						<?php else: ?>
-							<button class="btn btn-type-2 auth-applied" ng-if="authCode==-1">APPLIED</button>
-							<button class="btn btn-type-1" ng-if="authCode==-2" data-toggle="modal" data-target="#auth-store-modal">APPLY</button>
+							<!-- Applied -->
+							<p ng-if="authCode==-1"><?=__("brand_access__INFO_APPLIED")?></p>
+							<button class="btn btn-type-2 auth-applied" ng-if="authCode==-1"><?=__("brand_access__btn_APPLIED")?></button>
+							<!-- Apply -->
+							<p ng-if="authCode==-2"><?=__("brand_access__NO_PRIVILEGE_1")?></br><?=__("brand_access__NO_PRIVILEGE_2")?></p>
+							<button class="btn btn-type-1" ng-if="authCode==-2" data-toggle="modal" data-target="#auth-store-modal"><?=__("brand_access__btn_APPLY")?></button>
 						<?php endif; ?>
 					</div>
 					<div class="row">
 						<div class=" col-xs-12">
 							<div class="collection-list-header">
-								<span class="collection-list-title">COLLECTIONS</span>
+								<span class="collection-list-title"><?=__("brand_filter__COLLECTIONS")?></span>
 							</div>
 						</div>
 					</div>
@@ -125,7 +129,7 @@
 					<div class="row"  ng-if="!collections.content.length">
 						<div class=" col-xs-12">
 							<div class="collection-list-header">
-								<span class="collection-list-title">COLLECTIONS</span>
+								<span class="collection-list-title"><?=__("brand_filter__COLLECTIONS")?></span>
 							</div>
 							 <div class="col-xs-12 text-center empty-warning">
 			                    <img src="/static/app/images/empty.png">
@@ -176,16 +180,16 @@
 	  	<div class="modal-dialog" role="document">
 		    <div class="modal-content">
 	      		<div class="modal-body">
-		       		<h4>SELECT THE SHOP TO AUTHORIZE</h4>
-		       		<p>Please select the shop to authorize the brand.</p>
+		       		<h4><?=__('brand_store_application__TITLE')?></h4>
+		       		<p><?=__('brand_store_application__BODY')?></p>
 		       		<div>
 		       			<div class="radio" ng-repeat="store in stores track by $index">
 							<label><input type="radio" name="authStore" ng-value="store" ng-click="selectStore(store)">{{store.name}}</label>
 						</div>
 		       		</div>
 		       		<div>
-		       			<button class="btn btn-type-1" data-dismiss="modal">CANCEL</button>
-		       			<button class="btn btn-type-1" ng-click="applyAuth()">OK</button>
+						<button class="btn btn-type-1" ng-click="applyAuth()"><?=__('brand_store_application__btn_APPLY')?></button>
+		       			<button class="btn btn-type-1" data-dismiss="modal"><?=__('brand_store_application__btn_CANCEL')?></button>
 		       		</div>
 	      		</div>
 	    	</div>

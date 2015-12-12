@@ -507,8 +507,22 @@ return array_merge(
         'brand_info__DESIGNER' => '设计师',
         'brand_info__WEBSITE' => '官网网址',
 
+        'brand_filter__COLLECTIONS' => '商品系列',
         'brand_filter__NO_COLLECTION_1' => '没找到符合条件的商品系列！',
         'brand_filter__NO_COLLECTION_2' => '更改搜索条件去发现更多的商品系列',
+
+        'brand_access__NO_PRIVILEGE_1' => '您没有权限访问该品牌',
+        'brand_access__NO_PRIVILEGE_2' => '申请这个品牌的访问权限',
+
+        'brand_access__btn_APPLY' => '申请访问',
+
+        'brand_access__INFO_APPLIED' => '请稍候，管理员正在审核您的权限',
+        'brand_access__btn_APPLIED' => '审核中',
+
+        'brand_store_application__TITLE' => '申请访问权限',
+        'brand_store_application__BODY' => '请选择一家店铺来申请访问权限',
+        'brand_store_application__btn_APPLY' => '申请',
+        'brand_store_application__btn_CANCEL' => '取消',
     ),
     /**
      * buyer_dashboard.php
