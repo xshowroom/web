@@ -83,7 +83,11 @@ angular.module(
      			options.pageSize = $scope.collections.pageSize;
      			options.offset = $scope.collections.offset;
      			options.brandId = $scope.brandId;
-     			
+
+				if(options.season){
+					options.season = options.season.join(',');
+				}
+
      			Brand.getCollectionList(options).success(function(res){
      				if (typeof(res) != 'object' || res.status) {
      					alert('获取Collection数据失败，请检查！');

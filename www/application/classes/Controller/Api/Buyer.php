@@ -52,8 +52,7 @@ class Controller_Api_Buyer extends Controller_BaseReqLogin
             'data'   => $res,
         ));
     }
-    
-    
+
     public function action_getAuthList()
     {
         $userId  = $this->opUser['id'];
