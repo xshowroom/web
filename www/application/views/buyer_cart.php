@@ -30,7 +30,7 @@
         	array('currentPage' =>  'cart', 'userAttr'=> $userAttr)); 
        	?>
 	</nav>
-	 <section class="row no-vertical-padding" ng-cloak>
+	<section class="row no-vertical-padding" ng-cloak>
         <div class="container collection-list">
         	<div class="row">
                 <div class="col-xs-12">

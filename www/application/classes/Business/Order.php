@@ -109,13 +109,15 @@ class Business_Order
                 }
 
                 $res[] = array(
+                	'id' => $production['id'],
                     'name' => $production['name'],
                     'styleNum' => $production['style_num'],
                     'wholePrice' => $production['whole_price'],
                     'retailPrice' => $production['retail_price'],
                     'sizeRegion' => $production['size_region'],
-                    'sizeCode' => $production['size_code'],
-                    'color' => $production['color'],
+                    'sizeCode' => json_decode($production['size_code']),
+                    'color' => json_decode($production['color']),
+                	'image' => $production['image_url'][0],
                 );
             }
         }

@@ -154,6 +154,13 @@ Route::set('product_create', 'product/create/<id>')
             'action'     => 'create',
             'id'        => '\d+',
         ));
+        
+Route::set('order_create', 'order/create/<id>')
+        ->defaults(array(
+        		'controller' => 'order',
+        		'action'     => 'create',
+        		'id'        => '\d+',
+        ));
 
 Route::set('detail', '<controller>(/<action>)/<id>',
         array(

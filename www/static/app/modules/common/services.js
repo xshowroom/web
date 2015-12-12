@@ -2,6 +2,23 @@ angular.module(
     'xShowroom.services', ['xShowroom.i18n']
 )
 .service(
+	'Order', 
+	[
+	    '$http', '$httpParamSerializer',
+		function ($http,  $httpParamSerializer) {
+		    return {
+		    	create:function (opts) {
+		    		return $http.post('/api/order/createOrder', $httpParamSerializer(opts), {
+						headers: {
+							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
+						}
+					});
+		    	}
+   			};
+         }
+    ]
+)
+.service(
 	'Cart', 
 	[
 	    '$http', '$httpParamSerializer',
@@ -26,6 +43,9 @@ angular.module(
 		      	},
 		      	findAll: function(opts){
 		      		return $http.get('/api/order/getListFromCart', {params: opts});
+		      	},
+		      	findOne: function(opts){
+		      		return $http.get('/api/order/getListFromCartByCollection', {params: opts});
 		      	}
    			};
          }
@@ -146,7 +166,8 @@ angular.module(
 		      	},
 		      	getIndexConditions: function(){
 		      		return {
-						available: conditions.available
+		      			mode: conditions.mode,
+		      			season: conditions.season
 		      		};
 		      	},
 		      	getMyBrandConditions: function(){
