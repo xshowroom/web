@@ -48,7 +48,7 @@ class Business_Collection
         }
         
         foreach ($collectionList as $idx => $collection) {
-            if (strtotime($collection['deadline']) <= strtotime(date('Y-m-d'))) {
+            if (strtotime($collection['deadline']) <= strtotime(date('Y-m-d')) || $collection['status'] != Model_Collection::TYPE_OF_ONLINE) {
                 unset($collectionList[$idx]);
             }
         }
@@ -105,9 +105,6 @@ class Business_Collection
             $resCollectionList[$collection['id']] = $collection;
         }
         $collectionIdList = array_column($resCollectionList, 'id');
-        if (empty($collectionIdList)) {
-            return array();
-        }
         
         $productionList = $this->productionModel->getByCollectionIdList($collectionIdList);
         foreach ($productionList as $production) {
