@@ -9,6 +9,7 @@ class Business_Order
     public $collectionService;
     public $buyerService;
     public $shopService;
+    public $brandService;
 
     public function __construct()
     {
@@ -17,6 +18,7 @@ class Business_Order
         $this->collectionService = new Business_Collection();
         $this->buyerService = new Business_Buyer();
         $this->shopService = new Business_Shop();
+        $this->brandService = new Business_Brand();
     }
 
     public function addToCart($userId, $productionId)
@@ -26,12 +28,11 @@ class Business_Order
 
         $productInCart = $this->getProductionFromCart($userId, $productionId);
 
-        $res = null;
-
-        if (empty($productInCart))
-        {
-            $res = $this->orderModel->addToCart($userId, $collectionId, $productionId);
+        if (!empty($productInCart)) {
+            return false;    
         }
+
+        $res = $this->orderModel->addToCart($userId, $collectionId, $productionId);
 
         return $res;
     }
@@ -49,9 +50,30 @@ class Business_Order
         
         $res = array();
         foreach ($productionListInCart as $productionInCart) {
-            $res[$productionInCart['collection_id']][] = $productionInCart['production_id'];
-            // to-do
-            // 根据productionId获取前端需要的production信息
+            // 获取collection信息和brand信息
+            $collectionId = $productionInCart['collection_id'];
+            // 避免重复获取
+            if (empty($res[$collectionId])) {
+                $collection = $this->collectionService->getCollectionInfo($userId, $collectionId)
+                // 防止collection信息为空
+                if (empty($collection)) {
+                    return null;
+                }
+                $res[$collectionId]['collectionInfo'] = $collection;
+
+                $brand = $this->brandService->getBrandInfo($collection['user_id']);
+                // 防止brand信息为空
+                if (empty($brand)) {
+                    return null;
+                }
+                $res[$collectionId]['brandName'] = $brand['brand_name'];
+            }
+            
+            $production = $this->productionService->getProduction($userId, $productionInCart['production_id']);
+            if(empty($production)) {
+                return null;
+            }
+            $res[$collectionId]['productions'][] = $production;
         }
 
         return $res;
