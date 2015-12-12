@@ -8,15 +8,21 @@
 angular.module(
     'xShowroom.buyer.cart', 
     [
-        'xShowroom.i18n', 'xShowroom.directives'
+        'xShowroom.i18n', 'xShowroom.directives', 'mgcrea.ngStrap'
     ]
 )
 .controller(
     'BuyerCartCtrl',
     [
-     	'$scope',
-        function ($scope) {
-     	
+     	'$scope', '$modal', 'Cart',
+        function ($scope, $modal, Cart) {
+     		Cart.findAll().success(function(res){
+     			if (typeof(res) != 'object' || res.status) {
+    				$modal({title: 'Error Info', content: '获取cart collection list失败，请检查！', show: true});
+ 					return;
+ 				}
+     			$scope.collections = res.data;
+     		});
         }
     ]
 );

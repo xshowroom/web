@@ -175,7 +175,6 @@
             </div>
             <?php }?>
         </div>
-        
     </section>
     <section class="row no-vertical-padding">
         <div class="container support">
