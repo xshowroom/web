@@ -123,7 +123,7 @@ class Model_Order
     {
         $result = DB::select()
                     ->from('order')
-                    ->where('id', '=', $orderId)
+                    ->where('order_id', '=', $orderId)
                     ->where('status', '=', STAT_NORMAL)
                     ->execute()
                     ->as_array();
