@@ -27,7 +27,7 @@ class Controller_Api_Order extends Controller_BaseReqLogin
     public function action_getFromCart()
     {
         $userId = $this->opUser['id'];
-        $productionId = Request::current()->query('productionId');
+        $productionId = Request::current()->post('productionId');
 
         $res = $this->orderService->getProductionFromCart($userId, $productionId);       
 
