@@ -100,7 +100,8 @@
 
 .product-info .product-gallery{
 	margin-top: 20px;
-	height: 200px;
+    height: 150px;
+    margin-bottom: 50px;
 }
 .product-info .product-gallery > div{
 	height: 100%;

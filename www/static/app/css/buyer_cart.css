@@ -73,6 +73,7 @@
     position: relative;
     display: inline-block;
     width: 50px;
+    float: left;
 }
 .collection-list .collection-list-content .collection-item .collection-info .product-photo > img{
 	width: 100%;
