@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8" >
 	<title>XShowroom</title>
-	
 	<link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="/static/bower_components/font-awesome/css/font-awesome.min.css" />
 	<link rel="stylesheet" type="text/css" href="/static/bower_components/angular-motion/dist/angular-motion.min.css">
@@ -62,14 +61,14 @@
 	                  		<div><span>Min-order:</span><span>{{record.collectionInfo.currency}}{{record.collectionInfo.mini_order}}</span></div>
 	                  		<div><span>Products In Cart:</span></div>
 	                  		<div>
-	                  			<a class="product-photo" ng-repeat="product in record.productions" >
+	                  			<a class="product-photo" ng-href="/product/{{product.id}}" ng-repeat="product in record.productions" >
 	                  				<img class="product-photo"
 	                  				ng-src="/{{product.small_image_url[0]}}">
 	                  			</a>
 	                  		</div>
 	                  	</div>
 	                  	<div class="col-xs-2 text-center cart-actions">
-	                  		<button class="btn btn-type-2">Generate Order</button>
+	                  		<a ng-href="/order/create/{{record.collectionInfo.id}}" class="btn btn-type-2">Generate Order</a>
 	                  	</div>
 	                  	<div class="clearfix"></div>
                   	</div>

@@ -133,14 +133,14 @@
 			                </div>
 						</div>
 					</div>
-					<div class="row" ng-repeat-start="collection in collections.content">
+					<div class="row" ng-repeat-start="collection in collections.content" ng-if="collection.production">
 						<div class=" col-xs-12">
 							<div class="collection-list-header">
 								<a class="collection-list-title" ng-href="/collection/{{collection.id}}">{{collection.name}}</a>
 							</div>
 						</div>
 					</div>
-					<div class="collection-list-content row" ng-repeat-end>
+					<div class="collection-list-content row" ng-repeat-end ng-if="collection.production">
 						<div class="col-xs-3" ng-repeat="(category, detail) in collection.production">
 							<a target="_self" href="/collection/{{collection.id}}#?category={{category}}" class="collection-item image-link">
 								<img ng-src="/{{parseImageUrl(detail[0].image)}}" class="collection-item-image">
