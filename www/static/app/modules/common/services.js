@@ -15,7 +15,14 @@ angular.module(
 					});
 		    	},
 		      	removeProductFromCart:function (opts) {
-		    		return $http.get('/api/order/addToCart', {params: opts});
+		      		return $http.post('/api/order/deleteFromCart', $httpParamSerializer(opts), {
+						headers: {
+							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
+						}
+					});
+		      	},
+		      	checkProductIsExisted: function(opts){
+		      		return $http.get('/api/order/getFromCart', {params: opts});
 		      	}
    			};
          }
