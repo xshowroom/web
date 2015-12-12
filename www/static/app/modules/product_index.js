@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'ProductIndexCtrl',
     [
-        '$scope', '$modal', 'Product', 'Order',
-        function ($scope, $modal, Product, Order) {
+        '$scope', '$modal', 'Product', 'Cart',
+        function ($scope, $modal, Product, Cart) {
         	$scope.setProductCover = function (url) {
         		$scope.productCover = url;
         	};
@@ -36,7 +36,7 @@ angular.module(
         	};
         	
         	$scope.addProductToCart = function(productId){
-        		Order.addProductToCart({
+        		Cart.addProduct({
         			productionId: productId
         		}).success(function(res){
         			if (typeof(res) != 'object' || res.status) {
@@ -48,7 +48,7 @@ angular.module(
         	};
         	
         	$scope.removeProductFromCart  = function(productId){
-        		Order.removeProductFromCart({
+        		Cart.removeProduct({
         			productionId: productId
         		}).success(function(res){
         			if (typeof(res) != 'object' || res.status) {
@@ -60,13 +60,14 @@ angular.module(
         	};
         	
         	$scope.checkProductIsExisted = function(productId){
-        		Order.checkProductIsExisted({
+        		Cart.checkProduct({
         			productionId: $scope.productId
         		}).success(function(res){
         			if (typeof(res) != 'object' || res.status) {
         				$modal({title: 'Error Info', content: '获取Cart数据失败，请检查！'}).show();
      					return;
      				}
+        			$scope.isInCart = !!res.data;
         		});
         	};
         	
