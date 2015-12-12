@@ -56,7 +56,7 @@ class Model_Order
                     ->execute()
                     ->as_array();
         
-        return empty($result) ? array() : $result[0];
+        return $result;
     }
 
     public function deleteFromCart($id)
