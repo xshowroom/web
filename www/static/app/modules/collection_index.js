@@ -154,7 +154,7 @@ angular.module(
          	
          	var init = function (){
      			if ($scope.hasAuth){
-     				initCollection
+     				initCollection();
      			}
      			$scope.filters = {
      				category: $location.search().category || '',

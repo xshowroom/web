@@ -121,7 +121,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-9 collection-list">
+				<div class="col-xs-9 collection-list" ng-if="authCode==0">
 					<div class="row"  ng-if="!collections.content.length">
 						<div class=" col-xs-12">
 							<div class="collection-list-header">

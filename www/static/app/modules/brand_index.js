@@ -62,6 +62,9 @@ angular.module(
      		};
      		
      		$scope.setFilters = function(name, condition){
+     			if ($scope.authCode != 0){
+     				return;
+     			}
      			if($scope.filterTimeout){
      				$timeout.cancel($scope.filterTimeout);
      				$scope.filterTimeout = null;
