@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  ng-app="xShowroom.product.create">
+<html  ng-app="xShowroom.product.create" ng-init="collectionId = <?=$collectionId?>;">
 <head>
     <meta charset="UTF-8" >
     <title>XShowroom</title>
@@ -21,9 +21,6 @@
     <script type="text/javascript" src="/static/app/modules/common/services.js"></script>
     <script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
     <script type="text/javascript" src="/static/app/modules/product_create.js"></script>
-    <script>
-        var collectionId = <?=$collectionId?>;
-    </script>
 </head>
 <body ng-controller="ProductCreateCtrl" class="container-fluid">
     <nav class="row setting-info">

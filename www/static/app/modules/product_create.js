@@ -22,14 +22,8 @@ angular.module(
      		$scope.sizeRegions = Product.getSizeRegions();
      		$scope.materials = Product.getMaterials();
      		
-//     		var referrer = document.referrer;
-//     		var urlReg = /\/collection\/\w+$/;
-//     		if (!urlReg.test(referrer)){
-//     			window.open('/error', '_self');
-//     		}
-//     		var collectionId = referrer.match(urlReg)[0].split(/\//)[2];
      		$scope.product = {
-         		collectionId: collectionId,
+         		collectionId: $scope.collectionId,
          		images: []
          	};
      		
