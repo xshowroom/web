@@ -235,7 +235,7 @@ class Business_Order
     public function updateStatus($userId, $orderId, $status)
     {
         $order = $this->getOrder($userId, $orderId);
-        $res = $this->updateStatus($order['order_id'], $status);
+        $res = $this->orderModel->updateStatus($order['order_id'], $status);
 
         return $res;
     }
@@ -243,7 +243,7 @@ class Business_Order
     public function deleteOrder($userId, $orderId)
     {
         $order = $this->getOrder($userId, $orderId);
-        $res = $this->deleteOrder($order['order_id']);
+        $res = $this->orderModel->deleteOrder($order['order_id']);
 
         return $res;
     }
