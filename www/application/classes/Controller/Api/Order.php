@@ -30,7 +30,7 @@ class Controller_Api_Order extends Controller_BaseReqLogin
         $productionId = Request::current()->query('productionId');
 
         $res = $this->orderService->getProductionFromCart($userId, $productionId);       
-        
+
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
             'msg'   => '',

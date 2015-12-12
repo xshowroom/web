@@ -28,7 +28,7 @@ class Business_Order
 
         $res = null;
 
-        if (!empty($productInCart))
+        if (empty($productInCart))
         {
             $res = $this->orderModel->addToCart($userId, $collectionId, $productionId);
         }
@@ -40,7 +40,7 @@ class Business_Order
     {
         $productionInCart = $this->orderModel->getProductionFromCart($userId, $productionId);
 
-        return $productionInCart;
+        return empty($productionInCart)? null : $productionInCart;
     }
 
     public function getProductionListFromCart($userId)
