@@ -56,7 +56,7 @@ class Controller_Api_Order extends Controller_BaseReqLogin
         $userId = $this->opUser['id'];
         $collectionId = Request::current()->post('collectionId');
 
-        $res = $this->orderService->getListFromCartByCollection($userId);
+        $res = $this->orderService->getListFromCartByCollection($userId, $collectionId);
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
