@@ -210,9 +210,13 @@ class Business_Order
         return $order;
     }
 
-    public function getOrderList($userId, $status)
+    public function getOrderList($userId, $status, $type)
     {
-        $orderList = $this->orderModel->getByUserId($userId);
+        if ($type == Model_User::TYPE_USER_BRAND) {
+            $orderList = $this->orderModel->getByBrandId($userId);
+        } else {
+            $orderList = $this->orderModel->getByBuyerId($userId);
+        }
 
         if ($status === null) {
             return $orderList;    
