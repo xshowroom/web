@@ -492,10 +492,61 @@ return array_merge(
         'brand_collection__btn_VIEW' => 'VIEW',
     ),
     /**
-     * brand_order.php
+     * buyer_brand.php, shop.php
      */
     array(
+        'brand_filter__NO_BRAND_1' => 'NO BRAND MATCHES YOUR CONDITIONS!',
+        'brand_filter__NO_BRAND_2' => 'CHANGING YOUR SEARCH CONDITIONS TO VIEW MORE BRANDS',
+    ),
+    /**
+     * brand_index.php
+     */
+    array(
+        'brand_info__BASE_IN' => 'BASE IN',
+        'brand_info__DESIGNER' => 'DESIGNER',
+        'brand_info__WEBSITE' => 'WEB SITE',
 
+        'brand_filter__COLLECTIONS' => 'COLLECTIONS',
+        'brand_filter__NO_COLLECTION_1' => 'NO COLLECTION MATCHES YOUR CONDITIONS!',
+        'brand_filter__NO_COLLECTION_2' => 'CHANGING YOUR SEARCH CONDITIONS TO VIEW MORE COLLECTIONS',
+
+        'brand_access__NO_PRIVILEGE_1' => 'YOU DO NOT HAVE ACCESS TO THIS BRAND.',
+        'brand_access__NO_PRIVILEGE_2' => 'APPLY PRIVILEGE TO VIEW ALL HIS COLLECTION.',
+
+        'brand_access__btn_APPLY' => 'APPLY',
+
+        'brand_access__INFO_APPLIED' => 'SYSTEM ADMIN IS NOW REVIEWING YOUR APPLICATION.',
+        'brand_access__btn_APPLIED' => 'APPLIED',
+
+        'brand_store_application__TITLE' => 'SELECT THE STORE TO AUTHORIZE',
+        'brand_store_application__BODY' => 'Please select the store to authorize the brand.',
+        'brand_store_application__btn_APPLY' => 'APPLY',
+        'brand_store_application__btn_CANCEL' => 'CANCEL',
+    ),
+    /**
+     * buyer_dashboard.php
+     */
+    array(
+        'buyer_dashboard__INTERESTED' => 'INTERESTED BRANDS',
+        'buyer_dashboard__LAST_VISIT'=> 'LAST TIME VISIT',
+
+        'buyer_dashboard__MY_BRANDS' => 'MY BRANDS',
+        'buyer_dashboard__ALL_BRANDS' => 'ALL BRANDS >',
+        'buyer_dashboard__BRANDS_EMPTY_1' => 'CANNOT FIND WHAT YOU LIKE?',
+        'buyer_dashboard__BRANDS_EMPTY_2' => 'MORE AND MORE BRANDS ARE JOINING US.',
+        'buyer_dashboard__BRANDS_EMPTY_3' => 'EXPLORE NOW',
+
+        'buyer_dashboard__MY_ORDERS' => 'MY ORDERS',
+        'buyer_dashboard__ALL_ORDERS' => 'ALL ORDERS >',
+        'buyer_dashboard__ORDER_EMPTY_1' => 'WELCOME TO XSHOWROOM',
+        'buyer_dashboard__ORDER_EMPTY_2' => 'YOU HAVE ON ORDERS. PLEASE',
+        'buyer_dashboard__ORDER_EMPTY_3' => 'EXPLORE BRANDS',
+
+        'buyer_dashboard__MY_STORES' => 'MY STORES',
+        'buyer_dashboard__ALL_STORES' => 'ALL STORES >',
+
+        'buyer_dashboard__ACCOUNT_MANAGER' => 'At XSHOWROOM we have Brand Account Manager to help you to introduce the brand, book you in to see the collection, and follow up your order.',
+        'buyer_dashboard__ACCOUNT_MANAGER_CONTRACT' => 'CONTRACT US'
     ),
     /**
      * brand_message.php.php

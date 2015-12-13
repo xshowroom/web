@@ -34,11 +34,11 @@
                     <div class="brand-info">
                         <h3 class="brand-name"><?= $userAttr['display_name'] ?></h3>
                         <div class="brand-detail">
-                            <span >Interested brands</span>
+                            <span><?=__("buyer_dashboard__INTERESTED");?></span>
                             <span></span>
                         </div>
                         <div class="brand-detail">
-                            <span>Last time visit</span>
+                            <span><?=__("buyer_dashboard__LAST_VISIT");?></span>
                             <span><?= date('Y-m-d h:i:s', strtotime($user['last_login_time'])) ?></span>
                         </div>
                     </div>
@@ -51,32 +51,30 @@
         	<div class="row">
                 <div class="col-xs-12">
                     <div class="brand-list-header">
-                        <h2 class="brand-list-title">MY BRANDS</h2>
-                        <a class="brand-list-all-link" href="/buyer/brand">ALL BRANDS ></a>
+                        <h2 class="brand-list-title"><?=__("buyer_dashboard__MY_BRANDS");?></h2>
+                        <a class="brand-list-all-link" href="<?=URL::site('buyer/brand');?>"><?=__("buyer_dashboard__ALL_BRANDS");?></a>
                     </div>
                 </div>
             </div>
-        	<?php if (empty($authBrandList)) { ?>
+        	<?php if(empty($authBrandList)):?>
         	 <div class="row">
                 <div class="col-xs-12 text-center empty-warning">
                     <img src="/static/app/images/empty.png">
-                    <p>Welcome to XShowroom!<br/>Start your business with <a href="/shop">Explore Brands</a>.</p>
+                    <p><?=__("buyer_dashboard__BRANDS_EMPTY_1");?><br/><?=__("buyer_dashboard__BRANDS_EMPTY_2");?> <a href="<?=URL::site('shop');?>"><?=__("buyer_dashboard__BRANDS_EMPTY_3");?></a>.</p>
                 </div>
             </div>
-            <?php } else {?>
+            <?php else: ?>
             <div class="brand-list-content row">
-            	<?php
-            		for ($i=0, $count=count($authBrandList); $i<$count; $i++) { 
-            	?>
-                <div class="col-xs-3">
-                    <a target="_self" href="/brands/<?= $authBrandList[$i]['brand_url']?>" class="brand-item image-link">
-                        <img src="/<?= $authBrandList[$i]['brand_image']?>" class="brand-item-image">
-                        <div class="brand-name"><?= $authBrandList[$i]['name']?></div>
+                <?php foreach($authBrandList as $brand):?>
+                <div class="col-xs-2">
+                    <a target="_self" href="<?= URL::site('brands/'.$brand['brand_url'])?>" class="brand-item image-link">
+                        <img src="<?= URL::site($brand['brand_image']);?>" class="brand-item-image">
+                        <div class="brand-name"><?= $brand['name']?></div>
                     </a>
                 </div>
-                <?php }?>
+                <?php endforeach;?>
             </div>
-            <?php }?>
+            <?php endif; ?>
         </div>
     </section>
     <section class="row no-vertical-padding">
@@ -84,16 +82,15 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="order-list-header">
-                        <h2 class="order-list-title">MY ORDERS</h2>
-                        <a class="order-list-all-link" href="#">ALL ORDERS ></a>
+                        <h2 class="order-list-title"><?=__("buyer_dashboard__MY_ORDERS");?></h2>
+                        <a class="order-list-all-link" href="#"><?=__("buyer_dashboard__MY_ORDERS");?></a>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12 text-center empty-warning">
                     <img src="/static/app/images/empty.png">
-                    <p>Cannot find what you like?<br/>More and more brands are joining us. <a href="/shop">Explore Now.</a></p>
-                    <span><?= __("brand_dashboard__ORDER_EMPTY_3"); ?></span>
+                    <p><?=__("buyer_dashboard__ORDER_EMPTY_1");?><br/><?=__("buyer_dashboard__ORDER_EMPTY_2");?> <a href="<?=URL::site('shop');?>"><?=__("buyer_dashboard__ORDER_EMPTY_3");?></a></p>
                 </div>
             </div>
             <div class="order-list-content row" ng-if="false">
@@ -173,21 +170,19 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="store-list-header">
-                        <h2 class="store-list-title">My Stores</h2>
-                        <a class="store-list-all-link" href="#">ALL STORES ></a>
+                        <h2 class="store-list-title"><?=__("buyer_dashboard__MY_STORES");?></h2>
+                        <a class="store-list-all-link" href="#"><?=__("buyer_dashboard__ALL_STORES");?></a>
                     </div>
                 </div>
             </div>
             <div class="store-list-content row">
-            	<?php
-            		for ($i=0, $count=count($storeList); $i<$count; $i++) { 
-            	?>
+            	<?php foreach ($storeList as $store): ?>
                 <div class="col-xs-12">
                     <div class="store-item">
                     	<div class="store-item-header">
-                    		<span class="store-name"><?=$storeList[$i]['name']?></span>
-                    		<span class="store-location"><?=$storeList[$i]['address']?>, {{'<?=$storeList[$i]['country']?>' | translate}}</span>
-                    		<a class="pull-right">Edit</a>
+                    		<span class="store-name"><?=$store['name']?></span>
+                    		<span class="store-location"><?=$store['address']?>, {{'<?=$store['country']?>' | translate}}</span>
+                    		<a class="pull-right">VIEW</a>
                     	</div>
                         <div class="store-item-body">
                         	<div class="store-photo image-link">
@@ -195,14 +190,14 @@
                         	</div>
                             <div class="store-details">
 	                            <div>Brands</div>
-	                            <div><?=$storeList[$i]['brand_list']?></div>
+	                            <div><?=$store['brand_list']?></div>
 	                            <div>About Store</div>
 	                            <div>This is the introduction of your first store. This is the introduction of your first store. This is the introduction of your first store.</div>
 	                        </div>
                         </div>
                     </div>
                 </div>
-                <?php }?>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
@@ -211,8 +206,8 @@
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1">
                     <img src="/static/app/images/account-manager.png" class="account-manager-image">
-                    <p><?= __("brand_dashboard__ACCOUNT_MANAGER"); ?></p>
-                    <button class="btn btn-type-2">MESSAGE</button>
+                    <p><?= __("buyer_dashboard__ACCOUNT_MANAGER"); ?></p>
+                    <button class="btn btn-type-2"><?= __("buyer_dashboard__ACCOUNT_MANAGER_CONTRACT"); ?></button>
                 </div>
             </div>
         </div>

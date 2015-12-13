@@ -59,7 +59,7 @@
                 <div class="col-xs-12">
                     <div class="order-list-header">
                         <h2 class="order-list-title"><?= __("brand_dashboard__MY_ORDERS"); ?></h2>
-                        <a class="order-list-all-link" href="#"><?= __("brand_dashboard__ALL_ORDERS"); ?></a>
+                        <a class="order-list-all-link" href="<?=URL::site('#');?>"><?= __("brand_dashboard__ALL_ORDERS"); ?></a>
                     </div>
                 </div>
             </div>
@@ -148,32 +148,30 @@
                 <div class="col-xs-12">
                     <div class="collection-list-header">
                         <h2 class="collection-list-title"><?= __("brand_dashboard__MY_COLLECTIONS"); ?></h2>
-                        <a class="collection-list-all-link" href="/brand/collection"><?= __("brand_dashboard__ALL_COLLECTIONS"); ?></a>
+                        <a class="collection-list-all-link" href=""><?= __("brand_dashboard__ALL_COLLECTIONS"); ?></a>
                     </div>
                 </div>
             </div>
-        	<?php if (empty($collectionList)) { ?>
+        	<?php if(empty($collectionList)): ?>
         	 <div class="row">
                 <div class="col-xs-12 text-center empty-warning">
                     <img src="/static/app/images/empty.png">
                     <p><?= __("brand_dashboard__COLLECTION_EMPTY_1"); ?><br/><?= __("brand_dashboard__COLLECTION_EMPTY_2"); ?></p>
-                    <a class="btn btn-type-2" href="/collection/create"><?= __("brand_dashboard__COLLECTION_EMPTY_3"); ?></a>
+                    <a class="btn btn-type-2" href=""><?= __("brand_dashboard__COLLECTION_EMPTY_3"); ?></a>
                 </div>
             </div>
-            <?php } else {?>
+            <?php else: ?>
             <div class="collection-list-content row">
-            	<?php
-            		for ($i=0, $count=count($collectionList); $i<$count; $i++) { 
-            	?>
+                <?php foreach($collectionList as $collection):?>
                 <div class="col-xs-3">
-                    <a target="_self" href="/collection/<?= $collectionList[$i]['id']?>" class="collection-item image-link">
-                        <img src="/<?= $collectionList[$i]['cover_image_medium']?>" class="collection-item-image">
-                        <div class="collection-name"><?= $collectionList[$i]['name']?></div>
+                    <a target="_self" href="<?=URL::site('collection/'.$collection['id']);?>" class="collection-item image-link">
+                        <img src="<?=URL::site($collection['cover_image_medium']);?>" class="collection-item-image">
+                        <div class="collection-name"><?= $collection['name']?></div>
                     </a>
                 </div>
-                <?php }?>
+                <?php endforeach; ?>
             </div>
-            <?php }?>
+            <?php endif; ?>
         </div>
     </section>
     <section class="row no-vertical-padding">

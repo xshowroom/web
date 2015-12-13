@@ -36,12 +36,12 @@
 					<div class="row">
 						<div class=" col-xs-12">
 							<div class="brand-list-header">
-								<span class="brand-list-title" ng-cloak>{{hasFilter() ? 'FILTERED BRANDS' : 'ALL MY BRANDS'}}</span>
+								<span class="brand-list-title" ng-cloak>{{hasFilter() ? ("filter_head__FILTERED_BRAND"|translate) : ("filter_head__ALL_BRAND"|translate)}}</span>
 								<div class="input-group">
 									<span class="input-group-addon">
 										<span class="glyphicon glyphicon-search"></span>
 									</span>
-									<input type="text" class="form-control" id="brand-keyword" ng-model='keyword' placeholder="SEARCH BRAND" ng-change="setFilters('keyword', keyword)">
+									<input type="text" class="form-control" id="brand-keyword" ng-model='keyword' placeholder="{{'filter_head__SEARCH_BRAND'|translate}}" ng-change="setFilters('keyword', keyword)">
 								</div>
 							</div>
 						</div>
@@ -49,7 +49,7 @@
 					<div class="row"  ng-if="!brands.content.length">
 		                <div class="col-xs-12 text-center empty-warning">
 		                    <img src="/static/app/images/empty.png">
-		                    <p>No brand matches your conditions!<br/>Start your business with changing conditons.</p>
+							<p><?=__("brand_filter__NO_BRAND_1");?><br/><?=__("brand_filter__NO_BRAND_2");?></p>
 		                </div>
 		            </div>
 					<div class="brand-list-content row" ng-if="brands.content.length">

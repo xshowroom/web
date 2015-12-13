@@ -41,14 +41,14 @@ class Business_Collection
     private function doFilter($userId, $filter)
     {
         // 如果有show查询条件，筛选出相应的user_id
-        if (!empty($filter['status']) || !empty($filter['season'])) {
+        if (!empty($filter['mode']) || !empty($filter['season'])) {
             $collectionList = $this->collectionModel->getByFilter($filter);
         } else {
             $collectionList = $this->getAllCollectionList($userId);
         }
         
         foreach ($collectionList as $idx => $collection) {
-            if (strtotime($collection['deadline']) <= strtotime(date('Y-m-d')) || $collection['status'] != Model_Collection::TYPE_OF_ONLINE) {
+            if ($collection['user_id'] != $userId || strtotime($collection['deadline']) <= strtotime(date('Y-m-d')) || $collection['status'] != Model_Collection::TYPE_OF_ONLINE) {
                 unset($collectionList[$idx]);
             }
         }
@@ -74,10 +74,10 @@ class Business_Collection
     public function getCollectionList($userId)
     {
         $filter = array(
-            'status'    => Request::current()->query('status'),
+            'mode'    => Request::current()->query('mode'),
             'season'    => $this->doQuote(Request::current()->query('season')),
         );
-        
+
         $res = $this->doFilter($userId, $filter);
         
         return $res;
@@ -89,6 +89,8 @@ class Business_Collection
         if (empty($brandInfo)) {
             return array();
         }
+        
+        
         
         $collectionList = $this->getCollectionList($brandInfo['user_id']);
         if (empty($collectionList)) {

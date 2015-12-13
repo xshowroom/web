@@ -493,10 +493,61 @@ return array_merge(
         'brand_collection__btn_VIEW' => '查看',
     ),
     /**
-     * brand_order.php
+     * buyer_brand.php, shop.php
      */
     array(
+        'brand_filter__NO_BRAND_1' => '没找到符合条件的品牌！',
+        'brand_filter__NO_BRAND_2' => '更改搜索条件去发现更多的品牌',
+    ),
+    /**
+     * brand_index.php
+     */
+    array(
+        'brand_info__BASE_IN' => '品牌国家',
+        'brand_info__DESIGNER' => '设计师',
+        'brand_info__WEBSITE' => '官网网址',
 
+        'brand_filter__COLLECTIONS' => '商品系列',
+        'brand_filter__NO_COLLECTION_1' => '没找到符合条件的商品系列！',
+        'brand_filter__NO_COLLECTION_2' => '更改搜索条件去发现更多的商品系列',
+
+        'brand_access__NO_PRIVILEGE_1' => '您没有权限访问该品牌',
+        'brand_access__NO_PRIVILEGE_2' => '申请这个品牌的访问权限',
+
+        'brand_access__btn_APPLY' => '申请访问',
+
+        'brand_access__INFO_APPLIED' => '请稍候，管理员正在审核您的权限',
+        'brand_access__btn_APPLIED' => '审核中',
+
+        'brand_store_application__TITLE' => '申请访问权限',
+        'brand_store_application__BODY' => '请选择一家店铺来申请访问权限',
+        'brand_store_application__btn_APPLY' => '申请',
+        'brand_store_application__btn_CANCEL' => '取消',
+    ),
+    /**
+     * buyer_dashboard.php
+     */
+    array(
+        'buyer_dashboard__INTERESTED' => '感兴趣的品牌',
+        'buyer_dashboard__LAST_VISIT'=> '最后访问时间',
+
+        'buyer_dashboard__MY_BRANDS' => '我的品牌',
+        'buyer_dashboard__ALL_BRANDS' => '所有品牌 >',
+        'buyer_dashboard__BRANDS_EMPTY_1' => '欢迎来到SHOWROOM!',
+        'buyer_dashboard__BRANDS_EMPTY_2' => '您可以从这里开始',
+        'buyer_dashboard__BRANDS_EMPTY_3' => '浏览品牌',
+
+        'buyer_dashboard__MY_ORDERS' => '我的订单',
+        'buyer_dashboard__ALL_ORDERS' => '所有订单 >',
+        'buyer_dashboard__ORDER_EMPTY_1' => '欢迎来到SHOWROOM!',
+        'buyer_dashboard__ORDER_EMPTY_2' => '您还没有创建订单，你可以先',
+        'buyer_dashboard__ORDER_EMPTY_3' => '浏览品牌',
+
+        'buyer_dashboard__MY_STORES' => '我的店铺',
+        'buyer_dashboard__ALL_STORES' => '所有店铺 >',
+
+        'buyer_dashboard__ACCOUNT_MANAGER' => '在XSHOWROOM 我们拥有专属的品牌客户经理来帮助您介绍品牌, 与您共建商品集合, 并帮助您完成订单！',
+        'buyer_dashboard__ACCOUNT_MANAGER_CONTRACT' => '联系我们'
     ),
     /**
      * user_message.php & user_message_detail.php

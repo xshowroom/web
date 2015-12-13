@@ -72,7 +72,7 @@
     margin-top: 15px;
 }
 .brand-list .brand-list-content .brand-item{
-	height: 365px;
+	height: 240px;
     overflow: hidden;
     display: inline-block;
     position: relative;
@@ -97,9 +97,9 @@
     bottom: 0;
     width: 100%;
     background: rgba(255,255,255,0.8);
-    height: 80px;
+    height: 40px;
     color: #25272c;
-    line-height: 80px;
+    line-height: 40px;
     text-align: center;
     z-index: 99;
 }
