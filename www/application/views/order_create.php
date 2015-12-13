@@ -96,9 +96,10 @@
 								<tbody>
 									<tr ng-repeat="color in product.color">
 										<td>{{::color.name}}</td>
-										<td ng-repeat="(size, value) in product.sizeCode"><input
-											type="text"
-											ng-model="quantities[product.id][color.name][size]"></td>
+										<td ng-repeat="(size, value) in product.sizeCode">
+											<input type="text" ng-model="quantities[product.id][color.name][size]"
+												ng-keyup="validNumber(product.id, color.name, size);">
+										</td>
 										<td></td>
 									</tr>
 								</tbody>
