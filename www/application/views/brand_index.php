@@ -91,7 +91,7 @@
             <div class="row">
             	<div class="col-xs-3">
 					<div class="row filter-condition" ng-repeat="(title, content) in conditions" data-type="{{content.type}}" data-title="{{title}}"
-						selected="setFilters(name, conditions)" data-conditions="content.values"></div>
+						selected="setFilters(name, conditions)" data-conditions="content.values" data-has-clear-all="true"></div>
 				</div>
 				<div class="col-xs-9 collection-list" ng-if="authCode==-2 || authCode==-1">
 					<div class="has-no-auth">
