@@ -71,19 +71,19 @@
 	            	<div class="collection-info">
 	            		<h5><?=$collection['name']?></h5>
 	            		<div>
-	            			<span>Order Mode:</span>
+	            			<span><?=__("product_index__COLLECTION_MODE")?></span>
 	            			<span>{{'<?=$collection['mode']?>' | translate}}</span>
 	            		</div>
 	            		<div>
-	            			<span>Deadline for Order:</span>
+	            			<span><?=__("product_index__COLLECTION_DEADLINE")?></span>
 	            			<span><?=$collection['deadline']?></span>
 	            		</div>
 	            		<div>
-	            			<span>Delivery Date:</span>
+	            			<span><?=__("product_index__COLLECTION_DELIVERY_DATE")?></span>
 	            			<span><?=$collection['delivery_date']?></span>
 	            		</div>
 	            		<div>
-	            			<span>Min-order:</span>
+	            			<span><?=__("product_index__COLLECTION_MINIMUM_ORDER")?></span>
 	            			<span><?=$collection['currency']?><?=$collection['mini_order']?></span>
 	            		</div>
 	            	</div>
@@ -123,16 +123,16 @@
                  		<div><?=__("product_index__PRODUCT_COLOR")?></div>
                  		<?php $colors = json_decode($production['color']);?>
                  		<div class="row">
-	                 		<?php foreach($colors as $color){?>
+	                 		<?php foreach($colors as $color): ?>
 	                 		<div class="available-color col-xs-2">
-	                 			<?php if ($color->type == 0) {?>
+	                 			<?php if ($color->type == 0): ?>
 	                 			<div style="background-color: <?=$color->value?>"></div>
-	                 			<?php } else if ($color->type == 1){?>
+	                 			<?php elseif ($color->type == 1): ?>
 	                 			<div style="background-image: url(<?=URL::site($color->value)?>)"></div>
-	                 			<?php }?>
+	                 			<?php endif; ?>
 	                 			<div><?=$color->name?></div>
 	                 		</div>
-	                 		<?php }?>
+	                 		<?php endforeach; ?>
                  		</div>
                  	</div>
                  	<div class="col-xs-12 product-detail">
@@ -149,17 +149,17 @@
 	                 		<span class="product-care-instruction"><?=htmlentities($production['care_instruction'])?></span>
                  		</div>
                  	</div>
-                 	<?php if ($collection['status'] == '0' && $hasAuth){?>
+                 	<?php if($collection['status'] == '0' && $hasAuth): ?>
                  	<div class="col-xs-12 product-action">
                  		<button class="btn btn-type-2" data-toggle="modal" data-target="#modalDeleteConfirm"><?=__("product_index__PRODUCT_btn_DELETE")?></button>
                  	</div>
-                 	<?php } else if (!$hasAuth){?>
+                 	<?php elseif(!$hasAuth): ?>
                  	<div class="col-xs-12 product-action">
-                 		<button class="btn btn-type-2" ng-if="isInCart" ng-click="removeProductFromCart(<?=$production['id']?>)">REMOVE FROM CART</button>
-                 		<button class="btn btn-type-2" ng-if="!isInCart" ng-click="addProductToCart(<?=$production['id']?>)">ADD TO CART</button>
-                 		<a href="/buyer/cart" target="_self" class="btn btn-type-1">VIEW CART</a>
+                 		<button class="btn btn-type-2" ng-if="isInCart" ng-click="removeProductFromCart(<?=$production['id']?>)"><?=__("product_index__btn__ADD_TO_CART")?></button>
+                 		<button class="btn btn-type-2" ng-if="!isInCart" ng-click="addProductToCart(<?=$production['id']?>)"><?=__("product_index__btn__REMOVE_IN_CART")?></button>
+                 		<a href="<?=URL::site('buyer/cart')?>" target="_self" class="btn btn-type-1"><?=__("product_index__btn__VIEW_CART")?></a>
                  	</div>
-                 	<?php }?>
+                 	<?php endif; ?>
                 </div>
             </div>
         </div>

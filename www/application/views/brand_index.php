@@ -161,17 +161,17 @@
             </div>
         </div>
     </section>
-    <section class="row no-vertical-padding">
-        <div class="container support">
-            <div class="row">
-                <div class="col-xs-10 col-xs-offset-1">
-                    <img src="/static/app/images/account-manager.png" class="account-manager-image">
-                    <p><?= __("brand_dashboard__ACCOUNT_MANAGER"); ?></p>
-                    <button class="btn btn-type-2"><?= __("brand_dashboard__ACCOUNT_MANAGER_CONTRACT"); ?></button>
-                </div>
-            </div>
-        </div>
-    </section>
+<!--    <section class="row no-vertical-padding">-->
+<!--        <div class="container support">-->
+<!--            <div class="row">-->
+<!--                <div class="col-xs-10 col-xs-offset-1">-->
+<!--                    <img src="/static/app/images/account-manager.png" class="account-manager-image">-->
+<!--                    <p>--><?//= __("brand_dashboard__ACCOUNT_MANAGER"); ?><!--</p>-->
+<!--                    <button class="btn btn-type-2">--><?//= __("brand_dashboard__ACCOUNT_MANAGER_CONTRACT"); ?><!--</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
     <footer class="row footer-navigation">
         <?php echo View::factory('common/global_navigation_footer'); ?>
     </footer>
