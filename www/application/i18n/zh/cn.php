@@ -461,6 +461,12 @@ return array_merge(
     array(
         'product_index__BACK_COLLECTION' => '回到产品系列',
 
+        'product_index__COLLECTION_MODE' => '售卖模式: ',
+        'product_index__COLLECTION_SEASON' => '时尚季: ',
+        'product_index__COLLECTION_MINIMUM_ORDER' => '最小订单金额: ',
+        'product_index__COLLECTION_DEADLINE' => '下单截至日期: ',
+        'product_index__COLLECTION_DELIVERY_DATE' => '发货日期: ',
+
         'product_index__PRODUCT_CATEGORY' => '产品类别',
         'product_index__PRODUCT_STYLE_NUMBER' => '产品货号',
         'product_index__PRODUCT_WHOLESALE_PRICE' => '产品批发价',
@@ -470,6 +476,10 @@ return array_merge(
         'product_index__PRODUCT_MADE_IN' => '产品产地',
         'product_index__PRODUCT_MATERIAL' => '产品材质',
         'product_index__PRODUCT_CARE_INSTRUCTION' => '产品护理指南:',
+
+        'product_index__btn__ADD_TO_CART' => '添加购物车',
+        'product_index__btn__REMOVE_IN_CART' => '删除购物车',
+        'product_index__btn__VIEW_CART' => '查看购物车',
 
         'product_index__PRODUCT_btn_DELETE' => '删除产品',
 

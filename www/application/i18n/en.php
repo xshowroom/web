@@ -461,6 +461,12 @@ return array_merge(
     array(
         'product_index__BACK_COLLECTION' => 'BACK TO COLLECTION',
 
+        'product_index__COLLECTION_MODE' => 'COLLECTION MODE: ',
+        'product_index__COLLECTION_SEASON' => 'SEASON: ',
+        'product_index__COLLECTION_MINIMUM_ORDER' => 'MINIMUM ORDER: ',
+        'product_index__COLLECTION_DEADLINE' => 'DEADLINE FOR ORDER: ',
+        'product_index__COLLECTION_DELIVERY_DATE' => 'DELIVER DATE: ',
+
         'product_index__PRODUCT_CATEGORY' => 'PRODUCT CATEGORY',
         'product_index__PRODUCT_STYLE_NUMBER' => 'STYLE NUMBER',
         'product_index__PRODUCT_WHOLESALE_PRICE' => 'WHOLESALE PRICE',
@@ -470,6 +476,10 @@ return array_merge(
         'product_index__PRODUCT_MADE_IN' => 'MADE IN',
         'product_index__PRODUCT_MATERIAL' => 'MATERIAL',
         'product_index__PRODUCT_CARE_INSTRUCTION' => 'CARE INSTRUCTION:',
+
+        'product_index__btn__ADD_TO_CART' => 'ADD TO CART',
+        'product_index__btn__REMOVE_IN_CART' => 'REMOVE IN CART',
+        'product_index__btn__VIEW_CART' => 'VIEW MY CART',
 
         'product_index__PRODUCT_btn_DELETE' => 'DELETE',
 
