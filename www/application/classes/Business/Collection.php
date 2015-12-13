@@ -48,7 +48,7 @@ class Business_Collection
         }
         
         foreach ($collectionList as $idx => $collection) {
-            if (strtotime($collection['deadline']) <= strtotime(date('Y-m-d')) || $collection['status'] != Model_Collection::TYPE_OF_ONLINE) {
+            if ($collection['user_id'] != $userId || strtotime($collection['deadline']) <= strtotime(date('Y-m-d')) || $collection['status'] != Model_Collection::TYPE_OF_ONLINE) {
                 unset($collectionList[$idx]);
             }
         }
@@ -89,6 +89,8 @@ class Business_Collection
         if (empty($brandInfo)) {
             return array();
         }
+        
+        
         
         $collectionList = $this->getCollectionList($brandInfo['user_id']);
         if (empty($collectionList)) {
