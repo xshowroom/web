@@ -76,6 +76,16 @@ angular.module(
      			return $scope.minOrder - $scope.getTotalAmount();
      		};
      		
+     		$scope.validNumber = function (productId, colorName, size){
+     			var input = $scope.quantities[productId][colorName][size];
+     			var reg = /^(0|[1-9]{1}\d*)$/;
+     			var isNumber = reg.test(input);
+     			if (input && !isNumber){
+     				$modal({title: 'Error Info', content: '您输入了非法数字！', show: true});
+     				$scope.quantities[productId][colorName][size] = null;
+     			}
+     		};
+     		
      		$scope.createOrder = function(){
      			var result = {};
      			if ($scope.getRestAmount() > 0){
@@ -97,7 +107,6 @@ angular.module(
 	     			}
      			}
      			console.log(result)
-//     			Order.create
      		}
         }
     ]
