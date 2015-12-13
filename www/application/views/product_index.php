@@ -155,8 +155,8 @@
                  	</div>
                  	<?php elseif(!$hasAuth): ?>
                  	<div class="col-xs-12 product-action">
-                 		<button class="btn btn-type-2" ng-if="isInCart" ng-click="removeProductFromCart(<?=$production['id']?>)"><?=__("product_index__btn__ADD_TO_CART")?></button>
-                 		<button class="btn btn-type-2" ng-if="!isInCart" ng-click="addProductToCart(<?=$production['id']?>)"><?=__("product_index__btn__REMOVE_IN_CART")?></button>
+                 		<button class="btn btn-type-2" ng-if="isInCart" ng-click="removeProductFromCart(<?=$production['id']?>)"><?=__("product_index__btn__REMOVE_IN_CART")?></button>
+                 		<button class="btn btn-type-2" ng-if="!isInCart" ng-click="addProductToCart(<?=$production['id']?>)"><?=__("product_index__btn__ADD_TO_CART")?></button>
                  		<a href="<?=URL::site('buyer/cart')?>" target="_self" class="btn btn-type-1"><?=__("product_index__btn__VIEW_CART")?></a>
                  	</div>
                  	<?php endif; ?>
