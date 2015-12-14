@@ -53,7 +53,7 @@
 									<span class="input-group-addon">
 										<span class="glyphicon glyphicon-search"></span>
 									</span>
-									<input type="text" class="form-control" id="brand-keyword" ng-model='keyword' placeholder="{{'filter_head__SEARCH_BRAND'|translate}}" ng-change="setFilters('keyword', keyword)">
+									<input type="text" class="form-control" id="brand-keyword" ng-model='query' placeholder="{{'filter_head__SEARCH_BRAND'|translate}}" ng-change="setFilters('query', query)">
 								</div>
 							</div>
 						</div>
