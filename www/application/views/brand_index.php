@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="xShowroom.brand.index" ng-init="brandId = <?=$brandInfo['id']?>; isGuest = <?=empty($user) ? 'true' : 'false'?>;">
+<html ng-app="xShowroom.brand.index" ng-init="brandId=<?=$brandInfo['id']?>;isGuest=<?=empty($user) ? 'true' : 'false'?>;">
 <head>
     <meta charset="UTF-8" >
     <title>XShowroom</title>
@@ -29,9 +29,13 @@
 		<?php echo View::factory('common/global_setting_without_login', array('userAttr'=> $userAttr, 'user'=> $user)); ?>
 	</nav>
 	<?php endif; ?>
-	<?php if(empty($user) || $user["role_type"] != Business_User::ROLE_BUYER): ?>
+	<?php if(empty($user)): ?>
 	<nav class="row guest-navigation">
         <?php echo View::factory('common/global_navigation_top_guest', array('currentPage' =>  'shop')); ?>
+	</nav>
+	<?php elseif ($user["role_type"] == Business_User::ROLE_BRAND): ?>
+	<nav class="row user-navigation">
+        <?php echo View::factory('common/global_navigation_top_brand', array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); ?>
 	</nav>
 	<?php elseif ($user["role_type"] == Business_User::ROLE_BUYER): ?>
 	<nav class="row user-navigation">

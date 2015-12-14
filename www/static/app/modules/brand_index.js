@@ -34,7 +34,7 @@ angular.module(
      			Brand.getCoversBySeason({
      				brandId: $scope.brandId
      			}).success(function(res){
-     				if (typeof(res) != 'object' || res.status) {
+     				if (typeof(res) != 'object' || res.status || !res.data) {
      					alert('获取Cover数据失败，请检查！');
      					return;
      				}

@@ -35,7 +35,6 @@ class Controller_Home extends Controller_Base
 	    if(!empty($opUser)) {
 		    $view->set('user', $opUser);
 		    $view->set('userAttr', $this->userService->getUserAttr($opUser['id']));
-		    
 	    }
 	    $brandService = new Business_Brand();
 	    $brandInfo = $brandService->getBrandInfoByUrl($brandUrl);
