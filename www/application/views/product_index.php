@@ -102,11 +102,11 @@
 	                </div>
                  	<div class="col-xs-12 product-detail">
                  		<div><?=__("product_index__PRODUCT_WHOLESALE_PRICE")?></div>
-                 		<div><?= $collection['currency']?>{{<?= $production['retail_price']?> | number: 2}}</div>
+                 		<div><?= $collection['currency']?>{{<?= $production['whole_price']?> | number: 2}}</div>
                  	</div>
                  	<div class="col-xs-12 product-detail">
                  		<div><?=__("product_index__PRODUCT_RETAIL_PRICE")?></div>
-                 		<div><?= $collection['currency']?>{{<?= $production['whole_price']?> | number:2}}</div>
+                 		<div><?= $collection['currency']?>{{<?= $production['retail_price']?> | number:2}}</div>
                  	</div>
                  	<div class="col-xs-12 product-detail">
                  		<div><?=__("product_index__PRODUCT_SIZE")?> | <?= $production['size_region']?></div>
