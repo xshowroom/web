@@ -38,4 +38,19 @@ class Controller_Api_Lookbook extends Controller_BaseReqLogin
             'data'   => $res,
         ));
     }
+    public function action_deleteLookbook()
+    {
+    	$userId = $this->opUser['id'];
+    
+    	$season     = Request::current()->post('id');
+    
+//     	$res = $this->lookbookService->saveLookbook($userId, $season, $lookbook);
+    
+    	echo json_encode(array(
+    			'status' => STATUS_SUCCESS,
+    			'msg'    => '',
+    			'data'   => null,
+    	));
+    }
+    
 }
