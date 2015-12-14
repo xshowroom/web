@@ -114,6 +114,7 @@ class Model_User {
         $result = DB::select()
                     ->from('brand')
                     ->where('brand_url', '=', $brandUrl)
+                    ->where('status', '=', STAT_NORMAL)
                     ->execute()
                     ->as_array();
     
