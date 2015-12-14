@@ -12,17 +12,17 @@ class Model_Lookbook
     public function createLookbook($userId, $season, $lookbook)
     {
         $result = DB::insert(Model_Lookbook::$TABLE)
-            ->columns(array(
-                'user_id',
-                'season',
-                'lookbook',
-            ))
-            ->values(array(
-                $userId,
-                $season,
-                $lookbook
-            ))
-            ->execute();
+                    ->columns(array(
+                        'user_id',
+                        'season',
+                        'lookbook',
+                    ))
+                    ->values(array(
+                        $userId,
+                        $season,
+                        $lookbook
+                    ))
+                    ->execute();
 
         return $result[0];
     }
@@ -33,6 +33,27 @@ class Model_Lookbook
                     ->set(array('lookbook'=>$lookbook))
                     ->where('user_id', '=', $userId)
                     ->where('season', '=', $season)
+                    ->execute();
+
+        return $result[0];
+    }
+
+    public function deleteLookbook($userId, $lookbookId)
+    {
+        $result = DB::delete(Model_Lookbook::$TABLE)
+                    ->where('user_id', '=', $userId)
+                    ->where('id', '=', $lookbookId)
+                    ->execute();
+
+        return $result[0];
+    }
+
+    public function getLookbook($userId, $lookbookId)
+    {
+        $result = DB::select()
+                    ->from(Model_Lookbook::$TABLE)
+                    ->where('user_id', '=', $userId)
+                    ->where('id', '=', $lookbookId)
                     ->execute();
 
         return $result[0];

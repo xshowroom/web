@@ -113,4 +113,28 @@ class Business_Upload
     
         return array($realPathFile, $mediumPathFile, $smallPathFile);
     }
+
+    public function createResizeImage($imagePath, $resizeTerm)
+    {
+
+        $fileSize = filesize($imagePath);
+
+        if($fileSize > 0.5 * 1024 * 1024)
+        {
+            $resizeImagePath = $this->resize($imagePath, 0.5, $resizeTerm);
+            Business_Upload::deleteFile($imagePath);
+            $imagePath = $resizeImagePath;
+        }
+
+        $extension = substr(strrchr($imagePath, '.'), 1);
+        $realPathFile  = 'data/' . date('ymdHis'). substr(microtime(),2,4). '_'  .$resizeTerm. '.' . $extension;
+        copy($imagePath, $realPathFile);
+
+        return $realPathFile;
+    }
+
+    public static function deleteFile($filePath)
+    {
+        unlink($filePath);
+    }
 } 

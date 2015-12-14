@@ -26,7 +26,7 @@ class Business_Lookbook
     }
 
     /**
-     * get a specific message
+     * save a lookbook
      *
      * @param $userId
      * @param $season
@@ -35,15 +35,23 @@ class Business_Lookbook
      */
     public function saveLookbook($userId, $season, $lookbook)
     {
-        $lookbookItem = $this->lookbookModel->getSingleLookbook($userId, $season);
+         return $this->lookbookModel->createLookbook($userId, $season, $lookbook);
+    }
 
-        if (empty($lookbookItem))
+    /**
+     * delete a exist lookbook
+     *
+     * @param $userId
+     * @param $lookbookId
+     */
+    public function deleteLookbook($userId, $lookbookId)
+    {
+        $lookbookItem = $this->lookbookModel->getLookbook($userId, $lookbookId);
+
+        if ($lookbookItem)
         {
-            $this->lookbookModel->createLookbook($userId, $season, $lookbook);
-        }
-        else
-        {
-            $this->lookbookModel->updateLookbook($userId, $season, $lookbook);
+            Business_Upload::deleteFile($lookbookItem['lookbook']);
+            $this->lookbookModel->deleteLookbook($userId, $lookbookId);
         }
     }
 }

@@ -3,11 +3,13 @@
 class Controller_Api_Lookbook extends Controller_BaseReqLogin
 {
     public $lookbookService;
+    public $uploadService;
 
     public function before()
     {
         parent::before();
         $this->lookbookService = new Business_Lookbook();
+        $this->uploadService = new Business_Upload();
     }
     
     public function action_getList()
@@ -30,26 +32,27 @@ class Controller_Api_Lookbook extends Controller_BaseReqLogin
         $season     = Request::current()->post('season');
         $lookbook   = Request::current()->post('lookbook');
 
-        $res = $this->lookbookService->saveLookbook($userId, $season, $lookbook);
+        $lookbookPath = $this->uploadService->createResizeImage($lookbook, 'lookbook');
+        $this->lookbookService->saveLookbook($userId, $season, $lookbookPath);
 
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
             'msg'    => '',
-            'data'   => $res,
+            'data'   => $lookbookPath,
         ));
     }
+
     public function action_deleteLookbook()
     {
-    	$userId = $this->opUser['id'];
+        $userId = $this->opUser['id'];
+        $lookbookId = Request::current()->post('id');
     
-    	$season     = Request::current()->post('id');
-    
-//     	$res = $this->lookbookService->saveLookbook($userId, $season, $lookbook);
+        $res = $this->lookbookService->deleteLookbook($userId, $lookbookId);
     
     	echo json_encode(array(
     			'status' => STATUS_SUCCESS,
     			'msg'    => '',
-    			'data'   => null,
+    			'data'   => $res,
     	));
     }
     
