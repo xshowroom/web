@@ -25,7 +25,7 @@
 	<nav class="row guest-navigation"  id="home-page-navigation">
         <?php echo View::factory('common/global_navigation_top_guest'); ?>
 	</nav>
-	<section class="row">
+	<section class="row" ng-cloak>
 		<div class="container uploading">
 			<div class="col-xs-12">
 				<h2 class="brand-register-step">
@@ -123,8 +123,11 @@
 									ng-model="user.designerName"  placeholder='<?= __("brand_register__STEP_2__DESIGNER_NAME_PLACEHOLDER");?>'>
 							</div>
 							<div class="form-group col-xs-12">
-								<span class="form-control brand-register-text-center" name="generated-url">
-									www.xshowroom.com/{{!user.brandName || user.brandName == '' ? 'Brandname' : user.brandName}} </span>
+								<div class="brand-url" ng-class="{'has-error': step.validation[2].brandUrl}">
+									<span>www.xshowroom.com/brands/</span>
+									<input  class="form-control brand-register-text-center" type="text" class="form-control" id="brand-url" name="brandUrl"
+										ng-model="user.brandUrl" placeholder='BRAND_URL*'>
+								</div>
 								<p class="text-center help-block">
 									<?= __("brand_register__STEP_2__URL_DESC_1");?><br>
 									<?= __("brand_register__STEP_2__URL_DESC_2");?>

@@ -24,7 +24,8 @@ angular.module(
 				    2: {
 				    	'brandName': false, 
 						'designerName': false,
-						'imagePath': false
+						'imagePath': false,
+						'brandUrl': false
 				    },
 				    3: {
 				    	'companyName': false,
@@ -42,14 +43,16 @@ angular.module(
 						'firstName': /^\S{2,50}$/,
 						'lastName': /^\S{2,50}$/,
 					},
-				    2:{},
+				    2:{
+				    	'brandUrl': /^[0-9a-zA-Z]+$/
+				    },
 				    3:{
 						'companyWebsite': /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-@?^=%&amp;/~\+#])?/
 					}
 				},
 				duplication: {
 					1: ['email'],
-					2: ['brandName'],
+					2: ['brandName', 'brandUrl'],
 					3: []
 				}
 			};
@@ -110,7 +113,9 @@ angular.module(
 					$scope.step.stepNumber--;
 				}
 			};
+			
 			$scope.countries = Country.getAll();
+			
 			$scope.register = function() {
 				var register = User.register($scope.user);
 				register.success(function(res){
