@@ -54,6 +54,8 @@ angular.module(
             brandName_EMPTY_ERROR: "请输入您的品牌名称",
             brandName_DUPLICATION_ERROR: "该品牌名称已经存在",
             designerName_EMPTY_ERROR: "请输入您的设计师",
+            brandUrl_EMPTY_ERROR: "请输入您的个性化域名",
+            brandUrl_PATTERN_ERROR: "url只能由字母和数字组成",
 
             shopName_EMPTY_ERROR: "请输入商店名称",
             shopName_PATTERN_ERROR: "请正确输入商店名称",
@@ -467,6 +469,8 @@ angular.module(
             brandName_EMPTY_ERROR: "please input your brand name",
             brandName_DUPLICATION_ERROR: "this brand name is exist",
             designerName_EMPTY_ERROR: "please input your designers",
+            brandUrl_EMPTY_ERROR: "please input your brand url",
+            brandUrl_PATTERN_ERROR: "only number and character is allowed in URL",
 
             shopName_EMPTY_ERROR: "please input your store name",
             shopName_PATTERN_ERROR: "invalid store name",

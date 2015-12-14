@@ -114,7 +114,8 @@ class Business_User
     {
         $userId = $this->addCommonInfo();
         if (!$userId) {
-            return null;
+            $errorInfo = Kohana::message('message', 'STATUS_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         } 
         // generate welcome msg
         $this->msgService->createMessage($userId, __(Business_Message::AUTO_MSG_WELCOME_BRAND));
@@ -129,12 +130,14 @@ class Business_User
         
         $brandExist = $this->checkBrandName($brandName);
         if ($brandExist) {
-            return null;
+            $errorInfo = Kohana::message('message', 'STATUS_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
 
         $brandUrlExist = $this->checkBrandUrl($brandUrl);
         if ($brandUrlExist) {
-            return null;
+            $errorInfo = Kohana::message('message', 'STATUS_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
         
         list($realPathFile, $mediumPathFile, $smallPathFile) = $this->uploadService->createThreeImage($imagePath); 
@@ -147,7 +150,8 @@ class Business_User
     {
         $userId = $this->addCommonInfo();
         if (!$userId) {
-            return null;
+            $errorInfo = Kohana::message('message', 'STATUS_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
         // generate welcome msg
         $this->msgService->createMessage($userId, __(Business_Message::AUTO_MSG_WELCOME_BRAND));
