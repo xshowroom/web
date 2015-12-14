@@ -3,15 +3,12 @@ section.row.lookbook {
 }
 
 .lookbook-season h2{
-	border-bottom: 2px solid #ca7379;
+	font-size: 18px;
+	margin-right: 1em;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #333;
 	margin-top: 30px;
-	margin-bottom: 20px;
-	padding-top: 0;
-	padding-bottom: 6px;
-	color: #ca7379;
-	font-weight: 300;
-	font-size: 17px;
-	vertical-align: bottom;
+	line-height: 40px;
 }
 .lookbook .lookbook-content .product-image{
 	height: 250px;
