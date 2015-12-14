@@ -42,10 +42,18 @@
 }
 .brand-list .brand-list-content .brand-item{
 	overflow: hidden;
+	position: relative;
 }
 .brand-list .brand-list-content .brand-item .brand-item-image{
-	height: 100%;
 	width: 100%;
+    position: absolute;
+    top: 50%;
+    z-index: 0;
+    left: 0;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
 }
 .brand-list .brand-list-content .brand-item .brand-item-name{
 	height: 45px;
