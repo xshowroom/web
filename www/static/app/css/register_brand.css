@@ -14,14 +14,24 @@ h2.brand-register-step {
 	line-height: 22px !important;
 } */
 
-.brand-register-text-center {
-	line-height: 20px;
+/* .brand-register-text-center{
+	
+} */
+.brand-url{
+	height: 34px;
 }
-
+.brand-url input{
+	width: 47%;
+    float: left;
+    margin-left: 2%;
+}
+.brand-url span{
+	line-height: 34px;
+	float: left;
+}
 .brand-register-block-spare {
 	margin-bottom: 20px;
 }
-
 .brand-register-lookbook-upload {
 	height: 200px;
 	/* background: transparent; */
