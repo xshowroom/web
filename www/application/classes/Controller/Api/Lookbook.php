@@ -23,9 +23,12 @@ class Controller_Api_Lookbook extends Controller_BaseReqLogin
         ));
     }
 
-    public function action_saveLookbook($season, $lookbook)
+    public function action_saveLookbook()
     {
         $userId = $this->opUser['id'];
+        
+        $season     = Request::current()->post('season');
+        $lookbook   = Request::current()->post('lookbook');
 
         $res = $this->lookbookService->saveLookbook($userId, $season, $lookbook);
 
