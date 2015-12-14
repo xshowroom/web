@@ -143,7 +143,7 @@ class Model_User {
                         $password,
                         $roleType,
                         date('Y-m-d H:i:s'),
-                        STATUS_USER_PENDING,
+                        Model_User::STATUS_USER_NORMAL,
                     ))
                     ->execute();
         
