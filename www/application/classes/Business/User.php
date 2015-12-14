@@ -123,25 +123,20 @@ class Business_User
         $brandName     = Request::current()->post('brandName');
         $designerName  = Request::current()->post('designerName');
         $imagePath     = Request::current()->post('imagePath');
-        //$brandUrl      = $brandName;
+        $brandUrl      = Request::current()->post('brandUrl');;
 
-        $brandUrl = urlencode('brands/' . $this->safeFileName($brandName));
-        //$extension = substr(strrchr($imagePath, '.'), 1);
-        //$realPathFile  = 'data/' . date('ymdHis'). substr(microtime(),2,4) . '.' . $extension;
+        $brandUrl = urlencode($this->safeFileName($brandUrl));
         
-        $brandExist = $this->checkBrand($brandName);
+        $brandExist = $this->checkBrandName($brandName);
         if ($brandExist) {
             return null;
         }
+
+        $brandUrlExist = $this->checkBrandUrl($brandUrl);
+        if ($brandUrlExist) {
+            return null;
+        }
         
-        /*if (file_exists($imagePath)){
-            try{
-                copy($imagePath, $realPathFile);
-                unlink($imagePath);
-            } catch (Exception $e) {
-                return null;
-            }                
-        }*/
         list($realPathFile, $mediumPathFile, $smallPathFile) = $this->uploadService->createThreeImage($imagePath); 
 
         $brandId = $this->userModel->addBrandInfo($userId, $brandName, $designerName, $brandUrl, $realPathFile);
@@ -166,9 +161,15 @@ class Business_User
         return $res;
     }
     
-    public function checkBrand($brandName)
+    public function checkBrandName($brandName)
     {
-        $res = $this->userModel->checkBrand($brandName);
+        $res = $this->userModel->checkBrandName($brandName);
+        return $res;
+    }
+
+    public function checkBrandUrl($brandUrl)
+    {
+        $res = $this->userModel->checkBrandUrl($brandUrl);
         return $res;
     }
     
@@ -178,8 +179,11 @@ class Business_User
             case 'email' :
                 $res = $this->checkEmail($param);
                 break;
-            case 'brand':
-                $res = $this->checkBrand($param);
+            case 'brandName':
+                $res = $this->checkBrandName($param);
+                break;
+            case 'brandUrl':
+                $res = $this->checkBrandUrl($param);
                 break;
             default:
                 $res = $this->checkEmail($param);

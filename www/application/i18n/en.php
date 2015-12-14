@@ -14,7 +14,8 @@ return array_merge(
         'upload_success' => 'upload success',
         'email_existed' => 'email existed',
         'name_existed' => 'name existed',
-        'brand_existed' => 'brand name has already been resisted',
+        'brandName_existed' => 'brand name has already been resisted',
+        'brandUrl_existed' => 'brand url has already been resisted',
         'check_ok' => 'ok',
     ),
     /**

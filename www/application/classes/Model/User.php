@@ -92,11 +92,28 @@ class Model_User {
      * @param string $brandName
      * @return array
      */
-    public function checkBrand($brandName)
+    public function checkBrandName($brandName)
     {
         $result = DB::select()
                     ->from('brand')
                     ->where('brand_name', '=', $brandName)
+                    ->execute()
+                    ->as_array();
+    
+        return empty($result) ? false : true;
+    }
+
+    /**
+     * 查询brandUrl信息
+     *
+     * @param string $brandUrl
+     * @return array
+     */
+    public function checkBrandUrl($brandUrl)
+    {
+        $result = DB::select()
+                    ->from('brand')
+                    ->where('brand_url', '=', $brandUrl)
                     ->execute()
                     ->as_array();
     
