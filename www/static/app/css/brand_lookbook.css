@@ -1,5 +1,5 @@
-.lookbook {
-    padding-top: 10px !important;
+section.row.lookbook {
+    padding-top: 10px;
 }
 
 .lookbook-season h2{
@@ -13,4 +13,48 @@
 	font-size: 17px;
 	vertical-align: bottom;
 }
-
+.lookbook .lookbook-content .product-image{
+	height: 250px;
+	position: relative;
+	width: 15%;
+	margin-right: 2%;
+	float: left;
+	margin-bottom: 15px;
+	overflow: hidden;
+}
+.lookbook .lookbook-content > .product-image:nth-child(6n){
+	margin-right: 0;
+}
+.lookbook .lookbook-content .product-image > img{
+	width: 100%;
+    position: absolute;
+    top: 50%;
+    z-index: 0;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+}
+.lookbook .lookbook-content .product-image:hover .product-image-action{
+	display: block;
+}
+.lookbook .lookbook-content .product-image .product-image-action{
+	position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    background: rgba(0,0,0,.5);
+    height: 100%;
+}
+.lookbook .lookbook-content .product-image .product-image-action .btn{
+	min-width: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+}

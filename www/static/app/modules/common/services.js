@@ -102,8 +102,8 @@ angular.module(
 .service(
 	'Brand', 
 	[
-	    '$http',
-		function ($http) {
+	    '$http', '$httpParamSerializer',
+		function ($http, $httpParamSerializer) {
 	    	var conditions = {
 				mode: {
 	    			type: 'radio',
@@ -176,11 +176,31 @@ angular.module(
 						country: conditions.country
 		      		};
 		      	},
+		      	getSeasons: function(){
+		      		return conditions.season.values;
+		      	},
 		      	getCoversBySeason: function (opts) {
 		    		return $http.get('/api/guest/coverImgList', {params: opts});
 		      	},
 		      	getCollectionList: function (opts){
 		      		return $http.get('/api/buyer/getCollectionList', {params: opts});
+		      	},
+		      	getLookbookPhotos: function (opts) {
+		    		return $http.get('/api/lookbook/getList', {params: opts});
+		      	},
+		      	saveLookbookPhoto: function(opts){
+		      		return $http.post('/api/lookbook/saveLookbook', $httpParamSerializer(opts), {
+						headers: {
+							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
+						}
+					});
+		      	},
+		      	removeLookbookPhoto: function(opts){
+		      		return $http.post('/api/lookbook/deleteLookbook', $httpParamSerializer(opts), {
+						headers: {
+							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
+						}
+					});
 		      	}
    			};
          }
