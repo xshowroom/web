@@ -101,7 +101,7 @@
 					<div class="has-no-auth">
 						<?php if (empty($user)): ?>
 							<p><?=__("brand_access__NO_PRIVILEGE_1")?></br><?=__("brand_access__NO_PRIVILEGE_2")?></p>
-							<a class="btn btn-type-1" href="<?URL::site('login')?>"><?=__("brand_access__btn_APPLY")?></a>
+							<a class="btn btn-type-1" href="<?=URL::site('login')?>"><?=__("brand_access__btn_APPLY")?></a>
 						<?php else: ?>
 							<!-- Applied -->
 							<p ng-if="authCode==-1"><?=__("brand_access__INFO_APPLIED")?></p>
