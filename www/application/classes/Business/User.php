@@ -123,7 +123,7 @@ class Business_User
         $brandName     = Request::current()->post('brandName');
         $designerName  = Request::current()->post('designerName');
         $imagePath     = Request::current()->post('imagePath');
-        $brandUrl      = Request::current()->post('brandUrl');;
+        $brandUrl      = Request::current()->post('brandUrl');
 
         $brandUrl = urlencode($this->safeFileName($brandUrl));
         
