@@ -148,7 +148,7 @@
                 <div class="col-xs-12">
                     <div class="collection-list-header">
                         <h2 class="collection-list-title"><?= __("brand_dashboard__MY_COLLECTIONS"); ?></h2>
-                        <a class="collection-list-all-link" href=""><?= __("brand_dashboard__ALL_COLLECTIONS"); ?></a>
+                        <a class="collection-list-all-link" href="/brand/collection"><?= __("brand_dashboard__ALL_COLLECTIONS"); ?></a>
                     </div>
                 </div>
             </div>
