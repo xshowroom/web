@@ -141,7 +141,7 @@ angular.module(
 			$scope.register = function() {
 				var register = User.register($scope.user);
 				register.success(function(res){
-        			if(res.status){
+					if (typeof(res) != 'object' || res.status) {
         				$scope.errorMsgs.push(['register error', res,msg]);
         			}else{
         				window.open('/buyer/dashboard', '_self');
