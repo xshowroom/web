@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/bower_components/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/bower_components/angular-motion/dist/angular-motion.min.css">
     <link rel="stylesheet" type="text/css" href="/static/app/css/common.css" />
     <link rel="stylesheet" type="text/css" href="/static/app/css/brand_index.css" />
     <script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
@@ -14,6 +15,8 @@
     <script type="text/javascript" src="/static/bower_components/angular-animate/angular-animate.min.js"></script>
     <script type="text/javascript" src="/static/bower_components/angular-cookies/angular-cookies.min.js"></script>
     <script type="text/javascript" src="/static/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="/static/bower_components/angular-strap/dist/angular-strap.min.js"></script>
+    <script type="text/javascript" src="/static/bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
     <script type="text/javascript" src="/static/app/modules/common/i18n.js"></script>
     <script type="text/javascript" src="/static/app/modules/common/services.js"></script>
     <script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
@@ -59,18 +62,10 @@
 	            		<span><?=__("brand_info__WEBSITE");?></span>
 	            		<span><?=$brandAttr['company_web_url']?></span>
 	            	</div>
-	            	<!-- <div class="brand-info brand-about">
-	            		<span>About</span>
-	            		<span>This collection is about.This collection is about.This collection is aboutThis collection is about.This collection is about.This collection is about</span>
-	            		<span class="pull-right">
-	                 		<a href="#" ng-show="showAllDesc"  ng-click="showAllDesc = !showAllDesc;">HIDE</a>
-	                 		<a href="#" ng-show="!showAllDesc" ng-click="showAllDesc = !showAllDesc;">SHOW ALL</a>
-	                 	</<span>
-	            	</div> -->
             	</div>
             	<div class="col-xs-3">
             		<div class="brand-cover">
-            			<img ng-src="/{{selectedCover.cover_image_medium}}"/>
+            			<img ng-src="/{{selectedCover.lookbook}}"/>
             		</div>
             	</div>
             	<div class="col-xs-5">
@@ -84,7 +79,7 @@
 						</ul>
 					</div>
             		<div class="collection-cover" ng-repeat="cover in covers[selectedSeason]|limitTo: 18" ng-click="selectCover(cover);">
-            			<img ng-src="/{{cover.cover_image_small}}"/>
+            			<img ng-src="/{{cover.lookbook}}"/>
             		</div>
             	</div>
             </div>

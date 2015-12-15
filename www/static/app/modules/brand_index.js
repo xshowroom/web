@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'BrandIndexCtrl',
     [
-     	'$scope', '$timeout', 'Brand', 'Buyer',
-        function ($scope, $timeout, Brand, Buyer) {
+     	'$scope', '$modal', '$timeout', 'Brand', 'Buyer',
+        function ($scope, $modal, $timeout, Brand, Buyer) {
      		$scope.selectSeason = function (season) {
      			$scope.selectedSeason = season;
      			$scope.selectedCover = $scope.covers[season][0];
@@ -31,19 +31,26 @@ angular.module(
      		
      		$scope.refreshCovers = function(){
      			$scope.seasons = [];
-     			Brand.getCoversBySeason({
-     				brandId: $scope.brandId
-     			}).success(function(res){
+     			
+     			Brand.getLookbookPhotos({
+            		brandId: $scope.brandId
+            	}).success(function(res){
      				if (typeof(res) != 'object' || res.status || !res.data) {
-     					alert('获取Cover数据失败，请检查！');
+     					$modal({title: 'Error Info', content: res.msg, show: true});
      					return;
      				}
-     				$scope.covers = res.data;
-     				for (var season in $scope.covers){
-     					$scope.seasons.push(season);
-     				}
+     				$scope.seasons = [];
+            		$scope.covers = {};
+            		for(var i = 0, len = res.data.length; i < len; i++){
+            			var record = res.data[i];
+            			if(!$scope.covers[record.season]){
+            				$scope.seasons.push(record.season);
+            				$scope.covers[record.season] = [];
+            			}
+            			$scope.covers[record.season].push(record);
+                	}
      				$scope.selectedSeason = $scope.seasons[0];
-     				$scope.selectedCover = res.data[$scope.selectedSeason][0];
+     				$scope.selectedCover = $scope.covers[$scope.selectedSeason][0];
      			});
      		};
      		
@@ -53,7 +60,7 @@ angular.module(
      				brandId: $scope.brandId
      			}).success(function(res){
      				if (typeof(res) != 'object' || res.status) {
-     					alert('申请Auth失败，请检查！');
+     					$modal({title: 'Error Info', content: res.msg, show: true});
      					return;
      				}
      				$scope.authCode = -1;
@@ -90,7 +97,7 @@ angular.module(
 
      			Brand.getCollectionList(options).success(function(res){
      				if (typeof(res) != 'object' || res.status) {
-     					alert('获取Collection数据失败，请检查！');
+     					$modal({title: 'Error Info', content: res.msg, show: true});
      					return;
      				}
      				if(isRefresh){
@@ -118,7 +125,7 @@ angular.module(
      				brandId: $scope.brandId
      			}).success(function(res){
      				if (typeof(res) != 'object' || res.status) {
-     					alert('获取Auth数据失败，请检查！');
+     					$modal({title: 'Error Info', content: res.msg, show: true});
      					return;
      				}
      				$scope.authCode = res.data;
@@ -134,7 +141,7 @@ angular.module(
      			}
      			Buyer.getStoreList().success(function(res){
      				if (typeof(res) != 'object' || res.status) {
-     					alert('获取Store数据失败，请检查！');
+     					$modal({title: 'Error Info', content: res.msg, show: true});
      					return;
      				}
      				$scope.stores = res.data;
