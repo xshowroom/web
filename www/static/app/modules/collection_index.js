@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'CollectionIndexCtrl',
     [
-     	'$scope', '$location', 'Collection', 
-        function ($scope, $location, Collection) {
+     	'$scope', '$modal', '$location', 'Collection', 
+        function ($scope, $modal, $location, Collection) {
      		$scope.checkInfo = {
          		validation: {
      			   	'name': false,
@@ -62,8 +62,8 @@ angular.module(
          			Collection.modify(
          	   			$scope.collection
          	    	).success(function(res){
-         	     		if (res.status) {
-         	     			alert(res.msg);
+         	    		if (typeof(res) != 'object' || res.status) {
+            				$modal({title: 'Error Info', content: res.msg, show: true});
          	     		}else{
          	     			window.location.reload();
          	     		}
@@ -75,8 +75,8 @@ angular.module(
 				Collection.destroy({
 					id: $scope.collectionId
 				}).success(function(res){
-					if (res.status) {
-						alert(res.msg);
+					if (typeof(res) != 'object' || res.status) {
+						$modal({title: 'Error Info', content: res.msg, show: true});
 					}else{
 						window.open('/brand/collection', '_self');
 					}
@@ -86,8 +86,8 @@ angular.module(
 				Collection.enable({
 					id: $scope.collectionId
 				}).success(function(res){
-					if (res.status) {
-						alert(res.msg);
+					if (typeof(res) != 'object' || res.status) {
+        				$modal({title: 'Error Info', content: res.msg, show: true});
 					}else{
 						window.location.reload();
 					}
@@ -97,8 +97,8 @@ angular.module(
 				Collection.close({
 					id: $scope.collectionId
 				}).success(function(res){
-					if (res.status) {
-						alert(res.msg);
+					if (typeof(res) != 'object' || res.status) {
+        				$modal({title: 'Error Info', content: res.msg, show: true});
 					}else{
 						window.location.reload();
 					}
@@ -134,8 +134,8 @@ angular.module(
              		collectionId: $scope.collectionId,
              		timestamp: new Date().getTime()
          		}).success(function(res){
-         			if(res.status){
-         				alert(res.msg);
+         			if (typeof(res) != 'object' || res.status) {
+        				$modal({title: 'Error Info', content: res.msg, show: true});
          				return;
          			}
          			$scope.products = res.data;

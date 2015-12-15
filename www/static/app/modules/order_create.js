@@ -19,6 +19,10 @@ angular.module(
      		Cart.findOne({
      			collectionId: $scope.collectionId
      		}).success(function(res){
+     			if (typeof(res) != 'object' || res.status) {
+    				$modal({title: 'Error Info', content: res.msg, show: true});
+    				return;
+     			}
      			$scope.quantities = {};
      			for(var i = 0, len = res.data.length; i < len; i++) {
      				var productId = res.data[i].id;

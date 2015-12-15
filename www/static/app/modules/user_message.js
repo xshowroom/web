@@ -8,14 +8,14 @@
 angular.module(
     'xShowroom.user.message',
     [
-        'ngCookies', 'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services'
+        'ngCookies', 'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services', 'mgcrea.ngStrap'
     ]
 )
 .controller(
     'UserMessageCtrl',
     [
-        '$scope',
-        function ($scope){
+        '$scope', '$modal', 
+        function ($scope, $modal){
             $scope.clickMessage=function(){
                 messageId = angular.element('#msg_id').val();
             };
@@ -25,6 +25,10 @@ angular.module(
                     id: messageId,
                     rnd: new Date().getTime()
                 }).success(function(res){
+                	if (typeof(res) != 'object' || res.status) {
+	    				$modal({title: 'Error Info', content: res.msg, show: true});
+	    				return;
+                	}
                     window.location.reload();
                 });
             }

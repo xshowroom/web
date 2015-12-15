@@ -45,6 +45,10 @@ angular.module(
         	Brand.getLookbookPhotos({
         		brandId: $scope.userId
         	}).success(function(res){
+        		if (typeof(res) != 'object' || res.status) {
+    				$modal({title: 'Error Info', content: res.msg, show: true});
+ 					return;
+ 				}
         		$scope.seasons = Brand.getSeasons();
         		$scope.photos = {};
         		for(var i = 0, len = res.data.length; i < len; i++){
