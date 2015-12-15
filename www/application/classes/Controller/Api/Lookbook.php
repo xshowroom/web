@@ -35,8 +35,13 @@ class Controller_Api_Lookbook extends Controller_BaseReqLogin
         $lookbookPath = $this->uploadService->createResizeImage($lookbook, 'lookbook');
         $lookbookId = $this->lookbookService->saveLookbook($userId, $season, $lookbookPath);
 
-        $data = array('id' => $lookbookId, 'lookbook' => $lookbookPath, 'season' => $season);
-        
+        $data = array(
+            'id' => $lookbookId,
+            'user_id' => $userId,
+            'season' => $season,
+            'lookbook' => $lookbookPath
+        );
+
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
             'msg'    => '',
