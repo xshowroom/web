@@ -14,9 +14,9 @@ class Controller_Api_Lookbook extends Controller_BaseReqLogin
     
     public function action_getList()
     {
-        $userId = $this->opUser['id'];
+        $brandId = Request::current()->query('brandId');
 
-        $res = $this->lookbookService->getLookbookList($userId);
+        $res = $this->lookbookService->getLookbookList($brandId);
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,

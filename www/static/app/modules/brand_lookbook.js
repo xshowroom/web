@@ -42,7 +42,9 @@ angular.module(
         		});
         	};
         	
-        	Brand.getLookbookPhotos().success(function(res){
+        	Brand.getLookbookPhotos({
+        		brandId: 
+        	}).success(function(res){
         		$scope.seasons = Brand.getSeasons();
         		$scope.photos = {};
         		for(var i = 0, len = res.data.length; i < len; i++){
