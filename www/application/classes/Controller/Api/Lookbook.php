@@ -39,7 +39,7 @@ class Controller_Api_Lookbook extends Controller_BaseReqLogin
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
             'msg'    => '',
-            'data'   => $lookbookPath,
+            'data'   => $data,
         ));
     }
 
