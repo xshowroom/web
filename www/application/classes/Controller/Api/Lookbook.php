@@ -14,7 +14,7 @@ class Controller_Api_Lookbook extends Controller_BaseReqLogin
     
     public function action_getList()
     {
-        $userId = $this->opUser['id'];
+        $userId = Request::current()->query('brandId');
 
         $res = $this->lookbookService->getLookbookList($userId);
         
@@ -33,8 +33,9 @@ class Controller_Api_Lookbook extends Controller_BaseReqLogin
         $lookbook   = Request::current()->post('lookbook');
 
         $lookbookPath = $this->uploadService->createResizeImage($lookbook, 'lookbook');
-        $this->lookbookService->saveLookbook($userId, $season, $lookbookPath);
+        $lookbookId = $this->lookbookService->saveLookbook($userId, $season, $lookbookPath);
 
+        $data = array('id' => $lookbookId, 'lookbook' => $lookbookPath)
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
             'msg'    => '',
