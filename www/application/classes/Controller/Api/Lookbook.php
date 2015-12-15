@@ -27,7 +27,7 @@ class Controller_Api_Lookbook extends Controller_Base
 
     public function action_saveLookbook()
     {
-        $userId = $this->opUser['id'];
+        $userId = $_SESSION['opUser']['id'];
         
         $season     = Request::current()->post('season');
         $lookbook   = Request::current()->post('lookbook');
