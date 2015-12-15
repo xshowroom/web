@@ -43,7 +43,7 @@ angular.module(
         	};
         	
         	Brand.getLookbookPhotos({
-        		brandId: 
+        		brandId: $scope.userId
         	}).success(function(res){
         		$scope.seasons = Brand.getSeasons();
         		$scope.photos = {};
