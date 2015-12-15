@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="xShowroom.brand.index" ng-init="brandId=<?=$brandInfo['id']?>;isGuest=<?=empty($user) ? 'true' : 'false'?>;">
+<html ng-app="xShowroom.brand.index" ng-init="brandOwner=<?=$brandInfo['user_id']?>;brandId=<?=$brandInfo['id']?>;isGuest=<?=empty($user) ? 'true' : 'false'?>;">
 <head>
     <meta charset="UTF-8" >
     <title>XShowroom</title>

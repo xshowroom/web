@@ -33,7 +33,7 @@ angular.module(
      			$scope.seasons = [];
      			
      			Brand.getLookbookPhotos({
-            		brandId: $scope.brandId
+            		brandId: $scope.brandOwner
             	}).success(function(res){
      				if (typeof(res) != 'object' || res.status || !res.data) {
      					$modal({title: 'Error Info', content: res.msg, show: true});
