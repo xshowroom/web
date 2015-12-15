@@ -3,24 +3,13 @@
 <head>
 	<meta charset="UTF-8" >
 	<title>XShowroom</title>
-	
-	<link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="/static/bower_components/font-awesome/css/font-awesome.min.css" />
+	<?php echo View::factory('common/global_libraries'); ?>
 	<link rel="stylesheet" type="text/css" href="/static/bower_components/nivoslider/nivo-slider.css" />
 	<link rel="stylesheet" type="text/css" href="/static/bower_components/nivoslider/themes/bar/bar.css" />
-	<link rel="stylesheet" type="text/css" href="/static/app/css/common.css" />
 	<link rel="stylesheet" type="text/css" href="/static/app/css/home.css" />
-	<link rel="shortcut icon" href="/favicon.ico" />
-	<script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="/static/bower_components/nivoslider/jquery.nivo.slider.pack.js"></script>
-	<script type="text/javascript" src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="/static/bower_components/angular/angular.min.js"></script>
-	<script type="text/javascript" src="/static/bower_components/angular-cookies/angular-cookies.min.js"></script>
 	<script type="text/javascript" src="/static/bower_components/others/jquery.countdown.min.js"></script>
 	<script type="text/javascript" src="/static/bower_components/others/jquery.waypoints.min.js"></script>
-	<script type="text/javascript" src="/static/app/modules/common/i18n.js"></script>
-	<script type="text/javascript" src="/static/app/modules/common/services.js"></script>
-	<script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
 	<script type="text/javascript" src="/static/app/modules/home.js"></script>
 	<script>
 		$(document).ready(function(){

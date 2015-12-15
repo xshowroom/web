@@ -78,40 +78,6 @@ angular.module(
         }
     };
 }])
-//.directive('userInfoNav', ['User', function (User) {
-//    return {
-//        template: function ($element, $attr, $scope) {
-//            var html = [
-//                '<div class="user-not-logined" ng-if="!userInfo">',
-//					'<span>{{ "directives_js__WELCOME"| translate }} GUEST</span>',
-//					'<a href="login" target="_self">{{ "directives_js__LOGIN"| translate }}</a>',
-//					'<span> | </span>',
-//					'<a href="guide">{{ "directives_js__REGISTER"| translate }}</a>',
-//				'</div>',
-//				'<div class="user-logined" ng-if="userInfo">',
-//					'<span>{{ "directives_js__WELCOME"| translate }}, </span>',
-//					'<a href="#">{{userInfo.displayName}}</a>',
-//					'<span> | </span>',
-//					'<a href="/user/logout" target="_self">{{ "directives_js__LOGOUT"| translate }}</a>',
-//				'</div>'
-//            ].join('');
-//            return html;
-//        },
-//        transclude: true,
-//        restrict: 'C',
-//        replace: false,
-//        controller: function ($scope) {
-//        	
-//        	User.getUserInfo().success(function(res){
-//     			if (res.status != 0){
-//     				$scope.userInfo = undefined;
-//     				return;
-//     			}
-//     			$scope.userInfo = res.data;
-//     		});
-//        }
-//    };
-//}])
 .directive('filterCondition', [function () {
     return {
         template: function ($element, $attr, $scope) {
@@ -177,7 +143,7 @@ angular.module(
         }
     };
 }])
-.directive('imageUploader', ['uiUploader', '$location', '$timeout', function (uiUploader, $location, $timeout) {
+.directive('imageUploader', ['uiUploader', '$modal', '$location', '$timeout', function (uiUploader, $modal, $location, $timeout) {
     return {
     	template: [
     	    '<div>',
@@ -216,13 +182,13 @@ angular.module(
                     url: '/api/upload/image',
                     onCompleted: function(file, response) {
                     	if (!$scope.timeout){
-                    		alert('上传图片超时，请重新上传！');
+                    		$modal({title: 'Error Info', content: '上传图片超时，请重新上传！', show: true});
                     		$scope.$emit('uploading.end');
                     		return;
                     	}
                     	response = JSON.parse(response);
                     	if(response.status != 0){
-                    		alert('上传图片接口出错，请重新上传，如多次失败请联系我们！');
+                    		$modal({title: 'Error Info', content: '上传图片接口出错，请重新上传，如多次失败请联系我们！', show: true});
                     		$scope.$emit('uploading.end');
                     		return;
                     	}
@@ -249,13 +215,13 @@ angular.module(
 					return;
 				}
 				if(!/image\/\w+/.test(files[0].type)){
-					alert('上传文件类型必须为图片！');
+					$modal({title: 'Error Info', content: '上传文件类型必须为图片！', show: true});
 					self.val('');
 					$scope.$emit('uploading.end');
 				    return; 
 				}
 				if(files[0].size / 1024 / 1024 > 5){
-					alert('上传文件大于5MB！');
+					$modal({title: 'Error Info', content: '上传文件大于5MB！', show: true});
 					self.val('');
 					$scope.$emit('uploading.end');
 				    return; 
