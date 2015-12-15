@@ -148,7 +148,7 @@ class Business_Order
             $production = $this->productionService->getProduction($userId, $productionId);
             foreach ($items as $item) {
                 $totalNum = $totalNum + $item['buy_num'];
-                $itemAmount = $itemAmount + $item['buy_num'] * $production['retail_price']; // 批发价还是零售价
+                $itemAmount = $itemAmount + $item['buy_num'] * $production['whole_price']; // 批发价
             }
             $productionIds[] = $productionId;
         }
@@ -157,7 +157,7 @@ class Business_Order
 
         $collection = $this->collectionService->getCollectionInfo($userId, $collectionId); 
 
-        if ($collection['mini_order'] > $totalAmount) { // 要不要加shipAmount
+        if ($collection['mini_order'] > $itemAmount) { // 要不要加shipAmount
             $errorInfo = Kohana::message('message', 'AUTH_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
