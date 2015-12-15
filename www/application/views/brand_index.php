@@ -63,12 +63,12 @@
 	            		<span><?=$brandAttr['company_web_url']?></span>
 	            	</div>
             	</div>
-            	<div class="col-xs-3">
+            	<div class="col-xs-3" ng-if="seasons.length">
             		<div class="brand-cover">
             			<img ng-src="/{{selectedCover.lookbook}}"/>
             		</div>
             	</div>
-            	<div class="col-xs-5">
+            	<div class="col-xs-5"  ng-if="seasons.length">
             		<div class="dropdown season-filter">
 						<span type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						 	<span>{{selectedSeason | translate}}</span>
