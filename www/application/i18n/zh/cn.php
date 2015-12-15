@@ -250,6 +250,7 @@ return array_merge(
         'brand_register__STEP_2__IMAGE' => '相册 / 照片',
         'brand_register__STEP_2__BRAND_NAME_PLACEHOLDER' => '请输入您的品牌名称 *',
         'brand_register__STEP_2__DESIGNER_NAME_PLACEHOLDER' => '设计师 *',
+        'brand_register__STEP_2__BRAND_URL' => '自定义域名',
         'brand_register__STEP_2__URL_DESC_1' => '这个链接将被用于直接定位到你的品牌站点',
         'brand_register__STEP_2__URL_DESC_2' => '(通过验证的买手才能访问)',
         'brand_register__STEP_2__btn__PREVIOUS' => '上一步',
