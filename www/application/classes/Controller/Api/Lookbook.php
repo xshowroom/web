@@ -51,7 +51,7 @@ class Controller_Api_Lookbook extends Controller_Base
 
     public function action_deleteLookbook()
     {
-        $userId = $this->opUser['id'];
+        $userId = $_SESSION['opUser']['id'];
         $lookbookId = Request::current()->post('id');
     
         $res = $this->lookbookService->deleteLookbook($userId, $lookbookId);
