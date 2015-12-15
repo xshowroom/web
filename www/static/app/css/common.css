@@ -358,6 +358,7 @@ a.active:before{
 	font-size: 12px;
 	font-weight: normal;
 	color: #888;
+	display: inline-block;
 }
 /*用户中心的侧边导航*/
 .xs-user-center-slide-nav {

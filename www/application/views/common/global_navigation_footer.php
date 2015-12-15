@@ -40,8 +40,15 @@
 				<button class="btn"><?=__("global_navigation_footer__SUBSCRIBE__BUTTON")?></button>
 			</form>
 			<span class="copyright">
+				©2015 XSHOWROOM
+			</span>
+			<span class="copyright">
 				<?=__("global_navigation_footer__SUBSCRIBE__LICENSE")?>
 			</span>
+			<span class="copyright">
+				沪ICP备 15032330号-1
+			</span>
+
 		</div>
 	</div>
 	<!-- Baidu tongji code -->

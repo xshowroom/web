@@ -95,7 +95,7 @@ return array_merge(
         'global_navigation_footer__SUBSCRIBE__SIGN_IP' => 'SIGN UP AND GET LATEST NEWS',
         'global_navigation_footer__SUBSCRIBE__EMAIL' => 'YOUR EMAIL ADDRESS',
         'global_navigation_footer__SUBSCRIBE__BUTTON' => 'SUBSCRIBE',
-        'global_navigation_footer__SUBSCRIBE__LICENSE' => '©2015 XSHOWROOM. ALL RIGHTS RESERVED',
+        'global_navigation_footer__SUBSCRIBE__LICENSE' => 'ALL RIGHTS RESERVED',
     ),
     /**
      * Home.php
