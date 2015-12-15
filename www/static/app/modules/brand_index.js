@@ -8,7 +8,7 @@
 angular.module(
     'xShowroom.brand.index', 
     [
-        'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services'
+        'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services', 'mgcrea.ngStrap'
     ]
 )
 .controller(
