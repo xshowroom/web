@@ -8,14 +8,14 @@
 angular.module(
     'xShowroom.buyer.brand', 
     [
-        'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services'
+        'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services', 'mgcrea.ngStrap'
     ]
 )
 .controller(
     'BuyerBrandCtrl',
     [
-     	'$scope', '$timeout', 'Brand', 'Buyer',
-        function ($scope, $timeout, Brand, Buyer) {
+     	'$scope', '$modal', '$timeout', 'Brand', 'Buyer',
+        function ($scope, $modal, $timeout, Brand, Buyer) {
      		$scope.hasFilter = function(){
      			return !angular.equals($scope.filters, {});
      		}
@@ -48,8 +48,8 @@ angular.module(
      				options.country = options.country.join(',');
      			}
      			Buyer.getMyBrandList(options).success(function(res){
-     				if (res.status){
-     					alert(res.msg);
+     				if (typeof(res) != 'object' || res.status) {
+        				$modal({title: 'Error Info', content: res.msg, show: true});
      					return;
      				}
      				if(isRefresh){

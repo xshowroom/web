@@ -27,8 +27,8 @@ angular.module(
 				Product.destroy({
 					id: productId
 				}).success(function(res){
-					if (res.status) {
-						alert(res.msg);
+					if (typeof(res) != 'object' || res.status) {
+	    				$modal({title: 'Error Info', content: res.msg, show: true});
 					}else{
 						window.open('/collection/' + collectionId, '_self');
 					}

@@ -8,14 +8,14 @@
 angular.module(
     'xShowroom.shop', 
     [
-        'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services'
+        'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services', 'mgcrea.ngStrap'
     ]
 )
 .controller(
     'ShopCtrl',
     [
-     	'$scope', '$timeout', 'Brand',
-        function ($scope, $timeout, Brand) {
+     	'$scope', '$timeout', '$modal', 'Brand',
+        function ($scope, $timeout, $modal, Brand) {
      		$scope.hasFilter = function(){
      			return !angular.equals($scope.filters, {});
      		}
@@ -48,8 +48,8 @@ angular.module(
      				options.country = options.country.join(',');
      			}
      			Brand.findAll(options).success(function(res){
-     				if (res.status){
-     					alert(res.msg);
+     				if (typeof(res) != 'object' || res.status) {
+	    				$modal({title: 'Error Info', content: res.msg, show: true});
      					return;
      				}
      				if(isRefresh){

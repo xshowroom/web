@@ -8,14 +8,14 @@
 angular.module(
     'xShowroom.brand.collection', 
     [
-        'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services'
+        'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services',  'mgcrea.ngStrap'
     ]
 )
 .controller(
     'BrandCollectionCtrl',
     [
-     	'$scope', 'Collection',
-        function ($scope, Collection) {
+     	'$scope', '$modal', 'Collection',
+        function ($scope, $modal, Collection) {
      		$scope.filters = {
      			limit: 4,
      			status: ''
@@ -24,6 +24,10 @@ angular.module(
      		Collection.findAll({
      			detail: 1
      		}).success(function(res){
+     			if (typeof(res) != 'object' || res.status) {
+    				$modal({title: 'Error Info', content: res.msg, show: true});
+ 					return;
+ 				}
      			$scope.statusCounter = {};
      			for(var i = 0, len = res.data.length; i < len; i++) {
      				var status = res.data[i].status;

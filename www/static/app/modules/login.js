@@ -46,7 +46,7 @@ angular.module(
         		}
         		
         		login.success(function(res){
-           			if(res.status){
+        			if (typeof(res) != 'object' || res.status) {
            				$scope.refreshValidCode();
            				$scope.loginError = {
            		        	hasError: true,
