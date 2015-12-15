@@ -226,29 +226,29 @@
 			</div>
 			<div class="row"> 
 				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link">
-						<img src="/static/app/images/home-hot-brands-1.png"/>
+					<a class="showcase-image image-link" href="<?=URL::site('brands/THREEFLOOR')?>">
+						<img src="/static/app/images/home-banner/home-hot-brands-1.jpg"/>
 					</a>
 					<div class="showcase-name">PAPER LONDON</div>
 					<div class="showcase-collection"><?=__("home__SSI5_COLLECTION")?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link">
-						<img src="/static/app/images/home-hot-brands-2.png"/>
+					<a class="showcase-image image-link" href="<?=URL::site('brands/FABITORIA')?>">
+						<img src="/static/app/images/home-banner/home-hot-brands-2.jpg"/>
 					</a>
 					<div class="showcase-name">MAYA MAYAGAL</div>
 					<div class="showcase-collection"><?=__("home__SSI5_COLLECTION")?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link">
-						<img src="/static/app/images/home-hot-brands-3.png"/>
+					<a class="showcase-image image-link" href="<?=URL::site('brands/SUNCOO')?>">
+						<img src="/static/app/images/home-banner/home-hot-brands-3.jpg"/>
 					</a>
 					<div class="showcase-name">PPQ</div>
 					<div class="showcase-collection"><?=__("home__SSI5_COLLECTION")?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link">
-						<img src="/static/app/images/home-hot-brands-4.png"/>
+					<a class="showcase-image image-link" href="<?=URL::site('brands/FOREVERUNIQUE')?>">
+						<img src="/static/app/images/home-banner/home-hot-brands-4.jpg"/>
 					</a>
 					<div class="showcase-name">MUUBAA</div>
 					<div class="showcase-collection"><?=__("home__SSI5_COLLECTION")?></div>
