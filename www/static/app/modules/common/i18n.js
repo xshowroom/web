@@ -354,10 +354,13 @@ angular.module(
             dropdown__COLLECTION_MODE__PERMANENT: '常年可定',
 
             // Collection Season
-            dropdown__COLLECTION_SEASON__AW_15: '15 秋冬',
-            dropdown__COLLECTION_SEASON__PRE_SS16: '16 早春',
-            dropdown__COLLECTION_SEASON__SS_16: '16 春夏',
-            dropdown__COLLECTION_SEASON__AW_16: '16 秋冬',
+            dropdown__COLLECTION_SEASON__AW_14: '14秋冬',
+            dropdown__COLLECTION_SEASON__PRE_SS_15: '15早春',
+            dropdown__COLLECTION_SEASON__SS_15: '15春夏',
+            dropdown__COLLECTION_SEASON__AW_15: '15秋冬',
+            dropdown__COLLECTION_SEASON__PRE_SS16: '16早春',
+            dropdown__COLLECTION_SEASON__SS_16: '16春夏',
+            dropdown__COLLECTION_SEASON__AW_16: '16秋冬',
 
             // Product Category
             dropdown__PRODUCT_CATEGORY__ALL: "所有",
@@ -772,6 +775,9 @@ angular.module(
             dropdown__COLLECTION_MODE__PERMANENT: 'PERMANENT',
 
             // Collection Season
+            dropdown__COLLECTION_SEASON__AW_14: 'AW14',
+            dropdown__COLLECTION_SEASON__PRE_SS_15: 'PRE-SS15',
+            dropdown__COLLECTION_SEASON__SS_15: 'SS15',
             dropdown__COLLECTION_SEASON__AW_15: 'AW15',
             dropdown__COLLECTION_SEASON__PRE_SS16: 'PRE-SS16',
             dropdown__COLLECTION_SEASON__SS_16: 'SS16',

@@ -133,6 +133,14 @@ angular.module(
 	    		        'dropdown__COLLECTION_SEASON__SS_16', 'dropdown__COLLECTION_SEASON__AW_16'
 	    		    ]
 	    		},
+				seasonInLookbook:{
+					type: 'checkbox',
+					values: [
+						'dropdown__COLLECTION_SEASON__AW_14',
+						'dropdown__COLLECTION_SEASON__PRE_SS_15','dropdown__COLLECTION_SEASON__SS_15', 'dropdown__COLLECTION_SEASON__AW_15',
+						'dropdown__COLLECTION_SEASON__PRE_SS16','dropdown__COLLECTION_SEASON__SS_16'//, 'dropdown__COLLECTION_SEASON__AW_16'
+					]
+				},
 				available: {
 	    		  	type: 'radio',
 	    		    values: [
@@ -179,6 +187,9 @@ angular.module(
 		      	getSeasons: function(){
 		      		return conditions.season.values;
 		      	},
+				getSeasonsForLookbook: function(){
+					return conditions.seasonInLookbook.values;
+				},
 		      	getCoversBySeason: function (opts) {
 		    		return $http.get('/api/guest/coverImgList', {params: opts});
 		      	},

@@ -52,7 +52,7 @@ angular.module(
     				$modal({title: 'Error Info', content: res.msg, show: true});
  					return;
  				}
-        		$scope.seasons = Brand.getSeasons();
+        		$scope.seasons = Brand.getSeasonsForLookbook();
         		$scope.photos = {};
         		for(var i = 0, len = res.data.length; i < len; i++){
         			var record = res.data[i];
