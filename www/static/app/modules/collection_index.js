@@ -105,6 +105,18 @@ angular.module(
 				});
          	};
          	
+         	$scope.setDatesByMode = function(mode){
+     			if(mode == 'dropdown__COLLECTION_MODE__PERMANENT'){
+     				var year = new Date().getFullYear();
+     				var maxDate = new Date().setYear(year + 100);
+     				$scope.collection.delivery = $filter('date')(maxDate, 'yyyy-mm-dd');
+     				$scope.collection.deadline = $filter('date')(maxDate, 'yyyy-mm-dd');
+     			} else {
+     				$scope.collection.delivery = null;
+     				$scope.collection.deadline = null;
+     			}
+     		};
+     		
          	var initCollection = function(){
          		Collection.findById({
          			id: $scope.collectionId

@@ -43,10 +43,12 @@
                  		<span><?=__("collection_index__COLLECTION_MODE")?>:</span><span>{{'<?= $collection['mode']?>' | translate}}</span>
                  	</div>
                  	<div class="col-xs-12 collection-detail">
-                 		<span><?=__("collection_index__COLLECTION_DEADLINE")?>:</span><span><?= $collection['deadline']?></span>
+                 		<span><?=__("collection_index__COLLECTION_DEADLINE")?>:</span>
+                 		<span><?= $collection['mode'] == 'dropdown__COLLECTION_MODE__PERMANENT' ? '无' :$collection['deadline']?></span>
                  	</div>
                  	<div class="col-xs-12 collection-detail">
-                 		<span><?=__("collection_index__COLLECTION_DELIVERY_DATE")?>:</span><span><?= $collection['delivery_date']?></span>
+                 		<span><?=__("collection_index__COLLECTION_DELIVERY_DATE")?>:</span>
+                 		<span><?= $collection['mode'] == 'dropdown__COLLECTION_MODE__PERMANENT' ? '按需发货' :$collection['delivery_date']?></span>
                  	</div>
                  	<div class="col-xs-12 collection-detail">
                  		<span><?=__("collection_index__COLLECTION_MINIMUM_ORDER")?>:</span><span><?= $collection['currency']?><?= $collection['mini_order']?></span>
@@ -103,7 +105,7 @@
                         <div class="form-group col-xs-6" ng-class="{'has-error': checkInfo.validation.mode}">
                             <label for="mode" class="col-xs-4 control-label"><?=__("collection_index__COLLECTION_MODE")?></label>
                             <div class="col-xs-8">
-                                  <select class="form-control" id="mode" ng-model="collection.mode">
+                                  <select class="form-control" id="mode" ng-model="collection.mode" ng-chaneg="setDatesByMode(collection.mode)">
 									  <option value="dropdown__COLLECTION_MODE__PRE_ORDER">{{ 'dropdown__COLLECTION_MODE__PRE_ORDER' | translate}}</option>
 									  <option value="dropdown__COLLECTION_MODE__STOCK">{{ 'dropdown__COLLECTION_MODE__STOCK' | translate}}</option>
 									  <option value="dropdown__COLLECTION_MODE__RE_ORDER">{{ 'dropdown__COLLECTION_MODE__RE_ORDER' | translate}}</option>
@@ -139,7 +141,7 @@
                                   </select>
                             </div>
                         </div>
-                        <div class="form-group col-xs-6" ng-class="{'has-error': checkInfo.validation.deadline}">
+                        <div class="form-group col-xs-6" ng-class="{'has-error': checkInfo.validation.deadline}" ng-hide="collection.mode == 'dropdown__COLLECTION_MODE__PERMANENT'">
                             <label for="deadline" class="col-xs-4 control-label"><?=__("collection_index__COLLECTION_DEADLINE")?></label>
                             <div class="col-xs-8">
                             	<input type="text" class="form-control datepicker" id="deadline" ng-model="collection.deadline"
@@ -147,7 +149,7 @@
 					        		data-model-date-format="yyyy-MM-dd" data-autoclose="1" bs-datepicker ng-change="collection.delivery = ''">
                             </div>
                         </div>
-                        <div class="form-group col-xs-6" ng-class="{'has-error': checkInfo.validation.delivery}">
+                        <div class="form-group col-xs-6" ng-class="{'has-error': checkInfo.validation.delivery}" ng-hide="collection.mode == 'dropdown__COLLECTION_MODE__PERMANENT'">
                             <label for="inputEmail3" class="col-xs-4 control-label"><?=__("collection_index__COLLECTION_DELIVERY_DATE")?></label>
                             <div class="col-xs-8">
                             	<input type="text" class="form-control datepicker" id="delivery-date" ng-model="collection.delivery"
