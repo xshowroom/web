@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  ng-app="xShowroom.brand.lookbook" ng-init="userId=<?=$userAttr['id']?>">
+<html  ng-app="xShowroom.brand.lookbook" ng-init="userId=<?=$brandInfo['user_id']?>">
 <head>
 	<meta charset="UTF-8" >
 	<title>XShowroom</title>
