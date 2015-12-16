@@ -1,13 +1,14 @@
 echo "install tools ..."
-sudo apt-get install python-software-properties
+# sudo apt-get install python-software-properties
+# sudo add-apt-repository ppa:ondrej/php5
+
 sudo apt-get update
-sudo add-apt-repository ppa:ondrej/php5
 
 sudo apt-get install git
 
 echo "install apache2 ..."
 sudo apt-get install apache2
-echo "install php2 ..."
+echo "install php5 ..."
 sudo apt-get install libapache2-mod-php5 php5 php5-gd php5-mysql
 
 # not install mysql-server in prod environment
@@ -21,15 +22,16 @@ git clone https://github.com/xshowroom/web.git
 #
 # sudo vi /etc/apache2/sites-available/000-default.conf
 
+<Directory /home/xshowroom/web/www>
+	Options FollowSymLinks
+	DirectoryIndex index.php
+	AllowOverride all
+	Require all granted
+</Directory>
+
 # <VirtualHost *:80>
-# 	ServerAdmin arwutang@hotmail.com
-#   DocumentRoot /home/xshowroom/web/www
-# 	<Directory /home/xshowroom/web/www>
-#     	Options FollowSymLinks
-#       DirectoryIndex index.php
-#       AllowOverride all
-#     	Require all granted
-# 	</Directory>
+	ServerAdmin arwutang@hotmail.com
+  	DocumentRoot /home/xshowroom/web/www
 # </VirtualHost>
 
 # open apache rewrite
