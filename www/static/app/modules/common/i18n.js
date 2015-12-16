@@ -29,7 +29,7 @@ angular.module(
             // directives.js
             directives_js__UPLOADING: '上传图片中',
             directives_js__UPLOAD: '上传图片',
-            directives_js__FILE_SIZE: '文件大小上限为5MB',
+            directives_js__FILE_SIZE: '文件大小上限为2MB',
 
             // login.js
             login__EMAIL_PATTERN_ERROR: 'Email格式错误！',
@@ -448,7 +448,7 @@ angular.module(
             // directives.js
             directives_js__UPLOADING: 'UPLOADING IMAGE',
             directives_js__UPLOAD: 'UPLOAD',
-            directives_js__FILE_SIZE: 'File size limit is 5MB',
+            directives_js__FILE_SIZE: 'File size limit is 2MB',
 
             // login.js
             login__EMAIL_PATTERN_ERROR: 'email address is not valid！',
