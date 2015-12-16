@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-2">
-			<a href="<?=URL::site('home');?>" class="logo-link" target="_self">
+			<a href="<?=URL::site();?>" class="logo-link" target="_self">
 				<img class="site-logo" ng-src="/static/app/images/logo-black.png">
 			</a>
 		</div>

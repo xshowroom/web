@@ -8,7 +8,7 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12 text-center">
-			<a href="/home" class="logo-link" target="_self">
+			<a href="<?=URL::site()?>" class="logo-link" target="_self">
 				<img class="site-logo" ng-src="/static/app/images/logo-<?php if ($currentPage == 'home'){ echo 'white';}else{ echo 'black';}?>.png">
 			</a>
 		</div>

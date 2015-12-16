@@ -9,7 +9,7 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12 text-center">
-			<a href="<?=URL::site('home');?>" class="logo-link" target="_self">
+			<a href="<?=URL::site();?>" class="logo-link" target="_self">
 				<img class="site-logo" ng-src="/static/app/images/logo-<?php if ($currentPage == 'home'){ echo 'white';}else{ echo 'black';}?>.png">
 			</a>
 		</div>
@@ -17,7 +17,7 @@
 	<div class="row">
 		<div class="col-xs-12 text-center">
 			<ul class="main-naviagtions">
-				<li><a href="<?=URL::site('home');?>" <?php if ($currentPage == 'home'){?>class="active"<?php }?>><?= __("global_navigation_top_guest__HOME") ?></a></li>
+				<li><a href="<?=URL::site();?>" <?php if ($currentPage == 'home'){?>class="active"<?php }?>><?= __("global_navigation_top_guest__HOME") ?></a></li>
 				<li><a href="<?=URL::site('guide');?>" <?php if ($currentPage == 'guide'){?>class="active"<?php }?>><?= __("global_navigation_top_guest__GUIDE") ?></a></li>
 				<li><a href="<?=URL::site('shop');?>" <?php if ($currentPage == 'shop'){?>class="active"<?php }?>><?= __("global_navigation_top_guest__SHOP") ?></a></li>
 				<li><a href="<?=URL::site('#');?>"  <?php if ($currentPage == 'discovery'){?>class="active"<?php }?>><?= __("global_navigation_top_guest__DISCOVER") ?></a></li>
