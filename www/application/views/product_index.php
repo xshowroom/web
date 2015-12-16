@@ -61,11 +61,11 @@
 	            		</div>
 	            		<div>
 	            			<span><?=__("product_index__COLLECTION_DEADLINE")?></span>
-	            			<span><?=$collection['deadline']?></span>
+	            			<span><?= $collection['mode'] == 'dropdown__COLLECTION_MODE__PERMANENT' ? '无' :$collection['deadline']?></span>
 	            		</div>
 	            		<div>
 	            			<span><?=__("product_index__COLLECTION_DELIVERY_DATE")?></span>
-	            			<span><?=$collection['delivery_date']?></span>
+	            			<span><?= $collection['mode'] == 'dropdown__COLLECTION_MODE__PERMANENT' ? '按需发货' :$collection['delivery_date']?></span>
 	            		</div>
 	            		<div>
 	            			<span><?=__("product_index__COLLECTION_MINIMUM_ORDER")?></span>

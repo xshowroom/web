@@ -17,7 +17,7 @@
             array('currentPage' =>  'collection', 'userAttr'=> $userAttr)); 
            ?>
     </nav>
-    <section class="row uploading">
+    <section class="row uploading" ng-cloak>
         <div class="container collection-create">
             <div class="row">
                 <div class="col-xs-12">
@@ -50,7 +50,7 @@
                         <div class="form-group col-xs-6" ng-class="{'has-error': checkInfo.validation.mode}">
                             <label for="mode" class="col-xs-4 control-label"><?= __("collection_create__COLLECTION_MODE"); ?></label>
                             <div class="col-xs-8">
-                                  <select class="form-control" id="mode" ng-model="collection.mode">
+                                  <select class="form-control" id="mode" ng-model="collection.mode" ng-change="setDatesByMode(collection.mode)">
                                       <option value="dropdown__COLLECTION_MODE__PRE_ORDER">{{ 'dropdown__COLLECTION_MODE__PRE_ORDER' | translate}}</option>
                                       <option value="dropdown__COLLECTION_MODE__STOCK">{{ 'dropdown__COLLECTION_MODE__STOCK' | translate}}</option>
                                       <option value="dropdown__COLLECTION_MODE__RE_ORDER">{{ 'dropdown__COLLECTION_MODE__RE_ORDER' | translate}}</option>
@@ -86,7 +86,7 @@
                                   </select>
                             </div>
                         </div>
-                        <div class="form-group col-xs-6" ng-class="{'has-error': checkInfo.validation.deadline}">
+                        <div class="form-group col-xs-6" ng-class="{'has-error': checkInfo.validation.deadline}" ng-hide="collection.mode == 'dropdown__COLLECTION_MODE__PERMANENT'">
                             <label for="deadline" class="col-xs-4 control-label"><?= __("collection_create__COLLECTION_DEADLINE"); ?></label>
                             <div class="col-xs-8">
                             	<input type="text" class="form-control datepicker" id="deadline" ng-model="collection.deadline"
@@ -94,7 +94,7 @@
 					        		data-model-date-format="yyyy-MM-dd" data-autoclose="1" bs-datepicker ng-change="collection.delivery = ''">
                             </div>
                         </div>
-                        <div class="form-group col-xs-6" ng-class="{'has-error': checkInfo.validation.delivery}">
+                        <div class="form-group col-xs-6" ng-class="{'has-error': checkInfo.validation.delivery}" ng-hide="collection.mode == 'dropdown__COLLECTION_MODE__PERMANENT'">
                             <label for="inputEmail3" class="col-xs-4 control-label"><?= __("collection_create__COLLECTION_DELIVERY_DATE"); ?></label>
                             <div class="col-xs-8">
                             	<input type="text" class="form-control datepicker" id="delivery-date" ng-model="collection.delivery"

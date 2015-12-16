@@ -42,8 +42,8 @@
 	                  		<h3>{{record.brandName}} - {{record.collectionInfo.name}}</h3>
 	                  		<div><span>Season:</span><span>{{record.collectionInfo.season | translate}}</span></div>
 	                  		<div><span>Order Mode:</span><span>{{record.collectionInfo.mode | translate}}</span></div>
-	                  		<div><span>Deadline for order:</span><span>{{record.collectionInfo.deadline}}</span></div>
-	                  		<div><span>Delivery Date:</span><span>{{record.collectionInfo.delivery_date}}</span></div>
+	                  		<div><span>Deadline for order:</span><span>{{record.collectionInfo.mode == 'dropdown__COLLECTION_MODE__PERMANENT' ? '无' : record.collectionInfo.deadline}}</span></div>
+	                  		<div><span>Delivery Date:</span><span>{{record.collectionInfo.mode == 'dropdown__COLLECTION_MODE__PERMANENT' ? '按需发货' :record.collectionInfo.delivery_date}}</span></div>
 	                  		<div><span>Min-order:</span><span>{{record.collectionInfo.currency}}{{record.collectionInfo.mini_order}}</span></div>
 	                  		<div><span>Products In Cart:</span></div>
 	                  		<div>
