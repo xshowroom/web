@@ -25,6 +25,9 @@ angular.module(
         				$modal({title: 'Error Info', content: res.msg, show: true});
      					return;
      				}
+        			if (!$scope.photos[season]){
+        				$scope.photos[season] = [];
+        			}
         			$scope.photos[season].push(res.data);
         		});
         	};

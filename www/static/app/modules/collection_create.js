@@ -9,7 +9,7 @@ angular.module(
     'xShowroom.collection.create', 
     [
         'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services',
-        'ngAnimate', 'mgcrea.ngStrap', 'ngTextcomplete'
+        'mgcrea.ngStrap', 'ngTextcomplete'
     ]
 )
 .controller(

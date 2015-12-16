@@ -1,9 +1,9 @@
 document.write("<script type='text/javascript' src='/static/bower_components/angular-ui-uploader/dist/uploader.min.js'></script>");
 
 angular.module(
-    'xShowroom.directives', 
+    'xShowroom.directives',
     [
-        'ngCookies', 'xShowroom.i18n', 'xShowroom.services', 'ui.uploader'
+        'ngCookies', 'mgcrea.ngStrap', 'xShowroom.i18n', 'xShowroom.services', 'ui.uploader'
     ]
 )
 .config(
