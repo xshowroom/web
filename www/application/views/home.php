@@ -172,7 +172,7 @@
 					</div>
 					<div class="col-xs-6">
 						<a href="/register/buyer" class="register-link buyer-register-link">
-							<h4><?=__("home__BRANDS")?></h4>
+							<h4><?=__("home__BUYERS")?></h4>
 							<div>
 								<img src="/static/app/images/common-icon-gift-white.png"/>
 								<span><?=__("home__btn_REGISTER")?></span>
