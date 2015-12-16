@@ -95,7 +95,7 @@ return array_merge(
         'global_navigation_footer__SUBSCRIBE__SIGN_IP' => '注册并获得最新资讯',
         'global_navigation_footer__SUBSCRIBE__EMAIL' => '您的电子邮箱',
         'global_navigation_footer__SUBSCRIBE__BUTTON' => '订阅',
-        'global_navigation_footer__SUBSCRIBE__LICENSE' => '©2015 XSHOWROOM. 版权所有',
+        'global_navigation_footer__SUBSCRIBE__LICENSE' => '版权所有',
     ),
     /**
      * Home.php
@@ -250,6 +250,7 @@ return array_merge(
         'brand_register__STEP_2__IMAGE' => '相册 / 照片',
         'brand_register__STEP_2__BRAND_NAME_PLACEHOLDER' => '请输入您的品牌名称 *',
         'brand_register__STEP_2__DESIGNER_NAME_PLACEHOLDER' => '设计师 *',
+        'brand_register__STEP_2__BRAND_URL' => '自定义域名',
         'brand_register__STEP_2__URL_DESC_1' => '这个链接将被用于直接定位到你的品牌站点',
         'brand_register__STEP_2__URL_DESC_2' => '(通过验证的买手才能访问)',
         'brand_register__STEP_2__btn__PREVIOUS' => '上一步',
