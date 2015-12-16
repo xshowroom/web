@@ -220,7 +220,7 @@ angular.module(
 					$scope.$emit('uploading.end');
 				    return; 
 				}
-				if(files[0].size / 1024 / 1024 > 5){
+				if(files[0].size / 1024 / 1024 > 2){
 					$modal({title: 'Error Info', content: '上传文件大于5MB！', show: true});
 					self.val('');
 					$scope.$emit('uploading.end');

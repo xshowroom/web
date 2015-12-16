@@ -113,6 +113,7 @@ angular.module(
             product_add_image_unnamed_error: '上传的色彩图片未命名',
             product_add_image_format_error: '不支持的文件类型',
             product_add_image_timeout_error: '上传图片超时，请重试',
+            product_add_image_size_error: '上传图片不能超过 1 MB',
 
             /**
              * DROP DOWN LIST
@@ -532,6 +533,7 @@ angular.module(
             product_add_image_unnamed_error: 'input the name for upload color',
             product_add_image_format_error: 'not support file type',
             product_add_image_timeout_error: 'upload image timeout, please retry',
+            product_add_image_size_error: 'image size no more than 1 MB',
 
             /**
              * DROP DOWN LIST

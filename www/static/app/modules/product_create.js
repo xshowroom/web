@@ -83,7 +83,7 @@ angular.module(
 					$scope.$emit('uploading.end');
 				    return; 
 				}
-				if(files[0].size / 1024 / 1024 > 2){
+				if(files[0].size / 1024 / 1024 > 1){
 					error.msg = 'size_error';
 					$scope.colorErrorMsg.push(error);
 					$scope.$apply();
