@@ -199,7 +199,8 @@
 }
 .cart-details .order-details{
 	border: 1px solid #ccc;
-	padding: 15px;
+    padding: 15px;
+    margin-top: 50px;
 }
 .cart-details .order-details .order-details-header{
 	margin: 10px 0;
