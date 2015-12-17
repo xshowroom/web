@@ -4,7 +4,7 @@
 	background-color: #fff;
 }
 .dropdown.season-filter {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     text-align: right;
     cursor: pointer;
 }
@@ -65,7 +65,7 @@
 	height: 95px;
     background-color: #eee;
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     width: 15%;
     float: left;
     margin-right: 2%;
