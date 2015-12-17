@@ -130,17 +130,17 @@ class Business_Upload
     {
         $fileSize = filesize($imagePath);
 
-        // 裁图，目标100K一个图
+        // 裁图，目标50K一个图
         if($fileSize > 1 * 1024 * 1024) {
-            $resizeImagePath = $this->resize($imagePath, 0.1, $resizeTerm);
+            $resizeImagePath = $this->resize($imagePath, 0.05, $resizeTerm);
             Business_Upload::deleteFile($imagePath);
             $imagePath = $resizeImagePath;
         } elseif ($fileSize > 0.5 * 1024 * 1024)  {
-            $resizeImagePath = $this->resize($imagePath, 0.2, $resizeTerm);
+            $resizeImagePath = $this->resize($imagePath, 0.1, $resizeTerm);
             Business_Upload::deleteFile($imagePath);
             $imagePath = $resizeImagePath;
         } elseif ($fileSize > 0.3 * 1024 * 1024)  {
-            $resizeImagePath = $this->resize($imagePath, 0.3, $resizeTerm);
+            $resizeImagePath = $this->resize($imagePath, 0.2, $resizeTerm);
             Business_Upload::deleteFile($imagePath);
             $imagePath = $resizeImagePath;
         }
