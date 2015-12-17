@@ -76,7 +76,7 @@ foreach($fileList as $processFile) {
         if ($isProcess) {
             echo 'Process: ' . $processFile;
 
-            $resizeImagePath = resize($processFile, 0.5);
+            $resizeImagePath = resize($processFile, 0.8);
             $imagePath = $resizeImagePath;
         }
     }
