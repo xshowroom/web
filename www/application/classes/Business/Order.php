@@ -47,7 +47,7 @@ class Business_Order
     public function getProductionListFromCart($userId)
     {
         $productionListInCart = $this->orderModel->getProductionListFromCart($userId);
-        
+
         $res = array();
         foreach ($productionListInCart as $productionInCart) {
             
@@ -60,7 +60,7 @@ class Business_Order
                
                 // 防止collection信息为空
                 if (empty($collection)) {
-                    return null;
+                    continue;
                 }
 
                 $res[$collectionId]['collectionInfo'] = $collection;
@@ -68,7 +68,7 @@ class Business_Order
                 $brand = $this->brandService->getBrandInfo($collection['user_id']);
                 // 防止brand信息为空
                 if (empty($brand)) {
-                    return null;
+                    continue;
                 }
 
                 $res[$collectionId]['brandName'] = $brand['brand_name'];
@@ -77,7 +77,7 @@ class Business_Order
             $production = $this->productionService->getProduction($userId, $productionInCart['production_id']);
             
             if(empty($production)) {
-                return null;
+                continue;
             }
 
             $res[$collectionId]['productions'][] = array(
