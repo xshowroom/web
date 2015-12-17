@@ -1,13 +1,15 @@
 @CHARSET "UTF-8";
 
-section.row{
+/* section.row{
 	padding-top: 10px;
-}
+} */
 
 .collection-category h3{
 	font-size: 14px;
 	padding: 10px 0;
 	border-bottom: 1px solid #999;
+	line-height: 20px;
+	margin: 0;
 }
 .collection-category ul{
 	margin: 0;
@@ -48,6 +50,8 @@ section.row{
 	font-size: 14px;
 	padding: 10px 0;
 	border-bottom: 1px solid #999;
+	line-height: 20px;
+	margin: 0;
 }
 .collection-item .collection-info{
 	margin: 30px 0;
