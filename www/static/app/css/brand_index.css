@@ -70,7 +70,7 @@
     float: left;
     margin-right: 2%;
 }
-.brand-preview .collection-cover:nth-child(6n){
+.brand-preview .collection-cover:nth-child(6n+1){
 	margin-right: 0;
 }
 .brand-preview .collection-cover > img{
