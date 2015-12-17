@@ -116,12 +116,19 @@ class Business_Upload
 
     public function createResizeImage($imagePath, $resizeTerm)
     {
-
         $fileSize = filesize($imagePath);
 
-        if($fileSize > 0.5 * 1024 * 1024)
-        {
-            $resizeImagePath = $this->resize($imagePath, 0.5, $resizeTerm);
+        // 1 MB
+        if($fileSize > 1 * 1024 * 1024) {
+            $resizeImagePath = $this->resize($imagePath, 0.1, $resizeTerm);
+            Business_Upload::deleteFile($imagePath);
+            $imagePath = $resizeImagePath;
+        } elseif ($fileSize > 0.5 * 1024 * 1024)  {
+            $resizeImagePath = $this->resize($imagePath, 0.2, $resizeTerm);
+            Business_Upload::deleteFile($imagePath);
+            $imagePath = $resizeImagePath;
+        } elseif ($fileSize > 0.3 * 1024 * 1024)  {
+            $resizeImagePath = $this->resize($imagePath, 0.3, $resizeTerm);
             Business_Upload::deleteFile($imagePath);
             $imagePath = $resizeImagePath;
         }
