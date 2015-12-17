@@ -136,7 +136,7 @@ angular.module(
          	 				'image': res.data.cover_image	
      					};
          			}else{
-         				alert(res.msg);
+         				$modal({title: 'Error Info', content: res.msg, show: true});
          			};
          		});
          	};

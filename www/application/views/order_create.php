@@ -17,8 +17,8 @@
         <?php echo View::factory('common/global_navigation_top_buyer', 
         		array('currentPage' =>  'cart', 'userAttr'=> $userAttr));?>
 	</nav>
-	<section class="row no-vertical-padding" ng-cloak>
-		<div class="container">
+	<section class="row" ng-cloak>
+		<div class="container" ng-show="generateOrderStep == 1;">
 			<div class="row">
 				<div class="col-xs-8 cart-details">
 					<div class="cart-details-header">
@@ -55,15 +55,17 @@
 								<div>
 									<span>Size Region:</span><span>{{::product.sizeRegion}}</span>
 								</div>
-	
+							</div>
+							<div class="product-actions">
+								<button class="btn btn-type-1" ng-click="removeProductFromCart(product)">Remove</button>
 							</div>
 							<table class="table quantity-info">
 								<caption>ORDER DETAIL</caption>
 								<thead>
 									<tr>
-										<td>CODE/SIZE</td>
-										<td ng-repeat="(size, value) in product.sizeCode">{{::size}}</td>
-										<td></td>
+										<th>CODE/SIZE</th>
+										<th ng-repeat="(size, value) in product.sizeCode">{{::size}}</th>
+										<th></td>
 									</tr>
 								</thead>
 								<tbody>
@@ -98,7 +100,7 @@
 				</div>
 				<div class="col-xs-4">
 					<div class="check-out-box">
-						<h3 class="text-center">ONE CLICK TO ORDER</h3>
+						<h3 class="text-center">ORDER SUMMARY</h3>
 						<div>
 							<span>PRODUCTS</span><span>{{products.length}}</span>
 						</div>
@@ -109,9 +111,142 @@
 							<span>TOTAL AMOUNT</span><span><?=$collection['currency']?>{{getTotalAmount()}}</span>
 						</div>
 						<div class="text-center">
-							<button class="btn btn-type-2" ng-click="createOrder();">CHECK OUT</button>
+							<button class="btn btn-type-2" ng-click="checkout();">CHECK OUT</button>
 						</div>
-						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container" ng-show="generateOrderStep == 2;">
+			<div class="row">
+				<div class="col-xs-8 cart-details">
+					<div class="cart-details-header">
+						<h2 class="cart-details-title">SHIPPING ADDRESS</h2>
+					</div>
+					<div class="shipping-address">
+						<div class="address-card">
+							<h4>
+								 <label><input type="radio" name="address" value="1" ng-model="order.address" checked>ADDRESS 1</label>
+							</h4>
+							<div class="address-info">
+								<div><span>Name:</span><span>百度上研大厦</span></div>
+								<div><span>Address:</span><span>上海市浦东新区纳贤路701号</span></div>
+								<div><span>Zip Code:</span><span>200000</span></div>
+								<div><span>Phone:</span><span>+8613312345678</span></div>
+							</div>
+						</div>
+						<div class="address-card">
+							<h4>
+								 <label><input type="radio" name="address" value="2" ng-model="order.address" checked>ADDRESS 1</label>
+							</h4>
+							<div class="address-info">
+								<div><span>Name:</span><span>百度上研大厦</span></div>
+								<div><span>Address:</span><span>上海市浦东新区纳贤路701号</span></div>
+								<div><span>Zip Code:</span><span>200000</span></div>
+								<div><span>Phone:</span><span>+8613312345678</span></div>
+							</div>
+						</div>
+					</div>
+					<div class="cart-details-header">
+						<h2 class="cart-details-title">PAYMENT OPTIONS</h2>
+					</div>
+					<div class="payment-options">
+						<div class="radio">
+						    <label><input type="radio" name="payment" value="offline" ng-model="order.payment" checked>OFFLINE PAYMENT</label>
+						    <p>Remittance to XShowRoom account</p>
+						</div>
+					</div>
+					<div class="cart-actions">
+						<button class="btn btn-type-1" ng-click="generateOrderStep = 1;">PREVIOUS</button>
+						<button class="btn btn-type-2" ng-click="setOptions();">NEXT</button>
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<div class="instruction-box">
+						<h3 class="text-center">SOME INSTRUCTIONS</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container" ng-show="generateOrderStep == 3;">
+			<div class="row">
+				<div class="col-xs-8 cart-details">
+					<div class="cart-details-header">
+						<h2 class="cart-details-title">REVIEW YOUR ORDER</h2>
+					</div>
+					<div class="review-tips">
+						<p>When you click the “SUBMIT” button, we’ll send you an email message acknowledging receipt your order.<br/>
+						Your contact to purchase item will not be complete until we send you an email notifying you that the item has been shipped.</p>
+					</div>
+					<div class="order-details">
+						<div class="order-details-header">
+							<h4>PAYMENT & SHIPPING</h4>
+							<a ng-click="generateOrderStep = 1;">change</a>
+						</div>
+						<div>
+							<div class="order-address-info">
+								<h5>SHIPPING ADDRESS</h5>
+								<div>Store Name</div>
+								<div>Buyer Name</div>
+								<div>Buyer Address</div>
+								<div>Zip Code</div>
+								<div>Phone</div>
+							</div>
+							<div class="order-address-info">
+								<h5>PAYMENT OPTIONS</h5>
+								<div>Offline Pay</div>
+								<div class="payment-warning">
+									<div><i class="fa fa-exclamation"></i></div>
+									<p>Please send your payment receipt to xshowroom@projectcrossover.cn in order to confirm your payment....</p>
+								</div>
+							</div>
+							<div class="order-address-info">
+								<h5>DELIVERY</h5>
+								<div>{{collection.delivery_date}}</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="order-details-header">
+							<h4>ORDER LIST</h4>
+							<a ng-click="generateOrderStep = 2;">change</a>
+						</div>
+						<table class="table order-item-list">
+							<thead>
+								<tr>
+									<th>PRODUCT NAME</th>
+									<th>STYLE NO.</th>
+									<th>COLOR</th>
+									<th>SIZE</th>
+									<th>TOTAL</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="record in orderItems track by $index">
+									<td>{{record.name}}</td>
+									<td>{{record.styleNumber}}</td>
+									<td>{{record.size_code}}</td>
+									<td>{{record.color}}</td>
+									<td>{{record.buy_num}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<div class="check-out-box">
+						<h3 class="text-center">ORDER SUMMARY</h3>
+						<div>
+							<span>PRODUCTS</span><span>{{products.length}}</span>
+						</div>
+						<div>
+							<span>TOTAL QUANTITY</span><span>{{getTotalQuantity()}}</span>
+						</div>
+						<div>
+							<span>TOTAL AMOUNT</span><span><?=$collection['currency']?>{{getTotalAmount()}}</span>
+						</div>
+						<div class="text-center">
+							<button class="btn btn-type-2" ng-click="submitOrder();">SUBMIT</button>
+						</div>
 					</div>
 				</div>
 			</div>
