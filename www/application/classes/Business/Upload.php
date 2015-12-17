@@ -124,7 +124,7 @@ class Business_Upload
             Business_Upload::deleteFile($imagePath);
             $imagePath = $resizeImagePath;
         } elseif ($fileSize > 0.5 * 1024 * 1024)  {
-            $resizeImagePath = $this->resize($imagePath, 0.25, $resizeTerm);
+            $resizeImagePath = $this->resize($imagePath, 0.2, $resizeTerm);
             Business_Upload::deleteFile($imagePath);
             $imagePath = $resizeImagePath;
         } elseif ($fileSize > 0.3 * 1024 * 1024)  {
