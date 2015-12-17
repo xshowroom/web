@@ -52,4 +52,14 @@ class Controller_Order extends Controller_BaseReqLogin
     	$this->response->body($view);
     
     }
+    
+    
+    public function action_list()
+    {
+    	$view = View::factory('order_list');
+    	$view->set('user', $this->opUser);
+    	$view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+    	 
+    	$this->response->body($view);
+    }
 }

@@ -72,7 +72,7 @@
                 <div class="col-xs-12">
                     <div class="order-list-header">
                         <h2 class="order-list-title"><?=__("buyer_dashboard__MY_ORDERS");?></h2>
-                        <a class="order-list-all-link" href="#"><?=__("buyer_dashboard__ALL_BRANDS");?></a>
+                        <a class="order-list-all-link" href="<?=URL::site('order/list');?>"><?=__("buyer_dashboard__ALL_BRANDS");?></a>
                     </div>
                 </div>
             </div>

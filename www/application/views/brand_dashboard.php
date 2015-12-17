@@ -48,7 +48,7 @@
                 <div class="col-xs-12">
                     <div class="order-list-header">
                         <h2 class="order-list-title"><?= __("brand_dashboard__MY_ORDERS"); ?></h2>
-                        <a class="order-list-all-link" href="<?=URL::site('#');?>"><?= __("brand_dashboard__ALL_ORDERS"); ?></a>
+                        <a class="order-list-all-link" href="<?=URL::site('order/list');?>"><?= __("brand_dashboard__ALL_ORDERS"); ?></a>
                     </div>
                 </div>
             </div>
