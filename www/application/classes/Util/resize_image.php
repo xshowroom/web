@@ -42,7 +42,7 @@ function resize($filename, $percent)
 $pattern = $argv[1];
 $targetSize = $argv[2];
 $workingDir =  $argv[3];
-$isProcess =  $argv[4];
+$isProcess = (bool)$argv[4];
 
 echo 'resize pattern: ' . $pattern.', resize target: ' . $targetSize . ', working on: ' . $workingDir;
 
@@ -74,7 +74,7 @@ foreach($fileList as $processFile) {
 
     if($fileSize > $targetSize * 1024) {
         if ($isProcess) {
-            echo 'Process: ' . $processFile;
+            echo "\nProcess: " . $processFile;
 
             $resizeImagePath = resize($processFile, 0.8);
             $imagePath = $resizeImagePath;
