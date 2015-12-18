@@ -102,7 +102,7 @@ class Business_LogUtil
      */
     public static function log($logFileName, $msg, $where = '', $level = self::PLOG_NOTICE){
 
-        self::setLogPath(APPPATH.'ourlog');
+        self::setLogPath(APPPATH.'logs');
         
         // format:  [TIME] [LEVEL] [LOGID] [WHERE] [MSG]
         $curTime = date('Y-m-d H:i:s');
