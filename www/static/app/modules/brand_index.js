@@ -26,7 +26,13 @@ angular.module(
      		};
      		
      		$scope.selectStore = function(store){
-     			$scope.selectedStore = store;
+     			var index = $scope.selectedStores.indexOf(store);
+     			if (index >= 0){
+     				$scope.selectedStores.splice(index, 1);
+     			}else{
+     				$scope.selectedStores.push(store);
+     			}
+     			
      		};
      		
      		$scope.refreshCovers = function(){
@@ -50,13 +56,19 @@ angular.module(
             			$scope.covers[record.season].push(record);
                 	}
      				$scope.selectedSeason = $scope.seasons[0];
-     				$scope.selectedCover = $scope.covers[$scope.selectedSeason][0];
+     				$scope.selectedCover = $scope.covers[$scope.selectedSeason]
+     					? $scope.covers[$scope.selectedSeason][0]
+     					: null;
      			});
      		};
      		
      		$scope.applyAuth = function(){
+     			var storeIds = [];
+     			for(var i = 0, len = $scope.selectedStores.length; i < len; i++){
+     				storeIds.push($scope.selectedStores[i].id);
+            	}
      			Buyer.applyAuth({
-     				shopId: $scope.selectedStore.id,
+     				shopId: storeIds.join(','),
      				brandId: $scope.brandId
      			}).success(function(res){
      				if (typeof(res) != 'object' || res.status) {
@@ -159,6 +171,7 @@ angular.module(
          		};
      			$scope.filters = {};
      			$scope.conditions = Brand.getIndexConditions();
+     			$scope.selectedStores = [];
      			$scope.refreshCovers();
      		};
      		

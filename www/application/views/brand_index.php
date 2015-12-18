@@ -167,8 +167,11 @@
 		       		<h4><?=__('brand_store_application__TITLE')?></h4>
 		       		<p><?=__('brand_store_application__BODY')?></p>
 		       		<div>
-		       			<div class="radio" ng-repeat="store in stores track by $index">
-							<label><input type="radio" name="authStore" ng-value="store" ng-click="selectStore(store)">{{store.name}}</label>
+		       			<div class="checkbox" ng-repeat="store in stores track by $index">
+							<label>
+								<input type="checkbox" name="authStore" ng-value="store" ng-click="selectStore(store)">
+								<span>{{store.name}}</span>
+							</label>
 						</div>
 		       		</div>
 		       		<div>

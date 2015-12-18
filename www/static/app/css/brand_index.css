@@ -218,6 +218,14 @@
 	text-align: center;
 	padding: 30px;
 }
+.modal-content label{
+	line-height: 30px;
+	margin: 0;
+	padding: 0;
+}
+.modal-content label input{
+	margin-top: 9px;
+}
 .modal-content .btn.btn-type-1{
 	color: #222;
 	border-color: #222;
