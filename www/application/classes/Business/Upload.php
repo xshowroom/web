@@ -102,9 +102,21 @@ class Business_Upload
         if (file_exists($imagePath)){
             try{
                 copy($imagePath, $realPathFile);
-                // 生成medium图和small图
-                $mediumPathFile = $this->resize($realPathFile, 0.5, 'medium');
-                $smallPathFile = $this->resize($realPathFile, 0.2, 'small');
+
+                $fileSize = filesize($realPathFile);
+
+                // 生成medium图和small图，目标：中图大概200K左右，小图大概在30K
+                if($fileSize > 1 * 1024 * 1024) {
+                    $mediumPathFile = $this->resize($realPathFile, 0.15, 'medium');
+                    $smallPathFile = $this->resize($realPathFile, 0.02, 'small');
+                } elseif ($fileSize > 0.5 * 1024 * 1024)  {
+                    $mediumPathFile = $this->resize($realPathFile, 0.3, 'medium');
+                    $smallPathFile = $this->resize($realPathFile, 0.05, 'small');
+                } else {
+                    $mediumPathFile = $this->resize($realPathFile, 0.5, 'medium');
+                    $smallPathFile = $this->resize($realPathFile, 0.1, 'small');
+                }
+
             } catch (Exception $e) {
                 $errorInfo = Kohana::message('message', 'IMAGE_ERROR');
                 throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
@@ -118,17 +130,17 @@ class Business_Upload
     {
         $fileSize = filesize($imagePath);
 
-        // 1 MB
+        // 裁图，目标50K一个图
         if($fileSize > 1 * 1024 * 1024) {
-            $resizeImagePath = $this->resize($imagePath, 0.1, $resizeTerm);
+            $resizeImagePath = $this->resize($imagePath, 0.05, $resizeTerm);
             Business_Upload::deleteFile($imagePath);
             $imagePath = $resizeImagePath;
         } elseif ($fileSize > 0.5 * 1024 * 1024)  {
-            $resizeImagePath = $this->resize($imagePath, 0.2, $resizeTerm);
+            $resizeImagePath = $this->resize($imagePath, 0.1, $resizeTerm);
             Business_Upload::deleteFile($imagePath);
             $imagePath = $resizeImagePath;
         } elseif ($fileSize > 0.3 * 1024 * 1024)  {
-            $resizeImagePath = $this->resize($imagePath, 0.3, $resizeTerm);
+            $resizeImagePath = $this->resize($imagePath, 0.2, $resizeTerm);
             Business_Upload::deleteFile($imagePath);
             $imagePath = $resizeImagePath;
         }

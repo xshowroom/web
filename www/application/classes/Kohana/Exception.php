@@ -26,6 +26,7 @@ class Kohana_Exception extends Kohana_Kohana_Exception
      */
     public static function _handler(Exception $e)
     {
+        Business_LogUtil::log('exception', $e->getMessage(), '', Business_LogUtil::PLOG_FATAL);
         // 处理error code和error message
         $errorCode = 500;
         if ($e->getCode() === 404) {
