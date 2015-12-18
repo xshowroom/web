@@ -35,26 +35,31 @@
             <div class="collection-list-content row" ng-if="collections.length">
                 <div class="col-xs-12" ng-repeat="record in collections">
                 	<div class="collection-item">
-	                  	<a ng-href="/collection/{{record.collectionInfo.id}}" class="col-xs-3 collection-cover image-link">
+	                  	<a ng-href="/collection/{{record.collectionInfo.id}}" class="col-xs-2 collection-cover image-link">
 	                  		<img ng-src="/{{record.collectionInfo.cover_image_medium}}">
 	                  	</a>
-	                  	<div class="col-xs-7 collection-info">
-	                  		<h3>{{record.brandName}} - {{record.collectionInfo.name}}</h3>
-	                  		<div><span>Season:</span><span>{{record.collectionInfo.season | translate}}</span></div>
-	                  		<div><span>Order Mode:</span><span>{{record.collectionInfo.mode | translate}}</span></div>
-	                  		<div><span>Deadline for order:</span><span>{{record.collectionInfo.mode == 'dropdown__COLLECTION_MODE__PERMANENT' ? '无' : record.collectionInfo.deadline}}</span></div>
-	                  		<div><span>Delivery Date:</span><span>{{record.collectionInfo.mode == 'dropdown__COLLECTION_MODE__PERMANENT' ? '按需发货' :record.collectionInfo.delivery_date}}</span></div>
-	                  		<div><span>Min-order:</span><span>{{record.collectionInfo.currency}}{{record.collectionInfo.mini_order}}</span></div>
-	                  		<div><span>Products In Cart:</span></div>
-	                  		<div>
-	                  			<a class="product-photo" ng-href="/product/{{product.id}}" ng-repeat="product in record.productions" >
-	                  				<img class="product-photo"
-	                  				ng-src="/{{product.small_image_url[0]}}">
-	                  			</a>
-	                  		</div>
-	                  	</div>
-	                  	<div class="col-xs-2 text-center cart-actions">
-	                  		<a ng-href="/order/create/{{record.collectionInfo.id}}" class="btn btn-type-2">Generate Order</a>
+	                  	<div class="col-xs-10 collection-info">
+	                  		<div class="row">
+	                  			<div class="col-xs-12">
+	                  				<div class="collection-info-header">
+			                  			<h3>{{record.brandName}} - {{record.collectionInfo.name}}</h3>
+		                  			</div>
+		                  		</div>
+			                  	<div class="col-xs-4"><span>Season:</span><span>{{record.collectionInfo.season | translate}}</span></div>
+			                  	<div class="col-xs-4"><span>Order Mode:</span><span>{{record.collectionInfo.mode | translate}}</span></div>
+			                  	<div class="col-xs-4"><span>Deadline for order:</span><span>{{record.collectionInfo.mode == 'dropdown__COLLECTION_MODE__PERMANENT' ? '无' : record.collectionInfo.deadline}}</span></div>
+			                  	<div class="col-xs-4"><span>Delivery Date:</span><span>{{record.collectionInfo.mode == 'dropdown__COLLECTION_MODE__PERMANENT' ? '按需发货' :record.collectionInfo.delivery_date}}</span></div>
+			                  	<div class="col-xs-4"><span>Min-order:</span><span>{{record.collectionInfo.currency}}{{record.collectionInfo.mini_order}}</span></div>
+			                  	<div class="col-xs-12"><span>Product in Cart:</span></div>
+		                  		<div class="col-xs-12">
+			                  		<a class="product-photo" ng-href="/product/{{product.id}}" ng-repeat="product in record.productions" >
+			                  			<img ng-src="/{{product.small_image_url[0]}}">
+			                  		</a>
+			                  	</div>
+			                  	<div class="col-xs-12">
+			                  		<a ng-href="/order/create/{{record.collectionInfo.id}}" class="btn btn-type-2">Generate Order</a>
+			                  	</div>
+		                  	</div>
 	                  	</div>
 	                  	<div class="clearfix"></div>
                   	</div>

@@ -15,11 +15,10 @@
 	border-bottom: 1px solid #e3e3e3;
 }
 .collection-list .collection-list-header .collection-list-title{
-	font-size: 18px;
+	font-size: 14px;
 	display: inline-block;
-	margin-right: 1em;
-	margin-top: 15px;
-	margin-bottom: 15px;
+	padding: 10px 0;
+	margin: 0;
 }
 .collection-list .collection-list-header .collection-list-all-link{
 	color: #878787;
@@ -36,7 +35,7 @@
 }
 .collection-list .collection-list-content .collection-item .collection-cover{
 	position: relative;
-	height: 300px;
+	height: 250px;
 }
 .collection-list .collection-list-content .collection-item .collection-cover > img{
 	width: 80%;
@@ -50,28 +49,32 @@
 	-moz-transform: translateY(-50%);
 	-o-transform: translateY(-50%);
 }
-.collection-list .collection-list-content .collection-item .collection-info h3{
-    font-size: 18px;
+.collection-list .collection-list-content .collection-item .collection-info .collection-info-header{
+	border-bottom: 1px solid #ccc;
+	margin: 0 0 15px;
+	
+}
+.collection-list .collection-list-content .collection-item .collection-info .collection-info-header h3{
+    font-size: 16px;
     line-height: 40px;
-    margin: 0 0 30px;
-    border-bottom: 1px solid #ccc;
+    margin: 0;
+    display: inline-block;
 }
 .collection-list .collection-list-content .collection-item .collection-info div{
     line-height: 30px;
 }
-.collection-list .collection-list-content .collection-item .collection-info div:last-child{
-	line-height: 80px;
-	height: 80px;
+.collection-list .collection-list-content .collection-item .collection-info a{
+	margin-top: 15px;
 }
 .collection-list .collection-list-content .collection-item .collection-info div span{
     margin-right: 1em;
 }
 .collection-list .collection-list-content .collection-item .collection-info .product-photo{
-	height: 100%;
-    margin: 0 10px 0 0;
+	height: 80px;
+    margin: 15px 10px 15px 0;
     position: relative;
     display: inline-block;
-    width: 50px;
+    width: 60px;
     float: left;
 }
 .collection-list .collection-list-content .collection-item .collection-info .product-photo > img{
