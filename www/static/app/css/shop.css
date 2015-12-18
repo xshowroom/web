@@ -28,6 +28,7 @@
 	padding-top: 20px;
 }
 .brand-list .brand-list-content .brand-item{
+	overflow: hidden;
 	height: 260px;
 	position: relative;
 	display: inline-block;
@@ -39,10 +40,6 @@
 }
 .brand-list .brand-list-content .brand-item:before{
 	content: none;
-}
-.brand-list .brand-list-content .brand-item{
-	overflow: hidden;
-	position: relative;
 }
 .brand-list .brand-list-content .brand-item .brand-item-image{
 	width: 100%;
