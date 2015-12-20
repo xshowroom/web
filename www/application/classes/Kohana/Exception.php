@@ -34,7 +34,6 @@ class Kohana_Exception extends Kohana_Kohana_Exception
             $errorMsg = '您所查找的页面不存在';
             
             $errorMsg = HTML::entities($errorMsg);
-            
             $opUser = $_SESSION['opUser'];
             
             $view = View::factory('errors/error_msg');
@@ -49,21 +48,10 @@ class Kohana_Exception extends Kohana_Kohana_Exception
             $view->set('errorMsg', $errorMsg);
             
             echo $view->render();
+            exit(0);
         } else {
-            $errorInfo = Kohana::message('message','STATUS_ERROR');
-            $errorMsg = $errorInfo['msg'];
             
-            ob_clean();
-            
-            echo json_encode(array(
-                'status' => STATUS_ERROR,
-                'msg' => HTML::entities($errorMsg),
-            ));
-            
-            ob_end_flush();
-            flush();
+            // do nothing
         }
-
-        exit(0);
     }
 }

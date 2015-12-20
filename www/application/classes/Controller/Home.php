@@ -13,16 +13,21 @@ class Controller_Home extends Controller_Base
     
     public function action_index()
     {
-        $view = View::factory('home');
-         $opUser = $_SESSION['opUser'];
-
-        if(!empty($opUser)) {
-            $view->set('user', $opUser);
-            $view->set('userAttr', $this->userService->getUserAttr($opUser['id']));
-
-            self::redirect('/user');
+        try {
+            $view = View::factory('home');
+            $opUser = $_SESSION['opUser'];
+            
+            if(!empty($opUser)) {
+                $view->set('user', $opUser);
+                $view->set('userAttr', $this->userService->getUserAttr($opUser['id']));
+            
+                self::redirect('/user');
+            }
+            $this->response->body($view);
+        } catch (Exception $e) {
+            throw new Kohana_ViewException($e->getMessage(), $e->getCode());
         }
-        $this->response->body($view);
+        
     }
     
     public function action_brand()
