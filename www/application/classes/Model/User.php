@@ -5,11 +5,11 @@
  * @author shenpeipei
  * @author liyashuai
  */
-class Model_User {
-
-    const TYPE_USER_ADMIN = 0;
-    const TYPE_USER_BRAND = 1;
-    const TYPE_USER_BUYER = 2;
+class Model_User
+{
+    const TYPE_USER_ADMIN = 0;      // 管理员
+    const TYPE_USER_BRAND = 1;      // 品牌主
+    const TYPE_USER_BUYER = 2;      // 买手
 
     const STATUS_USER_REJECTED = -2;
     const STATUS_USER_PENDING = -1;

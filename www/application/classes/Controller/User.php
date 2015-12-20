@@ -12,11 +12,11 @@ class Controller_User extends Controller_BaseReqLogin
     {
         $roleType = (int)$this->opUser['role_type'];
 
-        if($roleType === Business_User::ROLE_BRAND){
+        if($roleType === Model_User::TYPE_USER_BRAND){
             $this->redirect('/brand/dashboard');
-        } elseif ($roleType === Business_User::ROLE_BUYER) {
+        } elseif ($roleType === Model_User::TYPE_USER_BUYER) {
             $this->redirect('/buyer/dashboard');
-        }elseif ($roleType === Business_User::ROLE_ADMIN){
+        }elseif ($roleType === Model_User::TYPE_USER_ADMIN){
             $this->redirect('/xsadmin/management');
         }
 
