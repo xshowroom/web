@@ -26,7 +26,7 @@ class Kohana_Exception extends Kohana_Kohana_Exception
      */
     public static function _handler(Exception $e)
     {
-        Business_LogUtil::log('exception', $e->getMessage(), '', Business_LogUtil::PLOG_FATAL);
+        Business_LogUtil::log('exception', $e->getMessage(), $e->getFile().':'.$e->getLine(), Business_LogUtil::PLOG_FATAL);
 
         // 处理error code和error message
         if ($e->getCode() === 404) {
@@ -48,10 +48,21 @@ class Kohana_Exception extends Kohana_Kohana_Exception
             $view->set('errorMsg', $errorMsg);
             
             echo $view->render();
-            exit(0);
         } else {
+            $errorInfo = Kohana::message('message','STATUS_ERROR');
+            $errorMsg = HTML::entities($errorInfo['msg']);
             
-            // do nothing
+            ob_clean();
+            
+            echo json_encode(array(
+                'status' => STATUS_ERROR,
+                'msg'   => $errorMsg,
+            ));
+            
+            ob_end_flush();
+            flush();
         }
+        
+        exit(0);
     }
 }

@@ -25,7 +25,7 @@ class Controller_Home extends Controller_Base
             }
             $this->response->body($view);
         } catch (Exception $e) {
-            throw new Kohana_ViewException($e->getMessage(), $e->getCode());
+            throw new Kohana_ViewException($e->getMessage(), null, $e->getCode());
         }
         
     }
