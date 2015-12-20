@@ -18,27 +18,14 @@ class Controller_Order extends Controller_BaseReqLogin
     }
 
     
-//     public function action_index()
-//     {
-//         $view = View::factory('product_index');
-//         $view->set('user', $this->opUser);
-//         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+    public function action_index()
+    {
+        $view = View::factory('order_index');
+        $view->set('user', $this->opUser);
+        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
 
-//         $userId = $this->opUser['id'];
-//         $productionId = Request::current()->param('id');
-//         if ($this->opUser['role_type'] == Business_User::ROLE_BRAND) {
-//             $production = $this->productionService->getProduction($userId, $productionId);
-//             $collection = $this->collectionService->getCollectionInfo($userId, $production['collection_id']);
-//         } else {
-//             $production = $this->buyerService->getProduction($userId, $productionId);
-//             $collection = $this->buyerService->getCollectionInfo($userId, $production['collection_id']);
-//         }
-//         $view->set('production', $production);
-//         $view->set('collection', $collection);
-//         $view->set('hasAuth', $collection['user_id'] == $userId);
-//         $this->response->body($view);
-
-//     }
+        $this->response->body($view);
+    }
     
     public function action_create()
     {
