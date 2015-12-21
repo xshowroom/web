@@ -38,6 +38,7 @@ class Kohana_Exception extends Kohana_Kohana_Exception
             $errorMsg =  $errorInfo['msg'];
         }
         
+        $view = View::factory('errors/error_msg');
         $errorMsg = HTML::entities($errorMsg);
         
         $opUser = $_SESSION['opUser'];
@@ -47,7 +48,7 @@ class Kohana_Exception extends Kohana_Kohana_Exception
             $view->set('userAttr', $userService->getUserAttr($opUser['id']));
         }
         
-        $view = View::factory('errors/error_msg');
+       
         
         $view->set('errorCode', $errorCode);
         $view->set('errorMsg', $errorMsg);

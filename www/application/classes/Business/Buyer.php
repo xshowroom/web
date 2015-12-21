@@ -24,7 +24,7 @@ class Business_Buyer
         $this->brandService = new Business_Brand();
         $this->collectionService = new Business_Collection();
         $this->productionService = new Business_Production();
-        $this->shopService = new Business_Shop();
+//         $this->shopService = new Business_Shop();
     }
     
     public function validateAuth($userId, $brandUserId)
@@ -222,25 +222,25 @@ class Business_Buyer
         return $shopList;
     }
 
-    public function getShopWhichCanApply($userId, $brandId)
-    {
-        $applyingShopList = $this->buyerModel->getShopInApplying($userId, $brandId);
-        $applyingShopIdList = array_column($applyingShopList, 'shop_id');
+//     public function getShopWhichCanApply($userId, $brandId)
+//     {
+//         $applyingShopList = $this->buyerModel->getShopInApplying($userId, $brandId);
+//         $applyingShopIdList = array_column($applyingShopList, 'shop_id');
 
-        $authedShopList = $this->buyerModel->getAuthListByUserAndBrand($userId, $brandId);
-        $authedShopIdList = array_column($authedShopList, 'shop_id');
+//         $authedShopList = $this->buyerModel->getAuthListByUserAndBrand($userId, $brandId);
+//         $authedShopIdList = array_column($authedShopList, 'shop_id');
 
-        $wellShopIdList = array_intersect($applyingShopIdList, $authedShopIdList);
+//         $wellShopIdList = array_intersect($applyingShopIdList, $authedShopIdList);
 
-        $allShopList = $this->shopService->getShopByUserId($userId);
+//         $allShopList = $this->shopService->getShopByUserId($userId);
 
-        $shopList = array();
-        foreach ($allShopList as $shop) {
-            if (!in_array($shop['id'], $wellShopIdList)) {
-                $shopList[] = $shop;
-            }
-        }
+//         $shopList = array();
+//         foreach ($allShopList as $shop) {
+//             if (!in_array($shop['id'], $wellShopIdList)) {
+//                 $shopList[] = $shop;
+//             }
+//         }
 
-        return $shopList;
-    }
+//         return $shopList;
+//     }
 }
