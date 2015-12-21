@@ -12,6 +12,7 @@ class Business_Buyer
     public $productionService;
     public $brandService;
     public $collectionService;
+    public $shopService;
     
     public function __construct()
     {
@@ -23,6 +24,7 @@ class Business_Buyer
         $this->brandService = new Business_Brand();
         $this->collectionService = new Business_Collection();
         $this->productionService = new Business_Production();
+        $this->shopService = new Business_Shop();
     }
     
     public function validateAuth($userId, $brandUserId)
@@ -123,6 +125,31 @@ class Business_Buyer
         return $realProduction;
     }
 
+    public function batchApply($userId, $shopIdList, $brandId)
+    {
+        $applyingShopList = $this->buyerModel->getShopInApplying($userId, $brandId);
+        $applyingShopIdList = array_column($applyingShopList, 'shop_id');
+
+        $authedShopList = $this->buyerModel->getAuthListByUserAndBrand($userId, $brandId);
+        $authedShopIdList = array_column($authedShopList, 'shop_id');
+
+        $wellShopIdList = array_intersect($applyingShopIdList, $authedShopIdList);
+
+        $shopIdArr = explode(',', $shopIdList);
+        if (empty($shopIdArr)) {
+            $errorInfo = Kohana::message('message', 'STATUS_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+
+        foreach ($shopIdArr as $shopId) {
+            if (!in_array($shopId, $wellShopIdList)) {
+                $this->apply($userId, $shopId, $brandId);
+            }    
+        }
+
+        return true;
+    }
+
     public function apply($userId, $shopId, $brandId)
     {
         $brand = $this->brandModel->getById($brandId);
@@ -130,14 +157,6 @@ class Business_Buyer
         if (empty($brand)) {
             $errorInfo = Kohana::message('message', 'STATUS_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
-        }
-
-        $auth = $this->buyerModel->getAuthListByUserAndBrand($userId, $brandId);
-        // 用户有shop已经申请过权限
-        if (!empty($auth)) {
-//             $errorInfo = Kohana::message('message', 'STATUS_ERROR');
-//             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
-            return -1;
         }
 
         $res = $this->buyerModel->apply($userId, $shopId, $brandId);
@@ -183,5 +202,45 @@ class Business_Buyer
     {
         $res = $this->buyerModel->updateAuthStatusByShop($userId, $shopId, $opUserId, $status);
         return $res;
+    }
+
+    public function getShopInApplying($userId, $brandId)
+    {
+        $applyingShopList = $this->buyerModel->getShopInApplying($userId, $brandId);
+        $shopIdList = array_column($applyingShopList, 'shop_id');
+
+        $shopList = $this->shopModel->getByIdList($shopIdList);
+        return $shopList;
+    }
+
+    public function getAuthedShop($userId, $brandId)
+    {
+        $authedShopList = $this->buyerModel->getAuthListByUserAndBrand($userId, $brandId);
+        $shopIdList = array_column($authedShopList, 'shop_id');
+
+        $shopList = $this->shopModel->getByIdList($shopIdList);
+        return $shopList;
+    }
+
+    public function getShopWhichCanApply($userId, $brandId)
+    {
+        $applyingShopList = $this->buyerModel->getShopInApplying($userId, $brandId);
+        $applyingShopIdList = array_column($applyingShopList, 'shop_id');
+
+        $authedShopList = $this->buyerModel->getAuthListByUserAndBrand($userId, $brandId);
+        $authedShopIdList = array_column($authedShopList, 'shop_id');
+
+        $wellShopIdList = array_intersect($applyingShopIdList, $authedShopIdList);
+
+        $allShopList = $this->shopService->getShopByUserId($userId);
+
+        $shopList = array();
+        foreach ($allShopList as $shop) {
+            if (!in_array($shop['id'], $wellShopIdList)) {
+                $shopList[] = $shop;
+            }
+        }
+
+        return $shopList;
     }
 }

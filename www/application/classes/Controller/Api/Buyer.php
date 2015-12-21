@@ -13,10 +13,10 @@ class Controller_Api_Buyer extends Controller_BaseReqLogin
     public function action_apply()
     {
         $userId  = $this->opUser['id'];
-        $shopId  = (int)trim(Request::current()->query('shopId'));
+        $shopId  = trim(Request::current()->query('shopIdList'));
         $brandId = (int)trim(Request::current()->query('brandId'));
         
-        $res = $this->buyerService->apply($userId, $shopId, $brandId);
+        $res = $this->buyerService->batchApply($userId, $shopId, $brandId);
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
@@ -94,6 +94,48 @@ class Controller_Api_Buyer extends Controller_BaseReqLogin
     {
         $brandId = Request::current()->query('brandId');
         $res = $this->buyerService->getCollectionList($brandId);
+        echo json_encode(array(
+            'status' => STATUS_SUCCESS,
+            'msg'    => '',
+            'data'   => $res,
+        ));
+    }
+
+    public function getShopInApplying()
+    {
+        $userId = $this->opUser['id'];
+        $brandId = Request::current()->query('brandId');
+        
+        $res = $this->buyerService->getShopInApplying($userId, $brandId);
+
+        echo json_encode(array(
+            'status' => STATUS_SUCCESS,
+            'msg'    => '',
+            'data'   => $res,
+        ));
+    }
+
+    public function getAuthedShop()
+    {
+        $userId = $this->opUser['id'];
+        $brandId = Request::current()->query('brandId');
+        
+        $res = $this->buyerService->getAuthedShop($userId, $brandId);
+
+        echo json_encode(array(
+            'status' => STATUS_SUCCESS,
+            'msg'    => '',
+            'data'   => $res,
+        ));
+    }
+
+    public function getShopWhichCanApply()
+    {
+        $userId = $this->opUser['id'];
+        $brandId = Request::current()->query('brandId');
+        
+        $res = $this->buyerService->getShopWhichCanApply($userId, $brandId);
+
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
             'msg'    => '',

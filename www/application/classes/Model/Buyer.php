@@ -117,4 +117,17 @@ class Model_Buyer
 
         return $result;
     }
+
+    public function getShopInApplying($userId, $brandId)
+    {
+        $result = DB::select()
+                    ->from('buyer_brand_map')
+                    ->where('user_id', '=', $userId)
+                    ->where('brand_id', '=', $brandId)
+                    ->where('status', '=', self::STATUS_APPLYING)
+                    ->execute()
+                    ->as_array();
+
+        return $result;
+    }
 }
