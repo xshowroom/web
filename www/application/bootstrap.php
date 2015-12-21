@@ -189,6 +189,11 @@ Route::set('brand', 'brands/<brand_url>',
                 'action'     => 'brand',
         ));
         
+Route::set('api', 'api')->defaults(array(
+        'controller' => 'Ajax',
+        'action'     => 'post',
+));
+
 Route::set('default', '(<directory>/)(<controller>(/<action>))',
     array(
         'directory' => '(api|xsadmin)',

@@ -13,25 +13,16 @@ class Controller_Home extends Controller_Base
     
     public function action_index()
     {
-        try {
-            $view = View::factory('home');
-            $opUser = $_SESSION['opUser'];
-            
-            if(!empty($opUser)) {
-                $view->set('user', $opUser);
-                $view->set('userAttr', $this->userService->getUserAttr($opUser['id']));
-            
-                self::redirect('/user');
-            }
-            $this->response->body($view);
-        } catch (Exception $e) {
-            echo json_encode(array(
-                'status' => STATUS_ERROR,
-                'msg' => '非常抱歉，系统出现错误，请稍后重试',
-                'data' => '',
-            ));
-        }
+        $view = View::factory('home');
+        $opUser = $_SESSION['opUser'];
         
+        if(!empty($opUser)) {
+            $view->set('user', $opUser);
+            $view->set('userAttr', $this->userService->getUserAttr($opUser['id']));
+        
+            self::redirect('/user');
+        }
+        $this->response->body($view);
     }
     
     public function action_brand()
