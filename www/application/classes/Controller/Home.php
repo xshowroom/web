@@ -25,7 +25,11 @@ class Controller_Home extends Controller_Base
             }
             $this->response->body($view);
         } catch (Exception $e) {
-            throw new Kohana_ViewException($e->getMessage(), null, $e->getCode());
+            echo json_encode(array(
+                'status' => STATUS_ERROR,
+                'msg' => '非常抱歉，系统出现错误，请稍后重试',
+                'data' => '',
+            ));
         }
         
     }

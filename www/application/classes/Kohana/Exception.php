@@ -32,36 +32,27 @@ class Kohana_Exception extends Kohana_Kohana_Exception
         if ($e->getCode() === 404) {
             $errorCode = 404;
             $errorMsg = '您所查找的页面不存在';
-            
-            $errorMsg = HTML::entities($errorMsg);
-            $opUser = $_SESSION['opUser'];
-            
-            $view = View::factory('errors/error_msg');
-            
-            if(!empty($opUser)) {
-                $view->set('user', $opUser);
-                $userService = new Business_User();
-                $view->set('userAttr', $userService->getUserAttr($opUser['id']));
-            }
-            
-            $view->set('errorCode', $errorCode);
-            $view->set('errorMsg', $errorMsg);
-            
-            echo $view->render();
         } else {
+            $errorCode = 500;
             $errorInfo = Kohana::message('message','STATUS_ERROR');
-            $errorMsg = HTML::entities($errorInfo['msg']);
-            
-            ob_clean();
-            
-            echo json_encode(array(
-                'status' => STATUS_ERROR,
-                'msg'   => $errorMsg,
-            ));
-            
-            ob_end_flush();
-            flush();
+            $errorMsg =  $errorInfo['msg'];
         }
+        
+        $errorMsg = HTML::entities($errorMsg);
+        
+        $opUser = $_SESSION['opUser'];
+        if(!empty($opUser)) {
+            $view->set('user', $opUser);
+            $userService = new Business_User();
+            $view->set('userAttr', $userService->getUserAttr($opUser['id']));
+        }
+        
+        $view = View::factory('errors/error_msg');
+        
+        $view->set('errorCode', $errorCode);
+        $view->set('errorMsg', $errorMsg);
+        
+        echo $view->render();
         
         exit(0);
     }
