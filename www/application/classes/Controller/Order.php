@@ -21,8 +21,11 @@ class Controller_Order extends Controller_BaseReqLogin
     public function action_index()
     {
         $view = View::factory('order_index');
+        $orderId = Request::current()->param('id');
+        
         $view->set('user', $this->opUser);
         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view->set('orderId', $orderId);
 
         $this->response->body($view);
     }

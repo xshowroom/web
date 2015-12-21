@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  ng-app="xShowroom.order.list" ng-init="userId=<?=$userAttr['id']?>">
+<html  ng-app="xShowroom.order.list">
 <head>
 	<meta charset="UTF-8" >
 	<title>XShowroom</title>
@@ -34,7 +34,7 @@
                 		</li>
                 		<li ng-repeat="(status, count) in statuses">
                 			<a ng-click="filters.status = status; filters.limit = pageSize;"  ng-class="{'active': filters.status == status}">
-                				<span>{{('COLLECTION_STATUS_' + status) | translate}}</span>
+                				<span>{{status}}</span>
                 				<span>{{count}}</span>
                 			</a>
                 		</li>
@@ -44,7 +44,7 @@
 					<div class="row">
 						<div class=" col-xs-12">
 							<div class="order-list-header">
-								<span class="order-list-title" ng-cloak>{{hasFilter() ? 'ORDER　LIST' : 'FILTERED ORDER LIST'}}</span>
+								<span class="order-list-title" ng-cloak>{{hasFilter() ? 'ORDER LIST' : 'FILTERED ORDER LIST'}}</span>
 								<div class="input-group">
 									<span class="input-group-addon">
 										<span class="glyphicon glyphicon-search"></span>

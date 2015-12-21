@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="xShowroom.order.index">
+<html ng-app="xShowroom.order.index" ng-init="orderId='<?=$orderId?>';">
 <head>
     <meta charset="UTF-8" >
     <title>XShowroom</title>
@@ -13,11 +13,11 @@
 	</nav>
 	<?php if($user["role_type"] == Business_User::ROLE_BRAND): ?>
 	<nav class="row user-navigation">
-        <?php echo View::factory('common/global_navigation_top_brand', array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); ?>
+        <?php echo View::factory('common/global_navigation_top_brand', array('currentPage' =>  'order', 'userAttr'=> $userAttr)); ?>
 	</nav>
 	<?php elseif ($user["role_type"] == Business_User::ROLE_BUYER): ?>
 	<nav class="row user-navigation">
-        <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); ?>
+        <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'order', 'userAttr'=> $userAttr)); ?>
 	</nav>
 	<?php endif; ?>
     <section class="row">
@@ -25,27 +25,27 @@
             <div class="row">
                 <div class="col-xs-2">
                 	<div class="order-cover">
-                 		<img src="/static/app/images/shop-brand-1.png">
+                 		<img ng-src="/static/app/images/shop-brand-1.png">
                  	</div>
                 </div>
                 <div class="col-xs-10">
                  	<div class="col-xs-12 order-detail order-name">
-                 		<h3>A12312301239123</h3>
+                 		<h3>{{order.order_id}}</h3>
                  	</div>
                  	<div class="col-xs-12 order-detail">
-                 		<span>STORE:</span><span>STORE NUMBER A</span>
+                 		<span>STORE:</span><span>{{order.order_id}}</span>
                  	</div>
                  	<div class="col-xs-12 order-detail">
-                 		<span>BUYER:</span><span>BUYER NAME</span>
+                 		<span>BUYER:</span><span>{{order.buyer_id}}</span>
                  	</div>
                  	<div class="col-xs-12 order-detail">
-                 		<span>SUBMITTED DATE:</span><span>2015-12-31</span>
+                 		<span>SUBMITTED DATE:</span><span>{{order.buy_time}}</span>
                  	</div>
                  	<div class="col-xs-12 order-detail">
-                 		<span>TOTAL AMOUNT:</span><span>$2312</span>
+                 		<span>TOTAL AMOUNT:</span><span>${{order.total_amount}}</span>
                  	</div>
                  	<div class="col-xs-12 order-detail">
-                 		<span>DELIVERY ADDRESS:</span><span>No.900, YISHAN ROAD, SHANGHAI, CHINA</span>
+                 		<span>DELIVERY ADDRESS:</span><span>{{order.shop_address}}</span>
                  	</div>
                 </div>
                 <div class="col-xs-12">
@@ -53,7 +53,7 @@
 						<h3>ORDER STATUS</h3>
 					</div>
 					<div class="order-status-list">
-						<div class="order-status active">
+						<div class="order-status" ng-class="{'active': order.status >= 0}">
 							<div>
 								<i class="fa fa-shopping-cart fa-5x"></i>
 							</div>
@@ -61,7 +61,7 @@
 								<span>PENDING</span>
 							</div>
 						</div>
-						<div class="order-status">
+						<div class="order-status" ng-class="{'active': order.status >= 1}">
 							<div>
 								<i class="fa fa-shopping-cart fa-5x"></i>
 							</div>
@@ -69,7 +69,7 @@
 								<span>DEPOSIT</span>
 							</div>
 						</div>
-						<div class="order-status">
+						<div class="order-status" ng-class="{'active': order.status >= 2}">
 							<div>
 								<i class="fa fa-shopping-cart fa-5x"></i>
 							</div>
@@ -77,7 +77,7 @@
 								<span>PREPARING</span>
 							</div>
 						</div>
-						<div class="order-status">
+						<div class="order-status" ng-class="{'active': order.status >= 3}">
 							<div>
 								<i class="fa fa-shopping-cart fa-5x"></i>
 							</div>
@@ -85,7 +85,7 @@
 								<span>BALANCE PAYMENT</span>
 							</div>
 						</div>
-						<div class="order-status">
+						<div class="order-status" ng-class="{'active': order.status >= 4}">
 							<div>
 								<i class="fa fa-shopping-cart fa-5x"></i>
 							</div>
@@ -93,7 +93,7 @@
 								<span>SHIPPING</span>
 							</div>
 						</div>
-						<div class="order-status">
+						<div class="order-status" ng-class="{'active': order.status >= 5}">
 							<div>
 								<i class="fa fa-shopping-cart fa-5x"></i>
 							</div>

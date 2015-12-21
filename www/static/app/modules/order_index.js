@@ -14,10 +14,22 @@ angular.module(
 .controller(
     'OrderIndexCtrl',
     [
-        '$scope', '$location',
-        function ($scope, $location, User) {
-        	var path = $location.path();
-        	$scope.solution = path == '/retailer' ? 'retailer' : 'brand';
+        '$scope', '$modal', 'Order',
+        function ($scope, $modal, Order) {
+        	var init = function (){
+        		Order.findOne({
+        			orderId: $scope.orderId
+        		}).success(function(res){
+        			if (typeof(res) != 'object' || res.status) {
+        				$modal({title: 'Error Info', content: '订单获取失败，请检查！', show: true});
+     					return;
+     				}
+        			res.data.status = parseInt(res.data.status);
+        			console.log(res.data)
+        			$scope.order = res.data;
+        		});
+        	};
+        	init();
         }
     ]
 );
