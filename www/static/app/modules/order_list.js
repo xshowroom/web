@@ -17,7 +17,7 @@ angular.module(
         '$scope', '$modal', 'Order',
         function ($scope, $modal, Order) {
         	$scope.hasFilter = function(){
-        		return !($scope.filters.status !== '' || $scope.filters.query !== '');
+        		return $scope.filters && !($scope.filters.status !== '' || $scope.filters.query !== '');
         	}
         	
         	var init = function(){
