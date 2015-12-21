@@ -19,9 +19,9 @@ class Controller_Api_Login extends Controller_Base
 
     public function action_index()
     {
-        $email       = Request::current()->query('email');
-        $password    = Request::current()->query('pass');
-        $code        = Request::current()->query('code');
+        $email       = Request::current()->getParam('email');
+        $password    = Request::current()->getParam('pass');
+        $code        = Request::current()->getParam('code');
 
         // Business_LogUtil::log('test',"test:{$email}:{$password}:{$code}",basename(__FILE__), Business_LogUtil::PLOG_NOTICE);
 

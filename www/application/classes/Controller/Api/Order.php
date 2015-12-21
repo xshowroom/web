@@ -13,7 +13,7 @@ class Controller_Api_Order extends Controller_BaseReqLogin
     public function action_addToCart()
     {
         $userId = $this->opUser['id'];
-        $productionId = Request::current()->post('productionId');
+        $productionId = Request::current()->getParam('productionId');
 
         $res = $this->orderService->addToCart($userId, $productionId);       
         
@@ -27,7 +27,7 @@ class Controller_Api_Order extends Controller_BaseReqLogin
     public function action_getFromCart()
     {
         $userId = $this->opUser['id'];
-        $productionId = Request::current()->query('productionId');
+        $productionId = Request::current()->getParam('productionId');
 
         $res = $this->orderService->getProductionFromCart($userId, $productionId);       
 
@@ -54,7 +54,7 @@ class Controller_Api_Order extends Controller_BaseReqLogin
     public function action_getListFromCartByCollection()
     {
         $userId = $this->opUser['id'];
-        $collectionId = Request::current()->query('collectionId');
+        $collectionId = Request::current()->getParam('collectionId');
 
         $res = $this->orderService->getListFromCartByCollection($userId, $collectionId);
         
@@ -68,7 +68,7 @@ class Controller_Api_Order extends Controller_BaseReqLogin
     public function action_deleteFromCart()
     {
         $userId = $this->opUser['id'];
-        $productionId = Request::current()->post('productionId');
+        $productionId = Request::current()->getParam('productionId');
 
         $res = $this->orderService->deleteFromCart($userId, $productionId);       
         
@@ -82,10 +82,10 @@ class Controller_Api_Order extends Controller_BaseReqLogin
     public function action_createOrder()
     {
         $userId = $this->opUser['id'];
-        $collectionId = Request::current()->post('collectionId');
-        $productionDetail = Request::current()->post('productionDetail');
-        $comments = Request::current()->post('comments');
-        $description = Request::current()->post('description');
+        $collectionId = Request::current()->getParam('collectionId');
+        $productionDetail = Request::current()->getParam('productionDetail');
+        $comments = Request::current()->getParam('comments');
+        $description = Request::current()->getParam('description');
 
         $res = $this->orderService->createOrder($userId, $collectionId, $productionDetail, $comments, $description);       
         
@@ -99,7 +99,7 @@ class Controller_Api_Order extends Controller_BaseReqLogin
     public function action_getOrder()
     {
         $userId = $this->opUser['id'];
-        $orderId = Request::current()->post('orderId');
+        $orderId = Request::current()->getParam('orderId');
 
         $res = $this->orderService->getOrder($userId, $orderId);       
         
@@ -113,8 +113,8 @@ class Controller_Api_Order extends Controller_BaseReqLogin
     public function action_getOrderList()
     {
         $userId = $this->opUser['id'];
-        $status = Request::current()->post('status');
-        $type = Request::current()->post('type');
+        $status = Request::current()->getParam('status');
+        $type = Request::current()->getParam('type');
 
         $res = $this->orderService->getOrderList($userId, $status, $type);       
         
@@ -128,8 +128,8 @@ class Controller_Api_Order extends Controller_BaseReqLogin
     public function action_updateStatus()
     {
         $userId = $this->opUser['id'];
-        $orderId = Request::current()->post('orderId');
-        $status = Request::current()->post('orderStatus');
+        $orderId = Request::current()->getParam('orderId');
+        $status = Request::current()->getParam('orderStatus');
 
         $res = $this->orderService->updateStatus($userId, $orderId, $status);       
         
@@ -143,7 +143,7 @@ class Controller_Api_Order extends Controller_BaseReqLogin
     public function action_deleteOrder()
     {
         $userId = $this->opUser['id'];
-        $orderId = Request::current()->post('orderId');
+        $orderId = Request::current()->getParam('orderId');
 
         $res = $this->orderService->deleteOrder($userId, $orderId);       
         

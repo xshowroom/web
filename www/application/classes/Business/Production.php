@@ -127,9 +127,9 @@ class Business_Production
     
     public function getProductionList($userId, $collectionId)
     {
-        $category = trim(Request::current()->post('category'));
-        $priceMin = Request::current()->post('priceMin');
-        $priceMax = Request::current()->post('priceMax');
+        $category = trim(Request::current()->getParam('category'));
+        $priceMin = Request::current()->getParam('priceMin');
+        $priceMax = Request::current()->getParam('priceMax');
 
         $productionList = $this->productionModel->getByCollectionId($collectionId);
         // 过滤并且添加字段        

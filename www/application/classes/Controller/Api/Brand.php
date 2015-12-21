@@ -23,7 +23,7 @@ class Controller_Api_Brand extends Controller_Base
     
     public function action_query()
     {
-        $name = Request::current()->query('name');
+        $name = Request::current()->getParam('name');
         $res = $this->brandService->queryBrand($name);
         
         echo json_encode(array(

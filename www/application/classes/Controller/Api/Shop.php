@@ -13,7 +13,7 @@ class Controller_Api_Shop extends Controller_BaseReqLogin
     public function action_save()
     {
         $userId = $this->opUser['id'];
-        $shopId = Request::current()->post('shopId');
+        $shopId = Request::current()->getParam('shopId');
         if ($shopId > 0) {
             $res = $this->shopService->updateShop($userId, $shopId);
         } else {
@@ -30,7 +30,7 @@ class Controller_Api_Shop extends Controller_BaseReqLogin
     public function action_detail()
     {
         $userId = $this->opUser['id'];
-        $shopId = Request::current()->post('shopId');
+        $shopId = Request::current()->getParam('shopId');
         $res = $this->shopService->getShopById($userId, $shopId);      
         
         echo json_encode(array(
@@ -55,7 +55,7 @@ class Controller_Api_Shop extends Controller_BaseReqLogin
     public function action_delete()
     {
         $userId = $this->opUser['id'];
-        $shopId = Request::current()->post('shopId');
+        $shopId = Request::current()->getParam('shopId');
         $res = $this->shopService->deleteShop($userId, $shopId);      
         
         echo json_encode(array(

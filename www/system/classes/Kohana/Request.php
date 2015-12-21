@@ -1337,5 +1337,14 @@ class Kohana_Request implements HTTP_Request {
 
 		return $this;
 	}
-
+    
+	public function getParam($key = NULL)
+	{
+	    $value = $this->post($key);
+	    if (!isset($value)) {
+	        $value = $this->query($key);
+	    }
+	    
+	    return trim($value);
+	}
 }
