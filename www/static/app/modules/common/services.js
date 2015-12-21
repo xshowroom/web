@@ -35,12 +35,15 @@ angular.module(
 //						}
 //					});
 		    	},
-		    	getStatuses: function(){
-		    		return [
-		    		    'ALL', 'PENDING', 'DEPOSITED', 'PREPARING',
-		    		    'BALANCE PAYMENT', 'SHIPPED', 'COMPLETE', 'CANCELED'
-		    		]
+		    	findAll: function (opts) {
+		    		return PostRequester('order/getOrderList', opts);
 		    	}
+//		    	getStatuses: function(){
+//		    		return [
+//		    		    'ALL', 'PENDING', 'DEPOSITED', 'PREPARING',
+//		    		    'BALANCE PAYMENT', 'SHIPPED', 'COMPLETE', 'CANCELED'
+//		    		]
+//		    	}
    			};
          }
     ]

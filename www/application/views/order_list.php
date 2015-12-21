@@ -27,13 +27,13 @@
                 	<h3>STATUS</h3>
                 	<ul>
                 		<li>
-                			<a ng-click="filters.status = ''; filters.limit = 4;"  ng-class="{'active': filters.status == ''}">
-                				<span>{{'COLLECTION_STATUS_ALL' | translate}}</span>
-                				<span>{{collections.length || 0}}</span>
+                			<a ng-click="filters.status = ''; filters.limit = pageSize;"  ng-class="{'active': filters.status == ''}">
+                				<span>ALL</span>
+                				<span>{{orders.length || 0}}</span>
                 			</a>
                 		</li>
-                		<li ng-repeat="status in statuses">
-                			<a ng-click="filters.status = status; filters.limit = 4;"  ng-class="{'active': filters.status == status}">
+                		<li ng-repeat="(status, count) in statuses">
+                			<a ng-click="filters.status = status; filters.limit = pageSize;"  ng-class="{'active': filters.status == status}">
                 				<span>{{('COLLECTION_STATUS_' + status) | translate}}</span>
                 				<span>{{count}}</span>
                 			</a>
@@ -49,24 +49,19 @@
 									<span class="input-group-addon">
 										<span class="glyphicon glyphicon-search"></span>
 									</span>
-									<input type="text" class="form-control" id="order-keyword" ng-model='query' placeholder="{{'filter_head__SEARCH_BRAND'|translate}}" ng-change="setFilters('query', query)">
+									<input type="text" class="form-control" id="order-keyword" ng-model='filters.query'
+										 placeholder="{{'filter_head__SEARCH_BRAND'|translate}}" ng-change="filters.limit = pageSize;">
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="row"  ng-if="!orders.content.length">
-		                <div class="col-xs-12 text-center empty-warning">
-		                    <img src="/static/app/images/empty.png">
-		                    <p><?=__("brand_filter__NO_BRAND_1");?><br/><?=__("brand_filter__NO_BRAND_2");?></p>
-		                </div>
-		            </div>
-					<div class="order-list-content row">
-						<div class="col-xs-12">
+					<div class="order-list-content row" ng-if="orders.length">
+						<div class="col-xs-12" ng-repeat="order in orders| limitTo: filters.limit |filter: {$: filters.query, 'status': filters.status}  as results track by $index ">
 							<div class="order-item">
 								<div class="order-item-header">
-									<span>A14581239123123</span>
+									<span>{{order.order_id}}</span>
 									<span>|</span>
-									<span>2015-12-25</span>
+									<span>{{order.buy_time}}</span>
 								</div>
 								<div class="order-item-content">
 									<div class="order-info">
@@ -76,21 +71,25 @@
 					                </div>
 				                  	<div class="order-info">
 			                  			<h3>record.brandName - record.collectionInfo.name</h3>
-			                  			<div><span>STATUS:</span><span>Pending</span></div>
-						                <div><span>Total Amount:</span><span>$123</span></div>
-						                <div><span>Delivery Date:</span><span>2015-12-25</span></div>
+			                  			<div><span>STATUS:</span><span>{{order.status}}</span></div>
+						                <div><span>Total Amount:</span><span>${{order.total_amount}}</span></div>
+						                <div><span>Delivery Date:</span><span>{{order.delivery_date}}</span></div>
 			                  		</div>
 						            <div class="order-info">
-						                <a ng-href="/order/123" class="btn btn-type-2">View Detail</a>
+						                <a ng-href="/order/{{order.order_id}}" target="_self" class="btn btn-type-2">View Detail</a>
 				                  	</div>
 			                  	</div>
 			                  	<div class="clearfix"></div>
 		                  	</div>
 						</div>
+						<div class="col-xs-12 text-center empty-warning"  ng-if="!results.length">
+		                    <img src="/static/app/images/empty.png">
+		                    <p><?=__("brand_filter__NO_BRAND_1");?><br/><?=__("brand_filter__NO_BRAND_2");?></p>
+		                </div>
+		                <div class="order-list-action text-center col-xs-12" ng-if="filters.limit < (orders | filter: {$: filters.query, 'status': filters.status}).length ">
+			                 <button class="btn btn-type-1" ng-click="filters.limit = filters.limit + pageSize;">LOAD MORE</button>
+			            </div>
 					</div>
-					<div class="order-list-action text-center row">
-		                 <button class="btn btn-type-1" ng-click="getNewOrders()"><?=__("collection_index__btn_LOAD_MORE")?></button>
-		            </div>
 				</div>
 			</div>
         </div>

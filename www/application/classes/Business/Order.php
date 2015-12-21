@@ -220,14 +220,15 @@ class Business_Order
         } else {
             $orderList = $this->orderModel->getByBuyerId($userId);
         }
-
-        if ($status === null) {
+        
+        if (empty($status) || $status === '') {
             return $orderList;    
         }
-
+        
         $finalOrderList = array();
+        
         foreach ($orderList as $order) {
-            if ($order['status'] == $status) {
+            if ($order['status'] == $status ) {
                 $finalOrderList[] = $order;
             }
         }

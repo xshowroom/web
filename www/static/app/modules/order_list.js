@@ -16,7 +16,35 @@ angular.module(
     [
         '$scope', '$modal', 'Order',
         function ($scope, $modal, Order) {
-        	var statuses = Order.getStatuses(); 
+        	var init = function(){
+        		Order.findAll().success(function(res){
+        			if (typeof(res) != 'object' || res.status) {
+        				$modal({title: 'Error Info', content: '订单获取失败，请检查！', show: true});
+     					return;
+     				}
+        			$scope.statuses = {};
+        			
+        			$scope.pageSize = 4;
+        			
+        			$scope.filters = {
+        				status: '',
+        				query: '',
+        				limit: $scope.pageSize
+        			};
+        				
+        			for(var i = 0, len = res.data.length; i < len; i++){
+        				var status = res.data[i].status;
+        				if (!$scope.statuses[status]){
+        					$scope.statuses[status] = 0;
+        				}
+        				$scope.statuses[status] += 1;
+        			}
+        				
+        			$scope.orders = res.data;
+        		});
+        	};
+        	
+        	init();
         }
     ]
 );

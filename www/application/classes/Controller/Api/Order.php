@@ -117,7 +117,7 @@ class Controller_Api_Order extends Controller_BaseReqLogin
     {
         $userId = $this->opUser['id'];
         $status = Request::current()->getParam('status');
-        $type = Request::current()->getParam('type');
+        $type = $this->opUser['role_type'];
 
         $res = $this->orderService->getOrderList($userId, $status, $type);       
         

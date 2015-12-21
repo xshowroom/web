@@ -64,6 +64,7 @@
 }
 .order-list .order-list-content .order-item{
 	border: 1px solid #ccc;
+	margin: 15px 0;
 }
 .order-list .order-list-content .order-item .order-item-header{
 	padding: 10px 15px;
