@@ -105,8 +105,8 @@ angular.module(
      				var year = new Date().getFullYear();
      				var maxDate = new Date();
      				maxDate.setYear(year + 100);
-     				$scope.collection.delivery = $filter('date')(maxDate, 'yyyy-mm-dd');
-     				$scope.collection.deadline = $filter('date')(maxDate, 'yyyy-mm-dd');
+     				$scope.collection.delivery = $filter('date')(maxDate, 'yyyy-MM-dd');
+     				$scope.collection.deadline = $filter('date')(maxDate, 'yyyy-MM-dd');
      			} else {
      				$scope.collection.delivery = null;
      				$scope.collection.deadline = null;
