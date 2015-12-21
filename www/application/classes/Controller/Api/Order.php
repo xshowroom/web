@@ -86,8 +86,11 @@ class Controller_Api_Order extends Controller_BaseReqLogin
         $productionDetail = Request::current()->getParam('productionDetail');
         $comments = Request::current()->getParam('comments');
         $description = Request::current()->getParam('description');
+        $address = Request::current()->getParam('address');
+        $paymentType = Request::current()->getParam('paymentType');
+        $shopId = Request::current()->getParam('shopId');
 
-        $res = $this->orderService->createOrder($userId, $collectionId, $productionDetail, $comments, $description);       
+        $res = $this->orderService->createOrder($userId, $collectionId, $productionDetail, $comments, $description, $shopId, $address, $paymentType);       
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,

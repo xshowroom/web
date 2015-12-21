@@ -137,7 +137,7 @@ class Business_Order
         return $res;
     }
 
-    public function createOrder($userId, $collectionId, $productionDetail, $comments, $description)
+    public function createOrder($userId, $collectionId, $productionDetail, $comments, $description, $shopId, $address, $paymentType)
     {
         // 需要从购物车删除的产品id列表
         $productionIds = array();
@@ -162,13 +162,13 @@ class Business_Order
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
 
-        $relation = $this->buyerService->getRelation($userId, $collection['user_id']);
-        $shop = $this->shopService->getShopById($userId, $relation['shop_id']);
+        //$relation = $this->buyerService->getRelation($userId, $collection['user_id']);
+        //$shop = $this->shopService->getShopById($userId, $relation['shop_id']);
 
         $order = array(
             'orderId' => $this->getOrderId(),
             'buyerId' => $userId,
-            'shopId' => $relation['shop_id'],
+            'shopId' => $shopId,
             'brandId' => $collection['user_id'],
             'collectionId' => $collectionId,
             'productionDetail' => $productionDetail,
@@ -177,9 +177,10 @@ class Business_Order
             'shippingAmount' => $shippingAmount,
             'totalAmount' => $totalAmount,
             'deliveryDate' => $collection['delivery_date'],
-            'shopAddress' => $shop['address'],
+            'shopAddress' => $address,
             'comments' => $comments,
             'description' => $description,
+            'paymentType' => $paymentType,
         );
 
         $res = $this->orderModel->addOrder($order);
