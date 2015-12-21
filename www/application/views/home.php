@@ -152,7 +152,7 @@
 					<div class="col-xs-12 buyer-introduction introduction-item">
 						<div class="introduction-content">
 							<h3>
-								<span><?=__("home__BRANDS")?></span>
+								<span><?=__("home__BUYERS")?></span>
 							</h3>
 							<p><?=__("home__BUYERS_DESC")?></p>
 							<div>
