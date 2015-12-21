@@ -105,7 +105,7 @@
                         <div class="form-group col-xs-6" ng-class="{'has-error': checkInfo.validation.mode}">
                             <label for="mode" class="col-xs-4 control-label"><?=__("collection_index__COLLECTION_MODE")?></label>
                             <div class="col-xs-8">
-                                  <select class="form-control" id="mode" ng-model="collection.mode" ng-chaneg="setDatesByMode(collection.mode)">
+                                  <select class="form-control" id="mode" ng-model="collection.mode" ng-change="setDatesByMode(collection.mode)">
 									  <option value="dropdown__COLLECTION_MODE__PRE_ORDER">{{ 'dropdown__COLLECTION_MODE__PRE_ORDER' | translate}}</option>
 									  <option value="dropdown__COLLECTION_MODE__STOCK">{{ 'dropdown__COLLECTION_MODE__STOCK' | translate}}</option>
 									  <option value="dropdown__COLLECTION_MODE__RE_ORDER">{{ 'dropdown__COLLECTION_MODE__RE_ORDER' | translate}}</option>

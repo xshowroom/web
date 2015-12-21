@@ -16,6 +16,10 @@ angular.module(
     [
         '$scope', '$modal', 'Order',
         function ($scope, $modal, Order) {
+        	$scope.hasFilter = function(){
+        		return !($scope.filters.status !== '' || $scope.filters.query !== '');
+        	}
+        	
         	var init = function(){
         		Order.findAll().success(function(res){
         			if (typeof(res) != 'object' || res.status) {

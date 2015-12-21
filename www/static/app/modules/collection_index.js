@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'CollectionIndexCtrl',
     [
-     	'$scope', '$modal', '$location', 'Collection', 
-        function ($scope, $modal, $location, Collection) {
+     	'$scope', '$modal', '$filter', '$location', 'Collection', 
+        function ($scope, $modal, $filter, $location, Collection) {
      		$scope.checkInfo = {
          		validation: {
      			   	'name': false,
@@ -108,7 +108,8 @@ angular.module(
          	$scope.setDatesByMode = function(mode){
      			if(mode == 'dropdown__COLLECTION_MODE__PERMANENT'){
      				var year = new Date().getFullYear();
-     				var maxDate = new Date().setYear(year + 100);
+     				var maxDate = new Date();
+     				maxDate.setYear(year + 100);
      				$scope.collection.delivery = $filter('date')(maxDate, 'yyyy-mm-dd');
      				$scope.collection.deadline = $filter('date')(maxDate, 'yyyy-mm-dd');
      			} else {
