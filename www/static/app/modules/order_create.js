@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'OrderCreateCtrl',
     [
-     	'$scope', '$modal', '$window', 'Cart', 'Order', 'Collection',
-        function ($scope, $modal, $window, Cart, Order, Collection) {
+     	'$scope', '$modal', '$window', 'Cart', 'Order', 'Collection', 'Buyer',
+        function ($scope, $modal, $window, Cart, Order, Collection, Buyer) {
      		$scope.removeProductFromCart  = function(product){
         		Cart.removeProduct({
         			productionId: product.id
@@ -89,7 +89,6 @@ angular.module(
      				var orderItems = [];
      				for(var i = 0, len = $scope.products.length; i < len; i++) {
          				var productId = $scope.products[i].id;
-//         				orderItems[productId] = [];
     	     			for(var color in $scope.quantities[productId]){
     	     				for(var size in $scope.quantities[productId][color]){
     	     					if ($scope.quantities[productId][color][size] > 0){
@@ -104,21 +103,67 @@ angular.module(
     	     				}
     	     			}
          			}
+     				
      				$scope.orderItems = orderItems;
-     				$scope.generateOrderStep += 1;
+     				Buyer.getAuthedShopList({
+     					collectionId: $scope.collectionId
+     				}).success(function(res){
+     					if (typeof(res) != 'object' || res.status) {
+            				$modal({title: 'Error Info', content: res.msg, show: true});
+            				return;
+             			}
+     					$scope.stores = res.data;
+     					$scope.generateOrderStep += 1;
+     				});
+     				
      			}
      		};
      		
      		$scope.setOptions = function(){
-     			if (!$scope.order.address){
+     			if (!$scope.order.store){
      				$modal({title: 'Error Info', content: '该订单尚未选择送货地址，请选择，谢谢！', show: true});
      				return;
      			}
-     			if (!$scope.order.payment){
+     			if (!$scope.order.paymentType){
      				$modal({title: 'Error Info', content: '该订单尚未选择支付方式，请选择，谢谢！', show: true});
      				return;
      			}
      			$scope.generateOrderStep += 1;
+     		};
+     		
+     		$scope.submitOrder = function (){
+     			var productionDetail = {};
+     			for(var i = 0, len = $scope.products.length; i < len; i++) {
+     				var productId = $scope.products[i].id;
+	     			for(var color in $scope.quantities[productId]){
+	     				for(var size in $scope.quantities[productId][color]){
+	     					if ($scope.quantities[productId][color][size] > 0){
+	     						if (!productionDetail[productId]){
+		     						productionDetail[productId] = [];
+		     					}
+	     						productionDetail[productId].push({
+		     						size_code: size,
+		     						color: color,
+		     						buy_num: $scope.quantities[productId][color][size]
+		     					});
+	     					}
+	     				}
+	     			}
+     			}
+     			Order.create({
+     				collectionId: $scope.collectionId,
+     		        productionDetail: productionDetail,
+     		        address: $scope.order.store.address,
+     		        paymentType: $scope.order.paymentType,
+     		        shopId: $scope.order.store.id
+     			}).success(function(res){
+     				if (typeof(res) != 'object' || res.status) {
+        				$modal({title: 'Error Info', content: res.msg, show: true});
+        				return;
+         			}
+     				$window.open('/order/list', '_self');
+     			});
+     			
      		};
      		
      		

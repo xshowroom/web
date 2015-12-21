@@ -124,35 +124,25 @@
 						<h2 class="cart-details-title">SHIPPING ADDRESS</h2>
 					</div>
 					<div class="shipping-address">
-						<div class="address-card">
+						<div class="address-card" ng-repeat="store in stores">
 							<h4>
-								 <label><input type="radio" name="address" value="1" ng-model="order.address" checked>ADDRESS 1</label>
+								 <label><input type="radio" name="address" ng-value="store" ng-model="order.store" checked>{{store.name}}</label>
 							</h4>
 							<div class="address-info">
-								<div><span>Name:</span><span>百度上研大厦</span></div>
-								<div><span>Address:</span><span>上海市浦东新区纳贤路701号</span></div>
-								<div><span>Zip Code:</span><span>200000</span></div>
-								<div><span>Phone:</span><span>+8613312345678</span></div>
+								<div><span>Type:</span><span>{{store.type | translate}}</span></div>
+								<div><span>Address:</span><span>{{store.address}}</span></div>
+								<div><span>Zip Code:</span><span>{{store.zip}}</span></div>
+								<div><span>Phone:</span><span>{{store.telephone}}</span></div>
 							</div>
 						</div>
-						<div class="address-card">
-							<h4>
-								 <label><input type="radio" name="address" value="2" ng-model="order.address" checked>ADDRESS 1</label>
-							</h4>
-							<div class="address-info">
-								<div><span>Name:</span><span>百度上研大厦</span></div>
-								<div><span>Address:</span><span>上海市浦东新区纳贤路701号</span></div>
-								<div><span>Zip Code:</span><span>200000</span></div>
-								<div><span>Phone:</span><span>+8613312345678</span></div>
-							</div>
-						</div>
+						<div class="clearfix"></div>
 					</div>
 					<div class="cart-details-header">
 						<h2 class="cart-details-title">PAYMENT OPTIONS</h2>
 					</div>
 					<div class="payment-options">
 						<div class="radio">
-						    <label><input type="radio" name="payment" value="offline" ng-model="order.payment" checked>OFFLINE PAYMENT</label>
+						    <label><input type="radio" name="payment" value="offline" ng-model="order.paymentType" checked>OFFLINE PAYMENT</label>
 						    <p>Remittance to XShowRoom account</p>
 						</div>
 					</div>
