@@ -13,7 +13,7 @@ class Controller_Api_Production extends Controller_BaseReqLogin
     public function action_list()
     {
         $userId     = $this->opUser['id'];
-        $collectionId = Request::current()->query('id');
+        $collectionId = Request::current()->getParam('id');
         $res = $this->productionService->getProductionList($userId, $collectionId);
         
         echo json_encode(array(

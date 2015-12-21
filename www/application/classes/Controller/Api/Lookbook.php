@@ -14,7 +14,7 @@ class Controller_Api_Lookbook extends Controller_Base
     
     public function action_getList()
     {
-        $brandId = Request::current()->query('brandId');
+        $brandId = Request::current()->getParam('brandId');
 
         $res = $this->lookbookService->getLookbookList($brandId);
         
@@ -29,8 +29,8 @@ class Controller_Api_Lookbook extends Controller_Base
     {
         $userId = $_SESSION['opUser']['id'];
         
-        $season     = Request::current()->post('season');
-        $lookbook   = Request::current()->post('lookbook');
+        $season     = Request::current()->getParam('season');
+        $lookbook   = Request::current()->getParam('lookbook');
 
         $lookbookPath = $this->uploadService->createResizeImage($lookbook, 'lookbook');
         $lookbookId = $this->lookbookService->saveLookbook($userId, $season, $lookbookPath);
@@ -52,7 +52,7 @@ class Controller_Api_Lookbook extends Controller_Base
     public function action_deleteLookbook()
     {
         $userId = $_SESSION['opUser']['id'];
-        $lookbookId = Request::current()->post('id');
+        $lookbookId = Request::current()->getParam('id');
     
         $res = $this->lookbookService->deleteLookbook($userId, $lookbookId);
     

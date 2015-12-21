@@ -51,15 +51,15 @@ class Business_Shop
     public function realAddShop($userId)
     {
         // generate buyer info
-        $name      = Request::current()->post('shopName');
-        $type      = Request::current()->post('shopType');
-        $colType   = Request::current()->post('collectionType');
-        $brandList = Request::current()->post('brandList');
-        $website   = Request::current()->post('shopWebsite');
-        $address   = Request::current()->post('shopAddress');
-        $country   = Request::current()->post('shopCountry');
-        $zipcode   = Request::current()->post('shopZipcode');
-        $tel       = Request::current()->post('shopTel');
+        $name      = Request::current()->getParam('shopName');
+        $type      = Request::current()->getParam('shopType');
+        $colType   = Request::current()->getParam('collectionType');
+        $brandList = Request::current()->getParam('brandList');
+        $website   = Request::current()->getParam('shopWebsite');
+        $address   = Request::current()->getParam('shopAddress');
+        $country   = Request::current()->getParam('shopCountry');
+        $zipcode   = Request::current()->getParam('shopZipcode');
+        $tel       = Request::current()->getParam('shopTel');
         
         $shopId = $this->shopModel->addShopInfo($userId, $name, $type, $colType, $brandList,
                                                 $website, $address, $country, $zipcode, $tel);
@@ -69,15 +69,15 @@ class Business_Shop
     public function realUpdateShop($userId, $shopId)
     {
         // generate buyer info
-        $name      = Request::current()->post('shopName');
-        $type      = Request::current()->post('shopType');
-        $colType   = Request::current()->post('collectionType');
-        $brandList = Request::current()->post('brandList');
-        $website   = Request::current()->post('shopWebsite');
-        $address   = Request::current()->post('shopAddress');
-        $country   = Request::current()->post('shopCountry');
-        $zipcode   = Request::current()->post('shopZipcode');
-        $tel       = Request::current()->post('shopTel');
+        $name      = Request::current()->getParam('shopName');
+        $type      = Request::current()->getParam('shopType');
+        $colType   = Request::current()->getParam('collectionType');
+        $brandList = Request::current()->getParam('brandList');
+        $website   = Request::current()->getParam('shopWebsite');
+        $address   = Request::current()->getParam('shopAddress');
+        $country   = Request::current()->getParam('shopCountry');
+        $zipcode   = Request::current()->getParam('shopZipcode');
+        $tel       = Request::current()->getParam('shopTel');
         
         $res = $this->shopModel->updateShopInfo($userId, $shopId, $name, $type, $colType, $brandList,
                                                 $website, $address, $country, $zipcode, $tel);

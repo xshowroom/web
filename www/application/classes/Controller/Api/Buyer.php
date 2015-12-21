@@ -13,9 +13,10 @@ class Controller_Api_Buyer extends Controller_BaseReqLogin
     public function action_apply()
     {
         $userId  = $this->opUser['id'];
+
         $shopId  = trim(Request::current()->query('shopIdList'));
         $brandId = (int)trim(Request::current()->query('brandId'));
-        
+       
         $res = $this->buyerService->batchApply($userId, $shopId, $brandId);
         
         echo json_encode(array(
@@ -28,8 +29,8 @@ class Controller_Api_Buyer extends Controller_BaseReqLogin
     public function action_checkAuth()
     {
         $userId  = $this->opUser['id'];
-        //$shopId  = (int)trim(Request::current()->query('shopId'));
-        $brandId = (int)trim(Request::current()->query('brandId'));
+        //$shopId  = (int)trim(Request::current()->getParam('shopId'));
+        $brandId = (int)trim(Request::current()->getParam('brandId'));
         
         $res = $this->buyerService->checkAuth($userId, $brandId);
         
@@ -92,7 +93,7 @@ class Controller_Api_Buyer extends Controller_BaseReqLogin
     
     public function action_getCollectionList()
     {
-        $brandId = Request::current()->query('brandId');
+        $brandId = Request::current()->getParam('brandId');
         $res = $this->buyerService->getCollectionList($brandId);
         echo json_encode(array(
             'status' => STATUS_SUCCESS,

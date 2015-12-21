@@ -14,7 +14,7 @@ class Controller_Api_Guest extends Controller_Base
     
     public function action_coverImgList()
     {
-        $brandId = Request::current()->query('brandId');
+        $brandId = Request::current()->getParam('brandId');
         
         $res = $this->collectionService->getAllCollectionImg($brandId);
         
@@ -28,8 +28,8 @@ class Controller_Api_Guest extends Controller_Base
     public function action_checkAuth()
     {
         $userId  = $this->opUser['id'];
-        //$shopId  = (int)trim(Request::current()->query('shopId'));
-        $brandId = (int)trim(Request::current()->query('brandId'));
+        //$shopId  = (int)trim(Request::current()->getParam('shopId'));
+        $brandId = (int)trim(Request::current()->getParam('brandId'));
     
         $res = $this->buyerService->checkAuth($userId, $brandId);
     

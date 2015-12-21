@@ -82,20 +82,20 @@ class Business_User
     
     public function addCommonInfo()
     {
-        $email          = Request::current()->post('email');
-        $password       = Request::current()->post('pass');
-        $roleType       = Request::current()->post('roleType');
-        $firstName      = Request::current()->post('firstName');
-        $lastName       = Request::current()->post('lastName');
-        $displayName    = Request::current()->post('displayName');
-        $tel            = Request::current()->post('tel');
-        $mobile         = Request::current()->post('mobile');
-        $companyName    = Request::current()->post('companyName');
-        $companyAddr    = Request::current()->post('companyAddr');
-        $companyCountry = Request::current()->post('companyCountry');
-        $companyZip     = Request::current()->post('companyZip');
-        $companyTel     = Request::current()->post('companyTel');
-        $companyWebsite = Request::current()->post('companyWebsite');
+        $email          = Request::current()->getParam('email');
+        $password       = Request::current()->getParam('pass');
+        $roleType       = Request::current()->getParam('roleType');
+        $firstName      = Request::current()->getParam('firstName');
+        $lastName       = Request::current()->getParam('lastName');
+        $displayName    = Request::current()->getParam('displayName');
+        $tel            = Request::current()->getParam('tel');
+        $mobile         = Request::current()->getParam('mobile');
+        $companyName    = Request::current()->getParam('companyName');
+        $companyAddr    = Request::current()->getParam('companyAddr');
+        $companyCountry = Request::current()->getParam('companyCountry');
+        $companyZip     = Request::current()->getParam('companyZip');
+        $companyTel     = Request::current()->getParam('companyTel');
+        $companyWebsite = Request::current()->getParam('companyWebsite');
         
         $emailExist = $this->checkEmail($email);
         if ($emailExist) {
@@ -121,10 +121,10 @@ class Business_User
         $this->msgService->createMessage($userId, __(Business_Message::AUTO_MSG_WELCOME_BRAND));
 
         // generate brand info
-        $brandName     = Request::current()->post('brandName');
-        $designerName  = Request::current()->post('designerName');
-        $imagePath     = Request::current()->post('imagePath');
-        $brandUrl      = Request::current()->post('brandUrl');
+        $brandName     = Request::current()->getParam('brandName');
+        $designerName  = Request::current()->getParam('designerName');
+        $imagePath     = Request::current()->getParam('imagePath');
+        $brandUrl      = Request::current()->getParam('brandUrl');
 
         $brandUrl = urlencode($this->safeFileName($brandUrl));
         

@@ -16,7 +16,7 @@ class Controller_Api_Product extends Controller_BaseReqLogin
     public function action_list()
     {
         $userId = $_SESSION['opUser']['id'];
-        $collectionId = Request::current()->query('collectionId');
+        $collectionId = Request::current()->getParam('collectionId');
         
         $res = $this->productionService->getProductionList($userId, $collectionId);
         
@@ -30,7 +30,7 @@ class Controller_Api_Product extends Controller_BaseReqLogin
     public function action_detail()
     {
         $userId = $_SESSION['opUser']['id'];
-        $productionId = Request::current()->query('productionId');
+        $productionId = Request::current()->getParam('productionId');
         
         $res = $this->productionService->getProduction($userId, $productionId);
         
@@ -44,19 +44,19 @@ class Controller_Api_Product extends Controller_BaseReqLogin
     public function action_add()
     {
         $userId     = $_SESSION['opUser']['id'];
-        $name       = Request::current()->post('name');
-        $category   = Request::current()->post('category');
-        $collection = Request::current()->post('collectionId');
-        $styleNum   = Request::current()->post('styleNum');
-        $wholePrice = Request::current()->post('wholePrice');
-        $rtlPrice   = Request::current()->post('retailPrice');
-        $sizeRegion = Request::current()->post('sizeRegion');
-        $sizeCode   = Request::current()->post('sizeCode');
-        $color      = Request::current()->post('color');
-        $madeIn     = Request::current()->post('madeIn');
-        $material   = Request::current()->post('material');
-        $careIns    = Request::current()->post('careIns');
-        $imagePaths = Request::current()->post('images');
+        $name       = Request::current()->getParam('name');
+        $category   = Request::current()->getParam('category');
+        $collection = Request::current()->getParam('collectionId');
+        $styleNum   = Request::current()->getParam('styleNum');
+        $wholePrice = Request::current()->getParam('wholePrice');
+        $rtlPrice   = Request::current()->getParam('retailPrice');
+        $sizeRegion = Request::current()->getParam('sizeRegion');
+        $sizeCode   = Request::current()->getParam('sizeCode');
+        $color      = Request::current()->getParam('color');
+        $madeIn     = Request::current()->getParam('madeIn');
+        $material   = Request::current()->getParam('material');
+        $careIns    = Request::current()->getParam('careIns');
+        $imagePaths = Request::current()->getParam('images');
         
         $res = $this->productionService->addProduction($userId, $name, $category,
                $collection, $styleNum, $wholePrice, $rtlPrice, $sizeRegion, $sizeCode,
@@ -72,20 +72,20 @@ class Controller_Api_Product extends Controller_BaseReqLogin
     public function action_modify()
     {
         $userId     = $_SESSION['opUser']['id'];
-        $production = Request::current()->post('id');
-        $name       = Request::current()->post('name');
-        $category   = Request::current()->post('category');
-        $collection = Request::current()->post('collectionId');
-        $styleNum   = Request::current()->post('styleNum');
-        $wholePrice = Request::current()->post('wholePrice');
-        $rtlPrice   = Request::current()->post('retailPrice');
-        $sizeRegion = Request::current()->post('sizeRegion');
-        $sizeCode   = Request::current()->post('sizeCode');
-        $color      = Request::current()->post('color');
-        $madeIn     = Request::current()->post('madeIn');
-        $material   = Request::current()->post('material');
-        $careIns    = Request::current()->post('careIns');
-        $imagePaths = Request::current()->post('images');
+        $production = Request::current()->getParam('id');
+        $name       = Request::current()->getParam('name');
+        $category   = Request::current()->getParam('category');
+        $collection = Request::current()->getParam('collectionId');
+        $styleNum   = Request::current()->getParam('styleNum');
+        $wholePrice = Request::current()->getParam('wholePrice');
+        $rtlPrice   = Request::current()->getParam('retailPrice');
+        $sizeRegion = Request::current()->getParam('sizeRegion');
+        $sizeCode   = Request::current()->getParam('sizeCode');
+        $color      = Request::current()->getParam('color');
+        $madeIn     = Request::current()->getParam('madeIn');
+        $material   = Request::current()->getParam('material');
+        $careIns    = Request::current()->getParam('careIns');
+        $imagePaths = Request::current()->getParam('images');
         
         $res = $this->productionService->modifyProduction($userId, $production, $name, $category,
                $collection, $styleNum, $wholePrice, $rtlPrice, $sizeRegion, $sizeCode,
@@ -101,7 +101,7 @@ class Controller_Api_Product extends Controller_BaseReqLogin
     public function action_delete()
     {
         $userId = $this->opUser['id'];
-        $productionId = Request::current()->query('id');
+        $productionId = Request::current()->getParam('id');
         $res = $this->productionService->updateStatus($userId, $productionId, STAT_DELETED);
         
         echo json_encode(array(
@@ -113,7 +113,7 @@ class Controller_Api_Product extends Controller_BaseReqLogin
     
     public function action_check()
     {
-        $productionName = Request::current()->post('name');
+        $productionName = Request::current()->getParam('name');
         list($status, $msg) = $this->productionService->checkProductionName($productionName);
         
         echo json_encode(array(

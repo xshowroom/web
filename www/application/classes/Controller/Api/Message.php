@@ -13,7 +13,7 @@ class Controller_Api_Message extends Controller_BaseReqLogin
     public function action_delete()
     {
         $userId = $this->opUser['id'];
-        $msgId = Request::current()->query('id');
+        $msgId = Request::current()->getParam('id');
         var_dump($userId, $msgId);
         $res = $this->messageService->deleteMessage($userId, $msgId);
         

@@ -96,19 +96,19 @@ class Business_Brand
     public function getBrandList()
     {
         $filter = array(
-            'show'      => Request::current()->query('show'),
-            'category'  => Request::current()->query('category'),
-            'season'    => $this->doQuote(Request::current()->query('season')),
-            'available' => self::$availableMap[Request::current()->query('available')],
-            'country'   => Request::current()->query('country'),
-            'query'     => Request::current()->query('query'),
+            'show'      => Request::current()->getParam('show'),
+            'category'  => Request::current()->getParam('category'),
+            'season'    => $this->doQuote(Request::current()->getParam('season')),
+            'available' => self::$availableMap[Request::current()->getParam('available')],
+            'country'   => Request::current()->getParam('country'),
+            'query'     => Request::current()->getParam('query'),
         );
         
         $res = $this->doFilter($filter);
         
-        $pageSize = Request::current()->query('pageSize');
+        $pageSize = Request::current()->getParam('pageSize');
         $pageSize = empty($pageSize) ? 0 : $pageSize;
-        $offset = Request::current()->query('offset');
+        $offset = Request::current()->getParam('offset');
         $offset = empty($offset) ? 0 : $offset;
         $res = array_slice($res, $offset, $pageSize);
         

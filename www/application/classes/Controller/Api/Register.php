@@ -19,7 +19,7 @@ class Controller_Api_Register extends Controller
 
     public function action_index()
     {
-        $roleType = Request::current()->post('roleType');
+        $roleType = Request::current()->getParam('roleType');
         
         $res = $this->userService->addUser($roleType);
 
@@ -34,8 +34,8 @@ class Controller_Api_Register extends Controller
     
     public function action_checkParam()
     {
-        $key = Request::current()->query('key');
-        $param = Request::current()->query('param');
+        $key = Request::current()->getParam('key');
+        $param = Request::current()->getParam('param');
 
         list($status, $msg) = $this->userService->checkParam($key, $param);
         
