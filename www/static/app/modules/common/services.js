@@ -37,6 +37,9 @@ angular.module(
 		    	},
 		    	findAll: function (opts) {
 		    		return PostRequester('order/getOrderList', opts);
+		    	},
+		    	findOne: function (opts) {
+		    		return PostRequester('order/getOrder', opts);
 		    	}
 //		    	getStatuses: function(){
 //		    		return [
@@ -203,11 +206,11 @@ angular.module(
 	      	};
 		    return {
 		    	findAll: function (opts) {
-		    		return PostRequester('buyer/getBrandList', opts);
+		    		return PostRequester('brand/list', opts);
 //		    		return $http.get('/api/brand/list', {params: opts});
 		      	},
 		      	query: function (opts) {
-		      		return PostRequester('buyer/getBrandList', opts);
+		      		return PostRequester('brand/query', opts);
 //		    		return $http.get('/api/brand/query', {params: opts});
 		      	},
 		      	getShopConditions: function(){
