@@ -116,12 +116,12 @@ class Controller_Api_Buyer extends Controller_BaseReqLogin
         ));
     }
 
-    public function getAuthedShop()
+    public function action_getAuthedShop()
     {
         $userId = $this->opUser['id'];
-        $brandId = Request::current()->query('brandId');
+        $collectionId = Request::current()->getParam('collectionId');
         
-        $res = $this->buyerService->getAuthedShop($userId, $brandId);
+        $res = $this->buyerService->getAuthedShop($userId, $collectionId);
 
         echo json_encode(array(
             'status' => STATUS_SUCCESS,

@@ -213,9 +213,11 @@ class Business_Buyer
         return $shopList;
     }
 
-    public function getAuthedShop($userId, $brandId)
+    public function getAuthedShop($userId, $collectionId)
     {
-        $authedShopList = $this->buyerModel->getAuthListByUserAndBrand($userId, $brandId);
+    	$collection = $this->collectionModel->getByCollectionId($collectionId);
+    	$brand = $this->brandModel->getByUserId($collection['user_id']);
+        $authedShopList = $this->buyerModel->getAuthListByUserAndBrand($userId, $brand['id']);
         $shopIdList = array_column($authedShopList, 'shop_id');
 
         $shopList = $this->shopModel->getByIdList($shopIdList);
