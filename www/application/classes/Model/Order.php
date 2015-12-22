@@ -79,7 +79,7 @@ class Model_Order
                     ->columns(array(
                         'order_id',
                         'buyer_id',
-                        'buyer_name'
+                        'buyer_name',
                         'user_id',
                         'shop_id',
                         'shop_name',

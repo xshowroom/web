@@ -172,7 +172,7 @@ class Business_Order
             'buyerId' => $userId,
             'buyerName' =>$user['dispaly_name'],
             'userId' => $collection['user_id'],
-            'shopId' => $shopId
+            'shopId' => $shopId,
             'shopName' => $shop['name'],
             'brandId' => $collection['brand_id'],
             'collectionId' => $collectionId,
