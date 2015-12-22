@@ -33,10 +33,10 @@
                  		<h3>{{order.order_id}}</h3>
                  	</div>
                  	<div class="col-xs-12 order-detail">
-                 		<span>STORE:</span><span>{{order.order_id}}</span>
+                 		<span>STORE:</span><span>{{order.brand_name}} - {{order.shop_name}}</span>
                  	</div>
                  	<div class="col-xs-12 order-detail">
-                 		<span>BUYER:</span><span>{{order.buyer_id}}</span>
+                 		<span>BUYER:</span><span>{{order.buyer_name}}</span>
                  	</div>
                  	<div class="col-xs-12 order-detail">
                  		<span>SUBMITTED DATE:</span><span>{{order.buy_time}}</span>

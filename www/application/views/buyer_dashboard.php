@@ -84,19 +84,24 @@
                 </div>
             </div>
             <?php else: ?>
-            <div class="order-list-content row">.
+            <div class="order-list-content row">
             	<?php foreach($orderList as $order):?>
                 <div class="col-xs-3">
                     <a target="_self" href="/order/<?=$order['order_id']?>" class="order-item">
                         <div class="order-images">
-                            <img src="/static/app/images/shop-brand-1.png" class="order-item-image">
-                            <img src="/static/app/images/shop-brand-1.png" class="order-item-sub-image">
-                            <img src="/static/app/images/shop-brand-1.png" class="order-item-sub-image">
+                            <img ng-src="/<?=order.cover_image_medium?>" class="order-item-image">
+                            <?php $counter = 0;?>
+                            <?php foreach($order['productions'] as  $productId=>$product):?>
+                            <?php if($counter < 2):?>
+                            <img src="/<?=$product['image']?>" class="order-item-sub-image">
+                            <?php $counter++;?>
+                            <?php endif;?>
+                            <?php endforeach;?>
                         </div>
                         <div class="order-detail">
                             <div><?=$order['order_id']?></div>
                             <div>Submitted <?=$order['buy_time']?></div>
-                            <div>Order amount: $<?=$order['total_amount']?></div>
+                            <div>Order amount: <?=$order['currency']?> {{'<?=$order['total_amount']?>' | number}}</div>
                         </div>
                         <div class="order-status">
                             <span><?=$order['status']?></span>

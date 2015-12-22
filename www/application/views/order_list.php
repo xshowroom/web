@@ -66,7 +66,7 @@
 								<div class="order-item-content">
 									<div class="order-info">
 					                  	<a class="image-link collection-cover" ng-href="/collection/{{order.collection_id}}">
-					                  		<img ng-src="/static/app/images/shop-brand-1.png"/>
+					                  		<img ng-src="/{{order.cover_image_medium}}"/>
 					                  	</a>
 					                </div>
 				                  	<div class="order-info">

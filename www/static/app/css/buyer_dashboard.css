@@ -48,6 +48,7 @@
     padding: 15px;
     overflow: hidden;
     display: inline-block;
+    width: 100%;
 }
 .order-list .order-list-content .order-item .order-images{
 	height: 160px;
