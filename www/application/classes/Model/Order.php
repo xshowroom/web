@@ -153,7 +153,7 @@ class Model_Order
         return $result;
     }
 
-    public function updateStatus($orderId, $shipNo, $shipAmount)
+    public function updateShipInfo($orderId, $shipNo, $shipAmount)
     {
         $result = DB::update('order')
                     ->set(array(
