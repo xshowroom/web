@@ -77,6 +77,7 @@ class Model_Order
                     ->columns(array(
                         'order_id',
                         'buyer_id',
+                        'user_id',
                         'shop_id',
                         'brand_id',
                         'collection_id',
@@ -98,6 +99,7 @@ class Model_Order
                     ->values(array(
                         $order['orderId'],
                         $order['buyerId'],
+                        $order['userId'],
                         $order['shopId'],
                         $order['brandId'],
                         $order['collectionId'],
@@ -163,18 +165,20 @@ class Model_Order
                     ->from('order')
                     ->where('buyer_id', '=', $buyerId)
                     ->where('status', '=', STAT_NORMAL)
+                    ->order_by('buy_time', 'DESC')
                     ->execute()
                     ->as_array();
         
         return empty($result) ? array() : $result;
     }
 
-    public function getByBrandId($brandId)
+    public function getByBrandId($userId)
     {
         $result = DB::select()
                     ->from('order')
-                    ->where('brand_id', '=', $brandId)
+                    ->where('user_id', '=', $userId)
                     ->where('status', '=', STAT_NORMAL)
+                    ->order_by('buy_time', 'DESC')
                     ->execute()
                     ->as_array();
         

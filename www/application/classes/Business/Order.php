@@ -168,8 +168,9 @@ class Business_Order
         $order = array(
             'orderId' => $this->getOrderId(),
             'buyerId' => $userId,
+            'userId' => $collection['user_id'],
             'shopId' => $shopId,
-            'brandId' => $collection['user_id'],
+            'brandId' => $collection['brand_id'],
             'collectionId' => $collectionId,
             'productionDetail' => $productionDetail,
             'totalNum' => $totalNum,
@@ -210,7 +211,9 @@ class Business_Order
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
         
-        return $order;
+        $wellFormedOrder = $this->buildOrderDetail($order);
+        
+        return $wellFormedOrder;
     }
 
     public function getOrderList($userId, $status, $type)
@@ -228,12 +231,26 @@ class Business_Order
         $finalOrderList = array();
         
         foreach ($orderList as $order) {
-            if ($order['status'] == $status ) {
+            if ($order['status'] == $status) {
                 $finalOrderList[] = $order;
             }
         }
 
-        return $finalOrderList;
+        $pageSize = Request::current()->getParam('pageSize');
+        $pageSize = empty($pageSize) ? 0 : $pageSize;
+        $offset = Request::current()->getParam('offset');
+        $offset = empty($offset) ? 0 : $offset;
+        
+        if ($offset >= 0 && $pageSize > 0) {
+            $finalOrderList = array_slice($finalOrderList, $offset, $pageSize);
+        }
+
+        $wellFormedOrderList = array();
+        foreach ($finalOrderList as $order) {
+            $wellFormedOrderList[] = $this->buildOrderDetail($order);
+        }
+        
+        return $wellFormedOrderList;
     }
     
     public function updateStatus($userId, $orderId, $status)
@@ -250,5 +267,37 @@ class Business_Order
         $res = $this->orderModel->deleteOrder($order['order_id']);
 
         return $res;
+    }
+
+    public function buildOrderDetail($order)
+    {
+        $brand = $this->brandService->getBrandInfo($order['user_id']);
+        $order['brand_name'] = $brand['brand_name'];
+
+        $collection = $this->collectionService->getCollectionInfo($order['user_id'], $order['collection_id']);
+        $order['collection_name'] = $collection['name'];
+        $order['currency'] = $collection['currency'];
+        $order['cover_image_medium'] = $collection['cover_image_medium'];
+
+        $productions = array();
+        $productionDetail = json_decode($order['production_detail']);
+        foreach ($productionDetail as $productionId => $detail) {
+            $production = $this->productionService->getProduction($order['user_id'], $productionId);
+            $productions[$productionId] = array(
+                'style_num' => $production['style_num'],
+                'name' => $production['name'],
+                'whole_price' => $production['whole_price'],
+                'retail_price' => $production['retail_price'],
+                'size_region' => $production['size_region'],
+                'size_code_all' => $production['size_code'],
+                'size_color_all' => $production['color'],
+                'image_url' => $production['image_url'],
+                'detail' => $detail,
+            );
+        }
+
+        $order['productions'] = $productions;
+
+        return $order;
     }
 }

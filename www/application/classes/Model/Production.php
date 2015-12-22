@@ -13,11 +13,12 @@ class Model_Production
      *
      * @return int
      */
-    public function addProduction($userId, $name, $category, $collection, $styleNum, $wholePrice, $rtlPrice, $sizeRegion, $sizeCode, $color, $madeIn, $material, $careIns, $imagePaths)
+    public function addProduction($userId, $brandId, $name, $category, $collection, $styleNum, $wholePrice, $rtlPrice, $sizeRegion, $sizeCode, $color, $madeIn, $material, $careIns, $imagePaths)
     {
         $result = DB::insert('production')
                     ->columns(array(
                         'user_id',
+                        'brand_id',
                         'name',
                         'category',
                         'collection_id',
@@ -35,6 +36,7 @@ class Model_Production
                     ))
                     ->values(array(
                         $userId,
+                        $brandId,
                         $name,
                         $category,
                         $collection,

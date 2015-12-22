@@ -110,6 +110,7 @@ class Business_Brand
         $pageSize = empty($pageSize) ? 0 : $pageSize;
         $offset = Request::current()->getParam('offset');
         $offset = empty($offset) ? 0 : $offset;
+        
         $res = array_slice($res, $offset, $pageSize);
         
         return $res;

@@ -58,7 +58,7 @@ class Business_Production
             $imagePathsFinalArr[] = $realPathFile;
         }
         $imagePaths = json_encode($imagePathsFinalArr);
-        $productionId = $this->productionModel->addProduction($userId, $name, $category, $collectionId, $styleNum, $wholePrice, $rtlPrice, $sizeRegion, $sizeCode, $color, $madeIn, $material, $careIns, $imagePaths);
+        $productionId = $this->productionModel->addProduction($userId, $collection['brand_id'], $name, $category, $collectionId, $styleNum, $wholePrice, $rtlPrice, $sizeRegion, $sizeCode, $color, $madeIn, $material, $careIns, $imagePaths);
         return $productionId;
     }
     

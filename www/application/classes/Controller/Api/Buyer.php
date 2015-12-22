@@ -14,8 +14,8 @@ class Controller_Api_Buyer extends Controller_BaseReqLogin
     {
         $userId  = $this->opUser['id'];
 
-        $shopId  = trim(Request::current()->query('shopIdList'));
-        $brandId = (int)trim(Request::current()->query('brandId'));
+        $shopId  = trim(Request::current()->getParam('shopIdList'));
+        $brandId = (int)trim(Request::current()->getParam('brandId'));
        
         $res = $this->buyerService->batchApply($userId, $shopId, $brandId);
         
@@ -102,10 +102,10 @@ class Controller_Api_Buyer extends Controller_BaseReqLogin
         ));
     }
 
-    public function getShopInApplying()
+    public function action_getShopInApplying()
     {
         $userId = $this->opUser['id'];
-        $brandId = Request::current()->query('brandId');
+        $brandId = Request::current()->getParam('brandId');
         
         $res = $this->buyerService->getShopInApplying($userId, $brandId);
 
@@ -119,9 +119,9 @@ class Controller_Api_Buyer extends Controller_BaseReqLogin
     public function action_getAuthedShop()
     {
         $userId = $this->opUser['id'];
-        $collectionId = Request::current()->getParam('collectionId');
+        $collectionId = Request::current()->getParam('brandId');
         
-        $res = $this->buyerService->getAuthedShop($userId, $collectionId);
+        $res = $this->buyerService->getAuthedShop($userId, $brandId);
 
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
@@ -130,12 +130,26 @@ class Controller_Api_Buyer extends Controller_BaseReqLogin
         ));
     }
 
-    public function getShopWhichCanApply()
+    public function action_getShopWhichCanApply()
     {
         $userId = $this->opUser['id'];
-        $brandId = Request::current()->query('brandId');
+        $brandId = Request::current()->getParam('brandId');
         
         $res = $this->buyerService->getShopWhichCanApply($userId, $brandId);
+
+        echo json_encode(array(
+            'status' => STATUS_SUCCESS,
+            'msg'    => '',
+            'data'   => $res,
+        ));
+    }
+
+    public function action_getAuthedShopByCollection()
+    {
+        $userId = $this->opUser['id'];
+        $collectionId = Request::current()->getParam('collectionId');
+        
+        $res = $this->buyerService->getAuthedShopByCollection($userId, $collectionId);
 
         echo json_encode(array(
             'status' => STATUS_SUCCESS,

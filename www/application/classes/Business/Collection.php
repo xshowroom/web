@@ -142,7 +142,9 @@ class Business_Collection
     {
         list($realPathFile, $mediumPathFile, $smallPathFile) = $this->uploadService->createThreeImage($imagePath);
         
-        $collectionId = $this->collectionModel->addCollection($userId, $name, $category, $mode, $season, $order, $currency, $deadline, $delivery, $description, $realPathFile, $mediumPathFile, $smallPathFile);
+        $brand = $this->brandModel->getByUserId($userId);
+
+        $collectionId = $this->collectionModel->addCollection($userId, $brand['id'], $name, $category, $mode, $season, $order, $currency, $deadline, $delivery, $description, $realPathFile, $mediumPathFile, $smallPathFile);
         
         return $collectionId;
     }

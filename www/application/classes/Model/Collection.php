@@ -59,11 +59,12 @@ class Model_Collection
      * @param int $roleType
      * @return int
      */
-    public function addCollection($userId, $name, $category, $mode, $season, $miniOrder, $currency, $deadline, $deliveryDate, $description, $imageUrl,$imageMediumUrl,$imageSmallUrl)
+    public function addCollection($userId, $brandId, $name, $category, $mode, $season, $miniOrder, $currency, $deadline, $deliveryDate, $description, $imageUrl,$imageMediumUrl,$imageSmallUrl)
     {
         $result = DB::insert('collection')
                     ->columns(array(
                         'user_id',
+                        'brand_id',
                         'name',
                         'category',
                         'mode',
@@ -82,6 +83,7 @@ class Model_Collection
                     ))
                     ->values(array(
                         $userId,
+                        $brandId.
                         $name,
                         $category,
                         $mode,

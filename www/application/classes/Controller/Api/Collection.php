@@ -61,7 +61,7 @@ class Controller_Api_Collection extends Controller_BaseReqLogin
     
     public function action_modify()
     {
-        $userId     = $_SESSION['opUser']['id'];
+        $userId     = $this->opUser['id'];
         $collectionId = Request::current()->getParam('id');
         $name       = Request::current()->getParam('name');
         $category   = Request::current()->getParam('category');
