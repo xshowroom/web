@@ -163,13 +163,17 @@ class Business_Order
         }
 
         //$relation = $this->buyerService->getRelation($userId, $collection['user_id']);
-        //$shop = $this->shopService->getShopById($userId, $relation['shop_id']);
+        $shop = $this->shopService->getShopById($userId, $shopId);
+
+        $user = $this->userService->getUserById($userId);
 
         $order = array(
             'orderId' => $this->getOrderId(),
             'buyerId' => $userId,
+            'buyerName' =>$user['dispaly_name'],
             'userId' => $collection['user_id'],
-            'shopId' => $shopId,
+            'shopId' => $shopId
+            'shopName' => $shop['name'],
             'brandId' => $collection['brand_id'],
             'collectionId' => $collectionId,
             'productionDetail' => $productionDetail,
@@ -232,18 +236,17 @@ class Business_Order
             $orderList = $this->orderModel->getByBuyerId($userId);
         }
         
-        if (empty($status)) {
-            return $orderList;    
-        }
-        
         $finalOrderList = array();
-        
-        foreach ($orderList as $order) {
-            if ($order['order_status'] == $status) {
-                $finalOrderList[] = $order;
-            }
+        if (!empty($status)) {
+            foreach ($orderList as $order) {
+                if ($order['order_status'] == $status) {
+                    $finalOrderList[] = $order;
+                }
+            }    
+        } else {
+            $finalOrderList = $orderList;
         }
-
+        
         $pageSize = Request::current()->getParam('pageSize');
         $pageSize = empty($pageSize) ? 0 : $pageSize;
         $offset = Request::current()->getParam('offset');
@@ -352,6 +355,26 @@ class Business_Order
 
         return $res;
     }*/
+
+    public function updateShipInfo($userId, $orderId, $type, $shipNo, $shipAmount)
+    {
+        if ($type != Model_User::TYPE_USER_BRAND) {
+            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+
+        $order = $this->orderModel->getById($orderId);
+
+        // 品牌用户拿别人订单报错
+        if ($order['user_id'] != $userId) {
+            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+
+        $res = $this->orderModel->updateShipInfo($orderId, $shipNo, $shipAmount);
+
+        return $res;
+    }
 
     public function buildOrderDetail($order)
     {

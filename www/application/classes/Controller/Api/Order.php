@@ -145,6 +145,24 @@ class Controller_Api_Order extends Controller_BaseReqLogin
         ));
     }
 
+    public function action_updateShipInfo()
+    {
+        $userId = $this->opUser['id'];
+        $type = $this->opUser['role_type'];
+        $orderId = Request::current()->getParam('orderId');
+        $shipNo = Request::current()->getParam('shipNo');
+        $shipAmount = Request::current()->getParam('shipAmount');
+
+
+        $res = $this->orderService->updateShipInfo($userId, $orderId, $type, $shipNo, $shipAmount);       
+        
+        echo json_encode(array(
+            'status' => STATUS_SUCCESS,
+            'msg'   => '',
+            'data'  => $res,
+        ));
+    }
+
     /*public function action_deleteOrder()
     {
         $userId = $this->opUser['id'];
