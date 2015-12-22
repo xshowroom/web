@@ -43,7 +43,7 @@ return array_merge(
         'global_navigation_top_guest__SHOP' => '选货',
         'global_navigation_top_guest__DISCOVER' => '探索',
         'global_navigation_top_guest__PRESS' => '资讯',
-        'global_navigation_top_guest__CONTACT' => '联系',
+        'global_navigation_top_guest__ABOUT' => '关于',
     ),
     /**
      * global_navigation_top_brand.php & global_navigation_top_buyer.php
