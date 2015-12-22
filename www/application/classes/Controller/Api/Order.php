@@ -103,8 +103,9 @@ class Controller_Api_Order extends Controller_BaseReqLogin
     {
         $userId = $this->opUser['id'];
         $orderId = Request::current()->getParam('orderId');
+        $type = $this->opUser['role_type'];
 
-        $res = $this->orderService->getOrder($userId, $orderId);       
+        $res = $this->orderService->getOrder($userId, $orderId, $type);       
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
@@ -131,10 +132,11 @@ class Controller_Api_Order extends Controller_BaseReqLogin
     public function action_updateStatus()
     {
         $userId = $this->opUser['id'];
+        $type = $this->opUser['role_type'];
         $orderId = Request::current()->getParam('orderId');
         $status = Request::current()->getParam('orderStatus');
 
-        $res = $this->orderService->updateStatus($userId, $orderId, $status);       
+        $res = $this->orderService->updateStatus($userId, $orderId, $status, $type);       
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
