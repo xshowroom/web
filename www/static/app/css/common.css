@@ -8,7 +8,6 @@ body {
 	font-family: MontserratRegular, "Microsoft Yahei", Helvetica, sans-serif !important;
 	color: #666;
 }
-
 /* 默认bootstrap样式覆盖 */
 .container{
 	min-width: 1200px;
@@ -191,6 +190,9 @@ a.active:before{
 }
 .alert ul li{
 	margin: 5px 0;
+}
+.modal-open{
+	overflow: auto;
 }
 /* 顶部语言、货币、用户信息导航 */
 .setting-info {
