@@ -10,7 +10,7 @@ class Business_Order
     public $buyerService;
     public $shopService;
     public $brandService;
-    public $userService;
+    public $userModel;
 
     public function __construct()
     {
@@ -20,7 +20,7 @@ class Business_Order
         $this->buyerService = new Business_Buyer();
         $this->shopService = new Business_Shop();
         $this->brandService = new Business_Brand();
-        $this->userService = new Business_User();
+        $this->userModel = new Model_User();
     }
 
     public function addToCart($userId, $productionId)
@@ -167,12 +167,12 @@ class Business_Order
         //$relation = $this->buyerService->getRelation($userId, $collection['user_id']);
         $shop = $this->shopService->getShopById($userId, $shopId);
 
-        $user = $this->userService->getUserById($userId);
-
+        $user = $this->userModel->getAttrByUserId($userId);
+		
         $order = array(
             'orderId' => $this->getOrderId(),
             'buyerId' => $userId,
-            'buyerName' =>$user['dispaly_name'],
+            'buyerName' =>$user['display_name'],
             'userId' => $collection['user_id'],
             'shopId' => $shopId,
             'shopName' => $shop['name'],
