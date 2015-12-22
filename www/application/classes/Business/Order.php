@@ -368,14 +368,14 @@ class Business_Order
         foreach ($productionDetail as $productionId => $detail) {
             $production = $this->productionService->getProduction($order['user_id'], $productionId);
             $productions[$productionId] = array(
-                'style_num' => $production['style_num'],
+                'styleNum' => $production['style_num'],
                 'name' => $production['name'],
-                'whole_price' => $production['whole_price'],
-                'retail_price' => $production['retail_price'],
-                'size_region' => $production['size_region'],
-                'size_code_all' => $production['size_code'],
-                'size_color_all' => $production['color'],
-                'image_url' => $production['image_url'],
+                'wholePrice' => (float)$production['whole_price'],
+                'retailPrice' => (float)$production['retail_price'],
+                'sizeRegion' => $production['size_region'],
+                'sizeCode' => json_decode($production['size_code']),
+                'color' => json_decode($production['color']),
+                'image' => $production['image_url'][0],
                 'detail' => $detail,
             );
         }

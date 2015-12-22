@@ -94,7 +94,7 @@
 .order-product-list .order-product-item .product-cover{
 	height: 250px;
 	position: relative;
-	width: 30%;
+	width: 20%;
 	float: left;
 }
 .order-product-list .order-product-item .product-cover > img{

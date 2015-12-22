@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="col-xs-2">
                 	<div class="order-cover">
-                 		<img ng-src="/static/app/images/shop-brand-1.png">
+                 		<img ng-src="/{{order.cover_image_medium}}">
                  	</div>
                 </div>
                 <div class="col-xs-10">
@@ -42,7 +42,7 @@
                  		<span>SUBMITTED DATE:</span><span>{{order.buy_time}}</span>
                  	</div>
                  	<div class="col-xs-12 order-detail">
-                 		<span>TOTAL AMOUNT:</span><span>${{order.total_amount}}</span>
+                 		<span>TOTAL AMOUNT:</span><span>{{order.currency}}{{order.total_amount}}</span>
                  	</div>
                  	<div class="col-xs-12 order-detail">
                  		<span>DELIVERY ADDRESS:</span><span>{{order.shop_address}}</span>
@@ -108,7 +108,7 @@
 						<h3>PRODUCTS</h3>
 					</div>
 					<div class="order-product-list">
-						<div class="order-product-item">
+						<div class="order-product-item" ng-repeat="(productId, product) in order.productions">
 							<div class="product-cover">
 								<img ng-src="/{{product.image}}" />
 							</div>
@@ -118,10 +118,10 @@
 									<span>Style Numnber:</span><span>{{::product.styleNum}}</span>
 								</div>
 								<div>
-									<span>Retail Price:</span><span><?=$collection['currency']?>{{::product.retailPrice}}</span>
+									<span>Retail Price:</span><span>{{::product.currency}}{{::product.retailPrice}}</span>
 								</div>
 								<div>
-									<span>Whole Price:</span><span><?=$collection['currency']?>{{::product.wholePrice}}</span>
+									<span>Whole Price:</span><span>{{::product.currency}}{{::product.wholePrice}}</span>
 								</div>
 								<div>
 									<span>Size Region:</span><span>{{::product.sizeRegion}}</span>
@@ -140,8 +140,7 @@
 									<tr ng-repeat="color in product.color">
 										<td>{{::color.name}}</td>
 										<td ng-repeat="(size, value) in product.sizeCode">
-											<input type="text" ng-model="quantities[product.id][color.name][size]"
-												ng-keyup="validNumber(product.id, color.name, size);">
+											{{::product.detail[color.name][size]}}
 										</td>
 										<td></td>
 									</tr>
@@ -149,9 +148,9 @@
 								<tfoot>
 									<tr>
 										<td>QUANTITY</td>
-										<td>{{getQuantity(product.id)}}</td>
-										<td colspan="{{product.size.length-1}}"></td>
-										<td>AMOUNT: <?=$collection['currency']?>{{getAmount(product.id, product.wholePrice)}}</td>
+										<td>{{::product.quantity}}</td>
+										<td colspan="{{product.size.length - 1}}"></td>
+										<td>AMOUNT: {{::order.currency}}{{::(product.quantity * product.wholePrice)}}</td>
 									</tr>
 								</tfoot>
 							</table>
@@ -159,10 +158,10 @@
 					</div>
 					<div class="order-total-info">
 						<div>
-							<span>TOTAL QUANTITY: </span> <span>{{getTotalQuantity()}}</span>
+							<span>TOTAL QUANTITY: </span> <span>{{order.quantity}}</span>
 						</div>
 						<div class="text-right">
-							<span>TOTAL AMOUNT: </span> <span><?=$collection['currency']?>{{getTotalAmount()}}</span>
+							<span>TOTAL AMOUNT: </span> <span>{{order.currency}}{{order.total_amount}}</span>
 						</div>
 					</div>	
 				</div>
