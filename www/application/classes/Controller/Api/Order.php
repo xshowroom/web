@@ -143,7 +143,7 @@ class Controller_Api_Order extends Controller_BaseReqLogin
         ));
     }
 
-    public function action_deleteOrder()
+    /*public function action_deleteOrder()
     {
         $userId = $this->opUser['id'];
         $orderId = Request::current()->getParam('orderId');
@@ -155,5 +155,5 @@ class Controller_Api_Order extends Controller_BaseReqLogin
             'msg'   => '',
             'data'  => $res,
         ));
-    }
+    }*/
 }
