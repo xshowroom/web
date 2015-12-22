@@ -242,7 +242,7 @@ class Business_Order
         
         foreach ($orderList as $order) {
             if ($order['order_status'] == $status) {
-                $finalOrderList[] = $this->buildOrderDetail($order);
+                $finalOrderList[] = $order;
             }
         }
 
