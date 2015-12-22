@@ -239,7 +239,7 @@ class Business_Order
         $finalOrderList = array();
         
         foreach ($orderList as $order) {
-            if ($order['order_status'] == $status) {
+            if ($order['status'] == $status) {
                 $finalOrderList[] = $order;
             }
         }
