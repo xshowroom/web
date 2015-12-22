@@ -8,11 +8,13 @@
 class Model_Order
 {
     const ORDER_STATUS_PENDING      = 0;
-    const ORDER_STATUS_DEPOSITED    = 1;
-    const ORDER_STATUS_PREPARING    = 2;
-    const ORDER_STATUS_PAYBALANCE   = 3;
-    const ORDER_STATUS_SHIPPED      = 4;
-    const ORDER_STATUS_COMPLETE     = 5;
+    const ORDER_STATUS_CONFIRMED    = 1;
+    const ORDER_STATUS_DEPOSITED    = 2;
+    const ORDER_STATUS_PREPARING    = 3;
+    const ORDER_STATUS_PAYBALANCE   = 4;
+    const ORDER_STATUS_SHIPPED      = 5;
+    const ORDER_STATUS_COMPLETE     = 6;
+    const ORDER_STATUS_FULLPAYMENT  = 7;
     
     public function addToCart($userId, $collectionId, $productionId)
     {
@@ -147,7 +149,7 @@ class Model_Order
         return $result;
     }
 
-    public function deleteOrder($orderId)
+    /*public function deleteOrder($orderId)
     {
         $result = DB::update('order')
                     ->set(array(
@@ -157,7 +159,7 @@ class Model_Order
                     ->execute();
         
         return $result;
-    }
+    }*/
 
     public function getByBuyerId($buyerId)
     {

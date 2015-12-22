@@ -204,9 +204,19 @@ class Business_Order
     }
 
     public function getOrder($userId, $orderId)
-    {
+    {  
         $order = $this->orderModel->getById($orderId);
-        if ($order['buyer_id'] != $userId) {
+
+        $type = $this->opUser['role_type'];
+
+        // 品牌用户拿别人订单报错
+        if ($type == Model_User::TYPE_USER_BRAND && $order['user_id'] != $userId) {
+            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        } 
+
+        // 买手拿别人订单报错
+        if ($type == Model_User::TYPE_USER_BUYER && $order['buyer_id'] != $userId) {
             $errorInfo = Kohana::message('message', 'AUTH_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
@@ -224,14 +234,14 @@ class Business_Order
             $orderList = $this->orderModel->getByBuyerId($userId);
         }
         
-        if (empty($status) || $status === '') {
+        if (empty($status)) {
             return $orderList;    
         }
         
         $finalOrderList = array();
         
         foreach ($orderList as $order) {
-            if ($order['status'] == $status) {
+            if ($order['order_status'] == $status) {
                 $finalOrderList[] = $this->buildOrderDetail($order);
             }
         }
@@ -255,19 +265,97 @@ class Business_Order
     
     public function updateStatus($userId, $orderId, $status)
     {
+        $type = $this->opUser['role_type'];
+
         $order = $this->getOrder($userId, $orderId);
+        $collection = $this->collectionService->getCollectionInfo($order['user_id'], $order['collection_id']);
+        $isInStock = ($collection['mode'] == 'dropdown__COLLECTION_MODE__STOCK') ? true : false;
+
+        switch ($status) {
+            // 订单状态不会被改成pending
+            case Model_Order::ORDER_STATUS_PENDING:
+                break;
+            // confirmed状态只能管理员修改&&前置状态必须是pending
+            case Model_Order::ORDER_STATUS_CONFIRMED:
+                if ($type != Model_User::TYPE_USER_ADMIN ||
+                    $order['order_status'] != Model_Order::ORDER_STATUS_PENDING) {
+                    $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+                    throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);           
+                }    
+                break;
+            // deposited状态只能是品牌商修改&&前置状态必须是confirmed&&现货不会出现该状态
+            case Model_Order::ORDER_STATUS_DEPOSITED:
+                if ($type != Model_User::TYPE_USER_BRAND ||
+                    $order['order_status'] != Model_Order::ORDER_STATUS_CONFIRMED ||
+                    $isInStock) {
+                    $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+                    throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);           
+                }    
+                break;
+            // preparing状态只能是品牌商修改&&前置状态可能为deposited或者fullpayment(现货)
+            case Model_Order::ORDER_STATUS_PREPARING:
+                if ($type != Model_User::TYPE_USER_BRAND ||
+                    ($isInStock && $order['status'] != Model_Order::ORDER_STATUS_FULLPAYMENT) ||
+                    (!$isInStock && $order['status'] != Model_Order::ORDER_STATUS_DEPOSITED)) {
+                    $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+                    throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+                }
+                break;
+            // paybalance状态只能是品牌商修改&&前置状态必须是preparing&&现货不会出现该状态
+            case Model_Order::ORDER_STATUS_PAYBALANCE:
+                if ($type != Model_User::TYPE_USER_BRAND ||
+                    $order['order_status'] != Model_Order::ORDER_STATUS_PREPARING ||
+                    $isInStock) {
+                    $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+                    throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);           
+                }    
+                break;
+            // shipped状态只能是品牌商修改&&前置状态可能为preparing(现货)或者paybalance
+            case Model_Order::ORDER_STATUS_SHIPPED:
+                if ($type != Model_User::TYPE_USER_BRAND ||
+                    ($isInStock && $order['status'] != Model_Order::ORDER_STATUS_PREPARING) ||
+                    (!$isInStock && $order['status'] != Model_Order::ORDER_STATUS_PAYBALANCE)) {
+                    $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+                    throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+                }   
+                break;
+            // completed状态只能买手修改&&前置状态必须是pending
+            case Model_Order::ORDER_STATUS_COMPLETED:
+                if ($type != Model_User::TYPE_USER_BUYER ||
+                    $order['order_status'] != Model_Order::ORDER_STATUS_SHIPPED) {
+                    $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+                    throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);           
+                }    
+                break;
+            // fullpayment状态只能是品牌商修改&&前置状态必须是confirmed&&非现货不会出现该状态
+            case Model_Order::ORDER_STATUS_FULLPAYMENT:
+                if ($type != Model_User::TYPE_USER_BRAND ||
+                    $order['order_status'] != Model_Order::ORDER_STATUS_CONFIRMED ||
+                    !$isInStock) {
+                    $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+                    throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);           
+                }    
+                break;
+
+            // 其他情况
+            default:
+                $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+                throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+                break;
+        }
+
         $res = $this->orderModel->updateStatus($order['order_id'], $status);
 
         return $res;
     }
 
-    public function deleteOrder($userId, $orderId)
+    /*public function deleteOrder($userId, $orderId)
     {
-        $order = $this->getOrder($userId, $orderId);
+        $order = $this->getOrder($orderId);
         $res = $this->orderModel->deleteOrder($order['order_id']);
 
         return $res;
-    }
+    }*/
 
     public function buildOrderDetail($order)
     {
