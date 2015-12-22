@@ -579,6 +579,37 @@ return array_merge(
         'buyer_cart__btn_GENERATE' => '生成订单',
     ),
     /**
+     * order_create.php
+     */
+    array(
+        'order_create__PRODUCTS' => '产品详情:',
+
+        'order_create__DESC_01' => '该产品系列购物满',
+        'order_create__DESC_02' => '',
+        'order_create__DESC_03' => '才能满足最小下单条件 ',
+        'order_create__btn_VIEW_DETAIL' => '查看详情',
+
+        'order_create__STYLE_NUMBER' => '产品货号:',
+        'order_create__RETAIL_PRICE' => '零售价:',
+        'order_create__WHOLE_PRICE' => '批发价:',
+        'order_create__SIZE_REGION' => '尺码地区:',
+
+        'order_create__btn_REMOVE' => '删除',
+
+        'order_create__ORDER_DETAIL' => '订单详情',
+        'order_create__CODE_SIZE' => '尺码/尺寸',
+        'order_create__QUANTITY' => '数量',
+        'order_create__AMOUNT' => '小计:',
+
+        'order_create__TOTAL_QUANTITY' => '产品总数:',
+        'order_create__TOTAL_AMOUNT' => '产品总价:',
+
+        'order_create__ORDER_SUMMARY' => '订单总览',
+        'order_create__PRODUCTS_COUNT' => '产品类别:',
+
+        'order_create__btn_CHECKOUT' => '生成订单',
+    ),
+    /**
      * user_message.php & user_message_detail.php
      */
     array(

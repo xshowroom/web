@@ -22,7 +22,7 @@
 			<div class="row">
 				<div class="col-xs-8 cart-details">
 					<div class="cart-details-header">
-						<h2 class="cart-details-title">PRODUCT IN CART</h2>
+						<h2 class="cart-details-title"><?=__("order_create__PRODUCTS")?></h2>
 					</div>
 					<div class="cart-product-list">
 						<div class="cart-collection-info">
@@ -31,9 +31,9 @@
 							</div>
 							<div class="col-xs-6 text-right" ng-if="getRestAmount() > 0">
 								<p class="cart-tips">
-									ADD <span class="rest-amount"><?=$collection['currency']?>{{getRestAmount()}}</span>
-									of this collection to<br />qualify for minimum order. <a
-										href="/collection/<?=$collection['id']?>">View Detail</a>
+									<?=__("order_create__DESC_01")?> <span class="rest-amount"><?=$collection['currency']?>{{getRestAmount()}}</span>
+									<?=__("order_create__DESC_02")?> <br /><?=__("order_create__DESC_03")?> <a
+										href="/collection/<?=$collection['id']?>"><?=__("order_create__btn_VIEW_DETAIL")?></a>
 								</p>
 							</div>
 						</div>
@@ -44,26 +44,26 @@
 							<div class="product-info">
 								<h4>{{::product.name}}</h4>
 								<div>
-									<span>Style Numnber:</span><span>{{::product.styleNum}}</span>
+									<span><?=__("order_create__STYLE_NUMBER")?></span><span>{{::product.styleNum}}</span>
 								</div>
 								<div>
-									<span>Retail Price:</span><span><?=$collection['currency']?>{{::product.retailPrice}}</span>
+									<span><?=__("order_create__RETAIL_PRICE")?></span><span><?=$collection['currency']?>{{::product.retailPrice}}</span>
 								</div>
 								<div>
-									<span>Whole Price:</span><span><?=$collection['currency']?>{{::product.wholePrice}}</span>
+									<span><?=__("order_create__WHOLE_PRICE")?></span><span><?=$collection['currency']?>{{::product.wholePrice}}</span>
 								</div>
 								<div>
-									<span>Size Region:</span><span>{{::product.sizeRegion}}</span>
+									<span><?=__("order_create__SIZE_REGION")?></span><span>{{::product.sizeRegion}}</span>
 								</div>
 							</div>
 							<div class="product-actions">
-								<button class="btn btn-type-1" ng-click="removeProductFromCart(product)">Remove</button>
+								<button class="btn btn-type-1" ng-click="removeProductFromCart(product)"><?=__("order_create__btn_REMOVE")?></button>
 							</div>
 							<table class="table quantity-info">
-								<caption>ORDER DETAIL</caption>
+								<caption><?=__("order_create__ORDER_DETAIL")?></caption>
 								<thead>
 									<tr>
-										<th>CODE/SIZE</th>
+										<th><?=__("order_create__CODE_SIZE")?></th>
 										<th ng-repeat="(size, value) in product.sizeCode">{{::size}}</th>
 										<th></td>
 									</tr>
@@ -80,10 +80,10 @@
 								</tbody>
 								<tfoot>
 									<tr>
-										<td>QUANTITY</td>
+										<td><?=__("order_create__QUANTITY")?></td>
 										<td>{{getQuantity(product.id)}}</td>
 										<td colspan="{{product.size.length-1}}"></td>
-										<td>AMOUNT: <?=$collection['currency']?>{{getAmount(product.id, product.wholePrice)}}</td>
+										<td><?=__("order_create__AMOUNT")?><?=$collection['currency']?>{{getAmount(product.id, product.wholePrice)}}</td>
 									</tr>
 								</tfoot>
 							</table>
@@ -91,27 +91,27 @@
 					</div>
 					<div class="cart-total-info">
 						<div>
-							<span>TOTAL QUANTITY: </span> <span>{{getTotalQuantity()}}</span>
+							<span><?=__("order_create__TOTAL_QUANTITY")?></span> <span>{{getTotalQuantity()}}</span>
 						</div>
 						<div class="text-right">
-							<span>TOTAL AMOUNT: </span> <span><?=$collection['currency']?>{{getTotalAmount()}}</span>
+							<span><?=__("order_create__TOTAL_AMOUNT")?></span> <span><?=$collection['currency']?>{{getTotalAmount()}}</span>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-4">
 					<div class="check-out-box">
-						<h3 class="text-center">ORDER SUMMARY</h3>
+						<h3 class="text-center"><?=__("order_create__ORDER_SUMMARY")?></h3>
 						<div>
-							<span>PRODUCTS</span><span>{{products.length}}</span>
+							<span><?=__("order_create__PRODUCTS_COUNT")?></span><span>{{products.length}}</span>
 						</div>
 						<div>
-							<span>TOTAL QUANTITY</span><span>{{getTotalQuantity()}}</span>
+							<span><?=__("order_create__TOTAL_QUANTITY")?></span><span>{{getTotalQuantity()}}</span>
 						</div>
 						<div>
-							<span>TOTAL AMOUNT</span><span><?=$collection['currency']?>{{getTotalAmount()}}</span>
+							<span><?=__("order_create__TOTAL_AMOUNT")?></span><span><?=$collection['currency']?>{{getTotalAmount()}}</span>
 						</div>
 						<div class="text-center">
-							<button class="btn btn-type-2" ng-click="checkout();">CHECK OUT</button>
+							<button class="btn btn-type-2" ng-click="checkout();"><?=__("order_create__btn_CHECKOUT")?></button>
 						</div>
 					</div>
 				</div>

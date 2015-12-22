@@ -579,6 +579,37 @@ return array_merge(
         'buyer_cart__btn_GENERATE' => 'GENERATE ORDER',
     ),
     /**
+     * order_create.php
+     */
+    array(
+        'order_create__PRODUCTS' => 'PRODUCT DETAIL IN CART:',
+
+        'order_create__DESC_01' => 'ADD',
+        'order_create__DESC_02' => 'of this collection to',
+        'order_create__DESC_03' => 'qualify for minimum order. ',
+        'order_create__btn_VIEW_DETAIL' => 'VIEW DETAIL',
+
+        'order_create__STYLE_NUMBER' => 'STYLE NUMBER:',
+        'order_create__RETAIL_PRICE' => 'RETAIL PRICE:',
+        'order_create__WHOLE_PRICE' => 'WHOLE PRICE:',
+        'order_create__SIZE_REGION' => 'SIZE REGION:',
+
+        'order_create__btn_REMOVE' => 'REMOVE',
+
+        'order_create__ORDER_DETAIL' => 'ORDER DETAIL',
+        'order_create__CODE_SIZE' => 'CODE/SIZE',
+        'order_create__QUANTITY' => 'QUANTITY',
+        'order_create__AMOUNT' => 'AMOUNT:',
+
+        'order_create__TOTAL_QUANTITY' => 'TOTAL QUANTITY:',
+        'order_create__TOTAL_AMOUNT' => 'TOTAL AMOUNT:',
+
+        'order_create__ORDER_SUMMARY' => 'ORDER SUMMARY',
+        'order_create__PRODUCTS_COUNT' => 'PRODUCTS:',
+
+        'order_create__btn_CHECKOUT' => 'CHECKOUT',
+    ),
+    /**
      * brand_message.php.php
      */
     array(
