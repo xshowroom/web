@@ -203,11 +203,9 @@ class Business_Order
         return $orderId;
     }
 
-    public function getOrder($userId, $orderId)
+    public function getOrder($userId, $orderId, $type)
     {  
         $order = $this->orderModel->getById($orderId);
-
-        $type = $this->opUser['role_type'];
 
         // 品牌用户拿别人订单报错
         if ($type == Model_User::TYPE_USER_BRAND && $order['user_id'] != $userId) {
@@ -263,11 +261,9 @@ class Business_Order
         return $wellFormedOrderList;
     }
     
-    public function updateStatus($userId, $orderId, $status)
+    public function updateStatus($userId, $orderId, $status, $type)
     {
-        $type = $this->opUser['role_type'];
-
-        $order = $this->getOrder($userId, $orderId);
+        $order = $this->getOrder($userId, $orderId, $type);
         $collection = $this->collectionService->getCollectionInfo($order['user_id'], $order['collection_id']);
         $isInStock = ($collection['mode'] == 'dropdown__COLLECTION_MODE__STOCK') ? true : false;
 
