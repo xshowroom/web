@@ -6,6 +6,7 @@ class Controller_Brand extends Controller_BaseReqLogin
     public $userService;
     public $brandService;
     public $collectionService;
+    public $orderService;
 
     public function before()
     {
@@ -16,6 +17,7 @@ class Controller_Brand extends Controller_BaseReqLogin
         $this->userService = new Business_User();
         $this->brandService = new Business_Brand();
         $this->collectionService = new Business_Collection();
+        $this->orderService = new Business_Order();
     }
 
     public function action_profile()
@@ -32,11 +34,15 @@ class Controller_Brand extends Controller_BaseReqLogin
     {
         $view = View::factory('brand_dashboard');
         $view->set('user', $this->opUser);
-        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
-        $view->set('brandInfo', $this->brandService->getBrandInfo($this->opUser['id']));
+        $userId = $this->opUser['id'];
+        $view->set('userAttr', $this->userService->getUserAttr($userId));
+        $view->set('brandInfo', $this->brandService->getBrandInfo($userId));
         
-        $collectionList = $this->collectionService->getAllCollectionList($this->opUser['id']);
-        $view->set('collectionList', array_slice($collectionList, 0, 4));
+        $orderList = $this->orderService->getOrderList($userId, '', $this->opUser['role_type']);
+        $view->set('orderList', array_slice($orderList, 0, 4));
+        
+        $collectionList = $this->collectionService->getAllCollectionList($userId);
+        $view->set('collectionList', array_slice($collectionList, 0, 6));
         
         $this->response->body($view);
     }

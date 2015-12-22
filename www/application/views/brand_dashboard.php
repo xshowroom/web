@@ -52,6 +52,7 @@
                     </div>
                 </div>
             </div>
+            <?php if(empty($orderList)):?>
             <div class="row">
                 <div class="col-xs-12 text-center empty-warning">
                     <img src="/static/app/images/empty.png">
@@ -59,76 +60,29 @@
                     <span><?= __("brand_dashboard__ORDER_EMPTY_3"); ?></span>
                 </div>
             </div>
-            <div class="order-list-content row" ng-if="false">
+            <?php else: ?>
+            <div class="order-list-content row">
+            	<?php foreach($orderList as $order):?>
                 <div class="col-xs-3">
-                    <a target="_blank" href="#" class="order-item">
+                     <a target="_self" href="/order/<?=$order['order_id']?>" class="order-item">
                         <div class="order-images">
                             <img src="/static/app/images/shop-brand-1.png" class="order-item-image">
                             <img src="/static/app/images/shop-brand-1.png" class="order-item-sub-image">
                             <img src="/static/app/images/shop-brand-1.png" class="order-item-sub-image">
                         </div>
                         <div class="order-detail">
-                            <div>A14712391230</div>
-                            <div>Submitted 2015-09-01</div>
-                            <div>Order amount: $343</div>
+                            <div><?=$order['order_id']?></div>
+                            <div>Submitted <?=$order['buy_time']?></div>
+                            <div>Order amount: $<?=$order['total_amount']?></div>
                         </div>
                         <div class="order-status">
-                            <span>PENDING</span>
+                            <span><?=$order['status']?></span>
                         </div>
                     </a>
                 </div>
-                <div class="col-xs-3">
-                    <a target="_blank" href="#" class="order-item">
-                        <div class="order-images">
-                            <img src="/static/app/images/shop-brand-1.png" class="order-item-image">
-                            <img src="/static/app/images/shop-brand-1.png" class="order-item-sub-image">
-                            <img src="/static/app/images/shop-brand-1.png" class="order-item-sub-image">
-                        </div>
-                        <div class="order-detail">
-                            <div>A14712391230</div>
-                            <div>Submitted 2015-09-01</div>
-                            <div>Order amount: $343</div>
-                        </div>
-                        <div class="order-status">
-                            <span>PENDING</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xs-3">
-                    <a target="_blank" href="#" class="order-item">
-                        <div class="order-images">
-                            <img src="/static/app/images/shop-brand-1.png" class="order-item-image">
-                            <img src="/static/app/images/shop-brand-1.png" class="order-item-sub-image">
-                            <img src="/static/app/images/shop-brand-1.png" class="order-item-sub-image">
-                        </div>
-                        <div class="order-detail">
-                            <div>A14712391230</div>
-                            <div>Submitted 2015-09-01</div>
-                            <div>Order amount: $343</div>
-                        </div>
-                        <div class="order-status">
-                            <span>PENDING</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xs-3">
-                    <a target="_blank" href="#" class="order-item">
-                        <div class="order-images">
-                            <img src="/static/app/images/shop-brand-1.png" class="order-item-image">
-                            <img src="/static/app/images/shop-brand-1.png" class="order-item-sub-image">
-                            <img src="/static/app/images/shop-brand-1.png" class="order-item-sub-image">
-                        </div>
-                        <div class="order-detail">
-                            <div>A14712391230</div>
-                            <div>Submitted 2015-09-01</div>
-                            <div>Order amount: $343</div>
-                        </div>
-                        <div class="order-status">
-                            <span>PENDING</span>
-                        </div>
-                    </a>
-                </div>
+                <?php endforeach; ?>
             </div>
+             <?php endif; ?>
         </div>
     </section>
     <section class="row no-vertical-padding">

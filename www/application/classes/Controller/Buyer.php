@@ -5,6 +5,7 @@ class Controller_Buyer extends Controller_BaseReqLogin
 {
     public $userService;
     public $buyerService;
+    public $orderService;
     // public $brandService;
     // public $collectionService;
 
@@ -16,6 +17,7 @@ class Controller_Buyer extends Controller_BaseReqLogin
 
         $this->userService = new Business_User();
         $this->buyerService = new Business_Buyer();
+        $this->orderService = new Business_Order();
         // $this->brandService = new Business_Brand();
         // $this->collectionService = new Business_Collection();
     }
@@ -33,10 +35,15 @@ class Controller_Buyer extends Controller_BaseReqLogin
     {
         $view = View::factory('buyer_dashboard');
         $view->set('user', $this->opUser);
-        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
-        $view->set('authBrandList', array_slice($this->buyerService->getAuthBrandList($this->opUser['id']), 0, 6));
+        $userId = $this->opUser['id'];
+        $view->set('userAttr', $this->userService->getUserAttr($userId));
         
-        $storeList = $this->buyerService->getStoreList($this->opUser['id']);
+        $view->set('authBrandList', array_slice($this->buyerService->getAuthBrandList($userId), 0, 6));
+        
+        $orderList = $this->orderService->getOrderList($userId, null, $this->opUser['role_type']);
+        $view->set('orderList', array_slice($orderList, 0, 4));
+        
+        $storeList = $this->buyerService->getStoreList($userId);
         $view->set('storeList', array_slice($storeList, 0, 2));
         
         $this->response->body($view);
