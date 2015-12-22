@@ -10,6 +10,7 @@ class Business_Order
     public $buyerService;
     public $shopService;
     public $brandService;
+    public $userService;
 
     public function __construct()
     {
@@ -19,6 +20,7 @@ class Business_Order
         $this->buyerService = new Business_Buyer();
         $this->shopService = new Business_Shop();
         $this->brandService = new Business_Brand();
+        $this->userService = new Business_User();
     }
 
     public function addToCart($userId, $productionId)
