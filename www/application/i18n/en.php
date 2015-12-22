@@ -561,6 +561,24 @@ return array_merge(
         'buyer_dashboard__ACCOUNT_MANAGER_CONTRACT' => 'CONTRACT US'
     ),
     /**
+     * buyer_cart.php
+     */
+    array(
+        'buyer_cart__TITLE' => 'ALL COLLECTIONS IN CART',
+
+        'buyer_cart__NO_ITEM_01' => 'YOU HAVE NOTHING IN CART！',
+        'buyer_cart__NO_ITEM_02' => 'GO & EXPLORE BRANDS',
+
+        'buyer_cart__SEASON'=> 'SEASON:',
+        'buyer_cart__ORDER_MODE' => 'ORDER MODE:',
+        'buyer_cart__DEADLINE' => 'DEADLINE FOR ORDER:',
+        'buyer_cart__DELIVERY_DATE' => 'DELIVERY DATE:',
+        'buyer_cart__MIN_ORDER' => 'MIN ORDER:',
+        'buyer_cart__PRODUCTS' => 'PRODUCTS IN CART:',
+
+        'buyer_cart__btn_GENERATE' => 'GENERATE ORDER',
+    ),
+    /**
      * brand_message.php.php
      */
     array(

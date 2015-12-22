@@ -491,7 +491,6 @@ return array_merge(
         'product_index__modal__DELETE_btn_DELETE' => '删除',
     ),
     /**
-    /**
      * brand_collection.php
      */
     array(
@@ -560,6 +559,24 @@ return array_merge(
 
         'buyer_dashboard__ACCOUNT_MANAGER' => '在XSHOWROOM 我们拥有专属的品牌客户经理来帮助您介绍品牌, 与您共建商品集合, 并帮助您完成订单！',
         'buyer_dashboard__ACCOUNT_MANAGER_CONTRACT' => '联系我们'
+    ),
+    /**
+     * buyer_cart.php
+     */
+    array(
+        'buyer_cart__TITLE' => '购物车 - 您的商品系列',
+
+        'buyer_cart__NO_ITEM_01' => '您还没有添加任何的商品！',
+        'buyer_cart__NO_ITEM_02' => '现在就去选货吧！',
+
+        'buyer_cart__SEASON'=> '时尚季:',
+        'buyer_cart__ORDER_MODE' => '售卖模式:',
+        'buyer_cart__DEADLINE' => '下单截止日:',
+        'buyer_cart__DELIVERY_DATE' => '发货日期:',
+        'buyer_cart__MIN_ORDER' => '最小订单:',
+        'buyer_cart__PRODUCTS' => '产品详情:',
+
+        'buyer_cart__btn_GENERATE' => '生成订单',
     ),
     /**
      * user_message.php & user_message_detail.php
