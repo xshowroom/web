@@ -160,6 +160,10 @@ class Business_Production
     public function getFormedProdution($production)
     {
         $imageUrlList = json_decode($production['image_url'], true);
+        if (empty($imageUrlList)) {
+            $errorInfo = Kohana::message('message', 'STATUS_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
         $mediumImageUrlList = $smallImageUrlList = array();
         foreach ($imageUrlList as $url) {
             list($filename, $extension) = explode('.', $url);
