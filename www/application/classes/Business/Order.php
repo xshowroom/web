@@ -237,6 +237,7 @@ class Business_Order
         }
         
         $finalOrderList = array();
+        
         if (!empty($status)) {
             foreach ($orderList as $order) {
                 if ($order['order_status'] == $status) {

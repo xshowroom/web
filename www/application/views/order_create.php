@@ -47,10 +47,10 @@
 									<span><?=__("order_create__STYLE_NUMBER")?></span><span>{{::product.styleNum}}</span>
 								</div>
 								<div>
-									<span><?=__("order_create__RETAIL_PRICE")?></span><span><?=$collection['currency']?>{{::product.retailPrice}}</span>
+									<span><?=__("order_create__RETAIL_PRICE")?></span><span><?=$collection['currency']?>{{::product.retailPrice| number}}</span>
 								</div>
 								<div>
-									<span><?=__("order_create__WHOLE_PRICE")?></span><span><?=$collection['currency']?>{{::product.wholePrice}}</span>
+									<span><?=__("order_create__WHOLE_PRICE")?></span><span><?=$collection['currency']?>{{::product.wholePrice| number}}</span>
 								</div>
 								<div>
 									<span><?=__("order_create__SIZE_REGION")?></span><span>{{::product.sizeRegion}}</span>
@@ -81,9 +81,9 @@
 								<tfoot>
 									<tr>
 										<td><?=__("order_create__QUANTITY")?></td>
-										<td>{{getQuantity(product.id)}}</td>
+										<td>{{getQuantity(product.id) | number}}</td>
 										<td colspan="{{product.size.length-1}}"></td>
-										<td><?=__("order_create__AMOUNT")?><?=$collection['currency']?>{{getAmount(product.id, product.wholePrice)}}</td>
+										<td><?=__("order_create__AMOUNT")?><?=$collection['currency']?>{{getAmount(product.id, product.wholePrice) | number}}</td>
 									</tr>
 								</tfoot>
 							</table>
@@ -91,10 +91,10 @@
 					</div>
 					<div class="cart-total-info">
 						<div>
-							<span><?=__("order_create__TOTAL_QUANTITY")?></span> <span>{{getTotalQuantity()}}</span>
+							<span><?=__("order_create__TOTAL_QUANTITY")?></span> <span>{{getTotalQuantity()| number}}</span>
 						</div>
 						<div class="text-right">
-							<span><?=__("order_create__TOTAL_AMOUNT")?></span> <span><?=$collection['currency']?>{{getTotalAmount()}}</span>
+							<span><?=__("order_create__TOTAL_AMOUNT")?></span> <span><?=$collection['currency']?>{{getTotalAmount()| number}}</span>
 						</div>
 					</div>
 				</div>
@@ -102,13 +102,13 @@
 					<div class="check-out-box">
 						<h3 class="text-center"><?=__("order_create__ORDER_SUMMARY")?></h3>
 						<div>
-							<span><?=__("order_create__PRODUCTS_COUNT")?></span><span>{{products.length}}</span>
+							<span><?=__("order_create__PRODUCTS_COUNT")?></span><span>{{products.length| number}}</span>
 						</div>
 						<div>
-							<span><?=__("order_create__TOTAL_QUANTITY")?></span><span>{{getTotalQuantity()}}</span>
+							<span><?=__("order_create__TOTAL_QUANTITY")?></span><span>{{getTotalQuantity()| number}}</span>
 						</div>
 						<div>
-							<span><?=__("order_create__TOTAL_AMOUNT")?></span><span><?=$collection['currency']?>{{getTotalAmount()}}</span>
+							<span><?=__("order_create__TOTAL_AMOUNT")?></span><span><?=$collection['currency']?>{{getTotalAmount()| number}}</span>
 						</div>
 						<div class="text-center">
 							<button class="btn btn-type-2" ng-click="checkout();"><?=__("order_create__btn_CHECKOUT")?></button>
@@ -216,7 +216,7 @@
 									<td>{{record.styleNumber}}</td>
 									<td>{{record.size_code}}</td>
 									<td>{{record.color}}</td>
-									<td>{{record.buy_num}}</td>
+									<td>{{record.buy_num | number}}</td>
 								</tr>
 							</tbody>
 						</table>
@@ -226,13 +226,13 @@
 					<div class="check-out-box">
 						<h3 class="text-center">ORDER SUMMARY</h3>
 						<div>
-							<span>PRODUCTS</span><span>{{products.length}}</span>
+							<span>PRODUCTS</span><span>{{products.length| number}}</span>
 						</div>
 						<div>
-							<span>TOTAL QUANTITY</span><span>{{getTotalQuantity()}}</span>
+							<span>TOTAL QUANTITY</span><span>{{getTotalQuantity()| number}}</span>
 						</div>
 						<div>
-							<span>TOTAL AMOUNT</span><span><?=$collection['currency']?>{{getTotalAmount()}}</span>
+							<span>TOTAL AMOUNT</span><span><?=$collection['currency']?>{{getTotalAmount()| number}}</span>
 						</div>
 						<div class="text-center">
 							<button class="btn btn-type-2" ng-click="submitOrder();">SUBMIT</button>

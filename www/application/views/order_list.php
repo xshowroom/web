@@ -65,15 +65,15 @@
 								</div>
 								<div class="order-item-content">
 									<div class="order-info">
-					                  	<a class="image-link collection-cover">
+					                  	<a class="image-link collection-cover" ng-href="/collection/{{order.collection_id}}">
 					                  		<img ng-src="/static/app/images/shop-brand-1.png"/>
 					                  	</a>
 					                </div>
 				                  	<div class="order-info">
-			                  			<h3>record.brandName - record.collectionInfo.name</h3>
+			                  			<h3>{{order.brand_name}} - {{order.collection_name}}</h3>
 			                  			<div><span>STATUS:</span><span>{{order.status}}</span></div>
-						                <div><span>Total Amount:</span><span>${{order.total_amount}}</span></div>
-						                <div><span>Delivery Date:</span><span>{{order.delivery_date}}</span></div>
+						                <div><span>Total Amount:</span><span>${{order.total_amount | number}}</span></div>
+						                <div><span>Delivery Date:</span><span>{{order.delivery_date | limitTo: 10}}</span></div>
 			                  		</div>
 						            <div class="order-info">
 						                <a ng-href="/order/{{order.order_id}}" target="_self" class="btn btn-type-2">View Detail</a>

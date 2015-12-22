@@ -42,7 +42,7 @@
                  		<span>SUBMITTED DATE:</span><span>{{order.buy_time}}</span>
                  	</div>
                  	<div class="col-xs-12 order-detail">
-                 		<span>TOTAL AMOUNT:</span><span>{{order.currency}}{{order.total_amount}}</span>
+                 		<span>TOTAL AMOUNT:</span><span>{{order.currency}}{{order.total_amount | number}}</span>
                  	</div>
                  	<div class="col-xs-12 order-detail">
                  		<span>DELIVERY ADDRESS:</span><span>{{order.shop_address}}</span>
@@ -118,10 +118,10 @@
 									<span>Style Numnber:</span><span>{{::product.styleNum}}</span>
 								</div>
 								<div>
-									<span>Retail Price:</span><span>{{::product.currency}}{{::product.retailPrice}}</span>
+									<span>Retail Price:</span><span>{{::order.currency}}{{::product.retailPrice| number}}</span>
 								</div>
 								<div>
-									<span>Whole Price:</span><span>{{::product.currency}}{{::product.wholePrice}}</span>
+									<span>Whole Price:</span><span>{{::order.currency}}{{::product.wholePrice| number}}</span>
 								</div>
 								<div>
 									<span>Size Region:</span><span>{{::product.sizeRegion}}</span>
@@ -148,9 +148,9 @@
 								<tfoot>
 									<tr>
 										<td>QUANTITY</td>
-										<td>{{::product.quantity}}</td>
+										<td>{{::product.quantity| number}}</td>
 										<td colspan="{{product.size.length - 1}}"></td>
-										<td>AMOUNT: {{::order.currency}}{{::(product.quantity * product.wholePrice)}}</td>
+										<td>AMOUNT: {{::order.currency}}{{::(product.quantity * product.wholePrice)| number}}</td>
 									</tr>
 								</tfoot>
 							</table>
@@ -158,10 +158,10 @@
 					</div>
 					<div class="order-total-info">
 						<div>
-							<span>TOTAL QUANTITY: </span> <span>{{order.quantity}}</span>
+							<span>TOTAL QUANTITY: </span> <span>{{order.quantity| number}}</span>
 						</div>
 						<div class="text-right">
-							<span>TOTAL AMOUNT: </span> <span>{{order.currency}}{{order.total_amount}}</span>
+							<span>TOTAL AMOUNT: </span> <span>{{order.currency}}{{order.total_amount| number}}</span>
 						</div>
 					</div>	
 				</div>

@@ -43,7 +43,7 @@ return array_merge(
         'global_navigation_top_guest__SHOP' => 'SHOP',
         'global_navigation_top_guest__DISCOVER' => 'DISCOVER',
         'global_navigation_top_guest__PRESS' => 'PRESS',
-        'global_navigation_top_guest__CONTACT' => 'CONTACT',
+        'global_navigation_top_guest__ABOUT' => 'ABOUT',
     ),
     /**
      * global_navigation_top_brand.php & global_navigation_top_buyer.php

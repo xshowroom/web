@@ -139,7 +139,7 @@ angular.module(
 //		      		return $http.get('/api/buyer/getBrandList', {params: opts});
 		      	},
 		      	getAuthedShopList: function (opts) {
-		      		return PostRequester('buyer/getAuthedShop', opts);
+		      		return PostRequester('buyer/getAuthedShopByCollection', opts);
 //		    		return $http.get('/api/buyer/getAuthedShop', {params: opts});
 		    	}
    			};
