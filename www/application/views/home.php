@@ -143,7 +143,7 @@
 							</h3>
 							<p><?=__("home__BRANDS_DESC")?></p>
 							<div>
-								<a href="/guide#/brand" class="btn btn-type-1"><?=__("home__btn_VIEW_MORE")?></a>
+								<a href="<?=URL::site('guide#/brand');?>" class="btn btn-type-1"><?=__("home__btn_VIEW_MORE")?></a>
 							</div>
 						</div>
 					</div>
@@ -156,12 +156,12 @@
 							</h3>
 							<p><?=__("home__BUYERS_DESC")?></p>
 							<div>
-								<a href="/guide#/buyer" class="btn btn-type-1"><?=__("home__btn_VIEW_MORE")?></a>
+								<a href="<?=URL::site('guide#/buyer');?>" class="btn btn-type-1"><?=__("home__btn_VIEW_MORE")?></a>
 							</div>
 						</div>
 					</div>
 					<div class="col-xs-6">
-						<a href="/register/brand" class="register-link brand-register-link">
+						<a href="<?=URL::site('register/brand');?>" class="register-link brand-register-link">
 							<h4><?=__("home__BRANDS")?></h4>
 							<div>
 								<img src="/static/app/images/common-icon-star-white.png"/>
@@ -171,7 +171,7 @@
 						</a>
 					</div>
 					<div class="col-xs-6">
-						<a href="/register/buyer" class="register-link buyer-register-link">
+						<a href="<?=URL::site('register/buyer');?>" class="register-link buyer-register-link">
 							<h4><?=__("home__BUYERS")?></h4>
 							<div>
 								<img src="/static/app/images/common-icon-gift-white.png"/>
