@@ -79,8 +79,10 @@ class Model_Order
                     ->columns(array(
                         'order_id',
                         'buyer_id',
+                        'buyer_name'
                         'user_id',
                         'shop_id',
+                        'shop_name',
                         'brand_id',
                         'collection_id',
                         'production_detail',
@@ -101,8 +103,10 @@ class Model_Order
                     ->values(array(
                         $order['orderId'],
                         $order['buyerId'],
+                        $order['buyerName'],
                         $order['userId'],
                         $order['shopId'],
+                        $order['shopName'],
                         $order['brandId'],
                         $order['collectionId'],
                         $order['productionDetail'],
@@ -142,6 +146,19 @@ class Model_Order
         $result = DB::update('order')
                     ->set(array(
                         'order_status' => $status,
+                    ))
+                    ->where('order_id', '=', $orderId)
+                    ->execute();
+        
+        return $result;
+    }
+
+    public function updateStatus($orderId, $shipNo, $shipAmount)
+    {
+        $result = DB::update('order')
+                    ->set(array(
+                        'shipping_amount' => $shipAmount,
+                        'shipping_no' => $shipNo,
                     ))
                     ->where('order_id', '=', $orderId)
                     ->execute();
