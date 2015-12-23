@@ -121,6 +121,9 @@ class Business_Upload
                 $errorInfo = Kohana::message('message', 'IMAGE_ERROR');
                 throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
             }
+        } else {
+            $errorInfo = Kohana::message('message', 'IMAGE_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
     
         return array($realPathFile, $mediumPathFile, $smallPathFile);
