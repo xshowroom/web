@@ -12,7 +12,7 @@
 		<?php echo View::factory('common/global_setting_with_login', array('userAttr'=> $userAttr, 'user'=> $user)); ?>
 	</nav>
 	<nav class="row guest-navigation">
-        <?php echo View::factory('common/global_navigation_top_guest', array('currentPage' =>  'guide')); ?>
+        <?php echo View::factory('common/global_navigation_top_guest', array('currentPage' =>  'about')); ?>
 	</nav>
 	<section class="row about-banner">
 		<div class="container">
