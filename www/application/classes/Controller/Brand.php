@@ -38,11 +38,11 @@ class Controller_Brand extends Controller_BaseReqLogin
         $view->set('userAttr', $this->userService->getUserAttr($userId));
         $view->set('brandInfo', $this->brandService->getBrandInfo($userId));
         
-        $orderList = $this->orderService->getOrderList($userId, '', $this->opUser['role_type']);
+       	$orderList = $this->orderService->getOrderList($userId, null, $this->opUser['role_type']);
         $view->set('orderList', array_slice($orderList, 0, 4));
         
         $collectionList = $this->collectionService->getAllCollectionList($userId);
-        $view->set('collectionList', array_slice($collectionList, 0, 6));
+        $view->set('collectionList', array_slice($collectionList, 0, 4));
         
         $this->response->body($view);
     }

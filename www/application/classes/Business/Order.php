@@ -386,6 +386,7 @@ class Business_Order
 
         $collection = $this->collectionService->getCollectionInfo($order['user_id'], $order['collection_id']);
         $order['collection_name'] = $collection['name'];
+        $order['collection_mode'] = $collection['mode'];
         $order['currency'] = $collection['currency'];
         $order['cover_image_medium'] = $collection['cover_image_medium'];
 
