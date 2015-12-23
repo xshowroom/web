@@ -163,6 +163,22 @@ class Controller_Api_Order extends Controller_BaseReqLogin
         ));
     }
 
+    public function action_updateInvoice()
+    {
+        $userId = $this->opUser['id'];
+        $type = $this->opUser['role_type'];
+        $orderId = Request::current()->getParam('orderId');
+        $invoiceUrl = Request::current()->getParam('invoiceUrl');
+
+        $res = $this->orderService->updateInvoice($userId, $orderId, $type, $invoiceUrl);       
+        
+        echo json_encode(array(
+            'status' => STATUS_SUCCESS,
+            'msg'   => '',
+            'data'  => $res,
+        ));
+    }
+
     /*public function action_deleteOrder()
     {
         $userId = $this->opUser['id'];
