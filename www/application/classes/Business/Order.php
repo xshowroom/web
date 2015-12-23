@@ -410,4 +410,24 @@ class Business_Order
 
         return $order;
     }
+
+    public function updateInvoice($userId, $orderId, $type, $invoiceUrl)
+    {
+        if ($type != Model_User::TYPE_USER_BRAND) {
+            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+
+        $order = $this->orderModel->getById($orderId);
+
+        // 品牌用户拿别人订单报错
+        if ($order['user_id'] != $userId) {
+            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+
+        $res = $this->orderModel->updateInvoice($orderId, $invoiceUrl);
+
+        return $res;
+    }    
 }

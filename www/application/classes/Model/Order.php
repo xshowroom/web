@@ -166,6 +166,18 @@ class Model_Order
         return $result;
     }
 
+    public function updateInvoice($orderId, $invoiceUrl)
+    {
+        $result = DB::update('order')
+                    ->set(array(
+                        'invoice_url' => $invoiceUrl,
+                    ))
+                    ->where('order_id', '=', $orderId)
+                    ->execute();
+        
+        return $result;
+    }
+
     /*public function deleteOrder($orderId)
     {
         $result = DB::update('order')
