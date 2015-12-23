@@ -114,7 +114,7 @@ angular.module(
 				$q.all(promises).then(function(){
 					for(var i = 0; i < arguments[0].length; i++) {
 						var res = arguments[0][i];
-						var key = res.config.params.key;
+						var key = res.config.data.key;
 						if (res.data.status) {
 							$scope.step.validation[stepNumber][key] = true;
 							$scope.errorMsgs.push([key, 'DUPLICATION_ERROR']);
