@@ -245,7 +245,8 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button id='delete_inbox_msg' type="button" class="btn btn-type-2" ng-click="checkInvitation();">现在注册</button>
+					<a type="button" class="btn btn-type-1" href="<?=url::site()?>">返回首页</a>
+					<a type="button" class="btn btn-type-2" ng-click="checkInvitation();">现在注册</a>
 				</div>
 			</div>
 		</div>
