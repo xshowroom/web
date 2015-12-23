@@ -15,9 +15,9 @@ class Business_Upload
     {
     }
 
-    public function image()
+    public function imageAndPdf()
     {
-        // 图片上传需要设置上传超时和上传最大内存
+        // 上传需要设置上传超时和上传最大内存
         set_time_limit(self::TIME_LIMIT);
         ini_set('memory_limit', self::MEMORY_LIMIT);
          
@@ -26,7 +26,7 @@ class Business_Upload
             return null;
         }
         
-        // 处理图片上传
+        // 处理上传
         try {
             $file = $_FILES['file'];
             $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
@@ -121,6 +121,9 @@ class Business_Upload
                 $errorInfo = Kohana::message('message', 'IMAGE_ERROR');
                 throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
             }
+        } else {
+            $errorInfo = Kohana::message('message', 'IMAGE_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
     
         return array($realPathFile, $mediumPathFile, $smallPathFile);

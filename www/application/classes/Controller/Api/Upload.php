@@ -15,16 +15,30 @@ class Controller_Api_Upload extends Controller_Base
 
     public function action_image()
     {
-        $res = $this->uploadService->image();
+        $res = $this->uploadService->imageAndPdf();
         
         $status = empty($res) ? STATUS_ERROR : STATUS_SUCCESS;
         $msg    = empty($res) ? __(self::MSG_KEY_1) : __(self::MSG_KEY_2);
         
         echo json_encode(array(
             'status' => $status,
-            'msg'      => $msg,
+            'msg'    => $msg,
             'data'   => $res,
         ));
     }
 
-} // End Welcome
+    public function action_pdf()
+    {
+        $res = $this->uploadService->imageAndPdf();
+        
+        $status = empty($res) ? STATUS_ERROR : STATUS_SUCCESS;
+        $msg    = empty($res) ? __(self::MSG_KEY_1) : __(self::MSG_KEY_2);
+        
+        echo json_encode(array(
+            'status' => $status,
+            'msg'    => $msg,
+            'data'   => $res,
+        ));
+    }
+
+}
