@@ -276,7 +276,8 @@ class Business_Order
         switch ($status) {
             // 订单状态不会被改成pending
             case Model_Order::ORDER_STATUS_PENDING:
-                break;
+                $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+                throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
             // confirmed状态只能管理员修改&&前置状态必须是pending
             case Model_Order::ORDER_STATUS_CONFIRMED:
                 if ($type != Model_User::TYPE_USER_ADMIN ||
