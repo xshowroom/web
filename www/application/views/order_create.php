@@ -175,12 +175,11 @@
 						</div>
 						<div>
 							<div class="order-address-info">
-								<h5>SHIPPING ADDRESS</h5>
-								<div>Store Name</div>
-								<div>Buyer Name</div>
-								<div>Buyer Address</div>
-								<div>Zip Code</div>
-								<div>Phone</div>
+								<h5>{{order.store.name}}</h5>
+								<div><?=$userAttr['displayName']?></div>
+								<div>{{order.store.address}}</div>
+								<div>{{order.store.zip}}</div>
+								<div>{{order.store.telephone}}</div>
 							</div>
 							<div class="order-address-info">
 								<h5>PAYMENT OPTIONS</h5>
