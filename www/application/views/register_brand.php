@@ -6,6 +6,11 @@
 	<?php echo View::factory('common/global_libraries'); ?>
 	<link rel="stylesheet" type="text/css" href="/static/app/css/register_brand.css" />
 	<script type="text/javascript" src="/static/app/modules/register_brand.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#invite-modal').modal('show');
+		});
+	</script>
 </head>
 
 <body ng-controller="RegisterBrandCtrl" class="container-fluid">
@@ -221,5 +226,30 @@
 	<footer class="row footer-navigation">
         <?php echo View::factory('common/global_navigation_footer'); ?>
 	</footer>
+
+	<div class="modal" id="invite-modal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-labelledby="invite-modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<h4>Invitation Code for XShowroom? </h4>
+					<form>
+						<div class="form-group">
+							<p>XShowroom目前使用邀请注册的形式</p>
+							<p>如果您想使用XShowroom的功能</p>
+							<p>请联系: info@xxxxxx.com 来获得邀请码</p>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="invitation-code" placeholder="输入邀请码继续注册">
+							<label id="invite-error" hidden>邀请码错误</label>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button id='delete_inbox_msg' type="button" class="btn btn-type-2" ng-click="checkInvitation();">现在注册</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 </body>
 </html>
