@@ -7,14 +7,16 @@ class Controller_Order extends Controller_BaseReqLogin
     public $buyerService;
     public $productionService;
     public $collectionService;
+    public $orderModel;
 
     public function before()
     {
         parent::before();
         $this->userService = new Business_User();
         $this->buyerService = new Business_Buyer();
-        $this->productionService =new Business_Production();
-        $this->collectionService =new Business_Collection();
+        $this->productionService = new Business_Production();
+        $this->collectionService = new Business_Collection();
+        $this->orderModel = new Model_Order();
     }
 
     
@@ -25,7 +27,7 @@ class Controller_Order extends Controller_BaseReqLogin
         
         $view->set('user', $this->opUser);
         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
-        $view->set('orderId', $orderId);
+        $view->set('order', $this->orderModel->getById($orderId));
 
         $this->response->body($view);
     }

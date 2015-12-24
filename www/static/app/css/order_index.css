@@ -47,11 +47,15 @@
 	padding: 30px;
 }
 .order-status-list .order-status{
-	width: 13%;
-	margin-right: 4.4%;
+	width: 10%;
+	margin-right: 5%;
 	float: left;
 	text-align: center;
 	position: relative;
+}
+.order-status-list.stock-collection .order-status{
+	width: 13%;
+	margin-right: 4.4%;
 }
 .order-status-list .order-status:not(:last-child):after{
 	content: "······";
@@ -74,6 +78,17 @@
 .order-status-list .order-status.active{
 	color: #ca7379;
 }
+
+.order-status-actions {
+	margin-top: 15px;
+}
+.order-status-actions label{
+	line-height: 34px;
+}
+.order-status-actions .btn{
+	min-width: 100px;
+}
+
 
 
 .order-info-header{

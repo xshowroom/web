@@ -8,14 +8,15 @@
 angular.module(
     'xShowroom.order.index', 
     [
-     	'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services', 'mgcrea.ngStrap'
+     	'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services',
+     	'mgcrea.ngStrap', 'ui.uploader'
     ]
 )
 .controller(
     'OrderIndexCtrl',
     [
-        '$scope', '$modal', 'Order',
-        function ($scope, $modal, Order) {
+        '$scope', '$element', '$timeout', '$modal', 'Order', 'uiUploader',
+        function ($scope, $element, $timeout, $modal, Order, uiUploader) {
         	var init = function (){
         		Order.findOne({
         			orderId: $scope.orderId
@@ -24,6 +25,8 @@ angular.module(
         				$modal({title: 'Error Info', content: '订单获取失败，请检查！', show: true});
      					return;
      				}
+        			$scope.processes = Order.getProcessByCollectionType(res.data.collection_mode);
+        			
         			res.data.status = parseInt(res.data.status);
         			
         			var totalQuantity = 0;
@@ -50,9 +53,72 @@ angular.module(
          			}
          			res.data.quantity = totalQuantity;
         			$scope.order = res.data;
-        			console.log($scope.order)
         		});
         	};
+        	
+        	$element.on('change', '#invoice-file', function(e){
+        		$scope.$emit('uploading.start');
+        		var self = $(this);
+				var files = e.target.files;
+				if (!files.length){
+					$scope.$emit('uploading.end');
+					return;
+				}
+				var error = {
+					index: -1
+				}
+				$scope.colorErrorMsg = [];
+				var timeout = $timeout(function(){
+					timeout = null;
+        		}, 30000, true);
+        		
+        		if(files[0].type !== 'application/pdf'){
+					$modal({title: 'Error Info', content: '上传PDF文件格式错误，请重新上传！', show: true});
+					$scope.$apply();
+					self.val('');
+					$scope.$emit('uploading.end');
+				    return; 
+				}
+        		if(files[0].size / 1024 / 1024 > 2){
+					$modal({title: 'Error Info', content: '上传PDF文件不得大于2MB，请重新上传！', show: true});
+					$scope.$apply();
+					self.val('');
+					$scope.$emit('uploading.end');
+				    return; 
+				}
+        		
+				uiUploader.removeAll();
+				uiUploader.addFiles(files);
+                uiUploader.startUpload({
+                    url: '/api/upload/pdf',
+                    onCompleted: function(file, response) {
+                    	if (!timeout) {
+                    		$modal({title: 'Error Info', content: '上传文件超时，请重新上传！', show: true});
+            				$scope.$apply();
+            				self.val('');
+            				$scope.$emit('uploading.end');
+            				return;
+                    	}
+                    	response = JSON.parse(response);
+                    	if (response.status != 0) {
+                    		$modal({title: 'Error Info', content: '上传文件失败，请重新上传！', show: true});
+        					$scope.$apply();
+        					self.val('');
+        					$scope.$emit('uploading.end');
+                    		return;
+                    	}
+                    	$scope.invoice = response.data;
+                    	$scope.$apply();
+                    	
+                    	$scope.$emit('uploading.end');
+                    	$timeout.cancel(timeout);
+                    	timeout = null;
+                    }
+                });
+			});
+        	
+        	
+        	
         	init();
         }
     ]

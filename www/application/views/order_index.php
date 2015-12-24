@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="xShowroom.order.index" ng-init="orderId='<?=$orderId?>';">
+<html ng-app="xShowroom.order.index" ng-init="orderId='<?=$order['order_id']?>';">
 <head>
     <meta charset="UTF-8" >
     <title>XShowroom</title>
@@ -52,56 +52,102 @@
 					<div class="order-info-header">
 						<h3>ORDER STATUS</h3>
 					</div>
-					<div class="order-status-list">
-						<div class="order-status" ng-class="{'active': order.status >= 0}">
+					<div class="order-status-list" ng-class="{'stock-collection': processes.length == 6}">
+						<div class="order-status" ng-repeat="step in processes">
 							<div>
 								<i class="fa fa-shopping-cart fa-5x"></i>
 							</div>
 							<div>
-								<span>PENDING</span>
-							</div>
-						</div>
-						<div class="order-status" ng-class="{'active': order.status >= 1}">
-							<div>
-								<i class="fa fa-shopping-cart fa-5x"></i>
-							</div>
-							<div>
-								<span>DEPOSIT</span>
-							</div>
-						</div>
-						<div class="order-status" ng-class="{'active': order.status >= 2}">
-							<div>
-								<i class="fa fa-shopping-cart fa-5x"></i>
-							</div>
-							<div>
-								<span>PREPARING</span>
-							</div>
-						</div>
-						<div class="order-status" ng-class="{'active': order.status >= 3}">
-							<div>
-								<i class="fa fa-shopping-cart fa-5x"></i>
-							</div>
-							<div>
-								<span>BALANCE PAYMENT</span>
-							</div>
-						</div>
-						<div class="order-status" ng-class="{'active': order.status >= 4}">
-							<div>
-								<i class="fa fa-shopping-cart fa-5x"></i>
-							</div>
-							<div>
-								<span>SHIPPING</span>
-							</div>
-						</div>
-						<div class="order-status" ng-class="{'active': order.status >= 5}">
-							<div>
-								<i class="fa fa-shopping-cart fa-5x"></i>
-							</div>
-							<div>
-								<span>COMPLETE</span>
+								<span>{{step}}</span>
 							</div>
 						</div>
 					</div>
+					<?php if ($user["role_type"] == Business_User::ROLE_BRAND && $order['order_status'] == 0): ?>
+					<div class="order-status-actions">
+						<div class="row">
+							<label class="col-xs-1" for="comment">Comment</label>
+						    <div class="col-xs-4">
+						    	<input type="text" class="form-control" id="comment" placeholder="ORDER COMMENT">
+						    </div>
+						    <label class="col-xs-1" for="comment">Invoice</label>
+						    <div class="col-xs-3">
+						    	<input type="file" class="form-control" id="invoice-file" placeholder="ORDER INVOICE*">
+						    </div>
+						    <div class="col-xs-3 text-right">
+							     <button class="btn btn-type-2">确认提交</button>
+							     <button class="btn btn-type-1">取消订单</button>
+							</div>
+						</div>
+					</div>
+					<?php elseif ($user["role_type"] == Business_User::ROLE_BRAND && $order['order_status'] == 1): ?>
+					<div class="order-status-actions">
+						<div class="row">
+							<label class="col-xs-1" for="comment">Comment</label>
+						    <div class="col-xs-4">
+						    	<input type="text" class="form-control" id="comment" placeholder="ORDER COMMENT">
+						    </div>
+						    <div class="col-xs-6 text-right">
+							     <button type="submit" class="btn btn-type-2">确认已收货款</button>
+							</div>
+						</div>
+					</div>
+					<?php elseif ($user["role_type"] == Business_User::ROLE_BRAND && $order['order_status'] == 2): ?>
+					<div class="order-status-actions">
+						<div class="row">
+							<label class="col-xs-1" for="comment">Comment</label>
+						    <div class="col-xs-4">
+						    	<input type="text" class="form-control" id="comment" placeholder="ORDER COMMENT">
+						    </div>
+						    <div class="col-xs-6 text-right">
+							     <button type="submit" class="btn btn-type-2">开始备货</button>
+							</div>
+						</div>
+					</div>
+					<?php elseif ($user["role_type"] == Business_User::ROLE_BRAND && $order['order_status'] == 3): ?>
+					<div class="order-status-actions">
+						<div class="row">
+							<label class="col-xs-1" for="comment">Comment</label>
+						    <div class="col-xs-4">
+						    	<input type="text" class="form-control" id="comment" placeholder="ORDER COMMENT">
+						    </div>
+						    <label class="col-xs-1" for="shippingFee">Shipping Fee</label>
+						    <div class="col-xs-4">
+						    	<input type="text" class="form-control" id="shippingFee" placeholder="SHIPPING FEE">
+						    </div>
+						    <div class="col-xs-2 text-right">
+							     <button type="submit" class="btn btn-type-2">确认提交</button>
+							</div>
+						</div>
+					</div>
+					<?php elseif ($user["role_type"] == Business_User::ROLE_BRAND && $order['order_status'] == 4): ?>
+					<div class="order-status-actions">
+						<div class="row">
+							<label class="col-xs-1" for="comment">Comment</label>
+						    <div class="col-xs-4">
+						    	<input type="text" class="form-control" id="comment" placeholder="ORDER COMMENT">
+						    </div>
+						    <label class="col-xs-1" for="shippingFee">Shipping Fee</label>
+						    <div class="col-xs-4">
+						    	<input type="text" class="form-control" id="shippingFee" placeholder="SHIPPING FEE">
+						    </div>
+						    <div class="col-xs-2 text-right">
+							     <button type="submit" class="btn btn-type-2">确认发货</button>
+							</div>
+						</div>
+					</div>
+					<?php elseif ($user["role_type"] == Business_User::ROLE_BUYER && $order['order_status'] == 5): ?>
+					<div class="order-status-actions">
+						<div class="row">
+							<label class="col-xs-1" for="comment">Comment</label>
+						    <div class="col-xs-4">
+						    	<input type="text" class="form-control" id="comment" placeholder="ORDER COMMENT">
+						    </div>
+						    <div class="col-xs-6 text-right">
+							     <button type="submit" class="btn btn-type-2">确认收货</button>
+							</div>
+						</div>
+					</div>
+					<?php endif; ?>
 				</div>
                 <div class="col-xs-12">
 					<div class="order-info-header">

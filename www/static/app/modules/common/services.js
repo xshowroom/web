@@ -26,6 +26,16 @@ angular.module(
 	[
 	    'PostRequester',
 		function (PostRequester) {
+	    	var STATUS_CODE = {
+	    		ORDER_STATUS_PENDING: 0,
+	    		ORDER_STATUS_CONFIRMED: 1,
+	    		ORDER_STATUS_DEPOSITED: 2,
+	    		ORDER_STATUS_PREPARING: 3,
+	    		ORDER_STATUS_PAYBALANCE: 4,
+	    		ORDER_STATUS_SHIPPED: 5,
+	    		ORDER_STATUS_COMPLETE: 6,
+	    		ORDER_STATUS_FULLPAYMENT: 7
+	    	};
 		    return {
 		    	create: function (opts) {
 		    		return PostRequester('order/createOrder', opts);
@@ -40,7 +50,22 @@ angular.module(
 		    	},
 		    	findOne: function (opts) {
 		    		return PostRequester('order/getOrder', opts);
+		    	},
+		    	getProcessByCollectionType: function (type) {
+		    		return type == 'dropdown__COLLECTION_MODE__STOCK'
+		    			? [
+                           STATUS_CODE.ORDER_STATUS_PENDING, STATUS_CODE.ORDER_STATUS_CONFIRMED, 
+                           STATUS_CODE.ORDER_STATUS_FULLPAYMENT, STATUS_CODE.ORDER_STATUS_PREPARING,
+                           STATUS_CODE.ORDER_STATUS_SHIPPED, STATUS_CODE.ORDER_STATUS_COMPLETE
+		    			]
+			    		: [
+	                       STATUS_CODE.ORDER_STATUS_PENDING, STATUS_CODE.ORDER_STATUS_CONFIRMED, 
+	                       STATUS_CODE.ORDER_STATUS_DEPOSITED, STATUS_CODE.ORDER_STATUS_PREPARING,
+	                       STATUS_CODE.ORDER_STATUS_PAYBALANCE, STATUS_CODE.ORDER_STATUS_SHIPPED,
+	                       STATUS_CODE.ORDER_STATUS_COMPLETE
+		    			];
 		    	}
+		    	
 //		    	getStatuses: function(){
 //		    		return [
 //		    		    'ALL', 'PENDING', 'DEPOSITED', 'PREPARING',
