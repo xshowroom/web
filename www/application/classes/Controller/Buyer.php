@@ -70,13 +70,13 @@ class Controller_Buyer extends Controller_BaseReqLogin
     }
     
     
-//     public function action_order()
-//     {
-//         $view = View::factory('buyer_order');
-//         $view->set('user', $this->opUser);
-//         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
-//         $this->response->body($view);
-//     }
+    public function action_store()
+    {
+        $view = View::factory('buyer_store');
+        $view->set('user', $this->opUser);
+        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $this->response->body($view);
+    }
 
     public function action_message()
     {
