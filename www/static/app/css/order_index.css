@@ -88,8 +88,36 @@
 .order-status-actions .btn{
 	min-width: 100px;
 }
-
-
+#invoice-file{
+	outline: none;
+}
+.order-status-actions{
+	font-size: 12px;
+}
+.order-status-actions .upload-label{
+	display: inline-block;
+    width: 80px;
+	line-height: 34px;
+	margin-left: 15px
+}
+.order-status-actions .upload-label span{
+	border: 1px solid #ccc;
+	padding: 5px 8px;
+	border-radius: 4px;
+}
+.order-status-actions .upload-label span:hover{
+	background-color: #ca7379;
+	border-color: #ca7379;
+	color: #fff;
+	cursor: pointer;
+}
+.order-status-actions .upload-label input{
+	visibility: hidden;
+    width: 0;
+    height: 0;
+    display: inline-block;
+    padding: 0;
+}
 
 .order-info-header{
 	border-bottom: 1px solid #e3e3e3;

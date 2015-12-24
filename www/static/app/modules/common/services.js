@@ -27,14 +27,14 @@ angular.module(
 	    'PostRequester',
 		function (PostRequester) {
 	    	var STATUS_CODE = {
-	    		ORDER_STATUS_PENDING: 0,
-	    		ORDER_STATUS_CONFIRMED: 1,
-	    		ORDER_STATUS_DEPOSITED: 2,
-	    		ORDER_STATUS_PREPARING: 3,
-	    		ORDER_STATUS_PAYBALANCE: 4,
-	    		ORDER_STATUS_SHIPPED: 5,
-	    		ORDER_STATUS_COMPLETE: 6,
-	    		ORDER_STATUS_FULLPAYMENT: 7
+	    		ORDER_STATUS_PENDING: '0',
+	    		ORDER_STATUS_CONFIRMED: '1',
+	    		ORDER_STATUS_DEPOSITED: '2',
+	    		ORDER_STATUS_PREPARING: '3',
+	    		ORDER_STATUS_PAYBALANCE: '4',
+	    		ORDER_STATUS_SHIPPED: '5',
+	    		ORDER_STATUS_COMPLETE: '6',
+	    		ORDER_STATUS_FULLPAYMENT: '7'
 	    	};
 		    return {
 		    	create: function (opts) {
@@ -64,14 +64,16 @@ angular.module(
 	                       STATUS_CODE.ORDER_STATUS_PAYBALANCE, STATUS_CODE.ORDER_STATUS_SHIPPED,
 	                       STATUS_CODE.ORDER_STATUS_COMPLETE
 		    			];
+		    	},
+		    	updateStatus: function(opts){
+		    		return PostRequester('order/updateStatus', opts);
+		    	},
+		    	updateInvoice: function(opts){
+		    		return PostRequester('order/updateInvoice', opts);
+		    	},
+		    	updateShipInfo: function(opts){
+		    		return PostRequester('order/updateShipInfo', opts);
 		    	}
-		    	
-//		    	getStatuses: function(){
-//		    		return [
-//		    		    'ALL', 'PENDING', 'DEPOSITED', 'PREPARING',
-//		    		    'BALANCE PAYMENT', 'SHIPPED', 'COMPLETE', 'CANCELED'
-//		    		]
-//		    	}
    			};
          }
     ]

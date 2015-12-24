@@ -53,7 +53,7 @@
 						<h3>ORDER STATUS</h3>
 					</div>
 					<div class="order-status-list" ng-class="{'stock-collection': processes.length == 6}">
-						<div class="order-status" ng-repeat="step in processes">
+						<div class="order-status" ng-repeat="step in processes track by $index" ng-class="{'active': statusIndex >= $index}">
 							<div>
 								<i class="fa fa-shopping-cart fa-5x"></i>
 							</div>
@@ -65,85 +65,68 @@
 					<?php if ($user["role_type"] == Business_User::ROLE_BRAND && $order['order_status'] == 0): ?>
 					<div class="order-status-actions">
 						<div class="row">
-							<label class="col-xs-1" for="comment">Comment</label>
-						    <div class="col-xs-4">
-						    	<input type="text" class="form-control" id="comment" placeholder="ORDER COMMENT">
-						    </div>
-						    <label class="col-xs-1" for="comment">Invoice</label>
-						    <div class="col-xs-3">
+						    <label class="col-xs-1">Invoice</label>
+						    <div class="col-xs-3" ng-if="!order.invoice_url">
 						    	<input type="file" class="form-control" id="invoice-file" placeholder="ORDER INVOICE*">
 						    </div>
-						    <div class="col-xs-3 text-right">
-							     <button class="btn btn-type-2">确认提交</button>
-							     <button class="btn btn-type-1">取消订单</button>
+						    <div class="col-xs-4" ng-if="order.invoice_url">
+						    	<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
+						    	<label class="upload-label">
+						    		<span>重新上传</span>
+						    		<input type="file" class="form-control" id="invoice-file" placeholder="ORDER INVOICE*">
+						    	</label>
+						    </div>
+						    <div class="col-xs-2">
+							     <button class="btn btn-type-2" ng-click="updateInvoice();">确认提交</button>
+							     <!-- <button class="btn btn-type-1">取消订单</button> -->
 							</div>
 						</div>
 					</div>
 					<?php elseif ($user["role_type"] == Business_User::ROLE_BRAND && $order['order_status'] == 1): ?>
 					<div class="order-status-actions">
 						<div class="row">
-							<label class="col-xs-1" for="comment">Comment</label>
-						    <div class="col-xs-4">
-						    	<input type="text" class="form-control" id="comment" placeholder="ORDER COMMENT">
-						    </div>
-						    <div class="col-xs-6 text-right">
-							     <button type="submit" class="btn btn-type-2">确认已收货款</button>
+						    <div class="col-xs-12 text-right">
+							     <button class="btn btn-type-2" ng-click="updateStatus();">确认已收货款</button>
 							</div>
 						</div>
 					</div>
 					<?php elseif ($user["role_type"] == Business_User::ROLE_BRAND && $order['order_status'] == 2): ?>
 					<div class="order-status-actions">
 						<div class="row">
-							<label class="col-xs-1" for="comment">Comment</label>
-						    <div class="col-xs-4">
-						    	<input type="text" class="form-control" id="comment" placeholder="ORDER COMMENT">
-						    </div>
-						    <div class="col-xs-6 text-right">
-							     <button type="submit" class="btn btn-type-2">开始备货</button>
+						    <div class="col-xs-12 text-right">
+							     <button class="btn btn-type-2" ng-click="updateStatus();">开始备货</button>
 							</div>
 						</div>
 					</div>
 					<?php elseif ($user["role_type"] == Business_User::ROLE_BRAND && $order['order_status'] == 3): ?>
 					<div class="order-status-actions">
 						<div class="row">
-							<label class="col-xs-1" for="comment">Comment</label>
+						    <label class="col-xs-1" for="shippingNo">Shipping No</label>
 						    <div class="col-xs-4">
-						    	<input type="text" class="form-control" id="comment" placeholder="ORDER COMMENT">
+						    	<input type="text" class="form-control" id="shippingNo" ng-model="order.shipNo">
 						    </div>
-						    <label class="col-xs-1" for="shippingFee">Shipping Fee</label>
+						     <label class="col-xs-1" for="shippingFee">Shipping Fee</label>
 						    <div class="col-xs-4">
-						    	<input type="text" class="form-control" id="shippingFee" placeholder="SHIPPING FEE">
+						    	<input type="text" class="form-control" id="shippingFee" ng-model="order.shipAmount">
 						    </div>
-						    <div class="col-xs-2 text-right">
-							     <button type="submit" class="btn btn-type-2">确认提交</button>
+						    <div class="col-xs-2">
+							     <button class="btn btn-type-2" ng-click="updateShipInfo();">确认提交</button>
 							</div>
 						</div>
 					</div>
 					<?php elseif ($user["role_type"] == Business_User::ROLE_BRAND && $order['order_status'] == 4): ?>
 					<div class="order-status-actions">
 						<div class="row">
-							<label class="col-xs-1" for="comment">Comment</label>
-						    <div class="col-xs-4">
-						    	<input type="text" class="form-control" id="comment" placeholder="ORDER COMMENT">
-						    </div>
-						    <label class="col-xs-1" for="shippingFee">Shipping Fee</label>
-						    <div class="col-xs-4">
-						    	<input type="text" class="form-control" id="shippingFee" placeholder="SHIPPING FEE">
-						    </div>
-						    <div class="col-xs-2 text-right">
-							     <button type="submit" class="btn btn-type-2">确认发货</button>
+						    <div class="col-xs-12 text-right">
+							     <button class="btn btn-type-2" ng-click="updateStatus();">确认发货</button>
 							</div>
 						</div>
 					</div>
 					<?php elseif ($user["role_type"] == Business_User::ROLE_BUYER && $order['order_status'] == 5): ?>
 					<div class="order-status-actions">
 						<div class="row">
-							<label class="col-xs-1" for="comment">Comment</label>
-						    <div class="col-xs-4">
-						    	<input type="text" class="form-control" id="comment" placeholder="ORDER COMMENT">
-						    </div>
-						    <div class="col-xs-6 text-right">
-							     <button type="submit" class="btn btn-type-2">确认收货</button>
+						    <div class="col-xs-12 text-right">
+							     <button class="btn btn-type-2"  ng-click="updateStatus();">确认收货</button>
 							</div>
 						</div>
 					</div>
