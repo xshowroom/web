@@ -64,14 +64,16 @@ angular.module(
 	                       STATUS_CODE.ORDER_STATUS_PAYBALANCE, STATUS_CODE.ORDER_STATUS_SHIPPED,
 	                       STATUS_CODE.ORDER_STATUS_COMPLETE
 		    			];
+		    	},
+		    	updateStatus: function(opts){
+		    		return PostRequester('order/updateStatus', opts);
+		    	},
+		    	updateInvoice: function(opts){
+		    		return PostRequester('order/updateInvoice', opts);
+		    	},
+		    	updateShipInfo: function(opts){
+		    		return PostRequester('order/updateShipInfo', opts);
 		    	}
-		    	
-//		    	getStatuses: function(){
-//		    		return [
-//		    		    'ALL', 'PENDING', 'DEPOSITED', 'PREPARING',
-//		    		    'BALANCE PAYMENT', 'SHIPPED', 'COMPLETE', 'CANCELED'
-//		    		]
-//		    	}
    			};
          }
     ]

@@ -15,8 +15,8 @@ angular.module(
 .controller(
     'OrderIndexCtrl',
     [
-        '$scope', '$element', '$timeout', '$modal', 'Order', 'uiUploader',
-        function ($scope, $element, $timeout, $modal, Order, uiUploader) {
+        '$scope', '$element', '$window', '$timeout', '$modal', 'Order', 'uiUploader',
+        function ($scope, $element, $window, $timeout, $modal, Order, uiUploader) {
         	var init = function (){
         		Order.findOne({
         			orderId: $scope.orderId
@@ -27,7 +27,7 @@ angular.module(
      				}
         			$scope.processes = Order.getProcessByCollectionType(res.data.collection_mode);
         			
-        			res.data.status = parseInt(res.data.status);
+        			res.data.order_status = parseInt(res.data.order_status);
         			
         			var totalQuantity = 0;
         			
@@ -53,6 +53,8 @@ angular.module(
          			}
          			res.data.quantity = totalQuantity;
         			$scope.order = res.data;
+        			
+        			$scope.statusIndex = $scope.processes.indexOf(res.data.order_status);
         		});
         	};
         	
@@ -107,7 +109,7 @@ angular.module(
         					$scope.$emit('uploading.end');
                     		return;
                     	}
-                    	$scope.invoice = response.data;
+                    	$scope.order.invoice_url = response.data;
                     	$scope.$apply();
                     	
                     	$scope.$emit('uploading.end');
@@ -117,7 +119,44 @@ angular.module(
                 });
 			});
         	
+        	$scope.updateStatus = function(){
+        		Order.updateStatus({
+        			orderId: $scope.orderId,
+        			orderStatus: $scope.order.order_status
+        		}).success(function(res){
+        			if (typeof(res) != 'object' || res.status) {
+        				$modal({title: 'Error Info', content: res.msg, show: true});
+     					return;
+     				}
+        			$window.location.reload();
+        		});
+        	};
         	
+        	$scope.updateInvoice = function(){
+        		Order.updateInvoice({
+        			orderId: $scope.orderId,
+        			invoiceUrl: $scope.order.invoice_url
+        		}).success(function(res){
+        			if (typeof(res) != 'object' || res.status) {
+        				$modal({title: 'Error Info', content: res.msg, show: true});
+     					return;
+     				}
+        		});
+        	};
+        	
+        	$scope.updateShipInfo = function(){
+        		Order.updateShipInfo({
+        			orderId: $scope.orderId,
+        			shipNo: $scope.order.shipNo,
+        			shipAmount: $scope.order.shipAomunt
+        		}).success(function(res){
+        			if (typeof(res) != 'object' || res.status) {
+        				$modal({title: 'Error Info', content: res.msg, show: true});
+     					return;
+     				}
+        			$scope.updateStatus();
+        		});
+        	};
         	
         	init();
         }
