@@ -191,9 +191,7 @@ a.active:before{
 .alert ul li{
 	margin: 5px 0;
 }
-.modal-open{
-	overflow: auto;
-}
+
 /* 顶部语言、货币、用户信息导航 */
 .setting-info {
 	height: 40px;
