@@ -3,29 +3,19 @@
 <head>
 	<meta charset="UTF-8" >
 	<title>XShowroom</title>
-	
-	<link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="/static/bower_components/font-awesome/css/font-awesome.min.css" />
-	<link rel="stylesheet" type="text/css" href="/static/app/css/common.css" />
+	<?php echo View::factory('common/global_libraries'); ?>
 	<link rel="stylesheet" type="text/css" href="/static/app/css/admin.css" />
-	<link rel="shortcut icon" href="/favicon.ico" />
-	<script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="/static/bower_components/angular/angular.min.js"></script>
-	<script type="text/javascript" src="/static/bower_components/angular-cookies/angular-cookies.min.js"></script>
-	<script type="text/javascript" src="/static/app/modules/common/i18n.js"></script>
-	<script type="text/javascript" src="/static/app/modules/common/services.js"></script>
-	<script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
 	<script type="text/javascript" src="/static/app/modules/admin_user_mgr.js"></script>
+	<script>var userId = -1</script>
 </head>
 <body ng-controller="AdminUserMgrCtrl" class="container-fluid">
 	<nav class="row setting-info">
 		<?php echo View::factory('admin_views/admin_setting_with_login', array('user'=> $user)); ?>
 	</nav>
-	<nav class="row guest-navigation"  id="home-page-navigation">
+	<nav class="row guest-navigation" id="home-page-navigation">
         <?php echo View::factory('admin_views/admin_navigation_top_login', array('currentPage' => 'users')); ?>
 	</nav>
-	<section class="row">
+	<section class="row admin-content">
 		<div class="container">
 			<div class="row">
 				<h2>PENDING USERS</h2>
@@ -66,19 +56,21 @@
 							<td class="xs-row">
 								<p><?= $row['last_login_time'] ?></p>
 							</td>
-							<td class="xs-row xs-row-action">
+							<td class="xs-row">
 								<a href="<?=URL::site('xsadmin/management/user_detail/'.$row['id']);?>" target="_blank">
 									<p>PROFILE</p>
 								</a>
 							</td>
 							<td class="xs-row xs-row-action">
-								<a href="#">
+								<a data-toggle="modal" href="#modalAllowConfirm" ng-click="clickUser();" >
 									<p>ALLOW</p>
+									<input id="user_id" type="hidden" value="<?= $row['id'] ?>">
 								</a>
 							</td>
-							<td class="xs-row xs-row-action">
-								<a href="#">
+							<td class="xs-row">
+								<a data-toggle="modal" href="#modalRejectConfirm" ng-click="clickUser();" >
 									<p>REJECT</p>
+									<input id="user_id" type="hidden" value="<?= $row['id'] ?>">
 								</a>
 							</td>
 						</tr>
@@ -91,5 +83,43 @@
 	<footer class="row footer-navigation">
         <?php echo View::factory('common/global_navigation_footer'); ?>
 	</footer>
+
+	<!-- allow confirm -->
+	<div class="modal fade" id="modalAllowConfirm" tabindex="-1" role="dialog">
+		<div class="modal-dialog  modal-xs">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title">CONFIRM</h4>
+				</div>
+				<div class="modal-body">
+					<p>APPROVE THIS USERS REGISTRATION?</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn  btn-type-1" data-dismiss="modal">CANCEL</button>
+					<button id='delete_inbox_msg' type="button" class="btn btn-type-2" ng-click="adminAllowUser();">ALLOW</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<!-- reject confirm -->
+	<div class="modal fade" id="modalRejectConfirm" tabindex="-1" role="dialog">
+		<div class="modal-dialog  modal-xs">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title">CONFIRM</h4>
+				</div>
+				<div class="modal-body">
+					<p>REJECT THIS USERS REGISTRATION?</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn  btn-type-1" data-dismiss="modal">CANCEL</button>
+					<button id='delete_inbox_msg' type="button" class="btn btn-type-2" ng-click="adminRejectUser();">REJECT</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 </body>
 </html>

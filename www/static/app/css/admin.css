@@ -3,6 +3,10 @@ section.row {
     padding-bottom: 30px;
 }
 
+section.admin-content{
+	min-height: 400px;
+}
+
 h2 {
 	font-weight: 200;
 	font-size: 22px;
