@@ -39,11 +39,6 @@ angular.module(
 		    return {
 		    	create: function (opts) {
 		    		return PostRequester('order/createOrder', opts);
-//		    		return $http.post('/api/order/createOrder', $httpParamSerializer(opts), {
-//						headers: {
-//							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
-//						}
-//					});
 		    	},
 		    	findAll: function (opts) {
 		    		return PostRequester('order/getOrderList', opts);
@@ -79,6 +74,25 @@ angular.module(
     ]
 )
 .service(
+	'Store', 
+	[
+	    'PostRequester',
+		function (PostRequester) {
+		    return {
+		    	create: function (opts) {
+		    		return PostRequester('shop/save', opts);
+		    	},
+		      	destroy: function (opts) {
+		      		return PostRequester('shop/delete', opts);
+		      	},
+		      	findOne: function(opts){
+		      		return PostRequester('shop/detail', opts);
+		      	}
+   			};
+         }
+    ]
+)
+.service(
 	'Cart', 
 	[
 	    'PostRequester',
@@ -86,31 +100,18 @@ angular.module(
 		    return {
 		    	addProduct:function (opts) {
 		    		return PostRequester('order/addToCart', opts);
-//		    		return $http.post('/api/', $httpParamSerializer(opts), {
-//						headers: {
-//							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
-//						}
-//					});
 		    	},
 		      	removeProduct:function (opts) {
 		      		return PostRequester('order/deleteFromCart', opts);
-//		      		return $http.post('/api/order/deleteFromCart', $httpParamSerializer(opts), {
-//						headers: {
-//							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
-//						}
-//					});
 		      	},
 		      	checkProduct: function(opts){
 		      		return PostRequester('order/getFromCart', opts);
-//		      		return $http.get('/api/order/getFromCart', {params: opts});
 		      	},
 		      	findAll: function(opts){
 		      		return PostRequester('order/getListFromCart', opts);
-//		      		return $http.get('/api/order/getListFromCart', {params: opts});
 		      	},
 		      	findOne: function(opts){
 		      		return PostRequester('order/getListFromCartByCollection', opts);
-//		      		return $http.get('/api/order/getListFromCartByCollection', {params: opts});
 		      	}
    			};
          }
@@ -123,21 +124,13 @@ angular.module(
 		function (PostRequester) {
 		    return {
 		    	login: function (opts) {
-		    		console.log(PostRequester)
 		    		return PostRequester('login', opts);
-//		    		return $http.get('/api/login', {params: opts});
 		      	},
 		      	register: function (opts) {
 		      		return PostRequester('register', opts);
-//		      		return $http.post('/api/register', $httpParamSerializer(opts), {
-//						headers: {
-//							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
-//						}
-//					});
 		      	},
 		      	duplicationCheck: function (opts) {
 		      		return PostRequester('register/checkParam', opts);
-//		    		return $http.get('/api/register/checkParam', {params: opts});
 		    	},
 				invitationCheck: function (opts) {
 					return PostRequester('register/checkInvitationCode', opts);
@@ -154,23 +147,21 @@ angular.module(
 		    return {
 		    	checkAuth: function(opts){
 		    		return PostRequester('buyer/checkAuth', opts);
-//		      		return $http.get('/api/buyer/checkAuth', {params: opts});
 		      	},
 		      	applyAuth: function(opts){
 		      		return PostRequester('buyer/apply', opts);
-//		      		return $http.get('/api/buyer/apply', {params: opts});
 		      	},
 		      	getStoreList: function(opts){
 		      		return PostRequester('buyer/getStoreList', opts);
-//		      		return $http.get('/api/buyer/getStoreList', {params: opts});
 		      	},
 		      	getMyBrandList: function(opts){
 		      		return PostRequester('buyer/getBrandList', opts);
-//		      		return $http.get('/api/buyer/getBrandList', {params: opts});
 		      	},
 		      	getAuthedShopList: function (opts) {
 		      		return PostRequester('buyer/getAuthedShopByCollection', opts);
-//		    		return $http.get('/api/buyer/getAuthedShop', {params: opts});
+		    	},
+		    	getMyStoreList: function (opts) {
+		      		return PostRequester('buyer/getStoreList', opts);
 		    	}
    			};
          }
@@ -237,11 +228,9 @@ angular.module(
 		    return {
 		    	findAll: function (opts) {
 		    		return PostRequester('brand/list', opts);
-//		    		return $http.get('/api/brand/list', {params: opts});
 		      	},
 		      	query: function (opts) {
 		      		return PostRequester('brand/query', opts);
-//		    		return $http.get('/api/brand/query', {params: opts});
 		      	},
 		      	getShopConditions: function(){
 		      		return {
@@ -271,31 +260,18 @@ angular.module(
 				},
 		      	getCoversBySeason: function (opts) {
 		      		return PostRequester('guest/coverImgList', opts);
-//		    		return $http.get('/api/guest/coverImgList', {params: opts});
 		      	},
 		      	getCollectionList: function (opts){
 		      		return PostRequester('buyer/getCollectionList', opts);
-//		      		return $http.get('/api/buyer/getCollectionList', {params: opts});
 		      	},
 		      	getLookbookPhotos: function (opts) {
 		      		return PostRequester('lookbook/getList', opts);
-//		    		return $http.get('/api/lookbook/getList', {params: opts});
 		      	},
 		      	saveLookbookPhoto: function(opts){
 		      		return PostRequester('lookbook/saveLookbook', opts);
-//		      		return $http.post('/api/lookbook/saveLookbook', $httpParamSerializer(opts), {
-//						headers: {
-//							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
-//						}
-//					});
 		      	},
 		      	removeLookbookPhoto: function(opts){
 		      		return PostRequester('lookbook/deleteLookbook', opts);
-//		      		return $http.post('/api/lookbook/deleteLookbook', $httpParamSerializer(opts), {
-//						headers: {
-//							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
-//						}
-//					});
 		      	}
    			};
          }
@@ -309,50 +285,31 @@ angular.module(
 		    return {
 		      	create: function (opts) {
 		      		return PostRequester('collection/add', opts);
-//		      		return $http.post('/api/collection/add', $httpParamSerializer(opts), {
-//						headers: {
-//							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
-//						}
-//					});
 		      	},
 		      	modify: function (opts) {
 		      		return PostRequester('collection/modify', opts);
-//		      		return $http.post('/api/collection/modify', $httpParamSerializer(opts), {
-//						headers: {
-//							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
-//						}
-//					});
 		      	},
 		      	destroy: function (opts) {
 		      		return PostRequester('collection/delete', opts);
-//		      		return $http.get('/api/collection/delete', {params: opts});
 		      	},
 		      	findById: function(opts){
 		      		return PostRequester('collection/detail', opts);
-//		      		return $http.get('/api/collection/detail', {params: opts});
 		      	},
 		      	enable: function (opts) {
 		      		return PostRequester('collection/enable', opts);
-//		      		return $http.get('/api/collection/enable', {params: opts});
 		      	},
 		      	close: function (opts) {
 		      		return PostRequester('collection/close', opts);
-//		      		return $http.get('/api/collection/close', {params: opts});
 		      	},
 		      	findAll: function(opts){
 		      		return PostRequester('collection/list', opts);
-//		      		return $http.get('/api/collection/list', {params: opts});
 		      	},
 		      	getProductList: function(opts){
 		      		return PostRequester('product/list', opts);
-//		    		return $http.get('/api/product/list', {params: opts});
 		    	},
 		    	duplicationCheck: function (opts) {
 		    		if (opts.key == 'name'){
 		    			return PostRequester('collection/check', opts);
-//		    			return $http.get('/api/collection/check', {
-//		    				params: {name: opts.value}
-//		    			});
 		    		}
 		    	}
    			};
@@ -601,17 +558,6 @@ angular.module(
 						options.images = JSON.stringify(options.images);
 						return $httpParamSerializer(options);
 					});
-//		      		return $http.post('/api/product/add', opts, {
-//						headers: {
-//							"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
-//						},
-//						transformRequest: function(data){
-//							var options = angular.copy(data);
-//							options.color = JSON.stringify(options.color);
-//							options.images = JSON.stringify(options.images);
-//							return $httpParamSerializer(options);
-//						}
-//					});
 		      	},
 		    	getCategories: function(){
 		    		return categories;
@@ -627,7 +573,6 @@ angular.module(
 		    	},
 		    	destroy: function (opts) {
 		    		return PostRequester('product/delete', opts);
-//		      		return $http.get('/api/product/delete', {params: opts});
 		      	}
 			};
 		}
@@ -641,7 +586,6 @@ angular.module(
 			return {
 				destroy: function (opts) {
 					return PostRequester('message/delete', opts);
-//					return $http.get('/api/message/delete', {params: opts});
 				}
 			};
 		}

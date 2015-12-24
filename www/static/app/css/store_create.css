@@ -1,0 +1,91 @@
+@CHARSET "UTF-8";
+.store-inputs{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.store-inputs h3{
+	font-size: 16px;
+	padding: 10px 0;
+	border-bottom: 1px solid #999;
+	margin: 15px 0;
+}
+.store-inputs h3 span{
+	color: #ccc;
+	margin-left: 15px;
+}
+.store-inputs .store-image{
+	width: 18%;
+	margin-right: 1.9%;
+	height: 260px;
+	float: left;
+	border: 1px solid #ccc;
+	position: relative;
+	text-align: center;
+}
+
+.store-inputs .store-image.store-image-uploaded > a{
+	display: none;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%,-50%);
+	min-width: auto;
+}
+.store-inputs .store-image.store-image-uploaded:hover > a{
+	display: inline;
+}
+.store-inputs .store-image.store-image-uploaded > img{
+	width: 100%;
+	max-height: 100%;
+	position: absolute;
+	left:0;
+	top:50%;
+	z-index: 0;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+}
+.store-inputs .empty-store-image{
+	border: none;
+	background-color: transparent;
+	width: 100%;
+}
+.store-inputs .empty-store-image.has-error{
+	border: 1px solid #a94442;
+}
+.store-inputs .empty-store-image label{
+	background-color: transparent;
+	color: #ccc;
+}
+.store-inputs .empty-store-image.image-uploader label > span:first-child{
+	margin-top: 150px;
+}
+.store-inputs .size-codes{
+	line-height: 40px;
+}
+.store-inputs .size-codes label{
+	margin-right: 10px;
+}
+.store-inputs .size-codes input[type=checkbox]{
+	margin-top: 13px
+}
+.store-inputs .new-color{
+	line-height: 34px
+}
+#store-create-form .form-control{
+	text-align: left;
+}
+
+#store-create-form .control-label {
+	font-weight: 400;
+}
+
+#care-instruction{
+	height: 150px;
+    resize: none;
+    padding: 10px;
+    text-indent: 0 !important;
+}

@@ -1,0 +1,71 @@
+@CHARSET "UTF-8";
+.store-list .store-list-header{
+	border-bottom: 1px solid #e3e3e3;
+}
+.store-list .store-list-header .store-list-title{
+	font-size: 14px;
+	display: inline-block;
+	padding: 10px 0;
+	margin: 0;
+}
+.store-list .store-list-header a{
+	line-height: 40px;
+}
+.store-list .store-list-content .store-item{
+	border: 1px solid #ccc;
+	margin-top: 30px;
+	height: 250px;
+	padding: 15px;
+}
+.store-list .store-list-content .store-item .store-photo{
+	display: inline-block;
+	width: 30%;
+	overflow: hidden;
+	position: relative;
+	height: 220px;
+}
+.store-list .store-list-content .store-item .store-photo > img{
+	width: 100%;
+	max-height: 100%;
+	position: absolute;
+	left:0;
+	top:50%;
+	z-index: 0;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+}
+.store-list .store-list-content .store-item .store-details{
+	position: absolute;
+	top: 45px;
+	bottom: 15px;
+	left: 35%;
+	right: 30px;
+	height: auto;
+}
+.store-list .store-list-content .store-item .store-details > h3{
+	line-height: 30px;
+	font-size: 16px;
+	margin-bottom: 15px;
+}
+.store-list .store-list-content .store-item .store-details > div{
+	line-height: 30px;
+}
+.store-list .store-list-content .store-item .store-details > div > span:nth-child(2){
+	color: #878787;
+	font-size: 14px;
+	margin-left: 0.5em;
+}
+/* .store-list .store-list-content .store-item .store-details > div:nth-child(2n+1){
+	font-size: 18px;
+} */
+.store-list .store-list-content .store-item .store-actions > a{
+	margin-right: 15px;
+}
+.store-list .store-list-content .store-item .store-actions > a > i{
+	margin-right: 5px;
+}
+.store-list .store-list-action{
+	margin-top: 30px;
+}
