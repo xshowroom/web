@@ -14,10 +14,11 @@ angular.module(
 .controller(
     'UserMessageCtrl',
     [
-        '$scope', '$modal', 
-        function ($scope, $modal){
-            $scope.clickMessage=function(){
-                messageId = angular.element('#msg_id').val();
+        '$scope', '$modal', 'Message',
+        function ($scope, $modal, Message) {
+            $scope.clickMessage=function(msgId){
+                messageId = msgId;
+                alert(messageId);
             };
 
             $scope.deleteMessage=function(){

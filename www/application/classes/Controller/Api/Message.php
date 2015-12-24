@@ -14,13 +14,12 @@ class Controller_Api_Message extends Controller_BaseReqLogin
     {
         $userId = $this->opUser['id'];
         $msgId = Request::current()->getParam('id');
-        var_dump($userId, $msgId);
         $res = $this->messageService->deleteMessage($userId, $msgId);
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
             'msg'    => '',
-            'data'   => $res,
+            'data'   => $msgId,
         ));
     }
 }

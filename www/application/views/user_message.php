@@ -56,9 +56,8 @@
 											<p><?= $row['create_datetime'] ?></p>
 										</td>
 										<td class="xs-row xs-inbox-delete ">
-											<p data-toggle="modal" class="xs-inbox-delete-icon" href="#modalDeleteConfirm" ng-click="clickMessage();">
+											<p data-toggle="modal" class="xs-inbox-delete-icon" href="#modalDeleteConfirm" ng-click="clickMessage(<?=$row['id'];?>);">
 												<i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
-												<input id="msg_id" type="hidden" value="<?= $row['id'] ?>">
 											</p>
 										</td>
 									</tr>

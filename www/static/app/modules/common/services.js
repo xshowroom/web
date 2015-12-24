@@ -636,8 +636,8 @@ angular.module(
 .service(
 	'Message',
 	[
-		'$http',
-		function ($http) {
+		'PostRequester',
+		function (PostRequester) {
 			return {
 				destroy: function (opts) {
 					return PostRequester('message/delete', opts);
