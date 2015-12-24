@@ -66,7 +66,7 @@
 					<?php if ($user["role_type"] == Business_User::ROLE_BRAND && $order['order_status'] == 0): ?>
 					<div class="order-status-actions">
 						<div class="row">
-						    <label class="col-xs-1">Invoice</label>
+						    <label class="col-xs-1">Invoice:</label>
 						    <div class="col-xs-5" ng-if="!order.invoice_url">
 						    	<input type="file" class="form-control" id="invoice-file" placeholder="ORDER INVOICE*">
 						    </div>
@@ -86,7 +86,7 @@
 					<?php elseif ($user["role_type"] == Business_User::ROLE_BRAND && ($order['order_status'] == 1 || $order['order_status'] == 7)): ?>
 					<div class="order-status-actions">
 						<div class="row">
-							<label class="col-xs-1">Invoice</label>
+							<label class="col-xs-1">Invoice:</label>
 						    <div class="col-xs-5">
 						    	<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
 						    </div>
@@ -98,7 +98,7 @@
 					<?php elseif ($user["role_type"] == Business_User::ROLE_BRAND && $order['order_status'] == 2): ?>
 					<div class="order-status-actions">
 						<div class="row">
-							<label class="col-xs-1">Invoice</label>
+							<label class="col-xs-1">Invoice:</label>
 						    <div class="col-xs-5">
 						    	<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
 						    </div>
@@ -110,15 +110,15 @@
 					<?php elseif ($user["role_type"] == Business_User::ROLE_BRAND && $order['order_status'] == 3): ?>
 					<div class="order-status-actions">
 						<div class="row">
-						    <label class="col-xs-1" for="shippingNo">Shipping No</label>
+						    <label class="col-xs-1" for="shippingNo">Shipping No:</label>
 						    <div class="col-xs-5">
 						    	<input type="text" class="form-control" id="shippingNo" ng-model="order.shipNo">
 						    </div>
-						     <label class="col-xs-1" for="shippingFee">Shipping Fee</label>
+						     <label class="col-xs-1" for="shippingFee">Shipping Fee:</label>
 						    <div class="col-xs-5">
 						    	<input type="text" class="form-control" id="shippingFee" ng-model="order.shipAmount">
 						    </div>
-						    <label class="col-xs-1">Invoice</label>
+						    <label class="col-xs-1">Invoice:</label>
 						    <div class="col-xs-5">
 						    	<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
 						    </div>
@@ -130,15 +130,15 @@
 					<?php elseif ($user["role_type"] == Business_User::ROLE_BRAND && $order['order_status'] == 4): ?>
 					<div class="order-status-actions">
 						<div class="row">
-							<label class="col-xs-1">Shipping No</label>
+							<label class="col-xs-1">Shipping No:</label>
 						    <div class="col-xs-5">
 						    	<span>{{order.shipNo}}</span>
 						    </div>
-						    <label class="col-xs-1">Shipping Fee</label>
+						    <label class="col-xs-1">Shipping Fee:</label>
 						    <div class="col-xs-5">
 						    	<span>{{order.shipAmount}}</span>
 						    </div>
-						    <label class="col-xs-1">Invoice</label>
+						    <label class="col-xs-1">Invoice:</label>
 						    <div class="col-xs-5">
 						    	<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
 						    </div>
@@ -150,15 +150,15 @@
 					<?php elseif ($user["role_type"] == Business_User::ROLE_BUYER && $order['order_status'] == 5): ?>
 					<div class="order-status-actions">
 						<div class="row">
-							<label class="col-xs-1">Shipping No</label>
+							<label class="col-xs-1">Shipping No:</label>
 						    <div class="col-xs-5">
 						    	<span>{{order.shipNo}}</span>
 						    </div>
-						    <label class="col-xs-1">Shipping Fee</label>
+						    <label class="col-xs-1">Shipping Fee:</label>
 						    <div class="col-xs-5">
 						    	<span>{{order.shipAmount}}</span>
 						    </div>
-						    <label class="col-xs-1">Invoice</label>
+						    <label class="col-xs-1">Invoice:</label>
 						    <div class="col-xs-5">
 						    	<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
 						    </div>
@@ -171,15 +171,15 @@
 					<div class="order-status-actions">
 						<div class="row">
 						    <div class="col-xs-12 text-right">
-								<label class="col-xs-1" ng-if="order.shipNo">Shipping No</label>
+								<label class="col-xs-1" ng-if="order.shipNo">Shipping No:</label>
 							    <div class="col-xs-5" ng-if="order.shipNo">
 							    	<span>{{order.shipNo}}</span>
 							    </div>
-							    <label class="col-xs-1" ng-if="order.shipAmount">Shipping Fee</label>
+							    <label class="col-xs-1" ng-if="order.shipAmount">Shipping Fee:</label>
 							    <div class="col-xs-5" ng-if="order.shipAmount">
 							    	<span>{{order.shipAmount}}</span>
 							    </div>
-							     <label class="col-xs-1" ng-if="order.invoice_url">Invoice</label>
+							     <label class="col-xs-1" ng-if="order.invoice_url">Invoice:</label>
 							    <div class="col-xs-5" ng-if="order.invoice_url">
 							    	<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
 							    </div>
