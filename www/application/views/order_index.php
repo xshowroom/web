@@ -82,7 +82,7 @@
 							</div>
 						</div>
 					</div>
-					<?php elseif ($user["role_type"] == Business_User::ROLE_BRAND && $order['order_status'] == 1): ?>
+					<?php elseif ($user["role_type"] == Business_User::ROLE_BRAND && ($order['order_status'] == 1 || $order['order_status'] == 7)): ?>
 					<div class="order-status-actions">
 						<div class="row">
 						    <div class="col-xs-12 text-right">
@@ -130,6 +130,7 @@
 							</div>
 						</div>
 					</div>
+					
 					<?php endif; ?>
 				</div>
                 <div class="col-xs-12">

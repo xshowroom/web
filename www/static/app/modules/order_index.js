@@ -27,7 +27,7 @@ angular.module(
      				}
         			$scope.processes = Order.getProcessByCollectionType(res.data.collection_mode);
         			
-//        			res.data.status = parseInt(res.data.status);
+        			res.data.order_status = parseInt(res.data.order_status);
         			
         			var totalQuantity = 0;
         			
