@@ -7,16 +7,32 @@ angular.module(
 .controller(
     'AdminUserMgrCtrl',
     [
-        '$scope',
-        function ($scope) {
-            $scope.clickUser=function() {
-                userId = angular.element('#user_id').val();
+        '$scope', 'Admin',
+        function ($scope, Admin) {
+            $scope.clickUser=function(uid) {
+                userId = uid;
             };
             $scope.adminAllowUser=function() {
-                alert(userId);
+                Admin.allowUser({
+                    userId: userId
+                }).success(function(res){
+                    if (typeof(res) != 'object' || res.status) {
+                        $modal({title: 'Error Info', content: res.msg, show: true});
+                        return;
+                    }
+                    window.location.reload();
+                });
             };
             $scope.adminRejectUser=function() {
-                alert(userId);
+                Admin.rejectUser({
+                    userId: userId
+                }).success(function(res){
+                    if (typeof(res) != 'object' || res.status) {
+                        $modal({title: 'Error Info', content: res.msg, show: true});
+                        return;
+                    }
+                    window.location.reload();
+                });
             };
         }
     ]

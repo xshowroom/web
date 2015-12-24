@@ -288,4 +288,21 @@ class Model_User
 
         return $result;
     }
+
+    /**
+     * Update user status
+     *
+     * @param int $userId
+     * @param int $status
+     * @return int
+     */
+    public function updateUserStatus($userId, $status)
+    {
+        $result = DB::update('user')
+            ->set(array('status' => $status))
+            ->where('id', '=', $userId)
+            ->execute();
+
+        return $result[0];
+    }
 }

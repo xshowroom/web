@@ -646,4 +646,20 @@ angular.module(
 			};
 		}
 	]
+)
+.service(
+	'Admin',
+	[
+		'PostRequester',
+		function (PostRequester) {
+			return {
+				allowUser: function (opts) {
+					return PostRequester('admin/allowUser', opts);
+				},
+				rejectUser: function (opts) {
+					return PostRequester('admin/rejectUser', opts);
+				}
+			};
+		}
+	]
 );
