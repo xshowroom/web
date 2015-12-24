@@ -136,7 +136,10 @@ angular.module(
 		      	duplicationCheck: function (opts) {
 		      		return PostRequester('register/checkParam', opts);
 //		    		return $http.get('/api/register/checkParam', {params: opts});
-		    	}
+		    	},
+				invitationCheck: function (opts) {
+					return PostRequester('register/checkInvitationCode', opts);
+				}
    			};
          }
     ]

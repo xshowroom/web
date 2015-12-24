@@ -45,4 +45,18 @@ class Controller_Api_Register extends Controller
         ));
     }
 
+    public function action_checkInvitationCode()
+    {
+        $code = Request::current()->getParam('code');
+
+        $codeList = array("12345", "54321");
+
+        $isInvite =  in_array($code, $codeList);
+        $status = $isInvite ? STATUS_ERROR : STATUS_SUCCESS;
+
+        echo json_encode(array(
+            'status'    => $status,
+            'isInvite'  => $isInvite,
+        ));
+    }
 }
