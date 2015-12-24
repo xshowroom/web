@@ -62,13 +62,13 @@
 								</a>
 							</td>
 							<td class="xs-row xs-row-action">
-								<a data-toggle="modal" href="#modalAllowConfirm" ng-click="clickUser();" >
+								<a data-toggle="modal" href="#modalAllowConfirm" ng-click=<?= "clickUser(".$row['id'].")";?> >
 									<p>ALLOW</p>
-									<input id="user_id" type="hidden" value="<?= $row['id'] ?>">
+									<input id="user_id" type="hidden" value=>
 								</a>
 							</td>
 							<td class="xs-row">
-								<a data-toggle="modal" href="#modalRejectConfirm" ng-click="clickUser();" >
+								<a data-toggle="modal" href="#modalRejectConfirm" ng-click=<?= "clickUser(".$row['id'].")";?> >
 									<p>REJECT</p>
 									<input id="user_id" type="hidden" value="<?= $row['id'] ?>">
 								</a>

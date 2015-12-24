@@ -581,11 +581,27 @@ angular.module(
 .service(
 	'Message',
 	[
-		'$http',
-		function ($http) {
+		'PostRequester',
+		function (PostRequester) {
 			return {
 				destroy: function (opts) {
 					return PostRequester('message/delete', opts);
+				}
+			};
+		}
+	]
+)
+.service(
+	'Admin',
+	[
+		'PostRequester',
+		function (PostRequester) {
+			return {
+				allowUser: function (opts) {
+					return PostRequester('admin/allowUser', opts);
+				},
+				rejectUser: function (opts) {
+					return PostRequester('admin/rejectUser', opts);
 				}
 			};
 		}

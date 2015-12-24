@@ -219,6 +219,16 @@ class Business_User
         return $this->userModel->listUsersByStatus(Business_User::STATUS_USER_PENDING);
     }
 
+    public function allowUser($userId)
+    {
+        return $this->userModel->updateUserStatus($userId, Business_User::STATUS_USER_NORMAL);
+    }
+
+    public function rejectUser($userId)
+    {
+        return $this->userModel->updateUserStatus($userId, Business_User::STATUS_USER_REJECTED);
+    }
+
     /**
      * 将文件名中的非法字符去掉
      * 
