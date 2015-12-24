@@ -94,6 +94,9 @@
 .order-status-actions{
 	font-size: 12px;
 }
+.order-status-actions > div > *{
+	margin-bottom: 15px;
+}
 .order-status-actions .upload-label{
 	display: inline-block;
     width: 80px;
@@ -117,6 +120,12 @@
     height: 0;
     display: inline-block;
     padding: 0;
+}
+.order-status-actions a{
+	line-height: 34px;
+}
+.order-status-actions input{
+	text-align: left;
 }
 
 .order-info-header{

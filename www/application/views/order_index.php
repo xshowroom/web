@@ -42,10 +42,10 @@
                  		<span>SUBMITTED DATE:</span><span>{{order.buy_time}}</span>
                  	</div>
                  	<div class="col-xs-12 order-detail">
-                 		<span>TOTAL AMOUNT:</span><span>{{order.currency}}{{order.total_amount | number}}</span>
+                 		<span>DELIVERY ADDRESS:</span><span>{{order.shop_address}}</span>
                  	</div>
                  	<div class="col-xs-12 order-detail">
-                 		<span>DELIVERY ADDRESS:</span><span>{{order.shop_address}}</span>
+                 		<span>TOTAL AMOUNT:</span><span>{{order.currency}}{{order.total_amount | number}}</span>
                  	</div>
                 </div>
                 <div class="col-xs-12">
@@ -62,21 +62,22 @@
 							</div>
 						</div>
 					</div>
+						    
 					<?php if ($user["role_type"] == Business_User::ROLE_BRAND && $order['order_status'] == 0): ?>
 					<div class="order-status-actions">
 						<div class="row">
 						    <label class="col-xs-1">Invoice</label>
-						    <div class="col-xs-3" ng-if="!order.invoice_url">
+						    <div class="col-xs-5" ng-if="!order.invoice_url">
 						    	<input type="file" class="form-control" id="invoice-file" placeholder="ORDER INVOICE*">
 						    </div>
-						    <div class="col-xs-4" ng-if="order.invoice_url">
+						    <div class="col-xs-5" ng-if="order.invoice_url">
 						    	<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
 						    	<label class="upload-label">
 						    		<span>重新上传</span>
 						    		<input type="file" class="form-control" id="invoice-file" placeholder="ORDER INVOICE*">
 						    	</label>
 						    </div>
-						    <div class="col-xs-2">
+						    <div class="col-xs-6 text-right">
 							     <button class="btn btn-type-2" ng-click="updateInvoice();">确认提交</button>
 							     <!-- <button class="btn btn-type-1">取消订单</button> -->
 							</div>
@@ -85,7 +86,11 @@
 					<?php elseif ($user["role_type"] == Business_User::ROLE_BRAND && ($order['order_status'] == 1 || $order['order_status'] == 7)): ?>
 					<div class="order-status-actions">
 						<div class="row">
-						    <div class="col-xs-12 text-right">
+							<label class="col-xs-1">Invoice</label>
+						    <div class="col-xs-5">
+						    	<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
+						    </div>
+						    <div class="col-xs-6 text-right">
 							     <button class="btn btn-type-2" ng-click="updateStatus();">确认已收货款</button>
 							</div>
 						</div>
@@ -93,7 +98,11 @@
 					<?php elseif ($user["role_type"] == Business_User::ROLE_BRAND && $order['order_status'] == 2): ?>
 					<div class="order-status-actions">
 						<div class="row">
-						    <div class="col-xs-12 text-right">
+							<label class="col-xs-1">Invoice</label>
+						    <div class="col-xs-5">
+						    	<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
+						    </div>
+						    <div class="col-xs-6 text-right">
 							     <button class="btn btn-type-2" ng-click="updateStatus();">开始备货</button>
 							</div>
 						</div>
@@ -102,14 +111,18 @@
 					<div class="order-status-actions">
 						<div class="row">
 						    <label class="col-xs-1" for="shippingNo">Shipping No</label>
-						    <div class="col-xs-4">
+						    <div class="col-xs-5">
 						    	<input type="text" class="form-control" id="shippingNo" ng-model="order.shipNo">
 						    </div>
 						     <label class="col-xs-1" for="shippingFee">Shipping Fee</label>
-						    <div class="col-xs-4">
+						    <div class="col-xs-5">
 						    	<input type="text" class="form-control" id="shippingFee" ng-model="order.shipAmount">
 						    </div>
-						    <div class="col-xs-2">
+						    <label class="col-xs-1">Invoice</label>
+						    <div class="col-xs-5">
+						    	<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
+						    </div>
+						    <div class="col-xs-6 text-right">
 							     <button class="btn btn-type-2" ng-click="updateShipInfo();">确认提交</button>
 							</div>
 						</div>
@@ -117,6 +130,18 @@
 					<?php elseif ($user["role_type"] == Business_User::ROLE_BRAND && $order['order_status'] == 4): ?>
 					<div class="order-status-actions">
 						<div class="row">
+							<label class="col-xs-1">Shipping No</label>
+						    <div class="col-xs-5">
+						    	<span>{{order.shipNo}}</span>
+						    </div>
+						    <label class="col-xs-1">Shipping Fee</label>
+						    <div class="col-xs-5">
+						    	<span>{{order.shipAmount}}</span>
+						    </div>
+						    <label class="col-xs-1">Invoice</label>
+						    <div class="col-xs-5">
+						    	<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
+						    </div>
 						    <div class="col-xs-12 text-right">
 							     <button class="btn btn-type-2" ng-click="updateStatus();">确认发货</button>
 							</div>
@@ -125,12 +150,42 @@
 					<?php elseif ($user["role_type"] == Business_User::ROLE_BUYER && $order['order_status'] == 5): ?>
 					<div class="order-status-actions">
 						<div class="row">
-						    <div class="col-xs-12 text-right">
+							<label class="col-xs-1">Shipping No</label>
+						    <div class="col-xs-5">
+						    	<span>{{order.shipNo}}</span>
+						    </div>
+						    <label class="col-xs-1">Shipping Fee</label>
+						    <div class="col-xs-5">
+						    	<span>{{order.shipAmount}}</span>
+						    </div>
+						    <label class="col-xs-1">Invoice</label>
+						    <div class="col-xs-5">
+						    	<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
+						    </div>
+						    <div class="col-xs-6 text-right">
 							     <button class="btn btn-type-2"  ng-click="updateStatus();">确认收货</button>
 							</div>
 						</div>
 					</div>
-					
+					<?php else: ?>
+					<div class="order-status-actions">
+						<div class="row">
+						    <div class="col-xs-12 text-right">
+								<label class="col-xs-1" ng-if="order.shipNo">Shipping No</label>
+							    <div class="col-xs-5" ng-if="order.shipNo">
+							    	<span>{{order.shipNo}}</span>
+							    </div>
+							    <label class="col-xs-1" ng-if="order.shipAmount">Shipping Fee</label>
+							    <div class="col-xs-5" ng-if="order.shipAmount">
+							    	<span>{{order.shipAmount}}</span>
+							    </div>
+							     <label class="col-xs-1" ng-if="order.invoice_url">Invoice</label>
+							    <div class="col-xs-5" ng-if="order.invoice_url">
+							    	<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
+							    </div>
+							</div>
+						</div>
+					</div>
 					<?php endif; ?>
 				</div>
                 <div class="col-xs-12">
