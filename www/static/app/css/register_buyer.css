@@ -114,3 +114,31 @@ label[for='company-country'].has-content{
     line-height: 34px;
     margin-bottom: 0;
 }
+
+#invite-modal {
+	text-align: center;
+	margin-top: 145px;
+}
+
+#invite-modal .modal-content {
+	padding: 30px;
+}
+
+#invite-modal h4 {
+	color: #ca7379;
+	margin-bottom: 40px;
+}
+
+#invite-modal input {
+	margin-top: 50px;
+}
+
+#invite-modal label {
+	font-weight: 400;
+	color: #e02432;
+	margin-top: 5px;
+}
+
+#invite-modal .modal-footer {
+	text-align: center;
+}

@@ -148,7 +148,21 @@ angular.module(
         			}
         		});
 			};
-			
+			$scope.checkInvitation = function() {
+				var code = angular.element('#invitation-code').val();
+
+				User.invitationCheck({
+					code: code,
+					rnd: new Date().getTime()
+				}).success(function(res){
+					if (res.status) {
+						$('#invite-modal').modal('hide');
+					}
+					else {
+						$('#invite-error').show();
+					}
+				});
+			};
 		}
 
 	]
