@@ -128,6 +128,7 @@ angular.module(
         				$modal({title: 'Error Info', content: res.msg, show: true});
      					return;
      				}
+        			$window.location.reload();
         		});
         	};
         	
@@ -140,7 +141,6 @@ angular.module(
         				$modal({title: 'Error Info', content: res.msg, show: true});
      					return;
      				}
-        			$window.location.reload();
         		});
         	};
         	
@@ -154,6 +154,7 @@ angular.module(
         				$modal({title: 'Error Info', content: res.msg, show: true});
      					return;
      				}
+        			$scope.updateStatus();
         		});
         	};
         	
