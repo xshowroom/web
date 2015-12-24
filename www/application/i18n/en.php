@@ -624,5 +624,34 @@ return array_merge(
         'user_message__modal__DELETE_CONFIRM_DETAIL' => 'WILL YOU DELETE THIS MESSAGE PERMANENTLY?',
         'user_message__modal__btn_CLOSE' => 'CLOSE',
         'user_message__modal__btn_DELETE' => 'DELETE',
+    ),
+    /**
+     * about.php
+     */
+    array(
+        'about__TITLE' => 'ABOUT XSHOWROOM',
+        'about__CONTENT' => "
+            XSHOWROOM is the first online global fashion platform for wholesale
+            buying in China. Through our innovative platform and intuitive technology,
+            we're pioneering a wholesale evolution by making the
+            process more convenient and cost effective.
+
+            We provide this platform to allow brands and retailers to connect.
+            We've put the entire wholesale transaction process online
+            to enable brands and retailers to drive incremental revenue,
+            cut costs, improve their customer experience and analyse
+            performance through data analytics.
+
+            XSHOWROOM is based in Shanghai with a second office in London.
+        ",
+        'about__FOUNDER' => 'Founder',
+        'about__FOUNDER_NAME' => 'Dr. Cherie Chen',
+        'about__FOUNDER_DESC' => '
+            An industry expert whose experience spans the Chinese and international
+            fashion markets who is committed to providing services which help designers
+            grow to innovate, commercialise and bring sustainability to the brand.
+            Inspired by the high demand in fashion industry to reach internationally
+            and vast potential of Chinese retail market, Dr. Chen founded XSHOWROOM in 2015.
+        ',
     )
 );

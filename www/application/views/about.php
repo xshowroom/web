@@ -18,20 +18,8 @@
 		<div class="container">
 			<div class="row">
                 <div class="col-xs-8 col-xs-offset-2 banner-mask">
-                	<h2>ABOUT XSHOWROOM</h2>
-					<p>XSHOWROOM is the first online global fashion platform for wholesale 
-						buying in China. Through our innovative platform and intuitive technology, 
-						we're pioneering a wholesale evolution by making the 
-						process more convinient and cost effective.
-						
-						We provide this platform to allow brands and retailers to connect. 
-						We've put the entire wholesale transaction process online 
-						to enable brands and retailers to drive incremental revenue, 
-						cut costs, improve their customer experience and analyse 
-						performance through data analytics.
-						
-						XSHOWROOM is based in Shanghai with a second office in London.
-					</p>
+                	<h2><?=__('about__TITLE');?></h2>
+					<p><?=__('about__CONTENT');?></p>
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -44,13 +32,9 @@
 					<img src="/static/app/images/founder-photo.png" class="founder-photo">
 				</div>
 				<div class="col-xs-8 col-xs-offset-1 founder-info">
-					<h3>Founder</h3>
-					<h4>Dr. Cherie Chen</h4>
-					<p>An industry expert whose experience spans the Chinese and international 
-					fashion markets who is committed to providing services which help designers 
-					grow to innovate, commercialise and bring sustainability to the brand. 
-					Inspired by the high demand in fashion industry to reach internationally 
-					and vast potential of Chinese retail market, Dr. Chen founded XSHOWROOM in 2015.</p>
+					<h3><?=__('about__FOUNDER');?></h3>
+					<h4><?=__('about__FOUNDER_NAME');?></h4>
+					<p><?=__('about__FOUNDER_DESC');?></p>
 				</div>
 			</div>
 		</div>

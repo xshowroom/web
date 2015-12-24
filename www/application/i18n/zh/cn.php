@@ -624,5 +624,31 @@ return array_merge(
         'user_message__modal__DELETE_CONFIRM_DETAIL' => '您将永远删除该消息',
         'user_message__modal__btn_CLOSE' => '取消',
         'user_message__modal__btn_DELETE' => '删除',
+    ),
+    /**
+     * about.php
+     */
+    array(
+        'about__TITLE' => '关于 XSHOWROOM',
+        'about__CONTENT' => "
+            XSHOWROOM 是全球第一个为中国时尚批发市场开发的网路时尚平台。
+            通过我们创新的平台跟直观的技术，我们正开拓以及提高批发的市场，
+            使得过程更加便利与成本更加有效益
+
+            我们提供这个平台给予品牌和零售商进行串连
+            全程的网路批发交易过程能使品牌与零售商
+            增加收入、降低成本、以及透过数据分析来
+            改善客户体验
+
+            XSHOWROOM 总部设于上海。第二办事处为伦敦。
+        ",
+        'about__FOUNDER' => '创办人',
+        'about__FOUNDER_NAME' => '陈容博士',
+        'about__FOUNDER_DESC' => '
+            一位经验涵盖中国及国际市场的时尚专家。
+            能为客户提供最好的服务，和帮助时装设计师成长与创新，并商业化和持续发展品牌。
+            由于时尚界高需求的国际化发展以及中国零售市场的巨大潜力，
+            陈容博士在2015年创立XSHOWROOM。
+        ',
     )
 );
