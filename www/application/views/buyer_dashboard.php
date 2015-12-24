@@ -119,13 +119,13 @@
                 <div class="col-xs-12">
                     <div class="store-list-header">
                         <h2 class="store-list-title"><?=__("buyer_dashboard__MY_STORES");?></h2>
-                        <a class="store-list-all-link" href="#"><?=__("buyer_dashboard__ALL_STORES");?></a>
+                        <a class="store-list-all-link" href="/buyer/store"><?=__("buyer_dashboard__ALL_STORES");?></a>
                     </div>
                 </div>
             </div>
             <div class="store-list-content row">
             	<?php foreach ($storeList as $store): ?>
-                <div class="col-xs-12">
+                <div class="col-xs-6">
                     <div class="store-item">
                     	<div class="store-item-header">
                     		<span class="store-name"><?=$store['name']?></span>
