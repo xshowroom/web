@@ -156,7 +156,7 @@
 						    </div>
 						    <label class="col-xs-2"><?=__("order_index__actions__SHIP_FEE");?></label>
 						    <div class="col-xs-4">
-						    	<span>{{order.shipping_amount | number}}</span>
+						    	<span>{{order.currency}}{{order.shipping_amount | number}}</span>
 						    </div>
 						    <label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
 						    <div class="col-xs-4">
@@ -176,7 +176,7 @@
 							</div>
 							<label class="col-xs-2" ng-if="order.shipping_amount"><?=__("order_index__actions__SHIP_FEE");?></label>
 							<div class="col-xs-4" ng-if="order.shipping_amount">
-							  	<span>{{order.shipping_amount}}</span>
+							  	<span>{{order.currency}}{{order.shipping_amount}}</span>
 							</div>
 							<label class="col-xs-2" ng-if="order.invoice_url"><?=__("order_index__actions__INVOICE");?></label>
 							<div class="col-xs-4" ng-if="order.invoice_url">
