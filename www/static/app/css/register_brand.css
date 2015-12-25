@@ -98,7 +98,7 @@ h2.brand-register-step {
 }
 #country {
 	background-color: transparent;
-	color: transparent;
+	color: rgba(0,0,0,0);
 }
 #country option{
 	color: #000;

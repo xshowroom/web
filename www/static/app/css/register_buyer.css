@@ -71,7 +71,7 @@ label[for='company-country'].has-content{
 #store-country,
 #company-country{
 	background-color: transparent;
-	color: transparent;
+	color: rgba(0,0,0,0);;
 }
 #store-type option,
 #store-country option,
