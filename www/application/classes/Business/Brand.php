@@ -122,6 +122,13 @@ class Business_Brand
         
         return $brandInfo;
     }
+
+    public function getBrandInfoByBrandId($brandId)
+    {
+        $brandInfo = $this->brandModel->getById($brandId);
+
+        return $brandInfo;
+    }
     
     public function queryBrand($name)
     {

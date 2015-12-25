@@ -6,6 +6,10 @@
  */
 class Model_Shop
 {
+    const STATUS_SHOP_REJECTED = -2;
+    const STATUS_SHOP_PENDING = -1;
+    const STATUS_SHOP_NORMAL = 0;
+
     public function getById($shopId)
     {
         $result = DB::select()
@@ -110,7 +114,7 @@ class Model_Shop
                         'name' => $name,
                         'type' => $type,
                         'collection_type' => $colType,
-                        'brand_list' => $brandLsit,
+                        'brand_list' => $brandList,
                         'website' => $website,
                         'address' => $address,
                         'country' => $country,
@@ -141,6 +145,17 @@ class Model_Shop
         
         $result = DB::query(Database::SELECT, $sql)->execute()->as_array();
     
+        return $result;
+    }
+
+    public function listShopsByStatus($status)
+    {
+        $result = DB::select()
+            ->from('buyer_brand_map')
+            ->where('status', '=', $status)
+            ->execute()
+            ->as_array();
+
         return $result;
     }
 }

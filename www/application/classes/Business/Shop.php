@@ -8,6 +8,7 @@ class Business_Shop
     public $userModel;
     public $msgService;
     public $buyerService;
+    public $brandService;
 
     public function __construct()
     {
@@ -15,6 +16,7 @@ class Business_Shop
         $this->userModel = new Model_User();
         $this->msgService = new Business_Message();
         $this->buyerService = new Business_Buyer();
+        $this->brandService = new Business_Brand();
     }
     
     public function addShop($userId)
@@ -127,5 +129,30 @@ class Business_Shop
     {
         $res = $this->shopModel->updateStatus($shopId, $status);
         return $res;
+    }
+
+    public function listPendingShops()
+    {
+        $shopMapList = $this->shopModel->listShopsByStatus(Model_Shop::STATUS_SHOP_PENDING);
+
+        $wellFormedShopMapList = array();
+
+        foreach($shopMapList as $shopMap)
+        {
+            $wellFormedShopMapList[] = $this->buildShop($shopMap);
+        }
+
+        return $wellFormedShopMapList;
+    }
+
+    public function buildShop($shopMap)
+    {
+        $shopInfo = $this->shopModel->getById($shopMap['shop_id']);
+        $brandInfo = $this->brandService->getBrandInfoByBrandId($shopMap['brand_id']);
+
+        $shopMap['shop_info'] = $shopInfo;
+        $shopMap['brand_info'] = $brandInfo;
+
+        return $shopMap;
     }
 }

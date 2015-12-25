@@ -17,7 +17,59 @@
 	<section class="row admin-content">
 		<div class="container">
 			<div class="row">
-				Shop manager
+				<h2>PENDING STORES</h2>
+				<table class="table table-hover xs-table">
+					<tbody>
+					<tr>
+						<th class="xs-table-th" style="width: 60px;">ID</th>
+						<th class="xs-table-th">SHOP ADDRESS</th>
+						<th class="xs-table-th" style="width: 150px;">BUYER</th>
+						<th class="xs-table-th" style="width: 200px;">BRAND</th>
+						<th class="xs-table-th" style="width: 150px;">APPLY TIME</th>
+						<th class="xs-table-th" style="width: 120px;">DETAIL</th>
+						<th class="xs-table-th" style="width: 100px;">ALLOW</th>
+						<th class="xs-table-th" style="width: 100px;">REJECT</th>
+					</tr>
+					<?php foreach($pending_shop_list as $row): ?>
+						<tr>
+							<td class="xs-row">
+								<p><?= $row['id'] ?></p>
+							</td>
+							<td class="xs-row">
+								<a href="<?=URL::site('xsadmin/management/user_detail/'.$row['id']);?>" target="_blank">
+									<p><?= $row['shop_info']['address'] ?></p>
+								</a>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['shop_info']['name'] ?></p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['brand_info']['brand_name'] ?></p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['update_time'] ?></p>
+							</td>
+							<td class="xs-row">
+								<a href="<?=URL::site('xsadmin/management/shop_detail/'.$row['id']);?>" target="_blank">
+									<p>VIEW STORE</p>
+								</a>
+							</td>
+							<td class="xs-row xs-row-action">
+								<a data-toggle="modal" href="#modalAllowConfirm" ng-click=<?= "clickStore(".$row['id'].")";?> >
+									<p>ALLOW</p>
+									<input id="user_id" type="hidden" value=>
+								</a>
+							</td>
+							<td class="xs-row">
+								<a data-toggle="modal" href="#modalRejectConfirm" ng-click=<?= "clickStore(".$row['id'].")";?> >
+									<p>REJECT</p>
+									<input id="user_id" type="hidden" value="<?= $row['id'] ?>">
+								</a>
+							</td>
+						</tr>
+					<?php endforeach; ?>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</section>

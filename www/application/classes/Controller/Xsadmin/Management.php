@@ -6,6 +6,7 @@ class Controller_Xsadmin_Management extends Controller_BaseAdmin
     public $userService;
     public $brandService;
     public $buyerService;
+    public $shopService;
     public $collectionService;
 
     public function before()
@@ -15,6 +16,7 @@ class Controller_Xsadmin_Management extends Controller_BaseAdmin
         $this->userService = new Business_User();
         $this->brandService = new Business_Brand();
         $this->buyerService = new Business_Buyer();
+        $this->shopService = new Business_Shop();
         $this->collectionService =new Business_Collection();
     }
 
@@ -64,7 +66,7 @@ class Controller_Xsadmin_Management extends Controller_BaseAdmin
     {
         $view = View::factory('admin_views/shop_mgr');
         $view->set('user', $this->adminUser);
-
+        $view->set('pending_shop_list', $this->shopService->listPendingShops());
         $this->response->body($view);
     }
 
