@@ -114,7 +114,7 @@
 						    <div class="col-xs-4">
 						    	<input type="text" class="form-control" id="shippingNo" ng-model="order.shipNo">
 						    </div>
-						     <label class="col-xs-2" for="shippingFee"><?=__("order_index__actions__SHIP_FEE");?> (unit: {{order.currency}})</label>
+						     <label class="col-xs-2" for="shippingFee"><?=__("order_index__actions__SHIP_FEE");?> ( <?=__("order_index__actions__SHIP_FEE_UNIT");?> - {{order.currency}})</label>
 						    <div class="col-xs-4">
 						    	<input type="text" class="form-control" id="shippingFee" ng-model="order.shipAmount">
 						    </div>

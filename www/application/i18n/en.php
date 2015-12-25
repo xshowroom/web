@@ -633,9 +633,9 @@ return array_merge(
      * order_index.php
      */
     array(
-        'order_index__info_STORE' => 'STORE:',
-        'order_index__info_BUYER' => 'BUYER:',
-        'order_index__info_SUBMITTED_DATE' => 'SUBMITTED DATE:',
+        'order_index__info_STORE' => 'STORE NAME:',
+        'order_index__info_BUYER' => 'BUYER NAME:',
+        'order_index__info_SUBMITTED_DATE' => 'SUBMIT DATE:',
         'order_index__info_DELIVERY_ADDRESS' => 'SHIP ADDRESS:',
         'order_index__info_TOTAL_AMOUNT' => 'TOTAL AMOUNT:',
 
@@ -643,13 +643,14 @@ return array_merge(
 
         'order_index__actions__INVOICE' => 'ATTACH INVOICE (PDF FILE)',
         'order_index__actions__INVOICE_RE_SUMBMIT' => 'CHOOSE ANOTHER',
-        'order_index__actions__SHIP_NO' => 'SHIPMENT ID',
+        'order_index__actions__SHIP_NO' => 'SHIPMENT NO / ID & INFO',
         'order_index__actions__SHIP_FEE' => 'SHIPMENT FEE',
+        'order_index__actions__SHIP_FEE_UNIT' => 'UNIT',
 
         'order_index__actions__btn_INVOICE_SUBMIT' => 'SUBMIT',
         'order_index__actions__btn_DEPOSITED' => 'DEPOSITED',
         'order_index__actions__btn_PREPARING' => 'PREPARING',
-        'order_index__actions__btn_BALANCE_PAY' => 'PAY BALANCE',
+        'order_index__actions__btn_BALANCE_PAY' => 'REQ BALANCE',
         'order_index__actions__btn_SHIPPED' => 'SHIPPED',
         'order_index__actions__btn_COMPLETE' => 'COMPLETE',
 
