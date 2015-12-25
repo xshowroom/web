@@ -38,7 +38,10 @@ class Business_User
     public function login($email, $pass)
     {
         $user = $this->userModel->getByEmailPass($email, md5($pass));
-
+        if ($user['status'] == Model_User::STATUS_USER_PENDING) {
+            throw new Kohana_Exception('管理员还在审核中');
+        }
+        
         if (!empty($user)) {
             $_SESSION['opUser'] = $user;
             unset($user['password']);

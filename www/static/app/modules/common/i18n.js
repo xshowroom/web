@@ -426,7 +426,7 @@ angular.module(
             dropdown__PRODUCT_MATERIAL__Other: "其它",
 
             /**
-             * filters in service.js
+             * filters in service
              */
             filter_head__ALL_BRAND:"所有品牌",
             filter_head__FILTERED_BRAND:"筛选品牌",
@@ -440,7 +440,18 @@ angular.module(
             filter_title__CATEGORY:"系列类型",
             
             filter__CLEAR_ALL: "清除所有",
-            filter__SHOW_MORE: "更多选项"
+            filter__SHOW_MORE: "更多选项",
+
+            /**
+             * order status
+             */
+            order_status__0: "品牌处理",
+            order_status__1: "订单确认",
+            order_status__2: "定金确认",
+            order_status__3: "生产备货",
+            order_status__4: "支付尾款",
+            order_status__5: "品牌发货",
+            order_status__6: "订单完成"
         },
         'en': {
             /**
@@ -848,7 +859,7 @@ angular.module(
             dropdown__PRODUCT_MATERIAL__Other: "Other",
 
             /**
-             * filters in service.js
+             * filters in service
              */
             filter_head__ALL_BRAND:"ALL BRAND",
             filter_head__FILTERED_BRAND:"FILTERED BRAND",
@@ -862,7 +873,18 @@ angular.module(
             filter_title__CATEGORY:"COLLECTION CATEGORY",
 
             filter__CLEAR_ALL: "CLEAR ALL",
-            filter__SHOW_MORE: "MORE"
+            filter__SHOW_MORE: "MORE",
+
+            /**
+             * order status
+             */
+            order_status__0: "PENDING",
+            order_status__1: "ORDER CONFIRMED",
+            order_status__2: "DEPOSITED",
+            order_status__3: "PREPARING",
+            order_status__4: "BALANCE PAYMENT",
+            order_status__5: "SHIPPED",
+            order_status__6: "COMPLETE"
         }
 	}
 );
