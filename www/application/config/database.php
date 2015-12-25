@@ -19,9 +19,9 @@ return array
                  *
                  * Ports and sockets may be appended to the hostname.
                  */
-                'hostname'   => 'rds714462713h4vlbs02.mysql.rds.aliyuncs.com:3306',// 10.42.3.33:6008
+                'hostname'   => 'localhost:3306',
                 'database'   => 'xshowroom',
-                'username'   => 'xsroot',
+                'username'   => 'root',
                 'password'   => '123456',
                 'persistent' => false,
             ),
