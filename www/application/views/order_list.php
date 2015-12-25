@@ -24,17 +24,17 @@
         <div class="container">
         	<div class="row">
 				<div class="col-xs-3 order-status">
-                	<h3>STATUS</h3>
+                	<h3><?=__("order_list__filter_STATUS");?></h3>
                 	<ul>
                 		<li>
                 			<a ng-click="filters.status = ''; filters.limit = pageSize;"  ng-class="{'active': filters.status == ''}">
-                				<span>ALL</span>
+                				<span><?=__("order_list__filter_ALL");?></span>
                 				<span>{{orders.length || 0}}</span>
                 			</a>
                 		</li>
                 		<li ng-repeat="(status, count) in statuses">
                 			<a ng-click="filters.status = status; filters.limit = pageSize;"  ng-class="{'active': filters.status == status}">
-                				<span>{{status}}</span>
+                				<span>{{"order_status__" + status | translate}}</span>
                 				<span>{{count}}</span>
                 			</a>
                 		</li>
@@ -44,7 +44,7 @@
 					<div class="row" ng-cloak>
 						<div class=" col-xs-12">
 							<div class="order-list-header">
-								<span class="order-list-title" >'ORDER LIST'</span>
+								<span class="order-list-title" ><?=__("order_list__LIST");?></span>
 							</div>
 						</div>
 					</div>
@@ -64,12 +64,12 @@
 					                </div>
 				                  	<div class="order-info">
 			                  			<h3>{{order.brand_name}} - {{order.collection_name}}</h3>
-			                  			<div><span>STATUS:</span><span>{{order.status}}</span></div>
-						                <div><span>Total Amount:</span><span>${{order.total_amount | number}}</span></div>
-						                <div><span>Delivery Date:</span><span>{{order.delivery_date | limitTo: 10}}</span></div>
+			                  			<div><span><?=__("order_list__STATUS");?></span><span>{{"order_status__" + order.status | translate}}</span></div>
+						                <div><span><?=__("order_list__AMOUNT");?></span><span>${{order.total_amount | number}}</span></div>
+						                <div><span><?=__("order_list__DELIVERY");?></span><span>{{order.delivery_date | limitTo: 10}}</span></div>
 			                  		</div>
 						            <div class="order-info">
-						                <a ng-href="/order/{{order.order_id}}" target="_self" class="btn btn-type-2">View Detail</a>
+						                <a ng-href="/order/{{order.order_id}}" target="_self" class="btn btn-type-2"><?=__("order_list__btn_VIEW")?></a>
 				                  	</div>
 			                  	</div>
 			                  	<div class="clearfix"></div>

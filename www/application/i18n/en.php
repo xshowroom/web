@@ -613,6 +613,20 @@ return array_merge(
         'order_create__btn_CHECKOUT' => 'CHECKOUT',
     ),
     /**
+     * order_list.php
+     */
+    array(
+        'order_list__filter_STATUS' => 'STATUS',
+        'order_list__filter_ALL' => 'ALL',
+
+        'order_list__LIST' => 'ORDER LIST',
+        'order_list__STATUS' => 'ORDER STATUS:',
+        'order_list__AMOUNT' => 'TOTAL AMOUNT:',
+        'order_list__DELIVERY' => 'DELIVERY DATE:',
+
+        'order_list__btn_VIEW' => 'VIEW DETAIL',
+    ),
+    /**
      * brand_message.php.php
      */
     array(

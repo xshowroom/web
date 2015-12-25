@@ -445,12 +445,12 @@ angular.module(
             /**
              * order status
              */
-            order_status__0: "品牌处理",
-            order_status__1: "订单确认",
-            order_status__2: "定金确认",
-            order_status__3: "生产备货",
-            order_status__4: "支付尾款",
-            order_status__5: "品牌发货",
+            order_status__0: "订单待审核",
+            order_status__1: "订单已确认",
+            order_status__2: "待支付定金",
+            order_status__3: "已支付定金/备货中",
+            order_status__4: "备货完毕/待支付尾款",
+            order_status__5: "已支付尾款/待发货",
             order_status__6: "订单完成"
         },
         'en': {

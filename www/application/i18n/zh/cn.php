@@ -613,6 +613,20 @@ return array_merge(
         'order_create__btn_CHECKOUT' => '生成订单',
     ),
     /**
+     * order_list.php
+     */
+    array(
+        'order_list__filter_STATUS' => '订单状态',
+        'order_list__filter_ALL' => '全部订单',
+
+        'order_list__LIST' => '订单列表',
+        'order_list__STATUS' => '订单状态：',
+        'order_list__AMOUNT' => '订单总额：',
+        'order_list__DELIVERY' => '发货日期：',
+
+        'order_list__btn_VIEW' => '查看详情',
+    ),
+    /**
      * user_message.php & user_message_detail.php
      */
     array(
