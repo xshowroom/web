@@ -37,7 +37,7 @@
 						<table class="table table-hover xs-table">
 							<tbody>
 							<?php foreach($messageList as $row): ?>
-								<?php if((int)$row['status'] === Business_Message::MSG_STATUS_UNREADY): ?>
+								<?php if((int)$row['status'] === Model_Message::MSG_STATUS_UNREADY): ?>
 									<tr class="xs-inbox-unread">
 								<?php else: ?>
 									<tr class="xs-inbox-read">
