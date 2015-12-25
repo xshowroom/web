@@ -641,12 +641,19 @@ return array_merge(
 
         'order_index__status_TITLE' => '订单状态',
 
-        'order_index__actions_pending__INVOICE' => '附上清单/发票 (PDF文件)',
-        'order_index__actions_pending__INVOICE_RE_SUMBMIT' => '重新选择',
-        'order_index__actions_pending__INVOICE_btn_SUBMIT' => '确认提交',
+        'order_index__actions__INVOICE' => '附上清单/发票 (PDF文件)',
+        'order_index__actions__INVOICE_RE_SUMBMIT' => '重新选择',
+        'order_index__actions__SHIP_NO' => '物流单号',
+        'order_index__actions__SHIP_FEE' => '物流费用',
+
+        'order_index__actions__btn_INVOICE_SUBMIT' => '确认提交',
+        'order_index__actions__btn_DEPOSITED' => '收到订金',
+        'order_index__actions__btn_PREPARING' => '开始备货',
+        'order_index__actions__btn_BALANCE_PAY' => '收取尾款',
+        'order_index__actions__btn_SHIPPED' => '确认发货',
+        'order_index__actions__btn_COMPLETE' => '确认收货',
 
         'order_index__products_TITLE' => '订单详情',
-
         'order_index__products__STYLE_NUMBER' => '产品货号：',
         'order_index__products__RETAIL_PRICE' => '零售价：',
         'order_index__products__WHOLE_PRICE' => '批发价：',

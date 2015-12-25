@@ -641,12 +641,19 @@ return array_merge(
 
         'order_index__status_TITLE' => 'ORDER STATUS',
 
-        'order_index__actions_pending__INVOICE' => 'ATTACH INVOICE (PDF FILE)',
-        'order_index__actions_pending__INVOICE_RE_SUMBMIT' => 'CHOOSE ANOTHER',
-        'order_index__actions_pending__INVOICE_btn_SUBMIT' => 'SUBMIT',
+        'order_index__actions__INVOICE' => 'ATTACH INVOICE (PDF FILE)',
+        'order_index__actions__INVOICE_RE_SUMBMIT' => 'CHOOSE ANOTHER',
+        'order_index__actions__SHIP_NO' => 'SHIPMENT ID',
+        'order_index__actions__SHIP_FEE' => 'SHIPMENT FEE',
+
+        'order_index__actions__btn_INVOICE_SUBMIT' => 'SUBMIT',
+        'order_index__actions__btn_DEPOSITED' => 'DEPOSITED',
+        'order_index__actions__btn_PREPARING' => 'PREPARING',
+        'order_index__actions__btn_BALANCE_PAY' => 'PAY BALANCE',
+        'order_index__actions__btn_SHIPPED' => 'SHIPPED',
+        'order_index__actions__btn_COMPLETE' => 'COMPLETE',
 
         'order_index__products_TITLE' => 'PRODUCTS IN ORDER',
-
         'order_index__products__STYLE_NUMBER' => 'STYLE NUMBER:',
         'order_index__products__RETAIL_PRICE' => 'RETAIL PRICE:',
         'order_index__products__WHOLE_PRICE' => 'WHOLE PRICE:',
