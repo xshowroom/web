@@ -66,7 +66,7 @@
                 <div class="col-xs-3">
                     <a target="_self" href="/order/<?=$order['order_id']?>" class="order-item">
                         <div class="order-images">
-                            <img ng-src="/<?=order.cover_image_medium?>" class="order-item-image">
+                            <img ng-src="/<?=$order.cover_image_medium?>" class="order-item-image">
                             <?php $counter = 0;?>
                             <?php foreach($order['productions'] as  $productId=>$product):?>
                             <?php if($counter < 2):?>
