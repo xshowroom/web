@@ -63,7 +63,7 @@
         </div>
     </div>
 
-    <?php if($user['role_type'] == Business_User::ROLE_BRAND): ?>
+    <?php if($user['role_type'] == Model_User::TYPE_USER_BRAND): ?>
     <h2><?=__("profile__BRAND_INFO")?></h2>
     <div class="form-line">
         <div class="form-group">

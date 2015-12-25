@@ -60,7 +60,6 @@ class Model_Brand
         $result = DB::select()
                     ->from('brand')
                     ->where('user_id', '=', $userId)
-                    ->where('status', '=', Model_User::STATUS_USER_NORMAL)
                     ->execute()
                     ->as_array();
         
