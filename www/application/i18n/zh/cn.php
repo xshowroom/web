@@ -553,6 +553,9 @@ return array_merge(
         'buyer_dashboard__ORDER_EMPTY_1' => '欢迎来到SHOWROOM!',
         'buyer_dashboard__ORDER_EMPTY_2' => '您还没有创建订单，你可以先',
         'buyer_dashboard__ORDER_EMPTY_3' => '浏览品牌',
+        'buyer_dashboard__ORDER_NUMBER' => '订单号：',
+        'buyer_dashboard__ORDER_SUBMIT' => '创建于：',
+        'buyer_dashboard__ORDER_AMOUNT' => '订单额：',
 
         'buyer_dashboard__MY_STORES' => '我的店铺',
         'buyer_dashboard__ALL_STORES' => '所有店铺 >',

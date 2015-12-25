@@ -72,7 +72,7 @@
                 <div class="col-xs-12">
                     <div class="order-list-header">
                         <h2 class="order-list-title"><?=__("buyer_dashboard__MY_ORDERS");?></h2>
-                        <a class="order-list-all-link" href="<?=URL::site('order/list');?>"><?=__("buyer_dashboard__ALL_BRANDS");?></a>
+                        <a class="order-list-all-link" href="<?=URL::site('order/list');?>"><?=__("buyer_dashboard__ALL_ORDERS");?></a>
                     </div>
                 </div>
             </div>
@@ -99,12 +99,12 @@
                             <?php endforeach;?>
                         </div>
                         <div class="order-detail">
-                            <div><?=$order['order_id']?></div>
-                            <div>Submitted <?=$order['buy_time']?></div>
-                            <div>Order amount: <?=$order['currency']?> {{'<?=$order['total_amount']?>' | number}}</div>
+                            <div><?=__("buyer_dashboard__ORDER_NUMBER");?> <?=$order['order_id']?></div>
+                            <div><?=__("buyer_dashboard__ORDER_SUBMIT");?> <?=$order['buy_time']?></div>
+                            <div><?=__("buyer_dashboard__ORDER_AMOUNT");?> <?=$order['currency']?>{{'<?=$order['total_amount']?>' | number}}</div>
                         </div>
                         <div class="order-status">
-                            <span><?=$order['status']?></span>
+                            <span>{{ "order_status__" + "<?=$order['status']?>" | translate}}</span>
                         </div>
                     </a>
                 </div>

@@ -553,6 +553,9 @@ return array_merge(
         'buyer_dashboard__ORDER_EMPTY_1' => 'WELCOME TO XSHOWROOM',
         'buyer_dashboard__ORDER_EMPTY_2' => 'YOU HAVE ON ORDERS. PLEASE',
         'buyer_dashboard__ORDER_EMPTY_3' => 'EXPLORE BRANDS',
+        'buyer_dashboard__ORDER_NUMBER' => 'ORDER：',
+        'buyer_dashboard__ORDER_SUBMIT' => 'SUBMIT:',
+        'buyer_dashboard__ORDER_AMOUNT' => 'AMOUNT:',
 
         'buyer_dashboard__MY_STORES' => 'MY STORES',
         'buyer_dashboard__ALL_STORES' => 'ALL STORES >',
