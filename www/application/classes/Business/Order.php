@@ -214,9 +214,14 @@ class Business_Order
         return $orderId;
     }
 
+    public function getOrderById($orderId)
+    {
+        return $this->orderModel->getById($orderId);
+    }
+
     public function getOrder($userId, $orderId, $type)
     {  
-        $order = $this->orderModel->getById($orderId);
+        $order = $this->getOrderById($orderId);
 
         // 品牌用户拿别人订单报错
         if ($type == Model_User::TYPE_USER_BRAND && $order['user_id'] != $userId) {

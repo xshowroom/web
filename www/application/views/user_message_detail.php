@@ -4,6 +4,7 @@
 	<meta charset="UTF-8" >
 	<title>XShowroom</title>
 	<?php echo View::factory('common/global_libraries'); ?>
+	<link rel="stylesheet" type="text/css" href="/static/app/css/order_index.css" />
 	<link rel="stylesheet" type="text/css" href="/static/app/css/message_list.css" />
 	<script type="text/javascript" src="/static/app/modules/user_message.js"></script>
 	<script>var messageId =<?= $message['id'] ?></script>
@@ -41,12 +42,45 @@
 						<div>
 							<h5><?=__("user_message__MESSAGE_FROM_ADMIN")?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?= $message['create_datetime'] ?></h5>
 						</div>
-						<div>
-							<p><?= __($message['msg_body']) ?></p>
-							<?php if(!empty($message['order_id'])): ?>
-								1111
-							<?php endif; ?>
+
+						<div class="container">
+							<?= __($message['msg_body']) ?>
 						</div>
+						<?php if(!empty($message['order_id'])): ?>
+							<div class="container order-info">
+								<div class="row">
+									<div class="col-xs-2">
+										<div class="order-cover">
+											<img ng-src="/<?= $order['cover_image_medium'] ?>">
+										</div>
+									</div>
+									<div class="col-xs-10">
+										<div class="col-xs-12 order-detail order-name">
+											<h3><?= $order['order_id'] ?> - {{"order_status__" + "<?= $message['order_status'] ?>"|translate}}</h3>
+										</div>
+										<div class="col-xs-12 order-detail">
+											<span><?=__("order_index__info_STORE");?></span><span><?= $order['brand_name'] ?> - <?= $order['shop_name'] ?></span>
+										</div>
+										<div class="col-xs-12 order-detail">
+											<span><?=__("order_index__info_BUYER");?></span><span><?= $order['buyer_name'] ?></span>
+										</div>
+										<div class="col-xs-12 order-detail">
+											<span><?=__("order_index__info_SUBMITTED_DATE");?></span><span><?= $order['buy_time'] ?></span>
+										</div>
+										<div class="col-xs-12 order-detail">
+											<span><?=__("order_index__info_DELIVERY_ADDRESS");?></span><span><?= $order['shop_address'] ?></span>
+										</div>
+										<div class="col-xs-12 order-detail">
+											<span><?=__("order_index__info_TOTAL_AMOUNT");?></span><span><?= $order['currency'] ?>{{"<?= $order['total_amount'] ?>"| number}}</span>
+										</div>
+										<div class="col-xs-12 order-detail" style="padding-top: 10px">
+											<a ng-href="/order/<?= $order['order_id'] ?>" target="_self" class=""><?=__("order_list__btn_VIEW")?></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						<?php endif; ?>
+
 						<br>
 						<br>
 						<p><a href="<?= URL::site('message') ?>"><?=__("user_message__RETURN_MESSAGE_CENTER")?></a></p>
