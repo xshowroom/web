@@ -114,7 +114,7 @@
 						    <div class="col-xs-4">
 						    	<input type="text" class="form-control" id="shippingNo" ng-model="order.shipNo">
 						    </div>
-						     <label class="col-xs-2" for="shippingFee"><?=__("order_index__actions__SHIP_FEE");?></label>
+						     <label class="col-xs-2" for="shippingFee"><?=__("order_index__actions__SHIP_FEE");?> (unit: {{order.currency}})</label>
 						    <div class="col-xs-4">
 						    	<input type="text" class="form-control" id="shippingFee" ng-model="order.shipAmount">
 						    </div>
@@ -132,11 +132,11 @@
 						<div class="row">
 							<label class="col-xs-2"><?=__("order_index__actions__SHIP_NO");?></label>
 						    <div class="col-xs-4">
-						    	<span>{{order.shipNo}}</span>
+						    	<span>{{order.shipping_no}}</span>
 						    </div>
 						    <label class="col-xs-2"><?=__("order_index__actions__SHIP_FEE");?></label>
 						    <div class="col-xs-4">
-						    	<span>{{order.shipAmount}}</span>
+						    	<span>{{order.currency}}{{order.shipping_amount | number}}</span>
 						    </div>
 						    <label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
 						    <div class="col-xs-4">
@@ -152,11 +152,11 @@
 						<div class="row">
 							<label class="col-xs-2"><?=__("order_index__actions__SHIP_NO");?></label>
 						    <div class="col-xs-4">
-						    	<span>{{order.shipNo}}</span>
+						    	<span>{{order.shipping_no}}</span>
 						    </div>
 						    <label class="col-xs-2"><?=__("order_index__actions__SHIP_FEE");?></label>
 						    <div class="col-xs-4">
-						    	<span>{{order.shipAmount}}</span>
+						    	<span>{{order.shipping_amount | number}}</span>
 						    </div>
 						    <label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
 						    <div class="col-xs-4">
@@ -170,19 +170,17 @@
 					<?php else: ?>
 					<div class="order-status-actions">
 						<div class="row">
-						    <div class="col-xs-12 text-right">
-								<label class="col-xs-2" ng-if="order.shipNo"><?=__("order_index__actions__SHIP_NO");?></label>
-							    <div class="col-xs-4" ng-if="order.shipNo">
-							    	<span>{{order.shipNo}}</span>
-							    </div>
-							    <label class="col-xs-2" ng-if="order.shipAmount"><?=__("order_index__actions__SHIP_FEE");?></label>
-							    <div class="col-xs-4" ng-if="order.shipAmount">
-							    	<span>{{order.shipAmount}}</span>
-							    </div>
-							     <label class="col-xs-2" ng-if="order.invoice_url"><?=__("order_index__actions__INVOICE");?></label>
-							    <div class="col-xs-4" ng-if="order.invoice_url">
-							    	<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
-							    </div>
+							<label class="col-xs-2" ng-if="order.shipping_no"><?=__("order_index__actions__SHIP_NO");?></label>
+							<div class="col-xs-4" ng-if="order.shipping_no">
+							   	<span>{{order.shipping_no}}</span>
+							</div>
+							<label class="col-xs-2" ng-if="order.shipping_amount"><?=__("order_index__actions__SHIP_FEE");?></label>
+							<div class="col-xs-4" ng-if="order.shipping_amount">
+							  	<span>{{order.shipping_amount}}</span>
+							</div>
+							<label class="col-xs-2" ng-if="order.invoice_url"><?=__("order_index__actions__INVOICE");?></label>
+							<div class="col-xs-4" ng-if="order.invoice_url">
+							  	<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
 							</div>
 						</div>
 					</div>

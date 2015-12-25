@@ -94,6 +94,7 @@
 }
 .order-status-actions > div > *{
 	margin-bottom: 15px;
+	line-height: 34px;
 }
 .order-status-actions .upload-label{
 	display: inline-block;
