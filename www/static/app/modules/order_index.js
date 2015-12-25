@@ -148,7 +148,7 @@ angular.module(
         		Order.updateShipInfo({
         			orderId: $scope.orderId,
         			shipNo: $scope.order.shipNo,
-        			shipAmount: $scope.order.shipAomunt
+        			shipAmount: $scope.order.shipAmount
         		}).success(function(res){
         			if (typeof(res) != 'object' || res.status) {
         				$modal({title: 'Error Info', content: res.msg, show: true});
