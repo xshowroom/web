@@ -22,8 +22,8 @@
 					<tbody>
 					<tr>
 						<th class="xs-table-th" style="width: 60px;">ID</th>
-						<th class="xs-table-th">SHOP ADDRESS</th>
-						<th class="xs-table-th" style="width: 150px;">BUYER</th>
+						<th class="xs-table-th">STORE ADDRESS</th>
+						<th class="xs-table-th" style="width: 150px;">STORE NAME</th>
 						<th class="xs-table-th" style="width: 200px;">BRAND</th>
 						<th class="xs-table-th" style="width: 150px;">APPLY TIME</th>
 						<th class="xs-table-th" style="width: 120px;">DETAIL</th>
