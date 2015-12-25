@@ -133,9 +133,9 @@
                     		<a class="pull-right" href="/store/<?=$store['id']?>">VIEW</a>
                     	</div>
                         <div class="store-item-body">
-                        	<div class="store-photo image-link">
+                        	<a class="store-photo image-link" href="/store/<?=$store['id']?>">
                         		<img src="/static/app/images/shop-brand-1.png" class="order-item-image">
-                        	</div>
+                        	</a>
                             <div class="store-details">
 	                            <div>Brands</div>
 	                            <div><?=$store['brand_list']?></div>
