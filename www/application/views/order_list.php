@@ -49,7 +49,7 @@
 						</div>
 					</div>
 					<div class="order-list-content row">
-						<div class="col-xs-12" ng-repeat="order in orders| limitTo: filters.limit |filter: {$: filters.query, 'status': filters.status}  as results track by $index ">
+						<div class="col-xs-12" ng-repeat="order in orders| limitTo: filters.limit |filter: {$: filters.query, 'order_status': filters.status}  as results track by $index ">
 							<div class="order-item">
 								<div class="order-item-header">
 									<span>{{order.order_id}}</span>
