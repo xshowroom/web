@@ -68,7 +68,7 @@ angular.module(
      				storeIds.push($scope.selectedStores[i].id);
             	}
      			Buyer.applyAuth({
-     				shopId: storeIds.join(','),
+					shopIdList: storeIds.join(','),
      				brandId: $scope.brandId
      			}).success(function(res){
      				if (typeof(res) != 'object' || res.status) {
