@@ -13,10 +13,6 @@ class Business_Message
     const AUTO_MSG_ORDER_GENERATE = 'AUTO_MSG_ORDER_GENERATE';
     const AUTO_MSG_ORDER_STATUS_CHANGE = 'AUTO_MSG_ORDER_STATUS_CHANGE';
 
-    // Message Status
-    const MSG_STATUS_DELETE = -1;
-    const MSG_STATUS_UNREADY = 0;
-    const MSG_STATUS_READ =  1;
 
     public $messageModel;
 
@@ -65,12 +61,11 @@ class Business_Message
             return null;
         }
 
-        if ((int)$message["status"] === $this::MSG_STATUS_DELETE ) {
+        if ((int)$message["status"] === Model_Message::MSG_STATUS_DELETE ) {
             return null;
         }
         
-        if((int)$message["status"] === $this::MSG_STATUS_UNREADY ) {
-            // set message to READ after user get it
+        if((int)$message["status"] === Model_Message::MSG_STATUS_UNREADY ) {
             $this->messageModel->changeMessageStatus($userId, $messageId, Model_Message::MSG_STATUS_READ);
         }
 

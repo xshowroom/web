@@ -5,13 +5,13 @@
  * @author liyashuai
  */
 class Model_Shop
-{    
+{
     public function getById($shopId)
     {
         $result = DB::select()
                     ->from('shop')
                     ->where('id', '=', $shopId)
-                    ->where('status', '!=', STAT_DELETED)
+                    ->where('status', '=', Model_User::STATUS_USER_NORMAL)
                     ->execute()
                     ->as_array();
         
@@ -23,7 +23,7 @@ class Model_Shop
         $result = DB::select()
                     ->from('shop')
                     ->where('id', 'IN', $shopIdList)
-                    ->where('status', '=', STAT_NORMAL)
+                    ->where('status', '=', Model_User::STATUS_USER_NORMAL)
                     ->execute()
                     ->as_array();
         
@@ -35,7 +35,7 @@ class Model_Shop
         $result = DB::select()
                     ->from('shop')
                     ->where('user_id', '=', $userId)
-                    ->where('status', '!=', STAT_DELETED)
+                    ->where('status', '=', Model_User::STATUS_USER_NORMAL)
                     ->execute()
                     ->as_array();
         
@@ -96,7 +96,7 @@ class Model_Shop
                         $country,
                         $zipcode,
                         $tel,
-                        STAT_NORMAL,
+                        Model_User::STATUS_USER_PENDING,
                     ))
                     ->execute();
         
@@ -127,7 +127,7 @@ class Model_Shop
     
     public function getByFilter($filter)
     {
-        $sql = "SELECT * FROM shop WHERE status = " . STAT_NORMAL;
+        $sql = "SELECT * FROM shop WHERE status = " . Model_User::STATUS_USER_NORMAL;
     
         if (!empty($filter['show'])) {
             if ($filter['show'] == 'all') {

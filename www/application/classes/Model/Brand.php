@@ -12,7 +12,7 @@ class Model_Brand
     {
         $result = DB::select()
                     ->from('brand')
-                    ->where('status', '=', STAT_NORMAL)
+                    ->where('status', '=', Model_User::STATUS_USER_NORMAL)
                     ->execute()
                     ->as_array('user_id');
         
@@ -24,7 +24,7 @@ class Model_Brand
         $result = DB::select()
                     ->from('brand')
                     ->where('id', '=', $id)
-                    ->where('status', '=', STAT_NORMAL)
+                    ->where('status', '=', Model_User::STATUS_USER_NORMAL)
                     ->execute()
                     ->as_array();
         
@@ -36,7 +36,7 @@ class Model_Brand
         $result = DB::select()
                     ->from('brand')
                     ->where('brand_name', 'like', '%'.$name.'%')
-                    ->where('status', '=', STAT_NORMAL)
+                    ->where('status', '=', Model_User::STATUS_USER_NORMAL)
                     ->execute()
                     ->as_array('user_id');
         
@@ -48,7 +48,7 @@ class Model_Brand
         $result = DB::select()
                     ->from('brand')
                     ->where('brand_url', '=', $url)
-                    ->where('status', '=', STAT_NORMAL)
+                    ->where('status', '=', Model_User::STATUS_USER_NORMAL)
                     ->execute()
                     ->as_array();
         
@@ -60,7 +60,7 @@ class Model_Brand
         $result = DB::select()
                     ->from('brand')
                     ->where('user_id', '=', $userId)
-                    ->where('status', '=', STAT_NORMAL)
+                    ->where('status', '=', Model_User::STATUS_USER_NORMAL)
                     ->execute()
                     ->as_array();
         
@@ -72,7 +72,7 @@ class Model_Brand
         $result = DB::select()
                     ->from('brand')
                     ->where('user_id', 'IN', $userIdList)
-                    ->where('status', '=', STAT_NORMAL)
+                    ->where('status', '=', Model_User::STATUS_USER_NORMAL)
                     ->execute()
                     ->as_array();
         
@@ -84,7 +84,7 @@ class Model_Brand
         $result = DB::select()
                     ->from('brand')
                     ->where('id', 'IN', $brandList)
-                    ->where('status', '=', STAT_NORMAL)
+                    ->where('status', '=', Model_User::STATUS_USER_NORMAL)
                     ->execute()
                     ->as_array('user_id');
     

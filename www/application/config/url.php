@@ -7,5 +7,7 @@ return array(
 		'xiaotao.cloudapp.net',
 		'xshowroom-demo.cloudapp.net',
 		'xshowroom-web.cloudapp.net',
+		'www.xshowroom.com',
+		'www.xshowroom.cn'
 	),
 );
