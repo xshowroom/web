@@ -174,8 +174,8 @@
 							<div class="col-xs-4" ng-if="order.shipping_no">
 							   	<span>{{order.shipping_no}}</span>
 							</div>
-							<label class="col-xs-2" ng-if="order.shipping_amount"><?=__("order_index__actions__SHIP_FEE");?></label>
-							<div class="col-xs-4" ng-if="order.shipping_amount">
+							<label class="col-xs-2" ng-if="order.shipping_no"><?=__("order_index__actions__SHIP_FEE");?></label>
+							<div class="col-xs-4" ng-if="order.shipping_no">
 							  	<span>{{order.currency}}{{order.shipping_amount}}</span>
 							</div>
 							<label class="col-xs-2" ng-if="order.invoice_url"><?=__("order_index__actions__INVOICE");?></label>
