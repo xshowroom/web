@@ -633,9 +633,9 @@ return array_merge(
      * order_index.php
      */
     array(
-        'order_index__info_STORE' => 'STORE:',
-        'order_index__info_BUYER' => 'BUYER:',
-        'order_index__info_SUBMITTED_DATE' => 'SUBMITTED DATE:',
+        'order_index__info_STORE' => 'STORE NAME:',
+        'order_index__info_BUYER' => 'BUYER NAME:',
+        'order_index__info_SUBMITTED_DATE' => 'SUBMIT DATE:',
         'order_index__info_DELIVERY_ADDRESS' => 'SHIP ADDRESS:',
         'order_index__info_TOTAL_AMOUNT' => 'TOTAL AMOUNT:',
 
