@@ -114,7 +114,7 @@ class Model_User
         $result = DB::select()
                     ->from('brand')
                     ->where('brand_url', '=', $brandUrl)
-                    ->where('status', '=', STAT_NORMAL)
+                    ->where('status', '=', self::STATUS_USER_NORMAL)
                     ->execute()
                     ->as_array();
     
@@ -144,7 +144,7 @@ class Model_User
                         $password,
                         $roleType,
                         date('Y-m-d H:i:s'),
-                        Model_User::STATUS_USER_NORMAL,
+                        Model_User::STATUS_USER_PENDING,
                     ))
                     ->execute();
         
@@ -198,7 +198,7 @@ class Model_User
                         $companyZip,
                         $companyTel,
                         $companyWebsite,
-                        STAT_NORMAL,
+                        self::STATUS_USER_PENDING,
                     ))
                     ->execute();
     
@@ -232,7 +232,7 @@ class Model_User
                         $designerName,
                         $brandUrl,
                         $brandImage,
-                        STAT_NORMAL,
+                        self::STATUS_USER_PENDING,
                     ))
                     ->execute();
     
@@ -250,6 +250,7 @@ class Model_User
         $result = DB::select()
                   ->from('user_attr')
                   ->where('user_id', '=', $userId)
+                  ->where('status', '=', self::STATUS_USER_NORMAL)
                   ->execute()
                   ->as_array();
         
@@ -261,6 +262,7 @@ class Model_User
         $result = DB::select('user_id')
                     ->from('user_attr')
                     ->where('company_country', 'IN', $country)
+                    ->where('status', '=', self::STATUS_USER_NORMAL)
                     ->execute()
                     ->as_array();
         
@@ -272,6 +274,7 @@ class Model_User
         $result = DB::select(DB::expr('COUNT(id) AS USER_COUNT'))
                     ->from('user')
                     ->where('role_type', '=', $roleType)
+                    ->where('status', '=', self::STATUS_USER_NORMAL)
                     ->execute();
 
         return empty($result) ? 0 : (int)$result[0]['USER_COUNT'];
