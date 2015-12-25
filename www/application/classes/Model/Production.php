@@ -8,6 +8,8 @@
  */
 class Model_Production
 {
+    
+    
     /**
      * 增加产品信息
      *
