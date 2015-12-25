@@ -41,17 +41,10 @@
                 	</ul>
                 </div>	
 				<div class="col-xs-9 order-list">
-					<div class="row">
+					<div class="row" ng-cloak>
 						<div class=" col-xs-12">
 							<div class="order-list-header">
-								<span class="order-list-title" ng-cloak>{{hasFilter() ? 'ORDER LIST' : 'FILTERED ORDER LIST'}}</span>
-								<div class="input-group">
-									<span class="input-group-addon">
-										<span class="glyphicon glyphicon-search"></span>
-									</span>
-									<input type="text" class="form-control" id="order-keyword" ng-model='filters.query'
-										 placeholder="{{'filter_head__SEARCH_BRAND'|translate}}" ng-change="filters.limit = pageSize;">
-								</div>
+								<span class="order-list-title" >'ORDER LIST'</span>
 							</div>
 						</div>
 					</div>
