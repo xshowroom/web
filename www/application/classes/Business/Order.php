@@ -278,6 +278,10 @@ class Business_Order
         $collection = $this->collectionService->getCollectionInfo($order['user_id'], $order['collection_id']);
         $isInStock = ($collection['mode'] == 'dropdown__COLLECTION_MODE__STOCK') ? true : false;
 
+        $buyerUserId = $userId;
+        $brandUserId = $$order['user_id'];
+        $orderId = $order['order_id'];
+
         switch ($status) {
             // 订单状态不会被改成pending
             case Model_Order::ORDER_STATUS_PENDING:
@@ -289,7 +293,11 @@ class Business_Order
                     $order['order_status'] != Model_Order::ORDER_STATUS_PENDING) {
                     $errorInfo = Kohana::message('message', 'AUTH_ERROR');
                     throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);           
-                }    
+                }
+
+                // generate message to brand
+                $this->messageService->notifyOrderChange($brandUserId, $orderId);
+
                 break;
             // deposited状态只能是品牌商修改&&前置状态必须是confirmed&&现货不会出现该状态
             case Model_Order::ORDER_STATUS_DEPOSITED:
@@ -298,7 +306,11 @@ class Business_Order
                     $isInStock) {
                     $errorInfo = Kohana::message('message', 'AUTH_ERROR');
                     throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);           
-                }    
+                }
+
+                // generate message to buyer
+                $this->messageService->notifyOrderChange($buyerUserId, $orderId);
+
                 break;
             // preparing状态只能是品牌商修改&&前置状态可能为deposited或者fullpayment(现货)
             case Model_Order::ORDER_STATUS_PREPARING:
@@ -308,6 +320,10 @@ class Business_Order
                     $errorInfo = Kohana::message('message', 'AUTH_ERROR');
                     throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
                 }
+
+                // generate message to buyer
+                $this->messageService->notifyOrderChange($buyerUserId, $orderId);
+
                 break;
             // paybalance状态只能是品牌商修改&&前置状态必须是preparing&&现货不会出现该状态
             case Model_Order::ORDER_STATUS_PAYBALANCE:
@@ -325,15 +341,23 @@ class Business_Order
                     (!$isInStock && $order['status'] != Model_Order::ORDER_STATUS_PAYBALANCE)) {
                     $errorInfo = Kohana::message('message', 'AUTH_ERROR');
                     throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
-                }   
+                }
+
+                // generate message to buyer
+                $this->messageService->notifyOrderChange($buyerUserId, $orderId);
+
                 break;
             // completed状态只能买手修改&&前置状态必须是pending
-            case Model_Order::ORDER_STATUS_COMPLETED:
+            case Model_Order::ORDER_STATUS_COMPLETE:
                 if ($type != Model_User::TYPE_USER_BUYER ||
                     $order['order_status'] != Model_Order::ORDER_STATUS_SHIPPED) {
                     $errorInfo = Kohana::message('message', 'AUTH_ERROR');
                     throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);           
-                }    
+                }
+
+                // generate message to brand
+                $this->messageService->notifyOrderChange($brandUserId, $orderId);
+
                 break;
             // fullpayment状态只能是品牌商修改&&前置状态必须是confirmed&&非现货不会出现该状态
             case Model_Order::ORDER_STATUS_FULLPAYMENT:
@@ -342,7 +366,11 @@ class Business_Order
                     !$isInStock) {
                     $errorInfo = Kohana::message('message', 'AUTH_ERROR');
                     throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);           
-                }    
+                }
+
+                // generate message to buyer
+                $this->messageService->notifyOrderChange($buyerUserId, $orderId);
+
                 break;
 
             // 其他情况
