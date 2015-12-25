@@ -650,7 +650,7 @@ return array_merge(
         'order_index__actions__btn_INVOICE_SUBMIT' => 'SUBMIT',
         'order_index__actions__btn_DEPOSITED' => 'DEPOSITED',
         'order_index__actions__btn_PREPARING' => 'PREPARING',
-        'order_index__actions__btn_BALANCE_PAY' => 'PAY BALANCE',
+        'order_index__actions__btn_BALANCE_PAY' => 'REQ BALANCE',
         'order_index__actions__btn_SHIPPED' => 'SHIPPED',
         'order_index__actions__btn_COMPLETE' => 'COMPLETE',
 
