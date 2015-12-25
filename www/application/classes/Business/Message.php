@@ -28,7 +28,7 @@ class Business_Message
      */
     public function createMessage($toUserId, $messageBody)
     {
-        $this->messageModel->createMessage($toUserId, $messageBody, null);
+        $this->messageModel->createMessage($toUserId, $messageBody, null, null);
     }
 
     /**
@@ -36,10 +36,11 @@ class Business_Message
      *
      * @param $toUserId
      * @param $orderId
+     * @param $order_status
      */
-    public function notifyOrderChange($toUserId, $orderId)
+    public function notifyOrderChange($toUserId, $orderId, $order_status)
     {
-        $this->messageModel->createMessage($toUserId, Business_Message::AUTO_MSG_ORDER_STATUS_CHANGE, $orderId);
+        $this->messageModel->createMessage($toUserId, Business_Message::AUTO_MSG_ORDER_STATUS_CHANGE, $orderId, $order_status);
     }
 
     /**

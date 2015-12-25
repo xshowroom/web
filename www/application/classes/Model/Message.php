@@ -13,7 +13,7 @@ class Model_Message
     const MSG_STATUS_UNREADY = 0;
     const MSG_STATUS_READ =  1;
 
-    public function createMessage($toUserId, $messageBody, $orderId)
+    public function createMessage($toUserId, $messageBody, $orderId, $order_status)
     {
         $result = DB::insert(Model_Message::$TABLE)
             ->columns(array(
@@ -21,6 +21,7 @@ class Model_Message
                 'status',
                 'msg_body',
                 'order_id',
+                'order_status',
                 'create_datetime',
             ))
             ->values(array(
@@ -28,6 +29,7 @@ class Model_Message
                 Model_Message::MSG_STATUS_UNREADY,
                 $messageBody,
                 $orderId,
+                $order_status,
                 date('Y-m-d H:i:s'),
             ))
             ->execute();

@@ -199,7 +199,7 @@ class Business_Order
         }
 
         // generate message to brand
-        $this->messageService->notifyOrderChange($collection['user_id'], $res['order_id']);
+        $this->messageService->notifyOrderChange($collection['user_id'], $res, Model_Order::ORDER_STATUS_PENDING);
 
         return $order['orderId'];
         
@@ -296,7 +296,7 @@ class Business_Order
                 }
 
                 // generate message to brand
-                $this->messageService->notifyOrderChange($brandUserId, $orderId);
+                $this->messageService->notifyOrderChange($brandUserId, $orderId, Model_Order::ORDER_STATUS_CONFIRMED);
 
                 break;
             // deposited状态只能是品牌商修改&&前置状态必须是confirmed&&现货不会出现该状态
@@ -309,7 +309,7 @@ class Business_Order
                 }
 
                 // generate message to buyer
-                $this->messageService->notifyOrderChange($buyerUserId, $orderId);
+                $this->messageService->notifyOrderChange($buyerUserId, $orderId, Model_Order::ORDER_STATUS_DEPOSITED);
 
                 break;
             // preparing状态只能是品牌商修改&&前置状态可能为deposited或者fullpayment(现货)
@@ -322,7 +322,7 @@ class Business_Order
                 }
 
                 // generate message to buyer
-                $this->messageService->notifyOrderChange($buyerUserId, $orderId);
+                $this->messageService->notifyOrderChange($buyerUserId, $orderId, Model_Order::ORDER_STATUS_PREPARING);
 
                 break;
             // paybalance状态只能是品牌商修改&&前置状态必须是preparing&&现货不会出现该状态
@@ -344,7 +344,7 @@ class Business_Order
                 }
 
                 // generate message to buyer
-                $this->messageService->notifyOrderChange($buyerUserId, $orderId);
+                $this->messageService->notifyOrderChange($buyerUserId, $orderId, Model_Order::ORDER_STATUS_SHIPPED);
 
                 break;
             // completed状态只能买手修改&&前置状态必须是pending
@@ -356,7 +356,7 @@ class Business_Order
                 }
 
                 // generate message to brand
-                $this->messageService->notifyOrderChange($brandUserId, $orderId);
+                $this->messageService->notifyOrderChange($brandUserId, $orderId, Model_Order::ORDER_STATUS_CONFIRMED);
 
                 break;
             // fullpayment状态只能是品牌商修改&&前置状态必须是confirmed&&非现货不会出现该状态
@@ -369,7 +369,7 @@ class Business_Order
                 }
 
                 // generate message to buyer
-                $this->messageService->notifyOrderChange($buyerUserId, $orderId);
+                $this->messageService->notifyOrderChange($buyerUserId, $orderId, Model_Order::ORDER_STATUS_FULLPAYMENT);
 
                 break;
 
