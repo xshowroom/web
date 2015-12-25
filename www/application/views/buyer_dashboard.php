@@ -130,7 +130,7 @@
                     	<div class="store-item-header">
                     		<span class="store-name"><?=$store['name']?></span>
                     		<span class="store-location"><?=$store['address']?>, {{'<?=$store['country']?>' | translate}}</span>
-                    		<a class="pull-right">VIEW</a>
+                    		<a class="pull-right" href="/store/<?=$store['id']?>">VIEW</a>
                     	</div>
                         <div class="store-item-body">
                         	<div class="store-photo image-link">
