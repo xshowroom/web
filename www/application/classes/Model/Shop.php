@@ -11,7 +11,7 @@ class Model_Shop
         $result = DB::select()
                     ->from('shop')
                     ->where('id', '=', $shopId)
-                    ->where('status', '!=', Model_User::STATUS_USER_DELETED)
+                    ->where('status', '=', Model_User::STATUS_USER_NORMAL)
                     ->execute()
                     ->as_array();
         
@@ -35,7 +35,7 @@ class Model_Shop
         $result = DB::select()
                     ->from('shop')
                     ->where('user_id', '=', $userId)
-                    ->where('status', '!=', Model_User::STATUS_USER_DELETED)
+                    ->where('status', '=', Model_User::STATUS_USER_NORMAL)
                     ->execute()
                     ->as_array();
         
