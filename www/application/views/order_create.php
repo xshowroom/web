@@ -171,7 +171,7 @@
 					<div class="order-details">
 						<div class="order-details-header">
 							<h4>PAYMENT & SHIPPING</h4>
-							<a ng-click="generateOrderStep = 1;">change</a>
+							<a ng-click="generateOrderStep = 2;">change</a>
 						</div>
 						<div>
 							<div class="order-address-info">
@@ -197,7 +197,7 @@
 						</div>
 						<div class="order-details-header">
 							<h4>ORDER LIST</h4>
-							<a ng-click="generateOrderStep = 2;">change</a>
+							<a ng-click="generateOrderStep = 1;">change</a>
 						</div>
 						<table class="table order-item-list">
 							<thead>
