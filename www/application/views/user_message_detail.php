@@ -42,7 +42,10 @@
 							<h5><?=__("user_message__MESSAGE_FROM_ADMIN")?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?= $message['create_datetime'] ?></h5>
 						</div>
 						<div>
-							<?= $message['msg_body'] ?>
+							<p><?= __($message['msg_body']) ?></p>
+							<?php if(!empty($message['order_id'])): ?>
+								1111
+							<?php endif; ?>
 						</div>
 						<br>
 						<br>

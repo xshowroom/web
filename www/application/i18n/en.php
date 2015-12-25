@@ -23,7 +23,8 @@ return array_merge(
      */
     array(
         'AUTO_MSG_WELCOME_BRAND' => "Welcome to XShowroom! Let's start your business now! Please feel free to contact us if any problem. Mail to: info@projectcrossover.com",
-        'AUTO_MSG_WELCOME_BUYER' => "Welcome to XShowroom! Let's start your business now! Please feel free to contact us if any problem. Mail to: info@projectcrossover.com"
+        'AUTO_MSG_WELCOME_BUYER' => "Welcome to XShowroom! Let's start your business now! Please feel free to contact us if any problem. Mail to: info@projectcrossover.com",
+        'AUTO_MSG_ORDER_STATUS_CHANGE' => 'YOU ORDER STATUS HAS BEEN CHANGED',
     ),
     /**
      * global_setting_with_login.php

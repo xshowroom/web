@@ -121,7 +121,7 @@ class Business_User
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         } 
         // generate welcome msg
-        $this->msgService->createMessage($userId, __(Business_Message::AUTO_MSG_WELCOME_BRAND));
+        $this->msgService->createMessage($userId, Business_Message::AUTO_MSG_WELCOME_BRAND);
 
         // generate brand info
         $brandName     = Request::current()->getParam('brandName');
@@ -157,7 +157,7 @@ class Business_User
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
         // generate welcome msg
-        $this->msgService->createMessage($userId, __(Business_Message::AUTO_MSG_WELCOME_BRAND));
+        $this->msgService->createMessage($userId, Business_Message::AUTO_MSG_WELCOME_BRAND);
         $shopId = $this->shopService->realAddShop($userId);
         return $shopId;
     }

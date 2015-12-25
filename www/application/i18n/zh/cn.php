@@ -24,7 +24,7 @@ return array_merge(
     array(
         'AUTO_MSG_WELCOME_BRAND' => "欢迎来到XShowroom! 让我们一起开始我们的商业之旅! 您在使用过程中有任何问题，可以通过邮件告诉我们 info@projectcrossover.com",
         'AUTO_MSG_WELCOME_BUYER' => "欢迎来到XShowroom! 让我们一起开始我们的商业之旅! 您在使用过程中有任何问题，可以通过邮件告诉我们 info@projectcrossover.com",
-        'AUTO_MSG_ORDER_STATUS_CHANGE' => '您的订单',
+        'AUTO_MSG_ORDER_STATUS_CHANGE' => '您的订单状态发生了变化',
     ),
     /**
      * global_setting_with_login.php

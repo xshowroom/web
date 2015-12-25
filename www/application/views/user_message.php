@@ -49,7 +49,13 @@
 										</td>
 										<td class="xs-row xs-inbox-content">
 											<a href="<?= URL::site('message/detail/'.$row['id']); ?>">
-												<p><?= $row['msg_body'] ?></p>
+												<p>
+													<?= __($row['msg_body']) ?>
+													<?php if(!empty($row['order_id'])): ?>
+														<?= $row['order_id'] ?>
+													<?php endif; ?>
+													{{"order_status__" + "<?= $row['order_status'] ?>"|translate}}
+												</p>
 											</a>
 										</td>
 										<td class="xs-row xs-inbox-date hidden-sm hidden-xs">
