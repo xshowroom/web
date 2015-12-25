@@ -18,7 +18,7 @@
            ?>
     </nav>
     <section class="row no-vertical-padding">
-        <div class="container">
+        <div class="container" ng-cloak>
             <div class="row store-inputs uploading">
                 <div class="col-xs-12">
                 	<h3>Store Images<span>({{store.images.length}}/5)</span></h3>
@@ -32,7 +32,7 @@
                 	</div>
                     <div ng-show="store.images.length < 5" class="store-image image-uploader" 
                     	ng-class="{'empty-store-image': !store.images.length, 'has-error': checkInfo.validation.images}"
-                    	data-render-image='0' data-after-uploading = "addstoreImage(url);"
+                    	data-render-image='0' data-after-uploading = "addStoreImage(url);"
                     	data-title="{{store.images.length? '': 'You can upload 5 images (jpg, png, gif) for each store.'}}">
                     </div>
                 </div>
@@ -43,64 +43,93 @@
                 </div>
                 <div class="col-xs-10">
                     <form class="form-horizontal" id="store-create-form">
-                    	<div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.name}">
-                            <label for="name" class="col-xs-2 control-label"><?=__("product_create__store_NAME");?></label>
+                    	<div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopName}">
+                            <label for="name" class="col-xs-2 control-label">STORE NAME</label>
                             <div class="col-xs-6">
-                            	<input type="text" class="form-control" id="name"  name="name" ng-model="store.name">
+                            	<input type="text" class="form-control" id="store-name" name="shopName"
+									ng-model="store.shopName">
                             </div>
                         </div>
-                        <div class="form-group col-xs-12"  ng-class="{'has-error': checkInfo.validation.category}">
-                            <label for="category" class="col-xs-2 control-label"><?=__("store_create__store_CATEGORY");?></label>
+                        <div class="form-group col-xs-12"  ng-class="{'has-error': checkInfo.validation.shopType}">
+                            <label for="store-type" class="col-xs-2 control-label">STORE CATEGORY</label>
                             <div class="col-xs-6">
-                                <select class="form-control" id="category" name="category" ng-model="store.category"
-                                	ng-change="setSizeCodes(store.category, store.sizeRegion);">
-                                	<option ng-repeat="category in categories track by $index" value="dropdown__store_CATEGORY__{{category | uppercase}}">{{('dropdown__store_CATEGORY__' + category.toUpperCase()) | translate}}</option>
-                                </select>
+                                <select class="form-control" id="store-type" ng-model="store.shopType" name="shopType">
+                                    <option value="dropdown__STORE__DEPARTMENT_SHOP">{{ "dropdown__STORE__DEPARTMENT_SHOP"| translate }}</option>
+                                    <option value="dropdown__STORE__MULTI_BRAND_SHOP">{{ "dropdown__STORE__MULTI_BRAND_SHOP"| translate }}</option>
+                                    <option value="dropdown__STORE__ONLINE_SHOP">{{ "dropdown__STORE__ONLINE_SHOP"| translate }}</option>
+								</select>
                             </div>
                         </div>
-                        <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.styleNum}">
-                            <label for="style-number" class="col-xs-2 control-label"><?=__("store_create__store_STYLE_NUMBER");?></label>
+                        <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.collectionType}">
+                            <label class="col-xs-2 control-label">COLLETION TYPES</label>
+							<div class="col-xs-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" name="collectionType" ng-model="collectionType.women" ng-change="setCollection('dropdown__COLLECTION__WOMEN')">
+									{{ "dropdown__COLLECTION__WOMEN"| translate }}
+								</label>
+								<label for="collection-type-men" class="checkbox-inline">
+									<input type="checkbox" name="collectionType" ng-model="collectionType.man" ng-change="setCollection('dropdown__COLLECTION__MEN')">
+									{{ "dropdown__COLLECTION__MEN"| translate }}
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" name="collectionType" ng-model="collectionType.accessories" ng-change="setCollection('dropdown__COLLECTION__ACCESSORIES')">
+									{{ "dropdown__COLLECTION__ACCESSORIES"| translate }}
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" name="collectionType" ng-model="collectionType.lifestyle" ng-change="setCollection('dropdown__COLLECTION__LIFESTYLE')">
+									{{ "dropdown__COLLECTION__LIFESTYLE"| translate }}
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" name="collectionType" ng-model="collectionType.others" ng-change="setCollection('dropdown__COLLECTION__OTHERS')">
+									{{ "dropdown__COLLECTION__OTHERS"| translate }}
+								</label>
+							</div>
+                        </div>
+                        <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.brandList}">
+                            <label for="brand-carried" class="col-xs-2 control-label">BRAND LIST</label>
                             <div class="col-xs-6">
-                                  <input type="text" class="form-control" id="style-number" name="styleNumber" ng-model="store.styleNum">
+                                  <input type="text" class="form-control" id="brand-carried" name="brandList" ng-model="store.brandList">
                             </div>
                         </div>
-                        <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.wholePrice}">
-                            <label for="wholesale-price" class="col-xs-2 control-label"><?=__("store_create__store_WHOLESALE_PRICE");?></label>
+                        <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopWebsite}">
+                            <label for="website" class="col-xs-2 control-label">WEBSITE</label>
                             <div class="col-xs-6">
-                                  <input type="text" class="form-control" id="wholesale-price" name="wholesalePrice" ng-model="store.wholePrice">
+                            	<input type="text" class="form-control" id="website" name="shopWebsite" ng-model="store.shopWebsite">
                             </div>
                         </div>
-                        <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.retailPrice}">
-                            <label for="retail-price" class="col-xs-2 control-label"><?=__("store_create__store_RETAIL_PRICE");?></label>
+                        <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopAddress}">
+                            <label for="store-address" class="col-xs-2 control-label">ADDRESS</label>
                             <div class="col-xs-6">
-                                  <input type="text" class="form-control" id="retail-price" name="retailPrice" ng-model="store.retailPrice">
+                                <input type="text" class="form-control" id="store-address" name="shopAddress" ng-model="store.shopAddress">
                             </div>
                         </div>
-                        <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.madeIn}">
-                            <label for="made-in" class="col-xs-2 control-label"><?=__("store_create__store_MADE_IN");?></label>
+                        <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopCountry}">
+                            <label for="material" class="col-xs-2 control-label">COUNTRY</label>
                             <div class="col-xs-6">
-                                <select  class="form-control" id="made-in" name="madeIn" ng-model="store.madeIn">
+                            	<select  class="form-control" id="store-country" name="shopCountry" ng-model="store.shopCountry">
 									<option ng-repeat="country in countries" value="dropdown__COUNTRY__{{country}}">
 										{{ ("dropdown__COUNTRY__" + country)| translate}}
 									</option>
 								</select>
                             </div>
                         </div>
-                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.material}">
-                            <label for="material" class="col-xs-2 control-label"><?=__("store_create__store_MATERIAL");?></label>
+                        <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopZipcode}">
+                            <label for="store-address" class="col-xs-2 control-label">ZIPCODE</label>
                             <div class="col-xs-6">
-                            	<select class="form-control" id="material" ng-model="store.material">
-                                    <option ng-repeat="material in materials" value="{{'dropdown__store_MATERIAL__' + material}}">
-                                    	{{('dropdown__store_MATERIAL__' + material) | translate}}
-                                    </option>
-                                </select>
+                            	<input type="text" class="form-control" id="store-postcode" name="shopZipcode" ng-model="store.shopZipcode">
                             </div>
                         </div>
-                        <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.careIns}">
-                            <label for="care-instruction" class="col-xs-2 control-label"><?=__("store_create__store_CARE_INSTRUCTION");?></label>
+                        <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopTel}">
+                            <label for="store-address" class="col-xs-2 control-label">TELEPHONE</label>
+                            <div class="col-xs-6">
+                                <input type="text" class="form-control" id="store-telephone-number" name="shopTel" ng-model="store.shopTel">
+                            </div>
+                        </div>
+                        <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.about}">
+                            <label for="care-instruction" class="col-xs-2 control-label">ABOUT STORE</label>
                             <div class="col-xs-6">
                            		<textcomplete>
-                                  	<textarea class="form-control" id="care-instruction" ng-model="store.careIns"></textarea>
+                                  	<textarea class="form-control" id="care-instruction" ng-model="store.about"></textarea>
                                 </textcomplete>
                             </div>
                           </div>
@@ -115,7 +144,7 @@
 						</div>
                         <div class="form-group col-xs-12">
                             <div class="col-xs-10 col-xs-offset-2">
-                                  <button class="btn btn-type-2" id="create-btn" ng-click="create()"><?=__("store_create__store_btn_SAVE");?></button>
+                                  <button class="btn btn-type-2" id="create-btn" ng-click="create();">SAVE</button>
                         	</div>
                         </div>
                     </form>
