@@ -64,7 +64,7 @@
 					                </div>
 				                  	<div class="order-info">
 			                  			<h3>{{order.brand_name}} - {{order.collection_name}}</h3>
-			                  			<div><span><?=__("order_list__STATUS");?></span><span>{{"order_status__" + order.status | translate}}</span></div>
+			                  			<div><span><?=__("order_list__STATUS");?></span><span>{{"order_status__" + order.order_status | translate}}</span></div>
 						                <div><span><?=__("order_list__AMOUNT");?></span><span>${{order.total_amount | number}}</span></div>
 						                <div><span><?=__("order_list__DELIVERY");?></span><span>{{order.delivery_date | limitTo: 10}}</span></div>
 			                  		</div>
