@@ -81,7 +81,7 @@
                             <div><?= __("brand_dashboard__ORDER_AMOUNT"); ?> <?=$order['currency']?> {{'<?=$order['total_amount']?>' | number}}</div>
                         </div>
                         <div class="order-status">
-                            <span>{{ "order_status__" + "<?=$order['status']?>" | translate}}</span>
+                            <span>{{ "order_status__" + "<?=$order['order_status']?>" | translate}}</span>
                         </div>
                     </a>
                 </div>

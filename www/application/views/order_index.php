@@ -171,15 +171,15 @@
 					<div class="order-status-actions">
 						<div class="row">
 						    <div class="col-xs-12 text-right">
-								<label class="col-xs-1" ng-if="order.shipNo">Shipping No:</label>
+								<label class="col-xs-1" ng-if="order.shipNo"><?=__("order_index__actions__SHIP_NO");?></label>
 							    <div class="col-xs-5" ng-if="order.shipNo">
 							    	<span>{{order.shipNo}}</span>
 							    </div>
-							    <label class="col-xs-1" ng-if="order.shipAmount">Shipping Fee:</label>
+							    <label class="col-xs-1" ng-if="order.shipAmount"><?=__("order_index__actions__SHIP_FEE");?></label>
 							    <div class="col-xs-5" ng-if="order.shipAmount">
 							    	<span>{{order.shipAmount}}</span>
 							    </div>
-							     <label class="col-xs-1" ng-if="order.invoice_url">Invoice:</label>
+							     <label class="col-xs-2" ng-if="order.invoice_url"><?=__("order_index__actions__INVOICE");?></label>
 							    <div class="col-xs-5" ng-if="order.invoice_url">
 							    	<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
 							    </div>
