@@ -644,8 +644,9 @@ return array_merge(
 
         'order_index__actions__INVOICE' => '附上清单/发票 (PDF文件)',
         'order_index__actions__INVOICE_RE_SUMBMIT' => '重新选择',
-        'order_index__actions__SHIP_NO' => '物流单号',
+        'order_index__actions__SHIP_NO' => '物流信息（发货方，物流单号）',
         'order_index__actions__SHIP_FEE' => '物流费用',
+        'order_index__actions__SHIP_FEE_UNIT' => '计费单位',
 
         'order_index__actions__btn_INVOICE_SUBMIT' => '确认提交',
         'order_index__actions__btn_DEPOSITED' => '收到订金',
