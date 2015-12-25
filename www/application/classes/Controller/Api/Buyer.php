@@ -29,7 +29,6 @@ class Controller_Api_Buyer extends Controller_BaseReqLogin
     public function action_checkAuth()
     {
         $userId  = $this->opUser['id'];
-        //$shopId  = (int)trim(Request::current()->getParam('shopId'));
         $brandId = (int)trim(Request::current()->getParam('brandId'));
         
         $res = $this->buyerService->checkAuth($userId, $brandId);
