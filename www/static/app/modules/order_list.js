@@ -37,7 +37,7 @@ angular.module(
         			};
         				
         			for(var i = 0, len = res.data.length; i < len; i++){
-        				var status = res.data[i].status;
+        				var status = res.data[i].order_status;
         				if (!$scope.statuses[status]){
         					$scope.statuses[status] = 0;
         				}
