@@ -52,11 +52,22 @@
 		</div>
 	</div>
 	<!-- Baidu tongji code -->
+	<!-- for devo -->
 	<script>
 		var _hmt = _hmt || [];
 		(function() {
 			var hm = document.createElement("script");
 			hm.src = "//hm.baidu.com/hm.js?6576053e06f49480da22d5d468ab6115";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+	<!-- for prod -->
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?5cdb5b2284017ebece7b453d8345fbcb";
 			var s = document.getElementsByTagName("script")[0];
 			s.parentNode.insertBefore(hm, s);
 		})();
