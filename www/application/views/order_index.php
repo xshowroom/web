@@ -33,24 +33,24 @@
                  		<h3>{{order.order_id}}</h3>
                  	</div>
                  	<div class="col-xs-12 order-detail">
-                 		<span>STORE:</span><span>{{order.brand_name}} - {{order.shop_name}}</span>
+                 		<span><?=__("order_index__info_STORE");?></span><span>{{order.brand_name}} - {{order.shop_name}}</span>
                  	</div>
                  	<div class="col-xs-12 order-detail">
-                 		<span>BUYER:</span><span>{{order.buyer_name}}</span>
+                 		<span><?=__("order_index__info_BUYER");?></span><span>{{order.buyer_name}}</span>
                  	</div>
                  	<div class="col-xs-12 order-detail">
-                 		<span>SUBMITTED DATE:</span><span>{{order.buy_time}}</span>
+                 		<span><?=__("order_index__info_SUBMITTED_DATE");?></span><span>{{order.buy_time}}</span>
                  	</div>
                  	<div class="col-xs-12 order-detail">
-                 		<span>DELIVERY ADDRESS:</span><span>{{order.shop_address}}</span>
+                 		<span><?=__("order_index__info_DELIVERY_ADDRESS");?></span><span>{{order.shop_address}}</span>
                  	</div>
                  	<div class="col-xs-12 order-detail">
-                 		<span>TOTAL AMOUNT:</span><span>{{order.currency}}{{order.total_amount | number}}</span>
+                 		<span><?=__("order_index__info_TOTAL_AMOUNT");?></span><span>{{order.currency}}{{order.total_amount | number}}</span>
                  	</div>
                 </div>
                 <div class="col-xs-12">
 					<div class="order-info-header">
-						<h3>ORDER STATUS</h3>
+						<h3><?=__("order_index__status_TITLE");?></h3>
 					</div>
 					<div class="order-status-list" ng-class="{'stock-collection': processes.length == 6}">
 						<div class="order-status" ng-repeat="step in processes track by $index" ng-class="{'active': statusIndex >= $index}">
@@ -58,32 +58,32 @@
 								<i class="fa fa-shopping-cart fa-5x"></i>
 							</div>
 							<div>
-								<span>{{step}}</span>
+								<span>{{"order_status__" + step | translate}}</span>
 							</div>
 						</div>
 					</div>
 						    
-					<?php if ($user["role_type"] == Business_User::ROLE_BRAND && $order['order_status'] == 0): ?>
+					<?php if ($user["role_type"] == Model_User::TYPE_USER_BRAND && $order['order_status'] == Model_Order::ORDER_STATUS_PENDING): ?>
 					<div class="order-status-actions">
 						<div class="row">
-						    <label class="col-xs-1">Invoice:</label>
+						    <label class="col-xs-2"><?=__("order_index__actions_pending__INVOICE");?></label>
 						    <div class="col-xs-5" ng-if="!order.invoice_url">
 						    	<input type="file" class="form-control" id="invoice-file" placeholder="ORDER INVOICE*">
 						    </div>
 						    <div class="col-xs-5" ng-if="order.invoice_url">
 						    	<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
 						    	<label class="upload-label">
-						    		<span>重新上传</span>
+						    		<span><?=__("order_index__actions_pending__INVOICE_RE_SUMBMIT");?></span>
 						    		<input type="file" class="form-control" id="invoice-file" placeholder="ORDER INVOICE*">
 						    	</label>
 						    </div>
-						    <div class="col-xs-6 text-right">
-							     <button class="btn btn-type-2" ng-click="updateInvoice();">确认提交</button>
+						    <div class="col-xs-5 text-right">
+							     <button class="btn btn-type-2" ng-click="updateInvoice();"><?=__("order_index__actions_pending__INVOICE_btn_SUBMIT");?></button>
 							     <!-- <button class="btn btn-type-1">取消订单</button> -->
 							</div>
 						</div>
 					</div>
-					<?php elseif ($user["role_type"] == Business_User::ROLE_BRAND && ($order['order_status'] == 1 || $order['order_status'] == 7)): ?>
+					<?php elseif ($user["role_type"] == Model_User::TYPE_USER_BRAND && ($order['order_status'] == Model_Order::ORDER_STATUS_CONFIRMED || $order['order_status'] == Model_Order::ORDER_STATUS_FULLPAYMENT)): ?>
 					<div class="order-status-actions">
 						<div class="row">
 							<label class="col-xs-1">Invoice:</label>
@@ -95,7 +95,7 @@
 							</div>
 						</div>
 					</div>
-					<?php elseif ($user["role_type"] == Business_User::ROLE_BRAND && $order['order_status'] == 2): ?>
+					<?php elseif ($user["role_type"] == Model_User::TYPE_USER_BRAND && $order['order_status'] == Model_Order::ORDER_STATUS_DEPOSITED): ?>
 					<div class="order-status-actions">
 						<div class="row">
 							<label class="col-xs-1">Invoice:</label>
@@ -107,7 +107,7 @@
 							</div>
 						</div>
 					</div>
-					<?php elseif ($user["role_type"] == Business_User::ROLE_BRAND && $order['order_status'] == 3): ?>
+					<?php elseif ($user["role_type"] == Model_User::TYPE_USER_BRAND && $order['order_status'] == Model_Order::ORDER_STATUS_PREPARING): ?>
 					<div class="order-status-actions">
 						<div class="row">
 						    <label class="col-xs-1" for="shippingNo">Shipping No:</label>
@@ -127,7 +127,7 @@
 							</div>
 						</div>
 					</div>
-					<?php elseif ($user["role_type"] == Business_User::ROLE_BRAND && $order['order_status'] == 4): ?>
+					<?php elseif ($user["role_type"] == Model_User::TYPE_USER_BRAND && $order['order_status'] == Model_Order::ORDER_STATUS_FULLPAYMENT): ?>
 					<div class="order-status-actions">
 						<div class="row">
 							<label class="col-xs-1">Shipping No:</label>
@@ -147,7 +147,7 @@
 							</div>
 						</div>
 					</div>
-					<?php elseif ($user["role_type"] == Business_User::ROLE_BUYER && $order['order_status'] == 5): ?>
+					<?php elseif ($user["role_type"] == Model_User::TYPE_USER_BUYER && $order['order_status'] == Model_Order::ORDER_STATUS_SHIPPED): ?>
 					<div class="order-status-actions">
 						<div class="row">
 							<label class="col-xs-1">Shipping No:</label>
@@ -190,7 +190,7 @@
 				</div>
                 <div class="col-xs-12">
 					<div class="order-info-header">
-						<h3>PRODUCTS</h3>
+						<h3><?=__("order_index__products_TITLE");?></h3>
 					</div>
 					<div class="order-product-list">
 						<div class="order-product-item" ng-repeat="(productId, product) in order.productions">
@@ -200,23 +200,22 @@
 							<div class="product-info">
 								<h4>{{::product.name}}</h4>
 								<div>
-									<span>Style Numnber:</span><span>{{::product.styleNum}}</span>
+									<span><?=__("order_index__products__STYLE_NUMBER");?></span><span>{{::product.styleNum}}</span>
 								</div>
 								<div>
-									<span>Retail Price:</span><span>{{::order.currency}}{{::product.retailPrice| number}}</span>
+									<span><?=__("order_index__products__RETAIL_PRICE");?></span><span>{{::order.currency}}{{::product.retailPrice| number}}</span>
 								</div>
 								<div>
-									<span>Whole Price:</span><span>{{::order.currency}}{{::product.wholePrice| number}}</span>
+									<span><?=__("order_index__products__WHOLE_PRICE");?></span><span>{{::order.currency}}{{::product.wholePrice| number}}</span>
 								</div>
 								<div>
-									<span>Size Region:</span><span>{{::product.sizeRegion}}</span>
+									<span><?=__("order_index__products__SIZE_REGION");?></span><span>{{::product.sizeRegion}}</span>
 								</div>
 							</div>
 							<table class="table quantity-info">
-								<caption>ORDER DETAIL</caption>
 								<thead>
 									<tr>
-										<th>CODE/SIZE</th>
+										<th><?=__("order_index__products__CODE_SIZE");?></th>
 										<th ng-repeat="(size, value) in product.sizeCode">{{::size}}</th>
 										<th></td>
 									</tr>
@@ -232,10 +231,10 @@
 								</tbody>
 								<tfoot>
 									<tr>
-										<td>QUANTITY</td>
+										<td><?=__("order_index__products__QUANTITY");?></td>
 										<td>{{::product.quantity| number}}</td>
 										<td colspan="{{product.size.length - 1}}"></td>
-										<td>AMOUNT: {{::order.currency}}{{::(product.quantity * product.wholePrice)| number}}</td>
+										<td><?=__("order_index__products__AMOUNT");?> {{::order.currency}}{{::(product.quantity * product.wholePrice)| number}}</td>
 									</tr>
 								</tfoot>
 							</table>
@@ -243,10 +242,10 @@
 					</div>
 					<div class="order-total-info">
 						<div>
-							<span>TOTAL QUANTITY: </span> <span>{{order.quantity| number}}</span>
+							<span><?=__("order_index__products__TOTAL_QUANTITY");?> </span> <span>{{order.quantity| number}}</span>
 						</div>
 						<div class="text-right">
-							<span>TOTAL AMOUNT: </span> <span>{{order.currency}}{{order.total_amount| number}}</span>
+							<span><?=__("order_index__products__TOTAL_AMOUNT");?> </span> <span>{{order.currency}}{{order.total_amount| number}}</span>
 						</div>
 					</div>	
 				</div>

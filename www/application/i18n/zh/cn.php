@@ -354,6 +354,9 @@ return array_merge(
         'brand_dashboard__ORDER_EMPTY_1' => '欢迎来到 XSHOWROOM!',
         'brand_dashboard__ORDER_EMPTY_2' => '立刻开始您的商业之旅!',
         'brand_dashboard__ORDER_EMPTY_3' => '温馨提示: 商品系列可以为您带来订单',
+        'brand_dashboard__ORDER_NUMBER' => '订单号：',
+        'brand_dashboard__ORDER_SUBMIT' => '创建于：',
+        'brand_dashboard__ORDER_AMOUNT' => '订单额：',
 
         'brand_dashboard__MY_COLLECTIONS' => '我的系列',
         'brand_dashboard__ALL_COLLECTIONS' => '所有系列 >',
@@ -600,15 +603,15 @@ return array_merge(
         'order_create__btn_REMOVE' => '删除',
 
         'order_create__ORDER_DETAIL' => '订单详情',
-        'order_create__CODE_SIZE' => '尺码/尺寸',
-        'order_create__QUANTITY' => '数量',
-        'order_create__AMOUNT' => '小计:',
+        'order_create__CODE_SIZE' => '尺码/尺寸：',
+        'order_create__QUANTITY' => '购买数量：',
+        'order_create__AMOUNT' => '小计：',
 
-        'order_create__TOTAL_QUANTITY' => '产品总数:',
-        'order_create__TOTAL_AMOUNT' => '产品总价:',
+        'order_create__TOTAL_QUANTITY' => '购买总数：',
+        'order_create__TOTAL_AMOUNT' => '订单总价：',
 
         'order_create__ORDER_SUMMARY' => '订单总览',
-        'order_create__PRODUCTS_COUNT' => '产品类别:',
+        'order_create__PRODUCTS_COUNT' => '产品类别：',
 
         'order_create__btn_CHECKOUT' => '生成订单',
     ),
@@ -625,6 +628,34 @@ return array_merge(
         'order_list__DELIVERY' => '发货日期：',
 
         'order_list__btn_VIEW' => '查看详情',
+    ),
+    /**
+     * order_index.php
+     */
+    array(
+        'order_index__info_STORE' => '买手店名：',
+        'order_index__info_BUYER' => '时尚买手：',
+        'order_index__info_SUBMITTED_DATE' => '下单日期：',
+        'order_index__info_DELIVERY_ADDRESS' => '送货地址：',
+        'order_index__info_TOTAL_AMOUNT' => '订单总额：',
+
+        'order_index__status_TITLE' => '订单状态',
+
+        'order_index__actions_pending__INVOICE' => '附上清单/发票 (PDF文件)',
+        'order_index__actions_pending__INVOICE_RE_SUMBMIT' => '重新选择',
+        'order_index__actions_pending__INVOICE_btn_SUBMIT' => '确认提交',
+
+        'order_index__products_TITLE' => '订单详情',
+
+        'order_index__products__STYLE_NUMBER' => '产品货号：',
+        'order_index__products__RETAIL_PRICE' => '零售价：',
+        'order_index__products__WHOLE_PRICE' => '批发价：',
+        'order_index__products__SIZE_REGION' => '尺码地区：',
+        'order_index__products__CODE_SIZE' => '尺码/尺寸',
+        'order_index__products__QUANTITY' => '购买数量：',
+        'order_index__products__AMOUNT' => '小计：',
+        'order_index__products__TOTAL_QUANTITY' => '购买总数：',
+        'order_index__products__TOTAL_AMOUNT' => '订单总价：',
     ),
     /**
      * user_message.php & user_message_detail.php

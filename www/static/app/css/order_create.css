@@ -40,6 +40,7 @@
 	color: #fc3d4a;
 }
 .cart-details .cart-product-list .cart-product-item{
+	padding-top: 15px;
 	border-top: 1px solid #ccc;
 }
 .cart-details .cart-product-list .cart-product-item .product-cover{

@@ -448,9 +448,9 @@ angular.module(
             order_status__0: "订单待审核",
             order_status__1: "订单已确认",
             order_status__2: "待支付定金",
-            order_status__3: "已支付定金/备货中",
-            order_status__4: "备货完毕/待支付尾款",
-            order_status__5: "已支付尾款/待发货",
+            order_status__3: "已支付/备货中",
+            order_status__4: "待付尾款",
+            order_status__5: "已付尾款/发货",
             order_status__6: "订单完成"
         },
         'en': {

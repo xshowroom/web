@@ -354,6 +354,9 @@ return array_merge(
         'brand_dashboard__ORDER_EMPTY_1' => 'WELCOME TO XSHOWROOM!',
         'brand_dashboard__ORDER_EMPTY_2' => 'START YOUR BUSINESS NOW!',
         'brand_dashboard__ORDER_EMPTY_3' => 'tips: collection create order',
+        'brand_dashboard__ORDER_NUMBER' => 'ORDER',
+        'brand_dashboard__ORDER_SUBMIT' => 'SUBMIT:',
+        'brand_dashboard__ORDER_AMOUNT' => 'AMOUNT:',
 
         'brand_dashboard__MY_COLLECTIONS' => 'MY COLLECTIONS',
         'brand_dashboard__ALL_COLLECTIONS' => 'ALL COLLECTIONS >',
@@ -553,7 +556,7 @@ return array_merge(
         'buyer_dashboard__ORDER_EMPTY_1' => 'WELCOME TO XSHOWROOM',
         'buyer_dashboard__ORDER_EMPTY_2' => 'YOU HAVE ON ORDERS. PLEASE',
         'buyer_dashboard__ORDER_EMPTY_3' => 'EXPLORE BRANDS',
-        'buyer_dashboard__ORDER_NUMBER' => 'ORDER：',
+        'buyer_dashboard__ORDER_NUMBER' => 'ORDER:',
         'buyer_dashboard__ORDER_SUBMIT' => 'SUBMIT:',
         'buyer_dashboard__ORDER_AMOUNT' => 'AMOUNT:',
 
@@ -601,7 +604,7 @@ return array_merge(
 
         'order_create__ORDER_DETAIL' => 'ORDER DETAIL',
         'order_create__CODE_SIZE' => 'CODE/SIZE',
-        'order_create__QUANTITY' => 'QUANTITY',
+        'order_create__QUANTITY' => 'QUANTITY:',
         'order_create__AMOUNT' => 'AMOUNT:',
 
         'order_create__TOTAL_QUANTITY' => 'TOTAL QUANTITY:',
@@ -625,6 +628,34 @@ return array_merge(
         'order_list__DELIVERY' => 'DELIVERY DATE:',
 
         'order_list__btn_VIEW' => 'VIEW DETAIL',
+    ),
+    /**
+     * order_index.php
+     */
+    array(
+        'order_index__info_STORE' => 'STORE:',
+        'order_index__info_BUYER' => 'BUYER:',
+        'order_index__info_SUBMITTED_DATE' => 'SUBMITTED DATE:',
+        'order_index__info_DELIVERY_ADDRESS' => 'SHIP ADDRESS:',
+        'order_index__info_TOTAL_AMOUNT' => 'TOTAL AMOUNT:',
+
+        'order_index__status_TITLE' => 'ORDER STATUS',
+
+        'order_index__actions_pending__INVOICE' => 'ATTACH INVOICE (PDF FILE)',
+        'order_index__actions_pending__INVOICE_RE_SUMBMIT' => 'CHOOSE ANOTHER',
+        'order_index__actions_pending__INVOICE_btn_SUBMIT' => 'SUBMIT',
+
+        'order_index__products_TITLE' => 'PRODUCTS IN ORDER',
+
+        'order_index__products__STYLE_NUMBER' => 'STYLE NUMBER:',
+        'order_index__products__RETAIL_PRICE' => 'RETAIL PRICE:',
+        'order_index__products__WHOLE_PRICE' => 'WHOLE PRICE:',
+        'order_index__products__SIZE_REGION' => 'SIZE REGION:',
+        'order_index__products__CODE_SIZE' => 'CODE/SIZE',
+        'order_index__products__QUANTITY' => 'QUANTITY:',
+        'order_index__products__AMOUNT' => 'AMOUNT:',
+        'order_index__products__TOTAL_QUANTITY' => 'TOTAL QUANTITY:',
+        'order_index__products__TOTAL_AMOUNT' => 'TOTAL AMOUNT:',
     ),
     /**
      * brand_message.php.php

@@ -76,12 +76,12 @@
                             <?php endforeach;?>
                         </div>
                         <div class="order-detail">
-                            <div><?=$order['order_id']?></div>
-                            <div>Submitted <?=$order['buy_time']?></div>
-                            <div>Order amount: <?=$order['currency']?> {{'<?=$order['total_amount']?>' | number}}</div>
+                            <div><?= __("brand_dashboard__ORDER_NUMBER"); ?><?=$order['order_id']?></div>
+                            <div><?= __("brand_dashboard__ORDER_SUBMIT"); ?> <?=$order['buy_time']?></div>
+                            <div><?= __("brand_dashboard__ORDER_AMOUNT"); ?> <?=$order['currency']?> {{'<?=$order['total_amount']?>' | number}}</div>
                         </div>
                         <div class="order-status">
-                            <span><?=$order['status']?></span>
+                            <span>{{ "order_status__" + "<?=$order['status']?>" | translate}}</span>
                         </div>
                     </a>
                 </div>
