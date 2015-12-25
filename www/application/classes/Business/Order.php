@@ -10,6 +10,7 @@ class Business_Order
     public $buyerService;
     public $shopService;
     public $brandService;
+    public $messageService;
     public $userModel;
 
     public function __construct()
@@ -20,6 +21,7 @@ class Business_Order
         $this->buyerService = new Business_Buyer();
         $this->shopService = new Business_Shop();
         $this->brandService = new Business_Brand();
+        $this->messageService = new Business_Message();
         $this->userModel = new Model_User();
     }
 
@@ -195,6 +197,9 @@ class Business_Order
         foreach ($productionIds as $productionId) {
             $this->deleteFromCart($userId, $productionId);
         }
+
+        // generate message to brand
+        $this->messageService->notifyOrderChange($collection['user_id'], $res['order_id']);
 
         return $order['orderId'];
         

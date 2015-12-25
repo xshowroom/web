@@ -10,7 +10,6 @@ class Business_Message
      */
     const AUTO_MSG_WELCOME_BRAND = 'AUTO_MSG_WELCOME_BRAND';
     const AUTO_MSG_WELCOME_BUYER = 'AUTO_MSG_WELCOME_BUYER';
-    const AUTO_MSG_ORDER_GENERATE = 'AUTO_MSG_ORDER_GENERATE';
     const AUTO_MSG_ORDER_STATUS_CHANGE = 'AUTO_MSG_ORDER_STATUS_CHANGE';
 
 
@@ -29,7 +28,18 @@ class Business_Message
      */
     public function createMessage($toUserId, $messageBody)
     {
-        $this->messageModel->createMessage($toUserId, $messageBody);
+        $this->messageModel->createMessage($toUserId, $messageBody, null);
+    }
+
+    /**
+     * Create message for specific user when order change
+     *
+     * @param $toUserId
+     * @param $orderId
+     */
+    public function notifyOrderChange($toUserId, $orderId)
+    {
+        $this->messageModel->createMessage($toUserId, Business_Message::AUTO_MSG_ORDER_STATUS_CHANGE, $orderId);
     }
 
     /**
