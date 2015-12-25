@@ -8,6 +8,8 @@ return array(
 		'xshowroom-demo.cloudapp.net',
 		'xshowroom-web.cloudapp.net',
 		'www.xshowroom.com',
-		'www.xshowroom.cn'
+		'xshowroom.com',
+		'www.xshowroom.cn',
+		'xshowroom.cn'
 	),
 );
