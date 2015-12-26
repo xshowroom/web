@@ -70,11 +70,11 @@
     margin-right: 1em;
 }
 .collection-list .collection-list-content .collection-item .collection-info .product-photo{
-	height: 80px;
-    margin: 15px 10px 15px 0;
+	height: 120px;
+    margin: 15px 10px 0 0;
     position: relative;
     display: inline-block;
-    width: 60px;
+    width: 90px;
     float: left;
 }
 .collection-list .collection-list-content .collection-item .collection-info .product-photo > img{

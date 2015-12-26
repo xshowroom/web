@@ -73,14 +73,14 @@
     color: #878787;
 }
 .order-list .order-list-content .order-item .order-item-content{
-	height: 280px;
+	height: 230px;
 	padding: 15px 0;
 }
 .order-list .order-list-content .order-item .order-info{
 	padding: 0 15px;
 	display: inline-block;
 	float: left;
-	height: 250px;
+	height: 200px;
 	width: 25%;
 	position: relative;
 }
@@ -93,7 +93,7 @@
 .order-list .order-list-content .order-item .collection-cover{
 	position: relative;
 	overflow: hidden;
-	height: 250px;
+	height: 100%;
 	width: 100%;
 	display: inline-block;
 }
@@ -113,7 +113,6 @@
 	font-size: 16px;
 	line-height: 50px;
 	color: #878787;
-	margin-top: 100px;
 }
 .order-list .order-list-content .order-item .order-info div{
 	line-height: 30px;

@@ -122,7 +122,7 @@ angular.module(
         	$scope.updateStatus = function(){
         		Order.updateStatus({
         			orderId: $scope.orderId,
-        			orderStatus: $scope.order.order_status
+        			orderStatus:  $scope.processes[$scope.statusIndex + 1]
         		}).success(function(res){
         			if (typeof(res) != 'object' || res.status) {
         				$modal({title: 'Error Info', content: res.msg, show: true});
@@ -141,6 +141,7 @@ angular.module(
         				$modal({title: 'Error Info', content: res.msg, show: true});
      					return;
      				}
+        			$modal({title: 'Submit successfully', content: '提交invoice成功！', show: true});
         		});
         	};
         	
