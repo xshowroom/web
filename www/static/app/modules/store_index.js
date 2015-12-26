@@ -107,7 +107,7 @@ angular.module(
 						shopCountry: res.data.country,
 						shopZipcode: res.data.zip,
 						shopTel: res.data.telephone,
-						images: ['data/tmp/1512260730520253.jpg']
+						images: []
 //						about
 					};
 					$scope.collectionType = {};
