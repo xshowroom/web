@@ -244,8 +244,10 @@ class Business_Order
     {
         if ($type == Model_User::TYPE_USER_BRAND) {
             $orderList = $this->orderModel->getByBrandId($userId);
-        } else {
+        } elseif ($type == Model_User::TYPE_USER_BUYER)  {
             $orderList = $this->orderModel->getByBuyerId($userId);
+        } else {
+            $orderList = $this->orderModel->getByStatus($status);
         }
         
         $finalOrderList = array();
