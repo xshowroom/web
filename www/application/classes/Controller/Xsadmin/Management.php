@@ -76,8 +76,15 @@ class Controller_Xsadmin_Management extends Controller_BaseAdmin
 
     public function action_orders()
     {
+        $adminId = $this->adminUser['id'];
+        $adminType = $this->adminUser['role_type'];
+
         $view = View::factory('admin_views/order_mgr');
         $view->set('user', $this->adminUser);
+        $view->set('pending_order_list', $this->orderService->getOrderList($adminId, Model_Order::ORDER_STATUS_PENDING, $adminType));
+        $view->set('confirmed_order_list', $this->orderService->getOrderList($adminId, Model_Order::ORDER_STATUS_CONFIRMED, $adminType));
+        $view->set('balance_payment_order_list', $this->orderService->getOrderList($adminId, Model_Order::ORDER_STATUS_PAYBALANCE, $adminType));
+        $view->set('full_payment_order_list', $this->orderService->getOrderList($adminId, Model_Order::ORDER_STATUS_FULLPAYMENT, $adminType));
 
         $this->response->body($view);
     }

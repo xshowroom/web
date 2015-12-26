@@ -190,6 +190,19 @@ class Model_Order
         return $result;
     }*/
 
+    public function getByStatus($status)
+    {
+        $result = DB::select()
+            ->from('order')
+            ->where('order_status', '=', $status)
+            ->where('status', '=', STAT_NORMAL)
+            ->order_by('buy_time', 'DESC')
+            ->execute()
+            ->as_array();
+
+        return empty($result) ? array() : $result;
+    }
+
     public function getByBuyerId($buyerId)
     {
         $result = DB::select()

@@ -6,9 +6,7 @@
 	<?php echo View::factory('common/global_libraries'); ?>
 	<link rel="stylesheet" type="text/css" href="/static/app/css/admin.css" />
 	<script type="text/javascript" src="/static/app/modules/admin_store_mgr.js"></script>
-    <script>
-        var mapId = -1;
-    </script>
+    <script>var mapId = -1;</script>
 </head>
 <body ng-controller="AdminStoreMgrCtrl" class="container-fluid">
 	<nav class="row setting-info">

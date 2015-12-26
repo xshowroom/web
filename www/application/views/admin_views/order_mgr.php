@@ -6,6 +6,7 @@
 	<?php echo View::factory('common/global_libraries'); ?>
 	<link rel="stylesheet" type="text/css" href="/static/app/css/admin.css" />
 	<script type="text/javascript" src="/static/app/modules/admin_order_mgr.js"></script>
+	<script>var orderId = -1;</script>
 </head>
 <body ng-controller="AdminOrderMgrCtrl" class="container-fluid">
 	<nav class="row setting-info">
@@ -17,7 +18,198 @@
 	<section class="row admin-content">
 		<div class="container">
 			<div class="row">
-				Order manager
+				<h2>PENDING ORDERS <span>(Admin should check the invoice and confirm order)</span></h2>
+				<table class="table table-hover xs-table">
+					<tbody>
+					<tr>
+						<th class="xs-table-th" style="width: 50px;">ID</th>
+						<th class="xs-table-th" style="width: 100px;">STATUS</th>
+						<th class="xs-table-th" style="width: 150px;">BRAND</th>
+						<th class="xs-table-th">Collection</th>
+						<th class="xs-table-th" style="width: 100px;">BUYER</th>
+						<th class="xs-table-th" style="width: 100px;">AMOUNT</th>
+						<th class="xs-table-th" style="width: 150px;">ORDER TIME</th>
+						<th class="xs-table-th" style="width: 120px;">DETAIL</th>
+						<th class="xs-table-th" style="width: 100px;">ALLOW</th>
+						<th class="xs-table-th" style="width: 100px;">REJECT</th>
+					</tr>
+					<?php foreach($pending_order_list as $row): ?>
+						<tr>
+							<td class="xs-row">
+								<p><?= $row['id'] ?></p>
+							</td>
+							<td class="xs-row">
+								<p>{{ "order_status__" + <?=$row['order_status']?>| translate}}</p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['brand_name'] ?></p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['collection_name'] ?></p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['buyer_name'] ?></p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['currency'] ?>{{"<?= $row['total_amount'] ?>"| number}}</p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['buy_time'] ?></p>
+							</td>
+							<td class="xs-row">
+								<a href="<?=URL::site('xsadmin/management/shop_detail/'.$row['id']);?>" target="_blank">
+									<p>VIEW ORDER</p>
+								</a>
+							</td>
+							<td class="xs-row xs-row-action">
+								<a data-toggle="modal" href="#modalAllowConfirm" ng-click=<?= "clickStore(".$row['id'].")";?> >
+									<p>ALLOW</p>
+								</a>
+							</td>
+							<td class="xs-row">
+								<a data-toggle="modal" href="#modalRejectConfirm" ng-click=<?= "clickStore(".$row['id'].")";?> >
+									<p>REJECT</p>
+								</a>
+							</td>
+						</tr>
+					<?php endforeach; ?>
+					</tbody>
+				</table>
+				<h2>CONFIRMED ORDERS <span>(Admin should check payment and transfer to brand)</span></h2>
+				<table class="table table-hover xs-table">
+					<tbody>
+					<tr>
+						<th class="xs-table-th" style="width: 50px;">ID</th>
+						<th class="xs-table-th" style="width: 100px;">STATUS</th>
+						<th class="xs-table-th" style="width: 150px;">BRAND</th>
+						<th class="xs-table-th">Collection</th>
+						<th class="xs-table-th" style="width: 100px;">BUYER</th>
+						<th class="xs-table-th" style="width: 100px;">AMOUNT</th>
+						<th class="xs-table-th" style="width: 150px;">ORDER TIME</th>
+						<th class="xs-table-th" style="width: 120px;">DETAIL</th>
+					</tr>
+					<?php foreach($confirmed_order_list as $row): ?>
+						<tr>
+							<td class="xs-row">
+								<p><?= $row['id'] ?></p>
+							</td>
+							<td class="xs-row">
+								<p>{{ "order_status__" + <?=$row['order_status']?>| translate}}</p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['brand_name'] ?></p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['collection_name'] ?></p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['buyer_name'] ?></p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['currency'] ?>{{"<?= $row['total_amount'] ?>"| number}}</p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['buy_time'] ?></p>
+							</td>
+							<td class="xs-row">
+								<a href="<?=URL::site('xsadmin/management/shop_detail/'.$row['id']);?>" target="_blank">
+									<p>VIEW ORDER</p>
+								</a>
+							</td>
+						</tr>
+					<?php endforeach; ?>
+					</tbody>
+				</table>
+				<h2>BALANCE PAYMENT ORDERS <span>(Admin should check payment and transfer to brand)</span></h2>
+				<table class="table table-hover xs-table">
+					<tbody>
+					<tr>
+						<th class="xs-table-th" style="width: 50px;">ID</th>
+						<th class="xs-table-th" style="width: 100px;">STATUS</th>
+						<th class="xs-table-th" style="width: 150px;">BRAND</th>
+						<th class="xs-table-th">Collection</th>
+						<th class="xs-table-th" style="width: 100px;">BUYER</th>
+						<th class="xs-table-th" style="width: 100px;">AMOUNT</th>
+						<th class="xs-table-th" style="width: 150px;">ORDER TIME</th>
+						<th class="xs-table-th" style="width: 120px;">DETAIL</th>
+					</tr>
+					<?php foreach($balance_payment_order_list as $row): ?>
+						<tr>
+							<td class="xs-row">
+								<p><?= $row['id'] ?></p>
+							</td>
+							<td class="xs-row">
+								<p>{{ "order_status__" + <?=$row['order_status']?>| translate}}</p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['brand_name'] ?></p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['collection_name'] ?></p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['buyer_name'] ?></p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['currency'] ?>{{"<?= $row['total_amount'] ?>"| number}}</p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['buy_time'] ?></p>
+							</td>
+							<td class="xs-row">
+								<a href="<?=URL::site('xsadmin/management/shop_detail/'.$row['id']);?>" target="_blank">
+									<p>VIEW ORDER</p>
+								</a>
+							</td>
+						</tr>
+					<?php endforeach; ?>
+					</tbody>
+				</table>
+				<h2>FULL PAYMENT ORDERS <span>(Admin should check payment and transfer to brand)</span></h2>
+				<table class="table table-hover xs-table">
+					<tbody>
+					<tr>
+						<th class="xs-table-th" style="width: 50px;">ID</th>
+						<th class="xs-table-th" style="width: 100px;">STATUS</th>
+						<th class="xs-table-th" style="width: 150px;">BRAND</th>
+						<th class="xs-table-th">Collection</th>
+						<th class="xs-table-th" style="width: 100px;">BUYER</th>
+						<th class="xs-table-th" style="width: 100px;">AMOUNT</th>
+						<th class="xs-table-th" style="width: 150px;">ORDER TIME</th>
+						<th class="xs-table-th" style="width: 120px;">DETAIL</th>
+					</tr>
+					<?php foreach($full_payment_order_list as $row): ?>
+						<tr>
+							<td class="xs-row">
+								<p><?= $row['id'] ?></p>
+							</td>
+							<td class="xs-row">
+								<p>{{ "order_status__" + <?=$row['order_status']?>| translate}}</p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['brand_name'] ?></p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['collection_name'] ?></p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['buyer_name'] ?></p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['currency'] ?>{{"<?= $row['total_amount'] ?>"| number}}</p>
+							</td>
+							<td class="xs-row">
+								<p><?= $row['buy_time'] ?></p>
+							</td>
+							<td class="xs-row">
+								<a href="<?=URL::site('xsadmin/management/shop_detail/'.$row['id']);?>" target="_blank">
+									<p>VIEW ORDER</p>
+								</a>
+							</td>
+						</tr>
+					<?php endforeach; ?>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</section>
