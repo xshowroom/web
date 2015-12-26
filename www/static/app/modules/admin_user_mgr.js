@@ -9,8 +9,10 @@ angular.module(
     [
         '$scope', 'Admin',
         function ($scope, Admin) {
-            $scope.clickUser=function(uid) {
+            $scope.clickUser=function(uid, sid, bid) {
                 userId = uid;
+                storeId = sid;
+                brandId = bid
             };
             $scope.adminAllowUser=function() {
                 Admin.allowUser({
@@ -34,34 +36,6 @@ angular.module(
                     window.location.reload();
                 });
             };
-
-            $scope.clickStore=function(sid) {
-                storeId = sid;
-            };
-            $scope.adminAllowStore=function() {
-                Admin.allowStore({
-                    storeId: storeId
-                }).success(function(res){
-                    if (typeof(res) != 'object' || res.status) {
-                        $modal({title: 'Error Info', content: res.msg, show: true});
-                        return;
-                    }
-                    window.location.reload();
-                });
-            };
-            $scope.adminRejectStore=function() {
-                Admin.rejectStore({
-                    storeId: storeId
-                }).success(function(res){
-                    if (typeof(res) != 'object' || res.status) {
-                        $modal({title: 'Error Info', content: res.msg, show: true});
-                        return;
-                    }
-                    window.location.reload();
-                });
-            };
-
-
         }
     ]
 );

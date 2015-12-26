@@ -130,4 +130,18 @@ class Model_Buyer
 
         return $result;
     }
+
+    public function updateAuthStatusByMapId($mapId, $opUserId, $status)
+    {
+        $result = DB::update('buyer_brand_map')
+            ->set(array(
+                'op_user_id' => $opUserId,
+                'update_time' => date('Y-m-d H:i:s'),
+                'status'      => $status,
+            ))
+            ->where('id', '=', $mapId)
+            ->execute();
+
+        return $result;
+    }
 }
