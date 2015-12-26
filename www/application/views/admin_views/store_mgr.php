@@ -27,7 +27,7 @@
 						<th class="xs-table-th" style="width: 150px;">STORE NAME</th>
 						<th class="xs-table-th" style="width: 200px;">BRAND</th>
 						<th class="xs-table-th" style="width: 150px;">APPLY TIME</th>
-						<th class="xs-table-th" style="width: 120px;">DETAIL</th>
+						<th class="xs-table-th" style="width: 120px;">DETAIL INFO</th>
 						<th class="xs-table-th" style="width: 100px;">ALLOW</th>
 						<th class="xs-table-th" style="width: 100px;">REJECT</th>
 					</tr>

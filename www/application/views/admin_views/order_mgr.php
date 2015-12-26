@@ -23,15 +23,14 @@
 					<tbody>
 					<tr>
 						<th class="xs-table-th" style="width: 50px;">ID</th>
-						<th class="xs-table-th" style="width: 100px;">STATUS</th>
+						<th class="xs-table-th" style="width: 150px;">STATUS</th>
 						<th class="xs-table-th" style="width: 150px;">BRAND</th>
 						<th class="xs-table-th">Collection</th>
 						<th class="xs-table-th" style="width: 100px;">BUYER</th>
 						<th class="xs-table-th" style="width: 100px;">AMOUNT</th>
 						<th class="xs-table-th" style="width: 150px;">ORDER TIME</th>
-						<th class="xs-table-th" style="width: 120px;">DETAIL</th>
-						<th class="xs-table-th" style="width: 100px;">ALLOW</th>
-						<th class="xs-table-th" style="width: 100px;">REJECT</th>
+						<th class="xs-table-th" style="width: 120px;">DETAIL INFO</th>
+						<th class="xs-table-th" style="width: 100px;">ACTION</th>
 					</tr>
 					<?php foreach($pending_order_list as $row): ?>
 						<tr>
@@ -56,19 +55,14 @@
 							<td class="xs-row">
 								<p><?= $row['buy_time'] ?></p>
 							</td>
-							<td class="xs-row">
-								<a href="<?=URL::site('xsadmin/management/shop_detail/'.$row['id']);?>" target="_blank">
+							<td class="xs-row xs-row-action">
+								<a href="<?=URL::site('order/'.$row['order_id']);?>" target="_blank">
 									<p>VIEW ORDER</p>
 								</a>
 							</td>
 							<td class="xs-row xs-row-action">
 								<a data-toggle="modal" href="#modalAllowConfirm" ng-click=<?= "clickStore(".$row['id'].")";?> >
-									<p>ALLOW</p>
-								</a>
-							</td>
-							<td class="xs-row">
-								<a data-toggle="modal" href="#modalRejectConfirm" ng-click=<?= "clickStore(".$row['id'].")";?> >
-									<p>REJECT</p>
+									<p>CONFIRM</p>
 								</a>
 							</td>
 						</tr>
@@ -80,13 +74,14 @@
 					<tbody>
 					<tr>
 						<th class="xs-table-th" style="width: 50px;">ID</th>
-						<th class="xs-table-th" style="width: 100px;">STATUS</th>
+						<th class="xs-table-th" style="width: 150px;">STATUS</th>
 						<th class="xs-table-th" style="width: 150px;">BRAND</th>
 						<th class="xs-table-th">Collection</th>
 						<th class="xs-table-th" style="width: 100px;">BUYER</th>
 						<th class="xs-table-th" style="width: 100px;">AMOUNT</th>
 						<th class="xs-table-th" style="width: 150px;">ORDER TIME</th>
-						<th class="xs-table-th" style="width: 120px;">DETAIL</th>
+						<th class="xs-table-th" style="width: 150px;">UPDATE TIME</th>
+						<th class="xs-table-th" style="width: 120px;">DETAIL INFO</th>
 					</tr>
 					<?php foreach($confirmed_order_list as $row): ?>
 						<tr>
@@ -112,7 +107,10 @@
 								<p><?= $row['buy_time'] ?></p>
 							</td>
 							<td class="xs-row">
-								<a href="<?=URL::site('xsadmin/management/shop_detail/'.$row['id']);?>" target="_blank">
+								<p><?= $row['update_time'] ?></p>
+							</td>
+							<td class="xs-row xs-row-action">
+								<a href="<?=URL::site('order/'.$row['order_id']);?>" target="_blank">
 									<p>VIEW ORDER</p>
 								</a>
 							</td>
@@ -125,13 +123,14 @@
 					<tbody>
 					<tr>
 						<th class="xs-table-th" style="width: 50px;">ID</th>
-						<th class="xs-table-th" style="width: 100px;">STATUS</th>
+						<th class="xs-table-th" style="width: 150px;">STATUS</th>
 						<th class="xs-table-th" style="width: 150px;">BRAND</th>
 						<th class="xs-table-th">Collection</th>
 						<th class="xs-table-th" style="width: 100px;">BUYER</th>
 						<th class="xs-table-th" style="width: 100px;">AMOUNT</th>
 						<th class="xs-table-th" style="width: 150px;">ORDER TIME</th>
-						<th class="xs-table-th" style="width: 120px;">DETAIL</th>
+						<th class="xs-table-th" style="width: 150px;">UPDATE TIME</th>
+						<th class="xs-table-th" style="width: 120px;">DETAIL INFO</th>
 					</tr>
 					<?php foreach($balance_payment_order_list as $row): ?>
 						<tr>
@@ -157,7 +156,10 @@
 								<p><?= $row['buy_time'] ?></p>
 							</td>
 							<td class="xs-row">
-								<a href="<?=URL::site('xsadmin/management/shop_detail/'.$row['id']);?>" target="_blank">
+								<p><?= $row['update_time'] ?></p>
+							</td>
+							<td class="xs-row xs-row-action">
+								<a href="<?=URL::site('order/'.$row['order_id']);?>" target="_blank">
 									<p>VIEW ORDER</p>
 								</a>
 							</td>
@@ -170,13 +172,14 @@
 					<tbody>
 					<tr>
 						<th class="xs-table-th" style="width: 50px;">ID</th>
-						<th class="xs-table-th" style="width: 100px;">STATUS</th>
+						<th class="xs-table-th" style="width: 150px;">STATUS</th>
 						<th class="xs-table-th" style="width: 150px;">BRAND</th>
 						<th class="xs-table-th">Collection</th>
 						<th class="xs-table-th" style="width: 100px;">BUYER</th>
 						<th class="xs-table-th" style="width: 100px;">AMOUNT</th>
 						<th class="xs-table-th" style="width: 150px;">ORDER TIME</th>
-						<th class="xs-table-th" style="width: 120px;">DETAIL</th>
+						<th class="xs-table-th" style="width: 150px;">UPDATE TIME</th>
+						<th class="xs-table-th" style="width: 120px;">DETAIL INFO</th>
 					</tr>
 					<?php foreach($full_payment_order_list as $row): ?>
 						<tr>
@@ -202,7 +205,10 @@
 								<p><?= $row['buy_time'] ?></p>
 							</td>
 							<td class="xs-row">
-								<a href="<?=URL::site('xsadmin/management/shop_detail/'.$row['id']);?>" target="_blank">
+								<p><?= $row['update_time'] ?></p>
+							</td>
+							<td class="xs-row xs-row-action">
+								<a href="<?=URL::site('order/'.$row['order_id']);?>" target="_blank">
 									<p>VIEW ORDER</p>
 								</a>
 							</td>
