@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'ProductCreateCtrl',
     [
-     	'$scope', '$location', '$filter', '$element', '$timeout', 'Country', 'Product', 'uiUploader',
-        function ($scope, $location, $filter, $element, $timeout, Country, Product, uiUploader) {
+     	'$scope', '$location', '$window', '$filter', '$element', '$timeout', 'Country', 'Product', 'uiUploader',
+        function ($scope, $location, $window, $filter, $element, $timeout, Country, Product, uiUploader) {
      		$scope.countries = Country.getAll();
      		$scope.categories = Product.getCategories();
      		$scope.sizeRegions = Product.getSizeRegions();
@@ -209,10 +209,10 @@ angular.module(
      				Product.create(
      	     			$scope.product
      	     		).success(function(res){
-     	     			if (res.status){
+     	     			if (typeof(res) != 'object' || res.status) {
      	     				$scope.errorMsgs.push(['create error', res.msg]);
      	     			}else{
-     	     				window.history.back();
+     	     				$window.open('/collection/'+$scope.collectionId, '_self');
      	     			}
      	     		});
      			} 

@@ -39,8 +39,8 @@
 					                <div><span>Address: </span><span>{{store['address']}}</span></div>
 					                <div><span>Telephone: </span><span>{{store['telephone']}}</span></div>
 					                <div class="store-actions">
-					                	<a ng-href="/store/{{store.id}}"><i class="fa fa-pencil-square-o"></i>Edit</a>
-					                	<a ng-href="/store/{{store.id}}#?isEdit=1"><i class="fa fa-eye"></i>View</a>
+					                	<a ng-href="/store/{{store.id}}#?isEdit=1"><i class="fa fa-pencil-square-o"></i>Edit</a>
+					                	<a ng-href="/store/{{store.id}}"><i class="fa fa-eye"></i>View</a>
 					                	<a ng-click="closeStore(store.id, $index);"><i class="fa fa-trash"></i>Close</a>
 					                </div>
 			                    </div>

@@ -82,7 +82,9 @@
 #store-create-form .control-label {
 	font-weight: 400;
 }
-
+.checkbox-inline > input[type='checkbox']{
+	margin-top: 2px;
+}
 #care-instruction{
 	height: 150px;
     resize: none;

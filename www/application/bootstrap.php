@@ -164,7 +164,7 @@ Route::set('order_create', 'order/create/<id>')
 
 Route::set('detail', '<controller>(/<action>)/<id>',
         array(
-            'controller' => '(collection|order|product|message)',
+            'controller' => '(collection|order|product|message|store)',
             'id'        => '\d+',
         ))
         ->defaults(array(
