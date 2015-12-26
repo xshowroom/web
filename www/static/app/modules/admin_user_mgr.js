@@ -34,6 +34,34 @@ angular.module(
                     window.location.reload();
                 });
             };
+
+            $scope.clickStore=function(sid) {
+                storeId = sid;
+            };
+            $scope.adminAllowStore=function() {
+                Admin.allowStore({
+                    storeId: storeId
+                }).success(function(res){
+                    if (typeof(res) != 'object' || res.status) {
+                        $modal({title: 'Error Info', content: res.msg, show: true});
+                        return;
+                    }
+                    window.location.reload();
+                });
+            };
+            $scope.adminRejectStore=function() {
+                Admin.rejectStore({
+                    storeId: storeId
+                }).success(function(res){
+                    if (typeof(res) != 'object' || res.status) {
+                        $modal({title: 'Error Info', content: res.msg, show: true});
+                        return;
+                    }
+                    window.location.reload();
+                });
+            };
+
+
         }
     ]
 );

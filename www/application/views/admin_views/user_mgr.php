@@ -37,7 +37,7 @@
 								<p><?= $row['id'] ?></p>
 							</td>
 							<td class="xs-row">
-								<a href="<?=URL::site('xsadmin/management/user_detail/'.$row['id']);?>" target="_blank">
+								<a href="<?=URL::site('xsadmin/management/store/'.$row['id']);?>" target="_blank">
 									<p><?= $row['email'] ?></p>
 								</a>
 							</td>
@@ -57,20 +57,18 @@
 								<p><?= $row['last_login_time'] ?></p>
 							</td>
 							<td class="xs-row">
-								<a href="<?=URL::site('xsadmin/management/user_detail/'.$row['id']);?>" target="_blank">
+								<a href="<?=URL::site('xsadmin/management/store/'.$row['id']);?>" target="_blank">
 									<p>PROFILE</p>
 								</a>
 							</td>
 							<td class="xs-row xs-row-action">
 								<a data-toggle="modal" href="#modalAllowConfirm" ng-click=<?= "clickUser(".$row['id'].")";?> >
 									<p>ALLOW</p>
-									<input id="user_id" type="hidden" value=>
 								</a>
 							</td>
 							<td class="xs-row">
 								<a data-toggle="modal" href="#modalRejectConfirm" ng-click=<?= "clickUser(".$row['id'].")";?> >
 									<p>REJECT</p>
-									<input id="user_id" type="hidden" value="<?= $row['id'] ?>">
 								</a>
 							</td>
 						</tr>
@@ -93,7 +91,7 @@
 					<h4 class="modal-title">CONFIRM</h4>
 				</div>
 				<div class="modal-body">
-					<p>APPROVE THIS USERS REGISTRATION?</p>
+					<p>APPROVE THIS USER'S REGISTRATION?</p>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn  btn-type-1" data-dismiss="modal">CANCEL</button>
@@ -112,7 +110,7 @@
 					<h4 class="modal-title">CONFIRM</h4>
 				</div>
 				<div class="modal-body">
-					<p>REJECT THIS USERS REGISTRATION?</p>
+					<p>REJECT THIS USER'S REGISTRATION?</p>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn  btn-type-1" data-dismiss="modal">CANCEL</button>

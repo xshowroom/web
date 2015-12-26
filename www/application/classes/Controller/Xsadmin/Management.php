@@ -66,9 +66,9 @@ class Controller_Xsadmin_Management extends Controller_BaseAdmin
         $this->response->body($view);
     }
 
-    public function action_shops()
+    public function action_stores()
     {
-        $view = View::factory('admin_views/shop_mgr');
+        $view = View::factory('admin_views/store_mgr');
         $view->set('user', $this->adminUser);
         $view->set('pending_shop_list', $this->shopService->listPendingShops());
         $this->response->body($view);

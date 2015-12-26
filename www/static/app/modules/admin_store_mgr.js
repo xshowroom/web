@@ -5,7 +5,7 @@ angular.module(
     ]
 )
 .controller(
-    'AdminShopMgrCtrl',
+    'AdminStoreMgrCtrl',
     [
         '$scope',
         function ($scope){

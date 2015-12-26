@@ -5,14 +5,15 @@
 	<title>XShowroom</title>
 	<?php echo View::factory('common/global_libraries'); ?>
 	<link rel="stylesheet" type="text/css" href="/static/app/css/admin.css" />
-	<script type="text/javascript" src="/static/app/modules/admin_shop_mgr.js"></script>
+	<script type="text/javascript" src="/static/app/modules/admin_store_mgr.js"></script>
+    <script>var storeId = -1</script>
 </head>
-<body ng-controller="AdminShopMgrCtrl" class="container-fluid">
+<body ng-controller="AdminStoreMgrCtrl" class="container-fluid">
 	<nav class="row setting-info">
 		<?php echo View::factory('admin_views/admin_setting_with_login', array('user'=> $user)); ?>
 	</nav>
 	<nav class="row guest-navigation" id="home-page-navigation">
-        <?php echo View::factory('admin_views/admin_navigation_top_login', array('currentPage' => 'shops')); ?>
+        <?php echo View::factory('admin_views/admin_navigation_top_login', array('currentPage' => 'stores')); ?>
 	</nav>
 	<section class="row admin-content">
 		<div class="container">
@@ -57,13 +58,11 @@
 							<td class="xs-row xs-row-action">
 								<a data-toggle="modal" href="#modalAllowConfirm" ng-click=<?= "clickStore(".$row['id'].")";?> >
 									<p>ALLOW</p>
-									<input id="user_id" type="hidden" value=>
 								</a>
 							</td>
 							<td class="xs-row">
 								<a data-toggle="modal" href="#modalRejectConfirm" ng-click=<?= "clickStore(".$row['id'].")";?> >
 									<p>REJECT</p>
-									<input id="user_id" type="hidden" value="<?= $row['id'] ?>">
 								</a>
 							</td>
 						</tr>
@@ -76,5 +75,43 @@
 	<footer class="row footer-navigation">
         <?php echo View::factory('common/global_navigation_footer'); ?>
 	</footer>
+
+    <!-- allow confirm -->
+    <div class="modal fade" id="modalAllowConfirm" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-xs">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">CONFIRM</h4>
+                </div>
+                <div class="modal-body">
+                    <p>APPROVE THIS STORE'S APPLICATION?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn  btn-type-1" data-dismiss="modal">CANCEL</button>
+                    <button id='delete_inbox_msg' type="button" class="btn btn-type-2" ng-click="adminAllowStore();">APPROVE</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- reject confirm -->
+    <div class="modal fade" id="modalRejectConfirm" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-xs">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">CONFIRM</h4>
+                </div>
+                <div class="modal-body">
+                    <p>REJECT THIS STORE'S APPLICATION?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn  btn-type-1" data-dismiss="modal">CANCEL</button>
+                    <button id='delete_inbox_msg' type="button" class="btn btn-type-2" ng-click="adminRejectStore();">REJECT</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 </body>
 </html>

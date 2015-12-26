@@ -602,6 +602,12 @@ angular.module(
 				},
 				rejectUser: function (opts) {
 					return PostRequester('admin/rejectUser', opts);
+				},
+				allowStore: function (opts) {
+					return PostRequester('admin/allowStore', opts);
+				},
+				rejectStore: function (opts) {
+					return PostRequester('admin/rejectStore', opts);
 				}
 			};
 		}
