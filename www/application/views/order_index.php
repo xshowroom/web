@@ -183,10 +183,12 @@
 								<div class="col-xs-4" ng-if="order.invoice_url">
 									<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
 								</div>
+								<?php if ($user["role_type"] == Model_User::TYPE_USER_BUYER):?>
 								<label class="col-xs-2">银行账户</label>
 								<div class="col-xs-4">
 									<span><?=$adminAccount?></span>
 								</div>
+								<?php endif;?>
 							</div>
 						</div>
 					<?php endif; ?>
