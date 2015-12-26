@@ -215,4 +215,23 @@ class Model_Order
         
         return empty($result) ? array() : $result;
     }
+
+    public function countOrder()
+    {
+        $result = DB::select(DB::expr('COUNT(id) AS ORDER_COUNT'))
+            ->from('order')
+            ->execute();
+
+        return empty($result) ? 0 : (int)$result[0]['ORDER_COUNT'];
+    }
+
+    public function countOrderByStatus($status)
+    {
+        $result = DB::select(DB::expr('COUNT(id) AS ORDER_COUNT'))
+            ->from('order')
+            ->where('order_status', '=', $status)
+            ->execute();
+
+        return empty($result) ? 0 : (int)$result[0]['ORDER_COUNT'];
+    }
 }

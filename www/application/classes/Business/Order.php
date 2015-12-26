@@ -483,5 +483,15 @@ class Business_Order
         $res = $this->orderModel->updateInvoice($orderId, $realPathFile);
 
         return $res;
-    }    
+    }
+
+    public function countOrder()
+    {
+        return $this->orderModel->countOrder();
+    }
+
+    public function countOrderByStatus($status)
+    {
+        return $this->orderModel->countOrderByStatus($status);
+    }
 }

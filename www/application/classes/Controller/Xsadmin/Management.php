@@ -7,6 +7,7 @@ class Controller_Xsadmin_Management extends Controller_BaseAdmin
     public $brandService;
     public $buyerService;
     public $shopService;
+    public $orderService;
     public $collectionService;
 
     public function before()
@@ -17,6 +18,7 @@ class Controller_Xsadmin_Management extends Controller_BaseAdmin
         $this->brandService = new Business_Brand();
         $this->buyerService = new Business_Buyer();
         $this->shopService = new Business_Shop();
+        $this->orderService = new Business_Order();
         $this->collectionService =new Business_Collection();
     }
 
@@ -29,14 +31,16 @@ class Controller_Xsadmin_Management extends Controller_BaseAdmin
     {
         $view = View::factory('admin_views/statistics');
 
-        $brand_count = $this->userService->countUserByRole(Business_User::ROLE_BRAND);
-        $buyer_count = $this->userService->countUserByRole(Business_User::ROLE_BUYER);
-        $all_user_count = $this->userService->countAllUser();
+        $brandCount = $this->userService->countUserByRole(Model_User::TYPE_USER_BRAND);
+        $buyerCount = $this->userService->countUserByRole(Model_User::TYPE_USER_BUYER);
+        $allUserCount = $this->userService->countAllUser();
+        $orderCount = $this->orderService->countOrder();
 
         $view->set('user', $this->adminUser);
-        $view->set('brand_count', $brand_count);
-        $view->set('buyer_count', $buyer_count);
-        $view->set('all_user_count', $all_user_count);
+        $view->set('brand_count', $brandCount);
+        $view->set('buyer_count', $buyerCount);
+        $view->set('all_user_count', $allUserCount);
+        $view->set('order_count', $orderCount);
 
         $this->response->body($view);
     }
