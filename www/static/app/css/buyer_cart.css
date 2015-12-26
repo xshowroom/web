@@ -35,7 +35,7 @@
 }
 .collection-list .collection-list-content .collection-item .collection-cover{
 	position: relative;
-	height: 250px;
+	height: 280px;
 }
 .collection-list .collection-list-content .collection-item .collection-cover > img{
 	width: 100%;
@@ -70,11 +70,11 @@
     margin-right: 1em;
 }
 .collection-list .collection-list-content .collection-item .collection-info .product-photo{
-	height: 120px;
+	height: 80px;
     margin: 15px 10px 0 0;
     position: relative;
     display: inline-block;
-    width: 90px;
+    width: 60px;
     float: left;
 }
 .collection-list .collection-list-content .collection-item .collection-info .product-photo > img{
