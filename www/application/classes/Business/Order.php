@@ -320,8 +320,8 @@ class Business_Order
             // preparing状态只能是品牌商修改&&前置状态可能为deposited或者fullpayment(现货)
             case Model_Order::ORDER_STATUS_PREPARING:
                 if ($type != Model_User::TYPE_USER_BRAND ||
-                    ($isInStock && $order['status'] != Model_Order::ORDER_STATUS_FULLPAYMENT) ||
-                    (!$isInStock && $order['status'] != Model_Order::ORDER_STATUS_DEPOSITED)) {
+                    ($isInStock && $order['order_status'] != Model_Order::ORDER_STATUS_FULLPAYMENT) ||
+                    (!$isInStock && $order['order_status'] != Model_Order::ORDER_STATUS_DEPOSITED)) {
                     $errorInfo = Kohana::message('message', 'AUTH_ERROR');
                     throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
                 }
@@ -342,8 +342,8 @@ class Business_Order
             // shipped状态只能是品牌商修改&&前置状态可能为preparing(现货)或者paybalance
             case Model_Order::ORDER_STATUS_SHIPPED:
                 if ($type != Model_User::TYPE_USER_BRAND ||
-                    ($isInStock && $order['status'] != Model_Order::ORDER_STATUS_PREPARING) ||
-                    (!$isInStock && $order['status'] != Model_Order::ORDER_STATUS_PAYBALANCE)) {
+                    ($isInStock && $order['order_status'] != Model_Order::ORDER_STATUS_PREPARING) ||
+                    (!$isInStock && $order['order_status'] != Model_Order::ORDER_STATUS_PAYBALANCE)) {
                     $errorInfo = Kohana::message('message', 'AUTH_ERROR');
                     throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
                 }
