@@ -616,6 +616,42 @@ return array_merge(
         'order_create__PRODUCTS_COUNT' => 'PRODUCTS:',
 
         'order_create__btn_CHECKOUT' => 'CHECKOUT',
+
+        'order_create__SHIPPING_ADDRESS' => 'SHIPPING ADDRESS',
+        'order_create__store_TYPE' => 'STORE TYPE:',
+        'order_create__store_ADDRESS' => 'ADDRESS:',
+        'order_create__store_ZIPCODE' => 'ZIPCODE:',
+        'order_create__store_TELEPHONE' => 'TELEPHONE:',
+
+        'order_create__payment__TITLE' => 'PAYMENT OPTIONS',
+        'order_create__payment__OPTIONS__OFFLINE_PAYMENT' => 'OFFLINE PAYMENT',
+        'order_create__payment__OPTIONS__OFFLINE_PAYMENT__DESC' => 'Remittance to XShowRoom account',
+        'order_create__INSTRUCTIONS' => 'SOME INSTRUCTIONS',
+
+        'order_create__review__TITLE' => 'REVIEW YOUR ORDER',
+        'order_create__review__DESC_01' => 'When you click the "SUBMIT" button, we’ll contract with brand to acknowledging receipt your order.',
+        'order_create__review__DESC_02' => 'Your contact to purchase item will not be complete until we send you an email notifying you that the item has been shipped.',
+
+        'order_create__review__PAYMANET_SHIPPING' => 'PAYMENT & SHIPPING',
+        'order_create__review__PAYMENT_OPTION' => 'PAYMENT OPTION',
+        'order_create__review__PAYMENT_OPTION__OFFLINE_PAY' => 'OFFLINE PAY',
+        'order_create__review__PAYMENT_OPTION__OFFLINE_PAY_DESC' => 'Please send your payment receipt to XSHOWROOM in order to confirm your payment.',
+        'order_create__review__DELIVERY' => 'DELIVERY',
+        'order_create__review__ORDER_LIST' => 'ORDER LIST',
+        'order_create__review__ORDER_LIST__PRODUCT' => 'PRODUCT',
+        'order_create__review__ORDER_LIST__NO' => 'STYLE NO.',
+        'order_create__review__ORDER_LIST__COLOR' => 'COLOR',
+        'order_create__review__ORDER_LIST__SIZE' => 'SIZE',
+        'order_create__review__ORDER_LIST__TOTAL' => 'TOTAL',
+        'order_create__review__ORDER_SUMMARY' => 'ORDER SUMMARY',
+        'order_create__review__ORDER_SUMMARY__PRODUCTS' => 'PRODUCTS',
+        'order_create__review__ORDER_SUMMARY__TOTAL_QUANTITY' => 'TOTAL QUANTITY',
+        'order_create__review__ORDER_SUMMARY__TOTAL_AMOUNT' => 'TOTAL AMOUNT',
+
+        'order_create__btn_CHANGE' => 'CHANGE',
+        'order_create__btn_PREVIOUS' => 'PREVIOUS',
+        'order_create__btn_NEXT' => 'NEXT',
+        'order_create__btn_SUBMIT' => 'SUBMIT',
     ),
     /**
      * order_list.php

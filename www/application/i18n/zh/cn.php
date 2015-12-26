@@ -616,6 +616,42 @@ return array_merge(
         'order_create__PRODUCTS_COUNT' => '产品类别：',
 
         'order_create__btn_CHECKOUT' => '生成订单',
+
+        'order_create__SHIPPING_ADDRESS' => '送货地址',
+        'order_create__store_TYPE' => '商店类型：',
+        'order_create__store_ADDRESS' => '商店地址：',
+        'order_create__store_ZIPCODE' => '商店邮编：',
+        'order_create__store_TELEPHONE' => '收货电话：',
+
+        'order_create__payment__TITLE' => '支付方式',
+        'order_create__payment__OPTIONS__OFFLINE_PAYMENT' => '线下支付',
+        'order_create__payment__OPTIONS__OFFLINE_PAYMENT__DESC' => '汇款到XShowRoom的账户',
+        'order_create__INSTRUCTIONS' => '指导信息',
+
+        'order_create__review__TITLE' => '确认订单信息',
+        'order_create__review__DESC_01' => '当你点击“提交”按键后，我们将和品牌联系已确认您的订单',
+        'order_create__review__DESC_02' => '你的订单将一直持续到我们告知您订单中的商品开始发货',
+
+        'order_create__review__PAYMANET_SHIPPING' => '支付 & 物流',
+        'order_create__review__PAYMENT_OPTION' => '支付方式',
+        'order_create__review__PAYMENT_OPTION__OFFLINE_PAY' => '线下支付',
+        'order_create__review__PAYMENT_OPTION__OFFLINE_PAY_DESC' => '请及时将您的付款凭据发送到XSHOWROOM平台已确认您的支付',
+        'order_create__review__DELIVERY' => '运送',
+        'order_create__review__ORDER_LIST' => '订单列表',
+        'order_create__review__ORDER_LIST__PRODUCT' => '产品',
+        'order_create__review__ORDER_LIST__NO' => '货号',
+        'order_create__review__ORDER_LIST__COLOR' => '颜色',
+        'order_create__review__ORDER_LIST__SIZE' => '尺码',
+        'order_create__review__ORDER_LIST__TOTAL' => '计价',
+        'order_create__review__ORDER_SUMMARY' => '订单概要',
+        'order_create__review__ORDER_SUMMARY__PRODUCTS' => '产品种类',
+        'order_create__review__ORDER_SUMMARY__TOTAL_QUANTITY' => '产品数量',
+        'order_create__review__ORDER_SUMMARY__TOTAL_AMOUNT' => '合计总价',
+
+        'order_create__btn_CHANGE' => '更改',
+        'order_create__btn_PREVIOUS' => '上一步',
+        'order_create__btn_NEXT' => '下一步',
+        'order_create__btn_SUBMIT' => '提交',
     ),
     /**
      * order_list.php

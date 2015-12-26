@@ -35,7 +35,9 @@
 }
 .collection-list .collection-list-content .collection-item .collection-cover{
 	position: relative;
-	height: 280px;
+	height: 270px;
+	border: 1px solid #ccc;
+	border-bottom-width: 2px;
 }
 .collection-list .collection-list-content .collection-item .collection-cover > img{
 	width: 100%;

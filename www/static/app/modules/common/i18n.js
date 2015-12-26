@@ -115,6 +115,9 @@ angular.module(
             product_add_image_timeout_error: '上传图片超时，请重试',
             product_add_image_size_error: '上传图片不能超过 1 MB',
 
+            modal_dialog__WARNING_TITLE : 'WARNING!',
+            modal_dialog__ERROR_TITLE : 'ERROR!',
+
             /**
              * DROP DOWN LIST
              */

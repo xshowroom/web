@@ -121,7 +121,7 @@
 			<div class="row">
 				<div class="col-xs-8 cart-details">
 					<div class="cart-details-header">
-						<h2 class="cart-details-title">SHIPPING ADDRESS</h2>
+						<h2 class="cart-details-title"><?=__("order_create__SHIPPING_ADDRESS");?></h2>
 					</div>
 					<div class="shipping-address">
 						<div class="address-card" ng-repeat="store in stores">
@@ -129,31 +129,31 @@
 								 <label><input type="radio" name="address" ng-value="store" ng-model="order.store" checked>{{store.name}}</label>
 							</h4>
 							<div class="address-info">
-								<div><span>Type:</span><span>{{store.type | translate}}</span></div>
-								<div><span>Address:</span><span>{{store.address}}</span></div>
-								<div><span>Zip Code:</span><span>{{store.zip}}</span></div>
-								<div><span>Phone:</span><span>{{store.telephone}}</span></div>
+								<div><span><?=__("order_create__store_TYPE");?></span><span>{{store.type | translate}}</span></div>
+								<div><span><?=__("order_create__store_ADDRESS");?></span><span>{{store.address}}</span></div>
+								<div><span><?=__("order_create__store_ZIPCODE");?></span><span>{{store.zip}}</span></div>
+								<div><span><?=__("order_create__store_TELEPHONE");?></span><span>{{store.telephone}}</span></div>
 							</div>
 						</div>
 						<div class="clearfix"></div>
 					</div>
 					<div class="cart-details-header">
-						<h2 class="cart-details-title">PAYMENT OPTIONS</h2>
+						<h2 class="cart-details-title"><?=__("order_create__payment__TITLE");?></h2>
 					</div>
 					<div class="payment-options">
 						<div class="radio">
-						    <label><input type="radio" name="payment" value="offline" ng-model="order.paymentType" checked>OFFLINE PAYMENT</label>
-						    <p>Remittance to XShowRoom account</p>
+						    <label><input type="radio" name="payment" value="offline" ng-model="order.paymentType" checked><?=__("order_create__payment__OPTIONS__OFFLINE_PAYMENT");?></label>
+						    <p><?=__("order_create__payment__OPTIONS__OFFLINE_PAYMENT__DESC");?></p>
 						</div>
 					</div>
 					<div class="cart-actions">
-						<button class="btn btn-type-1" ng-click="generateOrderStep = 1;">PREVIOUS</button>
-						<button class="btn btn-type-2" ng-click="setOptions();">NEXT</button>
+						<button class="btn btn-type-1" ng-click="generateOrderStep = 1;"><?=__("order_create__btn_PREVIOUS");?></button>
+						<button class="btn btn-type-2" ng-click="setOptions();"><?=__("order_create__btn_NEXT");?></button>
 					</div>
 				</div>
 				<div class="col-xs-4">
 					<div class="instruction-box">
-						<h3 class="text-center">SOME INSTRUCTIONS</h3>
+						<h3 class="text-center"><?=__("order_create__INSTRUCTIONS");?></h3>
 					</div>
 				</div>
 			</div>
@@ -162,16 +162,19 @@
 			<div class="row">
 				<div class="col-xs-8 cart-details">
 					<div class="cart-details-header">
-						<h2 class="cart-details-title">REVIEW YOUR ORDER</h2>
+						<h2 class="cart-details-title"><?=__("order_create__review__TITLE");?></h2>
 					</div>
 					<div class="review-tips">
-						<p>When you click the “SUBMIT” button, we’ll send you an email message acknowledging receipt your order.<br/>
-						Your contact to purchase item will not be complete until we send you an email notifying you that the item has been shipped.</p>
+						<p>
+							<?=__("order_create__review__DESC_01");?>
+							<br/>
+							<?=__("order_create__review__DESC_02");?>
+						</p>
 					</div>
 					<div class="order-details">
 						<div class="order-details-header">
-							<h4>PAYMENT & SHIPPING</h4>
-							<a ng-click="generateOrderStep = 2;">change</a>
+							<h4><?=__("order_create__review__PAYMANET_SHIPPING");?></h4>
+							<a ng-click="generateOrderStep = 2;"><?=__("order_create__btn_CHANGE");?></a>
 						</div>
 						<div>
 							<div class="order-address-info">
@@ -182,31 +185,31 @@
 								<div>{{order.store.telephone}}</div>
 							</div>
 							<div class="order-address-info">
-								<h5>PAYMENT OPTIONS</h5>
-								<div>Offline Pay</div>
+								<h5><?=__("order_create__review__PAYMENT_OPTION");?></h5>
+								<div><?=__("order_create__review__PAYMENT_OPTION__OFFLINE_PAY");?></div>
 								<div class="payment-warning">
 									<div><i class="fa fa-exclamation"></i></div>
-									<p>Please send your payment receipt to xshowroom@projectcrossover.cn in order to confirm your payment....</p>
+									<p><?=__("order_create__review__PAYMENT_OPTION__OFFLINE_PAY_DESC");?></p>
 								</div>
 							</div>
 							<div class="order-address-info">
-								<h5>DELIVERY</h5>
+								<h5><?=__("order_create__review__DELIVERY");?></h5>
 								<div>{{collection.delivery_date}}</div>
 							</div>
 							<div class="clearfix"></div>
 						</div>
 						<div class="order-details-header">
-							<h4>ORDER LIST</h4>
-							<a ng-click="generateOrderStep = 1;">change</a>
+							<h4><?=__("order_create__review__ORDER_LIST");?></h4>
+							<a ng-click="generateOrderStep = 1;"><?=__("order_create__btn_CHANGE");?></a>
 						</div>
 						<table class="table order-item-list">
 							<thead>
 								<tr>
-									<th>PRODUCT NAME</th>
-									<th>STYLE NO.</th>
-									<th>COLOR</th>
-									<th>SIZE</th>
-									<th>TOTAL</th>
+									<th><?=__("order_create__review__ORDER_LIST__PRODUCT");?></th>
+									<th><?=__("order_create__review__ORDER_LIST__NO");?></th>
+									<th><?=__("order_create__review__ORDER_LIST__COLOR");?></th>
+									<th><?=__("order_create__review__ORDER_LIST__SIZE");?></th>
+									<th><?=__("order_create__review__ORDER_LIST__TOTAL");?></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -223,18 +226,18 @@
 				</div>
 				<div class="col-xs-4">
 					<div class="check-out-box">
-						<h3 class="text-center">ORDER SUMMARY</h3>
+						<h3 class="text-center"><?=__("order_create__review__ORDER_SUMMARY");?></h3>
 						<div>
-							<span>PRODUCTS</span><span>{{products.length| number}}</span>
+							<span><?=__("order_create__review__ORDER_SUMMARY__PRODUCTS");?></span><span>{{products.length| number}}</span>
 						</div>
 						<div>
-							<span>TOTAL QUANTITY</span><span>{{getTotalQuantity()| number}}</span>
+							<span><?=__("order_create__review__ORDER_SUMMARY__TOTAL_QUANTITY");?></span><span>{{getTotalQuantity()| number}}</span>
 						</div>
 						<div>
-							<span>TOTAL AMOUNT</span><span><?=$collection['currency']?>{{getTotalAmount()| number}}</span>
+							<span><?=__("order_create__review__ORDER_SUMMARY__TOTAL_AMOUNT");?></span><span><?=$collection['currency']?>{{getTotalAmount()| number}}</span>
 						</div>
 						<div class="text-center">
-							<button class="btn btn-type-2" ng-click="submitOrder();">SUBMIT</button>
+							<button class="btn btn-type-2" ng-click="submitOrder();"><?=__("order_create__btn_SUBMIT");?></button>
 						</div>
 					</div>
 				</div>
