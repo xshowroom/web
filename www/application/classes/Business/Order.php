@@ -280,12 +280,13 @@ class Business_Order
     public function updateStatus($userId, $orderId, $status, $type)
     {
         $order = $this->getOrder($userId, $orderId, $type);
-        $collection = $this->collectionService->getCollectionInfo($order['user_id'], $order['collection_id']);
-        $isInStock = ($collection['mode'] == 'dropdown__COLLECTION_MODE__STOCK') ? true : false;
 
         $buyerUserId = $userId;
         $brandUserId = $$order['user_id'];
         $orderId = $order['order_id'];
+
+        $collection = $this->collectionService->getCollectionInfo($brandUserId, $order['collection_id']);
+        $isInStock = ($collection['mode'] == 'dropdown__COLLECTION_MODE__STOCK') ? true : false;
 
         switch ($status) {
             // 订单状态不会被改成pending
