@@ -202,6 +202,12 @@ class Business_Buyer
         return $res;
     }
 
+    public function updateAuthStatusByMapId($mapId, $opUserId, $status)
+    {
+        $res = $this->buyerModel->updateAuthStatusByMapId($mapId, $opUserId, $status);
+        return $res;
+    }
+
     public function getShopInApplying($userId, $brandId)
     {
         $applyingShopList = $this->buyerModel->getShopInApplying($userId, $brandId);
