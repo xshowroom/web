@@ -71,9 +71,11 @@ class Model_Shop
      * @param string $country
      * @param string $zipcode
      * @param string $tel
+     * @param string $image
+     * @param string $about
      * @return int
      */
-    public function addShopInfo($userId, $name, $type, $colType, $brandList, $website, $address, $country, $zipcode, $tel)
+    public function addShopInfo($userId, $name, $type, $colType, $brandList, $website, $address, $country, $zipcode, $tel, $image, $about)
     {
         $result = DB::insert('shop')
                     ->columns(array(
@@ -87,6 +89,9 @@ class Model_Shop
                         'country',
                         'zip',
                         'telephone',
+                        'image',
+                        'about',
+                        'create_time',
                         'status',
                     ))
                     ->values(array(
@@ -100,6 +105,9 @@ class Model_Shop
                         $country,
                         $zipcode,
                         $tel,
+                        $image,
+                        $about,
+                        date('Y-m-d h:i:s'),
                         Model_User::STATUS_USER_PENDING,
                     ))
                     ->execute();
@@ -107,7 +115,7 @@ class Model_Shop
         return $result[0];
     }
 
-    public function updateShopInfo($userId, $shopId, $name, $type, $colType, $brandList, $website, $address, $country, $zipcode, $tel)
+    public function updateShopInfo($userId, $shopId, $name, $type, $colType, $brandList, $website, $address, $country, $zipcode, $tel, $image, $about)
     {
         $result = DB::update('shop')
                     ->set(array(
@@ -120,6 +128,8 @@ class Model_Shop
                         'country' => $country,
                         'zip' => $zipcode,
                         'telephone' => $tel,
+                        'image' => $image,
+                        'about' => $about,
                         'update_time' => date('Y-m-d H:i:s'),
                     ))
                     ->where('id', '=', $shopId)

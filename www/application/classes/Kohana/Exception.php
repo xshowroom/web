@@ -48,8 +48,6 @@ class Kohana_Exception extends Kohana_Kohana_Exception
             $view->set('userAttr', $userService->getUserAttr($opUser['id']));
         }
         
-       
-        
         $view->set('errorCode', $errorCode);
         $view->set('errorMsg', $errorMsg);
         

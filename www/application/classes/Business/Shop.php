@@ -9,6 +9,7 @@ class Business_Shop
     public $msgService;
     public $buyerService;
     public $brandService;
+    public $uploadService;
 
     public function __construct()
     {
@@ -17,6 +18,7 @@ class Business_Shop
         $this->msgService = new Business_Message();
         $this->buyerService = new Business_Buyer();
         $this->brandService = new Business_Brand();
+        $this->uploadService = new Business_Upload();
     }
     
     public function addShop($userId)
@@ -62,9 +64,16 @@ class Business_Shop
         $country   = Request::current()->getParam('shopCountry');
         $zipcode   = Request::current()->getParam('shopZipcode');
         $tel       = Request::current()->getParam('shopTel');
+        $image     = Request::current()->getParam('shopImage');
+        $about     = Request::current()->getParam('shopAbout');
+        
+        // resize image
+        if (!empty($image)) {
+            $image = $this->uploadService->createResizeImage($image, 'medium');
+        }
         
         $shopId = $this->shopModel->addShopInfo($userId, $name, $type, $colType, $brandList,
-                                                $website, $address, $country, $zipcode, $tel);
+                                                $website, $address, $country, $zipcode, $tel, $image, $about);
         return $shopId;
     }
 
@@ -80,9 +89,16 @@ class Business_Shop
         $country   = Request::current()->getParam('shopCountry');
         $zipcode   = Request::current()->getParam('shopZipcode');
         $tel       = Request::current()->getParam('shopTel');
+        $image     = Request::current()->getParam('shopImage');
+        $about     = Request::current()->getParam('shopAbout');
+        
+        // resize image
+        if (!empty($image)) {
+            $image = $this->uploadService->createResizeImage($image, 'medium');
+        }
         
         $res = $this->shopModel->updateShopInfo($userId, $shopId, $name, $type, $colType, $brandList,
-                                                $website, $address, $country, $zipcode, $tel);
+                                                $website, $address, $country, $zipcode, $tel, $image, $about);
         return $res;
     }
 
