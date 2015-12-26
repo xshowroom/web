@@ -115,19 +115,25 @@ h2.brand-register-step {
 
 #invite-modal h4 {
     color: #ca7379;
+    font-size: 26px;
     margin-bottom: 40px;
 }
 
+#invite-modal p {
+    margin-top: 20px;
+    font-size: 10px;
+}
+
 #invite-modal input {
-    margin-top: 50px;
+    margin-top: 30px;
+}
+
+#invite-modal .btn {
+   width: 200px
 }
 
 #invite-modal label {
     font-weight: 400;
     color: #e02432;
     margin-top: 5px;
-}
-
-#invite-modal .modal-footer {
-    text-align: center;
 }

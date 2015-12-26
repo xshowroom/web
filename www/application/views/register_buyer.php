@@ -284,22 +284,23 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-body">
-					<h4>Invitation Code for XShowroom? </h4>
+					<h4>XSHOWROOM IS INVITATION ONLY</h4>
 					<form>
 						<div class="form-group">
-							<p>XShowroom目前使用邀请注册的形式</p>
-							<p>如果您想使用XShowroom的功能</p>
-							<p>请联系: info@xxxxxx.com 来获得邀请码</p>
+							<p>PLEASE ENTER YOUR INVITATION CODE TO START REGISTRATION</p>
 						</div>
 						<div class="form-group">
 							<input type="text" class="form-control" id="invitation-code" placeholder="输入邀请码继续注册">
-							<label id="invite-error" hidden>邀请码错误</label>
+							<label id="invite-error" hidden>WRONG INVITATION CODE</label>
 						</div>
 					</form>
 				</div>
-				<div class="modal-footer">
-					<a type="button" class="btn btn-type-1" href="<?=url::site()?>">返回首页</a>
-					<a type="button" class="btn btn-type-2" ng-click="checkInvitation();">现在注册</a>
+				<div>
+					<a type="button" class="btn btn-type-1" href="<?=url::site()?>"> BACK TO HOME PAGE </a>
+					<a type="button" class="btn btn-type-2" ng-click="checkInvitation();"> START REGISTATION </a>
+				</div>
+				<div>
+					<p>PLEASE CONTACT <a href="mailto:info@xshowroom.com">info@xshowroom.com</a> TO APPLY FOR INVITATION CODE</p>
 				</div>
 			</div>
 		</div>
