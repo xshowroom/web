@@ -170,9 +170,11 @@ class Business_Order
         $shop = $this->shopService->getShopById($userId, $shopId);
 
         $user = $this->userModel->getAttrByUserId($userId);
-		
+
+        $orderId = $this->getOrderId();
+
         $order = array(
-            'orderId' => $this->getOrderId(),
+            'orderId' => $orderId,
             'buyerId' => $userId,
             'buyerName' =>$user['display_name'],
             'userId' => $collection['user_id'],
@@ -198,8 +200,9 @@ class Business_Order
             $this->deleteFromCart($userId, $productionId);
         }
 
-        // generate message to brand
-        $this->messageService->notifyOrderChange($collection['user_id'], $res, Model_Order::ORDER_STATUS_PENDING);
+        // generate message
+        $this->messageService->notifyOrderChange($userId, $orderId, Model_Order::ORDER_STATUS_PENDING);
+        $this->messageService->notifyOrderChange($collection['user_id'], $orderId, Model_Order::ORDER_STATUS_PENDING);
 
         return $order['orderId'];
         
@@ -283,8 +286,8 @@ class Business_Order
     {
         $order = $this->getOrder($userId, $orderId, $type);
 
-        $buyerUserId = $userId;
-        $brandUserId = $$order['user_id'];
+        $buyerUserId =$order['buyer_id'];
+        $brandUserId = $order['user_id'];
         $orderId = $order['order_id'];
 
         $collection = $this->collectionService->getCollectionInfo($brandUserId, $order['collection_id']);
@@ -303,8 +306,9 @@ class Business_Order
                     throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);           
                 }
 
-                // generate message to brand
+                // generate message to brand & buyer
                 $this->messageService->notifyOrderChange($brandUserId, $orderId, Model_Order::ORDER_STATUS_CONFIRMED);
+                $this->messageService->notifyOrderChange($buyerUserId, $orderId, Model_Order::ORDER_STATUS_CONFIRMED);
 
                 break;
             // deposited状态只能是品牌商修改&&前置状态必须是confirmed&&现货不会出现该状态
@@ -316,7 +320,8 @@ class Business_Order
                     throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);           
                 }
 
-                // generate message to buyer
+                // generate message to brand & buyer
+                $this->messageService->notifyOrderChange($brandUserId, $orderId, Model_Order::ORDER_STATUS_DEPOSITED);
                 $this->messageService->notifyOrderChange($buyerUserId, $orderId, Model_Order::ORDER_STATUS_DEPOSITED);
 
                 break;
@@ -329,7 +334,8 @@ class Business_Order
                     throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
                 }
 
-                // generate message to buyer
+                // generate message to brand & buyer
+                $this->messageService->notifyOrderChange($brandUserId, $orderId, Model_Order::ORDER_STATUS_PREPARING);
                 $this->messageService->notifyOrderChange($buyerUserId, $orderId, Model_Order::ORDER_STATUS_PREPARING);
 
                 break;
@@ -340,7 +346,12 @@ class Business_Order
                     $isInStock) {
                     $errorInfo = Kohana::message('message', 'AUTH_ERROR');
                     throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);           
-                }    
+                }
+
+                // generate message to brand & buyer
+                $this->messageService->notifyOrderChange($brandUserId, $orderId, Model_Order::ORDER_STATUS_PAYBALANCE);
+                $this->messageService->notifyOrderChange($buyerUserId, $orderId, Model_Order::ORDER_STATUS_PAYBALANCE);
+
                 break;
             // shipped状态只能是品牌商修改&&前置状态可能为preparing(现货)或者paybalance
             case Model_Order::ORDER_STATUS_SHIPPED:
@@ -351,7 +362,8 @@ class Business_Order
                     throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
                 }
 
-                // generate message to buyer
+                // generate message to brand & buyer
+                $this->messageService->notifyOrderChange($brandUserId, $orderId, Model_Order::ORDER_STATUS_SHIPPED);
                 $this->messageService->notifyOrderChange($buyerUserId, $orderId, Model_Order::ORDER_STATUS_SHIPPED);
 
                 break;
@@ -363,8 +375,9 @@ class Business_Order
                     throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);           
                 }
 
-                // generate message to brand
-                $this->messageService->notifyOrderChange($brandUserId, $orderId, Model_Order::ORDER_STATUS_CONFIRMED);
+                // generate message to brand & buyer
+                $this->messageService->notifyOrderChange($brandUserId, $orderId, Model_Order::ORDER_STATUS_COMPLETE);
+                $this->messageService->notifyOrderChange($buyerUserId, $orderId, Model_Order::ORDER_STATUS_COMPLETE);
 
                 break;
             // fullpayment状态只能是品牌商修改&&前置状态必须是confirmed&&非现货不会出现该状态
@@ -376,7 +389,8 @@ class Business_Order
                     throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);           
                 }
 
-                // generate message to buyer
+                // generate message to brand & buyer
+                $this->messageService->notifyOrderChange($brandUserId, $orderId, Model_Order::ORDER_STATUS_FULLPAYMENT);
                 $this->messageService->notifyOrderChange($buyerUserId, $orderId, Model_Order::ORDER_STATUS_FULLPAYMENT);
 
                 break;
