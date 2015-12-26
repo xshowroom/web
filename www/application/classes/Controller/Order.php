@@ -28,6 +28,8 @@ class Controller_Order extends Controller_BaseReqLogin
         $view->set('user', $this->opUser);
         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
         $view->set('order', $this->orderModel->getById($orderId));
+        $view->set('adminAccount', '123123123123123');
+        
 
         $this->response->body($view);
     }

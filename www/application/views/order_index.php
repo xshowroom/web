@@ -63,8 +63,7 @@
 						</div>
 					</div>
 						    
-					<?php if ($order['order_status'] == Model_Order::ORDER_STATUS_PENDING): ?>
-						<?php if ($user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
+					<?php if ($order['order_status'] == Model_Order::ORDER_STATUS_PENDING && $user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
 							<div class="order-status-actions">
 								<div class="row">
 									<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
@@ -84,9 +83,7 @@
 									</div>
 								</div>
 							</div>
-						<?php endif; ?>
-					<?php elseif ($order['order_status'] == Model_Order::ORDER_STATUS_CONFIRMED || $order['order_status'] == Model_Order::ORDER_STATUS_FULLPAYMENT): ?>
-						<?php if ($user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
+					<?php elseif ($order['order_status'] == Model_Order::ORDER_STATUS_CONFIRMED && $user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
 							<div class="order-status-actions">
 							<div class="row">
 								<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
@@ -98,9 +95,8 @@
 								</div>
 							</div>
 						</div>
-						<?php endif; ?>
-					<?php elseif ( $order['order_status'] == Model_Order::ORDER_STATUS_DEPOSITED): ?>
-						<?php if ($user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
+					<?php elseif (($order['order_status'] == Model_Order::ORDER_STATUS_DEPOSITED || $order['order_status'] == Model_Order::ORDER_STATUS_FULLPAYMENT) 
+							&& $user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
 							<div class="order-status-actions">
 							<div class="row">
 								<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
@@ -112,9 +108,7 @@
 								</div>
 							</div>
 						</div>
-						<?php endif; ?>
-					<?php elseif ($order['order_status'] == Model_Order::ORDER_STATUS_PREPARING): ?>
-						<?php if ($user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
+					<?php elseif ($order['order_status'] == Model_Order::ORDER_STATUS_PREPARING && $user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
 							<div class="order-status-actions">
 								<div class="row">
 									<label class="col-xs-2" for="shippingNo"><?=__("order_index__actions__SHIP_NO");?></label>
@@ -134,31 +128,27 @@
 									</div>
 								</div>
 							</div>
-						<?php endif; ?>
-					<?php elseif ($order['order_status'] == Model_Order::ORDER_STATUS_PAYBALANCE): ?>
-						<?php if ($user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
+					<?php elseif ($order['order_status'] == Model_Order::ORDER_STATUS_PAYBALANCE && $user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
 							<div class="order-status-actions">
-						<div class="row">
-							<label class="col-xs-2"><?=__("order_index__actions__SHIP_NO");?></label>
-						    <div class="col-xs-4">
-						    	<span>{{order.shipping_no}}</span>
-						    </div>
-						    <label class="col-xs-2"><?=__("order_index__actions__SHIP_FEE");?></label>
-						    <div class="col-xs-4">
-						    	<span>{{order.currency}}{{order.shipping_amount | number}}</span>
-						    </div>
-						    <label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
-						    <div class="col-xs-4">
-						    	<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
-						    </div>
-						    <div class="col-xs-6 text-right">
-							     <button class="btn btn-type-2" ng-click="updateStatus();"><?=__("order_index__actions__btn_SHIPPED");?></button>
+								<div class="row">
+									<label class="col-xs-2"><?=__("order_index__actions__SHIP_NO");?></label>
+								    <div class="col-xs-4">
+								    	<span>{{order.shipping_no}}</span>
+								    </div>
+								    <label class="col-xs-2"><?=__("order_index__actions__SHIP_FEE");?></label>
+								    <div class="col-xs-4">
+								    	<span>{{order.currency}}{{order.shipping_amount | number}}</span>
+								    </div>
+								    <label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
+								    <div class="col-xs-4">
+								    	<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
+								    </div>
+								    <div class="col-xs-6 text-right">
+									     <button class="btn btn-type-2" ng-click="updateStatus();"><?=__("order_index__actions__btn_SHIPPED");?></button>
+									</div>
+								</div>
 							</div>
-						</div>
-					</div>
-						<?php endif; ?>
-					<?php elseif ($order['order_status'] == Model_Order::ORDER_STATUS_SHIPPED): ?>
-						<?php if ($user["role_type"] == Model_User::TYPE_USER_BUYER): ?>
+					<?php elseif ($order['order_status'] == Model_Order::ORDER_STATUS_SHIPPED && $user["role_type"] == Model_User::TYPE_USER_BUYER): ?>
 							<div class="order-status-actions">
 								<div class="row">
 									<label class="col-xs-2"><?=__("order_index__actions__SHIP_NO");?></label>
@@ -178,7 +168,6 @@
 									</div>
 								</div>
 							</div>
-						<?php endif; ?>
 					<?php else: ?>
 						<div class="order-status-actions">
 							<div class="row">
@@ -193,6 +182,10 @@
 								<label class="col-xs-2" ng-if="order.invoice_url"><?=__("order_index__actions__INVOICE");?></label>
 								<div class="col-xs-4" ng-if="order.invoice_url">
 									<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
+								</div>
+								<label class="col-xs-2">银行账户</label>
+								<div class="col-xs-4">
+									<span><?=$adminAccount?></span>
 								</div>
 							</div>
 						</div>
