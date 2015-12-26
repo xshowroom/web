@@ -17,6 +17,7 @@ return array_merge(
         'brandName_existed' => 'brand name has already been resisted',
         'brandUrl_existed' => 'brand url has already been resisted',
         'check_ok' => 'ok',
+        'not_active' => 'user is pending aporoval',
     ),
     /**
      * Inbox Message

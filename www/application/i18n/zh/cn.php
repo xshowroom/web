@@ -17,6 +17,7 @@ return array_merge(
         'brandName_existed' => '该品牌名称已存在',
         'brandUrl_existed' => '该URL已存在',
         'check_ok' => '参数验证成功',
+        'not_active' => '等待管理员审核中',
     ),
     /**
      * Inbox Message

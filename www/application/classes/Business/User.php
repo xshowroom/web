@@ -39,7 +39,7 @@ class Business_User
     {
         $user = $this->userModel->getByEmailPass($email, md5($pass));
         if ($user['status'] == Model_User::STATUS_USER_PENDING) {
-            throw new Kohana_Exception('管理员还在审核中');
+            throw new Kohana_Exception(__('not_active'));
         }
         
         if (!empty($user)) {
