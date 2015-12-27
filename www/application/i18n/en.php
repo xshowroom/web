@@ -604,6 +604,28 @@ return array_merge(
         'buyer_store__item__btn_CLOSE' => 'CLOSE',
     ),
     /**
+     * store_index.php & store_create.php
+     */
+    array(
+        'store_index__STORE_IMAGES' => 'STORE IMAGES',
+        'store_index__STORE_INFO' => 'STORE INFO',
+
+        'store_index__STORE_NAME' => 'STORE NAME',
+        'store_index__STORE_CATEGORY' => 'STORE CATEGORY',
+        'store_index__COLLECTION_TYPES' => 'COLLECTION TYPES',
+        'store_index__BRAND_LIST' => 'BRAND LIST',
+        'store_index__STORE_WEBSITE' => 'STORE WEBSITE',
+        'store_index__STORE_ADDRESS' => 'STORE ADDRESS',
+        'store_index__STORE_COUNTRY' => 'STORE COUNTRY',
+        'store_index__STORE_ZIPCODE' => 'STORE ZIPCODE',
+        'store_index__STORE_TELEPHONE' => 'STORE TELEPHONE',
+        'store_index__ABOUT_STORE' => 'ABOUT STORE',
+
+        'store_index__btn_SAVE' => 'SAVE',
+        'store_index__btn_CANCEL' => 'CANCEL',
+        'store_index__btn_EDIT' => 'EDIT STORE',
+    ),
+    /**
      * order_create.php
      */
     array(

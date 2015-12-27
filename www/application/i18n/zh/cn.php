@@ -587,10 +587,10 @@ return array_merge(
         'buyer_cart__btn_GENERATE' => '生成订单',
     ),
     /**
-     * buyer_store.php
-     */
+ * buyer_store.php
+ */
     array(
-        'buyer_store__TITLE' => '我的店铺',
+        'buyer_store__TITLE' => '我的商店',
 
         'buyer_store__ADD_NEW' => '+ 添加新店',
 
@@ -602,6 +602,28 @@ return array_merge(
         'buyer_store__item__btn_EDIT' => '编辑',
         'buyer_store__item__btn_VIEW' => '查看',
         'buyer_store__item__btn_CLOSE' => '删除',
+    ),
+    /**
+     * store_index.php & store_create.php
+     */
+    array(
+        'store_index__STORE_IMAGES' => '商店图集',
+        'store_index__STORE_INFO' => '商店信息',
+
+        'store_index__STORE_NAME' => '商店名称',
+        'store_index__STORE_CATEGORY' => '商店类型',
+        'store_index__COLLECTION_TYPES' => '售卖系列',
+        'store_index__BRAND_LIST' => '品牌列表',
+        'store_index__STORE_WEBSITE' => '商店网址',
+        'store_index__STORE_ADDRESS' => '商店地址',
+        'store_index__STORE_COUNTRY' => '商店国家',
+        'store_index__STORE_ZIPCODE' => '商店邮编',
+        'store_index__STORE_TELEPHONE' => '商店电话',
+        'store_index__ABOUT_STORE' => '关于商店',
+
+        'store_index__btn_SAVE' => '保存',
+        'store_index__btn_CANCEL' => '取消',
+        'store_index__btn_EDIT' => '编辑商店',
     ),
     /**
      * order_create.php

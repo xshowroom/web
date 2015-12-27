@@ -13,16 +13,26 @@
     <nav class="row setting-info">
         <?php echo View::factory('common/global_setting_without_login'); ?>
     </nav>
-    <nav class="row user-navigation">
-        <?php echo View::factory('common/global_navigation_top_buyer',
-            array('currentPage' =>  'dashboard', 'userAttr'=> $userAttr)); 
-           ?>
-    </nav>
+
+    <?php if($user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
+        <nav class="row user-navigation">
+            <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'dashboard', 'userAttr'=> $userAttr)); ?>
+        </nav>
+    <?php elseif ($user["role_type"] == Model_User::TYPE_USER_BUYER): ?>
+        <nav class="row user-navigation">
+            <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'dashboard', 'userAttr'=> $userAttr)); ?>
+        </nav>
+    <?php elseif ($user["role_type"] == Model_User::TYPE_USER_ADMIN): ?>
+        <nav class="row guest-navigation" id="home-page-navigation">
+            <?php echo View::factory('admin_views/admin_navigation_top_login', array('currentPage' => 'stores')); ?>
+        </nav>
+    <?php endif; ?>
+
     <section class="row no-vertical-padding">
         <div class="container" ng-cloak>
             <div class="row store-inputs uploading">
                 <div class="col-xs-12">
-                	<h3>Store Images<span>({{store.shopImage.length}}/5)</span></h3>
+                	<h3><?=__("store_index__STORE_IMAGES");?><span>({{store.shopImage.length}}/5)</span></h3>
                 </div>
                 <div class="col-xs-12">
                 	<div ng-repeat="url in store.shopImage track by $index" class="store-image store-image-uploaded">
@@ -40,19 +50,19 @@
             </div>
             <div class="row store-inputs">
                 <div class="col-xs-12">
-                    <h3>STORE INFO</h3>
+                    <h3><?=__("store_index__STORE_INFO");?></h3>
                 </div>
                 <div class="col-xs-10">
                     <form class="form-horizontal" id="store-create-form">
                     	<div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopName}">
-                            <label for="name" class="col-xs-2 control-label">STORE NAME</label>
+                            <label for="name" class="col-xs-2 control-label"><?=__("store_index__STORE_NAME");?></label>
                             <div class="col-xs-6">
                             	<input type="text" class="form-control" id="store-name" name="shopName"
 									ng-model="store.shopName" ng-disabled="true">
                             </div>
                         </div>
                         <div class="form-group col-xs-12"  ng-class="{'has-error': checkInfo.validation.shopType}">
-                            <label for="store-type" class="col-xs-2 control-label">STORE CATEGORY</label>
+                            <label for="store-type" class="col-xs-2 control-label"><?=__("store_index__STORE_CATEGORY");?></label>
                             <div class="col-xs-6">
                                 <select class="form-control" id="store-type" ng-model="store.shopType" name="shopType"
                                 	ng-disabled="!isEditing">
@@ -63,7 +73,7 @@
                             </div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.collectionType}">
-                            <label class="col-xs-2 control-label">COLLETION TYPES</label>
+                            <label class="col-xs-2 control-label"><?=__("store_index__COLLECTION_TYPES");?></label>
 							<div class="col-xs-6">
 								<label class="checkbox-inline">
 									<input type="checkbox" name="collectionType" ng-model="collectionType.dropdown__COLLECTION__WOMEN"
@@ -98,28 +108,28 @@
 							</div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.brandList}">
-                            <label for="brand-carried" class="col-xs-2 control-label">BRAND LIST</label>
+                            <label for="brand-carried" class="col-xs-2 control-label"><?=__("store_index__BRAND_LIST");?></label>
                             <div class="col-xs-6">
                                   <input type="text" class="form-control" id="brand-carried" name="brandList" ng-model="store.brandList"
                                   ng-disabled="!isEditing">
                             </div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopWebsite}">
-                            <label for="website" class="col-xs-2 control-label">WEBSITE</label>
+                            <label for="website" class="col-xs-2 control-label"><?=__("store_index__STORE_WEBSITE");?></label>
                             <div class="col-xs-6">
                             	<input type="text" class="form-control" id="website" name="shopWebsite" ng-model="store.shopWebsite"
                             	ng-disabled="!isEditing">
                             </div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopAddress}">
-                            <label for="store-address" class="col-xs-2 control-label">ADDRESS</label>
+                            <label for="store-address" class="col-xs-2 control-label"><?=__("store_index__STORE_ADDRESS");?></label>
                             <div class="col-xs-6">
                                 <input type="text" class="form-control" id="store-address" name="shopAddress" ng-model="store.shopAddress"
                                 ng-disabled="true">
                             </div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopCountry}">
-                            <label for="material" class="col-xs-2 control-label">COUNTRY</label>
+                            <label for="material" class="col-xs-2 control-label"><?=__("store_index__STORE_COUNTRY");?></label>
                             <div class="col-xs-6">
                             	<select  class="form-control" id="store-country" name="shopCountry" ng-model="store.shopCountry" ng-disabled="!isEditing">
 									<option ng-repeat="country in countries" value="dropdown__COUNTRY__{{country}}">
@@ -129,19 +139,19 @@
                             </div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopZipcode}">
-                            <label for="store-address" class="col-xs-2 control-label">ZIPCODE</label>
+                            <label for="store-address" class="col-xs-2 control-label"><?=__("store_index__STORE_ZIPCODE");?></label>
                             <div class="col-xs-6">
                             	<input type="text" class="form-control" id="store-postcode" name="shopZipcode" ng-model="store.shopZipcode" ng-disabled="!isEditing">
                             </div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopTel}">
-                            <label for="store-address" class="col-xs-2 control-label">TELEPHONE</label>
+                            <label for="store-address" class="col-xs-2 control-label"><?=__("store_index__STORE_TELEPHONE");?></label>
                             <div class="col-xs-6">
                                 <input type="text" class="form-control" id="store-telephone-number" name="shopTel" ng-model="store.shopTel" ng-disabled="!isEditing">
                             </div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopAbout}">
-                            <label for="store-about" class="col-xs-2 control-label">ABOUT STORE</label>
+                            <label for="store-about" class="col-xs-2 control-label"><?=__("store_index__ABOUT_STORE");?></label>
                             <div class="col-xs-6">
                            		<textcomplete>
                                   	<textarea class="form-control" id="store-about" ng-model="store.shopAbout" ng-disabled="!isEditing"></textarea>
@@ -160,11 +170,11 @@
 						<?php if ($user["role_type"] == Model_User::TYPE_USER_BUYER): ?>
                         <div class="form-group col-xs-12">
                             <div class="col-xs-10 col-xs-offset-2" ng-if="isEditing">
-                                <button class="btn btn-type-2" id="update-btn" ng-click="update();">SAVE</button>
-                                <button class="btn btn-type-1" id="update-btn" ng-click="toggleEditing();">Cancel</button>
+                                <button class="btn btn-type-2" id="update-btn" ng-click="update();"><?=__("store_index__btn_SAVE");?></button>
+                                <button class="btn btn-type-1" id="update-btn" ng-click="toggleEditing();"><?=__("store_index__btn_CANCEL");?></button>
                         	</div>
                         	<div class="col-xs-10 col-xs-offset-2" ng-if="!isEditing">
-                                  <button class="btn btn-type-2" id="edit-btn" ng-click="toggleEditing();">Edit</button>
+                                  <button class="btn btn-type-2" id="edit-btn" ng-click="toggleEditing();"><?=__("store_index__btn_EDIT");?></button>
                         	</div>
                         </div>
                         <?php endif;?>
