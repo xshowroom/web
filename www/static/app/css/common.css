@@ -665,6 +665,13 @@ to {-o-transform: translateX(0);}
 .user-navigation .user-actions .dropdown-menu li{
 	text-align: right;
 }
+/* .user-navigation .number-counter{
+	position: relative;
+}
+.user-navigation .number-counter:after{
+	content: attr(data-counter);
+} */
+
 .brand-banner{
 	background-image: url('/static/app/images/brand-banner.png');
 	height: 245px;

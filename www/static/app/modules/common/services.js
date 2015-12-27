@@ -586,6 +586,9 @@ angular.module(
 			return {
 				destroy: function (opts) {
 					return PostRequester('message/delete', opts);
+				},
+				getUnReadCount: function (opts) {
+					return PostRequester('message/unreadCount', opts);
 				}
 			};
 		}
