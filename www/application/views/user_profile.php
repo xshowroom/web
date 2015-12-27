@@ -11,11 +11,11 @@
 	<nav class="row setting-info">
 		<?php echo View::factory('common/global_setting_without_login'); ?>
 	</nav>
-	<?php if($user["role_type"] == Business_User::ROLE_BRAND): ?>
+	<?php if($user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
 	<nav class="row user-navigation">
         <?php echo View::factory('common/global_navigation_top_brand', array('currentPage' =>  'profile', 'userAttr'=> $userAttr)); ?>
 	</nav>
-	<?php elseif ($user["role_type"] == Business_User::ROLE_BUYER): ?>
+	<?php elseif ($user["role_type"] == Model_User::TYPE_USER_BUYER): ?>
 	<nav class="row user-navigation">
         <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'profile', 'userAttr'=> $userAttr)); ?>
 	</nav>

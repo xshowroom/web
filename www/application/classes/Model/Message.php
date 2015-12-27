@@ -9,6 +9,13 @@ class Model_Message
 {
     protected static $TABLE= 'message';
 
+    /**
+     * define some messages
+     */
+    const AUTO_MSG_WELCOME_BRAND = 'AUTO_MSG_WELCOME_BRAND';
+    const AUTO_MSG_WELCOME_BUYER = 'AUTO_MSG_WELCOME_BUYER';
+    const AUTO_MSG_ORDER_STATUS_CHANGE = 'AUTO_MSG_ORDER_STATUS_CHANGE';
+
     const MSG_STATUS_DELETE = -1;
     const MSG_STATUS_UNREAD = 0;
     const MSG_STATUS_READ =  1;

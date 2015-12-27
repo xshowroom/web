@@ -5,22 +5,6 @@
  */
 class Business_User
 {
-    /**
-     * 角色类型
-     */
-    const ROLE_ADMIN = 0;
-    const ROLE_BRAND = 1;
-    const ROLE_BUYER = 2;
-
-    /**
-     * User Status
-     */
-    const STATUS_USER_REJECTED = -2;
-    const STATUS_USER_PENDING = -1;
-    const STATUS_USER_NORMAL = 0;
-    const STATUS_USER_SUSPENDED = 1;
-    const STATUS_USER_DELETED = 2;
-
 
     public $userModel;
     public $msgService;
@@ -69,9 +53,9 @@ class Business_User
         try {
             Database::instance()->begin();
 
-            if ($roleType == self::ROLE_BRAND) {
+            if ($roleType == Model_User::TYPE_USER_BRAND) {
                 $ret = $this->addBrandUser();
-            } else if ($roleType == self::ROLE_BUYER) {
+            } else if ($roleType == Model_User::TYPE_USER_BUYER) {
                 $ret = $this->addBuyerUser();
             }
 
@@ -121,7 +105,7 @@ class Business_User
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         } 
         // generate welcome msg
-        $this->msgService->createMessage($userId, Business_Message::AUTO_MSG_WELCOME_BRAND);
+        $this->msgService->createMessage($userId, Model_Message::AUTO_MSG_WELCOME_BRAND);
 
         // generate brand info
         $brandName     = Request::current()->getParam('brandName');
@@ -157,7 +141,7 @@ class Business_User
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
         // generate welcome msg
-        $this->msgService->createMessage($userId, Business_Message::AUTO_MSG_WELCOME_BRAND);
+        $this->msgService->createMessage($userId, Model_Message::AUTO_MSG_WELCOME_BRAND);
         $shopId = $this->shopService->realAddShop($userId);
         return $shopId;
     }
@@ -211,25 +195,25 @@ class Business_User
 
     public function countAllUser()
     {
-        $brand_count = $this->userModel->countUserByRole(Business_User::ROLE_BRAND);
-        $buyer_count = $this->userModel->countUserByRole(Business_User::ROLE_BUYER);
+        $brand_count = $this->userModel->countUserByRole(Model_User::TYPE_USER_BRAND);
+        $buyer_count = $this->userModel->countUserByRole(Model_User::TYPE_USER_BUYER);
 
         return $brand_count + $buyer_count;
     }
 
     public function listPendingUsers()
     {
-        return $this->userModel->listUsersByStatus(Business_User::STATUS_USER_PENDING);
+        return $this->userModel->listUsersByStatus(Model_User::STATUS_USER_PENDING);
     }
 
     public function allowUser($userId)
     {
-        return $this->userModel->updateUserStatus($userId, Business_User::STATUS_USER_NORMAL);
+        return $this->userModel->updateUserStatus($userId, Model_User::STATUS_USER_NORMAL);
     }
 
     public function rejectUser($userId)
     {
-        return $this->userModel->updateUserStatus($userId, Business_User::STATUS_USER_REJECTED);
+        return $this->userModel->updateUserStatus($userId, Model_User::STATUS_USER_REJECTED);
     }
 
     /**

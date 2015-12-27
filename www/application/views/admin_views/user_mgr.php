@@ -43,9 +43,9 @@
 							</td>
 							<td class="xs-row">
 								<p>
-									<?php if($row['role_type'] == Business_User::ROLE_BRAND): ?>
+									<?php if($row['role_type'] == Model_User::TYPE_USER_BRAND): ?>
 									<?='BRAND'?>
-									<?php elseif($row['role_type'] == Business_User::ROLE_BUYER): ?>
+									<?php elseif($row['role_type'] == Model_User::TYPE_USER_BUYER): ?>
 									<?='BUYER'?>
 									<?php endif ?>
 								</p>

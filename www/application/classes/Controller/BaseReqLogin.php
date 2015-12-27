@@ -32,14 +32,14 @@ class Controller_BaseReqLogin extends Controller_Base
 
     protected function checkBrandUser()
     {
-        if ($this->opUser["role_type"] != Business_User::ROLE_BRAND) {
+        if ($this->opUser["role_type"] != Model_User::TYPE_USER_BRAND) {
             $this->redirect('/user');
         }
     }
 
     protected function checkBuyerUser()
     {
-        if ($this->opUser["role_type"] != Business_User::ROLE_BUYER) {
+        if ($this->opUser["role_type"] != Model_User::TYPE_USER_BUYER) {
             $this->redirect('/user');
         }
     }

@@ -34,9 +34,9 @@ class Controller_User extends Controller_BaseReqLogin
     {
         $roleType = (int)$this->opUser['role_type'];
 
-        if($roleType === Business_User::ROLE_BRAND){
+        if($roleType === Model_User::TYPE_USER_BRAND){
             $this->redirect('/brand/profile');
-        } elseif ($roleType === Business_User::ROLE_BUYER) {
+        } elseif ($roleType === Model_User::TYPE_USER_BUYER) {
             $this->redirect('/buyer/profile');
         }
     }
