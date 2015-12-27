@@ -134,13 +134,13 @@
                     	</div>
                         <div class="store-item-body">
                         	<a class="store-photo image-link" href="/store/<?=$store['id']?>">
-                        		<img src="/static/app/images/shop-brand-1.png" class="order-item-image">
+                        		<img src="/static/app/images/default-store-cover.png" class="store-item-image">
                         	</a>
                             <div class="store-details">
 	                            <div>Brands</div>
 	                            <div><?=$store['brand_list']?></div>
 	                            <div>About Store</div>
-	                            <div>This is the introduction of your first store. This is the introduction of your first store. This is the introduction of your first store.</div>
+	                            <div><?=$store['about'] ? $store['about'] : '暂无相关介绍'?></div>
 	                        </div>
                         </div>
                     </div>
