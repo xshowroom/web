@@ -162,7 +162,7 @@
 							<ul class="col-xs-6">
 								<li ng-repeat="msg in errorMsgs">
 									<span class="glyphicon glyphicon-remove-sign"></span>
-									<span>{{ ( "store_" + msg[0] + "_" + msg[1]) | translate}}</span>
+									<span>{{ ( "" + msg[0] + "_" + msg[1]) | translate}}</span>
 								</li>
 							</ul>
 							<div class="clearfix"></div>
