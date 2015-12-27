@@ -9,6 +9,7 @@
 	cursor: default;
 	color: #333;
 	padding-left: 0;
+	resize: none;
 }
 #store-create-form textarea[disabled]{
 	height: auto;

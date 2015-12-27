@@ -43,9 +43,9 @@ angular.module(
 				  	'shopAddress': false,
 				   	'shopCountry': false,
 				   	'shopZipcode': false,
-				   	'shopTel': false,
-					'shopImage': false,
-					'shopAbout': false
+				   	'shopTel': false
+//					'shopImage': false,
+//					'shopAbout': false
 				},
 				reg:{
 					'shopWebsite': /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-@?^=%&amp;/~\+#])?/,
