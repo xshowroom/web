@@ -10,7 +10,7 @@ class Model_Message
     protected static $TABLE= 'message';
 
     const MSG_STATUS_DELETE = -1;
-    const MSG_STATUS_UNREADY = 0;
+    const MSG_STATUS_UNREAD = 0;
     const MSG_STATUS_READ =  1;
 
     public function createMessage($toUserId, $messageBody, $orderId, $order_status)
@@ -26,7 +26,7 @@ class Model_Message
             ))
             ->values(array(
                 $toUserId,
-                Model_Message::MSG_STATUS_UNREADY,
+                Model_Message::MSG_STATUS_UNREAD,
                 $messageBody,
                 $orderId,
                 $order_status,
@@ -69,5 +69,16 @@ class Model_Message
                     ->execute();
         
         return $result[0];
+    }
+
+    public function countMessageUnread($userId)
+    {
+        $result = DB::select(DB::expr('COUNT(id) AS UNREAD_COUNT'))
+            ->from(Model_Message::$TABLE)
+            ->where('user_id', '=', $userId)
+            ->where('status', '=', Model_Message::MSG_STATUS_UNREAD)
+            ->execute();
+
+        return empty($result) ? 0 : (int)$result[0]['UNREAD_COUNT'];
     }
 }
