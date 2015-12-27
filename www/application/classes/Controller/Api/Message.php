@@ -22,4 +22,17 @@ class Controller_Api_Message extends Controller_BaseReqLogin
             'data'   => $msgId,
         ));
     }
+
+    public function action_unreadCount()
+    {
+        $userId = $this->opUser['id'];
+
+        $res = $this->messageService->getUnReadCount($userId);
+
+        echo json_encode(array(
+            'status' => STATUS_SUCCESS,
+            'msg'    => '',
+            'data'   => $res,
+        ));
+    }
 }
