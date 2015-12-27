@@ -29,8 +29,8 @@
 						<th class="xs-table-th" style="width: 100px;">BUYER</th>
 						<th class="xs-table-th" style="width: 100px;">AMOUNT</th>
 						<th class="xs-table-th" style="width: 150px;">ORDER TIME</th>
+						<th class="xs-table-th" style="width: 150px;">UPDATE TIME</th>
 						<th class="xs-table-th" style="width: 120px;">DETAIL INFO</th>
-						<th class="xs-table-th" style="width: 100px;">ACTION</th>
 					</tr>
 					<?php foreach($pending_order_list as $row): ?>
 						<tr>
@@ -55,14 +55,12 @@
 							<td class="xs-row">
 								<p><?= $row['buy_time'] ?></p>
 							</td>
+							<td class="xs-row">
+								<p><?= $row['update_time'] ?></p>
+							</td>
 							<td class="xs-row xs-row-action">
 								<a href="<?=URL::site('order/'.$row['order_id']);?>" target="_blank">
 									<p>VIEW ORDER</p>
-								</a>
-							</td>
-							<td class="xs-row xs-row-action">
-								<a data-toggle="modal" href="#modalAllowConfirm" ng-click=<?= "clickStore(".$row['id'].")";?> >
-									<p>CONFIRM</p>
 								</a>
 							</td>
 						</tr>
