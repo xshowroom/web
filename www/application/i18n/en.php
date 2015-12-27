@@ -694,6 +694,14 @@ return array_merge(
 
         'order_index__actions__btn_ORDER_CONFIRM' => 'ORDER CONFIRM',
 
+        'order_index__payment_TITLE' => 'PAYMENT INFORMATION',
+        'order_index__payment_REMITTANCE' => 'REMITTANCE TO: ',
+        'order_index__payment_BANK_NAME' => 'BANK NAME: ',
+        'order_index__payment_BANK_ACCOUTN' => 'BANK ACCOUNT: ',
+        'order_index__payment_BANK_PAYEE' => 'BANK PAYEE: ',
+        'order_index__payment_DESC_01' => 'Please send your payment receipt to',
+        'order_index__payment_DESC_02' => 'in order to confirm your payment.',
+
         'order_index__products_TITLE' => 'PRODUCTS IN ORDER',
         'order_index__products__STYLE_NUMBER' => 'STYLE NUMBER:',
         'order_index__products__RETAIL_PRICE' => 'RETAIL PRICE:',

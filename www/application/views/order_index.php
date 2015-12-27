@@ -191,13 +191,13 @@
 									<?php if (!empty($adminAccount)):?>
 									<div class="col-xs-12">
 										<div class="admin-account-info">
-											<h4>Payment Information</h4>
-											<div><span>Remittance to:</span><span>XXXX</span></div>
-											<div><span>Bank Name:</span><span>China Mechants Bank</span></div>
-											<div><span>Account Number:</span><span>12312312 123123123</span></div>
-											<div><span>Payee:</span><span>X Show Room</span></div>
+											<h4><?=__("order_index__payment_TITLE");?></h4>
+											<div><span><?=__("order_index__payment_REMITTANCE");?></span><span><?=PAYMENT_OFFLINE_REMITTANCE_TO?></span></div>
+											<div><span><?=__("order_index__payment_BANK_NAME");?></span><span><?=PAYMENT_OFFLINE_BANK_NAME?></span></span></div>
+											<div><span><?=__("order_index__payment_BANK_ACCOUTN");?></span><span><?=PAYMENT_OFFLINE_BANK_ACCOUNT?></span></div>
+											<div><span><?=__("order_index__payment_BANK_PAYEE");?></span><span><?=PAYMENT_OFFLINE_BANK_PAYEE?></span></div>
 											<div class="payment-tip">
-												<span class="glyphicon glyphicon-info-sign"></span>Please send your payment receipt to xshowroom@projectcrossover.cn in order to confirm your payment.
+												<span class="glyphicon glyphicon-info-sign"></span><?=__("order_index__payment_DESC_01")." ".ADMIN_EMAIL." ".__("order_index__payment_DESC_02");?>
 											</div>
 										</div>
 									</div>

@@ -694,6 +694,14 @@ return array_merge(
 
         'order_index__actions__btn_ORDER_CONFIRM' => '订单确认',
 
+        'order_index__payment_TITLE' => '支付信息',
+        'order_index__payment_REMITTANCE' => '汇款到: ',
+        'order_index__payment_BANK_NAME' => '银行名称: ',
+        'order_index__payment_BANK_ACCOUTN' => '银行账户: ',
+        'order_index__payment_BANK_PAYEE' => '收款人: ',
+        'order_index__payment_DESC_01' => '请将您的汇款凭证发送到',
+        'order_index__payment_DESC_02' => '以此来确认您的支付',
+
         'order_index__products_TITLE' => '订单详情',
         'order_index__products__STYLE_NUMBER' => '产品货号：',
         'order_index__products__RETAIL_PRICE' => '零售价：',
