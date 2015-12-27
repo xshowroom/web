@@ -24,7 +24,7 @@ class Business_Shop
     public function addShop($userId)
     {
         $user = $this->userModel->getById($userId);
-        if (empty($user) || $user['status'] != STAT_NORMAL || $user['role_type'] != Model_User::TYPE_USER_BUYER) {
+        if (empty($user) || $user['status'] != Model_User::STATUS_USER_NORMAL || $user['role_type'] != Model_User::TYPE_USER_BUYER) {
             $errorInfo = Kohana::message('message', 'STATUS_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
@@ -37,13 +37,13 @@ class Business_Shop
     public function updateShop($userId, $shopId)
     {
         $user = $this->userModel->getById($userId);
-        if (empty($user) || $user['status'] != STAT_NORMAL || $user['role_type'] != Model_User::TYPE_USER_BUYER) {
+        if (empty($user) || $user['status'] != Model_User::STATUS_USER_NORMAL || $user['role_type'] != Model_User::TYPE_USER_BUYER) {
             $errorInfo = Kohana::message('message', 'STATUS_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
 
         $shop = $this->shopModel->getById($shopId);
-        if (empty($shop) || $shop['status'] != STAT_NORMAL || $shop['user_id'] != $userId) {
+        if (empty($shop) || $shop['status'] != Model_User::STATUS_USER_NORMAL || $shop['user_id'] != $userId) {
             $errorInfo = Kohana::message('message', 'STATUS_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
