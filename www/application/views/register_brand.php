@@ -197,7 +197,7 @@
 					<div class="form-group">
 						<div class="col-xs-12">
 							<div class="brand-register-checkbox">
-								<label> <input type="checkbox" ng-required="true" ng-model="acceptConditions" value="true" name="accept">
+								<label class="checkbox-inline"> <input type="checkbox" ng-required="true" ng-model="acceptConditions" value="true" name="accept">
 									<span><?= __("brand_register__STEP_3__COMPANY_ACCEPT_2");?></span>
 								</label>
 							</div>

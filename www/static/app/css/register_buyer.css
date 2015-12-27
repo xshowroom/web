@@ -103,10 +103,11 @@ label[for='company-country'].has-content{
 	float: left;
 }
 #buyer-register .buyer-register-checkbox input[type='checkbox']{
-	margin-top: 1px;
+	margin-top: 2px;
 }
 #buyer-register .form-group .buyer-register-checkbox label{
 	line-height: 17px;
+	padding-top: 0;
 }
 .form-group label{
 	color: #878787;

@@ -249,7 +249,7 @@
 					<div class="form-group">
 						<div class="col-xs-12">
 							<div class="checkbox buyer-register-checkbox">
-								<label>
+								<label class="checkbox-inline">
 									<input type="checkbox" ng-required="true" ng-model="acceptConditions">
 									<span><?= __("buyer_register__STEP_3__COMPANY_ACCEPT_2");?></span>
 								</label>

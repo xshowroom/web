@@ -66,8 +66,11 @@ h2.brand-register-step {
  *//* #brand-register .brand-register-checkbox{
 	margin-bottom: 50px;
 } */
-#brand-register .brand-register-checkbox input[type='checkbox']{
-	margin-top: 1px;
+#brand-register .brand-register-checkbox .checkbox-inline{
+	padding-top: 0;
+}
+#brand-register .brand-register-checkbox .checkbox-inline input[type='checkbox']{
+	margin-top: 11px;
 }
 /* .brand-register-checkbox label {
 	line-height: 100% !important;
