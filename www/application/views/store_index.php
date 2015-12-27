@@ -48,7 +48,7 @@
                             <label for="name" class="col-xs-2 control-label">STORE NAME</label>
                             <div class="col-xs-6">
                             	<input type="text" class="form-control" id="store-name" name="shopName"
-									ng-model="store.shopName" ng-disabled="!isEditing">
+									ng-model="store.shopName" ng-disabled="true">
                             </div>
                         </div>
                         <div class="form-group col-xs-12"  ng-class="{'has-error': checkInfo.validation.shopType}">
@@ -115,7 +115,7 @@
                             <label for="store-address" class="col-xs-2 control-label">ADDRESS</label>
                             <div class="col-xs-6">
                                 <input type="text" class="form-control" id="store-address" name="shopAddress" ng-model="store.shopAddress"
-                                ng-disabled="!isEditing">
+                                ng-disabled="true">
                             </div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopCountry}">
@@ -157,6 +157,7 @@
 							</ul>
 							<div class="clearfix"></div>
 						</div>
+						<?php if ($user["role_type"] == Model_User::TYPE_USER_BUYER): ?>
                         <div class="form-group col-xs-12">
                             <div class="col-xs-10 col-xs-offset-2" ng-if="isEditing">
                                 <button class="btn btn-type-2" id="update-btn" ng-click="update();">SAVE</button>
@@ -166,6 +167,7 @@
                                   <button class="btn btn-type-2" id="edit-btn" ng-click="toggleEditing();">Edit</button>
                         	</div>
                         </div>
+                        <?php endif;?>
                     </form>
                 </div>            
             </div>
