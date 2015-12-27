@@ -31,6 +31,7 @@ class Controller_Api_Shop extends Controller_BaseReqLogin
     {
         $userId = $this->opUser['id'];
         $shopId = Request::current()->getParam('shopId');
+
         $res = $this->shopService->getShopById($userId, $shopId);      
         
         echo json_encode(array(

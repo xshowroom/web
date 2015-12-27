@@ -37,7 +37,7 @@
 								<p><?= $row['id'] ?></p>
 							</td>
 							<td class="xs-row">
-								<a href="<?=URL::site('xsadmin/management/store/'.$row['id']);?>" target="_blank">
+								<a href="<?=URL::site('xsadmin/management/user_detail/'.$row['id']);?>" target="_blank">
 									<p><?= $row['email'] ?></p>
 								</a>
 							</td>
@@ -57,7 +57,7 @@
 								<p><?= $row['last_login_time'] ?></p>
 							</td>
 							<td class="xs-row">
-								<a href="<?=URL::site('xsadmin/management/store/'.$row['id']);?>" target="_blank">
+								<a href="<?=URL::site('xsadmin/management/user_detail/'.$row['id']);?>" target="_blank">
 									<p>PROFILE</p>
 								</a>
 							</td>
