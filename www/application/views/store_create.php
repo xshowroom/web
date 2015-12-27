@@ -126,10 +126,10 @@
                             </div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopAbout}">
-                            <label for="care-instruction" class="col-xs-2 control-label">ABOUT STORE</label>
+                            <label for="store-about" class="col-xs-2 control-label">ABOUT STORE</label>
                             <div class="col-xs-6">
                            		<textcomplete>
-                                  	<textarea class="form-control" id="care-instruction" ng-model="store.shopAbout"></textarea>
+                                  	<textarea class="form-control" id="store-about" ng-model="store.shopAbout"></textarea>
                                 </textcomplete>
                             </div>
                           </div>
