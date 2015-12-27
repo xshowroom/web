@@ -145,7 +145,7 @@ class Business_User
         
         list($realPathFile, $mediumPathFile, $smallPathFile) = $this->uploadService->createThreeImage($imagePath); 
 
-        $brandId = $this->userModel->addBrandInfo($userId, $brandName, $designerName, $brandUrl, $realPathFile);
+        $brandId = $this->userModel->addBrandInfo($userId, $brandName, $designerName, $brandUrl, $mediumPathFile);
         return $brandId;
     }
     

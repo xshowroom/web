@@ -64,16 +64,21 @@ class Business_Shop
         $country   = Request::current()->getParam('shopCountry');
         $zipcode   = Request::current()->getParam('shopZipcode');
         $tel       = Request::current()->getParam('shopTel');
-        $image     = Request::current()->getParam('shopImage');
+        $images    = Request::current()->getParam('shopImage');
         $about     = Request::current()->getParam('shopAbout');
         
         // resize image
-        if (!empty($image)) {
-            $image = $this->uploadService->createResizeImage($image, 'medium');
+        $imageList = json_decode($images, true);
+        if (!empty($imageList)) {
+            foreach ($imageList as &$image) {
+                $image = $this->uploadService->createResizeImage($image, 'medium'); 
+            }
+            unset($image);
         }
+        $images = json_encode($imageList);
         
         $shopId = $this->shopModel->addShopInfo($userId, $name, $type, $colType, $brandList,
-                                                $website, $address, $country, $zipcode, $tel, $image, $about);
+                                                $website, $address, $country, $zipcode, $tel, $images, $about);
         return $shopId;
     }
 
@@ -89,27 +94,42 @@ class Business_Shop
         $country   = Request::current()->getParam('shopCountry');
         $zipcode   = Request::current()->getParam('shopZipcode');
         $tel       = Request::current()->getParam('shopTel');
-        $image     = Request::current()->getParam('shopImage');
+        $images    = Request::current()->getParam('shopImage');
         $about     = Request::current()->getParam('shopAbout');
         
         // resize image
-        if (!empty($image)) {
-            $image = $this->uploadService->createResizeImage($image, 'medium');
+        $imageList = json_decode($images, true);
+        if (!empty($imageList)) {
+            foreach ($imageList as &$image) {
+                $image = $this->uploadService->createResizeImage($image, 'medium'); 
+            }
+            unset($image);
         }
+        $images = json_encode($imageList);
         
         $res = $this->shopModel->updateShopInfo($userId, $shopId, $name, $type, $colType, $brandList,
-                                                $website, $address, $country, $zipcode, $tel, $image, $about);
+                                                $website, $address, $country, $zipcode, $tel, $images, $about);
         return $res;
     }
 
     public function getShopById($userId, $shopId)
     {
         $shop = $this->shopModel->getById($shopId);
-        if (empty($shop) || $shop['user_id'] != $userId) {
+        $user = $this->userModel->getById($userId);
+
+        $isAdminAuthed = $user['role_type'] == Model_User::TYPE_USER_ADMIN;
+        $isBuyerAuthed = $shop['user_id'] == $userId;
+        $isBrandAuthed = $user['role_type'] == Model_User::TYPE_USER_BRAND;
+
+        if (
+            empty($user) ||
+            empty($shop) ||
+            !($isAdminAuthed || $isBuyerAuthed || $isBrandAuthed)
+        ) {
             $errorInfo = Kohana::message('message', 'AUTH_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
-        
+
         return $shop;
     }
 

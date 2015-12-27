@@ -18,7 +18,6 @@ angular.module(
         function ($scope, $modal, $filter, Message) {
             $scope.clickMessage=function(msgId){
                 messageId = msgId;
-                alert(messageId);
             };
 
             $scope.deleteMessage=function(){

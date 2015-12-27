@@ -692,6 +692,8 @@ return array_merge(
         'order_index__actions__btn_SHIPPED' => 'SHIPPED',
         'order_index__actions__btn_COMPLETE' => 'COMPLETE',
 
+        'order_index__actions__btn_ORDER_CONFIRM' => 'ORDER CONFIRM',
+
         'order_index__products_TITLE' => 'PRODUCTS IN ORDER',
         'order_index__products__STYLE_NUMBER' => 'STYLE NUMBER:',
         'order_index__products__RETAIL_PRICE' => 'RETAIL PRICE:',

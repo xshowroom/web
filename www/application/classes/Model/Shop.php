@@ -108,7 +108,7 @@ class Model_Shop
                         $image,
                         $about,
                         date('Y-m-d h:i:s'),
-                        Model_User::STATUS_USER_PENDING,
+                        Model_User::STATUS_USER_NORMAL,
                     ))
                     ->execute();
         

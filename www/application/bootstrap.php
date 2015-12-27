@@ -176,7 +176,7 @@ Route::set('admin_with_id', '<directory>/<controller>/<action>/<id>',
         array(
             'directory' => 'xsadmin',
             'controller' => 'management',
-            'action' => '(user_detail|shop_detail|order_detail)',
+            'action' => '(user_detail|store_detail|order_detail)',
             'id'        => '\d+',
         ));
         
