@@ -44,6 +44,9 @@ angular.module(
         				$modal({title: 'Error Info', content: res.msg , show: true});
      					return;
      				}
+     				for (var i = 0, len = res.data.length; i < len; i++){
+     					res.data[i].image = res.data[i].image ? JSON.parse(res.data[i].image) : '';
+     				}
      				$scope.stores = res.data
      			});
      		};
