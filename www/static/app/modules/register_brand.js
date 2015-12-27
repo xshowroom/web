@@ -33,7 +33,8 @@ angular.module(
 						'companyCountry': false,
 						'companyZip': false,
 						'companyTel': false,
-						'companyWebsite': false
+						'companyWebsite': false,
+						'acceptCondition': false
 				    }
 				},
 				reg:{

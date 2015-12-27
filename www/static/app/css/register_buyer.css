@@ -109,6 +109,9 @@ label[for='company-country'].has-content{
 	line-height: 17px;
 	padding-top: 0;
 }
+#buyer-register .has-error .buyer-register-checkbox label span{
+	color: #a94442;
+}
 .form-group label{
 	color: #878787;
     font-weight: normal;

@@ -194,10 +194,10 @@
 							<p class="text-center help-block"><?= __("brand_register__STEP_3__COMPANY_ACCEPT_1");?></p>
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group" ng-class="{'has-error': step.validation[3].acceptCondition}">
 						<div class="col-xs-12">
 							<div class="brand-register-checkbox">
-								<label class="checkbox-inline"> <input type="checkbox" ng-required="true" ng-model="acceptConditions" value="true" name="accept">
+								<label class="checkbox-inline"> <input type="checkbox" ng-model="user.acceptCondition" ng-true-value="true" ng-false-value="false">
 									<span><?= __("brand_register__STEP_3__COMPANY_ACCEPT_2");?></span>
 								</label>
 							</div>

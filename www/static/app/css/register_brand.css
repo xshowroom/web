@@ -80,10 +80,13 @@ h2.brand-register-step {
 	margin-top: 15px;
 } */
 #brand-register .form-group label{
-	color: #878787;
+	color: #878787; 
     font-weight: normal;
     line-height: 34px;
     margin-bottom: 0;
+}
+#brand-register .has-error .checkbox-inline span{
+	color: #a94442;
 }
 
 #brand-register .form-group label[for='country'] {
