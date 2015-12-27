@@ -564,6 +564,10 @@ return array_merge(
 
         'buyer_dashboard__MY_STORES' => '我的店铺',
         'buyer_dashboard__ALL_STORES' => '所有店铺 >',
+        'buyer_dashboard__STORE_btn_VIEW' => '查看',
+        'buyer_dashboard__STORE_BRANDS' => '品牌',
+        'buyer_dashboard__STORE_ABOUT' => '关于',
+        'buyer_dashboard__STORE_NO_ABOUT' => '暂无相关介绍',
 
         'buyer_dashboard__ACCOUNT_MANAGER' => '在XSHOWROOM 我们拥有专属的品牌客户经理来帮助您介绍品牌, 与您共建商品集合, 并帮助您完成订单！',
         'buyer_dashboard__ACCOUNT_MANAGER_CONTRACT' => '联系我们'

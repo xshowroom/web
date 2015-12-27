@@ -564,6 +564,10 @@ return array_merge(
 
         'buyer_dashboard__MY_STORES' => 'MY STORES',
         'buyer_dashboard__ALL_STORES' => 'ALL STORES >',
+        'buyer_dashboard__STORE_btn_VIEW' => 'VIEW',
+        'buyer_dashboard__STORE_BRANDS' => 'BRANDS',
+        'buyer_dashboard__STORE_ABOUT' => 'ABOUT STORE',
+        'buyer_dashboard__STORE_NO_ABOUT' => 'NO INFORMATION',
 
         'buyer_dashboard__ACCOUNT_MANAGER' => 'At XSHOWROOM we have Brand Account Manager to help you to introduce the brand, book you in to see the collection, and follow up your order.',
         'buyer_dashboard__ACCOUNT_MANAGER_CONTRACT' => 'CONTRACT US'
