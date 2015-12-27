@@ -17,7 +17,6 @@ angular.module(
      	'$scope', '$window', '$location', '$filter', 'Country', 'Store',
         function ($scope, $window, $location, $filter, Country, Store) {
      		$scope.isEditing = $location.search().isEdit == 1;
-     		console.log($scope.isEditing)
      		$scope.setCollection = function(value){
 				var collections = $scope.store.collectionType
 					? $scope.store.collectionType.split(',')
@@ -43,15 +42,15 @@ angular.module(
 				   	'shopCountry': false,
 				   	'shopZipcode': false,
 				   	'shopTel': false,
-					'images': false,
-					'about': false
+					'shopImage': false,
+					'shopAbout': false
 				},
 				reg:{
 					'shopWebsite': /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-@?^=%&amp;/~\+#])?/,
 				}
 			};
 			$scope.addStoreImage = function(url){
-     			$scope.store.images.push(url);
+     			$scope.store.shopImage.push(url);
      			$scope.$apply();
      		};
 			
@@ -107,8 +106,8 @@ angular.module(
 						shopCountry: res.data.country,
 						shopZipcode: res.data.zip,
 						shopTel: res.data.telephone,
-						images: []
-//						about
+						shopImage: (res.data.image ? JSON.parse(res.data.image) : []),
+						shopAbout: res.data.about
 					};
 					$scope.collectionType = {};
 					var collectionTypes = res.data.collection_type.split(',');

@@ -29,9 +29,9 @@
 					<div class="store-list-content row">
 						<div class="col-xs-6" ng-repeat="store in stores | limitTo: limit track by $index">
 							<div class="store-item">
-				                <div class="store-photo image-link">
+				                <a class="store-photo image-link" ng-href="/store/{{store.id}}">
 				                   	<img src="/static/app/images/shop-brand-1.png" class="order-item-image">
-				                </div>
+				                </a>
 				                <div class="store-details">
 					            	<h3>{{store.name}}</h3>
 					                <div><span>Brands: </span><span>{{store['brand_list']}}</span></div>
