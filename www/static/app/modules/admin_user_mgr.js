@@ -7,8 +7,8 @@ angular.module(
 .controller(
     'AdminUserMgrCtrl',
     [
-        '$scope', 'Admin',
-        function ($scope, Admin) {
+        '$scope', '$filter', 'Admin',
+        function ($scope, $filter, Admin) {
             $scope.clickUser=function(uid, sid, bid) {
                 userId = uid;
                 storeId = sid;

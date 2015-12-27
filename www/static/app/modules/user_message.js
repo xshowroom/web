@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'UserMessageCtrl',
     [
-        '$scope', '$modal', 'Message',
-        function ($scope, $modal, Message) {
+        '$scope', '$modal', '$filter', 'Message',
+        function ($scope, $modal, $filter, Message) {
             $scope.clickMessage=function(msgId){
                 messageId = msgId;
                 alert(messageId);

@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'BuyerStoreCtrl',
     [
-     	'$scope', '$modal', 'Buyer', 'Store',
-        function ($scope, $modal, Buyer, Store) {
+     	'$scope', '$modal', '$filter', 'Buyer', 'Store',
+        function ($scope, $modal, $filter, Buyer, Store) {
      		$scope.loadMore = function(){
      			$scope.limit += 6;
      		};

@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'BuyerBrandCtrl',
     [
-     	'$scope', '$modal', '$timeout', 'Brand', 'Buyer',
-        function ($scope, $modal, $timeout, Brand, Buyer) {
+     	'$scope', '$modal', '$timeout', '$filter','Brand', 'Buyer',
+        function ($scope, $modal, $timeout, $filter, Brand, Buyer) {
      		$scope.hasFilter = function(){
      			return !angular.equals($scope.filters, {});
      		}

@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'OrderListCtrl',
     [
-        '$scope', '$modal', 'Order',
-        function ($scope, $modal, Order) {
+        '$scope', '$modal', '$filter', 'Order',
+        function ($scope, $modal, $filter, Order) {
         	$scope.hasFilter = function(){
         		return $scope.filters && !($scope.filters.status !== '' || $scope.filters.query !== '');
         	}

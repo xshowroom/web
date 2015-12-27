@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'StoreCreateCtrl',
     [
-     	'$scope', '$window', 'Country', 'Store',
-        function ($scope, $window, Country, Store) {
+     	'$scope', '$window', '$filter', 'Country', 'Store',
+        function ($scope, $window, $filter, Country, Store) {
      		$scope.store = {
          		images: []
          	};
