@@ -83,6 +83,18 @@
 									</div>
 								</div>
 							</div>
+					<?php elseif ($order['order_status'] == Model_Order::ORDER_STATUS_PENDING && $user["role_type"] == Model_User::TYPE_USER_ADMIN): ?>
+							<div class="order-status-actions">
+							<div class="row">
+								<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
+								<div class="col-xs-4">
+									<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
+								</div>
+								<div class="col-xs-6 text-right">
+									 <button class="btn btn-type-2" ng-click="updateStatus();">Confirm</button>
+								</div>
+							</div>
+						</div>
 					<?php elseif ($order['order_status'] == Model_Order::ORDER_STATUS_CONFIRMED && $user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
 							<div class="order-status-actions">
 							<div class="row">
