@@ -83,6 +83,18 @@
 									</div>
 								</div>
 							</div>
+					<?php elseif ($order['order_status'] == Model_Order::ORDER_STATUS_PENDING && $user["role_type"] == Model_User::TYPE_USER_ADMIN): ?>
+							<div class="order-status-actions">
+							<div class="row">
+								<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
+								<div class="col-xs-4">
+									<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
+								</div>
+								<div class="col-xs-6 text-right">
+									 <button class="btn btn-type-2" ng-click="updateStatus();">Confirm</button>
+								</div>
+							</div>
+						</div>
 					<?php elseif ($order['order_status'] == Model_Order::ORDER_STATUS_CONFIRMED && $user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
 							<div class="order-status-actions">
 							<div class="row">
@@ -168,6 +180,30 @@
 									</div>
 								</div>
 							</div>
+					<?php elseif (($order['order_status'] == Model_Order::ORDER_STATUS_CONFIRMED  || $order['order_status'] == Model_Order::ORDER_STATUS_PAYBALANCE) 
+						&& $user["role_type"] == Model_User::TYPE_USER_BUYER): ?>
+							<div class="order-status-actions">
+								<div class="row">
+									<?php if (!empty($adminAccount)):?>
+									<div class="col-xs-12">
+										<div class="admin-account-info">
+											<h4>Payment Information</h4>
+											<div><span>Remittance to:</span><span>XXXX</span></div>
+											<div><span>Bank Name:</span><span>China Mechants Bank</span></div>
+											<div><span>Account Number:</span><span>12312312 123123123</span></div>
+											<div><span>Payee:</span><span>X Show Room</span></div>
+											<div class="payment-tip">
+												<span class="glyphicon glyphicon-info-sign"></span>Please send your payment receipt to xshowroom@projectcrossover.cn in order to confirm your payment.
+											</div>
+										</div>
+									</div>
+									<?php endif;?>
+									<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
+									<div class="col-xs-4">
+										<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
+									</div>
+								</div>
+							</div>		
 					<?php else: ?>
 						<div class="order-status-actions">
 							<div class="row">
@@ -183,12 +219,6 @@
 								<div class="col-xs-4" ng-if="order.invoice_url">
 									<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
 								</div>
-								<?php if ($user["role_type"] == Model_User::TYPE_USER_BUYER):?>
-								<label class="col-xs-2">银行账户</label>
-								<div class="col-xs-4">
-									<span><?=$adminAccount?></span>
-								</div>
-								<?php endif;?>
 							</div>
 						</div>
 					<?php endif; ?>
