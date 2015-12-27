@@ -32,7 +32,7 @@ class Controller_Collection extends Controller_BaseReqLogin
         $userId = $this->opUser['id'];
         $collectionId = Request::current()->param('id');
         
-        if ($this->opUser['role_type'] == Business_User::ROLE_BRAND) {
+        if ($this->opUser['role_type'] == Model_User::TYPE_USER_BRAND) {
             $view->set('collection', $this->collectionService->getCollectionInfo($userId, $collectionId));
         } else {
             $view->set('collection', $this->buyerService->getCollectionInfo($userId, $collectionId));
