@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'StoreIndexCtrl',
     [
-     	'$scope', '$window', '$location', 'Country', 'Store',
-        function ($scope, $window, $location, Country, Store) {
+     	'$scope', '$window', '$location', '$filter', 'Country', 'Store',
+        function ($scope, $window, $location, $filter, Country, Store) {
      		$scope.isEditing = $location.search().isEdit == 1;
      		console.log($scope.isEditing)
      		$scope.setCollection = function(value){

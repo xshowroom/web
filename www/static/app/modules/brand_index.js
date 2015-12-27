@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'BrandIndexCtrl',
     [
-     	'$scope', '$modal', '$timeout', 'Brand', 'Buyer',
-        function ($scope, $modal, $timeout, Brand, Buyer) {
+     	'$scope', '$modal', '$timeout', '$filter','Brand', 'Buyer',
+        function ($scope, $modal, $timeout, $filter, Brand, Buyer) {
      		$scope.selectSeason = function (season) {
      			$scope.selectedSeason = season;
      			$scope.selectedCover = $scope.covers[season][0];

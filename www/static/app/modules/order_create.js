@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'OrderCreateCtrl',
     [
-     	'$scope', '$modal', '$window', 'Cart', 'Order', 'Collection', 'Buyer',
-        function ($scope, $modal, $window, Cart, Order, Collection, Buyer) {
+     	'$scope', '$modal', '$window', '$filter', 'Cart', 'Order', 'Collection', 'Buyer',
+        function ($scope, $modal, $window, $filter, Cart, Order, Collection, Buyer) {
      		$scope.removeProductFromCart  = function(product){
         		Cart.removeProduct({
         			productionId: product.id
@@ -121,7 +121,11 @@ angular.module(
      		
      		$scope.setOptions = function(){
      			if (!$scope.order.store){
-     				$modal({title: 'Error Info', content: '该订单尚未选择送货地址，请选择，谢谢！', show: true});
+     				$modal({
+     					title: $filter('translate')('error_title'), 
+     					content: '该订单尚未选择送货地址，请选择，谢谢！',
+     					show: true
+     				});
      				return;
      			}
      			if (!$scope.order.paymentType){

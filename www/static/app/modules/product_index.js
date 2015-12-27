@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'ProductIndexCtrl',
     [
-        '$scope', '$modal', 'Product', 'Cart',
-        function ($scope, $modal, Product, Cart) {
+        '$scope', '$modal', '$filter', 'Product', 'Cart',
+        function ($scope, $modal, $filter, Product, Cart) {
         	$scope.setProductCover = function (url) {
         		$scope.productCover = url;
         	};

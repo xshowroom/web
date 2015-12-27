@@ -15,8 +15,8 @@ angular.module(
 .controller(
     'OrderIndexCtrl',
     [
-        '$scope', '$element', '$window', '$timeout', '$modal', 'Order', 'uiUploader',
-        function ($scope, $element, $window, $timeout, $modal, Order, uiUploader) {
+        '$scope', '$element', '$window', '$timeout', '$modal', '$filter', 'Order', 'uiUploader',
+        function ($scope, $element, $window, $timeout, $modal, $filter, Order, uiUploader) {
         	var init = function (){
         		Order.findOne({
         			orderId: $scope.orderId
