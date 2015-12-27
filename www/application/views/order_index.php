@@ -95,7 +95,7 @@
 									<a ng-href="/{{order.invoice_url}}" target="_blank">{{order.invoice_url}}</a>
 								</div>
 								<div class="col-xs-6 text-right">
-									 <button class="btn btn-type-2" ng-click="updateStatus();">Confirm</button>
+									 <button class="btn btn-type-2" ng-click="updateStatus();"><?=__("order_index__actions__btn_ORDER_CONFIRM");?></button>
 								</div>
 							</div>
 						</div>

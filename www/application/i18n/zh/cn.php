@@ -692,6 +692,8 @@ return array_merge(
         'order_index__actions__btn_SHIPPED' => '确认发货',
         'order_index__actions__btn_COMPLETE' => '确认收货',
 
+        'order_index__actions__btn_ORDER_CONFIRM' => '订单确认',
+
         'order_index__products_TITLE' => '订单详情',
         'order_index__products__STYLE_NUMBER' => '产品货号：',
         'order_index__products__RETAIL_PRICE' => '零售价：',
