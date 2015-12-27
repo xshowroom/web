@@ -308,4 +308,21 @@ class Model_User
 
         return $result[0];
     }
+
+    /**
+     * Update userAttr status
+     *
+     * @param int $userId
+     * @param int $status
+     * @return int
+     */
+    public function updateUserAttrStatus($userId, $status)
+    {
+        $result = DB::update('user_attr')
+            ->set(array('status' => $status))
+            ->where('user_id', '=', $userId)
+            ->execute();
+
+        return $result[0];
+    }
 }

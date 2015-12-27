@@ -37,6 +37,12 @@ function resize($filename, $percent)
 }
 
 
+/*
+ * Shrink the size of images
+ *
+ * Example
+ * php resize_image.php *_medium* 200 /home/dev_root/xshowroom/web/www/data/ true
+ */
 
 # define variables
 $pattern = $argv[1];
