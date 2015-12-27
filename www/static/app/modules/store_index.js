@@ -106,8 +106,8 @@ angular.module(
 						shopCountry: res.data.country,
 						shopZipcode: res.data.zip,
 						shopTel: res.data.telephone,
-						shopImages: [],
-						shopImages: res.data.about
+						shopImage: (res.data.image ? JSON.parse(res.data.image) : []),
+						shopAbout: res.data.about
 					};
 					$scope.collectionType = {};
 					var collectionTypes = res.data.collection_type.split(',');
