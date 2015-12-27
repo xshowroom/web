@@ -297,7 +297,7 @@
 				</div>
 				<div>
 					<a type="button" class="btn btn-type-1" href="<?=url::site()?>"> BACK TO HOME PAGE </a>
-					<a type="button" class="btn btn-type-2" ng-click="checkInvitation();"> START REGISTATION </a>
+					<a type="button" class="btn btn-type-2" ng-click="checkInvitation();"> START REGISTRATION </a>
 				</div>
 				<div>
 					<p>PLEASE CONTACT <a href="mailto:info@xshowroom.com">info@xshowroom.com</a> TO APPLY FOR INVITATION CODE</p>
