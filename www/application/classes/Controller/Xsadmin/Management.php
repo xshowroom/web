@@ -74,6 +74,17 @@ class Controller_Xsadmin_Management extends Controller_BaseAdmin
         $this->response->body($view);
     }
 
+    public function action_store_detail()
+    {
+        $storeId = $this->request->param('id');
+
+        $view = View::factory('store_index');
+        $view->set('storeId', $storeId);
+        $this->response->body($view);
+
+        $this->response->body($view);
+    }
+
     public function action_orders()
     {
         $adminId = $this->adminUser['id'];

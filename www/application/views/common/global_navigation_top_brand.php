@@ -11,7 +11,9 @@
 				<li><a href="<?=URL::site('brand/collection');?>" <?php if ($currentPage == 'collection'){?>class="active"<?php }?>><?=__("global_navigation_top_user__COLLECTION");?></a></li>
 				<li><a href="<?=URL::site('brand/lookbook');?>" <?php if ($currentPage == 'lookbook'){?>class="active"<?php }?>><?=__("global_navigation_top_user__LOOKBOOK");?></a></li>
 				<li><a href="<?=URL::site('order/list');?>" <?php if ($currentPage == 'order'){?>class="active"<?php }?>><?=__("global_navigation_top_user__ORDER");?></a></li>
-				<li><a href="<?=URL::site('message/list');?>"  <?php if ($currentPage == 'message'){?>class="active"<?php }?>><?=__("global_navigation_top_user__MESSAGE");?></a></li>
+				<li class="unread-message-counter" ng-cloak>
+					<a href="<?=URL::site('message/list');?>" <?php if ($currentPage == 'message'){?>class="active"<?php }?>><?=__("global_navigation_top_user__MESSAGE");?><span ng-if="counter>0">({{counter}})</span></a>
+				</li>
 			</ul>
 		</div>
 		<div class="col-xs-3 text-right">

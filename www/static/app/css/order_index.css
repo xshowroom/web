@@ -78,7 +78,8 @@
 }
 
 .order-status-actions {
-	padding-top: 50px;
+	padding-top: 30px;
+	font-size: 12px;
 }
 .order-status-actions label{
 	line-height: 34px;
@@ -89,12 +90,37 @@
 #invoice-file{
 	outline: none;
 }
-.order-status-actions{
-	font-size: 12px;
-}
 .order-status-actions > div > *{
 	margin-bottom: 15px;
 	line-height: 34px;
+}
+.order-status-actions .admin-account-info{
+	border: 1px solid #ccc;
+	padding: 15px;
+	height: 172px;
+}
+.order-status-actions .admin-account-info h4{
+	margin: 0;
+	padding: 0;
+	line-height: 34px;
+}
+.order-status-actions .admin-account-info > div{
+	width: 50%;
+	float: left;
+}
+.order-status-actions .admin-account-info > div > span:last-child{
+	color: #878787;
+	margin-left: 0.5em;
+}
+.order-status-actions .admin-account-info .payment-tip{
+	border: 1px solid #ccc;
+	background-color: #eee;
+	padding: 0 10px;
+	width: 100%;
+	margin: 5px 0;
+}
+.order-status-actions .admin-account-info .payment-tip .glyphicon{
+	margin-right: 1em;
 }
 .order-status-actions .upload-label{
 	display: inline-block;

@@ -283,4 +283,20 @@ angular.module(
         	});
         }
     };
+}])
+.directive('unreadMessageCounter', ['Message', '$filter', '$modal', function (Message, $filter, $modal) {
+    return {
+        transclude: false,
+        restrict: 'C',
+        replace: false,
+        link: function ($scope, $element, $attrs, $transclude) {
+        	Message.getUnReadCount().success(function(res){
+        		if (res.status != 0){
+            		$modal({title: 'Error Info', content: '获取未读信息数失败！', show: true});
+            		return;
+            	}
+        		$scope.counter = res.data
+        	});
+        }
+    };
 }]);

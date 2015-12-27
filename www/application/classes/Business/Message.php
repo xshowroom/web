@@ -76,7 +76,7 @@ class Business_Message
             return null;
         }
         
-        if((int)$message["status"] === Model_Message::MSG_STATUS_UNREADY ) {
+        if((int)$message["status"] === Model_Message::MSG_STATUS_UNREAD ) {
             $this->messageModel->changeMessageStatus($userId, $messageId, Model_Message::MSG_STATUS_READ);
         }
 
@@ -98,5 +98,10 @@ class Business_Message
 
         $this->messageModel->changeMessageStatus($userId, $messageId, Model_Message::MSG_STATUS_DELETE);
         return true;
+    }
+
+    public function getUnReadCount($userId)
+    {
+        return $this->messageModel->countMessageUnread($userId);
     }
 }

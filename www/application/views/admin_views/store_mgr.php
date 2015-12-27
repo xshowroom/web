@@ -37,7 +37,7 @@
 								<p><?= $row['id'] ?></p>
 							</td>
 							<td class="xs-row">
-								<a href="<?=URL::site('xsadmin/management/user_detail/'.$row['id']);?>" target="_blank">
+								<a href="<?=URL::site('xsadmin/management/store_detail/'.$row['shop_id']);?>" target="_blank">
 									<p><?= $row['shop_info']['address'] ?></p>
 								</a>
 							</td>
@@ -51,7 +51,7 @@
 								<p><?= $row['update_time'] ?></p>
 							</td>
 							<td class="xs-row">
-								<a href="<?=URL::site('xsadmin/management/shop_detail/'.$row['id']);?>" target="_blank">
+								<a href="<?=URL::site('xsadmin/management/store_detail/'.$row['shop_id']);?>" target="_blank">
 									<p>VIEW STORE</p>
 								</a>
 							</td>

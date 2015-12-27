@@ -115,11 +115,21 @@ class Business_Shop
     public function getShopById($userId, $shopId)
     {
         $shop = $this->shopModel->getById($shopId);
-        if (empty($shop) || $shop['user_id'] != $userId) {
+        $user = $this->userModel->getById($userId);
+
+        $isAdminAuthed = $user['role_type'] == Model_User::TYPE_USER_ADMIN;
+        $isBuyerAuthed = $shop['user_id'] == $userId;
+        $isBrandAuthed = $user['role_type'] == Model_User::TYPE_USER_BRAND;
+
+        if (
+            empty($user) ||
+            empty($shop) ||
+            !($isAdminAuthed || $isBuyerAuthed || $isBrandAuthed)
+        ) {
             $errorInfo = Kohana::message('message', 'AUTH_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
-        
+
         return $shop;
     }
 

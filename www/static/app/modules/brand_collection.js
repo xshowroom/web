@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'BrandCollectionCtrl',
     [
-     	'$scope', '$modal', 'Collection',
-        function ($scope, $modal, Collection) {
+     	'$scope', '$modal', '$filter', 'Collection',
+        function ($scope, $modal, $filter, Collection) {
      		$scope.filters = {
      			limit: 4,
      			status: ''

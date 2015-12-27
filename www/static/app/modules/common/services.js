@@ -76,11 +76,15 @@ angular.module(
 .service(
 	'Store', 
 	[
-	    'PostRequester',
-		function (PostRequester) {
+	    'PostRequester', '$httpParamSerializer',
+		function (PostRequester, $httpParamSerializer) {
 		    return {
 		    	create: function (opts) {
-		    		return PostRequester('shop/save', opts);
+		    		return PostRequester('shop/save', opts, function(data){
+						var options = angular.copy(data);
+						options.shopImage = JSON.stringify(options.shopImage);
+						return $httpParamSerializer(options);
+					});
 		    	},
 		      	destroy: function (opts) {
 		      		return PostRequester('shop/delete', opts);
@@ -586,6 +590,9 @@ angular.module(
 			return {
 				destroy: function (opts) {
 					return PostRequester('message/delete', opts);
+				},
+				getUnReadCount: function (opts) {
+					return PostRequester('message/unreadCount', opts);
 				}
 			};
 		}

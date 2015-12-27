@@ -7,8 +7,8 @@ angular.module(
 .controller(
     'AdminStoreMgrCtrl',
     [
-        '$scope', 'Admin',
-        function ($scope, Admin){
+        '$scope', '$filter', 'Admin',
+        function ($scope, $filter, Admin){
             $scope.clickStore=function(mid) {
                 mapId = mid;
             };
