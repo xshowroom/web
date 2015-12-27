@@ -30,7 +30,7 @@
 						<div class="col-xs-6" ng-repeat="store in stores | limitTo: limit track by $index">
 							<div class="store-item">
 				                <a class="store-photo image-link" ng-href="/store/{{store.id}}">
-				                   	<img src="/static/app/images/shop-brand-1.png" class="order-item-image">
+				                   	<img ng-src="/{{store.image ?  store.image[0]: 'static/app/images/default-store-cover.png'}}" class="order-item-image">
 				                </a>
 				                <div class="store-details">
 					            	<h3>{{store.name}}</h3>
