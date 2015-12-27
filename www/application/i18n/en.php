@@ -587,6 +587,23 @@ return array_merge(
         'buyer_cart__btn_GENERATE' => 'GENERATE ORDER',
     ),
     /**
+     * buyer_store.php
+     */
+    array(
+        'buyer_store__TITLE' => 'MY STORES',
+
+        'buyer_store__ADD_NEW' => '+ ADD NEW STORE',
+
+        'buyer_store__item__BRANDS' => 'BRANDS:',
+        'buyer_store__item__TYPE' => 'TYPE:',
+        'buyer_store__item__ADDRESS' => 'ADDR:',
+        'buyer_store__item__TELEPHONE' => 'TEL:',
+
+        'buyer_store__item__btn_EDIT' => 'EDIT',
+        'buyer_store__item__btn_VIEW' => 'VIEW',
+        'buyer_store__item__btn_CLOSE' => 'CLOSE',
+    ),
+    /**
      * order_create.php
      */
     array(

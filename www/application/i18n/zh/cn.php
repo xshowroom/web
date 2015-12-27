@@ -587,6 +587,23 @@ return array_merge(
         'buyer_cart__btn_GENERATE' => '生成订单',
     ),
     /**
+     * buyer_store.php
+     */
+    array(
+        'buyer_store__TITLE' => '我的店铺',
+
+        'buyer_store__ADD_NEW' => '+ 添加新店',
+
+        'buyer_store__item__BRANDS' => '品牌：',
+        'buyer_store__item__TYPE' => '类型：',
+        'buyer_store__item__ADDRESS' => '店址：',
+        'buyer_store__item__TELEPHONE' => '电话：',
+
+        'buyer_store__item__btn_EDIT' => '编辑',
+        'buyer_store__item__btn_VIEW' => '查看',
+        'buyer_store__item__btn_CLOSE' => '删除',
+    ),
+    /**
      * order_create.php
      */
     array(

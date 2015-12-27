@@ -21,8 +21,8 @@
 					<div class="row">
 						<div class=" col-xs-12">
 							<div class="store-list-header">
-								<span class="store-list-title">My Stores</span>
-								<a class="pull-right" href="/store/create">Add new Store ></a>
+								<span class="store-list-title"><?=__("buyer_store__TITLE");?></span>
+								<a class="pull-right" href="/store/create"><?=__("buyer_store__ADD_NEW");?></a>
 							</div>
 						</div>
 					</div>
@@ -34,14 +34,14 @@
 				                </a>
 				                <div class="store-details">
 					            	<h3>{{store.name}}</h3>
-					                <div><span>Brands: </span><span>{{store['brand_list']}}</span></div>
-					                <div><span>Type: </span><span>{{store['type']|translate}}</span></div>
-					                <div><span>Address: </span><span>{{store['address']}}</span></div>
-					                <div><span>Telephone: </span><span>{{store['telephone']}}</span></div>
+					                <div><span><?=__("buyer_store__item__BRANDS");?> </span><span>{{store['brand_list']}}</span></div>
+					                <div><span><?=__("buyer_store__item__TYPE");?> </span><span>{{store['type']|translate}}</span></div>
+					                <div><span><?=__("buyer_store__item__ADDRESS");?> </span><span>{{store['address']}}</span></div>
+					                <div><span><?=__("buyer_store__item__TELEPHONE");?> </span><span>{{store['telephone']}}</span></div>
 					                <div class="store-actions">
-					                	<a ng-href="/store/{{store.id}}#?isEdit=1"><i class="fa fa-pencil-square-o"></i>Edit</a>
-					                	<a ng-href="/store/{{store.id}}"><i class="fa fa-eye"></i>View</a>
-					                	<a ng-click="closeStore(store.id, $index);"><i class="fa fa-trash"></i>Close</a>
+					                	<a ng-href="/store/{{store.id}}#?isEdit=1"><i class="fa fa-pencil-square-o"></i><?=__("buyer_store__item__btn_EDIT");?></a>
+					                	<a ng-href="/store/{{store.id}}"><i class="fa fa-eye"></i><?=__("buyer_store__item__btn_VIEW");?></a>
+					                	<a ng-click="closeStore(store.id, $index);"><i class="fa fa-trash"></i><?=__("buyer_store__item__btn_CLOSE");?></a>
 					                </div>
 			                    </div>
 							</div>
