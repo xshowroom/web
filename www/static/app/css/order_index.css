@@ -209,6 +209,7 @@
 .order-product-list .order-product-item .quantity-info{
 	color: #878787;
 	margin-bottom: 0;
+	clear: left;
 }
 .order-product-list .order-product-item .quantity-info > caption{
 	font-size: 16px;
