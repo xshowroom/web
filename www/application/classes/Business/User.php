@@ -7,6 +7,7 @@ class Business_User
 {
 
     public $userModel;
+    public $brandModel;
     public $msgService;
     public $shopService;
     public $uploadService;
@@ -14,6 +15,7 @@ class Business_User
     public function __construct()
     {
         $this->userModel = new Model_User();
+        $this->brandModel = new Model_Brand();
         $this->msgService = new Business_Message();
         $this->shopService = new Business_Shop();
         $this->uploadService = new Business_Upload();
@@ -208,12 +210,20 @@ class Business_User
 
     public function allowUser($userId)
     {
-        return $this->userModel->updateUserStatus($userId, Model_User::STATUS_USER_NORMAL);
+        $this->userModel->updateUserStatus($userId, Model_User::STATUS_USER_NORMAL);
+        $this->userModel->updateUserAttrStatus($userId, Model_User::STATUS_USER_NORMAL);
+        $this->brandModel->updateBrandStatus($userId, Model_User::STATUS_USER_NORMAL);
+
+        return true;
     }
 
     public function rejectUser($userId)
     {
-        return $this->userModel->updateUserStatus($userId, Model_User::STATUS_USER_REJECTED);
+        $this->userModel->updateUserStatus($userId, Model_User::STATUS_USER_REJECTED);
+        $this->userModel->updateUserAttrStatus($userId, Model_User::STATUS_USER_REJECTED);
+        $this->brandModel->updateBrandStatus($userId, Model_User::STATUS_USER_NORMAL);
+
+        return true;
     }
 
     /**

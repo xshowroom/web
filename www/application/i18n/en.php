@@ -564,6 +564,10 @@ return array_merge(
 
         'buyer_dashboard__MY_STORES' => 'MY STORES',
         'buyer_dashboard__ALL_STORES' => 'ALL STORES >',
+        'buyer_dashboard__STORE_btn_VIEW' => 'VIEW',
+        'buyer_dashboard__STORE_BRANDS' => 'BRANDS',
+        'buyer_dashboard__STORE_ABOUT' => 'ABOUT STORE',
+        'buyer_dashboard__STORE_NO_ABOUT' => 'NO INFORMATION',
 
         'buyer_dashboard__ACCOUNT_MANAGER' => 'At XSHOWROOM we have Brand Account Manager to help you to introduce the brand, book you in to see the collection, and follow up your order.',
         'buyer_dashboard__ACCOUNT_MANAGER_CONTRACT' => 'CONTRACT US'
@@ -585,6 +589,45 @@ return array_merge(
         'buyer_cart__PRODUCTS' => 'PRODUCTS IN CART:',
 
         'buyer_cart__btn_GENERATE' => 'GENERATE ORDER',
+    ),
+    /**
+     * buyer_store.php
+     */
+    array(
+        'buyer_store__TITLE' => 'MY STORES',
+
+        'buyer_store__ADD_NEW' => '+ ADD NEW STORE',
+
+        'buyer_store__item__BRANDS' => 'BRANDS:',
+        'buyer_store__item__TYPE' => 'TYPE:',
+        'buyer_store__item__ADDRESS' => 'ADDR:',
+        'buyer_store__item__TELEPHONE' => 'TEL:',
+
+        'buyer_store__item__btn_EDIT' => 'EDIT',
+        'buyer_store__item__btn_VIEW' => 'VIEW',
+        'buyer_store__item__btn_CLOSE' => 'CLOSE',
+    ),
+    /**
+     * store_index.php & store_create.php
+     */
+    array(
+        'store_index__STORE_IMAGES' => 'STORE IMAGES',
+        'store_index__STORE_INFO' => 'STORE INFO',
+
+        'store_index__STORE_NAME' => 'STORE NAME',
+        'store_index__STORE_CATEGORY' => 'STORE CATEGORY',
+        'store_index__COLLECTION_TYPES' => 'COLLECTION TYPES',
+        'store_index__BRAND_LIST' => 'BRAND LIST',
+        'store_index__STORE_WEBSITE' => 'STORE WEBSITE',
+        'store_index__STORE_ADDRESS' => 'STORE ADDRESS',
+        'store_index__STORE_COUNTRY' => 'STORE COUNTRY',
+        'store_index__STORE_ZIPCODE' => 'STORE ZIPCODE',
+        'store_index__STORE_TELEPHONE' => 'STORE TELEPHONE',
+        'store_index__ABOUT_STORE' => 'ABOUT STORE',
+
+        'store_index__btn_SAVE' => 'SAVE',
+        'store_index__btn_CANCEL' => 'CANCEL',
+        'store_index__btn_EDIT' => 'EDIT STORE',
     ),
     /**
      * order_create.php
@@ -693,6 +736,14 @@ return array_merge(
         'order_index__actions__btn_COMPLETE' => 'COMPLETE',
 
         'order_index__actions__btn_ORDER_CONFIRM' => 'ORDER CONFIRM',
+
+        'order_index__payment_TITLE' => 'PAYMENT INFORMATION',
+        'order_index__payment_REMITTANCE' => 'REMITTANCE TO: ',
+        'order_index__payment_BANK_NAME' => 'BANK NAME: ',
+        'order_index__payment_BANK_ACCOUTN' => 'BANK ACCOUNT: ',
+        'order_index__payment_BANK_PAYEE' => 'BANK PAYEE: ',
+        'order_index__payment_DESC_01' => 'Please send your payment receipt to',
+        'order_index__payment_DESC_02' => 'in order to confirm your payment.',
 
         'order_index__products_TITLE' => 'PRODUCTS IN ORDER',
         'order_index__products__STYLE_NUMBER' => 'STYLE NUMBER:',

@@ -35,3 +35,17 @@ define('WORD_SEPARATOR', "\n");
 // define('WEB_ROOT', SITE_DOMAIN . '/' . BASE_URI);
 // define('ROOT_DIR', '/home/dev_root/xshowroom/' . BASE_URI);
 define('UPLOAD_DIR', 'data');
+
+
+/**
+ * ADMIN - MAILBOX
+ */
+define('ADMIN_EMAIL', 'info@xshowroom.com');
+
+/**
+ * Payment - Offline
+ */
+define('PAYMENT_OFFLINE_REMITTANCE_TO', '陈蓉');
+define('PAYMENT_OFFLINE_BANK_NAME', '中国工商银行');
+define('PAYMENT_OFFLINE_BANK_ACCOUNT', '6200 8888 8888 8888');
+define('PAYMENT_OFFLINE_BANK_PAYEE', 'XSHOWROOM.COM');

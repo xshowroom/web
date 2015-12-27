@@ -89,4 +89,14 @@ class Model_Brand
     
         return $result;
     }
+
+    public function updateBrandStatus($userId, $status)
+    {
+        $result = DB::update('brand')
+            ->set(array('status' => $status))
+            ->where('user_id', '=', $userId)
+            ->execute();
+
+        return $result[0];
+    }
 }

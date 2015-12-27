@@ -130,17 +130,17 @@
                     	<div class="store-item-header">
                     		<span class="store-name"><?=$store['name']?></span>
                     		<span class="store-location"><?=$store['address']?>, {{'<?=$store['country']?>' | translate}}</span>
-                    		<a class="pull-right" href="/store/<?=$store['id']?>">VIEW</a>
+                    		<a class="pull-right" href="/store/<?=$store['id']?>"><?=__("buyer_dashboard__STORE_btn_VIEW");?></a>
                     	</div>
                         <div class="store-item-body">
                         	<a class="store-photo image-link" href="/store/<?=$store['id']?>">
                         		<img src="/<?=empty($store['image']) ? 'static/app/images/default-store-cover.png' : json_decode($store['image'])[0]?>" class="store-item-image">
                         	</a>
                             <div class="store-details">
-	                            <div>Brands</div>
+	                            <div><?=__("buyer_dashboard__STORE_BRANDS");?></div>
 	                            <div><?=$store['brand_list']?></div>
-	                            <div>About Store</div>
-	                            <div><?=$store['about'] ? $store['about'] : '暂无相关介绍'?></div>
+	                            <div><?=__("buyer_dashboard__STORE_ABOUT");?></div>
+	                            <div><?=$store['about'] ? $store['about'] : __("buyer_dashboard__STORE_NO_ABOUT")?></div>
 	                        </div>
                         </div>
                     </div>

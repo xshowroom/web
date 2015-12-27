@@ -564,6 +564,10 @@ return array_merge(
 
         'buyer_dashboard__MY_STORES' => '我的店铺',
         'buyer_dashboard__ALL_STORES' => '所有店铺 >',
+        'buyer_dashboard__STORE_btn_VIEW' => '查看',
+        'buyer_dashboard__STORE_BRANDS' => '品牌',
+        'buyer_dashboard__STORE_ABOUT' => '关于',
+        'buyer_dashboard__STORE_NO_ABOUT' => '暂无相关介绍',
 
         'buyer_dashboard__ACCOUNT_MANAGER' => '在XSHOWROOM 我们拥有专属的品牌客户经理来帮助您介绍品牌, 与您共建商品集合, 并帮助您完成订单！',
         'buyer_dashboard__ACCOUNT_MANAGER_CONTRACT' => '联系我们'
@@ -585,6 +589,45 @@ return array_merge(
         'buyer_cart__PRODUCTS' => '产品详情:',
 
         'buyer_cart__btn_GENERATE' => '生成订单',
+    ),
+    /**
+ * buyer_store.php
+ */
+    array(
+        'buyer_store__TITLE' => '我的商店',
+
+        'buyer_store__ADD_NEW' => '+ 添加新店',
+
+        'buyer_store__item__BRANDS' => '品牌：',
+        'buyer_store__item__TYPE' => '类型：',
+        'buyer_store__item__ADDRESS' => '店址：',
+        'buyer_store__item__TELEPHONE' => '电话：',
+
+        'buyer_store__item__btn_EDIT' => '编辑',
+        'buyer_store__item__btn_VIEW' => '查看',
+        'buyer_store__item__btn_CLOSE' => '删除',
+    ),
+    /**
+     * store_index.php & store_create.php
+     */
+    array(
+        'store_index__STORE_IMAGES' => '商店图集',
+        'store_index__STORE_INFO' => '商店信息',
+
+        'store_index__STORE_NAME' => '商店名称',
+        'store_index__STORE_CATEGORY' => '商店类型',
+        'store_index__COLLECTION_TYPES' => '售卖系列',
+        'store_index__BRAND_LIST' => '品牌列表',
+        'store_index__STORE_WEBSITE' => '商店网址',
+        'store_index__STORE_ADDRESS' => '商店地址',
+        'store_index__STORE_COUNTRY' => '商店国家',
+        'store_index__STORE_ZIPCODE' => '商店邮编',
+        'store_index__STORE_TELEPHONE' => '商店电话',
+        'store_index__ABOUT_STORE' => '关于商店',
+
+        'store_index__btn_SAVE' => '保存',
+        'store_index__btn_CANCEL' => '取消',
+        'store_index__btn_EDIT' => '编辑商店',
     ),
     /**
      * order_create.php
@@ -693,6 +736,14 @@ return array_merge(
         'order_index__actions__btn_COMPLETE' => '确认收货',
 
         'order_index__actions__btn_ORDER_CONFIRM' => '订单确认',
+
+        'order_index__payment_TITLE' => '支付信息',
+        'order_index__payment_REMITTANCE' => '汇款到: ',
+        'order_index__payment_BANK_NAME' => '银行名称: ',
+        'order_index__payment_BANK_ACCOUTN' => '银行账户: ',
+        'order_index__payment_BANK_PAYEE' => '收款人: ',
+        'order_index__payment_DESC_01' => '请将您的汇款凭证发送到',
+        'order_index__payment_DESC_02' => '以此来确认您的支付',
 
         'order_index__products_TITLE' => '订单详情',
         'order_index__products__STYLE_NUMBER' => '产品货号：',
