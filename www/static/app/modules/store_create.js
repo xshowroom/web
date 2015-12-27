@@ -17,7 +17,7 @@ angular.module(
      	'$scope', '$window', '$filter', 'Country', 'Store',
         function ($scope, $window, $filter, Country, Store) {
      		$scope.store = {
-         		images: []
+     			shopImage: []
          	};
      		$scope.setCollection = function(value){
 				var collections = $scope.store.collectionType
@@ -44,15 +44,15 @@ angular.module(
 				   	'shopCountry': false,
 				   	'shopZipcode': false,
 				   	'shopTel': false,
-					'images': false,
-					'about': false
+					'shopImage': false,
+					'shopAbout': false
 				},
 				reg:{
 					'shopWebsite': /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-@?^=%&amp;/~\+#])?/,
 				}
 			};
 			$scope.addStoreImage = function(url){
-     			$scope.store.images.push(url);
+     			$scope.store.shopImage.push(url);
      			$scope.$apply();
      		};
 			

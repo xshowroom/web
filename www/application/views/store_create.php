@@ -21,19 +21,19 @@
         <div class="container" ng-cloak>
             <div class="row store-inputs uploading">
                 <div class="col-xs-12">
-                	<h3>Store Images<span>({{store.images.length}}/5)</span></h3>
+                	<h3>Store Images<span>({{store.shopImage.length}}/5)</span></h3>
                 </div>
                 <div class="col-xs-12">
-                	<div ng-repeat="url in store.images track by $index" class="store-image store-image-uploaded">
+                	<div ng-repeat="url in store.shopImage track by $index" class="store-image store-image-uploaded">
                 		<image ng-src="/{{url}}">
-                		<a ng-click="store.images.splice($index, 1)" class="btn btn-type-2">
+                		<a ng-click="store.shopImage.splice($index, 1)" class="btn btn-type-2">
                 			<span class="glyphicon glyphicon-trash"></span>
                 		</a>
                 	</div>
-                    <div ng-show="store.images.length < 5" class="store-image image-uploader" 
-                    	ng-class="{'empty-store-image': !store.images.length, 'has-error': checkInfo.validation.images}"
+                    <div ng-show="store.shopImage.length < 5" class="store-image image-uploader" 
+                    	ng-class="{'empty-store-image': !store.shopImage.length, 'has-error': checkInfo.validation.shopImage}"
                     	data-render-image='0' data-after-uploading = "addStoreImage(url);"
-                    	data-title="{{store.images.length? '': 'You can upload 5 images (jpg, png, gif) for each store.'}}">
+                    	data-title="{{store.shopImage.length? '': 'You can upload 5 images (jpg, png, gif) for each store.'}}">
                     </div>
                 </div>
             </div>
@@ -125,11 +125,11 @@
                                 <input type="text" class="form-control" id="store-telephone-number" name="shopTel" ng-model="store.shopTel">
                             </div>
                         </div>
-                        <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.about}">
+                        <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopAbout}">
                             <label for="care-instruction" class="col-xs-2 control-label">ABOUT STORE</label>
                             <div class="col-xs-6">
                            		<textcomplete>
-                                  	<textarea class="form-control" id="care-instruction" ng-model="store.about"></textarea>
+                                  	<textarea class="form-control" id="care-instruction" ng-model="store.shopAbout"></textarea>
                                 </textcomplete>
                             </div>
                           </div>
