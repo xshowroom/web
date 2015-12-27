@@ -134,7 +134,7 @@
                     	</div>
                         <div class="store-item-body">
                         	<a class="store-photo image-link" href="/store/<?=$store['id']?>">
-                        		<img src="/static/app/images/default-store-cover.png" class="store-item-image">
+                        		<img src="/<?=empty($store['image']) ? 'static/app/images/default-store-cover.png' : json_decode($store['image'])[0]?>" class="store-item-image">
                         	</a>
                             <div class="store-details">
 	                            <div>Brands</div>
