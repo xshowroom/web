@@ -82,7 +82,7 @@ angular.module(
 		    	create: function (opts) {
 		    		return PostRequester('shop/save', opts, function(data){
 						var options = angular.copy(data);
-						options.shopImage = JSON.stringify(options.shopImage);
+						options.shopImage = options.shopImage.length ? JSON.stringify(options.shopImage) : '';
 						return $httpParamSerializer(options);
 					});
 		    	},
