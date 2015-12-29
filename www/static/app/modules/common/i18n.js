@@ -58,18 +58,18 @@ angular.module(
             brandUrl_PATTERN_ERROR: "url只能由字母和数字组成",
             brandUrl_DUPLICATION_ERROR: "该URL已经被注册",
 
-            shopName_EMPTY_ERROR: "请输入商店名称",
-            shopName_PATTERN_ERROR: "请正确输入商店名称",
-            shopType_EMPTY_ERROR: "请选择商店的类型",
+            shopName_EMPTY_ERROR: "请输入店铺名称",
+            shopName_PATTERN_ERROR: "请正确输入店铺名称",
+            shopType_EMPTY_ERROR: "请选择店铺的类型",
             collectionType_EMPTY_ERROR: "请选择系列的类型",
-            brandList_EMPTY_ERROR: "请输入商店的品牌",
-            shopWebsite_EMPTY_ERROR: "请输入商店的网址",
-            shopWebsite_PATTERN_ERROR: "请正确输入商店的网址，例如(http://www.example.com)",
-            shopAddress_EMPTY_ERROR: "请输入商店的地址",
-            shopCountry_EMPTY_ERROR: "请选择商店所在的国家",
-            shopZipcode_EMPTY_ERROR: "请输入商店的邮编",
-            shopTel_EMPTY_ERROR: "请输入商店的电话",
-            shopTel_PATTERN_ERROR: "请正确输入商店的电话",
+            brandList_EMPTY_ERROR: "请输入店铺的品牌",
+            shopWebsite_EMPTY_ERROR: "请输入店铺的网址",
+            shopWebsite_PATTERN_ERROR: "请正确输入店铺的网址，例如(http://www.example.com)",
+            shopAddress_EMPTY_ERROR: "请输入店铺的地址",
+            shopCountry_EMPTY_ERROR: "请选择店铺所在的国家",
+            shopZipcode_EMPTY_ERROR: "请输入店铺的邮编",
+            shopTel_EMPTY_ERROR: "请输入店铺的电话",
+            shopTel_PATTERN_ERROR: "请正确输入店铺的电话",
 
             imagePath_EMPTY_ERROR: "请上传图片",
 
@@ -337,10 +337,12 @@ angular.module(
             COLLECTION_STATUS_3: '已删除',
             
             // Store Type
-            dropdown__STORE__ALL: '全部',
+            dropdown__STORE__ONLINE_RETAIL_SHOP: '网店',
+            dropdown__STORE__MULTI_LABELS_SHOP: '多品牌集合店',
+            dropdown__STORE__CONCEPT_SHOP: '概念店',
+            dropdown__STORE__CHAIN_SHOP: '百货商场',
             dropdown__STORE__DEPARTMENT_SHOP: '商场',
-            dropdown__STORE__MULTI_BRAND_SHOP: '品牌集',
-            dropdown__STORE__ONLINE_SHOP: '网店',
+            dropdown__STORE__BUYING_OFFICE_SHOP: '代采中心',
 
             // Collection Type
             dropdown__COLLECTION__ALL: '所有产品',
@@ -348,7 +350,7 @@ angular.module(
             dropdown__COLLECTION__WOMEN: '女士',
             dropdown__COLLECTION__ACCESSORIES: '首饰',
             dropdown__COLLECTION__MEN: '男士',
-            dropdown__COLLECTION__LIFESTYLE: '时尚生活',
+            dropdown__COLLECTION__LIFESTYLE: '生活方式',
             dropdown__COLLECTION__OTHERS: '其他',
 
             // Collection Mode
@@ -769,10 +771,12 @@ angular.module(
             
             
             // Store Type
-            dropdown__STORE__ALL: 'ALL',
-            dropdown__STORE__DEPARTMENT_SHOP: 'DEPARTMENT SHOP',
-            dropdown__STORE__MULTI_BRAND_SHOP: 'MULTI-BRAND SHOP',
-            dropdown__STORE__ONLINE_SHOP: 'ONLINE SHOP',
+            dropdown__STORE__ONLINE_RETAIL_SHOP: 'ONLINE-RETAIL SHOP',
+            dropdown__STORE__MULTI_LABELS_SHOP: 'MULTI-LABELS SHOP',
+            dropdown__STORE__CONCEPT_SHOP: 'CONCEPT STORE',
+            dropdown__STORE__CHAIN_SHOP: 'CHAIN STORE',
+            dropdown__STORE__DEPARTMENT_SHOP: 'DEPARTMENT STORE',
+            dropdown__STORE__BUYING_OFFICE_SHOP: 'BUYING OFFICE',
 
             // Collection Type
             dropdown__COLLECTION__ALL: 'ALL',

@@ -61,7 +61,7 @@ return array_merge(
         'global_navigation_top_user__MESSAGE' => '消息中心',
 
         'global_navigation_top_user__BUYER_MY_BRAND' => '我的品牌',
-        'global_navigation_top_user__BUYER_MY_STORE' => '我的商店',
+        'global_navigation_top_user__BUYER_MY_STORE' => '我的店铺',
         'global_navigation_top_user__PROFILE' => '个人中心',
         'global_navigation_top_user__SIGN_OUT' => '退出登录',
     ),
@@ -276,7 +276,7 @@ return array_merge(
         'buyer_register__STEP' => '步骤',
         'buyer_register__SETP_OF' => '/',
         'buyer_register__STEP_INFORMATION_1' => '添加用户信息',
-        'buyer_register__STEP_INFORMATION_2' => '添加商店信息',
+        'buyer_register__STEP_INFORMATION_2' => '添加店铺信息',
         'buyer_register__STEP_INFORMATION_3' => '添加公司信息',
 
         'buyer_register__STEP_1__EMAIL_ADDRESS' => '电子邮箱',
@@ -291,13 +291,13 @@ return array_merge(
         'buyer_register__STEP_1__btn__CANCEL' => '取消注册',
         'buyer_register__STEP_1__btn__ADD_STORE' => '添加店铺',
 
-        'buyer_register__STEP_2__IMAGE' => '商店 / 照片',
-        'buyer_register__STEP_2__STORE_NAME_PLACEHOLDER' => '请输入您的商店名称 *',
-        'buyer_register__STEP_2__STORE_TYPE_PLACEHOLDER' => '请选择您的商店类型 *',
+        'buyer_register__STEP_2__IMAGE' => '店铺 / 照片',
+        'buyer_register__STEP_2__STORE_NAME_PLACEHOLDER' => '请输入您的店铺名称 *',
+        'buyer_register__STEP_2__STORE_TYPE_PLACEHOLDER' => '请选择您的店铺类型 *',
         'buyer_register__STEP_2__STORE_COLLECTION_TYPE' => '系列类型',
-        'buyer_register__STEP_2__STORE_BRAND_PLACEHOLDER' => '商店售卖的品牌 *',
+        'buyer_register__STEP_2__STORE_BRAND_PLACEHOLDER' => '店铺售卖的品牌 *',
         'buyer_register__STEP_2__STORE_WEBSITE_PLACEHOLDER' => '网址 *',
-        'buyer_register__STEP_2__STORE_ADDRESS_PLACEHOLDER' => '商店地址 *',
+        'buyer_register__STEP_2__STORE_ADDRESS_PLACEHOLDER' => '店铺地址 *',
         'buyer_register__STEP_2__STORE_COUNTRY_PLACEHOLDER' => '所在国家 *',
         'buyer_register__STEP_2__STORE_ZIP_PLACEHOLDER' => '邮政编码 *',
         'buyer_register__STEP_2__STORE_TELEPHONE_PLACEHOLDER' => '电话号码 *',
@@ -594,7 +594,7 @@ return array_merge(
  * buyer_store.php
  */
     array(
-        'buyer_store__TITLE' => '我的商店',
+        'buyer_store__TITLE' => '我的店铺',
 
         'buyer_store__ADD_NEW' => '+ 添加新店',
 
@@ -611,23 +611,23 @@ return array_merge(
      * store_index.php & store_create.php
      */
     array(
-        'store_index__STORE_IMAGES' => '商店图集',
-        'store_index__STORE_INFO' => '商店信息',
+        'store_index__STORE_IMAGES' => '店铺图集',
+        'store_index__STORE_INFO' => '店铺信息',
 
-        'store_index__STORE_NAME' => '商店名称',
-        'store_index__STORE_CATEGORY' => '商店类型',
+        'store_index__STORE_NAME' => '店铺名称',
+        'store_index__STORE_CATEGORY' => '店铺类型',
         'store_index__COLLECTION_TYPES' => '售卖系列',
         'store_index__BRAND_LIST' => '品牌列表',
-        'store_index__STORE_WEBSITE' => '商店网址',
-        'store_index__STORE_ADDRESS' => '商店地址',
-        'store_index__STORE_COUNTRY' => '商店国家',
-        'store_index__STORE_ZIPCODE' => '商店邮编',
-        'store_index__STORE_TELEPHONE' => '商店电话',
-        'store_index__ABOUT_STORE' => '关于商店',
+        'store_index__STORE_WEBSITE' => '店铺网址',
+        'store_index__STORE_ADDRESS' => '店铺地址',
+        'store_index__STORE_COUNTRY' => '店铺国家',
+        'store_index__STORE_ZIPCODE' => '店铺邮编',
+        'store_index__STORE_TELEPHONE' => '店铺电话',
+        'store_index__ABOUT_STORE' => '关于店铺',
 
         'store_index__btn_SAVE' => '保存',
         'store_index__btn_CANCEL' => '取消',
-        'store_index__btn_EDIT' => '编辑商店',
+        'store_index__btn_EDIT' => '编辑店铺',
     ),
     /**
      * order_create.php
@@ -661,9 +661,9 @@ return array_merge(
         'order_create__btn_CHECKOUT' => '生成订单',
 
         'order_create__SHIPPING_ADDRESS' => '送货地址',
-        'order_create__store_TYPE' => '商店类型：',
-        'order_create__store_ADDRESS' => '商店地址：',
-        'order_create__store_ZIPCODE' => '商店邮编：',
+        'order_create__store_TYPE' => '店铺类型：',
+        'order_create__store_ADDRESS' => '店铺地址：',
+        'order_create__store_ZIPCODE' => '店铺邮编：',
         'order_create__store_TELEPHONE' => '收货电话：',
 
         'order_create__payment__TITLE' => '支付方式',

@@ -54,9 +54,12 @@
                             <label for="store-type" class="col-xs-2 control-label">STORE CATEGORY</label>
                             <div class="col-xs-6">
                                 <select class="form-control" id="store-type" ng-model="store.shopType" name="shopType">
+                                    <option value="dropdown__STORE__ONLINE_RETAIL_SHOP">{{ "dropdown__STORE__ONLINE_RETAIL_SHOP"| translate }}</option>
+                                    <option value="dropdown__STORE__MULTI_LABELS_SHOP">{{ "dropdown__STORE__MULTI_LABELS_SHOP"| translate }}</option>
+                                    <option value="dropdown__STORE__CONCEPT_SHOP">{{ "dropdown__STORE__CONCEPT_SHOP"| translate }}</option>
+                                    <option value="dropdown__STORE__CHAIN_SHOP">{{ "dropdown__STORE__CHAIN_SHOP"| translate }}</option>
                                     <option value="dropdown__STORE__DEPARTMENT_SHOP">{{ "dropdown__STORE__DEPARTMENT_SHOP"| translate }}</option>
-                                    <option value="dropdown__STORE__MULTI_BRAND_SHOP">{{ "dropdown__STORE__MULTI_BRAND_SHOP"| translate }}</option>
-                                    <option value="dropdown__STORE__ONLINE_SHOP">{{ "dropdown__STORE__ONLINE_SHOP"| translate }}</option>
+                                    <option value="dropdown__STORE__BUYING_OFFICE_SHOP">{{ "dropdown__STORE__BUYING_OFFICE_SHOP"| translate }}</option>
 								</select>
                             </div>
                         </div>
@@ -137,7 +140,7 @@
 							<ul class="col-xs-6">
 								<li ng-repeat="msg in errorMsgs">
 									<span class="glyphicon glyphicon-remove-sign"></span>
-									<span>{{ ( "store_" + msg[0] + "_" + msg[1]) | translate}}</span>
+									<span>{{ ( msg[0] + "_" + msg[1]) | translate}}</span>
 								</li>
 							</ul>
 							<div class="clearfix"></div>
