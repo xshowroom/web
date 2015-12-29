@@ -1,0 +1,43 @@
+@CHARSET "UTF-8";
+
+.press {
+	margin-bottom: 100px;
+}
+
+.press h2{
+	color:#000000;
+	margin-bottom: 100px;
+	font-size: 30px;
+}
+
+.press .press-item {
+	background: #eeeeee;
+}
+
+.press .press-body {
+	padding: 15px;
+}
+
+.press .press-title {
+	color: #000000;
+	font-size: 16px;
+}
+
+.press .press-author {
+	margin-bottom: 20px;
+}
+
+.press .press-content {
+	color: #888888;
+	font-size: 12px;
+}
+
+.press .press-continue-button {
+	margin-top: 30px;
+}
+
+.press .press-continue-button>a {
+	color: #000000;
+	font-size: 12px;
+	font-style: italic
+}

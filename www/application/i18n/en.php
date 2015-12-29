@@ -800,5 +800,12 @@ return array_merge(
             Inspired by the high demand in fashion industry to reach internationally
             and vast potential of Chinese retail market, Dr. Chen founded XSHOWROOM in 2015.
         ',
+    ),
+    /**
+     * press.php
+     */
+    array(
+        'press__HEAD' => 'PRESS',
+
     )
 );

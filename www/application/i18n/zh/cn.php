@@ -797,5 +797,12 @@ return array_merge(
             由于时尚界高需求的国际化发展以及中国零售市场的巨大潜力，
             陈容博士在2015年创立XSHOWROOM。
         ',
+    ),
+    /**
+     * press.php
+     */
+    array(
+        'press__HEAD' => '最新资讯',
+
     )
 );
