@@ -348,7 +348,7 @@ angular.module(
             dropdown__COLLECTION__WOMEN: '女士',
             dropdown__COLLECTION__ACCESSORIES: '首饰',
             dropdown__COLLECTION__MEN: '男士',
-            dropdown__COLLECTION__LIFESTYLE: '时尚生活',
+            dropdown__COLLECTION__LIFESTYLE: '生活方式',
             dropdown__COLLECTION__OTHERS: '其他',
 
             // Collection Mode
