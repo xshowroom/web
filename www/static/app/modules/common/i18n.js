@@ -337,10 +337,12 @@ angular.module(
             COLLECTION_STATUS_3: '已删除',
             
             // Store Type
-            dropdown__STORE__ALL: '全部',
+            dropdown__STORE__ONLINE_RETAIL_SHOP: '网店',
+            dropdown__STORE__MULTI_LABELS_SHOP: '多品牌集合店',
+            dropdown__STORE__CONCEPT_SHOP: '概念店',
+            dropdown__STORE__CHAIN_SHOP: '百货商场',
             dropdown__STORE__DEPARTMENT_SHOP: '商场',
-            dropdown__STORE__MULTI_BRAND_SHOP: '品牌集',
-            dropdown__STORE__ONLINE_SHOP: '网店',
+            dropdown__STORE__BUYING_OFFICE_SHOP: '代采中心',
 
             // Collection Type
             dropdown__COLLECTION__ALL: '所有产品',
@@ -769,10 +771,12 @@ angular.module(
             
             
             // Store Type
-            dropdown__STORE__ALL: 'ALL',
-            dropdown__STORE__DEPARTMENT_SHOP: 'DEPARTMENT SHOP',
-            dropdown__STORE__MULTI_BRAND_SHOP: 'MULTI-BRAND SHOP',
-            dropdown__STORE__ONLINE_SHOP: 'ONLINE SHOP',
+            dropdown__STORE__ONLINE_RETAIL_SHOP: 'ONLINE-RETAIL SHOP',
+            dropdown__STORE__MULTI_LABELS_SHOP: 'MULTI-LABELS SHOP',
+            dropdown__STORE__CONCEPT_SHOP: 'CONCEPT STORE',
+            dropdown__STORE__CHAIN_SHOP: 'CHAIN STORE',
+            dropdown__STORE__DEPARTMENT_SHOP: 'DEPARTMENT STORE',
+            dropdown__STORE__BUYING_OFFICE_SHOP: 'BUYING OFFICE',
 
             // Collection Type
             dropdown__COLLECTION__ALL: 'ALL',

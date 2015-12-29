@@ -118,9 +118,12 @@
 									{{ user.shopType ? (user.shopType | translate) : '<?= __("buyer_register__STEP_2__STORE_TYPE_PLACEHOLDER");?>' }}
 								</label>
 								<select class="form-control" id="store-type" ng-model="user.shopType" name="shopType">
-                                    <option value="dropdown__STORE__DEPARTMENT_SHOP">{{ "dropdown__STORE__DEPARTMENT_SHOP"| translate }}</option>
-                                    <option value="dropdown__STORE__MULTI_BRAND_SHOP">{{ "dropdown__STORE__MULTI_BRAND_SHOP"| translate }}</option>
-                                    <option value="dropdown__STORE__ONLINE_SHOP">{{ "dropdown__STORE__ONLINE_SHOP"| translate }}</option>
+                                    <option value="dropdown__STORE__ONLINE_RETAIL_SHOP">{{ "dropdown__STORE__ONLINE_RETAIL_SHOP"| translate }}</option>
+                                    <option value="dropdown__STORE__MULTI_LABELS_SHOP">{{ "dropdown__STORE__MULTI_LABELS_SHOP"| translate }}</option>
+                                    <option value="dropdown__STORE__CONCEPT_SHOP">{{ "dropdown__STORE__CONCEPT_SHOP"| translate }}</option>
+									<option value="dropdown__STORE__CHAIN_SHOP">{{ "dropdown__STORE__CHAIN_SHOP"| translate }}</option>
+									<option value="dropdown__STORE__DEPARTMENT_SHOP">{{ "dropdown__STORE__DEPARTMENT_SHOP"| translate }}</option>
+									<option value="dropdown__STORE__BUYING_OFFICE_SHOP">{{ "dropdown__STORE__BUYING_OFFICE_SHOP"| translate }}</option>
 								</select>
 							</div>
 							<div class="form-group col-xs-12 buyer-register-checkbox-group"

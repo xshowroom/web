@@ -66,9 +66,12 @@
                             <div class="col-xs-6">
                                 <select class="form-control" id="store-type" ng-model="store.shopType" name="shopType"
                                 	ng-disabled="!isEditing">
+                                    <option value="dropdown__STORE__ONLINE_RETAIL_SHOP">{{ "dropdown__STORE__ONLINE_RETAIL_SHOP"| translate }}</option>
+                                    <option value="dropdown__STORE__MULTI_LABELS_SHOP">{{ "dropdown__STORE__MULTI_LABELS_SHOP"| translate }}</option>
+                                    <option value="dropdown__STORE__CONCEPT_SHOP">{{ "dropdown__STORE__CONCEPT_SHOP"| translate }}</option>
+                                    <option value="dropdown__STORE__CHAIN_SHOP">{{ "dropdown__STORE__CHAIN_SHOP"| translate }}</option>
                                     <option value="dropdown__STORE__DEPARTMENT_SHOP">{{ "dropdown__STORE__DEPARTMENT_SHOP"| translate }}</option>
-                                    <option value="dropdown__STORE__MULTI_BRAND_SHOP">{{ "dropdown__STORE__MULTI_BRAND_SHOP"| translate }}</option>
-                                    <option value="dropdown__STORE__ONLINE_SHOP">{{ "dropdown__STORE__ONLINE_SHOP"| translate }}</option>
+                                    <option value="dropdown__STORE__BUYING_OFFICE_SHOP">{{ "dropdown__STORE__BUYING_OFFICE_SHOP"| translate }}</option>
 								</select>
                             </div>
                         </div>
