@@ -125,7 +125,7 @@ angular.module(
 					}
 					if (!$scope.errorMsgs.length && $scope.step.stepNumber < 3) {
 						$scope.step.stepNumber += 1;
-					}else if (!$scope.errorMsgs.length && $scope.step.stepNumber == 3 && $scope.acceptConditions) {
+					}else if (!$scope.errorMsgs.length && $scope.step.stepNumber == 3) {
 						$scope.register();
 					}
 				});
