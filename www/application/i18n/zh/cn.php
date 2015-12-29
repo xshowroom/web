@@ -129,6 +129,8 @@ return array_merge(
         'home__FEATURED' => '圈内点评',
         'home__people_BUYER' => '时尚买手',
         'home__people_DESIGNER' => '品牌设计师',
+        'home__testimonials__comment_1' => '虽然我们才一起合作了两季，随着对彼此的信赖和对定位的了解，不断调整和更新品牌，每次都能让我们有发掘新品牌的激情。希望能开发越来越多的时尚品牌，一起为了我们热爱的事业而努力！',
+        'home__testimonials__comment_2' => '作为有多年买手店运营经验的买手，已与多个品牌及SHOWROOM合作过。其中PROJECT CROSSOVER是我们已成功合作多季的专业SHOWROOM, 无论是从品牌引进，展会举办以及后期的跟单，一系列的服务都很专业真诚，希望我们可以保持长期合作，共同推进买手市场的发展。 ',
     ),
     /**
      * guide.php

@@ -260,35 +260,68 @@
 					<p><?=__("home__FEATURED")?></p>
 				</div>
 			</div>
-			<div class="row"> 
-				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link">
-						<img src="/static/app/images/home-testomonial-1.png"/>
-					</a>
-					<div class="showcase-name">LILA SIMPSON</div>
-					<div class="showcase-identity"><?=__("home__people_BUYER")?></div>
+			<div class="row">
+				<div class="col-xs-1">
 				</div>
-				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link">
-						<img src="/static/app/images/home-testomonial-2.png"/>
-					</a>
-					<div class="showcase-name">JOHNSON SMITH</div>
-					<div class="showcase-identity"><?=__("home__people_BUYER")?></div>
+				<div class="col-xs-4 showcase-testimonials">
+					<div class="media">
+						<div class="media-left">
+							<img src="/static/app/images/TESTIMONIALS_1.png">
+						</div>
+						<div class="media-body showcase-testimonials-people">
+							<h4 class="media-heading">PLAY LOUNGE</h4>
+							<p>Iris: <?=__("home__people_BUYER")?></p>
+						</div>
+					</div>
+					<div class="showcase-testimonials-comment">
+						<?=__("home__testimonials__comment_1");?></div>
 				</div>
-				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link">
-						<img src="/static/app/images/home-testomonial-3.png"/>
-					</a>
-					<div class="showcase-name">BARNET MOLLY</div>
-					<div class="showcase-identity"><?=__("home__people_DESIGNER")?></div>
+				<div class="col-xs-2">
 				</div>
-				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link">
-						<img src="/static/app/images/home-testomonial-4.png"/>
-					</a>
-					<div class="showcase-name">JUDY WINTER</div>
-					<div class="showcase-identity"><?=__("home__people_BUYER")?></div>
+				<div class="col-xs-4 showcase-testimonials">
+					<div class="media">
+						<div class="media-left">
+							<img src="/static/app/images/TESTIMONIALS_2.png">
+						</div>
+						<div class="media-body showcase-testimonials-people">
+							<h4 class="media-heading">WENDYZ</h4>
+							<p>Wendy: <?=__("home__people_BUYER")?></p>
+						</div>
+					</div>
+					<div class="showcase-testimonials-comment">
+						<?=__("home__testimonials__comment_2");?>
+					</div>
 				</div>
+				<div class="col-xs-1">
+				</div>
+<!--				<div class="col-xs-3 showcase-item">-->
+<!--					<a class="showcase-image image-link">-->
+<!--						<img src="/static/app/images/home-testomonial-1.png"/>-->
+<!--					</a>-->
+<!--					<div class="showcase-name">LILA SIMPSON</div>-->
+<!--					<div class="showcase-identity">--><?//=__("home__people_BUYER")?><!--</div>-->
+<!--				</div>-->
+<!--				<div class="col-xs-3 showcase-item">-->
+<!--					<a class="showcase-image image-link">-->
+<!--						<img src="/static/app/images/home-testomonial-2.png"/>-->
+<!--					</a>-->
+<!--					<div class="showcase-name">JOHNSON SMITH</div>-->
+<!--					<div class="showcase-identity">--><?//=__("home__people_BUYER")?><!--</div>-->
+<!--				</div>-->
+<!--				<div class="col-xs-3 showcase-item">-->
+<!--					<a class="showcase-image image-link">-->
+<!--						<img src="/static/app/images/home-testomonial-3.png"/>-->
+<!--					</a>-->
+<!--					<div class="showcase-name">BARNET MOLLY</div>-->
+<!--					<div class="showcase-identity">--><?//=__("home__people_DESIGNER")?><!--</div>-->
+<!--				</div>-->
+<!--				<div class="col-xs-3 showcase-item">-->
+<!--					<a class="showcase-image image-link">-->
+<!--						<img src="/static/app/images/home-testomonial-4.png"/>-->
+<!--					</a>-->
+<!--					<div class="showcase-name">JUDY WINTER</div>-->
+<!--					<div class="showcase-identity">--><?//=__("home__people_BUYER")?><!--</div>-->
+<!--				</div>-->
 			</div>
 		</div>
 	</section>

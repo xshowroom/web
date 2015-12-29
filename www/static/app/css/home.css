@@ -314,6 +314,24 @@ to {opacity: 1;}
 	color: #999;
 }
 
+.showcase-testimonials-people {
+	padding-left: 20px;
+	padding-top: 80px;
+}
+
+.showcase-testimonials {
+	border-top: 3px solid #aaaaaa;
+	padding-top: 20px;
+}
+
+.showcase-testimonials-people>p {
+	padding-top: 5px;
+	font-style: italic;
+}
+
+.showcase-testimonials-comments {
+}
+
 .home-subscribe{
 	background-image: url('../images/home-subscibe.png');
 	height: 340px;
