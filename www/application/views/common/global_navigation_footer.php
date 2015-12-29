@@ -11,7 +11,7 @@
 		<div class="col-xs-3">
 			<h3><?= __("global_navigation_footer__COMPANY")?></h3>
 			<ul>
-				<li><a href="#"><?=__("global_navigation_footer__COMPANY__PRESS")?></a></li>
+				<li><a href="<?=URL::site('press');?>"><?=__("global_navigation_footer__COMPANY__PRESS")?></a></li>
 				<li><a href="#"><?=__("global_navigation_footer__COMPANY__DISCOVERY")?></a></li>
 				<li><a href="<?=URL::site('about');?>"><?=__("global_navigation_footer__COMPANY__ABOUT_US")?></a></li>
 				<li><a href="#"><?=__("global_navigation_footer__COMPANY__CAREER")?></a></li>
@@ -53,15 +53,16 @@
 	</div>
 	<!-- Baidu tongji code -->
 	<!-- for devo -->
-	<script>
-		var _hmt = _hmt || [];
-		(function() {
-			var hm = document.createElement("script");
-			hm.src = "//hm.baidu.com/hm.js?6576053e06f49480da22d5d468ab6115";
-			var s = document.getElementsByTagName("script")[0];
-			s.parentNode.insertBefore(hm, s);
-		})();
-	</script>
+	<!--	<script>-->
+	<!--		var _hmt = _hmt || [];-->
+	<!--		(function() {-->
+	<!--			var hm = document.createElement("script");-->
+	<!--			hm.src = "//hm.baidu.com/hm.js?6576053e06f49480da22d5d468ab6115";-->
+	<!--			var s = document.getElementsByTagName("script")[0];-->
+	<!--			s.parentNode.insertBefore(hm, s);-->
+	<!--		})();-->
+	<!--	</script>-->
+
 	<!-- for prod -->
 	<script>
 		var _hmt = _hmt || [];
