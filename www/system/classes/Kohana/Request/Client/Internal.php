@@ -122,6 +122,9 @@ class Kohana_Request_Client_Internal extends Request_Client {
 		}
 		catch (Exception $e)
 		{
+		    if ($request->is_ajax()) {
+		        throw $e;
+		    }
 			// Generate an appropriate Response object
 			$response = Kohana_Exception::_handler($e);
 		}
