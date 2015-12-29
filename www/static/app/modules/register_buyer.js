@@ -93,6 +93,10 @@ angular.module(
 				
 				for(var key in keys){
 					var value = $scope.user[key];
+					if (key == 'shopWebsite' && !value){
+						$scope.step.validation[stepNumber][key] = false;
+     					continue;
+     				}
 					if (!value || value == '') {
 						$scope.errorMsgs.push([key, 'EMPTY_ERROR']);
 						$scope.step.validation[stepNumber][key] = true;

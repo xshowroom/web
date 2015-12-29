@@ -61,6 +61,10 @@ angular.module(
 					
    				for(var key in $scope.checkInfo.validation){
      				var value = $scope.store[key];
+     				if (key == 'shopWebsite' && !value){
+     					$scope.checkInfo.validation[key] = false;
+     					continue;
+     				}
      				if (!value || value == '' || angular.equals(value, {})) {
      					$scope.errorMsgs.push([key, 'EMPTY_ERROR']);
      					$scope.checkInfo.validation[key] = true;
