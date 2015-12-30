@@ -40,7 +40,7 @@
 		</div>
 	</section>
 	<section class="row">
-		<div class="container contact-us">
+		<div class="container contact-us" id="contact-us">
 			<div class="row">
 				<div class="col-xs-12 text-center section-title">
 					<h3>OUR OFFICES</h3>
