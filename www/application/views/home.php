@@ -246,7 +246,6 @@
 					<div class="showcase-testimonials-comment">
 						<i class="fa fa-quote-left"></i>
 						<p><?=__("home__testimonials__comment_1");?><i class="fa fa-quote-right"></i></p>
-						
 					</div>
 				</div>
 				<div class="col-xs-4 col-xs-offset-2 showcase-testimonials">
@@ -262,7 +261,6 @@
 					<div class="showcase-testimonials-comment">
 						<i class="fa fa-quote-left"></i>
 						<p><?=__("home__testimonials__comment_2");?><i class="fa fa-quote-right"></i></p>
-						
 					</div>
 				</div>
 			</div>

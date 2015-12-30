@@ -14,7 +14,7 @@
 				<li><a href="<?=URL::site('press');?>"><?=__("global_navigation_footer__COMPANY__PRESS")?></a></li>
 				<li><a href="#"><?=__("global_navigation_footer__COMPANY__DISCOVERY")?></a></li>
 				<li><a href="<?=URL::site('about');?>"><?=__("global_navigation_footer__COMPANY__ABOUT_US")?></a></li>
-				<li><a href="#"><?=__("global_navigation_footer__COMPANY__CAREER")?></a></li>
+				<li><a href="<?=URL::site('career');?>""><?=__("global_navigation_footer__COMPANY__CAREER")?></a></li>
 			</ul>
 		</div>
 		<div class="col-xs-3">

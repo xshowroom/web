@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
 .about-banner {
-	background-image: url('/static/app/images/about_background.png');
+	background-image: url('/static/app/images/about-background.png');
     background-position: center;
     background-position-x: center;
     background-position-y: center;
