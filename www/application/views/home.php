@@ -232,36 +232,34 @@
 					<p><?=__("home__FEATURED")?></p>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-xs-4 col-xs-offset-1 showcase-testimonials">
-					<div class="media">
-						<div class="media-left">
-							<img src="/static/app/images/TESTIMONIALS_1.png">
-						</div>
-						<div class="media-body showcase-testimonials-people">
-							<h4 class="media-heading">PLAY LOUNGE</h4>
-							<div>Iris: <?=__("home__people_BUYER")?></div>
-						</div>
-					</div>
-					<div class="showcase-testimonials-comment">
-						<i class="fa fa-quote-left"></i>
-						<p><?=__("home__testimonials__comment_1");?><i class="fa fa-quote-right"></i></p>
-					</div>
+			<div class="row"> 
+				<div class="col-xs-3 showcase-item">
+					<a class="showcase-image image-link" href="<?=URL::site('about')?>#play-lounge">
+						<img src="/static/app/images/home-testomonial-1.png"/>
+					</a>
+					<div class="showcase-name">PLAY LOUNGE</div>
+					<div class="showcase-collection">Iris Hu: Buyer</div>
 				</div>
-				<div class="col-xs-4 col-xs-offset-2 showcase-testimonials">
-					<div class="media">
-						<div class="media-left">
-							<img src="/static/app/images/TESTIMONIALS_2.png">
-						</div>
-						<div class="media-body showcase-testimonials-people">
-							<h4 class="media-heading">WENDYZ</h4>
-							<div>Wendy: <?=__("home__people_BUYER")?></div>
-						</div>
-					</div>
-					<div class="showcase-testimonials-comment">
-						<i class="fa fa-quote-left"></i>
-						<p><?=__("home__testimonials__comment_2");?><i class="fa fa-quote-right"></i></p>
-					</div>
+				<div class="col-xs-3 showcase-item">
+					<a class="showcase-image image-link" href="<?=URL::site('about')?>#wendyz">
+						<img src="/static/app/images/home-testomonial-2.png"/>
+					</a>
+					<div class="showcase-name">WENDYZ</div>
+					<div class="showcase-collection">Wendy Weng: Director</div>
+				</div>
+				<div class="col-xs-3 showcase-item">
+					<a class="showcase-image image-link" href="<?=URL::site('about')?>#ppq">
+						<img src="/static/app/images/home-testomonial-3.png"/>
+					</a>
+					<div class="showcase-name">PPQ</div>
+					<div class="showcase-collection">Percy Parker: Brand Director</div>
+				</div>
+				<div class="col-xs-3 showcase-item">
+					<a class="showcase-image image-link" href="<?=URL::site('about')?>#three-floor">
+						<img src="/static/app/images/home-testomonial-4.png"/>
+					</a>
+					<div class="showcase-name">THREE FLOOR</div>
+					<div class="showcase-collection">Yvonne Hoang: Brand Director</div>
 				</div>
 			</div>
 		</div>

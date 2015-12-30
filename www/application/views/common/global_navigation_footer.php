@@ -20,7 +20,7 @@
 		<div class="col-xs-3">
 			<h3><?= __("global_navigation_footer__HELP")?></h3>
 			<ul>
-				<li><a href="#"><?=__("global_navigation_footer__HELP__CONTACT_US")?></a></li>
+				<li><a href="<?=URL::site('about');?>#contact-us"><?=__("global_navigation_footer__HELP__CONTACT_US")?></a></li>
 				<li><a href="#"<?=__("global_navigation_footer__HELP__PRIVACY_COOKIES")?></li>
 				<li><a href="#"><?=__("global_navigation_footer__HELP__Q_A")?></a></li>
 				<li><a href="#"><?=__("global_navigation_footer__HELP__TERMS_OF_SERVICE")?></a></li>
