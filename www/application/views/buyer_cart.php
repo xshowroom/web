@@ -51,7 +51,7 @@
 			                  	<div class="col-xs-4"><span><?=__("buyer_cart__DELIVERY_DATE");?></span><span>{{record.collectionInfo.mode == 'dropdown__COLLECTION_MODE__PERMANENT' ? '' :record.collectionInfo.delivery_date}}</span></div>
 			                  	<div class="col-xs-4"><span><?=__("buyer_cart__MIN_ORDER");?></span><span>{{record.collectionInfo.currency}}{{record.collectionInfo.mini_order| number}}</span></div>
 		                  		<div class="col-xs-12">
-			                  		<a class="product-photo" ng-href="/product/{{product.id}}" ng-repeat="product in record.productions | limitTo: 12" >
+			                  		<a class="product-photo" ng-href="/product/{{product.id}}" target="_blank" ng-repeat="product in record.productions | limitTo: 12" >
 			                  			<img ng-src="/{{product.small_image_url[0]}}">
 			                  		</a>
 			                  	</div>
