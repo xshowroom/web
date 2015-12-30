@@ -118,7 +118,7 @@ return array_merge(
         'home__BUYERS_DESC' => 'Discover new and exciting brands and explore their collections.',
         'home__btn_VIEW_MORE' => 'VIEW MORE',
 
-        'home__btn_SOLUTION' => 'LEARN',
+        'home__btn_SOLUTION' => 'SOLUTION',
         'home__btn_REGISTER' => 'REGISTER',
 
         'home__HOT_BRANDS' => 'HOT BRANDS',
@@ -128,7 +128,8 @@ return array_merge(
         'home__TESTIMONIALS' => 'TESTIMONIALS',
         'home__FEATURED' => 'FEATURED',
         'home__people_BUYER' => 'BUYER',
-        'home__people_DESIGNER' => 'BRAND DESIGNER',
+        'home__people_DIRECTOR' => 'DIRECTOR',
+        'home__people_BRAND_DIRECTOR' => 'BRAND DIRECTOR',
         'home__testimonials__comment_1' => 'Although we have only collaborated for two seasons, our relationship and confidence gradually strengthens as we work closely together. We are able to position brands better in the marketplace, constantly making adjustments and improvements, Exciting new brands are also discovered as work along Hopefully this can open up for development to more fashion brands. Let\'s strive for the career we love!',
         'home__testimonials__comment_2' => 'Working as buyers for a number of years in independent retail, we have worked with a number of brands and showrooms. Among them includes Project Crossover, a professional showroom platform that we collaborated with for several seasons. Whether introducing a brand, hosting a showroom exhibition or taking after season orders, the service was genuine and professional. We hope to have a long-term partnership with Project Crossover, working closely together to promote the retailer market growth. ',
     ),

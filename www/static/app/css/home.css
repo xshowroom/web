@@ -62,21 +62,22 @@
     top: 35%;
     bottom: auto;
     background: transparent;
-    width: 800px;
+    width: 850px;
     text-align: center;
     opacity: 1;
     border: 1px solid #eee;
     margin: 0 0 0 -400px;
     left: 50%;
     padding: 3%;
+	overflow: visible;
 }
 .home-banner .nivo-caption:before {
 	content: "";
 	display: inline-block;
-	top: 15px;
-	bottom: 15px;
-	left: 15px;
-	right: 15px;
+	top: 10px;
+	bottom: -10px;
+	left: 10px;
+	right: -10px;
 	border: 1px solid #eee;
 	position: absolute;
 }
@@ -190,6 +191,12 @@ to {opacity: 1;}
 }
 .home-introduction .introduction-item a + a{
 	margin-left: 2em;
+}
+
+.home-introduction .introduction-item a {
+	padding: 10px 30px;
+	border: 1px solid #ca7379;
+	border-radius: 22px;
 }
 /*  .home-introduction .introduction-item{
  	position: relative;

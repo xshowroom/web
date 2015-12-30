@@ -135,26 +135,26 @@
 	<section class="row no-vertical-padding">
 		<div class="container-fluid home-introduction">
 			<div class="row">
-				<div class="col-xs-2 col-xs-offset-2 introduction-item">
+				<div class="col-xs-3 col-xs-offset-1 introduction-item">
 					<div>
 						<img src="/static/app/images/common-icon-star.png"/>
 					</div>
 					<h4><?=__("home__BRANDS")?></h4>
 					<p><?=__("home__BRANDS_DESC")?></p>
 					<div>
-						<a href="<?=URL::site('guide#/buyer');?>">SOLUTION</a>
-						<a href="<?=URL::site('register/buyer');?>">REGISTER</a>
+						<a class="btn" href="<?=URL::site('guide#/brand');?>"><?=__("home__btn_SOLUTION")?></a>
+						<a class="btn" href="<?=URL::site('register/brand');?>"><?=__("home__btn_REGISTER")?></a>
 					</div>
 				</div>
-				<div class="col-xs-2 col-xs-offset-4 introduction-item">
+				<div class="col-xs-3 col-xs-offset-4 introduction-item">
 					<div>
 						<img src="/static/app/images/common-icon-gift.png"/>
 					</div>
 					<h4><?=__("home__BUYERS")?></h4>
 					<p><?=__("home__BUYERS_DESC")?></p>
 					<div>
-						<a href="<?=URL::site('guide#/buyer');?>">SOLUTION</a>
-						<a href="<?=URL::site('register/buyer');?>">REGISTER</a>
+						<a class="btn" href="<?=URL::site('guide#/buyer');?>"><?=__("home__btn_SOLUTION")?></a>
+						<a class="btn" href="<?=URL::site('register/buyer');?>"><?=__("home__btn_REGISTER")?></a>
 					</div>
 				</div>
 			</div>
@@ -215,28 +215,28 @@
 						<img src="/static/app/images/home-testomonial-1.png"/>
 					</a>
 					<div class="showcase-name">PLAY LOUNGE</div>
-					<div class="showcase-collection">Iris Hu: Buyer</div>
+					<div class="showcase-collection">Iris Hu: <?=__('home__people_BUYER');?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
 					<a class="showcase-image image-link" href="<?=URL::site('about')?>#wendyz">
 						<img src="/static/app/images/home-testomonial-2.png"/>
 					</a>
 					<div class="showcase-name">WENDYZ</div>
-					<div class="showcase-collection">Wendy Weng: Director</div>
+					<div class="showcase-collection">Wendy Weng: <?=__('home__people_DIRECTOR');?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
 					<a class="showcase-image image-link" href="<?=URL::site('about')?>#ppq">
 						<img src="/static/app/images/home-testomonial-3.png"/>
 					</a>
 					<div class="showcase-name">PPQ</div>
-					<div class="showcase-collection">Percy Parker: Brand Director</div>
+					<div class="showcase-collection">Percy Parker: <?=__('home__people_BRAND_DIRECTOR');?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
 					<a class="showcase-image image-link" href="<?=URL::site('about')?>#three-floor">
 						<img src="/static/app/images/home-testomonial-4.png"/>
 					</a>
 					<div class="showcase-name">THREE FLOOR</div>
-					<div class="showcase-collection">Yvonne Hoang: Brand Director</div>
+					<div class="showcase-collection">Yvonne Hoang: <?=__('home__people_BRAND_DIRECTOR');?></div>
 				</div>
 			</div>
 		</div>
