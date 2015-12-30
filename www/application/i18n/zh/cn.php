@@ -806,5 +806,18 @@ return array_merge(
     array(
         'press__HEAD' => '最新资讯',
 
+        'press__TITLE_01' => '伦敦Project Crossover创始人Cherie Chen“爱上超模”',
+        'press__CONTENT_01' => '爱上超模II空降伦敦Project Crossover工作室，伦敦Project Crossover创始人Cherie Chen“爱上超模。',
+
+        'press__TITLE_02' => '昆凌助阵FABITORIA，将上海时装周推向高潮',
+        'press__CONTENT_02' => '象征华丽浪漫、细腻优雅的新时尚设计师品牌FABITORIA本年度在上海时尚周上的16春夏大秀已于昨日圆满结束。',
+
+        'press__TITLE_03' => '跨界时尚Adorn主题：邀你一起参与三地时装周系列活动',
+        'press__CONTENT_03' => '在今年9月、10月伦敦、巴黎、上海三地时装周举办期间，Project Crossover和OOAK联合十一个设计师品牌，以pop up store和showroom联手的形式横跨欧亚大陆三地帮助设计师举办展览活动。',
+
+        'press__TITLE_04' => 'Crossover PR的“媒体福利日”就是看美衣，吃马卡龙，和时尚博主聚会',
+        'press__CONTENT_04' => 'Crossover PR于2015年5月29日，6月5日分别在上海 Project Crossover Showroom（洛克菲勒公馆），北京Pansi Palace成功举办设计师品牌Three Floor、Fabitoria和Forever Unique 的2015秋冬系列新品媒体预览会。',
+
+        'press__btn_CONTINUE' => '阅读全文 ...'
     )
 );

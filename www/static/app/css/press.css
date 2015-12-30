@@ -16,17 +16,13 @@
 
 .press .press-body {
 	padding: 15px;
+	height: 320px;
 }
 
 .press .press-title {
 	color: #000000;
 	font-size: 16px;
-}
-
-.press .press-author {
 	margin-bottom: 30px;
-	font-size: 14px;
-	font-weight: 300;
 }
 
 .press .press-content {
@@ -35,7 +31,10 @@
 }
 
 .press .press-continue-button {
-	margin-top: 30px;
+	position:absolute;
+	bottom:0;
+	right: 0;
+	margin-right: 30px;
 }
 
 .press .press-continue-button>a {

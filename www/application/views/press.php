@@ -23,10 +23,9 @@
 					<div class="press-item">
 						<img class="press-img img-responsive" src="/static/app/images/press-1.png">
 						<div class="press-body">
-							<h3 class="press-title text-center">Press Heading</h3>
-							<p class="press-author text-center">Author</p>
-							<p class="press-content text-center">一位经验涵盖中国及国际市场的时尚专家。 能为客户提供最好的服务，和帮助时装设计师成长与创新，并商业化和持续发展品牌。 由于时尚界高需求的国际化发展以及中国零售市场的巨大潜力， 陈容博士在2015年创立XSHOWROOM。</p>
-							<p class="press-continue-button text-right"><a href="#"><u>CONTINUE READING ...</u></a></p>
+							<h3 class="press-title text-center"><?=__("press__TITLE_01")?></h3>
+							<p class="press-content text-left"><?=__("press__CONTENT_01")?></p>
+							<p class="press-continue-button text-right"><a href="#"><u><?=__("press__btn_CONTINUE")?></u></a></p>
 						</div>
 					</div>
 				</div>
@@ -34,10 +33,9 @@
 					<div class="press-item">
 						<img class="press-img img-responsive" src="/static/app/images/press-2.png">
 						<div class="press-body">
-							<h3 class="press-title text-center">Press Heading</h3>
-							<p class="press-author text-center">Author</p>
-							<p class="press-content text-center">一位经验涵盖中国及国际市场的时尚专家。 能为客户提供最好的服务，和帮助时装设计师成长与创新，并商业化和持续发展品牌。 由于时尚界高需求的国际化发展以及中国零售市场的巨大潜力， 陈容博士在2015年创立XSHOWROOM。</p>
-							<p class="press-continue-button text-right"><a href="#"><u>CONTINUE READING ...</u></a></p>
+							<h3 class="press-title text-center"><?=__("press__TITLE_02")?></h3>
+							<p class="press-content text-left"><?=__("press__CONTENT_02")?></p>
+							<p class="press-continue-button text-right"><a href="#"><u><?=__("press__btn_CONTINUE")?></u></a></p>
 						</div>
 					</div>
 				</div>
@@ -45,10 +43,9 @@
 					<div class="press-item">
 						<img class="press-img img-responsive" src="/static/app/images/press-3.png">
 						<div class="press-body">
-							<h3 class="press-title text-center">Press Heading</h3>
-							<p class="press-author text-center">Author</p>
-							<p class="press-content text-center">一位经验涵盖中国及国际市场的时尚专家。 能为客户提供最好的服务，和帮助时装设计师成长与创新，并商业化和持续发展品牌。 由于时尚界高需求的国际化发展以及中国零售市场的巨大潜力， 陈容博士在2015年创立XSHOWROOM。</p>
-							<p class="press-continue-button text-right"><a href="#"><u>CONTINUE READING ...</u></a></p>
+							<h3 class="press-title text-center"><?=__("press__TITLE_03")?></h3>
+							<p class="press-content text-left"><?=__("press__CONTENT_03")?></p>
+							<p class="press-continue-button text-right"><a href="#"><u><?=__("press__btn_CONTINUE")?></u></a></p>
 						</div>
 					</div>
 				</div>
@@ -56,10 +53,9 @@
 					<div class="press-item">
 						<img class="press-img img-responsive" src="/static/app/images/press-4.png">
 						<div class="press-body">
-							<h3 class="press-title text-center">Press Heading</h3>
-							<p class="press-author text-center">Author</p>
-							<p class="press-content text-center">一位经验涵盖中国及国际市场的时尚专家。 能为客户提供最好的服务，和帮助时装设计师成长与创新，并商业化和持续发展品牌。 由于时尚界高需求的国际化发展以及中国零售市场的巨大潜力， 陈容博士在2015年创立XSHOWROOM。</p>
-							<p class="press-continue-button text-right"><a href="#"><u>CONTINUE READING ...</u></a></p>
+							<h3 class="press-title text-center"><?=__("press__TITLE_04")?></h3>
+							<p class="press-content text-left"><?=__("press__CONTENT_04")?></p>
+							<p class="press-continue-button text-right"><a href="#"><u><?=__("press__btn_CONTINUE")?></u></a></p>
 						</div>
 					</div>
 				</div>
