@@ -675,7 +675,7 @@ return array_merge(
 
         'order_create__review__TITLE' => 'REVIEW YOUR ORDER',
         'order_create__review__DESC_01' => 'When you click the "SUBMIT" button, we’ll contract with brand to acknowledging receipt your order.',
-        'order_create__review__DESC_02' => 'Your contact to purchase item will not be complete until we send you an email notifying you that the item has been shipped.',
+        'order_create__review__DESC_02' => 'Once the order confirmed, we will inform you. Please take an eye on order status updating.',
 
         'order_create__review__PAYMANET_SHIPPING' => 'PAYMENT & SHIPPING',
         'order_create__review__PAYMENT_OPTION' => 'PAYMENT OPTION',
@@ -808,6 +808,7 @@ return array_merge(
      */
     array(
         'press__HEAD' => 'PRESS',
+
 
     )
 );

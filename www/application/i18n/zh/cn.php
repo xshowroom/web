@@ -674,8 +674,8 @@ return array_merge(
         'order_create__INSTRUCTIONS' => '指导信息',
 
         'order_create__review__TITLE' => '确认订单信息',
-        'order_create__review__DESC_01' => '当你点击“提交”按键后，我们将和品牌联系已确认您的订单',
-        'order_create__review__DESC_02' => '你的订单将一直持续到我们告知您订单中的商品开始发货',
+        'order_create__review__DESC_01' => '当您点击“提交”按键后，我们将提交订单给品牌进行审核',
+        'order_create__review__DESC_02' => '一旦订单确认，我们将第一时间通知您，请留意订单状态更新',
 
         'order_create__review__PAYMANET_SHIPPING' => '支付 & 物流',
         'order_create__review__PAYMENT_OPTION' => '支付方式',
