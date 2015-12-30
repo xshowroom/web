@@ -135,55 +135,32 @@
 	<section class="row no-vertical-padding">
 		<div class="container-fluid home-introduction">
 			<div class="row">
-				<div class="col-xs-7">
-					<div class="col-xs-12 brand-introduction introduction-item">
-						<div class="introduction-content">
-							<h3>
-								<span><?=__("home__BRANDS")?></span>
-							</h3>
-							<p><?=__("home__BRANDS_DESC")?></p>
-							<div>
-								<a href="<?=URL::site('guide#/brand');?>" class="btn btn-type-1"><?=__("home__btn_VIEW_MORE")?></a>
-							</div>
-						</div>
+				<div class="col-xs-2 col-xs-offset-2 introduction-item">
+					<div>
+						<img src="/static/app/images/common-icon-star.png"/>
+					</div>
+					<h4><?=__("home__BRANDS")?></h4>
+					<p><?=__("home__BRANDS_DESC")?></p>
+					<div>
+						<a href="<?=URL::site('guide#/buyer');?>">SOLUTION</a>
+						<a href="<?=URL::site('register/buyer');?>">REGISTER</a>
 					</div>
 				</div>
-				<div class="col-xs-5">
-					<div class="col-xs-12 buyer-introduction introduction-item">
-						<div class="introduction-content">
-							<h3>
-								<span><?=__("home__BUYERS")?></span>
-							</h3>
-							<p><?=__("home__BUYERS_DESC")?></p>
-							<div>
-								<a href="<?=URL::site('guide#/buyer');?>" class="btn btn-type-1"><?=__("home__btn_VIEW_MORE")?></a>
-							</div>
-						</div>
+				<div class="col-xs-2 col-xs-offset-4 introduction-item">
+					<div>
+						<img src="/static/app/images/common-icon-gift.png"/>
 					</div>
-					<div class="col-xs-6">
-						<a href="<?=URL::site('register/brand');?>" class="register-link brand-register-link">
-							<h4><?=__("home__BRANDS")?></h4>
-							<div>
-								<img src="/static/app/images/common-icon-star-white.png"/>
-								<span><?=__("home__btn_REGISTER")?></span>
-							</div>
-							<p><?=__("home__BRANDS_DESC")?></p>
-						</a>
-					</div>
-					<div class="col-xs-6">
-						<a href="<?=URL::site('register/buyer');?>" class="register-link buyer-register-link">
-							<h4><?=__("home__BUYERS")?></h4>
-							<div>
-								<img src="/static/app/images/common-icon-gift-white.png"/>
-								<span><?=__("home__btn_REGISTER")?></span>
-							</div>
-							<p><?=__("home__BUYERS_DESC")?></p>
-						</a>
+					<h4><?=__("home__BUYERS")?></h4>
+					<p><?=__("home__BUYERS_DESC")?></p>
+					<div>
+						<a href="<?=URL::site('guide#/buyer');?>">SOLUTION</a>
+						<a href="<?=URL::site('register/buyer');?>">REGISTER</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+	
 	<section class="row no-vertical-padding">
 		<div class="container-fluid home-showcase">
 			<div class="row">
