@@ -62,9 +62,23 @@
     top: 35%;
     bottom: auto;
     background: transparent;
-    width: 100%;
+    width: 800px;
     text-align: center;
     opacity: 1;
+    border: 1px solid #eee;
+    margin: 0 0 0 -400px;
+    left: 50%;
+    padding: 3%;
+}
+.home-banner .nivo-caption:before {
+	content: "";
+	display: inline-block;
+	top: 15px;
+	bottom: 15px;
+	left: 15px;
+	right: 15px;
+	border: 1px solid #eee;
+	position: absolute;
 }
 .home-banner .nivo-caption * {
 	animation: fadeIn 2s;
