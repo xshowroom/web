@@ -32,8 +32,8 @@
 							<div class="col-xs-6 text-right" ng-if="getRestAmount() > 0">
 								<p class="cart-tips">
 									<?=__("order_create__DESC_01")?> <span class="rest-amount"><?=$collection['currency']?>{{getRestAmount()}}</span>
-									<?=__("order_create__DESC_02")?> <br /><?=__("order_create__DESC_03")?> <a
-										href="/collection/<?=$collection['id']?>"><?=__("order_create__btn_VIEW_DETAIL")?></a>
+									<?=__("order_create__DESC_02")?> <br /><?=__("order_create__DESC_03")?>
+									<a target="_blank" href="/collection/<?=$collection['id']?>"><?=__("order_create__btn_VIEW_DETAIL")?></a>
 								</p>
 							</div>
 						</div>

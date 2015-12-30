@@ -35,7 +35,7 @@
             <div class="collection-list-content row" ng-if="collections.length">
                 <div class="col-xs-12" ng-repeat="record in collections">
                 	<div class="collection-item">
-	                  	<a ng-href="/collection/{{record.collectionInfo.id}}" class="col-xs-2 collection-cover image-link">
+	                  	<a ng-href="/collection/{{record.collectionInfo.id}}" target="_blank" class="col-xs-2 collection-cover image-link">
 	                  		<img ng-src="/{{record.collectionInfo.cover_image_medium}}">
 	                  	</a>
 	                  	<div class="col-xs-10 collection-info">
