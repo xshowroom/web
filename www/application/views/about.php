@@ -39,7 +39,104 @@
 			</div>
 		</div>
 	</section>
-	
+	<section class="row">
+		<div class="container contact-us">
+			<div class="row">
+				<div class="col-xs-12 text-center section-title">
+					<h3>OUR OFFICES</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4 col-xs-offset-1 contact-office">
+					<h4>伦敦</h4>
+					<div>电话:  +44 20 7637 9977</div>
+					<div>
+						<p>76 Great Portland Street,<br/>伦敦<br/>英国<br/>W1W 7NL</p>
+					</div>
+					<div>陈容博士<br/>CEO</div>
+					<div>info@projectcrossover.com</div>
+				</div>
+				<div class="col-xs-4 col-xs-offset-2 contact-office">
+					<h4>上海</h4>
+					<div>座机:  +86 21 6236 3226<br/>手机:  +86 135 244 09274</div>
+					<div>上海市长宁区愚园路753号<br/>嘉春E座503室， 200050</div>
+					<div>申兰<br/>销售主管</div>
+					<div>stephy@projectcrossover.com</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="row">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 text-center section-title">
+					<h3><?=__("home__TESTIMONIALS")?></h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4 col-xs-offset-1 showcase-testimonials"  id="play-lounge">
+					<div class="media">
+						<div class="media-left">
+							<img src="/static/app/images/home-testomonial-1.png">
+						</div>
+						<div class="media-body showcase-testimonials-people">
+							<h4 class="media-heading">PLAY LOUNGE</h4>
+							<div>Iris: <?=__("home__people_BUYER")?></div>
+						</div>
+					</div>
+					<div class="showcase-testimonials-comment">
+						<i class="fa fa-quote-left"></i>
+						<p><?=__("home__testimonials__comment_1");?><i class="fa fa-quote-right"></i></p>
+					</div>
+				</div>
+				<div class="col-xs-4 col-xs-offset-2 showcase-testimonials"  id="wendyz">
+					<div class="media">
+						<div class="media-left">
+							<img src="/static/app/images/home-testomonial-2.png">
+						</div>
+						<div class="media-body showcase-testimonials-people">
+							<h4 class="media-heading">WENDYZ</h4>
+							<div>Wendy: <?=__("home__people_BUYER")?></div>
+						</div>
+					</div>
+					<div class="showcase-testimonials-comment">
+						<i class="fa fa-quote-left"></i>
+						<p><?=__("home__testimonials__comment_2");?><i class="fa fa-quote-right"></i></p>
+					</div>
+				</div>
+				<div class="col-xs-4 col-xs-offset-1 showcase-testimonials"  id="ppq">
+					<div class="media">
+						<div class="media-left">
+							<img src="/static/app/images/home-testomonial-3.png">
+						</div>
+						<div class="media-body showcase-testimonials-people">
+							<h4 class="media-heading">PPQ</h4>
+							<div>Iris: <?=__("home__people_BUYER")?></div>
+						</div>
+					</div>
+					<div class="showcase-testimonials-comment">
+						<i class="fa fa-quote-left"></i>
+						<p><?=__("home__testimonials__comment_1");?><i class="fa fa-quote-right"></i></p>
+					</div>
+				</div>
+				<div class="col-xs-4 col-xs-offset-2 showcase-testimonials" id="three-floor">
+					<div class="media">
+						<div class="media-left">
+							<img src="/static/app/images/home-testomonial-4.png">
+						</div>
+						<div class="media-body showcase-testimonials-people">
+							<h4 class="media-heading">THREE FLOOR</h4>
+							<div>Wendy: <?=__("home__people_BUYER")?></div>
+						</div>
+					</div>
+					<div class="showcase-testimonials-comment">
+						<i class="fa fa-quote-left"></i>
+						<p><?=__("home__testimonials__comment_2");?><i class="fa fa-quote-right"></i></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 	<footer class="row footer-navigation">
         <?php echo View::factory('common/global_navigation_footer'); ?>
 	</footer>

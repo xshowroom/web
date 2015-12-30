@@ -21,7 +21,7 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="press-item">
-						<img class="press-img img-responsive" src="/static/app/images/home-banner-5.jpg">
+						<img class="press-img img-responsive" src="/static/app/images/press-1.png">
 						<div class="press-body">
 							<h3 class="press-title text-center">Press Heading</h3>
 							<p class="press-author text-center">Author</p>
@@ -32,7 +32,7 @@
 				</div>
 				<div class="col-md-3">
 					<div class="press-item">
-						<img class="press-img img-responsive" src="/static/app/images/home-banner-5.jpg">
+						<img class="press-img img-responsive" src="/static/app/images/press-2.png">
 						<div class="press-body">
 							<h3 class="press-title text-center">Press Heading</h3>
 							<p class="press-author text-center">Author</p>
@@ -43,7 +43,7 @@
 				</div>
 				<div class="col-md-3">
 					<div class="press-item">
-						<img class="press-img img-responsive" src="/static/app/images/home-banner-5.jpg">
+						<img class="press-img img-responsive" src="/static/app/images/press-3.png">
 						<div class="press-body">
 							<h3 class="press-title text-center">Press Heading</h3>
 							<p class="press-author text-center">Author</p>
@@ -54,7 +54,7 @@
 				</div>
 				<div class="col-md-3">
 					<div class="press-item">
-						<img class="press-img img-responsive" src="/static/app/images/home-banner-5.jpg">
+						<img class="press-img img-responsive" src="/static/app/images/press-4.png">
 						<div class="press-body">
 							<h3 class="press-title text-center">Press Heading</h3>
 							<p class="press-author text-center">Author</p>
