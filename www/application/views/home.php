@@ -182,38 +182,6 @@
 					</div>
 				</div>
 			</div>
-			<!-- <div class="row">
-				<div class="col-xs-offset-1 col-xs-5 text-center introduction-item">
-					<h3>
-						
-						<span><?=__("home__BRANDS")?></span>
-					</h3>
-					<p><?=__("home__BRANDS_DESC")?></p>
-					<div>
-						<a href="/guide#/brand" class="btn btn-type-1"><?=__("home__btn_SOLUTION")?></a>
-						<a class="btn btn-type-1" href="/register/brand" target="_self"><?=__( "home__btn_REGISTER")?></a>
-					</div>
-				</div>
-				<div class="col-xs-6 introduction-item introduction-image">
-					<img src="/static/app/images/home-introduction-image-1.png"/>
-				</div>
-			</div>
-			<div class="row"> 
-				<div class="col-xs-6 introduction-item introduction-image">
-					<img src="/static/app/images/home-introduction-image-2.png"/>
-				</div>
-				<div class="col-xs-5 text-center introduction-item">
-					<h3>
-						<img src="/static/app/images/common-icon-gift.png"/>
-						<span><?=__("home__BUYERS")?></span>
-					</h3>
-					<p><?=__("home__BUYERS_DESC")?></p>
-					<div>
-						<a href="/guide#/retailer" class="btn btn-type-1"><?=__("home__btn_SOLUTION")?></a>
-						<a class="btn btn-type-1" href="/register/buyer" target="_self"><?=__("home__btn_REGISTER")?></a>
-					</div>
-				</div>
-			</div> -->
 		</div>
 	</section>
 	<section class="row no-vertical-padding">
@@ -254,6 +222,10 @@
 					<div class="showcase-collection"><?=__("home__SSI5_COLLECTION")?></div>
 				</div>
 			</div>
+		</div>
+	</section>
+	<section class="row no-vertical-padding">
+		<div class="container-fluid home-showcase">
 			<div class="row">
 				<div class="col-xs-12 text-center">
 					<h3><?=__("home__TESTIMONIALS")?></h3>
@@ -261,67 +233,38 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-1">
-				</div>
-				<div class="col-xs-4 showcase-testimonials">
+				<div class="col-xs-4 col-xs-offset-1 showcase-testimonials">
 					<div class="media">
 						<div class="media-left">
 							<img src="/static/app/images/TESTIMONIALS_1.png">
 						</div>
 						<div class="media-body showcase-testimonials-people">
 							<h4 class="media-heading">PLAY LOUNGE</h4>
-							<p>Iris: <?=__("home__people_BUYER")?></p>
+							<div>Iris: <?=__("home__people_BUYER")?></div>
 						</div>
 					</div>
 					<div class="showcase-testimonials-comment">
-						<?=__("home__testimonials__comment_1");?></div>
+						<i class="fa fa-quote-left"></i>
+						<p><?=__("home__testimonials__comment_1");?><i class="fa fa-quote-right"></i></p>
+						
+					</div>
 				</div>
-				<div class="col-xs-2">
-				</div>
-				<div class="col-xs-4 showcase-testimonials">
+				<div class="col-xs-4 col-xs-offset-2 showcase-testimonials">
 					<div class="media">
 						<div class="media-left">
 							<img src="/static/app/images/TESTIMONIALS_2.png">
 						</div>
 						<div class="media-body showcase-testimonials-people">
 							<h4 class="media-heading">WENDYZ</h4>
-							<p>Wendy: <?=__("home__people_BUYER")?></p>
+							<div>Wendy: <?=__("home__people_BUYER")?></div>
 						</div>
 					</div>
 					<div class="showcase-testimonials-comment">
-						<?=__("home__testimonials__comment_2");?>
+						<i class="fa fa-quote-left"></i>
+						<p><?=__("home__testimonials__comment_2");?><i class="fa fa-quote-right"></i></p>
+						
 					</div>
 				</div>
-				<div class="col-xs-1">
-				</div>
-<!--				<div class="col-xs-3 showcase-item">-->
-<!--					<a class="showcase-image image-link">-->
-<!--						<img src="/static/app/images/home-testomonial-1.png"/>-->
-<!--					</a>-->
-<!--					<div class="showcase-name">LILA SIMPSON</div>-->
-<!--					<div class="showcase-identity">--><?//=__("home__people_BUYER")?><!--</div>-->
-<!--				</div>-->
-<!--				<div class="col-xs-3 showcase-item">-->
-<!--					<a class="showcase-image image-link">-->
-<!--						<img src="/static/app/images/home-testomonial-2.png"/>-->
-<!--					</a>-->
-<!--					<div class="showcase-name">JOHNSON SMITH</div>-->
-<!--					<div class="showcase-identity">--><?//=__("home__people_BUYER")?><!--</div>-->
-<!--				</div>-->
-<!--				<div class="col-xs-3 showcase-item">-->
-<!--					<a class="showcase-image image-link">-->
-<!--						<img src="/static/app/images/home-testomonial-3.png"/>-->
-<!--					</a>-->
-<!--					<div class="showcase-name">BARNET MOLLY</div>-->
-<!--					<div class="showcase-identity">--><?//=__("home__people_DESIGNER")?><!--</div>-->
-<!--				</div>-->
-<!--				<div class="col-xs-3 showcase-item">-->
-<!--					<a class="showcase-image image-link">-->
-<!--						<img src="/static/app/images/home-testomonial-4.png"/>-->
-<!--					</a>-->
-<!--					<div class="showcase-name">JUDY WINTER</div>-->
-<!--					<div class="showcase-identity">--><?//=__("home__people_BUYER")?><!--</div>-->
-<!--				</div>-->
 			</div>
 		</div>
 	</section>

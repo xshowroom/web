@@ -283,11 +283,11 @@ to {opacity: 1;}
 	margin-top: 80px;
 	margin-bottom: 20px;
 }
-.home-showcase p{
+/* .home-showcase p{
 	font-size: 12px;
 	margin-bottom: 50px;
 	font-style: italic;
-}
+} */
 .home-showcase .showcase-item{
 	text-align: center;
 }
@@ -313,23 +313,36 @@ to {opacity: 1;}
 .showcase-collection, .showcase-identity {
 	color: #999;
 }
-
-.showcase-testimonials-people {
+.showcase-testimonials{
 	padding-left: 20px;
-	padding-top: 80px;
-}
-
-.showcase-testimonials {
+	padding-top: 30px;
+	margin-top: 30px;
 	border-top: 3px solid #aaaaaa;
-	padding-top: 20px;
 }
-
-.showcase-testimonials-people>p {
+.showcase-testimonials-people{
+	padding-top: 72px;
+	padding-left: 15px;
+}
+.showcase-testimonials-people > *{
+	line-height: 30px;
+	margin: 0;
+}
+.showcase-testimonials-people > h4{
+	font-size: 16px;
+}
+.showcase-testimonials-people > div{
+	font-style: italic;
+}
+.showcase-testimonials .showcase-testimonials-comment > p {
 	padding-top: 5px;
 	font-style: italic;
 }
+.showcase-testimonials .showcase-testimonials-comment > p > i{
+	margin-left: 1em;
+}
 
-.showcase-testimonials-comments {
+.showcase-testimonials .showcase-testimonials-comment {
+	margin-top: 50px;
 }
 
 .home-subscribe{
