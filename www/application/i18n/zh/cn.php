@@ -130,8 +130,6 @@ return array_merge(
         'home__people_BUYER' => '时尚买手',
         'home__people_DIRECTOR' => '总监',
         'home__people_BRAND_DIRECTOR' => '品牌总监',
-        'home__testimonials__comment_1' => '虽然我们才一起合作了两季，随着对彼此的信赖和对定位的了解，不断调整和更新品牌，每次都能让我们有发掘新品牌的激情。希望能开发越来越多的时尚品牌，一起为了我们热爱的事业而努力！',
-        'home__testimonials__comment_2' => '作为有多年买手店运营经验的买手，已与多个品牌及SHOWROOM合作过。其中PROJECT CROSSOVER是我们已成功合作多季的专业SHOWROOM, 无论是从品牌引进，展会举办以及后期的跟单，一系列的服务都很专业真诚，希望我们可以保持长期合作，共同推进买手市场的发展。 ',
     ),
     /**
      * guide.php
@@ -792,6 +790,7 @@ return array_merge(
 
             XSHOWROOM 总部设于上海。第二办事处为伦敦。
         ",
+
         'about__FOUNDER' => '创办人',
         'about__FOUNDER_NAME' => '陈容博士',
         'about__FOUNDER_DESC' => '
@@ -800,6 +799,13 @@ return array_merge(
             由于时尚界高需求的国际化发展以及中国零售市场的巨大潜力，
             陈容博士在2015年创立XSHOWROOM。
         ',
+
+        'about__OFFICE_TITLE' => '',
+
+        'about__testimonials__comment_1' => '虽然我们才一起合作了两季，随着对彼此的信赖和对定位的了解，不断调整和更新品牌，每次都能让我们有发掘新品牌的激情。希望能开发越来越多的时尚品牌，一起为了我们热爱的事业而努力！',
+        'about__testimonials__comment_2' => '作为有多年买手店运营经验的买手，已与多个品牌及SHOWROOM合作过。其中PROJECT CROSSOVER是我们已成功合作多季的专业SHOWROOM, 无论是从品牌引进，展会举办以及后期的跟单，一系列的服务都很专业真诚，希望我们可以保持长期合作，共同推进买手市场的发展。 ',
+        'about__testimonials__comment_3' => '跨界时尚Project Crossover是中国市场最为成功的品牌孵化机构。通过将销售策略和公关推广的紧密结合，跨界时尚成功的让我们的品牌在最初进入这个新市场时便得到了充足的支持及市场的关注，让我们的品牌得以实现快速而健康的商业增长。作为中国第一个多品牌集合平台之一，跨界时尚已建立起强大的买手网络，并将此资源成功导入XSHOWROOM买手圈线上平台，这将引领时尚行业进入全新的发展阶段',
+        'about__testimonials__comment_4' => '跨界时尚Project Crossover无论是在线上或线下推广我们的品牌方面，都表现极为出色，通过在社交平台上的推广及和中国知名媒体之间的合作，我们的品牌被更多的人知道并喜爱。我们很荣幸近期与知名演员佟丽娅合作，为《时尚芭莎》杂志拍摄大片。同时，此前跨界时尚于北京和上海成功举办媒体发布会，并邀请了《瑞丽》杂志编辑总监及《时装》的编辑等，活动反响非常令人满意。 ',
     ),
     /**
      * press.php

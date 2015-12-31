@@ -130,8 +130,6 @@ return array_merge(
         'home__people_BUYER' => 'BUYER',
         'home__people_DIRECTOR' => 'DIRECTOR',
         'home__people_BRAND_DIRECTOR' => 'BRAND DIRECTOR',
-        'home__testimonials__comment_1' => 'Although we have only collaborated for two seasons, our relationship and confidence gradually strengthens as we work closely together. We are able to position brands better in the marketplace, constantly making adjustments and improvements, Exciting new brands are also discovered as work along Hopefully this can open up for development to more fashion brands. Let\'s strive for the career we love!',
-        'home__testimonials__comment_2' => 'Working as buyers for a number of years in independent retail, we have worked with a number of brands and showrooms. Among them includes Project Crossover, a professional showroom platform that we collaborated with for several seasons. Whether introducing a brand, hosting a showroom exhibition or taking after season orders, the service was genuine and professional. We hope to have a long-term partnership with Project Crossover, working closely together to promote the retailer market growth. ',
     ),
     /**
      * guide.php
@@ -794,6 +792,7 @@ return array_merge(
 
             XSHOWROOM is based in Shanghai with a second office in London.
         ",
+
         'about__FOUNDER' => 'Founder',
         'about__FOUNDER_NAME' => 'Dr. Cherie Chen',
         'about__FOUNDER_DESC' => '
@@ -803,6 +802,11 @@ return array_merge(
             Inspired by the high demand in fashion industry to reach internationally
             and vast potential of Chinese retail market, Dr. Chen founded XSHOWROOM in 2015.
         ',
+
+        'about__testimonials__comment_1' => 'Although we have only collaborated for two seasons, our relationship and confidence gradually strengthens as we work closely together. We are able to position brands better in the marketplace, constantly making adjustments and improvements, Exciting new brands are also discovered as work along Hopefully this can open up for development to more fashion brands. Let\'s strive for the career we love!',
+        'about__testimonials__comment_2' => 'Working as buyers for a number of years in independent retail, we have worked with a number of brands and showrooms. Among them includes Project Crossover, a professional showroom platform that we collaborated with for several seasons. Whether introducing a brand, hosting a showroom exhibition or taking after season orders, the service was genuine and professional. We hope to have a long-term partnership with Project Crossover, working closely together to promote the retailer market growth. ',
+        'about__testimonials__comment_3' => 'Project Crossover has created the perfect model for brand building in the territory of China. By integrating sales strategy with a strong PR department, we have received the crucial support that our label required to initially enter the market and then grow at a fast paced yet sustainable level. As one of the first multi-brand agencies in China, Project Crossover have managed to build an unrivalled network of industry buyers which combined with the new online platform XSHOWROOM will see the agency spearhead the next big development in the business of fashion.',
+        'about__testimonials__comment_4' => 'Project Crossover have shown great expertise in building our brand both online and off, engaging and growing our audiences via social media and in Chinese press – we were very pleased to have the Chinese actress Tong Lia, photographed in Harpers Bazaar in Three Floor last season. In addition Project Crossover have previously held successful press days for our brand in Beijing and Shanghai – with attendees including the chief editor of Rayli Magazine and L’Officiel among others. ',
     ),
     /**
      * press.php

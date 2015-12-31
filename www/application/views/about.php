@@ -86,7 +86,7 @@
 					</div>
 					<div class="showcase-testimonials-comment">
 						<i class="fa fa-quote-left"></i>
-						<p><?=__("home__testimonials__comment_1");?><i class="fa fa-quote-right"></i></p>
+						<p><?=__("about__testimonials__comment_1");?><i class="fa fa-quote-right"></i></p>
 					</div>
 				</div>
 				<div class="col-xs-4 col-xs-offset-2 showcase-testimonials"  id="wendyz">
@@ -96,12 +96,12 @@
 						</div>
 						<div class="media-body showcase-testimonials-people">
 							<h4 class="media-heading">WENDYZ</h4>
-							<div>Wendy: <?=__("home__people_BUYER")?></div>
+							<div>Wendy: <?=__("home__people_DIRECTOR")?></div>
 						</div>
 					</div>
 					<div class="showcase-testimonials-comment">
 						<i class="fa fa-quote-left"></i>
-						<p><?=__("home__testimonials__comment_2");?><i class="fa fa-quote-right"></i></p>
+						<p><?=__("about__testimonials__comment_2");?><i class="fa fa-quote-right"></i></p>
 					</div>
 				</div>
 				<div class="col-xs-4 col-xs-offset-1 showcase-testimonials"  id="ppq">
@@ -111,12 +111,12 @@
 						</div>
 						<div class="media-body showcase-testimonials-people">
 							<h4 class="media-heading">PPQ</h4>
-							<div>Iris: <?=__("home__people_BUYER")?></div>
+							<div>Percy Parker: <?=__("home__people_BRAND_DIRECTOR")?></div>
 						</div>
 					</div>
 					<div class="showcase-testimonials-comment">
 						<i class="fa fa-quote-left"></i>
-						<p><?=__("home__testimonials__comment_1");?><i class="fa fa-quote-right"></i></p>
+						<p><?=__("about__testimonials__comment_3");?><i class="fa fa-quote-right"></i></p>
 					</div>
 				</div>
 				<div class="col-xs-4 col-xs-offset-2 showcase-testimonials" id="three-floor">
@@ -126,12 +126,12 @@
 						</div>
 						<div class="media-body showcase-testimonials-people">
 							<h4 class="media-heading">THREE FLOOR</h4>
-							<div>Wendy: <?=__("home__people_BUYER")?></div>
+							<div>Yvonne Hoang: <?=__("home__people_BRAND_DIRECTOR")?></div>
 						</div>
 					</div>
 					<div class="showcase-testimonials-comment">
 						<i class="fa fa-quote-left"></i>
-						<p><?=__("home__testimonials__comment_2");?><i class="fa fa-quote-right"></i></p>
+						<p><?=__("about__testimonials__comment_4");?><i class="fa fa-quote-right"></i></p>
 					</div>
 				</div>
 			</div>
