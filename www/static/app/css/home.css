@@ -62,31 +62,31 @@
     top: 35%;
     bottom: auto;
     background: transparent;
-    width: 850px;
+    width: 100%;
     text-align: center;
     opacity: 1;
-    border: 1px solid #eee;
-    margin: 0 0 0 -400px;
-    left: 50%;
-    padding: 3%;
-	overflow: visible;
+    /*border: 1px solid #eee;*/
+    /*margin: 0 0 0 -400px;*/
+    /*left: 50%;*/
+    /*padding: 3%;*/
+	/*overflow: visible;*/
 }
-.home-banner .nivo-caption:before {
-	content: "";
-	display: inline-block;
-	top: 10px;
-	bottom: -10px;
-	left: 10px;
-	right: -10px;
-	border: 1px solid #eee;
-	position: absolute;
-}
-.home-banner .nivo-caption * {
-	animation: fadeIn 2s;
-    -webkit-animation: fadeIn 2s;
-    -moz-animation: fadeIn 2s;
-    -o-animation: fadeIn 2s;
-}
+/*.home-banner .nivo-caption:before {*/
+	/*content: "";*/
+	/*display: inline-block;*/
+	/*top: 10px;*/
+	/*bottom: -10px;*/
+	/*left: 10px;*/
+	/*right: -10px;*/
+	/*border: 1px solid #eee;*/
+	/*position: absolute;*/
+/*}*/
+/*.home-banner .nivo-caption * {*/
+	/*animation: fadeIn 2s;*/
+    /*-webkit-animation: fadeIn 2s;*/
+    /*-moz-animation: fadeIn 2s;*/
+    /*-o-animation: fadeIn 2s;*/
+/*}*/
 .home-banner .nivo-caption h2{
 	font-size: 80px;
 	margin: 0;
