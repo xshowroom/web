@@ -777,18 +777,13 @@ return array_merge(
      * about.php
      */
     array(
-        'about__TITLE' => '关于 XSHOWROOM',
+        'about__TITLE' => '关于XSHOWROOM买手圈',
         'about__CONTENT' => "
-            XSHOWROOM 是全球第一个为中国时尚批发市场开发的网路时尚平台。
-            通过我们创新的平台跟直观的技术，我们正开拓以及提高批发的市场，
-            使得过程更加便利与成本更加有效益
+            XSHOWROOM是中国时尚行业中第一个提供专业买手服务的线上平台。通过创新的平台及领先的科技，我们将大大提升采购效率、节约采购成本，从而全面升级时尚买手行业采购体系，引领行业发展。
 
-            我们提供这个平台给予品牌和零售商进行串连
-            全程的网路批发交易过程能使品牌与零售商
-            增加收入、降低成本、以及透过数据分析来
-            改善客户体验
+            我们创造这样一个平台的目的是连接品牌与零售商，将整个采购流程移植线上，使品牌与零售商双方均能够实现效率最大化，并通过精准的数据分析进行多维度优化。
 
-            XSHOWROOM 总部设于上海。第二办事处为伦敦。
+            XSHOWROOM立足上海和伦敦，连接全球买手圈。
         ",
 
         'about__FOUNDER' => '创办人',
@@ -800,7 +795,19 @@ return array_merge(
             陈容博士在2015年创立XSHOWROOM。
         ',
 
-        'about__OFFICE_TITLE' => '',
+        'about__CONTACT_US' => '联系我们',
+        'about__CONTACT__LONDON' => '伦敦',
+        'about__CONTACT__SHANGHAI' => '上海',
+        'about__CONTACT__TEL_01' => '座机',
+        'about__CONTACT__TEL_02' => '手机',
+        'about__CONTACT__ADDRESS2_01' => '上海市长宁区愚园路753号',
+        'about__CONTACT__ADDRESS2_02' => '嘉春E座503室， 200050',
+        'about__CONTACT__ADDRESS2_03' => '',
+        'about__CONTACT__UK' => '英国',
+        'about__CONTACT__PEOPLE_01' => '陈容博士',
+        'about__CONTACT__PEOPLE_02' => '申兰',
+        'about__CONTACT__PEOPLE_POSITION_02' => '销售主管',
+
 
         'about__testimonials__comment_1' => '虽然我们才一起合作了两季，随着对彼此的信赖和对定位的了解，不断调整和更新品牌，每次都能让我们有发掘新品牌的激情。希望能开发越来越多的时尚品牌，一起为了我们热爱的事业而努力！',
         'about__testimonials__comment_2' => '作为有多年买手店运营经验的买手，已与多个品牌及SHOWROOM合作过。其中PROJECT CROSSOVER是我们已成功合作多季的专业SHOWROOM, 无论是从品牌引进，展会举办以及后期的跟单，一系列的服务都很专业真诚，希望我们可以保持长期合作，共同推进买手市场的发展。 ',

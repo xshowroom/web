@@ -135,7 +135,7 @@
 	<section class="row no-vertical-padding">
 		<div class="container-fluid home-introduction">
 			<div class="row">
-				<div class="col-xs-3 col-xs-offset-1 introduction-item">
+				<div class="col-xs-4 col-xs-offset-1 introduction-item">
 					<div>
 						<img src="/static/app/images/common-icon-star.png"/>
 					</div>
@@ -146,7 +146,7 @@
 						<a class="btn" href="<?=URL::site('register/brand');?>"><?=__("home__btn_REGISTER")?></a>
 					</div>
 				</div>
-				<div class="col-xs-3 col-xs-offset-4 introduction-item">
+				<div class="col-xs-4 col-xs-offset-2 introduction-item">
 					<div>
 						<img src="/static/app/images/common-icon-gift.png"/>
 					</div>

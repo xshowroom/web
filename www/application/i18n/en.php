@@ -803,6 +803,19 @@ return array_merge(
             and vast potential of Chinese retail market, Dr. Chen founded XSHOWROOM in 2015.
         ',
 
+        'about__CONTACT_US' => 'CONTACT US',
+        'about__CONTACT__LONDON' => 'LONDON',
+        'about__CONTACT__SHANGHAI' => 'SHANGHAI',
+        'about__CONTACT__TEL_01' => 't.',
+        'about__CONTACT__TEL_02' => 't.',
+        'about__CONTACT__ADDRESS2_01' => '503, Building E, Jia Chun Park,',
+        'about__CONTACT__ADDRESS2_02' => '753 Yuyuan Road, Changning District',
+        'about__CONTACT__ADDRESS2_03' => 'Shanghai, China, 200050',
+        'about__CONTACT__UK' => 'UK',
+        'about__CONTACT__PEOPLE_01' => 'Dr. Cherie Chen',
+        'about__CONTACT__PEOPLE_02' => 'Stephy Shen',
+        'about__CONTACT__PEOPLE_POSITION_02' => 'Sales Manager',
+
         'about__testimonials__comment_1' => 'Although we have only collaborated for two seasons, our relationship and confidence gradually strengthens as we work closely together. We are able to position brands better in the marketplace, constantly making adjustments and improvements, Exciting new brands are also discovered as work along Hopefully this can open up for development to more fashion brands. Let\'s strive for the career we love!',
         'about__testimonials__comment_2' => 'Working as buyers for a number of years in independent retail, we have worked with a number of brands and showrooms. Among them includes Project Crossover, a professional showroom platform that we collaborated with for several seasons. Whether introducing a brand, hosting a showroom exhibition or taking after season orders, the service was genuine and professional. We hope to have a long-term partnership with Project Crossover, working closely together to promote the retailer market growth. ',
         'about__testimonials__comment_3' => 'Project Crossover has created the perfect model for brand building in the territory of China. By integrating sales strategy with a strong PR department, we have received the crucial support that our label required to initially enter the market and then grow at a fast paced yet sustainable level. As one of the first multi-brand agencies in China, Project Crossover have managed to build an unrivalled network of industry buyers which combined with the new online platform XSHOWROOM will see the agency spearhead the next big development in the business of fashion.',
