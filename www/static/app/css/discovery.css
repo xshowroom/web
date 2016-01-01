@@ -1,0 +1,74 @@
+@CHARSET "UTF-8";
+.discovery-banner {
+	background-image: url('/static/app/images/discovery-background.png');
+    background-position: center;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+.discovery-banner .banner-mask{
+	background-color: rgba(0, 0, 0, 0);
+	text-align: center;
+	padding: 50px;
+}
+.discovery-banner h2{
+	margin-bottom: 50px;
+	font-size: 30px;
+	line-height: 50px;
+}
+.discovery-banner p{
+	font-size: 16px;
+	line-height: 30px;
+	white-space: pre-line;
+}
+
+.discovery .discovery-content:nth-child(2n+1){
+	background-color: #fafafa;
+}
+.discovery .discovery-content img{
+	width: 100%;
+}
+.discovery-content h3{
+	font-size: 24px;
+	line-height: 1.5em;
+	height: 3em;
+	display: inline-block;
+    float: left;
+    margin: 0;
+}
+.discovery .discovery-content:nth-child(n+5) h3{
+	line-height: 3em;
+}
+.discovery .discovery-content .discovery-section-icon{
+	font-size: 18px;
+    width: 100px;
+    height: 70px;
+    display: inline-block;
+    float: left;
+    background-image: url('/static/app/images/discovery-section-icon.png');
+    background-repeat: no-repeat;
+}
+.discovery .discovery-content:nth-child(4) .discovery-section-icon{
+	background-position-x: 0;
+}
+
+.discovery .discovery-content:nth-child(5) .discovery-section-icon{
+	background-position: -139px 10px;
+	background-position-x: -139px;
+	background-position-y: 10px;
+}
+.discovery .discovery-content:nth-child(6) .discovery-section-icon{
+	background-position: -288px 5px;
+	background-position-x: -288px;
+    background-position-y: 5px;
+}
+.discovery .discovery-content p{
+    display: block;
+    clear: left;
+    margin-top: 100px;
+    white-space: pre-line;
+    padding-left: 100px;
+    line-height: 30px;
+}
