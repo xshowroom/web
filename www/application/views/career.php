@@ -80,23 +80,18 @@
 				<ul class="opportunty-list col-xs-10 col-xs-offset-1">
 					<li ng-click="setOpenPosition($index)" ng-repeat="position in positions track by $index">
 						<div>
-							<span class="position-name">ACCOUNT MANAGER</span>
+							<span class="position-name">{{position.name}}</span>
 						</div>
 						<div>
-							<span class="position-location"><i class="fa fa-map-marker"></i>SHANGHAI</span>
-							<span class="position-type">FULL TIME</span>
-							<span class="position-date">POSTED: 2016/01/01</span>
+							<span class="position-location"><i class="fa fa-map-marker"></i>{{position.location}}</span>
+							<span class="position-type">{{position.type}}</span>
+							<span class="position-date">POSTED: {{position.date}}</span>
 							<span class="position-action">
 								<i class="fa" ng-class="{'fa-sort-desc': selectedPosition != $index, 'fa-sort-asc': selectedPosition == $index}"></i>
 							</span>
 						</div>
 						<div ng-show="selectedPosition == $index">
-							<p class="position-description">Vix te habemus facilisi postulant. Te duo habemus vivendo. 
-								Debet legere inimicus sed ei. Ut mei quaeque labores 
-								feugait, case elit explicari no duo. Insolens oportere ius in, 
-								ad dicat nostrud delicata vix. Nemore malorum definitiones
-								no eam. Pri dolorum comprehensam ei. Eum eu diam. 
-								Unum zril cotidieque ea ius.  </p>
+							<p class="position-description">{{position.description}}</p>
 							<div class="position-email">TO APPLY: careers@xshowroom.com</div>
 						</div>
 					</li>
