@@ -18,16 +18,10 @@
 		<div class="container">
 			<div class="row">
                 <div class="col-xs-8 col-xs-offset-2 banner-mask">
-                	<h2>JOIN OUR TEAM</h2>
-                	<h3>Make Work Matter</h3>
-					<p>We’re a rapidly expanding organisation with plenty of room for brilliant, 
-						like-minded people. We’re all about helping thousands of businesses 
-						around the world grow by putting the wholesale buying process online.
-					</p>
-					<p>We offer a truly inspiring workplace for new ideas, new expressions and 
-						personal development. If you’d like to work as part of a growing team 
-						focused on pushing boundaries, send us a copy of your C.V and 
-						covering letter to:</p>
+                	<h2><?=__("career__TITLE")?></h2>
+                	<h3><?=__("career__SUB_TITLE")?></h3>
+					<p><?=__("career__CONTENT_01")?></p>
+					<p><?=__("career__CONTENT_02")?></p>
 					<div class="career-email">careers@xshowroom.com</div>
 				</div>
 				<div class="clearfix"></div>
@@ -37,35 +31,35 @@
 	<section class="row benefits">
 		<div class="container">
 			<div class="row">
-				<h3 class="col-xs-12 text-center">BENEFITS OF WORKING WITH XSHOWROOM</h3>
+				<h3 class="col-xs-12 text-center"><?=__("career__BENIFITS_TITLE")?></h3>
 			</div>
 			<div class="row">
 				<div class="col-xs-5 col-xs-offset-1  benefit-item">
 					<div class="benefit-icon"></div>
 					<div class="benefit-desc">
-						<h4>CREATIVE ENVIRONMENT</h4>
-						<p>We empower our teams to find creative solutions to difficult problems.</p>
+						<h4><?=__("career__BENIFITS_01")?></h4>
+						<p><?=__("career__BENIFITS_01_DESC")?></p>
 					</div>
 				</div>
 				<div class="col-xs-5 benefit-item">
 					<div class="benefit-icon"></div>
 					<div class="benefit-desc">
-						<h4>CENTRAL LOCATION</h4>
-						<p>Great office in a central Shanghai location.</p>
+						<h4><?=__("career__BENIFITS_02")?></h4>
+						<p><?=__("career__BENIFITS_02_DESC")?></p>
 					</div>
 				</div>
 				<div class="col-xs-5 col-xs-offset-1 benefit-item">
 					<div class="benefit-icon"></div>
 					<div class="benefit-desc">
-						<h4>PASSIONATE PEOPLE</h4>
-						<p>Our team works closely together and are committed to providing help whenever a problem arises.</p>
+						<h4><?=__("career__BENIFITS_03")?></h4>
+						<p><?=__("career__BENIFITS_03_DESC")?></p>
 					</div>
 				</div>
 				<div class="col-xs-5 benefit-item">
 					<div class="benefit-icon"></div>
 					<div class="benefit-desc">
-						<h4>HIGH PROFILE EVENT ACCESS</h4>
-						<p>Access and exposure to fashion events.</p>
+						<h4><?=__("career__BENIFITS_04")?></h4>
+						<p><?=__("career__BENIFITS_04_DESC")?></p>
 					</div>
 				</div>
 			</div>

@@ -840,5 +840,32 @@ return array_merge(
         'press__CONTENT_04' => 'Crossover PR于2015年5月29日，6月5日分别在上海 Project Crossover Showroom（洛克菲勒公馆），北京Pansi Palace成功举办设计师品牌Three Floor、Fabitoria和Forever Unique 的2015秋冬系列新品媒体预览会。',
 
         'press__btn_CONTINUE' => 'CONTINUE READING ...'
+    ),
+    /**
+     * career.php
+     */
+    array(
+        'career__TITLE' => 'JOIN OUR TEAM',
+
+        'career__SUB_TITLE' => 'Make Work Matter',
+        'career__CONTENT_01' =>
+            'We\'re a rapidly expanding organisation with plenty of room for brilliant, 
+			like-minded people. We’re all about helping thousands of businesses
+			around the world grow by putting the wholesale buying process online.',
+        'career__CONTENT_02' =>
+            'We offer a truly inspiring workplace for new ideas, new expressions and
+			personal development. If you’d like to work as part of a growing team
+			focused on pushing boundaries, send us a copy of your C.V and
+			covering letter to:',
+
+        'career__BENIFITS_TITLE' => 'BENEFITS OF WORKING WITH XSHOWROOM',
+        'career__BENIFITS_01' => 'CREATIVE ENVIRONMENT',
+        'career__BENIFITS_01_DESC' => 'We empower our teams to find creative solutions to difficult problems.',
+        'career__BENIFITS_02' => 'CENTRAL LOCATION',
+        'career__BENIFITS_02_DESC' => 'Great office in a central Shanghai location.',
+        'career__BENIFITS_03' => 'PASSIONATE PEOPLE',
+        'career__BENIFITS_03_DESC' => 'Our team works closely together and are committed to providing help whenever a problem arises.',
+        'career__BENIFITS_04' => 'HIGH PROFILE EVENT ACCESS',
+        'career__BENIFITS_04_DESC' => 'Access and exposure to fashion events.',
     )
 );
