@@ -82,22 +82,22 @@
 					<div class="col-xs-12 guide-solution-feature">
 						<div class="col-xs-3 guide-solution-icon"></div>
 						<div class="col-xs-9">
-							<h4><?=__("guide__brand_right_INTRODUCE_1")?></h4>
-							<p><?=__("guide__brand_right_INTRODUCE_DESC_1")?></p>
+							<h4><?=__("guide__buyer_right_INTRODUCE_1")?></h4>
+							<p><?=__("guide__buyer_right_INTRODUCE_DESC_1")?></p>
 						</div>
 					</div>
 					<div class="col-xs-12 guide-solution-feature">
 						<div class="col-xs-3 guide-solution-icon"></div>
 						<div class="col-xs-9">
-	                        <h4><?=__("guide__brand_right_INTRODUCE_2")?></h4>
-	                        <p><?=__("guide__brand_right_INTRODUCE_DESC_2")?></p>
+	                        <h4><?=__("guide__buyer_right_INTRODUCE_2")?></h4>
+	                        <p><?=__("guide__buyer_right_INTRODUCE_DESC_2")?></p>
 						</div>
 					</div>
 					<div class="col-xs-12 guide-solution-feature">
 						<div class="col-xs-3 guide-solution-icon"></div>
 						<div class="col-xs-9">
-	                        <h4><?=__("guide__brand_right_INTRODUCE_3")?></h4>
-	                        <p><?=__("guide__brand_right_INTRODUCE_DESC_3")?></p>
+	                        <h4><?=__("guide__buyer_right_INTRODUCE_3")?></h4>
+	                        <p><?=__("guide__buyer_right_INTRODUCE_DESC_3")?></p>
 						</div>
 					</div>
 				</div>
@@ -242,22 +242,22 @@
 			</div>
 		</div>
 	</section>
-	<section class="row">
-		<div class="container">
-			<div class="row guide-membership">
-				<h3 class="col-xs-12 text-center"><?=__("guide__MEMBERSHIP_INCLUDES")?></h3>
-				<ul class="col-xs-6">
-					<li><?=__("guide__MEMBERSHIP_INCLUDES_R1")?></li>
-					<li><?=__("guide__MEMBERSHIP_INCLUDES_R2")?></li>
-					<li><?=__("guide__MEMBERSHIP_INCLUDES_R3")?></li>
-				</ul>
-				<ul class="col-xs-6">
-					<li><?=__("guide__MEMBERSHIP_INCLUDES_R4")?></li>
-					<li><?=__("guide__MEMBERSHIP_INCLUDES_R5")?></li>
-				</ul>
-			</div>
-		</div>
-	</section>
+<!--	<section class="row">-->
+<!--		<div class="container">-->
+<!--			<div class="row guide-membership">-->
+<!--				<h3 class="col-xs-12 text-center">--><?//=__("guide__MEMBERSHIP_INCLUDES")?><!--</h3>-->
+<!--				<ul class="col-xs-6">-->
+<!--					<li>--><?//=__("guide__MEMBERSHIP_INCLUDES_R1")?><!--</li>-->
+<!--					<li>--><?//=__("guide__MEMBERSHIP_INCLUDES_R2")?><!--</li>-->
+<!--					<li>--><?//=__("guide__MEMBERSHIP_INCLUDES_R3")?><!--</li>-->
+<!--				</ul>-->
+<!--				<ul class="col-xs-6">-->
+<!--					<li>--><?//=__("guide__MEMBERSHIP_INCLUDES_R4")?><!--</li>-->
+<!--					<li>--><?//=__("guide__MEMBERSHIP_INCLUDES_R5")?><!--</li>-->
+<!--				</ul>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</section>-->
 	<footer class="row footer-navigation">
         <?php echo View::factory('common/global_navigation_footer'); ?>
 	</footer>
