@@ -65,15 +65,25 @@
 	height: 110px;
 	background-repeat: no-repeat;
 }
-.guide-solution .guide-solution-feature:nth-child(1) .guide-solution-icon{
-	background-position: center 0px;
+.guide-solution.brand-solution .guide-solution-feature:nth-child(1) .guide-solution-icon{
+	background-position: 0 0;
 }
-.guide-solution .guide-solution-feature:nth-child(2) .guide-solution-icon{
-	background-position: center -115px;
+.guide-solution.brand-solution .guide-solution-feature:nth-child(2) .guide-solution-icon{
+	background-position: 0 -125px;
 }
-.guide-solution .guide-solution-feature:nth-child(3) .guide-solution-icon{
-	background-position: center -230px;
+.guide-solution.brand-solution .guide-solution-feature:nth-child(3) .guide-solution-icon{
+	background-position: 0 -265px;
 }
+.guide-solution.buyer-solution .guide-solution-feature:nth-child(1) .guide-solution-icon{
+	background-position: -140px 0;
+}
+.guide-solution.buyer-solution .guide-solution-feature:nth-child(2) .guide-solution-icon{
+	background-position: -148px -125px;
+}
+.guide-solution.buyer-solution .guide-solution-feature:nth-child(3) .guide-solution-icon{
+	background-position: -149px -265px;
+}
+
 .guide-solution .guide-solution-feature h4{
 	font-size: 16px;
 	text-align: center;
@@ -101,10 +111,69 @@
 	height: 160px;
 } 
 .guide-benefit .guide-benefit-container .guide-benefit-item .guide-benefit-item-icon{
-	background-image: url('../images/common-icon-star.png');
-	height: 130px;
+	height: 60px;
     background-repeat: no-repeat;
     background-position: center 15px;
+}
+.guide-benefit .guide-benefit-container.guide-benefit-brand .guide-benefit-item .guide-benefit-item-icon{
+	background-image: url('../images/guide-benefit-brand-icon.png');
+}
+.guide-benefit .guide-benefit-container.guide-benefit-brand .guide-benefit-item:nth-child(2) .guide-benefit-item-icon{
+	background-position: -8px -18px;
+}
+.guide-benefit .guide-benefit-container.guide-benefit-brand .guide-benefit-item:nth-child(3) .guide-benefit-item-icon{
+	background-position: -108px -18px;
+}
+.guide-benefit .guide-benefit-container.guide-benefit-brand .guide-benefit-item:nth-child(4) .guide-benefit-item-icon{
+	background-position: -208px -18px;
+}
+.guide-benefit .guide-benefit-container.guide-benefit-brand .guide-benefit-item:nth-child(5) .guide-benefit-item-icon{
+	background-position: -8px -118px;
+}
+.guide-benefit .guide-benefit-container.guide-benefit-brand .guide-benefit-item:nth-child(6) .guide-benefit-item-icon{
+	background-position: -108px -118px;
+}
+.guide-benefit .guide-benefit-container.guide-benefit-brand .guide-benefit-item:nth-child(7) .guide-benefit-item-icon{
+	background-position: -208px -118px;
+}
+.guide-benefit .guide-benefit-container.guide-benefit-brand .guide-benefit-item:nth-child(8) .guide-benefit-item-icon{
+	background-position: -8px -218px;
+}
+.guide-benefit .guide-benefit-container.guide-benefit-brand .guide-benefit-item:nth-child(9) .guide-benefit-item-icon{
+	background-position: -108px -218px;
+}
+.guide-benefit .guide-benefit-container.guide-benefit-brand .guide-benefit-item:nth-child(10) .guide-benefit-item-icon{
+	background-position: -208px -218px;
+}
+.guide-benefit .guide-benefit-container.guide-benefit-buyer .guide-benefit-item .guide-benefit-item-icon{
+	background-image: url('../images/guide-benefit-buyer-icon.png');
+}
+.guide-benefit .guide-benefit-container.guide-benefit-buyer .guide-benefit-item:nth-child(2) .guide-benefit-item-icon{
+	background-position: -8px -18px;
+}
+.guide-benefit .guide-benefit-container.guide-benefit-buyer .guide-benefit-item:nth-child(3) .guide-benefit-item-icon{
+	background-position: -108px -18px;
+}
+.guide-benefit .guide-benefit-container.guide-benefit-buyer .guide-benefit-item:nth-child(4) .guide-benefit-item-icon{
+	background-position: -208px -18px;
+}
+.guide-benefit .guide-benefit-container.guide-benefit-buyer .guide-benefit-item:nth-child(5) .guide-benefit-item-icon{
+	background-position: -8px -118px;
+}
+.guide-benefit .guide-benefit-container.guide-benefit-buyer .guide-benefit-item:nth-child(6) .guide-benefit-item-icon{
+	background-position: -108px -118px;
+}
+.guide-benefit .guide-benefit-container.guide-benefit-buyer .guide-benefit-item:nth-child(7) .guide-benefit-item-icon{
+	background-position: -208px -118px;
+}
+.guide-benefit .guide-benefit-container.guide-benefit-buyer .guide-benefit-item:nth-child(8) .guide-benefit-item-icon{
+	background-position: -8px -218px;
+}
+.guide-benefit .guide-benefit-container.guide-benefit-buyer .guide-benefit-item:nth-child(9) .guide-benefit-item-icon{
+	background-position: -108px -218px;
+}
+.guide-benefit .guide-benefit-container.guide-benefit-buyer .guide-benefit-item:nth-child(10) .guide-benefit-item-icon{
+	background-position: -208px -218px;
 }
 .guide-benefit .guide-benefit-container .guide-benefit-item h4{
 	font-size: 13px;
