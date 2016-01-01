@@ -71,21 +71,122 @@
 				<h3 class="col-xs-12 text-center">CURRENT OPPORTUNITIES</h3>
 			</div>
 			<div class="row">
-				<ul class="opportunty-list col-xs-10 col-xs-offset-1">
-					<li ng-click="setOpenPosition($index)" ng-repeat="position in positions track by $index">
+				<ul class="opportunity-list col-xs-10 col-xs-offset-1">
+					<li ng-click="setOpenPosition(0)">
 						<div>
-							<span class="position-name">{{position.name}}</span>
+							<span class="position-name">Graphic Designer</span>
 						</div>
 						<div>
-							<span class="position-location"><i class="fa fa-map-marker"></i>{{position.location}}</span>
-							<span class="position-type">{{position.type}}</span>
-							<span class="position-date">POSTED: {{position.date}}</span>
+							<span class="position-location"><i class="fa fa-map-marker"></i>Shanghai</span>
+							<span class="position-type">Full time</span>
+							<span class="position-date">POSTED: 2016/01/01</span>
 							<span class="position-action">
-								<i class="fa" ng-class="{'fa-sort-desc': selectedPosition != $index, 'fa-sort-asc': selectedPosition == $index}"></i>
+								<i class="fa" ng-class="{'fa-sort-desc': selectedPosition != 0, 'fa-sort-asc': selectedPosition == 0}"></i>
 							</span>
 						</div>
-						<div ng-show="selectedPosition == $index">
-							<p class="position-description">{{position.description}}</p>
+						<div ng-show="selectedPosition == 0">
+							<p class="position-description">
+								We are looking for highly motivated individual to provide artwork internally to generate all the graphics needed for proposals, communication tools and promotional material.
+								<br/>
+								<br/>
+								Responsibilities
+								<br/>
+								- Provide graphic design for companies and customers, edit graphic visual and network information, including print, digital or video content
+								<br/>
+								- Provide graphic design for new e-commerce platform,  propose effective recommendations for achieving a good user experience
+								<br/>
+								- Provide ideas and suggestions for e-commerce site activities
+								<br/>
+								- Artistic creations
+								<br/>
+								- Provide required design for our internal, external website to make recommendations and modifications
+								<br/>
+								- HTML, CSS, Java knowledge, create, modify, e-marketing mail campaign
+								<br/>
+								- Proficient in Adobe family of software
+								<br/>
+								- Video production capabilities is plus
+								<br/>
+								<br/>
+								Qualifications and experience
+								<br/>
+								- With 5 years experience in graphic design and web design (please send various forms of works for reference)
+								<br/>
+								- University degree or equivalent
+								<br/>
+								- Proficient in Adobe Design Tools
+								<br/>
+								- With HTML, java, CSS coding knowledge
+								<br/>
+								- Proficiency in Chinese and English
+								<br/>
+								- Able to adapt to the rhythm of urgent work
+								<br/>
+								- Good to interact, communicate and actively express thoughts
+								<br/>
+								- It can adapt to the complex, professional work environment
+								<br/>
+								- Open-minded, good to meet the challenges, good team spirit
+							</p>
+							<div class="position-email">TO APPLY: careers@xshowroom.com</div>
+						</div>
+					</li>
+					<li ng-click="setOpenPosition(1)">
+						<div>
+							<span class="position-name">Graphic Designer</span>
+						</div>
+						<div>
+							<span class="position-location"><i class="fa fa-map-marker"></i>Shanghai</span>
+							<span class="position-type">Full time</span>
+							<span class="position-date">POSTED: 2016/01/01</span>
+							<span class="position-action">
+								<i class="fa" ng-class="{'fa-sort-desc': selectedPosition != 1, 'fa-sort-asc': selectedPosition == 1}"></i>
+							</span>
+						</div>
+						<div ng-show="selectedPosition == 1">
+							<p class="position-description">
+								We are looking for highly motivated individual to provide artwork internally to generate all the graphics needed for proposals, communication tools and promotional material.
+								<br/>
+								<br/>
+								Responsibilities
+								<br/>
+								- Provide graphic design for companies and customers, edit graphic visual and network information, including print, digital or video content
+								<br/>
+								- Provide graphic design for new e-commerce platform,  propose effective recommendations for achieving a good user experience
+								<br/>
+								- Provide ideas and suggestions for e-commerce site activities
+								<br/>
+								- Artistic creations
+								<br/>
+								- Provide required design for our internal, external website to make recommendations and modifications
+								<br/>
+								- HTML, CSS, Java knowledge, create, modify, e-marketing mail campaign
+								<br/>
+								- Proficient in Adobe family of software
+								<br/>
+								- Video production capabilities is plus
+								<br/>
+								<br/>
+								Qualifications and experience
+								<br/>
+								- With 5 years experience in graphic design and web design (please send various forms of works for reference)
+								<br/>
+								- University degree or equivalent
+								<br/>
+								- Proficient in Adobe Design Tools
+								<br/>
+								- With HTML, java, CSS coding knowledge
+								<br/>
+								- Proficiency in Chinese and English
+								<br/>
+								- Able to adapt to the rhythm of urgent work
+								<br/>
+								- Good to interact, communicate and actively express thoughts
+								<br/>
+								- It can adapt to the complex, professional work environment
+								<br/>
+								- Open-minded, good to meet the challenges, good team spirit
+							</p>
 							<div class="position-email">TO APPLY: careers@xshowroom.com</div>
 						</div>
 					</li>

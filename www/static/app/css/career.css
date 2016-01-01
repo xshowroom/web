@@ -78,54 +78,54 @@
 	color: #878787;
 }
 
-.opportunty-list{
+.opportunity-list{
 	margin-top: 80px;
 	margin-bottom: 0;
 	padding: 0;
 	list-style: none;
 }
-.opportunty-list > li{
+.opportunity-list > li{
 	padding: 0;
 	list-style: none;
 }
-.opportunty-list > li{
+.opportunity-list > li{
 	cursor: pointer;
 	padding: 15px;
 }
-.opportunty-list > li:hover{
+.opportunity-list > li:hover{
 	background-color: #eee;
 	border-radius: 4px;
 }
-.opportunty-list > li .position-name{
+.opportunity-list > li .position-name{
 	font-size: 18px;
 	line-height: 30px;
 }
-.opportunty-list > li .position-location,
-.opportunty-list > li .position-type,
-.opportunty-list > li .position-date{
+.opportunity-list > li .position-location,
+.opportunity-list > li .position-type,
+.opportunity-list > li .position-date{
 	font-size: 14px;
 	display: inline-block;
 	width: 30%;
 	line-height: 30px;
 	float: left;
 }
-.opportunty-list > li .position-location > i{
+.opportunity-list > li .position-location > i{
 	margin-right: 1em;
 	color: #ca7379;
 }
-.opportunty-list > li .position-action{
+.opportunity-list > li .position-action{
 	font-size: 14px;
 	display: inline-block;
 	width: 10%;
 	line-height: 30px;
 	text-align:right;
 }
-.opportunty-list > li .position-description{
+.opportunity-list > li .position-description{
 	margin: 20px 0;
 	line-height: 25px;
 	width: 90%;
 }
-.opportunty-list > li .position-email{
+.opportunity-list > li .position-email{
 	line-height: 25px;
 	text-align: right;
 }
