@@ -53,12 +53,12 @@
     background-position-x: 0;
     background-position-y: 10px;
 }
-.benefits .benefit-item:nth-child(2) .benefit-icon{
+.benefits .benefit-item:nth-child(3) .benefit-icon{
 	background-position: 0 -140px;
     background-position-x: 0;
     background-position-y: -140px;
 }
-.benefits .benefit-item:nth-child(3) .benefit-icon{
+.benefits .benefit-item:nth-child(2) .benefit-icon{
 	background-position: -150px 10px;
     background-position-x: -150px;
     background-position-y: 10px;
