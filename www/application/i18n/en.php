@@ -150,7 +150,7 @@ return array_merge(
         'guide__brand_right_INTRODUCE_3' => 'DIGITAL ORDERS',
         'guide__brand_right_INTRODUCE_DESC_3' => 'Easy-to-click ordering system for new and repeated orders. Linesheets are set up automatically from orders and downloads are available',
 
-        'guide__buyer_INTRODUCE' => 'SHOWCASE TO SELECTED BRANDS',
+        'guide__buyer_left_INTRODUCE' => 'SHOWCASE TO SELECTED BRANDS',
         'guide__buyer_right_INTRODUCE_1' => '24/7 SOURCING OF BRANDS',
         'guide__buyer_right_INTRODUCE_DESC_1' => 'Virtual showrooms with our selected brands. Discover new brands and preview collections before buying',
         'guide__buyer_right_INTRODUCE_2' => 'ORDER HISTORY',

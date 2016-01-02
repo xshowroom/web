@@ -150,7 +150,7 @@ return array_merge(
         'guide__brand_right_INTRODUCE_3' => '电子订单',
         'guide__brand_right_INTRODUCE_DESC_3' => '方便快捷的线上下单系统，快速生成方便下载的电子价目表',
 
-        'guide__buyer_INTRODUCE' => '时尚买手的订货专属平台',
+        'guide__buyer_left_INTRODUCE' => '时尚买手的订货专属平台',
         'guide__buyer_right_INTRODUCE_1' => '24/7时刻搜寻品牌',
         'guide__buyer_right_INTRODUCE_DESC_1' => 'XSHOWROOM买手圈为您精选时尚品牌。尽情探索众多新品牌并浏览品牌最新系列以达成您的采购目标',
         'guide__buyer_right_INTRODUCE_2' => '详细订货记录',

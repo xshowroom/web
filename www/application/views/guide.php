@@ -40,8 +40,8 @@
 				<div class="col-xs-6 text-center">
 					<p class="col-xs-12"><?=__("guide__brand_left_INTRODUCE")?></p>
 					<div class="col-xs-12">
-						<a class="btn btn-type-2" href="/register/brand" target="_self"><?=__("guide__btn_REGISTER")?></a>
-						<a class="btn btn-type-1" href="/login" target="_self"><?=__("guide__btn_SIGN_IN")?></a>
+						<a class="btn btn-type-2" href="<?=url::site("register/brand")?>" target="_self"><?=__("guide__btn_REGISTER")?></a>
+						<a class="btn btn-type-1" href="<?=url::site("login")?>" target="_self"><?=__("guide__btn_SIGN_IN")?></a>
 					</div>
 				</div>
 				<div class="col-xs-6">
@@ -72,10 +72,10 @@
 		<div class="container guide-solution buyer-solution" ng-if="solution == 'retailer'">
 			<div class="row">
 				<div class="col-xs-6 text-center">
-					<p class="col-xs-12"><?=__("guide__brand_left_INTRODUCE")?></p>
+					<p class="col-xs-12"><?=__("guide__buyer_left_INTRODUCE")?></p>
 					<div class="col-xs-12">
-						<a class="btn btn-type-2" href="/register/buyer" target="_self"><?=__("guide__btn_REGISTER")?></a>
-						<a class="btn btn-type-1" href="/login" target="_self"><?=__("guide__btn_SIGN_IN")?></a>
+						<a class="btn btn-type-2" href="<?=url::site("register/buyer")?>" target="_self"><?=__("guide__btn_REGISTER")?></a>
+						<a class="btn btn-type-1" href="<?=url::site("login")?>" target="_self"><?=__("guide__btn_SIGN_IN")?></a>
 					</div>
 				</div>
 				<div class="col-xs-6">
