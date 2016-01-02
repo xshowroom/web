@@ -25,7 +25,7 @@
 						<div class="press-body">
 							<h3 class="press-title text-center"><?=__("press__TITLE_01")?></h3>
 							<p class="press-content text-left"><?=__("press__CONTENT_01")?></p>
-							<p class="press-continue-button text-right"><a href="#"><u><?=__("press__btn_CONTINUE")?></u></a></p>
+							<p class="press-continue-button text-right"><a href="/static/press/supermodel.htm" target="_blank"><u><?=__("press__btn_CONTINUE")?></u></a></p>
 						</div>
 					</div>
 				</div>
@@ -35,7 +35,7 @@
 						<div class="press-body">
 							<h3 class="press-title text-center"><?=__("press__TITLE_02")?></h3>
 							<p class="press-content text-left"><?=__("press__CONTENT_02")?></p>
-							<p class="press-continue-button text-right"><a href="#"><u><?=__("press__btn_CONTINUE")?></u></a></p>
+							<p class="press-continue-button text-right"><a href="/static/press/fabitoria.htm" target="_blank">><u><?=__("press__btn_CONTINUE")?></u></a></p>
 						</div>
 					</div>
 				</div>
@@ -45,7 +45,7 @@
 						<div class="press-body">
 							<h3 class="press-title text-center"><?=__("press__TITLE_03")?></h3>
 							<p class="press-content text-left"><?=__("press__CONTENT_03")?></p>
-							<p class="press-continue-button text-right"><a href="#"><u><?=__("press__btn_CONTINUE")?></u></a></p>
+							<p class="press-continue-button text-right"><a href="/static/press/adorn.htm" target="_blank">><u><?=__("press__btn_CONTINUE")?></u></a></p>
 						</div>
 					</div>
 				</div>
@@ -55,7 +55,7 @@
 						<div class="press-body">
 							<h3 class="press-title text-center"><?=__("press__TITLE_04")?></h3>
 							<p class="press-content text-left"><?=__("press__CONTENT_04")?></p>
-							<p class="press-continue-button text-right"><a href="#"><u><?=__("press__btn_CONTINUE")?></u></a></p>
+							<p class="press-continue-button text-right"><a href="/static/press/pressday.htm" target="_blank">><u><?=__("press__btn_CONTINUE")?></u></a></p>
 						</div>
 					</div>
 				</div>
