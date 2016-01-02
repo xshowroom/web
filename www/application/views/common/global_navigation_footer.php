@@ -12,7 +12,7 @@
 			<h3><?= __("global_navigation_footer__COMPANY")?></h3>
 			<ul>
 				<li><a href="<?=URL::site('press');?>"><?=__("global_navigation_footer__COMPANY__PRESS")?></a></li>
-				<li><a href="#"><?=__("global_navigation_footer__COMPANY__DISCOVERY")?></a></li>
+				<li><a href="<?=URL::site('discovery');?>"><?=__("global_navigation_footer__COMPANY__DISCOVERY")?></a></li>
 				<li><a href="<?=URL::site('about');?>"><?=__("global_navigation_footer__COMPANY__ABOUT_US")?></a></li>
 				<li><a href="<?=URL::site('career');?>""><?=__("global_navigation_footer__COMPANY__CAREER")?></a></li>
 			</ul>
