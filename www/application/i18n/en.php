@@ -150,7 +150,7 @@ return array_merge(
         'guide__brand_right_INTRODUCE_3' => 'DIGITAL ORDERS',
         'guide__brand_right_INTRODUCE_DESC_3' => 'Easy-to-click ordering system for new and repeated orders. Linesheets are set up automatically from orders and downloads are available',
 
-        'guide__buyer_left_INTRODUCE' => 'SHOWCASE TO SELECTED BRANDS',
+        'guide__buyer_left_INTRODUCE' => 'Do you have your own store? Whether you choose to sell online or in store, sign up as a buyer on X SHOWROOM and view the collections that our brands have available. Sign up is FREE, and there are no subscription fees to pay. Product catalogues and our online showrooms are available 24/7. Simply view the collections and submit your order directly to the brand and they will be in touch to process your order. Our team in Shanghai are always at hand to assist in the process and with communication.',
         'guide__buyer_right_INTRODUCE_1' => '24/7 SOURCING OF BRANDS',
         'guide__buyer_right_INTRODUCE_DESC_1' => 'Virtual showrooms with our selected brands. Discover new brands and preview collections before buying',
         'guide__buyer_right_INTRODUCE_2' => 'ORDER HISTORY',
