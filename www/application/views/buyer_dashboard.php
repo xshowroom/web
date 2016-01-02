@@ -58,7 +58,7 @@
                 <div class="col-xs-2">
                     <a target="_self" href="<?= URL::site('brands/'.$brand['brand_url'])?>" class="brand-item image-link">
                         <img src="<?= URL::site($brand['brand_image']);?>" class="brand-item-image">
-                        <div class="brand-name"><?= $brand['name']?></div>
+                        <div class="brand-name"><?= $brand['brand_name']?></div>
                     </a>
                 </div>
                 <?php endforeach;?>
