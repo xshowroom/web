@@ -19,7 +19,7 @@
 		<div class="container">
 			<h2 class="text-center"><?=__('press__HEAD');?></h2>
 			<div class="row">
-				<div class="col-md-3">
+				<div class="col-xs-3">
 					<div class="press-item">
 						<img class="press-img img-responsive" src="/static/app/images/press-1.png">
 						<div class="press-body">
@@ -29,7 +29,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-3">
+				<div class="col-xs-3">
 					<div class="press-item">
 						<img class="press-img img-responsive" src="/static/app/images/press-2.png">
 						<div class="press-body">
@@ -39,7 +39,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-3">
+				<div class="col-xs-3">
 					<div class="press-item">
 						<img class="press-img img-responsive" src="/static/app/images/press-3.png">
 						<div class="press-body">
@@ -49,7 +49,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-3">
+				<div class="col-xs-3">
 					<div class="press-item">
 						<img class="press-img img-responsive" src="/static/app/images/press-4.png">
 						<div class="press-body">
