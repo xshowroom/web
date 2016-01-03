@@ -844,9 +844,10 @@ return array_merge(
 
         'career__SUB_TITLE' => 'Make Work Matter',
         'career__CONTENT_01' =>
-            'We\'re a rapidly expanding organisation with plenty of room for brilliant, 
-			like-minded people. We’re all about helping thousands of businesses
-			around the world grow by putting the wholesale buying process online.',
+            'We\'re a rapidly expanding organisation with plenty of room
+            for brilliant, like-minded people.
+			 We’re all about helping thousands of businesses around the world
+			 grow by putting the wholesale buying process online.',
         'career__CONTENT_02' =>
             'We offer a truly inspiring workplace for new ideas, new expressions and
 			personal development. If you’d like to work as part of a growing team
@@ -862,5 +863,7 @@ return array_merge(
         'career__BENIFITS_03_DESC' => 'Our team works closely together and are committed to providing help whenever a problem arises.',
         'career__BENIFITS_04' => 'HIGH PROFILE EVENT ACCESS',
         'career__BENIFITS_04_DESC' => 'Access and exposure to fashion events.',
+
+        'career__OPPORTUNITITY_TITLE' => 'CURRENT OPPORTUNITIES'
     )
 );

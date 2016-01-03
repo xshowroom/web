@@ -774,9 +774,16 @@ return array_merge(
     array(
         'about__TITLE' => '关于XSHOWROOM买手圈',
         'about__CONTENT' => "
-            XSHOWROOM是中国时尚行业中第一个提供专业买手服务的线上平台。通过创新的平台及领先的科技，我们将大大提升采购效率、节约采购成本，从而全面升级时尚买手行业采购体系，引领行业发展。
+            XSHOWROOM是中国时尚行业中第一个提供专业买手服务的线上平台。
+            通过创新的平台及领先的科技，
+            我们将大大提升采购效率、节约采购成本，
+            从而全面升级时尚买手行业采购体系，引领行业发展。
 
-            我们创造这样一个平台的目的是连接品牌与零售商，将整个采购流程移植线上，使品牌与零售商双方均能够实现效率最大化，并通过精准的数据分析进行多维度优化。
+            我们创造这样一个平台的目的是连接品牌与零售商，
+            将整个采购流程移植线上，
+            使品牌与零售商双方均能够实现效率最大化，
+            并通过精准的数据分析进行多维度优化。
+
 
             XSHOWROOM立足上海和伦敦，连接全球买手圈。
         ",
@@ -833,27 +840,30 @@ return array_merge(
     * career.php
     */
     array(
-        'career__TITLE' => 'JOIN OUR TEAM',
+        'career__TITLE' => '加入我们',
 
-        'career__SUB_TITLE' => 'Make Work Matter',
+        'career__SUB_TITLE' => '让你的职场之路更有价值',
         'career__CONTENT_01' =>
-            'We\'re a rapidly expanding organisation with plenty of room for brilliant, 
-			like-minded people. We’re all about helping thousands of businesses
-			around the world grow by putting the wholesale buying process online.',
+            '我们的团队持续在扩大，
+            将成为最精英最志同道合的伙伴提供无数绝佳的职业机会。
+            我们将通过最专业的买手服务线上平台，
+            帮助千万个商户实现快速商业增长。',
         'career__CONTENT_02' =>
-            'We offer a truly inspiring workplace for new ideas, new expressions and
-			personal development. If you’d like to work as part of a growing team
-			focused on pushing boundaries, send us a copy of your C.V and
-			covering letter to:',
+            '我们提供一个鼓舞人心的工作环境，
+            我们欢迎任何创新的想法，我们帮助每个员工实现个人职业成长。
+            如果你想成为这个日渐壮大的团队的一员，
+            请将您的简历与求职信发送到：',
 
-        'career__BENIFITS_TITLE' => 'BENEFITS OF WORKING WITH XSHOWROOM',
-        'career__BENIFITS_01' => 'CREATIVE ENVIRONMENT',
-        'career__BENIFITS_01_DESC' => 'We empower our teams to find creative solutions to difficult problems.',
-        'career__BENIFITS_02' => 'CENTRAL LOCATION',
-        'career__BENIFITS_02_DESC' => 'Great office in a central Shanghai location.',
-        'career__BENIFITS_03' => 'PASSIONATE PEOPLE',
-        'career__BENIFITS_03_DESC' => 'Our team works closely together and are committed to providing help whenever a problem arises.',
-        'career__BENIFITS_04' => 'HIGH PROFILE EVENT ACCESS',
-        'career__BENIFITS_04_DESC' => 'Access and exposure to fashion events.',
+        'career__BENIFITS_TITLE' => '为何加入XSHOWROOM买手圈团队',
+        'career__BENIFITS_01' => '创新的环境',
+        'career__BENIFITS_01_DESC' => '我们的团队一直在不断寻找最创新的问题解决办法',
+        'career__BENIFITS_02' => '绝佳的工作地段',
+        'career__BENIFITS_02_DESC' => '我们选址在上海最繁华的中心地段作为我们的办公室',
+        'career__BENIFITS_03' => '热情的团队',
+        'career__BENIFITS_03_DESC' => '我们的团队紧密团结，致力于提供最佳的服务',
+        'career__BENIFITS_04' => '最高端的时尚活动',
+        'career__BENIFITS_04_DESC' => '我们定期举办及参加最高端最时尚的线下活动',
+
+        'career__OPPORTUNITITY_TITLE' => '职业机会'
     )
 );

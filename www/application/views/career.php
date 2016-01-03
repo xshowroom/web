@@ -68,7 +68,7 @@
 	<section class="row">
 		<div class="container">
 			<div class="row">
-				<h3 class="col-xs-12 text-center">CURRENT OPPORTUNITIES</h3>
+				<h3 class="col-xs-12 text-center"><?=__("career__OPPORTUNITITY_TITLE")?></h3>
 			</div>
 			<div class="row">
 				<ul class="opportunity-list col-xs-10 col-xs-offset-1">
