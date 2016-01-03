@@ -902,5 +902,12 @@ return array_merge(
             - Assist sales manager for business development and buyers' relationship maintenance. Responsible for gathering buyer's information, enhance team's communication and understanding of business partners.
             - Assist sales manager of market information collection and assist the sales team to maintain market balance and protect business partners' interests.
         "
+    ),
+    /**
+     * customer_support.php
+     */
+    array(
+        'customer_banner_TITLE' => 'CUSTOMER SUPPORT',
+        'customer_FAQ' => 'FAQ',
     )
 );
