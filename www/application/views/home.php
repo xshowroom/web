@@ -109,7 +109,7 @@
 	<section class="row">
 		<div class="container home-kpi text-center" ng-cloak>
 			<div class="row">
-				<h1 class="col-xs-12">X SHOWROOM</h1>
+				<h1 class="col-xs-12">XSHOWROOM</h1>
 				<p class="col-xs-12"><?=__("home__XSHOWROOM_DESC")?></p>
 			</div>
 			<div class="row">
