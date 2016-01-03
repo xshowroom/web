@@ -864,6 +864,43 @@ return array_merge(
         'career__BENIFITS_04' => 'HIGH PROFILE EVENT ACCESS',
         'career__BENIFITS_04_DESC' => 'Access and exposure to fashion events.',
 
-        'career__OPPORTUNITITY_TITLE' => 'CURRENT OPPORTUNITIES'
+        'career__OPPORTUNITITY_TITLE' => 'CURRENT OPPORTUNITIES',
+        'career__job_location_SH' => 'Shanghai',
+        'career__job_location_POST' => 'POST',
+        'career__job_type_FULLTIME' => 'FULL TIME',
+
+        'career_jd_01' => "
+            We are looking for highly motivated individual to provide artwork internally to generate all the graphics needed for proposals, communication tools and promotional material.
+
+            Responsibilities
+            - Provide graphic design for companies and customers, edit graphic visual and network information, including print, digital or video content
+            - Provide graphic design for new e-commerce platform,  propose effective recommendations for achieving a good user experience
+            - Provide ideas and suggestions for e-commerce site activities
+            - Artistic creations
+            - Provide required design for our internal, external website to make recommendations and modifications
+            - HTML, CSS, Java knowledge, create, modify, e-marketing mail campaign
+            - Proficient in Adobe family of software
+            - Video production capabilities is plus
+
+            Qualifications and experience
+            - With 5 years experience in graphic design and web design (please send various forms of works for reference)
+            - University degree or equivalent
+            - Proficient in Adobe Design Tools
+            - With HTML, java, CSS coding knowledge
+            - Proficiency in Chinese and English
+            - Able to adapt to the rhythm of urgent work
+            - Good to interact, communicate and actively express thoughts
+            - It can adapt to the complex, professional work environment
+            - Open-minded, good to meet the challenges, good team spirit
+        ",
+        'career_jd_02' => "
+            We are looking for highly motivated individual to join our sales team.
+
+            - Undertake sales tasks to complete the annual sales target.
+            - Responsible for liaising with brands for information (collection order information / regularly updated brand information / sales feedback, etc.)
+            - Responsible for sales contracts and other sales documents and materials management, sorting, filing.
+            - Assist sales manager for business development and buyers' relationship maintenance. Responsible for gathering buyer's information, enhance team's communication and understanding of business partners.
+            - Assist sales manager of market information collection and assist the sales team to maintain market balance and protect business partners' interests.
+        "
     )
 );
