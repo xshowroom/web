@@ -171,28 +171,28 @@
 			</div>
 			<div class="row"> 
 				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link" href="<?=URL::site('brands/THREEFLOOR')?>">
+					<a class="showcase-image image-link" href="<?=URL::site('brands/THREEFLOOR')?>" data-brief="THREEFLOOR">
 						<img src="/static/app/images/home-banner/home-hot-brands-1.jpg"/>
 					</a>
 					<div class="showcase-name">THREE FLOOR</div>
 					<div class="showcase-collection"><?=__("home__SSI5_COLLECTION")?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link" href="<?=URL::site('brands/FABITORIA')?>">
+					<a class="showcase-image image-link" href="<?=URL::site('brands/FABITORIA')?>" data-brief="FABITORIA">
 						<img src="/static/app/images/home-banner/home-hot-brands-2.jpg"/>
 					</a>
 					<div class="showcase-name">FABITORIA</div>
 					<div class="showcase-collection"><?=__("home__SSI5_COLLECTION")?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link" href="<?=URL::site('brands/SUNCOO')?>">
+					<a class="showcase-image image-link" href="<?=URL::site('brands/SUNCOO')?>" data-brief="SUNCOO">
 						<img src="/static/app/images/home-banner/home-hot-brands-3.jpg"/>
 					</a>
 					<div class="showcase-name">SUNCOO</div>
 					<div class="showcase-collection"><?=__("home__SSI5_COLLECTION")?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link" href="<?=URL::site('brands/FOREVERUNIQUE')?>">
+					<a class="showcase-image image-link" href="<?=URL::site('brands/FOREVERUNIQUE')?>" data-brief="FOREVERUNIQUE">
 						<img src="/static/app/images/home-banner/home-hot-brands-4.jpg"/>
 					</a>
 					<div class="showcase-name">FOREVER UNIQUE</div>
@@ -211,28 +211,28 @@
 			</div>
 			<div class="row"> 
 				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link" href="<?=URL::site('about')?>#play-lounge">
+					<a class="showcase-image image-link" href="<?=URL::site('about#play-lounge')?>" data-brief="VIEW DETAIL">
 						<img src="/static/app/images/home-testomonial-1.png"/>
 					</a>
 					<div class="showcase-name">PLAY LOUNGE</div>
 					<div class="showcase-collection">Iris Hu: <?=__('home__people_BUYER');?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link" href="<?=URL::site('about')?>#wendyz">
+					<a class="showcase-image image-link" href="<?=URL::site('about#wendyz')?>" data-brief="VIEW DETAIL">
 						<img src="/static/app/images/home-testomonial-2.png"/>
 					</a>
 					<div class="showcase-name">WENDYZ</div>
 					<div class="showcase-collection">Wendy Weng: <?=__('home__people_DIRECTOR');?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link" href="<?=URL::site('about')?>#ppq">
+					<a class="showcase-image image-link" href="<?=URL::site('about#ppq')?>" data-brief="VIEW DETAIL">
 						<img src="/static/app/images/home-testomonial-3.png"/>
 					</a>
 					<div class="showcase-name">PPQ</div>
 					<div class="showcase-collection">Percy Parker: <?=__('home__people_BRAND_DIRECTOR');?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link" href="<?=URL::site('about')?>#three-floor">
+					<a class="showcase-image image-link" href="<?=URL::site('about#three-floor')?>" data-brief="VIEW DETAIL">
 						<img src="/static/app/images/home-testomonial-4.png"/>
 					</a>
 					<div class="showcase-name">THREE FLOOR</div>
