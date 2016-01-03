@@ -1,25 +1,24 @@
 @CHARSET "UTF-8";
 .career-banner {
-	background-image: url('/static/app/images/career-background.png');
-    background-position: center;
-    background-position-x: center;
+	background-position-x: center;
     background-position-y: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+	background: url('/static/app/images/career-background.jpg') no-repeat center;
+	background-size: cover;
     color: #fff;
 }
 .career-banner .banner-mask{
 	background-color: rgba(0, 0, 0, .4);
 	text-align: center;
-	padding: 50px;
+	padding: 30px;
 }
 .career-banner h2{
 	margin-bottom: 30px;
-	font-size: 30px;
+	font-size: 36px;
+	font-weight: 900;
 }
 .career-banner h3{
 	margin-bottom: 50px;
-	font-size: 20px;
+	font-size: 24px;
 }
 .career-banner p{
 	font-size: 16px;
