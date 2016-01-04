@@ -113,7 +113,8 @@
 .guide-benefit .guide-benefit-container .guide-benefit-item .guide-benefit-item-icon{
 	height: 60px;
     background-repeat: no-repeat;
-    background-position: center 15px;
+    width: 70px;
+    float: left;
 }
 .guide-benefit .guide-benefit-container.guide-benefit-brand .guide-benefit-item .guide-benefit-item-icon{
 	background-image: url('../images/guide-benefit-brand-icon.png');

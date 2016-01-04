@@ -110,63 +110,63 @@
 				<div class="col-xs-12 guide-benefit-container guide-benefit-brand" ng-if="solution == 'brand'">
 					<h3 class="col-xs-12 text-center"><?=__("guide__MORE_BENEFITS_OF_REGISTERING_WITH_US")?></h3>
 					<div class="col-xs-4 guide-benefit-item">
-						<div class="col-xs-3 guide-benefit-item-icon "></div>
+						<div class="guide-benefit-item-icon"></div>
 						<div class="col-xs-9">
 							<h4><?=__("guide__benefits_PREVIEW_PROFILES")?></h4>
 							<p><?=__("guide__benefits_PREVIEW_PROFILES_DESC")?></p>
 						</div>
 					</div>
 					<div class="col-xs-4 guide-benefit-item">
-						<div class="col-xs-3 guide-benefit-item-icon "></div>
+						<div class="guide-benefit-item-icon"></div>
 						<div class="col-xs-9">
 							<h4><?=__("guide__benefits_LANGUAGE_SELECTION")?></h4>
 							<p><?=__("guide__benefits_LANGUAGE_SELECTION_DESC")?></p>
 						</div>
 					</div>
 					<div class="col-xs-4 guide-benefit-item">
-						<div class="col-xs-3 guide-benefit-item-icon "></div>
+						<div class="guide-benefit-item-icon"></div>
 						<div class="col-xs-9">
 							<h4><?=__("guide__benefits_PROMOTION")?></h4>
 							<p><?=__("guide__benefits_PROMOTION_DESC")?></p>
 						</div>
 					</div>
 					<div class="col-xs-4 guide-benefit-item">
-						<div class="col-xs-3 guide-benefit-item-icon "></div>
+						<div class="guide-benefit-item-icon"></div>
 						<div class="col-xs-9">
 							<h4><?=__("guide__benefits_CHOOSE_ACCOUNT_TYPE")?></h4>
 							<p><?=__("guide__benefits_CHOOSE_ACCOUNT_TYPE_DESC")?></p>
 						</div>
 					</div>
 					<div class="col-xs-4 guide-benefit-item">
-						<div class="col-xs-3 guide-benefit-item-icon "></div>
+						<div class="guide-benefit-item-icon"></div>
 						<div class="col-xs-9">
 							<h4><?=__("guide__benefits_DIGITAL_LINE_SHEETSS")?></h4>
 							<p><?=__("guide__benefits_DIGITAL_LINE_SHEETS_DESC")?></p>
 						</div>
 					</div>
 					<div class="col-xs-4 guide-benefit-item">
-						<div class="col-xs-3 guide-benefit-item-icon "></div>
+						<div class="guide-benefit-item-icon"></div>
 						<div class="col-xs-9">
 							<h4><?=__("guide__benefits_MINIMISE_ORDER_ERROR")?></h4>
 							<p><?=__("guide__benefits_MINIMISE_ORDER_ERROR_DESC")?></p>
 						</div>
 					</div>
 					<div class="col-xs-4 guide-benefit-item">
-						<div class="col-xs-3 guide-benefit-item-icon "></div>
+						<div class="guide-benefit-item-icon"></div>
 						<div class="col-xs-9">
 							<h4><?=__("guide__benefits_UNLIMITED_UPLOAD")?></h4>
 							<p><?=__("guide__benefits_UNLIMITED_UPLOAD_DESC")?></p>
 						</div>
 					</div>
 					<div class="col-xs-4 guide-benefit-item">
-						<div class="col-xs-3 guide-benefit-item-icon "></div>
+						<div class="guide-benefit-item-icon"></div>
 						<div class="col-xs-9">
 							<h4><?=__("guide__benefits_24_7_SHOWROOM")?></h4>
 							<p><?=__("guide__benefits_24_7_SHOWROOM_DESC")?></p>
 						</div>
 					</div>
 					<div class="col-xs-4 guide-benefit-item">
-						<div class="col-xs-3 guide-benefit-item-icon "></div>
+						<div class="guide-benefit-item-icon"></div>
 						<div class="col-xs-9">
 							<h4><?=__("guide__benefits_24_7_ACCESS_TO_ORDER_HISTORY")?></h4>
 							<p><?=__("guide__benefits_24_7_ACCESS_TO_ORDER_HISTORY_DESC")?></p>
