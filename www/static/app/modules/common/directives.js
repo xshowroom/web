@@ -1,5 +1,3 @@
-document.write("<script type='text/javascript' src='/static/bower_components/angular-ui-uploader/dist/uploader.min.js'></script>");
-
 angular.module(
     'xShowroom.directives',
     [
@@ -269,15 +267,40 @@ angular.module(
         link: function ($scope, $element, $attrs, $transclude) {
         	$element.on("mouseenter", function(){
         		var imageUrl = $(this).children("img").attr("src");
-        		var imageUrl = $(this).children("img").attr("src");
         		var template = [
-        	    	'<div class="image-link-mask" style="background-image: url(' + imageUrl +');">',
-        	        	'<div>',
-        	            	'<a class="btn btn-type-1" href="' + $attrs.href + '" target="' + ($attrs.target || '_self')  + '"><i class="fa fa-search"></i></a>',
-        	            '</div>',
-        	        '</div>'
-        	    ].join('');
-        		$element.append(template);
+        	    	'<div class="image-link-mask" style="background-image: url(' + imageUrl +');">'
+        	    ];
+        		if ($attrs.hasButton === 'false'){
+        			template = template.concat([
+						'<div>',
+							'<a class="text-link" href="' + $attrs.href + '" target="' + ($attrs.target || '_self')  + '">',
+								'<i class="fa fa-quote-left pull-left"></i>',
+								'<p>' + $attrs.content + '</p>',
+								'<i class="fa fa-quote-right pull-right"></i>',
+								'<div class="clearfix"></div>',
+							'</a>',
+						'</div>'
+        			]);
+        		} else {
+        			if ($attrs.content) {
+        				template = template.concat([
+        				    '<div>',
+        				    	'<a class="text-link" href="' + $attrs.href + '" target="' + ($attrs.target || '_self')  + '">',
+	        				    	'<div class="btn btn-type-1"><i class="fa fa-search"></i></div>',
+									'<div>' + $attrs.content + '</div>',
+        				    	'</a>',
+        				    '</div>'                         
+        				]);
+        			} else {
+        				template = template.concat([
+        				    '<div>',
+        				        '<a class="btn btn-type-1" href="' + $attrs.href + '" target="' + ($attrs.target || '_self')  + '"><i class="fa fa-search"></i></a>',
+        				    '</div>'                         
+        				]);
+        			} 
+        		}
+        		template.push('</div>');
+        		$element.append(template.join(''));
         	});
         	$element.on("mouseleave", function(){
         		$element.find(".image-link-mask").remove();

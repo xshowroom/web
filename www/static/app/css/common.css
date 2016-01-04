@@ -585,7 +585,7 @@ to {-o-transform: translateX(0);}
     text-align: center;
     height: 100%;
 }
-.image-link-mask > div > a{
+.image-link-mask > div  a.btn{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -600,8 +600,28 @@ to {-o-transform: translateX(0);}
     font-size: 16px;
     cursor: pointer;
 }
-.image-link-mask > div > a:hover{
+.image-link-mask > div > a.text-link{
+	position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    min-width: 40px !important;
+    color: #25272c !important;
+    border-color: #25272c !important;
+    cursor: pointer;
+    left: 20px;
+    right: 20px;
+}
+.image-link-mask > div > a.text-link .btn{
+    min-width: 40px !important;
+}
+.image-link-mask > div a:hover{
     border-color: #ca7379 !important; 
+}
+.image-link-mask > div > a > p{
+    clear: both; 
 }
 
 
