@@ -77,7 +77,7 @@ return array_merge(
      */
     array(
         'global_navigation_footer__GUIDE' => '指导',
-        'global_navigation_footer__GUIDE__FOR_DESIGNERS' => '设计师必读',
+        'global_navigation_footer__GUIDE__FOR_BRANDS' => '品牌必读',
         'global_navigation_footer__GUIDE__FOR_BUYERS' => '买手必读',
         'global_navigation_footer__GUIDE__FOR_SHOWROOMS' => 'SHOWROOM必读',
 
@@ -909,5 +909,17 @@ return array_merge(
     array(
         'customer_banner_TITLE' => '客户支持中心',
         'customer_FAQ' => 'FAQ',
+    ),
+    /**
+     * others
+     */
+    array(
+        'other__invite__TITLE' => 'XSHOWROOM买手圈邀请制注册',
+        'other__invite__HINT' => '请输入您的注册邀请码进行注册',
+        'other__invite__btn_BACK' => '返回首页',
+        'other__invite__btn_CONTINUE' => '现在注册',
+        'other__invite__error_INFO' => '邀请码错误',
+        'other__invite__APPLY_01' => '未邀请的用户，请联系',
+        'other__invite__APPLY_02' => '进行注册邀请码申请',
     )
 );

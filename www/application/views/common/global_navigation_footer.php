@@ -3,8 +3,8 @@
 		<div class="col-xs-3">
 			<h3><?=__("global_navigation_footer__GUIDE")?></h3>
 			<ul>
-				<li><a href="#"><?=__("global_navigation_footer__GUIDE__FOR_DESIGNERS")?></a></li>
-				<li><a href="#"><?=__("global_navigation_footer__GUIDE__FOR_BUYERS")?></a></li>
+				<li><a href="<?=URL::site('guide#/brand');?>"><?=__("global_navigation_footer__GUIDE__FOR_BRANDS")?></a></li>
+				<li><a href="<?=URL::site('guide#/buyer');?>"><?=__("global_navigation_footer__GUIDE__FOR_BUYERS")?></a></li>
 				<li><a href="#"><?=__("global_navigation_footer__GUIDE__FOR_SHOWROOMS")?></a></li>
 			</ul>
 		</div>
