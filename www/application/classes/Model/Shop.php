@@ -68,6 +68,7 @@ class Model_Shop
      * @param string $brandList
      * @param string $website
      * @param string $address
+     * @param string $shipAddr
      * @param string $country
      * @param string $zipcode
      * @param string $tel
@@ -75,7 +76,7 @@ class Model_Shop
      * @param string $about
      * @return int
      */
-    public function addShopInfo($userId, $name, $type, $colType, $brandList, $website, $address, $country, $zipcode, $tel, $image, $about)
+    public function addShopInfo($userId, $name, $type, $colType, $brandList, $website, $address, $shipAddr, $country, $zipcode, $tel, $image, $about)
     {
         $result = DB::insert('shop')
                     ->columns(array(
@@ -86,6 +87,7 @@ class Model_Shop
                         'brand_list',
                         'website',
                         'address',
+                        'ship_address',
                         'country',
                         'zip',
                         'telephone',
@@ -102,6 +104,7 @@ class Model_Shop
                         $brandList,
                         $website,
                         $address,
+                        $shipAddr,
                         $country,
                         $zipcode,
                         $tel,
@@ -115,7 +118,7 @@ class Model_Shop
         return $result[0];
     }
 
-    public function updateShopInfo($userId, $shopId, $name, $type, $colType, $brandList, $website, $address, $country, $zipcode, $tel, $image, $about)
+    public function updateShopInfo($userId, $shopId, $name, $type, $colType, $brandList, $website, $address, $shipAddr, $country, $zipcode, $tel, $image, $about)
     {
         $result = DB::update('shop')
                     ->set(array(
@@ -125,6 +128,7 @@ class Model_Shop
                         'brand_list' => $brandList,
                         'website' => $website,
                         'address' => $address,
+                        'ship_address' => $shipAddr,
                         'country' => $country,
                         'zip' => $zipcode,
                         'telephone' => $tel,
