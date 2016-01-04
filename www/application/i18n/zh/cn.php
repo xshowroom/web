@@ -77,7 +77,7 @@ return array_merge(
      */
     array(
         'global_navigation_footer__GUIDE' => '指导',
-        'global_navigation_footer__GUIDE__FOR_DESIGNERS' => '设计师必读',
+        'global_navigation_footer__GUIDE__FOR_BRANDS' => '品牌必读',
         'global_navigation_footer__GUIDE__FOR_BUYERS' => '买手必读',
         'global_navigation_footer__GUIDE__FOR_SHOWROOMS' => 'SHOWROOM必读',
 

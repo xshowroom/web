@@ -77,7 +77,7 @@ return array_merge(
      */
     array(
         'global_navigation_footer__GUIDE' => 'GUIDE',
-        'global_navigation_footer__GUIDE__FOR_DESIGNERS' => 'FOR DESIGNERS',
+        'global_navigation_footer__GUIDE__FOR_BRANDS' => 'BRANDS',
         'global_navigation_footer__GUIDE__FOR_BUYERS' => 'BUYERS',
         'global_navigation_footer__GUIDE__FOR_SHOWROOMS' => 'FOR SHOWROOMS',
 
