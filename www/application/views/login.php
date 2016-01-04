@@ -2,7 +2,7 @@
 <html ng-app="xShowroom.login">
 <head>
 	<meta charset="UTF-8" >
-	<title>XShowroom</title>
+	<title>XSHOWROOM</title>
 	<?php echo View::factory('common/global_libraries'); ?>
 	<link rel="stylesheet" type="text/css" href="/static/app/css/login.css" />
 	<script type="text/javascript" src="/static/app/modules/login.js"></script>

@@ -2,7 +2,7 @@
 <html ng-app="xShowroom.admin">
 <head>
 	<meta charset="UTF-8" >
-	<title>XShowroom</title>
+	<title>XSHOWROOM</title>
 	<?php echo View::factory('common/global_libraries'); ?>
 	<link rel="stylesheet" type="text/css" href="/static/app/css/admin.css" />
 	<link rel="stylesheet" type="text/css" href="/static/app/css/profile.css" />

@@ -2,7 +2,7 @@
 <html  ng-app="xShowroom.product.create" ng-init="collectionId = <?=$collectionId?>;">
 <head>
     <meta charset="UTF-8" >
-    <title>XShowroom</title>
+    <title>XSHOWROOM</title>
     <?php echo View::factory('common/global_libraries'); ?>
     <link rel="stylesheet" type="text/css" href="/static/app/css/product_create.css" />
     <script type="text/javascript" src="/static/bower_components/ng-textcomplete/ng-textcomplete.min.js"></script>

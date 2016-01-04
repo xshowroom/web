@@ -2,7 +2,7 @@
 <html  ng-app="xShowroom.brand.dashboard">
 <head>
     <meta charset="UTF-8" >
-    <title>XShowroom</title>
+    <title>XSHOWROOM</title>
     <?php echo View::factory('common/global_libraries'); ?>
     <link rel="stylesheet" type="text/css" href="/static/app/css/brand_dashboard.css" />
     <script type="text/javascript" src="/static/app/modules/brand_dashboard.js"></script>
@@ -111,7 +111,7 @@
             <?php else: ?>
             <div class="collection-list-content row">
                 <?php foreach($collectionList as $collection):?>
-                <div class="col-xs-3">
+                <div class="col-xs-2">
                     <a target="_self" href="<?=URL::site('collection/'.$collection['id']);?>" class="collection-item image-link">
                         <img src="<?=URL::site($collection['cover_image_medium']);?>" class="collection-item-image">
                         <div class="collection-name"><?= $collection['name']?></div>

@@ -2,7 +2,7 @@
 <html  ng-app="xShowroom.order.list">
 <head>
 	<meta charset="UTF-8" >
-	<title>XShowroom</title>
+	<title>XSHOWROOM</title>
 	<?php echo View::factory('common/global_libraries'); ?>
 	<link rel="stylesheet" type="text/css" href="/static/app/css/order_list.css" />
 	<script type="text/javascript" src="/static/app/modules/order_list.js"></script>

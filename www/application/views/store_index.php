@@ -2,7 +2,7 @@
 <html  ng-app="xShowroom.store.index" ng-init="storeId=<?=$storeId?>;">
 <head>
     <meta charset="UTF-8" >
-    <title>XShowroom</title>
+    <title>XSHOWROOM</title>
     <?php echo View::factory('common/global_libraries'); ?>
    	<link rel="stylesheet" type="text/css" href="/static/app/css/store_create.css" />
     <link rel="stylesheet" type="text/css" href="/static/app/css/store_index.css" />

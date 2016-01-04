@@ -23,8 +23,8 @@ return array_merge(
      * Inbox Message
      */
     array(
-        'AUTO_MSG_WELCOME_BRAND' => "欢迎来到XShowroom! 让我们一起开始我们的商业之旅! 您在使用过程中有任何问题，可以通过邮件告诉我们 info@projectcrossover.com",
-        'AUTO_MSG_WELCOME_BUYER' => "欢迎来到XShowroom! 让我们一起开始我们的商业之旅! 您在使用过程中有任何问题，可以通过邮件告诉我们 info@projectcrossover.com",
+        'AUTO_MSG_WELCOME_BRAND' => "欢迎来到XSHOWROOM! 让我们一起开始我们的商业之旅! 您在使用过程中有任何问题，可以通过邮件告诉我们 info@projectcrossover.com",
+        'AUTO_MSG_WELCOME_BUYER' => "欢迎来到XSHOWROOM! 让我们一起开始我们的商业之旅! 您在使用过程中有任何问题，可以通过邮件告诉我们 info@projectcrossover.com",
         'AUTO_MSG_ORDER_STATUS_CHANGE' => '您的订单状态发生了变化',
     ),
     /**
@@ -123,9 +123,9 @@ return array_merge(
 
         'home__HOT_BRANDS' => '热门品牌',
         'home__BRAND_PROFILES' => '品牌介绍',
-        'home__SSI5_COLLECTION' => '2015春夏系列',
+        'home__SSI5_COLLECTION' => '2016春夏系列',
 
-        'home__TESTIMONIALS' => 'XShowroom人物',
+        'home__TESTIMONIALS' => 'XSHOWROOM人物',
         'home__FEATURED' => '圈内点评',
         'home__people_BUYER' => '时尚买手',
         'home__people_DIRECTOR' => '总监',
@@ -137,7 +137,7 @@ return array_merge(
     array(
         'guide__SOLUTIONS_FOR_BRANDS' => '时尚品牌 - 解决方案',
         'guide__SOLUTIONS_FOR_RETAILERS' => '时尚买手 - 解决方案',
-        'guide__X_SHOWROOM_FASHION_ACCESS' => 'X SHOWROOM 时尚零距离',
+        'guide__X_SHOWROOM_FASHION_ACCESS' => 'XSHOWROOM买手圈 时尚零距离',
         'guide__SOLUTION_BRAND' => '品牌',
         'guide__SOLUTION_RETAILER' => '时尚买手',
         'guide__SUBSCRIPTION' => '现在就加入我们吧',
@@ -177,8 +177,8 @@ return array_merge(
         'guide__benefits_MINIMISE_ORDER_ERROR_DESC' => '我们深知每一张订单对您的重要性。若有任何问题，欢迎随时联系线上客户经理寻求协助',
         'guide__benefits_UNLIMITED_UPLOAD' => '最大化宣传',
         'guide__benefits_UNLIMITED_UPLOAD_DESC' => '我们将通过XSHOWROOM买手圈多元化的活动及平台：比如展会、线上营销活动、订阅电子报及关联社交平台上最大化的宣传您的品牌',
-        'guide__benefits_24_7_SHOWROOM' => '线上线下两大SHOWROOM',
-        'guide__benefits_24_7_SHOWROOM_DESC' => '您可选择入驻线上SHOWROOM，或选择开通高级账户入驻线上线下两大SHOWROOM，您将享受我们线下SHOWROOM专业营销团队为您提供全年服务',
+        'guide__benefits_24_7_SHOWROOM' => '线上线下两大showroom',
+        'guide__benefits_24_7_SHOWROOM_DESC' => '您可选择入驻线上showroom，或选择开通高级账户入驻线上线下两大showroom，您将享受我们线下showroom专业营销团队为您提供全年服务',
         'guide__benefits_24_7_ACCESS_TO_ORDER_HISTORY' => '线下概念店合作',
         'guide__benefits_24_7_ACCESS_TO_ORDER_HISTORY_DESC' => '您将有机会入驻我们线下概念店，通过我们的专业销售团队的协助，在线下概念店空间更好的展示您的品牌及系列',
 
@@ -194,12 +194,12 @@ return array_merge(
         'guide__benefits_ONLINE_ORDER_SYSTEM_DESC' => '您可保存需要调整的订单，待之后进行修改并提交（品牌库存状况将影响订单确认）',
         'guide__benefits_SAVE_FOR_LATER' => '详细数据分析',
         'guide__benefits_SAVE_FOR_LATER_DESC' => '您可申请获取最精确详细的订货相关数据分析',
-        'guide__benefits_KEEP_TRACK' => '套索最新品牌',
+        'guide__benefits_KEEP_TRACK' => '探索最新品牌',
         'guide__benefits_KEEP_TRACK_DESC' => '从我们线上平台巨大品牌库中挖掘探索最适合您的新品牌',
         'guide__benefits_TRAINING' => '免费入圈',
         'guide__benefits_TRAINING_DESC' => '免费入驻XSHOWROOM买手圈成为我们的会员，无订阅费用',
         'guide__benefits_DEDICATED_URL' => '预约参观线下空间',
-        'guide__benefits_DEDICATED_URL_DESC' => '您可与我们预约参观线下实体SHOWROOM及概念店，多方位探索新品牌',
+        'guide__benefits_DEDICATED_URL_DESC' => '您可与我们预约参观线下实体showroom及概念店，多方位探索新品牌',
 
         'guide__MEMBERSHIP_INCLUDES' => '成为会员，您还可以享有 . . .',
         'guide__MEMBERSHIP_INCLUDES_R1' => '> 为期一年的免费线上系统使用权',
@@ -218,7 +218,7 @@ return array_merge(
         'login__VALID_CODE' => '验证码',
         'login__btn_LOGIN' => '登录',
         'login__REMEMBER_ME' => '记住我',
-        'login__EMAIL_PATTERN_ERROR' => 'Email格式错误！','login__REQUEST_MEMBERSHIP' => '入驻XShowroom申请',
+        'login__EMAIL_PATTERN_ERROR' => 'Email格式错误！','login__REQUEST_MEMBERSHIP' => '入驻XSHOWROOM申请',
         'login__REQUEST_MEMBERSHIP_DESC' => '买手圈只向注册并审核通过的品牌、代理机构及买手开放。若想入驻买手圈，请完成在线注册：',
         'login__REQUEST_BRAND' => '品牌入驻',
         'login__REQUEST_BUYER' => '买手入圈',
@@ -664,7 +664,7 @@ return array_merge(
 
         'order_create__payment__TITLE' => '支付方式',
         'order_create__payment__OPTIONS__OFFLINE_PAYMENT' => '线下支付',
-        'order_create__payment__OPTIONS__OFFLINE_PAYMENT__DESC' => '汇款到XShowRoom的账户',
+        'order_create__payment__OPTIONS__OFFLINE_PAYMENT__DESC' => '汇款到XXSHOWROOM的账户',
         'order_create__INSTRUCTIONS' => '指导信息',
 
         'order_create__review__TITLE' => '确认订单信息',

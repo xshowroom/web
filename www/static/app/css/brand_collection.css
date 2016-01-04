@@ -55,15 +55,15 @@
 }
 .collection-item .collection-info{
 	margin: 30px 0;
-	min-height: 350px;
+	min-height: 330px;
 	position: relative;
 }
 .collection-item .collection-info > div{
-	min-height: 350px;
+	min-height: 330px;
 }
 .collection-item .collection-info .collection-cover {
 	background-color: #fff;
-    height: 350px;
+    height: 330px;
     display: inline-block;
 	box-shadow:0 0 1px 0 #aaa;
 }
@@ -146,7 +146,7 @@
 .collection-item .product-gallery .product-list-preview .product-image{
     width: 19%;
     display: inline-block;
-    height: 180px;
+    height: 220px;
     float: left;
     margin-right: 1.25%;
     position: relative;
