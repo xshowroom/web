@@ -3,7 +3,7 @@
 	ng-init="collectionId=<?=$collection['id']?>; hasAuth=<?=$collection['user_id'] == $userAttr['user_id'] ? 'true': 'false'?>;">
 <head>
     <meta charset="UTF-8" >
-    <title>XShowroom</title>
+    <title>XSHOWROOM</title>
     <?php echo View::factory('common/global_libraries'); ?>
     <link rel="stylesheet" type="text/css" href="/static/app/css/collection_index.css" />
     <link rel="stylesheet" type="text/css" href="/static/app/css/collection_create.css" />

@@ -2,7 +2,7 @@
 <html  ng-app="xShowroom.brand.dashboard">
 <head>
     <meta charset="UTF-8" >
-    <title>XShowroom</title>
+    <title>XSHOWROOM</title>
     <?php echo View::factory('common/global_libraries'); ?>
     <link rel="stylesheet" type="text/css" href="/static/app/css/brand_dashboard.css" />
     <script type="text/javascript" src="/static/app/modules/brand_dashboard.js"></script>

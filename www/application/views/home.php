@@ -2,7 +2,7 @@
 <html ng-app="xShowroom.home">
 <head>
 	<meta charset="UTF-8" >
-	<title>XShowroom</title>
+	<title>XSHOWROOM</title>
 	<?php echo View::factory('common/global_libraries'); ?>
 	<link rel="stylesheet" type="text/css" href="/static/bower_components/nivoslider/nivo-slider.css" />
 	<link rel="stylesheet" type="text/css" href="/static/bower_components/nivoslider/themes/bar/bar.css" />

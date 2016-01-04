@@ -23,8 +23,8 @@ return array_merge(
      * Inbox Message
      */
     array(
-        'AUTO_MSG_WELCOME_BRAND' => "欢迎来到XShowroom! 让我们一起开始我们的商业之旅! 您在使用过程中有任何问题，可以通过邮件告诉我们 info@projectcrossover.com",
-        'AUTO_MSG_WELCOME_BUYER' => "欢迎来到XShowroom! 让我们一起开始我们的商业之旅! 您在使用过程中有任何问题，可以通过邮件告诉我们 info@projectcrossover.com",
+        'AUTO_MSG_WELCOME_BRAND' => "欢迎来到XSHOWROOM! 让我们一起开始我们的商业之旅! 您在使用过程中有任何问题，可以通过邮件告诉我们 info@projectcrossover.com",
+        'AUTO_MSG_WELCOME_BUYER' => "欢迎来到XSHOWROOM! 让我们一起开始我们的商业之旅! 您在使用过程中有任何问题，可以通过邮件告诉我们 info@projectcrossover.com",
         'AUTO_MSG_ORDER_STATUS_CHANGE' => '您的订单状态发生了变化',
     ),
     /**
@@ -123,9 +123,9 @@ return array_merge(
 
         'home__HOT_BRANDS' => '热门品牌',
         'home__BRAND_PROFILES' => '品牌介绍',
-        'home__SSI5_COLLECTION' => '2015春夏系列',
+        'home__SSI5_COLLECTION' => '2016春夏系列',
 
-        'home__TESTIMONIALS' => 'XShowroom人物',
+        'home__TESTIMONIALS' => 'XSHOWROOM人物',
         'home__FEATURED' => '圈内点评',
         'home__people_BUYER' => '时尚买手',
         'home__people_DIRECTOR' => '总监',
@@ -218,7 +218,7 @@ return array_merge(
         'login__VALID_CODE' => '验证码',
         'login__btn_LOGIN' => '登录',
         'login__REMEMBER_ME' => '记住我',
-        'login__EMAIL_PATTERN_ERROR' => 'Email格式错误！','login__REQUEST_MEMBERSHIP' => '入驻XShowroom申请',
+        'login__EMAIL_PATTERN_ERROR' => 'Email格式错误！','login__REQUEST_MEMBERSHIP' => '入驻XSHOWROOM申请',
         'login__REQUEST_MEMBERSHIP_DESC' => '买手圈只向注册并审核通过的品牌、代理机构及买手开放。若想入驻买手圈，请完成在线注册：',
         'login__REQUEST_BRAND' => '品牌入驻',
         'login__REQUEST_BUYER' => '买手入圈',
@@ -664,7 +664,7 @@ return array_merge(
 
         'order_create__payment__TITLE' => '支付方式',
         'order_create__payment__OPTIONS__OFFLINE_PAYMENT' => '线下支付',
-        'order_create__payment__OPTIONS__OFFLINE_PAYMENT__DESC' => '汇款到XShowRoom的账户',
+        'order_create__payment__OPTIONS__OFFLINE_PAYMENT__DESC' => '汇款到XXSHOWROOM的账户',
         'order_create__INSTRUCTIONS' => '指导信息',
 
         'order_create__review__TITLE' => '确认订单信息',

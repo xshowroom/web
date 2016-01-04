@@ -2,7 +2,7 @@
 <html  ng-app="xShowroom.user.message">
 <head>
 	<meta charset="UTF-8" >
-	<title>XShowroom</title>
+	<title>XSHOWROOM</title>
 	<?php echo View::factory('common/global_libraries'); ?>
 	<link rel="stylesheet" type="text/css" href="/static/app/css/message_list.css" />
 	<script type="text/javascript" src="/static/app/modules/user_message.js"></script>

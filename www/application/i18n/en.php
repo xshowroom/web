@@ -23,8 +23,8 @@ return array_merge(
      * Inbox Message
      */
     array(
-        'AUTO_MSG_WELCOME_BRAND' => "Welcome to XShowroom! Let's start your business now! Please feel free to contact us if any problem. Mail to: info@projectcrossover.com",
-        'AUTO_MSG_WELCOME_BUYER' => "Welcome to XShowroom! Let's start your business now! Please feel free to contact us if any problem. Mail to: info@projectcrossover.com",
+        'AUTO_MSG_WELCOME_BRAND' => "Welcome to XSHOWROOM! Let's start your business now! Please feel free to contact us if any problem. Mail to: info@projectcrossover.com",
+        'AUTO_MSG_WELCOME_BUYER' => "Welcome to XSHOWROOM! Let's start your business now! Please feel free to contact us if any problem. Mail to: info@projectcrossover.com",
         'AUTO_MSG_ORDER_STATUS_CHANGE' => 'YOU ORDER STATUS HAS BEEN CHANGED',
     ),
     /**
@@ -123,7 +123,7 @@ return array_merge(
 
         'home__HOT_BRANDS' => 'HOT BRANDS',
         'home__BRAND_PROFILES' => 'BRAND PROFILES',
-        'home__SSI5_COLLECTION' => 'SSI5 COLLECTION',
+        'home__SSI5_COLLECTION' => 'SSI6 COLLECTION',
 
         'home__TESTIMONIALS' => 'TESTIMONIALS',
         'home__FEATURED' => 'FEATURED',
@@ -664,7 +664,7 @@ return array_merge(
 
         'order_create__payment__TITLE' => 'PAYMENT OPTIONS',
         'order_create__payment__OPTIONS__OFFLINE_PAYMENT' => 'OFFLINE PAYMENT',
-        'order_create__payment__OPTIONS__OFFLINE_PAYMENT__DESC' => 'Remittance to XShowRoom account',
+        'order_create__payment__OPTIONS__OFFLINE_PAYMENT__DESC' => 'Remittance to XSHOWROOM account',
         'order_create__INSTRUCTIONS' => 'SOME INSTRUCTIONS',
 
         'order_create__review__TITLE' => 'REVIEW YOUR ORDER',

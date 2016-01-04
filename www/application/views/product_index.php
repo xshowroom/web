@@ -3,7 +3,7 @@
 	ng-init="hasAuth=<?=$hasAuth ? 'true': 'false'?>;productId = <?=$production['id']?>;">
 <head>
     <meta charset="UTF-8" >
-    <title>XShowroom</title>
+    <title>XSHOWROOM</title>
     <?php echo View::factory('common/global_libraries'); ?>
     <link rel="stylesheet" type="text/css" href="/static/app/css/product_index.css" />
     <script type="text/javascript" src="/static/bower_components/ng-textcomplete/ng-textcomplete.min.js"></script>

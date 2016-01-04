@@ -2,7 +2,7 @@
 <html ng-app="xShowroom.order.index" ng-init="orderId='<?=$order['order_id']?>';">
 <head>
     <meta charset="UTF-8" >
-    <title>XShowroom</title>
+    <title>XSHOWROOM</title>
     <?php echo View::factory('common/global_libraries'); ?>
     <link rel="stylesheet" type="text/css" href="/static/app/css/order_index.css" />
     <script type="text/javascript" src="/static/app/modules/order_index.js"></script>
