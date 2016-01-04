@@ -83,7 +83,7 @@ class Model_Collection
                     ))
                     ->values(array(
                         $userId,
-                        $brandId.
+                        $brandId,
                         $name,
                         $category,
                         $mode,
