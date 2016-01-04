@@ -211,14 +211,15 @@
 			</div>
 			<div class="row"> 
 				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link" href="<?=URL::site('about#play-lounge')?>" data-brief="VIEW DETAIL">
+					<a class="showcase-image image-link" href="<?=URL::site('about#play-lounge')?>"
+						data-has-button="false" data-content="territory of China. By integrating sales strategy with a strong PR department, we have received the crucial support that our label required to initially enter the market and then grow at a fast paced yet sustainable level.">
 						<img src="/static/app/images/home-testomonial-1.png"/>
 					</a>
 					<div class="showcase-name">PLAY LOUNGE</div>
 					<div class="showcase-collection">Iris Hu: <?=__('home__people_BUYER');?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link" href="<?=URL::site('about#wendyz')?>" data-brief="VIEW DETAIL">
+					<a class="showcase-image image-link" href="<?=URL::site('about#wendyz')?>" data-content="territory of China. By integrating sales strategy with a strong PR department, we have received the crucial support that our label required to initially enter the market and then grow at a fast paced yet sustainable level.">
 						<img src="/static/app/images/home-testomonial-2.png"/>
 					</a>
 					<div class="showcase-name">WENDYZ</div>
