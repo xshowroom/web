@@ -909,5 +909,17 @@ return array_merge(
     array(
         'customer_banner_TITLE' => 'CUSTOMER SUPPORT',
         'customer_FAQ' => 'FAQ',
+    ),
+    /**
+     * others
+     */
+    array(
+        'other__invite__TITLE' => 'XSHOWROOM IS INVITATION ONLY',
+        'other__invite__HINT' => 'PLEASE ENTER YOUR INVITATION CODE TO START REGISTRATION',
+        'other__invite__btn_BACK' => 'BACK TO HONE PAGE',
+        'other__invite__btn_CONTINUE' => 'START REGISTRATION',
+        'other__invite__error_INFO' => 'WRONG INVITATION CODE',
+        'other__invite__APPLY_01' => 'PLEASE CONTACT',
+        'other__invite__APPLY_02' => 'TO APPLY FOR INVITATION CODE',
     )
 );
