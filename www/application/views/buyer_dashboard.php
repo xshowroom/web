@@ -22,10 +22,10 @@
                 <div class="col-xs-12">
                     <div class="brand-info">
                         <h3 class="brand-name"><?= $userAttr['display_name'] ?></h3>
-                        <div class="brand-detail">
-                            <span><?=__("buyer_dashboard__INTERESTED");?></span>
-                            <span></span>
-                        </div>
+<!--                        <div class="brand-detail">-->
+<!--                            <span>--><?//=__("buyer_dashboard__INTERESTED");?><!--</span>-->
+<!--                            <span></span>-->
+<!--                        </div>-->
                         <div class="brand-detail">
                             <span><?=__("buyer_dashboard__LAST_VISIT");?></span>
                             <span><?= date('Y-m-d h:i:s', strtotime($user['last_login_time'])) ?></span>
