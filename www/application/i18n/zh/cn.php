@@ -54,7 +54,7 @@ return array_merge(
         'global_navigation_top_user__DASHBOARD' => '全情概览',
         'global_navigation_top_user__COLLECTION' => '系列管理',
         'global_navigation_top_user__ORDER' => '订单管理',
-        'global_navigation_top_user__BRAND' => '商品集市',
+        'global_navigation_top_user__BRAND' => '品牌直达',
         'global_navigation_top_user__LOOKBOOK' => '产品目录',
         'global_navigation_top_user__CART' => '购物车',
         'global_navigation_top_user__MY_BRANDS' => '我的品牌',
@@ -377,7 +377,7 @@ return array_merge(
         'collection_create__COLLECTION_SEASON' => '时尚季',
         'collection_create__COLLECTION_MINIMUM_ORDER' => '最小订单金额',
         'collection_create__COLLECTION_CURRENCY' => '结算货币',
-        'collection_create__COLLECTION_DEADLINE' => '下单截至日期',
+        'collection_create__COLLECTION_DEADLINE' => '下单截止日期',
         'collection_create__COLLECTION_DELIVERY_DATE' => '发货日期',
         'collection_create__COLLECTION_DESCRIPTION' => '详细描述',
         'collection_create__COLLECTION_CREATE' => '创建系列',
@@ -401,7 +401,7 @@ return array_merge(
         'collection_index__COLLECTION_SEASON' => '时尚季',
         'collection_index__COLLECTION_MINIMUM_ORDER' => '最小订单金额',
         'collection_index__COLLECTION_CURRENCY' => '结算货币',
-        'collection_index__COLLECTION_DEADLINE' => '下单截至日期',
+        'collection_index__COLLECTION_DEADLINE' => '下单截止日期',
         'collection_index__COLLECTION_DELIVERY_DATE' => '发货日期',
         'collection_index__COLLECTION_DESCRIPTION' => '详细描述',
 
@@ -467,7 +467,7 @@ return array_merge(
         'product_index__COLLECTION_MODE' => '售卖模式: ',
         'product_index__COLLECTION_SEASON' => '时尚季: ',
         'product_index__COLLECTION_MINIMUM_ORDER' => '最小订单金额: ',
-        'product_index__COLLECTION_DEADLINE' => '下单截至日期: ',
+        'product_index__COLLECTION_DEADLINE' => '下单截止日期: ',
         'product_index__COLLECTION_DELIVERY_DATE' => '发货日期: ',
 
         'product_index__PRODUCT_CATEGORY' => '产品类别',
@@ -675,7 +675,7 @@ return array_merge(
         'order_create__review__PAYMENT_OPTION' => '支付方式',
         'order_create__review__PAYMENT_OPTION__OFFLINE_PAY' => '线下支付',
         'order_create__review__PAYMENT_OPTION__OFFLINE_PAY_DESC' => '请及时将您的付款凭据发送到XSHOWROOM平台已确认您的支付',
-        'order_create__review__DELIVERY' => '运送',
+        'order_create__review__DELIVERY' => '预计发货时间',
         'order_create__review__ORDER_LIST' => '订单列表',
         'order_create__review__ORDER_LIST__PRODUCT' => '产品',
         'order_create__review__ORDER_LIST__NO' => '货号',
@@ -785,7 +785,7 @@ return array_merge(
             并通过精准的数据分析进行多维度优化。
 
 
-            XSHOWROOM立足上海和伦敦，连接全球买手圈。
+            XSHOWROOM立足上海和伦敦，连接全球时尚买手圈。
         ",
 
         'about__FOUNDER' => '创办人',
@@ -807,6 +807,7 @@ return array_merge(
         'about__CONTACT__ADDRESS2_03' => '200050',
         'about__CONTACT__UK' => '英国',
         'about__CONTACT__PEOPLE_01' => '陈容博士',
+        'about__CONTACT__PEOPLE_POSITION_01' => '创始人',
         'about__CONTACT__PEOPLE_02' => '申兰',
         'about__CONTACT__PEOPLE_POSITION_02' => '销售主管',
 

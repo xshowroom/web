@@ -808,6 +808,7 @@ return array_merge(
         'about__CONTACT__ADDRESS2_03' => 'Shanghai, China, 200050',
         'about__CONTACT__UK' => 'UK',
         'about__CONTACT__PEOPLE_01' => 'Dr. Cherie Chen',
+        'about__CONTACT__PEOPLE_POSITION_01' => 'Founder',
         'about__CONTACT__PEOPLE_02' => 'Stephy Shen',
         'about__CONTACT__PEOPLE_POSITION_02' => 'Sales Manager',
 

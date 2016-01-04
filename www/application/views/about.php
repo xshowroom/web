@@ -61,7 +61,7 @@
 					<div><?=__("about__CONTACT__TEL_01");?>:  +86 21 6236 3226<br/><?=__("about__CONTACT__TEL_02");?>:  +86 135 244 09274</div>
 					<div><?=__("about__CONTACT__ADDRESS2_01");?><br/><?=__("about__CONTACT__ADDRESS2_02");?><br/><?=__("about__CONTACT__ADDRESS2_03");?></div>
 					<div><?=__("about__CONTACT__PEOPLE_02");?><br/><?=__("about__CONTACT__PEOPLE_POSITION_02");?></div>
-					<div>stephy@projectcrossover.com</div>
+					<div>stephy@projectcrossover.cn</div>
 				</div>
 			</div>
 		</div>
