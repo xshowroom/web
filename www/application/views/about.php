@@ -53,7 +53,7 @@
 					<div>
 						<p>76 Great Portland Street,<br/><?=__("about__CONTACT__LONDON");?><br/><?=__("about__CONTACT__UK");?><br/>W1W 7NL</p>
 					</div>
-					<div><?=__("about__CONTACT__PEOPLE_01");?><br/>CEO</div>
+					<div><?=__("about__CONTACT__PEOPLE_01");?><br/><?=__("about__CONTACT__PEOPLE_POSITION_01");?></div>
 					<div>info@projectcrossover.com</div>
 				</div>
 				<div class="col-xs-4 col-xs-offset-2 contact-office">
