@@ -7,8 +7,8 @@ angular.module(
 .controller(
 	'RegisterBrandCtrl', 
 	[
-	    '$scope', '$element', '$timeout', '$q', 'User', 'Country',
-	    function($scope, $element, $timeout, $q, User, Country) {
+	    '$scope', '$element', '$timeout', '$modal', '$q', 'User', 'Country',
+	    function($scope, $element, $timeout, $modal, $q, User, Country) {
 			$scope.step = {
 				stepNumber: 1,
 				validation: {

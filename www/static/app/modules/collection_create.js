@@ -15,8 +15,8 @@ angular.module(
 .controller(
     'CollectionCreateCtrl',
     [
-     	'$scope', '$q', '$filter', 'Collection',
-        function ($scope, $q, $filter, Collection) {
+     	'$scope', '$q', '$modal', '$filter', 'Collection',
+        function ($scope, $q, $modal, $filter, Collection) {
      		$scope.collection = {};
      		$scope.checkInfo = {
      			validation: {

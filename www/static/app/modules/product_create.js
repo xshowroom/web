@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'ProductCreateCtrl',
     [
-     	'$scope', '$location', '$window', '$filter', '$element', '$timeout', 'Country', 'Product', 'uiUploader',
-        function ($scope, $location, $window, $filter, $element, $timeout, Country, Product, uiUploader) {
+     	'$scope', '$location', '$window', '$filter', '$modal', '$element', '$timeout', 'Country', 'Product', 'uiUploader',
+        function ($scope, $location, $window, $filter, $modal,  $element, $timeout, Country, Product, uiUploader) {
      		$scope.countries = Country.getAll();
      		$scope.categories = Product.getCategories();
      		$scope.sizeRegions = Product.getSizeRegions();
