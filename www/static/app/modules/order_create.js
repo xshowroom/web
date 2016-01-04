@@ -105,6 +105,10 @@ angular.module(
          			}
      				
      				$scope.orderItems = orderItems;
+     				if ($scope.stores) {
+     					$scope.generateOrderStep += 1;
+     					return;
+     				}
      				Buyer.getAuthedShopList({
      					collectionId: $scope.collectionId
      				}).success(function(res){

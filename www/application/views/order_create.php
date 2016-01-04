@@ -216,8 +216,8 @@
 								<tr ng-repeat="record in orderItems track by $index">
 									<td>{{record.name}}</td>
 									<td>{{record.styleNumber}}</td>
-									<td>{{record.size_code}}</td>
 									<td>{{record.color}}</td>
+									<td>{{record.size_code}}</td>
 									<td>{{record.buy_num | number}}</td>
 								</tr>
 							</tbody>
