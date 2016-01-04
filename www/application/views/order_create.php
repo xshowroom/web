@@ -133,6 +133,7 @@
 								<div><span><?=__("order_create__store_ADDRESS");?></span><span>{{store.address}}</span></div>
 								<div><span><?=__("order_create__store_ZIPCODE");?></span><span>{{store.zip}}</span></div>
 								<div><span><?=__("order_create__store_TELEPHONE");?></span><span>{{store.telephone}}</span></div>
+								<div><span>送货地址:</span><span>{{store.shipAddress}}</span></div>
 							</div>
 						</div>
 						<div class="clearfix"></div>
