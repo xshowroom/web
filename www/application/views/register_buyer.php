@@ -166,6 +166,10 @@
 						<input type="text" class="form-control" id="store-address" name="shopAddress"
 							ng-model="user.shopAddress" placeholder='<?= __("buyer_register__STEP_2__STORE_ADDRESS_PLACEHOLDER");?>'>
 					</div>
+					<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].shopShipAddress}">
+						<input type="text" class="form-control" id="store-address" name="shopShipAddress"
+							ng-model="user.shopShipAddress" placeholder='STORE SHIP ADDRESS*'>
+					</div>
 					<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].shopCountry}">
 						<div class="col-xs-6 buyer-register-form-inline-left">
 							<label for="store-country" ng-class="{'has-content': user.shopCountry && user.shopCountry !=''}">

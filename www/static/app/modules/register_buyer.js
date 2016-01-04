@@ -28,6 +28,7 @@ angular.module(
 				    	'brandList': false,
 				    	'shopWebsite': false,
 				    	'shopAddress': false,
+				    	'shopShipAddress': false,
 				    	'shopCountry': false,
 				    	'shopZipcode': false,
 				    	'shopTel': false,
