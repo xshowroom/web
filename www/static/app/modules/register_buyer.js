@@ -7,8 +7,8 @@ angular.module(
 .controller(
     'RegisterBuyerCtrl', 
     [
-        '$scope', '$element', '$q', 'User', 'Country',
-        function($scope, $element, $q, User, Country) {
+        '$scope', '$element', '$q', '$modal', 'User', 'Country',
+        function($scope, $element, $q, $modal, User, Country) {
 			$scope.step = {
 				stepNumber: 1,
 				validation: {
@@ -147,7 +147,7 @@ angular.module(
 				var register = User.register($scope.user);
 				register.success(function(res){
 					if (typeof(res) != 'object' || res.status) {
-        				$scope.errorMsgs.push(['register error', res,msg]);
+						$modal({title: 'Error Info', content: res.msg, show: true});
         			}else{
         				window.open('/buyer/dashboard', '_self');
         			}

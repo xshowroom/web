@@ -7,8 +7,8 @@ angular.module(
 .controller(
 	'RegisterBrandCtrl', 
 	[
-	    '$scope', '$element', '$timeout', '$q', 'User', 'Country',
-	    function($scope, $element, $timeout, $q, User, Country) {
+	    '$scope', '$element', '$timeout', '$modal', '$q', 'User', 'Country',
+	    function($scope, $element, $timeout, $modal, $q, User, Country) {
 			$scope.step = {
 				stepNumber: 1,
 				validation: {
@@ -121,7 +121,7 @@ angular.module(
 				var register = User.register($scope.user);
 				register.success(function(res){
 					if (typeof(res) != 'object' || res.status) {
-        				$scope.errorMsgs.push(['register error', res.msg]);
+						$modal({title: 'Error Info', content: res.msg, show: true});
         			}else{
         				window.open('/brand/dashboard', '_self');
         			}

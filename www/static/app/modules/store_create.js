@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'StoreCreateCtrl',
     [
-     	'$scope', '$window', '$filter', 'Country', 'Store',
-        function ($scope, $window, $filter, Country, Store) {
+     	'$scope', '$window', '$filter', '$modal, 'Country', 'Store',
+        function ($scope, $window, $filter, $modal, Country, Store) {
      		$scope.store = {
      			shopImage: []
          	};
@@ -82,7 +82,7 @@ angular.module(
      	     			$scope.store
      	     		).success(function(res){
      	     			if (res.status){
-     	     				$scope.errorMsgs.push(['create error', res.msg]);
+     	     				$modal({title: 'Error Info', content: res.msg, show: true});
      	     			}else{
      	     				$window.open('/buyer/store', '_self');
      	     			}
