@@ -153,12 +153,49 @@ class Model_Order
         return $result;
     }
 
+    // 废弃
     public function updateShipInfo($orderId, $shipNo, $shipAmount)
     {
         $result = DB::update('order')
                     ->set(array(
                         'shipping_amount' => $shipAmount,
                         'shipping_no' => $shipNo,
+                    ))
+                    ->where('order_id', '=', $orderId)
+                    ->execute();
+        
+        return $result;
+    }
+
+    public function updateShipNo($orderId, $shipNo)
+    {
+        $result = DB::update('order')
+                    ->set(array(
+                        'shipping_no' => $shipNo,
+                    ))
+                    ->where('order_id', '=', $orderId)
+                    ->execute();
+        
+        return $result;
+    }
+
+    public function updateShipAmount($orderId, $shipAmount)
+    {
+        $result = DB::update('order')
+                    ->set(array(
+                        'shipping_amount' => $shipAmount,
+                    ))
+                    ->where('order_id', '=', $orderId)
+                    ->execute();
+        
+        return $result;
+    }
+
+    public function updateComments($orderId, $comments)
+    {
+        $result = DB::update('order')
+                    ->set(array(
+                        'comments' => $comments,
                     ))
                     ->where('order_id', '=', $orderId)
                     ->execute();

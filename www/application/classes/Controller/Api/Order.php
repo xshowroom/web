@@ -145,6 +145,7 @@ class Controller_Api_Order extends Controller_BaseReqLogin
         ));
     }
 
+    // 废弃，拆成updateShipNo和updateShipAmount
     public function action_updateShipInfo()
     {
         $userId = $this->opUser['id'];
@@ -153,8 +154,55 @@ class Controller_Api_Order extends Controller_BaseReqLogin
         $shipNo = Request::current()->getParam('shipNo');
         $shipAmount = Request::current()->getParam('shipAmount');
 
-
         $res = $this->orderService->updateShipInfo($userId, $orderId, $type, $shipNo, $shipAmount);       
+        
+        echo json_encode(array(
+            'status' => STATUS_SUCCESS,
+            'msg'   => '',
+            'data'  => $res,
+        ));
+    }
+
+    public function action_updateShipNo()
+    {
+        $userId = $this->opUser['id'];
+        $type = $this->opUser['role_type'];
+        $orderId = Request::current()->getParam('orderId');
+        $shipNo = Request::current()->getParam('shipNo');
+
+        $res = $this->orderService->updateShipNo($userId, $orderId, $type, $shipNo);       
+        
+        echo json_encode(array(
+            'status' => STATUS_SUCCESS,
+            'msg'   => '',
+            'data'  => $res,
+        ));
+    }
+
+    public function action_updateShipAmount()
+    {
+        $userId = $this->opUser['id'];
+        $type = $this->opUser['role_type'];
+        $orderId = Request::current()->getParam('orderId');
+        $shipAmount = Request::current()->getParam('shipAmount');
+
+        $res = $this->orderService->updateShipAmount($userId, $orderId, $type, $shipAmount);       
+        
+        echo json_encode(array(
+            'status' => STATUS_SUCCESS,
+            'msg'   => '',
+            'data'  => $res,
+        ));
+    }
+
+    public function action_updateComments()
+    {
+        $userId = $this->opUser['id'];
+        $type = $this->opUser['role_type'];
+        $orderId = Request::current()->getParam('orderId');
+        $comments = Request::current()->getParam('comments');
+
+        $res = $this->orderService->updateComments($userId, $orderId, $type, $comments);       
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
