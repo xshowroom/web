@@ -112,7 +112,7 @@
 								</select>
                             </div>
                         </div>
-                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.material}">
+                        <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.material}">
                             <label for="material" class="col-xs-2 control-label"><?=__("product_create__PRODUCT_MATERIAL");?></label>
                             <div class="col-xs-6">
                             	<select class="form-control" id="material" ng-model="product.material">
