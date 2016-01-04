@@ -12,7 +12,7 @@ angular.module(
     ]
 )
 .filter('translate', ['$cookies', 'global', function($cookies, global){
-	var langInCookie = $cookies.get('language') || 'en';
+	var langInCookie = $cookies.get('language') || 'zh-CN';
 	return function(key, language){
 		var targetLanguage = language || langInCookie;
 		targetLanguage = targetLanguage in global ? targetLanguage : 'en';
