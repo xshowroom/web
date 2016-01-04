@@ -210,7 +210,7 @@ angular.module(
      	     			$scope.product
      	     		).success(function(res){
      	     			if (typeof(res) != 'object' || res.status) {
-     	     				$scope.errorMsgs.push(['create error', res.msg]);
+     	     				$modal({title: 'Error Info', content: res.msg, show: true});
      	     			}else{
      	     				$window.open('/collection/'+$scope.collectionId, '_self');
      	     			}

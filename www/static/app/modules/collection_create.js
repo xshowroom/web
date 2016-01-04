@@ -91,7 +91,7 @@ angular.module(
 	     	     			$scope.collection
 	     	     		).success(function(res){
 	     	     			if (res.status) {
-	     	     				$scope.errorMsgs.push(['create error', res.msg]);
+	     	     				$modal({title: 'Error Info', content: res.msg, show: true});
 	     	     			}else{
 	     	     				window.open('/collection/'+res.data, '_self');
 	     	     			}
