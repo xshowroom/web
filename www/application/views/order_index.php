@@ -68,27 +68,27 @@
 					</div>
 						    
 					<?php if ($order['order_status'] == Model_Order::ORDER_STATUS_PENDING && $user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
-							<div class="order-status-actions">
-								<div class="row">
-									<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
-									<div class="col-xs-4" ng-if="!order.invoice_url">
+						<div class="order-status-actions">
+							<div class="row">
+								<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
+								<div class="col-xs-4" ng-if="!order.invoice_url">
+									<input type="file" class="form-control" id="invoice-file" placeholder="ORDER INVOICE*">
+								</div>
+								<div class="col-xs-4" ng-if="order.invoice_url">
+									<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
+									<label class="upload-label">
+										<span><?=__("order_index__actions__INVOICE_RE_SUMBMIT");?></span>
 										<input type="file" class="form-control" id="invoice-file" placeholder="ORDER INVOICE*">
-									</div>
-									<div class="col-xs-4" ng-if="order.invoice_url">
-										<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
-										<label class="upload-label">
-											<span><?=__("order_index__actions__INVOICE_RE_SUMBMIT");?></span>
-											<input type="file" class="form-control" id="invoice-file" placeholder="ORDER INVOICE*">
-										</label>
-									</div>
-									<div class="col-xs-6 text-right">
-										 <button class="btn btn-type-2" ng-click="updateInvoice();"><?=__("order_index__actions__btn_INVOICE_SUBMIT");?></button>
-										 <!-- <button class="btn btn-type-1">取消订单</button> -->
-									</div>
+									</label>
+								</div>
+								<div class="col-xs-6 text-right">
+									 <button class="btn btn-type-2" ng-click="updateInvoice();"><?=__("order_index__actions__btn_INVOICE_SUBMIT");?></button>
+									 <!-- <button class="btn btn-type-1">取消订单</button> -->
 								</div>
 							</div>
+						</div>
 					<?php elseif ($order['order_status'] == Model_Order::ORDER_STATUS_PENDING && $user["role_type"] == Model_User::TYPE_USER_ADMIN): ?>
-							<div class="order-status-actions">
+						<div class="order-status-actions">
 							<div class="row">
 								<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
 								<div class="col-xs-4">
@@ -100,7 +100,7 @@
 							</div>
 						</div>
 					<?php elseif ($order['order_status'] == Model_Order::ORDER_STATUS_CONFIRMED && $user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
-							<div class="order-status-actions">
+						<div class="order-status-actions">
 							<div class="row">
 								<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
 								<div class="col-xs-4">
@@ -113,7 +113,7 @@
 						</div>
 					<?php elseif (($order['order_status'] == Model_Order::ORDER_STATUS_DEPOSITED || $order['order_status'] == Model_Order::ORDER_STATUS_FULLPAYMENT) 
 							&& $user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
-							<div class="order-status-actions">
+						<div class="order-status-actions">
 							<div class="row">
 								<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
 								<div class="col-xs-4">
@@ -125,89 +125,93 @@
 							</div>
 						</div>
 					<?php elseif ($order['order_status'] == Model_Order::ORDER_STATUS_PREPARING && $user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
-							<div class="order-status-actions">
-								<div class="row">
-									<label class="col-xs-2" for="shippingNo"><?=__("order_index__actions__SHIP_NO");?></label>
-									<div class="col-xs-4">
-										<input type="text" class="form-control" id="shippingNo" ng-model="order.shipNo">
-									</div>
-									 <label class="col-xs-2" for="shippingFee"><?=__("order_index__actions__SHIP_FEE");?> ( <?=__("order_index__actions__SHIP_FEE_UNIT");?> - {{order.currency}})</label>
-									<div class="col-xs-4">
-										<input type="text" class="form-control" id="shippingFee" ng-model="order.shipAmount">
-									</div>
-									<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
-									<div class="col-xs-4">
-										<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
-									</div>
-									<div class="col-xs-6 text-right">
-										 <button class="btn btn-type-2" ng-click="updateShipInfo();"><?=__("order_index__actions__btn_BALANCE_PAY");?></button>
-									</div>
+						<div class="order-status-actions">
+							<div class="row">
+								<label class="col-xs-2" for="shippingFee"><?=__("order_index__actions__SHIP_FEE");?> ( <?=__("order_index__actions__SHIP_FEE_UNIT");?> - {{order.currency}})</label>
+								<div class="col-xs-4">
+									<input type="text" class="form-control" id="shippingFee" ng-model="order.shipAmount">
+								</div>
+								<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
+								<div class="col-xs-4">
+									<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
+								</div>
+								<label class="col-xs-2" for="comment">备注信息</label>
+								<div class="col-xs-4">
+									<input type="text" class="form-control" id="comment" ng-model="order.comment">
+								</div>
+								<div class="col-xs-6 text-right">
+									 <button class="btn btn-type-2" ng-click="updateShipInfo();"><?=__("order_index__actions__btn_BALANCE_PAY");?></button>
 								</div>
 							</div>
+						</div>
 					<?php elseif ($order['order_status'] == Model_Order::ORDER_STATUS_PAYBALANCE && $user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
-							<div class="order-status-actions">
-								<div class="row">
-									<label class="col-xs-2"><?=__("order_index__actions__SHIP_NO");?></label>
-								    <div class="col-xs-4">
-								    	<span>{{order.shipping_no}}</span>
-								    </div>
-								    <label class="col-xs-2"><?=__("order_index__actions__SHIP_FEE");?></label>
-								    <div class="col-xs-4">
-								    	<span>{{order.currency}}{{order.shipping_amount | number}}</span>
-								    </div>
-								    <label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
-								    <div class="col-xs-4">
-								    	<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
-								    </div>
-								    <div class="col-xs-6 text-right">
-									     <button class="btn btn-type-2" ng-click="updateStatus();"><?=__("order_index__actions__btn_SHIPPED");?></button>
-									</div>
+						<div class="order-status-actions">
+							<div class="row">
+							    <label class="col-xs-2"><?=__("order_index__actions__SHIP_FEE");?></label>
+							    <div class="col-xs-4">
+							    	<span>{{order.currency}}{{order.shipping_amount | number}}</span>
+							    </div>
+							    <label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
+							    <div class="col-xs-4">
+							    	<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
+							    </div>
+							    <label class="col-xs-2">备注信息</label>
+							    <div class="col-xs-4">
+							    	<span>{{order.comment}}</span>
+							    </div>
+							    <div class="col-xs-6 text-right">
+								     <button class="btn btn-type-2" ng-click="updateStatus();"><?=__("order_index__actions__btn_SHIPPED");?></button>
 								</div>
 							</div>
+						</div>
 					<?php elseif ($order['order_status'] == Model_Order::ORDER_STATUS_SHIPPED && $user["role_type"] == Model_User::TYPE_USER_BUYER): ?>
-							<div class="order-status-actions">
-								<div class="row">
-									<label class="col-xs-2"><?=__("order_index__actions__SHIP_NO");?></label>
-									<div class="col-xs-4">
-										<span>{{order.shipping_no}}</span>
-									</div>
-									<label class="col-xs-2"><?=__("order_index__actions__SHIP_FEE");?></label>
-									<div class="col-xs-4">
-										<span>{{order.currency}}{{order.shipping_amount | number}}</span>
-									</div>
-									<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
-									<div class="col-xs-4">
-										<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
-									</div>
-									<div class="col-xs-6 text-right">
-										 <button class="btn btn-type-2"  ng-click="updateStatus();"><?=__("order_index__actions__btn_COMPLETE");?></button>
-									</div>
+						<div class="order-status-actions">
+							<div class="row">
+								 <label class="col-xs-2" for="shippingNo"><?=__("order_index__actions__SHIP_NO");?></label>
+								<div class="col-xs-4">
+									<input type="text" class="form-control" id="shippingNo" ng-model="order.shipNo">
+								</div>
+								<label class="col-xs-2"><?=__("order_index__actions__SHIP_FEE");?></label>
+								<div class="col-xs-4">
+									<span>{{order.currency}}{{order.shipping_amount | number}}</span>
+								</div>
+								<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
+								<div class="col-xs-4">
+									<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
+								</div>
+								<label class="col-xs-2">备注信息</label>
+							    <div class="col-xs-4">
+							    	<span>{{order.comment}}</span>
+							    </div>
+								<div class="col-xs-6 text-right">
+									 <button class="btn btn-type-2"  ng-click="updateStatus();"><?=__("order_index__actions__btn_COMPLETE");?></button>
 								</div>
 							</div>
+						</div>
 					<?php elseif (($order['order_status'] == Model_Order::ORDER_STATUS_CONFIRMED  || $order['order_status'] == Model_Order::ORDER_STATUS_PAYBALANCE) 
 						&& $user["role_type"] == Model_User::TYPE_USER_BUYER): ?>
-							<div class="order-status-actions">
-								<div class="row">
-									<?php if (!empty($adminAccount)):?>
-									<div class="col-xs-12">
-										<div class="admin-account-info">
-											<h4><?=__("order_index__payment_TITLE");?></h4>
-											<div><span><?=__("order_index__payment_REMITTANCE");?></span><span><?=PAYMENT_OFFLINE_REMITTANCE_TO?></span></div>
-											<div><span><?=__("order_index__payment_BANK_NAME");?></span><span><?=PAYMENT_OFFLINE_BANK_NAME?></span></span></div>
-											<div><span><?=__("order_index__payment_BANK_ACCOUTN");?></span><span><?=PAYMENT_OFFLINE_BANK_ACCOUNT?></span></div>
-											<div><span><?=__("order_index__payment_BANK_PAYEE");?></span><span><?=PAYMENT_OFFLINE_BANK_PAYEE?></span></div>
-											<div class="payment-tip">
-												<span class="glyphicon glyphicon-info-sign"></span><?=__("order_index__payment_DESC_01")." ".ADMIN_EMAIL." ".__("order_index__payment_DESC_02");?>
-											</div>
+						<div class="order-status-actions">
+							<div class="row">
+								<?php if (!empty($adminAccount)):?>
+								<div class="col-xs-12">
+									<div class="admin-account-info">
+										<h4><?=__("order_index__payment_TITLE");?></h4>
+										<div><span><?=__("order_index__payment_REMITTANCE");?></span><span><?=PAYMENT_OFFLINE_REMITTANCE_TO?></span></div>
+										<div><span><?=__("order_index__payment_BANK_NAME");?></span><span><?=PAYMENT_OFFLINE_BANK_NAME?></span></span></div>
+										<div><span><?=__("order_index__payment_BANK_ACCOUTN");?></span><span><?=PAYMENT_OFFLINE_BANK_ACCOUNT?></span></div>
+										<div><span><?=__("order_index__payment_BANK_PAYEE");?></span><span><?=PAYMENT_OFFLINE_BANK_PAYEE?></span></div>
+										<div class="payment-tip">
+											<span class="glyphicon glyphicon-info-sign"></span><?=__("order_index__payment_DESC_01")." ".ADMIN_EMAIL." ".__("order_index__payment_DESC_02");?>
 										</div>
 									</div>
-									<?php endif;?>
-									<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
-									<div class="col-xs-4">
-										<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
-									</div>
 								</div>
-							</div>		
+								<?php endif;?>
+								<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
+								<div class="col-xs-4">
+									<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
+								</div>
+							</div>
+						</div>		
 					<?php else: ?>
 						<div class="order-status-actions">
 							<div class="row">
@@ -222,6 +226,10 @@
 								<label class="col-xs-2" ng-if="order.invoice_url"><?=__("order_index__actions__INVOICE");?></label>
 								<div class="col-xs-4" ng-if="order.invoice_url">
 									<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
+								</div>
+								<label class="col-xs-2"  ng-if="order.comment">备注信息</label>
+								<div class="col-xs-4">
+								  	<span>{{order.comment}}</span>
 								</div>
 							</div>
 						</div>

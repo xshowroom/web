@@ -41,6 +41,7 @@ angular.module(
 				  	'shopAddress': false,
 				   	'shopCountry': false,
 				   	'shopZipcode': false,
+				   	'shopShipAddress': false,
 				   	'shopTel': false
 //					'shopImage': false,
 //					'shopAbout': false

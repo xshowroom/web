@@ -106,6 +106,12 @@
                                 <input type="text" class="form-control" id="store-address" name="shopAddress" ng-model="store.shopAddress">
                             </div>
                         </div>
+                        <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopShipAddress}">
+                            <label for="store-ship-address" class="col-xs-2 control-label">SHIP ADDRESS</label>
+                            <div class="col-xs-6">
+                                <input type="text" class="form-control" id="store-ship-address" name="shopShipAddress" ng-model="store.shopShipAddress">
+                            </div>
+                        </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopCountry}">
                             <label for="material" class="col-xs-2 control-label">COUNTRY</label>
                             <div class="col-xs-6">
