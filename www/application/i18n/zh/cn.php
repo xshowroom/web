@@ -912,6 +912,34 @@ return array_merge(
         'customer_FAQ' => 'FAQ',
     ),
     /**
+     * discovery.php
+     */
+    array(
+        'discovery_banner_TITLE' => '加入24小时全天候时尚周',
+
+        'discovery__SUB_TITLE_01' => '加入我们独有的私享时尚圈',
+        'discovery__SUB_DESC_01' => '
+            只有经过精心挑选及审核的品牌及买手放可入驻买手圈
+            为最优质的多品牌集合店、百货及采购团队提供最佳的货品选择
+            私享邀请制入驻/提交申请入驻
+        ',
+
+        'discovery__SUB_TITLE_02' => '节约订货成本',
+        'discovery__SUB_DESC_02' => '
+            最大程度优化您的时装周之旅，参加各大订货会及参观showroom
+            跨界时尚Project Crossover的合作买手及品牌免费入驻/参加相应活动
+        ',
+
+        'discovery__SUB_TITLE_03' => '体验全球化的B2B专业买手服务平台',
+        'discovery__SUB_DESC_03' => '
+            全年无休线上showroom供您订货
+            去掉繁琐的纸质订单订货流程，浏览电子订单，时时线上追踪订单状态
+            支持多种货币展示商品价格
+            全球化客服团队，每个国家都有专属XSHOWROOM买手圈团队为您提供帮助
+            加入24小时全天候时装周
+        ',
+    ),
+    /**
      * others
      */
     array(

@@ -912,6 +912,34 @@ return array_merge(
         'customer_FAQ' => 'FAQ',
     ),
     /**
+     * discovery.php
+     */
+    array(
+        'discovery_banner_TITLE' => 'JOIN THE ROUND THE CLOCK FASHION WEEK',
+
+        'discovery__SUB_TITLE_01' => 'JOIN OUR EXCLUSIVE & CURATED NETWORK',
+        'discovery__SUB_DESC_01' => '
+            Our selection of brands and buyers are carefully selected.
+            A selection thought for the edgiest multilabel stores, department stores and buying offices.
+            By private invitation or application only.
+        ',
+
+        'discovery__SUB_TITLE_02' => 'REDUCE COSTS',
+        'discovery__SUB_DESC_02' => '
+            Optimize your fashion weeks and visits to tradeshows and showrooms.
+            Free for buyers & partners of Project Crossover
+        ',
+
+        'discovery__SUB_TITLE_03' => 'EXPERIENCE GLOBAL B2B E-COMMERCE',
+        'discovery__SUB_DESC_03' => '
+            24/7 ordering from online showroom.
+            Eliminate paper, browse digital line sheets and also receive, track and export orders.
+            Price lists per region, with support for multiple currencies.
+            Ready for global teams: assign agents per country.
+            JOIN THE ROUND THE CLOCK FASHION WEEK
+        ',
+    ),
+    /**
      * others
      */
     array(
