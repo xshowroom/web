@@ -111,7 +111,7 @@
             <?php else: ?>
             <div class="collection-list-content row">
                 <?php foreach($collectionList as $collection):?>
-                <div class="col-xs-3">
+                <div class="col-xs-2">
                     <a target="_self" href="<?=URL::site('collection/'.$collection['id']);?>" class="collection-item image-link">
                         <img src="<?=URL::site($collection['cover_image_medium']);?>" class="collection-item-image">
                         <div class="collection-name"><?= $collection['name']?></div>
