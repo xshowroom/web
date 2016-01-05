@@ -218,8 +218,8 @@
 									<td>{{record.name}}</td>
 									<td>{{record.styleNumber}}</td>
 									<td>{{record.color}}</td>
-									<td>{{record.size_code}}</td>
-									<td>{{record.buy_num | number}}</td>
+									<td>{{record.sizeCode}}</td>
+									<td>{{record.buyNum * record.wholePrice | number}}</td>
 								</tr>
 							</tbody>
 						</table>

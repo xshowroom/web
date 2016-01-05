@@ -95,9 +95,10 @@ angular.module(
     	     						orderItems.push({
     	     							name: $scope.products[i].name,
     	     							styleNumber: $scope.products[i].styleNum,
-    		     						size_code: size,
+    		     						sizeCode: size,
     		     						color: color,
-    		     						buy_num: $scope.quantities[productId][color][size]
+    		     						buyNum: $scope.quantities[productId][color][size],
+    		     						wholePrice: $scope.products[i].wholePrice
     		     					});
     	     					}
     	     				}
