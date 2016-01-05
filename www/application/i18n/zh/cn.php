@@ -143,8 +143,8 @@ return array_merge(
         'guide__SUBSCRIPTION' => '现在就加入我们吧',
 
         'guide__brand_left_INTRODUCE' => '您想通过入驻线上showroom来打通更大的市场，挖掘品牌更大的潜力吗？通过买手圈，您的品牌将成功打入中国的买手市场。通过买手圈，您将得到来自我们最专业圈内人员的支持，以更好的推广您的品牌，我们的工作人员长期与Project Crossover线下showroom合作，深悉中国买手市场。同时，我们联合上海和伦敦的两大线下showroom及线上买手圈，为品牌的成长提供多重专业平台。通过买手圈，您的品牌会被1000多名已经注册入驻的买手知晓，每个系列的知名度、浏览量、订货量都会得到显著提高。',
-        'guide__brand_right_INTRODUCE_1' => '线上SHOWROOM',
-        'guide__brand_right_INTRODUCE_DESC_1' => '您的产品将展示在全年无休的线上SHOWROOM，方便买手时时预览并下单',
+        'guide__brand_right_INTRODUCE_1' => '线上showroom',
+        'guide__brand_right_INTRODUCE_DESC_1' => '您的产品将展示在全年无休的线上showroom，方便买手时时预览并下单',
         'guide__brand_right_INTRODUCE_2' => '顶尖买手',
         'guide__brand_right_INTRODUCE_DESC_2' => '我们确保入圈买手的真实性，只有真正拥有店铺的买手才可审核通过并预览您的品牌',
         'guide__brand_right_INTRODUCE_3' => '电子订单',
