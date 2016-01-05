@@ -68,7 +68,7 @@ angular.module(
      			$scope.brands = {
      				pageSize: 16,
      				offset: 0,
-     				content: []
+     				content: null
      			};
      			$scope.filters = {};
      			

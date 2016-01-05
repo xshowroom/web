@@ -1,5 +1,5 @@
 angular.module(
-    'xShowroom.services', ['xShowroom.i18n']
+    'xShowroom.services', ['ngLoadingSpinner', 'xShowroom.i18n']
 )
 .factory(
 	'PostRequester',

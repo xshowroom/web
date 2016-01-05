@@ -8,6 +8,7 @@
 	<script type="text/javascript" src="/static/app/modules/brand_collection.js"></script>
 </head>
 <body ng-controller="BrandCollectionCtrl" class="container-fluid">
+	<div class="global-loading-mask" us-spinner="{radius:15, width:5, length: 10}"></div>
 	<nav class="row setting-info">
 		<?php echo View::factory('common/global_setting_without_login'); ?>
 	</nav>

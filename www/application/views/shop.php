@@ -8,6 +8,7 @@
 	<script type="text/javascript" src="/static/app/modules/shop.js"></script>
 </head>
 <body ng-controller="ShopCtrl" class="container-fluid">
+	<div class="global-loading-mask" us-spinner="{radius:15, width:5, length: 10}"></div>
 	<?php if (empty($user)){?>
 	<nav class="row setting-info">
 		<?php echo View::factory('common/global_setting_with_login', array('userAttr'=> $userAttr, 'user'=> $user)); ?>
@@ -32,7 +33,7 @@
 				<div class="col-xs-3">
 					<div class="row filter-condition" ng-repeat="(title, content) in conditions" data-type="{{content.type}}" data-title="{{title}}"
 						data-has-clear-all="true" selected="setFilters(name, conditions)" data-conditions="content.values"></div>
-				</div>			
+				</div>
 				<div class="col-xs-9 brand-list">
 					<div class="row">
 						<div class=" col-xs-12">
@@ -47,7 +48,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="row"  ng-if="!brands.content.length">
+					<div class="row" ng-if="brands.content && !brands.content.length">
 		                <div class="col-xs-12 text-center empty-warning">
 		                    <img src="/static/app/images/empty.png">
 		                    <p><?=__("brand_filter__NO_BRAND_1");?><br/><?=__("brand_filter__NO_BRAND_2");?></p>

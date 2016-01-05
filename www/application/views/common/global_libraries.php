@@ -11,6 +11,9 @@
 <script type="text/javascript" src="/static/bower_components/angular-strap/dist/angular-strap.min.js"></script>
 <script type="text/javascript" src="/static/bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
 <script type="text/javascript" src="/static/bower_components/angular-ui-uploader/dist/uploader.min.js"></script>
+<script type="text/javascript" src="/static/bower_components/spin/spin.js"></script>
+<script type="text/javascript" src="/static/bower_components/angular-spinner/angular-spinner.min.js"></script>
+<script type="text/javascript" src="/static/bower_components/angular-loading-spinner/angular-loading-spinner.js"></script>
 <script type="text/javascript" src="/static/app/modules/common/i18n.js"></script>
 <script type="text/javascript" src="/static/app/modules/common/services.js"></script>
 <script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
