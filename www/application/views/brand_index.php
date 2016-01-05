@@ -8,6 +8,7 @@
     <script type="text/javascript" src="/static/app/modules/brand_index.js"></script>
 </head>
 <body ng-controller="BrandIndexCtrl" class="container-fluid"  ng-cloak>
+	<div class="global-loading-mask" us-spinner="{radius:15, width:5, length: 10}"></div>
    	<?php if(empty($user)): ?>
 	<nav class="row setting-info">
 		<?php echo View::factory('common/global_setting_with_login', array('userAttr'=> $userAttr, 'user'=> $user)); ?>
