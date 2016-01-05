@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="/static/app/css/order_create.css" />
 	<script type="text/javascript" src="/static/app/modules/order_create.js"></script>
 </head>
-<body ng-controller="OrderCreateCtrl" class="container-fluid">
+<body ng-controller="OrderCreateCtrl" class="container-fluid top-button">
 	<nav class="row setting-info">
 		<?php echo View::factory('common/global_setting_without_login',
 				array('userAttr'=> $userAttr, 'user'=> $user)); ?>
