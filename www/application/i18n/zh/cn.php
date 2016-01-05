@@ -449,7 +449,7 @@ return array_merge(
         'product_create__PRODUCT_ADD_COLOR' => '编辑',
         'product_create__PRODUCT_MADE_IN' => '产品产地',
         'product_create__PRODUCT_MATERIAL' => '产品材质',
-        'product_create__PRODUCT_CARE_INSTRUCTION' => '护理指导',
+        'product_create__PRODUCT_CARE_INSTRUCTION' => '产品详情',
 
         'product_create__PRODUCT_btn_SAVE' => '保存',
 

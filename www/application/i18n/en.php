@@ -449,7 +449,7 @@ return array_merge(
         'product_create__PRODUCT_ADD_COLOR' => 'EDIT',
         'product_create__PRODUCT_MADE_IN' => 'MADE IN',
         'product_create__PRODUCT_MATERIAL' => 'MATERIAL',
-        'product_create__PRODUCT_CARE_INSTRUCTION' => 'CARE INSTRUCTION',
+        'product_create__PRODUCT_CARE_INSTRUCTION' => 'PRODUCT DETAIL',
 
         'product_create__PRODUCT_btn_SAVE' => 'SAVE',
 
