@@ -449,7 +449,7 @@ return array_merge(
         'product_create__PRODUCT_ADD_COLOR' => 'EDIT',
         'product_create__PRODUCT_MADE_IN' => 'MADE IN',
         'product_create__PRODUCT_MATERIAL' => 'MATERIAL',
-        'product_create__PRODUCT_CARE_INSTRUCTION' => 'PRODUCT DETAIL',
+        'product_create__PRODUCT_CARE_INSTRUCTION' => 'PRODUCT DETAILS ( including description, measurement, care instructions etc)',
 
         'product_create__PRODUCT_btn_SAVE' => 'SAVE',
 
@@ -479,7 +479,7 @@ return array_merge(
         'product_index__PRODUCT_COLOR' => 'COLOR',
         'product_index__PRODUCT_MADE_IN' => 'MADE IN',
         'product_index__PRODUCT_MATERIAL' => 'MATERIAL',
-        'product_index__PRODUCT_CARE_INSTRUCTION' => 'CARE INSTRUCTION:',
+        'product_index__PRODUCT_CARE_INSTRUCTION' => 'PRODUCT DETAILS ( including description, measurement, care instructions etc)',
 
         'product_index__btn__ADD_TO_CART' => 'ADD TO CART',
         'product_index__btn__REMOVE_IN_CART' => 'REMOVE IN CART',

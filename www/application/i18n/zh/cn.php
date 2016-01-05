@@ -449,7 +449,7 @@ return array_merge(
         'product_create__PRODUCT_ADD_COLOR' => '编辑',
         'product_create__PRODUCT_MADE_IN' => '产品产地',
         'product_create__PRODUCT_MATERIAL' => '产品材质',
-        'product_create__PRODUCT_CARE_INSTRUCTION' => '产品详情',
+        'product_create__PRODUCT_CARE_INSTRUCTION' => '产品信息（包括款式描述、尺寸测量、洗护处理等）',
 
         'product_create__PRODUCT_btn_SAVE' => '保存',
 
@@ -479,7 +479,7 @@ return array_merge(
         'product_index__PRODUCT_COLOR' => '色彩',
         'product_index__PRODUCT_MADE_IN' => '产品产地',
         'product_index__PRODUCT_MATERIAL' => '产品材质',
-        'product_index__PRODUCT_CARE_INSTRUCTION' => '产品护理指南:',
+        'product_index__PRODUCT_CARE_INSTRUCTION' => '产品信息（包括款式描述、尺寸测量、洗护处理等）',
 
         'product_index__btn__ADD_TO_CART' => '添加购物车',
         'product_index__btn__REMOVE_IN_CART' => '删除购物车',
