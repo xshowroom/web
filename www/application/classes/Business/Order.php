@@ -471,7 +471,7 @@ class Business_Order
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
 
-        $res = $this->orderModel->updateShipNo($orderId, $shipAmount);
+        $res = $this->orderModel->updateShipAmount($orderId, $shipAmount);
 
         return $res;
     }
