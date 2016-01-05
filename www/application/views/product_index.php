@@ -10,10 +10,11 @@
     <script type="text/javascript" src="/static/app/modules/product_index.js"></script>
 </head>
 <body ng-controller="ProductIndexCtrl" class="container-fluid">
+	<div class="global-loading-mask" us-spinner="{radius:15, width:5, length: 10}"></div>
     <nav class="row setting-info">
         <?php echo View::factory('common/global_setting_without_login'); ?>
     </nav>
-   <?php if ($user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
+   	<?php if ($user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
 	<nav class="row user-navigation">
         <?php echo View::factory('common/global_navigation_top_brand', array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); ?>
 	</nav>
