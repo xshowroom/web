@@ -164,6 +164,15 @@ Route::set('order_create', 'order/create/<id>')
         		'id'        => '\d+',
         ));
 
+Route::set('press_detail', 'press/detail/<press_title>',
+    array(
+        'press_title' => '.*',
+    ))
+    ->defaults(array(
+        'controller' => 'press',
+        'action'     => 'detail',
+    ));
+
 Route::set('detail', '<controller>(/<action>)/<id>',
         array(
             'controller' => '(collection|order|product|message|store)',

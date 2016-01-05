@@ -808,6 +808,7 @@ return array_merge(
         'about__CONTACT__ADDRESS2_03' => 'Shanghai, China, 200050',
         'about__CONTACT__UK' => 'UK',
         'about__CONTACT__PEOPLE_01' => 'Dr. Cherie Chen',
+        'about__CONTACT__PEOPLE_POSITION_01' => 'Founder',
         'about__CONTACT__PEOPLE_02' => 'Stephy Shen',
         'about__CONTACT__PEOPLE_POSITION_02' => 'Sales Manager',
 
@@ -909,6 +910,34 @@ return array_merge(
     array(
         'customer_banner_TITLE' => 'CUSTOMER SUPPORT',
         'customer_FAQ' => 'FAQ',
+    ),
+    /**
+     * discovery.php
+     */
+    array(
+        'discovery_banner_TITLE' => 'JOIN THE ROUND THE CLOCK FASHION WEEK',
+
+        'discovery__SUB_TITLE_01' => 'JOIN OUR EXCLUSIVE & CURATED NETWORK',
+        'discovery__SUB_DESC_01' => '
+            Our selection of brands and buyers are carefully selected.
+            A selection thought for the edgiest multilabel stores, department stores and buying offices.
+            By private invitation or application only.
+        ',
+
+        'discovery__SUB_TITLE_02' => 'REDUCE COSTS',
+        'discovery__SUB_DESC_02' => '
+            Optimize your fashion weeks and visits to tradeshows and showrooms.
+            Free for buyers & partners of Project Crossover
+        ',
+
+        'discovery__SUB_TITLE_03' => 'EXPERIENCE GLOBAL B2B E-COMMERCE',
+        'discovery__SUB_DESC_03' => '
+            24/7 ordering from online showroom.
+            Eliminate paper, browse digital line sheets and also receive, track and export orders.
+            Price lists per region, with support for multiple currencies.
+            Ready for global teams: assign agents per country.
+            JOIN THE ROUND THE CLOCK FASHION WEEK
+        ',
     ),
     /**
      * others
