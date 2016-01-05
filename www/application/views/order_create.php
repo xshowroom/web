@@ -14,8 +14,7 @@
 				array('userAttr'=> $userAttr, 'user'=> $user)); ?>
 	</nav>
 	<nav class="row user-navigation">
-        <?php echo View::factory('common/global_navigation_top_buyer', 
-        		array('currentPage' =>  'cart', 'userAttr'=> $userAttr));?>
+        <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'cart', 'userAttr'=> $userAttr));?>
 	</nav>
 	<section class="row" ng-cloak>
 		<div class="container" ng-show="generateOrderStep == 1;">
@@ -26,13 +25,14 @@
 					</div>
 					<div class="cart-product-list">
 						<div class="cart-collection-info">
-							<div class="col-xs-6">
+							<div class="col-xs-5">
 								<h3 class="collection-name"><?=$collection['name']?></h3>
 							</div>
-							<div class="col-xs-6 text-right" ng-if="getRestAmount() > 0">
+							<div class="col-xs-7 text-right">
+								<p class="cart-tips" ng-if="getRestAmount() > 0">
+									<?=__("order_create__DESC_01")?> <span class="rest-amount"><?=$collection['currency']?>{{getRestAmount()}}</span> <?=__("order_create__DESC_02")?> <?=__("order_create__DESC_03")?>
+								</p>
 								<p class="cart-tips">
-									<?=__("order_create__DESC_01")?> <span class="rest-amount"><?=$collection['currency']?>{{getRestAmount()}}</span>
-									<?=__("order_create__DESC_02")?> <br /><?=__("order_create__DESC_03")?>
 									<a target="_blank" href="/collection/<?=$collection['id']?>"><?=__("order_create__btn_VIEW_DETAIL")?></a>
 								</p>
 							</div>

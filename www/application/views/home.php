@@ -171,28 +171,28 @@
 			</div>
 			<div class="row"> 
 				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link" href="<?=URL::site('brands/THREEFLOOR')?>" data-brief="THREEFLOOR">
+					<a class="showcase-image image-link" href="<?=URL::site('brands/THREEFLOOR')?>" data-content="THREEFLOOR">
 						<img src="/static/app/images/home-banner/home-hot-brands-1.jpg"/>
 					</a>
 					<div class="showcase-name">THREE FLOOR</div>
 					<div class="showcase-collection"><?=__("home__SSI5_COLLECTION")?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link" href="<?=URL::site('brands/FABITORIA')?>" data-brief="FABITORIA">
+					<a class="showcase-image image-link" href="<?=URL::site('brands/FABITORIA')?>" data-content="FABITORIA">
 						<img src="/static/app/images/home-banner/home-hot-brands-2.jpg"/>
 					</a>
 					<div class="showcase-name">FABITORIA</div>
 					<div class="showcase-collection"><?=__("home__SSI5_COLLECTION")?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link" href="<?=URL::site('brands/SUNCOO')?>" data-brief="SUNCOO">
+					<a class="showcase-image image-link" href="<?=URL::site('brands/SUNCOO')?>" data-content="SUNCOO">
 						<img src="/static/app/images/home-banner/home-hot-brands-3.jpg"/>
 					</a>
 					<div class="showcase-name">SUNCOO</div>
 					<div class="showcase-collection"><?=__("home__SSI5_COLLECTION")?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link" href="<?=URL::site('brands/FOREVERUNIQUE')?>" data-brief="FOREVERUNIQUE">
+					<a class="showcase-image image-link" href="<?=URL::site('brands/FOREVERUNIQUE')?>" data-content="FOREVERUNIQUE">
 						<img src="/static/app/images/home-banner/home-hot-brands-4.jpg"/>
 					</a>
 					<div class="showcase-name">FOREVER UNIQUE</div>
@@ -211,29 +211,28 @@
 			</div>
 			<div class="row"> 
 				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link" href="<?=URL::site('about#play-lounge')?>"
-						data-has-button="false" data-content="territory of China. By integrating sales strategy with a strong PR department, we have received the crucial support that our label required to initially enter the market and then grow at a fast paced yet sustainable level.">
+					<a class="showcase-image image-link" href="<?=URL::site('about#play-lounge')?>" data-has-button="false" data-content="<?=mb_substr(__('about__testimonials__comment_1'), 0, 70, 'utf-8').'. . .' ?>">
 						<img src="/static/app/images/home-testomonial-1.png"/>
 					</a>
 					<div class="showcase-name">PLAY LOUNGE</div>
 					<div class="showcase-collection">Iris Hu: <?=__('home__people_BUYER');?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link" href="<?=URL::site('about#wendyz')?>" data-content="territory of China. By integrating sales strategy with a strong PR department, we have received the crucial support that our label required to initially enter the market and then grow at a fast paced yet sustainable level.">
+					<a class="showcase-image image-link" href="<?=URL::site('about#wendyz')?>" data-has-button="false" data-content="<?=mb_substr(__('about__testimonials__comment_2'), 0, 70, 'utf-8').'. . .' ?>">
 						<img src="/static/app/images/home-testomonial-2.png"/>
 					</a>
 					<div class="showcase-name">WENDYZ</div>
 					<div class="showcase-collection">Wendy Weng: <?=__('home__people_DIRECTOR');?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link" href="<?=URL::site('about#ppq')?>" data-brief="VIEW DETAIL">
+					<a class="showcase-image image-link" href="<?=URL::site('about#ppq')?>" data-has-button="false" data-content="<?=mb_substr(__('about__testimonials__comment_3'), 0, 70, 'utf-8').'. . .' ?>">
 						<img src="/static/app/images/home-testomonial-3.png"/>
 					</a>
 					<div class="showcase-name">PPQ</div>
 					<div class="showcase-collection">Percy Parker: <?=__('home__people_BRAND_DIRECTOR');?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
-					<a class="showcase-image image-link" href="<?=URL::site('about#three-floor')?>" data-brief="VIEW DETAIL">
+					<a class="showcase-image image-link" href="<?=URL::site('about#three-floor')?>" data-has-button="false" data-content="<?=mb_substr(__('about__testimonials__comment_4'), 0, 70, 'utf-8').'. . .' ?>">
 						<img src="/static/app/images/home-testomonial-4.png"/>
 					</a>
 					<div class="showcase-name">THREE FLOOR</div>

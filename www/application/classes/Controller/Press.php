@@ -16,4 +16,23 @@ class Controller_Press extends Controller_Base
         }
         $this->response->body($view);
     }
+
+    public function action_detail()
+    {
+        $pressTitle = Request::current()->param('press_title');
+
+        $view = View::factory('press_detail');
+        $opUser = $_SESSION['opUser'];
+
+        if(!empty($opUser)) {
+            $view->set('user', $opUser);
+
+            $userService = new Business_User();
+            $view->set('userAttr', $userService->getUserAttr($opUser['id']));
+        }
+
+        $view->set('pressTitle', $pressTitle);
+
+        $this->response->body($view);
+    }
 }

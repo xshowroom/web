@@ -415,6 +415,7 @@ class Business_Order
         return $res;
     }*/
 
+    // 废弃
     public function updateShipInfo($userId, $orderId, $type, $shipNo, $shipAmount)
     {
         if ($type != Model_User::TYPE_USER_BRAND) {
@@ -431,6 +432,66 @@ class Business_Order
         }
 
         $res = $this->orderModel->updateShipInfo($orderId, $shipNo, $shipAmount);
+
+        return $res;
+    }
+
+    public function updateShipNo($userId, $orderId, $type, $shipNo)
+    {
+        if ($type != Model_User::TYPE_USER_BRAND) {
+            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+
+        $order = $this->orderModel->getById($orderId);
+
+        // 品牌用户拿别人订单报错
+        if ($order['user_id'] != $userId) {
+            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+
+        $res = $this->orderModel->updateShipNo($orderId, $shipNo);
+
+        return $res;
+    }
+
+    public function updateShipAmount($userId, $orderId, $type, $shipAmount)
+    {
+        if ($type != Model_User::TYPE_USER_BRAND) {
+            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+
+        $order = $this->orderModel->getById($orderId);
+
+        // 品牌用户拿别人订单报错
+        if ($order['user_id'] != $userId) {
+            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+
+        $res = $this->orderModel->updateShipNo($orderId, $shipAmount);
+
+        return $res;
+    }
+
+    public function updateComments($userId, $orderId, $type, $comments)
+    {
+        if ($type != Model_User::TYPE_USER_BRAND) {
+            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+
+        $order = $this->orderModel->getById($orderId);
+
+        // 品牌用户拿别人订单报错
+        if ($order['user_id'] != $userId) {
+            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+
+        $res = $this->orderModel->updateComments($orderId, $comments);
 
         return $res;
     }

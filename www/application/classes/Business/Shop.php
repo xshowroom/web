@@ -61,6 +61,7 @@ class Business_Shop
         $brandList = Request::current()->getParam('brandList');
         $website   = Request::current()->getParam('shopWebsite');
         $address   = Request::current()->getParam('shopAddress');
+        $shipAddr  = Request::current()->getParam('shopShipAddress');
         $country   = Request::current()->getParam('shopCountry');
         $zipcode   = Request::current()->getParam('shopZipcode');
         $tel       = Request::current()->getParam('shopTel');
@@ -78,7 +79,8 @@ class Business_Shop
         $images = json_encode($imageList);
         
         $shopId = $this->shopModel->addShopInfo($userId, $name, $type, $colType, $brandList,
-                                                $website, $address, $country, $zipcode, $tel, $images, $about);
+                                                $website, $address, $shipAddr, $country, $zipcode,
+                                                $tel, $images, $about);
         return $shopId;
     }
 
@@ -91,6 +93,7 @@ class Business_Shop
         $brandList = Request::current()->getParam('brandList');
         $website   = Request::current()->getParam('shopWebsite');
         $address   = Request::current()->getParam('shopAddress');
+        $shipAddr  = Request::current()->getParam('shopShipAddress');
         $country   = Request::current()->getParam('shopCountry');
         $zipcode   = Request::current()->getParam('shopZipcode');
         $tel       = Request::current()->getParam('shopTel');
@@ -108,7 +111,7 @@ class Business_Shop
         $images = json_encode($imageList);
         
         $res = $this->shopModel->updateShopInfo($userId, $shopId, $name, $type, $colType, $brandList,
-                                                $website, $address, $country, $zipcode, $tel, $images, $about);
+                                                $website, $address, $shipAddr, $country, $zipcode, $tel, $images, $about);
         return $res;
     }
 

@@ -18,7 +18,7 @@
 		<div class="container">
 			<div class="row">
                 <div class="col-xs-8 col-xs-offset-2 banner-mask">
-                	<h2>JOIN THE ROUND THE<br>CLOCK FASHION WEEK</h2>
+                	<h2><?=__("discovery_banner_TITLE");?></h2>
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -29,8 +29,8 @@
 			<div class="row">
 				<div class="col-xs-7">
 					<div class="discovery-section-icon"></div>
-					<h3>JOIN OUR EXCLUSIVE<br/>& CURATED NETWORK</h3>
-					<p>Optimize your fashion weeks and visits to tradeshows and showrooms.<br/>Free for buyers & partners of Project Crossover.</p>
+					<h3><?=__("discovery__SUB_TITLE_01");?></h3>
+					<p><?=__("discovery__SUB_DESC_01");?></p>
 				</div>
 				<div class="col-xs-5 text-center">
 					<img src="/static/app/images/discovery-section-1.png">
@@ -43,8 +43,8 @@
 			<div class="row">
 				<div class="col-xs-7">
 					<div class="discovery-section-icon"></div>
-					<h3>REDUCE COST</h3>
-					<p>Optimize your fashion weeks and visits to tradeshows and showrooms.<br/>Free for buyers & partners of Project Crossover.</p>
+					<h3><?=__("discovery__SUB_TITLE_02");?></h3>
+					<p><?=__("discovery__SUB_DESC_02");?></p>
 				</div>
 				<div class="col-xs-5 text-center">
 					<img src="/static/app/images/discovery-section-2.png">
@@ -57,8 +57,8 @@
 			<div class="row">
 				<div class="col-xs-7">
 					<div class="discovery-section-icon"></div>
-					<h3>EXPERIENCE GLOBAL B2B E-COMMERCE</h3>
-					<p>Optimize your fashion weeks and visits to tradeshows and showrooms.<br/>Free for buyers & partners of Project Crossover.</p>
+					<h3><?=__("discovery__SUB_TITLE_03");?></h3>
+					<p><?=__("discovery__SUB_DESC_03");?></p>
 				</div>
 				<div class="col-xs-5 text-center">
 					<img src="/static/app/images/discovery-section-3.png">

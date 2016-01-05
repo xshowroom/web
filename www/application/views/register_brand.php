@@ -231,23 +231,23 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-body">
-					<h4>XSHOWROOM IS INVITATION ONLY</h4>
+					<h4><?=__("other__invite__TITLE");?></h4>
 					<form>
 						<div class="form-group">
-							<p>PLEASE ENTER YOUR INVITATION CODE TO START REGISTRATION</p>
+							<p><?=__("other__invite__HINT");?></p>
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" id="invitation-code" placeholder="输入邀请码继续注册">
-							<label id="invite-error" hidden>WRONG INVITATION CODE</label>
+							<input type="text" class="form-control" id="invitation-code">
+							<label id="invite-error" hidden><?=__("other__invite__error_INFO");?></label>
 						</div>
 					</form>
 				</div>
 				<div>
-					<a type="button" class="btn btn-type-1" href="<?=url::site()?>"> BACK TO HOME PAGE </a>
-					<a type="button" class="btn btn-type-2" ng-click="checkInvitation();"> START REGISTRATION </a>
+					<a type="button" class="btn btn-type-1" href="<?=url::site()?>"> <?=__("other__invite__btn_BACK");?> </a>
+					<a type="button" class="btn btn-type-2" ng-click="checkInvitation();"> <?=__("other__invite__btn_CONTINUE");?> </a>
 				</div>
 				<div>
-					<p>PLEASE CONTACT <a href="mailto:info@xshowroom.com">info@xshowroom.com</a> TO APPLY FOR INVITATION CODE</p>
+					<p><?=__("other__invite__APPLY_01");?> <a href="mailto:info@xshowroom.com">info@xshowroom.com</a> <?=__("other__invite__APPLY_02");?></p>
 				</div>
 			</div>
 		</div>
