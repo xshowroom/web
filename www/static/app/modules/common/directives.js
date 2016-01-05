@@ -323,4 +323,32 @@ angular.module(
         	});
         }
     };
+}])
+.directive('topButton', ['$anchorScroll', function ($anchorScroll) {
+    return {
+        transclude: false,
+        restrict: 'C',
+        replace: true,
+        link: function ($scope, $element, $attrs, $transclude) {
+        	$element.attr('id', 'top-target');
+        	var template = [
+                '<aside ng-show="showTopButton" class="aside-action">',
+        	        '<button class="back-to-top">',
+                		'<span class="glyphicon glyphicon-triangle-top"></span><br/>',
+                		'<span>TOP</span>',
+                	'</button>',
+        	    '</aside>'
+        	].join('');
+        	var content = $(template);
+        	$element.append(content);
+        	
+    		angular.element(window).on('scroll', function() { 
+    			content.toggle(angular.element(this).scrollTop() > 500);
+    		});
+    		
+    		content.find('.back-to-top').on('click', function() { 
+    			$anchorScroll("top-target")
+    		});
+        }
+    };
 }]);
