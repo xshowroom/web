@@ -66,8 +66,14 @@ angular.module(
 		    	updateInvoice: function(opts){
 		    		return PostRequester('order/updateInvoice', opts);
 		    	},
-		    	updateShipInfo: function(opts){
-		    		return PostRequester('order/updateShipInfo', opts);
+		    	updateShipNo: function(opts){
+		    		return PostRequester('order/updateShipNo', opts);
+		    	},
+		    	updateShipAmount: function(opts){
+		    		return PostRequester('order/updateShipAmount', opts);
+		    	},
+		    	updateComments: function(opts){
+		    		return PostRequester('order/updateComments', opts);
 		    	}
    			};
          }

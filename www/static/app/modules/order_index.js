@@ -15,8 +15,12 @@ angular.module(
 .controller(
     'OrderIndexCtrl',
     [
-        '$scope', '$element', '$window', '$timeout', '$modal', '$filter', 'Order', 'uiUploader',
-        function ($scope, $element, $window, $timeout, $modal, $filter, Order, uiUploader) {
+        '$scope', '$element', '$window', '$timeout',
+        '$modal', '$filter', '$q', 'Order', 'uiUploader',
+        function (
+        	$scope, $element, $window, $timeout,
+        	$modal, $filter, $q, Order, uiUploader
+        ) {
         	var init = function (){
         		Order.findOne({
         			orderId: $scope.orderId
@@ -133,6 +137,10 @@ angular.module(
         	};
         	
         	$scope.updateInvoice = function(){
+        		if (!$scope.order.invoice_url){
+        			$modal({title: 'Error Info', content: '尚未提交invoice相关文件', show: true});
+        			return;
+        		}
         		Order.updateInvoice({
         			orderId: $scope.orderId,
         			invoiceUrl: $scope.order.invoice_url
@@ -145,11 +153,14 @@ angular.module(
         		});
         	};
         	
-        	$scope.updateShipInfo = function(){
-        		Order.updateShipInfo({
+        	$scope.updateShipNo = function(){
+        		if (!$scope.order.shipNo){
+        			$modal({title: 'Error Info', content: '运单信息尚未填写', show: true});
+        			return;
+        		}
+        		Order.updateShipNo({
         			orderId: $scope.orderId,
-        			shipNo: $scope.order.shipNo,
-        			shipAmount: $scope.order.shipAmount
+        			shipNo: $scope.order.shipNo
         		}).success(function(res){
         			if (typeof(res) != 'object' || res.status) {
         				$modal({title: 'Error Info', content: res.msg, show: true});
@@ -157,6 +168,45 @@ angular.module(
      				}
         			$scope.updateStatus();
         		});
+        	};
+        	
+        	$scope.updateComments = function(){
+        		Order.updateComments({
+					orderId: $scope.orderId,
+					comments: $scope.order.comments
+				}).success(function(res){
+        			if (typeof(res) != 'object' || res.status) {
+        				$modal({title: 'Error Info', content: res.msg, show: true});
+     					return;
+     				}
+        			$scope.updateStatus();
+        		});
+        	};
+        	
+        	$scope.updateShipAmountComments = function(){
+        		if (!$scope.order.shipNo && !/^\d+$/.test($scope.order.shipAmount)){
+        			$modal({title: 'Error Info', content: '运费信息尚未填写或有非数字内容', show: true});
+        			return;
+        		}
+        		$q.all([
+					Order.updateShipAmount({
+						orderId: $scope.orderId,
+						shipAmount: $scope.order.shipAmount
+					}),
+					Order.updateComments({
+						orderId: $scope.orderId,
+						comments: $scope.order.comments
+					})
+        		]).then(function(res){
+        			for (var i = 0, len = res.length; i < len; i++) {
+        				if (typeof(res[i].data) != 'object' || res[i].data.status) {
+            				$modal({title: 'Error Info', content: res[i].data.msg, show: true});
+         					return;
+         				}
+        			}
+        			$scope.updateStatus();
+        		});
+        		
         	};
         	
         	init();

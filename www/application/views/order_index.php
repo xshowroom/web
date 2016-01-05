@@ -91,8 +91,11 @@
 						<div class="order-status-actions">
 							<div class="row">
 								<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
-								<div class="col-xs-4">
+								<div class="col-xs-4" ng-if="order.invoice_url">
 									<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
+								</div>
+								<div class="col-xs-4" ng-if="!order.invoice_url">
+									<span>尚未提交</span>
 								</div>
 								<div class="col-xs-6 text-right">
 									 <button class="btn btn-type-2" ng-click="updateStatus();"><?=__("order_index__actions__btn_ORDER_CONFIRM");?></button>
@@ -127,28 +130,35 @@
 					<?php elseif ($order['order_status'] == Model_Order::ORDER_STATUS_PREPARING && $user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
 						<div class="order-status-actions">
 							<div class="row">
-								<label class="col-xs-2" for="shippingFee"><?=__("order_index__actions__SHIP_FEE");?> ( <?=__("order_index__actions__SHIP_FEE_UNIT");?> - {{order.currency}})</label>
-								<div class="col-xs-4">
+								<label class="col-xs-2" for="shippingFee" ng-if="order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'"><?=__("order_index__actions__SHIP_FEE");?> ( <?=__("order_index__actions__SHIP_FEE_UNIT");?> - {{order.currency}})</label>
+								<div class="col-xs-4" ng-if="order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'">
 									<input type="text" class="form-control" id="shippingFee" ng-model="order.shipAmount">
 								</div>
 								<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
 								<div class="col-xs-4">
 									<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
 								</div>
-								<label class="col-xs-2" for="comment">备注信息</label>
+								<label class="col-xs-2" for="comments">备注信息</label>
 								<div class="col-xs-4">
-									<input type="text" class="form-control" id="comment" ng-model="order.comment">
+									<input type="text" class="form-control" id="comments" ng-model="order.comments">
 								</div>
-								<div class="col-xs-6 text-right">
-									 <button class="btn btn-type-2" ng-click="updateShipInfo();"><?=__("order_index__actions__btn_BALANCE_PAY");?></button>
+								<div class="col-xs-6 text-right" ng-if="order.collection_mode == 'dropdown__COLLECTION_MODE__STOCK'">
+									 <button class="btn btn-type-2" ng-click="updateComments();"><?=__("order_index__actions__btn_BALANCE_PAY");?></button>
+								</div>
+								<div class="col-xs-6 text-right" ng-if="order.collection_mode != 'dropdown__COLLECTION_MODE__STOCK'">
+									 <button class="btn btn-type-2" ng-click="updateShipAmountComments();"><?=__("order_index__actions__btn_BALANCE_PAY");?></button>
 								</div>
 							</div>
 						</div>
 					<?php elseif ($order['order_status'] == Model_Order::ORDER_STATUS_PAYBALANCE && $user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
 						<div class="order-status-actions">
 							<div class="row">
-							    <label class="col-xs-2"><?=__("order_index__actions__SHIP_FEE");?></label>
-							    <div class="col-xs-4">
+							    <label class="col-xs-2" for="shippingNo" ng-if="order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'"><?=__("order_index__actions__SHIP_NO");?></label>
+								<div class="col-xs-4" ng-if="order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'">
+									<input type="text" class="form-control" id="shippingNo" ng-model="order.shipNo">
+								</div>
+								<label class="col-xs-2" ng-if="order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'"><?=__("order_index__actions__SHIP_FEE");?></label>
+							    <div class="col-xs-4" ng-if="order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'">
 							    	<span>{{order.currency}}{{order.shipping_amount | number}}</span>
 							    </div>
 							    <label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
@@ -157,22 +167,25 @@
 							    </div>
 							    <label class="col-xs-2">备注信息</label>
 							    <div class="col-xs-4">
-							    	<span>{{order.comment}}</span>
+							    	<span>{{order.comments}}</span>
 							    </div>
-							    <div class="col-xs-6 text-right">
+							    <div class="col-xs-6 text-right" ng-if="order.collection_mode =='dropdown__COLLECTION_MODE__STOCK'">
 								     <button class="btn btn-type-2" ng-click="updateStatus();"><?=__("order_index__actions__btn_SHIPPED");?></button>
+								</div>
+								<div class="col-xs-12 text-right" ng-if="order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'">
+								     <button class="btn btn-type-2" ng-click="updateShipNo();"><?=__("order_index__actions__btn_SHIPPED");?></button>
 								</div>
 							</div>
 						</div>
 					<?php elseif ($order['order_status'] == Model_Order::ORDER_STATUS_SHIPPED && $user["role_type"] == Model_User::TYPE_USER_BUYER): ?>
 						<div class="order-status-actions">
 							<div class="row">
-								 <label class="col-xs-2" for="shippingNo"><?=__("order_index__actions__SHIP_NO");?></label>
-								<div class="col-xs-4">
-									<input type="text" class="form-control" id="shippingNo" ng-model="order.shipNo">
+								<label class="col-xs-2" ng-if="order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'"><?=__("order_index__actions__SHIP_FEE");?></label>
+								<div class="col-xs-4" ng-if="order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'">
+									<span>{{order.shipping_no}}</span>
 								</div>
-								<label class="col-xs-2"><?=__("order_index__actions__SHIP_FEE");?></label>
-								<div class="col-xs-4">
+								<label class="col-xs-2" ng-if="order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'"><?=__("order_index__actions__SHIP_FEE");?></label>
+								<div class="col-xs-4" ng-if="order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'">
 									<span>{{order.currency}}{{order.shipping_amount | number}}</span>
 								</div>
 								<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
@@ -181,9 +194,9 @@
 								</div>
 								<label class="col-xs-2">备注信息</label>
 							    <div class="col-xs-4">
-							    	<span>{{order.comment}}</span>
+							    	<span>{{order.comments}}</span>
 							    </div>
-								<div class="col-xs-6 text-right">
+								<div class="col-xs-12 text-right">
 									 <button class="btn btn-type-2"  ng-click="updateStatus();"><?=__("order_index__actions__btn_COMPLETE");?></button>
 								</div>
 							</div>
@@ -206,30 +219,38 @@
 									</div>
 								</div>
 								<?php endif;?>
-								<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
-								<div class="col-xs-4">
-									<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
-								</div>
-							</div>
-						</div>		
-					<?php else: ?>
-						<div class="order-status-actions">
-							<div class="row">
-								<label class="col-xs-2" ng-if="order.shipping_no"><?=__("order_index__actions__SHIP_NO");?></label>
-								<div class="col-xs-4" ng-if="order.shipping_no">
-									<span>{{order.shipping_no}}</span>
-								</div>
-								<label class="col-xs-2" ng-if="order.shipping_no"><?=__("order_index__actions__SHIP_FEE");?></label>
-								<div class="col-xs-4" ng-if="order.shipping_no">
+								<label class="col-xs-2" ng-if="order.shipping_amount && order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'""><?=__("order_index__actions__SHIP_FEE");?></label>
+								<div class="col-xs-4" ng-if="order.shipping_amount && order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'"">
 									<span>{{order.currency}}{{order.shipping_amount}}</span>
 								</div>
 								<label class="col-xs-2" ng-if="order.invoice_url"><?=__("order_index__actions__INVOICE");?></label>
 								<div class="col-xs-4" ng-if="order.invoice_url">
 									<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
 								</div>
-								<label class="col-xs-2"  ng-if="order.comment">备注信息</label>
-								<div class="col-xs-4">
-								  	<span>{{order.comment}}</span>
+								<label class="col-xs-2"  ng-if="order.comments">备注信息</label>
+								<div class="col-xs-4" ng-if="order.comments">
+								  	<span>{{order.comments}}</span>
+								</div>
+							</div>
+						</div>		
+					<?php else: ?>
+						<div class="order-status-actions">
+							<div class="row">
+								<label class="col-xs-2" ng-if="order.shipping_no && order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'""><?=__("order_index__actions__SHIP_NO");?></label>
+								<div class="col-xs-4" ng-if="order.shipping_no && order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'"">
+									<span>{{order.shipping_no}}</span>
+								</div>
+								<label class="col-xs-2" ng-if="order.shipping_amount && order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'""><?=__("order_index__actions__SHIP_FEE");?></label>
+								<div class="col-xs-4" ng-if="order.shipping_amount && order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'"">
+									<span>{{order.currency}}{{order.shipping_amount}}</span>
+								</div>
+								<label class="col-xs-2" ng-if="order.invoice_url"><?=__("order_index__actions__INVOICE");?></label>
+								<div class="col-xs-4" ng-if="order.invoice_url">
+									<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
+								</div>
+								<label class="col-xs-2"  ng-if="order.comments">备注信息</label>
+								<div class="col-xs-4" ng-if="order.comments">
+								  	<span>{{order.comments}}</span>
 								</div>
 							</div>
 						</div>
