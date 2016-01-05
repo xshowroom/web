@@ -219,8 +219,8 @@
 									</div>
 								</div>
 								<?php endif;?>
-								<label class="col-xs-2" ng-if="order.shipping_amount == '0' && order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'""><?=__("order_index__actions__SHIP_FEE");?></label>
-								<div class="col-xs-4" ng-if="order.shipping_amount == '0' && order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'"">
+								<label class="col-xs-2" ng-if="order.shipping_amount != '0' && order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'""><?=__("order_index__actions__SHIP_FEE");?></label>
+								<div class="col-xs-4" ng-if="order.shipping_amount != '0' && order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'"">
 									<span>{{order.currency}}{{order.shipping_amount}}</span>
 								</div>
 								<label class="col-xs-2" ng-if="order.invoice_url"><?=__("order_index__actions__INVOICE");?></label>
@@ -240,8 +240,8 @@
 								<div class="col-xs-4" ng-if="order.shipping_no && order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'"">
 									<span>{{order.shipping_no}}</span>
 								</div>
-								<label class="col-xs-2" ng-if="order.shipping_amount == '0' && order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'""><?=__("order_index__actions__SHIP_FEE");?></label>
-								<div class="col-xs-4" ng-if="order.shipping_amount == '0' && order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'"">
+								<label class="col-xs-2" ng-if="order.shipping_amount != '0' && order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'""><?=__("order_index__actions__SHIP_FEE");?></label>
+								<div class="col-xs-4" ng-if="order.shipping_amount != '0' && order.collection_mode !='dropdown__COLLECTION_MODE__STOCK'"">
 									<span>{{order.currency}}{{order.shipping_amount}}</span>
 								</div>
 								<label class="col-xs-2" ng-if="order.invoice_url"><?=__("order_index__actions__INVOICE");?></label>
