@@ -126,7 +126,7 @@
                             <label for="care-instruction" class="col-xs-2 control-label"><?=__("product_create__PRODUCT_CARE_INSTRUCTION");?></label>
                             <div class="col-xs-6">
                            		<textcomplete>
-                                  	<textarea class="form-control" id="care-instruction" ng-model="product.careIns"></textarea>
+                                  	<textarea class="form-control" id="care-instruction" ng-model="product.careIns" placeholder="<?=__('product_create__PRODUCT_CARE_INSTRUCTION_DESC');?>"></textarea>
                                 </textcomplete>
                             </div>
                           </div>

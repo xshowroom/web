@@ -115,7 +115,6 @@
 								<li ng-repeat="msg in errorMsgs">
 									<span class="glyphicon glyphicon-remove-sign"></span>
 									<span>{{ ( "collection_" + msg[0] + "_" + msg[1]) | translate}}</span>
-                                    <span>{{ ( "collection_" + msg[0] + "_" + msg[1]) }}</span>
 								</li>
 							</ul>
 							<div class="clearfix"></div>

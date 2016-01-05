@@ -18,6 +18,8 @@ return array_merge(
         'brandUrl_existed' => '该URL已存在',
         'check_ok' => '参数验证成功',
         'not_active' => '等待管理员审核中',
+        'OLD_PASSWORD_ERROR'=> 'old password is not match',
+        'CHANGE_PASSWORD_SUCCESS'=> 'password has been changed',
     ),
     /**
      * Inbox Message
@@ -462,7 +464,8 @@ return array_merge(
         'product_create__PRODUCT_ADD_COLOR' => '编辑',
         'product_create__PRODUCT_MADE_IN' => '产品产地',
         'product_create__PRODUCT_MATERIAL' => '产品材质',
-        'product_create__PRODUCT_CARE_INSTRUCTION' => '产品信息（包括款式描述、尺寸测量、洗护处理等）',
+        'product_create__PRODUCT_CARE_INSTRUCTION' => '产品信息',
+        'product_create__PRODUCT_CARE_INSTRUCTION_DESC' => '包括款式描述、尺寸测量、洗护处理等',
 
         'product_create__PRODUCT_btn_SAVE' => '保存',
 

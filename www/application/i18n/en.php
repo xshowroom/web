@@ -17,7 +17,9 @@ return array_merge(
         'brandName_existed' => 'brand name has already been resisted',
         'brandUrl_existed' => 'brand url has already been resisted',
         'check_ok' => 'ok',
-        'not_active' => 'user is pending aporoval',
+        'not_active' => 'user is pending approval',
+        'OLD_PASSWORD_ERROR'=> 'old password is not match',
+        'CHANGE_PASSWORD_SUCCESS'=> 'password has been changed',
     ),
     /**
      * Inbox Message
@@ -25,7 +27,7 @@ return array_merge(
     array(
         'AUTO_MSG_WELCOME_BRAND' => "Welcome to XSHOWROOM! Let's start your business now! Please feel free to contact us if any problem. Mail to: info@projectcrossover.com",
         'AUTO_MSG_WELCOME_BUYER' => "Welcome to XSHOWROOM! Let's start your business now! Please feel free to contact us if any problem. Mail to: info@projectcrossover.com",
-        'AUTO_MSG_ORDER_STATUS_CHANGE' => 'YOU ORDER STATUS HAS BEEN CHANGED',
+        'AUTO_MSG_ORDER_STATUS_CHANGE' => 'YOU ORDER STATUS CHANGED',
     ),
     /**
      * global_setting_with_login.php
@@ -70,7 +72,7 @@ return array_merge(
      */
     array(
         'global_navigation_user_center__PROFILE' => 'MY PROFILE',
-        'global_navigation_user_center__PASSWORD' => 'CHANGE PASSWORD',
+        'global_navigation_user_center__PASSWORD' => 'MY PASSWORD',
         'global_navigation_user_center__MESSAGES' => 'MESSAGES',
     ),
     /**
@@ -462,7 +464,8 @@ return array_merge(
         'product_create__PRODUCT_ADD_COLOR' => 'EDIT',
         'product_create__PRODUCT_MADE_IN' => 'MADE IN',
         'product_create__PRODUCT_MATERIAL' => 'MATERIAL',
-        'product_create__PRODUCT_CARE_INSTRUCTION' => 'PRODUCT DETAILS (including description, measurement, care instructions etc)',
+        'product_create__PRODUCT_CARE_INSTRUCTION' => 'PRODUCT DETAILS',
+        'product_create__PRODUCT_CARE_INSTRUCTION_DESC' => 'including description, measurement, care instructions etc',
 
         'product_create__PRODUCT_btn_SAVE' => 'SAVE',
 

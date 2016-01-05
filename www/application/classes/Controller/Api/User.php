@@ -3,7 +3,6 @@
 class Controller_Api_User extends Controller_BaseReqLogin
 {
     const OLD_PASSWORD_ERROR = 'OLD_PASSWORD_ERROR';
-    const CHANGE_PASSWORD_FAILED = 'CHANGE_PASSWORD_FAILED';
     const CHANGE_PASSWORD_SUCCESS = 'CHANGE_PASSWORD_SUCCESS';
 
     public $userService;
