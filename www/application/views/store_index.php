@@ -132,7 +132,7 @@
                             </div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopShipAddress}">
-                            <label for="store-ship-address" class="col-xs-2 control-label">SHIP ADDRESS</label>
+                            <label for="store-ship-address" class="col-xs-2 control-label"><?=__("store_index__STORE_SHIPPING_ADDRESS");?></label>
                             <div class="col-xs-6">
                                 <input type="text" class="form-control" id="store-ship-address" name="shopShipAddress" ng-model="store.shopShipAddress"
                                 ng-disabled="!isEditing">

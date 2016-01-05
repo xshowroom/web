@@ -49,9 +49,9 @@
 			<div class="row">
 				<div class="col-xs-4 col-xs-offset-1 contact-office">
 					<h4><?=__("about__CONTACT__LONDON");?></h4>
-					<div><?=__("about__CONTACT__TEL_01");?>:  +44 20 7637 9977</div>
+					<div><?=__("about__CONTACT__TEL_01");?>:  +44 7419284524</div>
 					<div>
-						<p>76 Great Portland Street,<br/><?=__("about__CONTACT__LONDON");?><br/><?=__("about__CONTACT__UK");?><br/>W1W 7NL</p>
+						<p>4/F, 76 Great Portland Street,<br/><?=__("about__CONTACT__LONDON");?><br/><?=__("about__CONTACT__UK");?><br/>W1W 7NL</p>
 					</div>
 					<div><?=__("about__CONTACT__PEOPLE_01");?><br/><?=__("about__CONTACT__PEOPLE_POSITION_01");?></div>
 					<div>info@projectcrossover.com</div>
