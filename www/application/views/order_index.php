@@ -57,7 +57,7 @@
 						<h3><?=__("order_index__status_TITLE");?></h3>
 					</div>
 					<div class="order-status-list" ng-class="{'stock-collection': processes.length == 6}">
-						<div class="order-status" ng-repeat="step in processes track by $index" ng-class="{'active': statusIndex > $index}">
+						<div class="order-status" ng-repeat="step in processes track by $index" ng-class="{'active': statusIndex >= $index}">
 							<div>
 								<i class="fa fa-shopping-cart fa-5x"></i>
 							</div>
