@@ -75,7 +75,7 @@
 									<input type="file" class="form-control" id="invoice-file" placeholder="ORDER INVOICE*">
 								</div>
 								<div class="col-xs-4" ng-if="order.invoice_url">
-									<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
+									<a ng-href="/{{order.invoice_url}}" target="_blank">Invoice.PDF</a>
 									<label class="upload-label">
 										<span><?=__("order_index__actions__INVOICE_RE_SUMBMIT");?></span>
 										<input type="file" class="form-control" id="invoice-file" placeholder="ORDER INVOICE*">
@@ -92,7 +92,7 @@
 							<div class="row">
 								<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
 								<div class="col-xs-4" ng-if="order.invoice_url">
-									<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
+									<a ng-href="/{{order.invoice_url}}" target="_blank">Invoice.PDF</a>
 								</div>
 								<div class="col-xs-4" ng-if="!order.invoice_url">
 									<span>尚未提交</span>
@@ -107,7 +107,7 @@
 							<div class="row">
 								<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
 								<div class="col-xs-4">
-									<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
+									<a ng-href="/{{order.invoice_url}}" target="_blank">Invoice.PDF</a>
 								</div>
 								<div class="col-xs-6 text-right">
 									 <button class="btn btn-type-2" ng-click="updateStatus();"><?=__("order_index__actions__btn_DEPOSITED");?></button>
@@ -120,7 +120,7 @@
 							<div class="row">
 								<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
 								<div class="col-xs-4">
-									<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
+									<a ng-href="/{{order.invoice_url}}" target="_blank">Invoice.PDF</a>
 								</div>
 								<div class="col-xs-6 text-right">
 									 <button class="btn btn-type-2" ng-click="updateStatus();"><?=__("order_index__actions__btn_PREPARING");?></button>
@@ -136,9 +136,9 @@
 								</div>
 								<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
 								<div class="col-xs-4">
-									<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
+									<a ng-href="/{{order.invoice_url}}" target="_blank">Invoice.PDF</a>
 								</div>
-								<label class="col-xs-2" for="comments">备注信息</label>
+								<label class="col-xs-2" for="comments"><?=__("order_index__actions__BRAND_DESCRIPTION")?></label>
 								<div class="col-xs-4">
 									<input type="text" class="form-control" id="comments" ng-model="order.comments">
 								</div>
@@ -163,9 +163,9 @@
 							    </div>
 							    <label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
 							    <div class="col-xs-4">
-							    	<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
+							    	<a ng-href="/{{order.invoice_url}}" target="_blank">Invoice.PDF</a>
 							    </div>
-							    <label class="col-xs-2">备注信息</label>
+							    <label class="col-xs-2"><?=__("order_index__actions__BRAND_DESCRIPTION")?></label>
 							    <div class="col-xs-4">
 							    	<span>{{order.comments}}</span>
 							    </div>
@@ -190,9 +190,9 @@
 								</div>
 								<label class="col-xs-2"><?=__("order_index__actions__INVOICE");?></label>
 								<div class="col-xs-4">
-									<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
+									<a ng-href="/{{order.invoice_url}}" target="_blank">Invoice.PDF</a>
 								</div>
-								<label class="col-xs-2">备注信息</label>
+								<label class="col-xs-2"><?=__("order_index__actions__BRAND_DESCRIPTION")?></label>
 							    <div class="col-xs-4">
 							    	<span>{{order.comments}}</span>
 							    </div>
@@ -225,9 +225,9 @@
 								</div>
 								<label class="col-xs-2" ng-if="order.invoice_url"><?=__("order_index__actions__INVOICE");?></label>
 								<div class="col-xs-4" ng-if="order.invoice_url">
-									<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
+									<a ng-href="/{{order.invoice_url}}" target="_blank">Invoice.PDF</a>
 								</div>
-								<label class="col-xs-2"  ng-if="order.comments">备注信息</label>
+								<label class="col-xs-2"  ng-if="order.comments"><?=__("order_index__actions__BRAND_DESCRIPTION")?></label>
 								<div class="col-xs-4" ng-if="order.comments">
 								  	<span>{{order.comments}}</span>
 								</div>
@@ -246,9 +246,9 @@
 								</div>
 								<label class="col-xs-2" ng-if="order.invoice_url"><?=__("order_index__actions__INVOICE");?></label>
 								<div class="col-xs-4" ng-if="order.invoice_url">
-									<a ng-href="/{{order.invoice_url}}" target="_blank">订单Invoice.PDF</a>
+									<a ng-href="/{{order.invoice_url}}" target="_blank">Invoice.PDF</a>
 								</div>
-								<label class="col-xs-2"  ng-if="order.comments">备注信息</label>
+								<label class="col-xs-2"  ng-if="order.comments"><?=__("order_index__actions__BRAND_DESCRIPTION")?></label>
 								<div class="col-xs-4" ng-if="order.comments">
 								  	<span>{{order.comments}}</span>
 								</div>

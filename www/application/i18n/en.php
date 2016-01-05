@@ -725,6 +725,7 @@ return array_merge(
         'order_index__actions__SHIP_NO' => 'SHIPMENT NO / ID & INFO',
         'order_index__actions__SHIP_FEE' => 'SHIPMENT FEE',
         'order_index__actions__SHIP_FEE_UNIT' => 'UNIT',
+        'order_index__actions__BRAND_DESCRIPTION' => 'INFO (BOX NUM etc.)',
 
         'order_index__actions__btn_INVOICE_SUBMIT' => 'SUBMIT',
         'order_index__actions__btn_DEPOSITED' => 'DEPOSITED',
