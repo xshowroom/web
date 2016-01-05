@@ -8,6 +8,7 @@
 	<script type="text/javascript" src="/static/app/modules/buyer_brand.js"></script>
 </head>
 <body ng-controller="BuyerBrandCtrl" class="container-fluid" ng-cloak>
+	<div class="global-loading-mask" us-spinner="{radius:15, width:5, length: 10}"></div>
 	<nav class="row setting-info">
 		<?php echo View::factory('common/global_setting_without_login', array('userAttr'=> $userAttr, 'user'=> $user)); ?>
 	</nav>

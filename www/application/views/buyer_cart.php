@@ -7,7 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="/static/app/css/buyer_cart.css" />
 	<script type="text/javascript" src="/static/app/modules/buyer_cart.js"></script>
 </head>
-<body ng-controller="BuyerCartCtrl" class="container-fluid">
+<body ng-controller="BuyerCartCtrl" class="container-fluid">+
+	<div class="global-loading-mask" us-spinner="{radius:15, width:5, length: 10}"></div>
 	<nav class="row setting-info">
 		<?php echo View::factory('common/global_setting_without_login'); ?>
 	</nav>
