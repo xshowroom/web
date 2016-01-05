@@ -9,12 +9,12 @@ body {
 	color: #666;
 }
 /* 默认bootstrap样式覆盖 */
-.container{
+/* .container{
 	min-width: 1200px;
 }
 .container-fluid{
 	min-width: 1200px;
-}
+} */
 .row{
 	position: relative;
 }
@@ -600,6 +600,7 @@ to {-o-transform: translateX(0);}
     font-size: 16px;
     cursor: pointer;
     margin-left: -20px;
+    left: 50%;
 }
 .image-link-mask > div > a.text-link{
 	position: absolute;
