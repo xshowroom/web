@@ -40,4 +40,15 @@ class Controller_User extends Controller_BaseReqLogin
             $this->redirect('/buyer/profile');
         }
     }
+
+    public function action_password()
+    {
+        $roleType = (int)$this->opUser['role_type'];
+
+        if($roleType === Model_User::TYPE_USER_BRAND){
+            $this->redirect('/brand/password');
+        } elseif ($roleType === Model_User::TYPE_USER_BUYER) {
+            $this->redirect('/buyer/password');
+        }
+    }
 }

@@ -70,6 +70,7 @@ return array_merge(
      */
     array(
         'global_navigation_user_center__PROFILE' => 'MY PROFILE',
+        'global_navigation_user_center__PASSWORD' => 'CHANGE PASSWORD',
         'global_navigation_user_center__MESSAGES' => 'MESSAGES',
     ),
     /**
@@ -341,6 +342,18 @@ return array_merge(
         'profile__BRAND_URL' => 'BRAND URL',
     ),
     /**
+     * user_password.php
+     */
+    array(
+        'password__TITLE' => 'CHANGE YOUR PASSWORD',
+
+        'password__OLD' => 'old password *',
+        'password__NEW_1' => 'your new password *',
+        'password__NEW_2' => 'confirm password *',
+
+        'password__btn_UPDATE' => 'CHANGE PASSWORD',
+    ),
+    /**
      * brand_dashboard.php
      */
     array(
@@ -449,7 +462,7 @@ return array_merge(
         'product_create__PRODUCT_ADD_COLOR' => 'EDIT',
         'product_create__PRODUCT_MADE_IN' => 'MADE IN',
         'product_create__PRODUCT_MATERIAL' => 'MATERIAL',
-        'product_create__PRODUCT_CARE_INSTRUCTION' => 'PRODUCT DETAILS ( including description, measurement, care instructions etc)',
+        'product_create__PRODUCT_CARE_INSTRUCTION' => 'PRODUCT DETAILS (including description, measurement, care instructions etc)',
 
         'product_create__PRODUCT_btn_SAVE' => 'SAVE',
 
@@ -479,7 +492,7 @@ return array_merge(
         'product_index__PRODUCT_COLOR' => 'COLOR',
         'product_index__PRODUCT_MADE_IN' => 'MADE IN',
         'product_index__PRODUCT_MATERIAL' => 'MATERIAL',
-        'product_index__PRODUCT_CARE_INSTRUCTION' => 'PRODUCT DETAILS ( including description, measurement, care instructions etc)',
+        'product_index__PRODUCT_CARE_INSTRUCTION' => 'PRODUCT DETAILS (including description, measurement, care instructions etc)',
 
         'product_index__btn__ADD_TO_CART' => 'ADD TO CART',
         'product_index__btn__REMOVE_IN_CART' => 'REMOVE IN CART',

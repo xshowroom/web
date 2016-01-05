@@ -168,10 +168,9 @@ to {opacity: 1;}
 
 .home-introduction{
 	height: 700px;
-	background-image: url(/static/app/images/home-introduction.png);
 	padding-top: 250px;
 	text-align: center;
-	background-position: center;
+	background: url(/static/app/images/home-introduction.jpg) center;
 	background-position-x: center;
 	background-position-y: center;
 }

@@ -4,6 +4,9 @@
 			<a href="<?=URL::site('user/profile');?>" <?php if ($currentPage == 'profile'){?>class="active"<?php }?>><?=__("global_navigation_user_center__PROFILE");?></a>
 		</li>
 		<li>
+			<a href="<?=URL::site('user/password');?>" <?php if ($currentPage == 'password'){?>class="active"<?php }?>><?=__("global_navigation_user_center__PASSWORD");?></a>
+		</li>
+		<li>
 			<a href="<?=URL::site('message/list');?>" <?php if ($currentPage == 'message'){?>class="active"<?php }?>><?=__("global_navigation_user_center__MESSAGES");?></a>
 		</li>
 	</ul>

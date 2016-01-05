@@ -31,6 +31,15 @@ class Controller_Buyer extends Controller_BaseReqLogin
         $this->response->body($view);
     }
 
+    public function action_password()
+    {
+        $view = View::factory('user_password');
+        $view->set('user', $this->opUser);
+        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+
+        $this->response->body($view);
+    }
+
     public function action_dashboard()
     {
         $view = View::factory('buyer_dashboard');

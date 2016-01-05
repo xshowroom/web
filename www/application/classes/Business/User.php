@@ -147,7 +147,18 @@ class Business_User
         $shopId = $this->shopService->realAddShop($userId);
         return $shopId;
     }
-    
+
+    public function changePassword($userId, $new)
+    {
+        $this->userModel->changeUserPassword($userId, $new);
+    }
+
+    public function checkPassword($userId, $password)
+    {
+        $res = $this->userModel->checkPassword($userId, $password);
+        return $res;
+    }
+
     public function checkEmail($email)
     {
         $res = $this->userModel->checkEmail($email);

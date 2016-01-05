@@ -120,6 +120,18 @@ class Model_User
     
         return empty($result) ? false : true;
     }
+
+    public function checkPassword($userId, $password)
+    {
+        $result = DB::select()
+            ->from('user')
+            ->where('id', '=', $userId)
+            ->where('password', '=', $password)
+            ->execute()
+            ->as_array();
+
+        return empty($result) ? false : true;
+    }
     
     /**
      * 增加用户信息
@@ -238,7 +250,24 @@ class Model_User
     
         return $result[0];
     }
-    
+
+    /**
+     * Change user password
+     *
+     * @param $userId
+     * @param $newPass
+     * @return mixed
+     */
+    public function changeUserPassword($userId, $newPass)
+    {
+        $result = DB::update('user')
+            ->set(array('password' => $newPass))
+            ->where('id', '=', $userId)
+            ->execute();
+
+        return $result[0];
+    }
+
     /**
      * 查询用户属性
      *

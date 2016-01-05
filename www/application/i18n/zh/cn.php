@@ -70,6 +70,7 @@ return array_merge(
      */
     array(
         'global_navigation_user_center__PROFILE' => '个人信息',
+        'global_navigation_user_center__PASSWORD' => '修改密码',
         'global_navigation_user_center__MESSAGES' => '消息中心',
     ),
     /**
@@ -339,6 +340,18 @@ return array_merge(
         'profile__BRAND_NAME' => '品牌名称',
         'profile__DESIGNER_NAME' => '品牌设计师',
         'profile__BRAND_URL' => '品牌网址',
+    ),
+    /**
+     * user_password.php
+     */
+    array(
+        'password__TITLE' => '修改您的密码',
+
+        'password__OLD' => '请输入旧的密码 *',
+        'password__NEW_1' => '请输入新的密码 *',
+        'password__NEW_2' => '请确认新的密码 *',
+
+        'password__btn_UPDATE' => '更改密码',
     ),
     /**
      * brand_dashboard.php
