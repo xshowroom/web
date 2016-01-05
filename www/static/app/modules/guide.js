@@ -18,6 +18,10 @@ angular.module(
         function ($scope, $location, User) {
         	var path = $location.path();
         	$scope.solution = path == '/retailer' ? 'retailer' : 'brand';
+        	
+        	$scope.$on('$locationChangeSuccess', function(){
+        		$scope.solution = $location.path() == '/retailer' ? 'retailer' : 'brand';
+        	});
         }
     ]
 );

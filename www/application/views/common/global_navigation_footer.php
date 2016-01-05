@@ -4,7 +4,7 @@
 			<h3><?=__("global_navigation_footer__GUIDE")?></h3>
 			<ul>
 				<li><a href="<?=URL::site('guide#/brand');?>"><?=__("global_navigation_footer__GUIDE__FOR_BRANDS")?></a></li>
-				<li><a href="<?=URL::site('guide#/buyer');?>"><?=__("global_navigation_footer__GUIDE__FOR_BUYERS")?></a></li>
+				<li><a href="<?=URL::site('guide#/retailer');?>"><?=__("global_navigation_footer__GUIDE__FOR_BUYERS")?></a></li>
 				<li><a href="#"><?=__("global_navigation_footer__GUIDE__FOR_SHOWROOMS")?></a></li>
 			</ul>
 		</div>
@@ -21,7 +21,7 @@
 			<h3><?= __("global_navigation_footer__HELP")?></h3>
 			<ul>
 				<li><a href="<?=URL::site('about#contact-us');?>"><?=__("global_navigation_footer__HELP__CONTACT_US")?></a></li>
-				<li><a href="#"<?=__("global_navigation_footer__HELP__PRIVACY_COOKIES")?></li>
+				<li><a href="#"><?=__("global_navigation_footer__HELP__PRIVACY_COOKIES")?></li>
 				<li><a href="<?=url::site('customer')?>"><?=__("global_navigation_footer__HELP__Q_A")?></a></li>
 				<li><a href="#"><?=__("global_navigation_footer__HELP__TERMS_OF_SERVICE")?></a></li>
 			</ul>

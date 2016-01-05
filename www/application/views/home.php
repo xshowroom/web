@@ -153,7 +153,7 @@
 					<h4><?=__("home__BUYERS")?></h4>
 					<p><?=__("home__BUYERS_DESC")?></p>
 					<div>
-						<a class="btn" href="<?=URL::site('guide#/buyer');?>"><?=__("home__btn_SOLUTION")?></a>
+						<a class="btn" href="<?=URL::site('guide#/retailer');?>"><?=__("home__btn_SOLUTION")?></a>
 						<a class="btn" href="<?=URL::site('register/buyer');?>"><?=__("home__btn_REGISTER")?></a>
 					</div>
 				</div>
