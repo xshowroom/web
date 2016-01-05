@@ -26,7 +26,7 @@
 			</div>
 			<div class="row">
 				<span class="col-xs-4 col-xs-offset-2">support@xshowroom.com</span>
-				<span class="col-xs-4">+44 20 485 736 22</span>
+				<span class="col-xs-4"><?=__("customer_banner_TEL")?></span>
 			</div>
 		</div>
 	</section>

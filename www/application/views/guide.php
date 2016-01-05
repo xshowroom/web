@@ -178,64 +178,64 @@
 					<div class="col-xs-4 guide-benefit-item">
 						<div class="col-xs-3 guide-benefit-item-icon"></div>
 						<div class="col-xs-9">
-							<h4><?=__("guide__benefits_PREVIEW_COLLECTIONS")?></h4>
-							<p><?=__("guide__benefits_PREVIEW_COLLECTIONS_DESC")?></p>
+							<h4><?=__("guide__benefits_BUYER_01")?></h4>
+							<p><?=__("guide__benefits_BUYER_01_DESC")?></p>
 						</div>
 					</div>
 					<div class="col-xs-4 guide-benefit-item">
 						<div class="col-xs-3 guide-benefit-item-icon"></div>
 						<div class="col-xs-9">
-							<h4><?=__("guide__benefits_24_7_ACCESS")?></h4>
-							<p><?=__("guide__benefits_24_7_ACCESS_DESC")?></p>
+							<h4><?=__("guide__benefits_BUYER_02")?></h4>
+							<p><?=__("guide__benefits_BUYER_02_DESC")?></p>
 						</div>
 					</div>
 					<div class="col-xs-4 guide-benefit-item">
 						<div class="col-xs-3 guide-benefit-item-icon"></div>
 						<div class="col-xs-9">
-							<h4><?=__("guide__benefits_DISCOVER_BRANDS")?></h4>
-							<p><?=__("guide__benefits_DISCOVER_BRANDS_DESC")?></p>
+							<h4><?=__("guide__benefits_BUYER_03")?></h4>
+							<p><?=__("guide__benefits_BUYER_03_DESC")?></p>
 						</div>
 					</div>
 					<div class="col-xs-4 guide-benefit-item">
 						<div class="col-xs-3 guide-benefit-item-icon"></div>
 						<div class="col-xs-9">
-							<h4><?=__("guide__benefits_VIRTUAL_SHOWROOMS")?></h4>
-							<p><?=__("guide__benefits_VIRTUAL_SHOWROOMS_DESC")?></p>
+							<h4><?=__("guide__benefits_BUYER_04")?></h4>
+							<p><?=__("guide__benefits_BUYER_04_DESC")?></p>
 						</div>
 					</div>
 					<div class="col-xs-4 guide-benefit-item">
 						<div class="col-xs-3 guide-benefit-item-icon"></div>
 						<div class="col-xs-9">
-							<h4><?=__("guide__benefits_VIRTUAL_SHOWROOMS")?></h4>
-							<p><?=__("guide__benefits_VIRTUAL_SHOWROOMS_DESC")?></p>
+							<h4><?=__("guide__benefits_BUYER_05")?></h4>
+							<p><?=__("guide__benefits_BUYER_05_DESC")?></p>
 						</div>
 					</div>
 					<div class="col-xs-4 guide-benefit-item">
 						<div class="col-xs-3 guide-benefit-item-icon"></div>
 						<div class="col-xs-9">
-							<h4><?=__("guide__benefits_SAVE_FOR_LATER")?></h4>
-							<p><?=__("guide__benefits_SAVE_FOR_LATER_DESC")?></p>
+							<h4><?=__("guide__benefits_BUYER_06")?></h4>
+							<p><?=__("guide__benefits_BUYER_06_DESC")?></p>
 						</div>
 					</div>
 					<div class="col-xs-4 guide-benefit-item">
 						<div class="col-xs-3 guide-benefit-item-icon"></div>
 						<div class="col-xs-9">
-							<h4><?=__("guide__benefits_KEEP_TRACK")?></h4>
-							<p><?=__("guide__benefits_KEEP_TRACK_DESC")?></p>
+							<h4><?=__("guide__benefits_BUYER_07")?></h4>
+							<p><?=__("guide__benefits_BUYER_07_DESC")?></p>
 						</div>
 					</div>
 					<div class="col-xs-4 guide-benefit-item">
 						<div class="col-xs-3 guide-benefit-item-icon"></div>
 						<div class="col-xs-9">
-							<h4><?=__("guide__benefits_TRAINING")?></h4>
-							<p><?=__("guide__benefits_TRAINING_DESC")?></p>
+							<h4><?=__("guide__benefits_BUYER_08")?></h4>
+							<p><?=__("guide__benefits_BUYER_08_DESC")?></p>
 						</div>
 					</div>
 					<div class="col-xs-4 guide-benefit-item">
 						<div class="col-xs-3 guide-benefit-item-icon"></div>
 						<div class="col-xs-9">
-							<h4><?=__("guide__benefits_DEDICATED_URL")?></h4>
-							<p><?=__("guide__benefits_DEDICATED_URL_DESC")?></p>
+							<h4><?=__("guide__benefits_BUYER_09")?></h4>
+							<p><?=__("guide__benefits_BUYER_09_DESC")?></p>
 						</div>
 					</div>
 				</div>

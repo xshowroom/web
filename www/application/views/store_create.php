@@ -21,7 +21,7 @@
         <div class="container" ng-cloak>
             <div class="row store-inputs uploading">
                 <div class="col-xs-12">
-                	<h3>Store Images<span>({{store.shopImage.length}}/5)</span></h3>
+                	<h3><?=__("store_index__STORE_IMAGES");?><span>({{store.shopImage.length}}/5)</span></h3>
                 </div>
                 <div class="col-xs-12">
                 	<div ng-repeat="url in store.shopImage track by $index" class="store-image store-image-uploaded">
@@ -39,19 +39,19 @@
             </div>
             <div class="row store-inputs">
                 <div class="col-xs-12">
-                    <h3>STORE INFO</h3>
+                    <h3><?=__("store_index__STORE_INFO");?></h3>
                 </div>
                 <div class="col-xs-10">
                     <form class="form-horizontal" id="store-create-form">
                     	<div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopName}">
-                            <label for="name" class="col-xs-2 control-label">STORE NAME</label>
+                            <label for="name" class="col-xs-2 control-label"><?=__("store_index__STORE_NAME");?></label>
                             <div class="col-xs-6">
                             	<input type="text" class="form-control" id="store-name" name="shopName"
 									ng-model="store.shopName">
                             </div>
                         </div>
                         <div class="form-group col-xs-12"  ng-class="{'has-error': checkInfo.validation.shopType}">
-                            <label for="store-type" class="col-xs-2 control-label">STORE CATEGORY</label>
+                            <label for="store-type" class="col-xs-2 control-label"><?=__("store_index__STORE_CATEGORY");?></label>
                             <div class="col-xs-6">
                                 <select class="form-control" id="store-type" ng-model="store.shopType" name="shopType">
                                     <option value="dropdown__STORE__ONLINE_RETAIL_SHOP">{{ "dropdown__STORE__ONLINE_RETAIL_SHOP"| translate }}</option>
@@ -64,7 +64,7 @@
                             </div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.collectionType}">
-                            <label class="col-xs-2 control-label">COLLETION TYPES</label>
+                            <label class="col-xs-2 control-label"><?=__("store_index__COLLECTION_TYPES");?></label>
 							<div class="col-xs-6">
 								<label class="checkbox-inline">
 									<input type="checkbox" name="collectionType" ng-model="collectionType.women" ng-change="setCollection('dropdown__COLLECTION__WOMEN')">
@@ -89,31 +89,31 @@
 							</div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.brandList}">
-                            <label for="brand-carried" class="col-xs-2 control-label">BRAND LIST</label>
+                            <label for="brand-carried" class="col-xs-2 control-label"><?=__("store_index__BRAND_LIST");?></label>
                             <div class="col-xs-6">
                                   <input type="text" class="form-control" id="brand-carried" name="brandList" ng-model="store.brandList">
                             </div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopWebsite}">
-                            <label for="website" class="col-xs-2 control-label">WEBSITE</label>
+                            <label for="website" class="col-xs-2 control-label"><?=__("store_index__STORE_WEBSITE");?></label>
                             <div class="col-xs-6">
                             	<input type="text" class="form-control" id="website" name="shopWebsite" ng-model="store.shopWebsite">
                             </div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopAddress}">
-                            <label for="store-address" class="col-xs-2 control-label">ADDRESS</label>
+                            <label for="store-address" class="col-xs-2 control-label"><?=__("store_index__STORE_ADDRESS");?></label>
                             <div class="col-xs-6">
                                 <input type="text" class="form-control" id="store-address" name="shopAddress" ng-model="store.shopAddress">
                             </div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopShipAddress}">
-                            <label for="store-ship-address" class="col-xs-2 control-label">SHIP ADDRESS</label>
+                            <label for="store-ship-address" class="col-xs-2 control-label"><?=__("store_index__STORE_SHIPPING_ADDRESS");?></label>
                             <div class="col-xs-6">
                                 <input type="text" class="form-control" id="store-ship-address" name="shopShipAddress" ng-model="store.shopShipAddress">
                             </div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopCountry}">
-                            <label for="material" class="col-xs-2 control-label">COUNTRY</label>
+                            <label for="material" class="col-xs-2 control-label"><?=__("store_index__STORE_COUNTRY");?></label>
                             <div class="col-xs-6">
                             	<select  class="form-control" id="store-country" name="shopCountry" ng-model="store.shopCountry">
 									<option ng-repeat="country in countries" value="dropdown__COUNTRY__{{country}}">
@@ -123,19 +123,19 @@
                             </div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopZipcode}">
-                            <label for="store-address" class="col-xs-2 control-label">ZIPCODE</label>
+                            <label for="store-address" class="col-xs-2 control-label"><?=__("store_index__STORE_ZIPCODE");?></label>
                             <div class="col-xs-6">
                             	<input type="text" class="form-control" id="store-postcode" name="shopZipcode" ng-model="store.shopZipcode">
                             </div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopTel}">
-                            <label for="store-address" class="col-xs-2 control-label">TELEPHONE</label>
+                            <label for="store-address" class="col-xs-2 control-label"><?=__("store_index__STORE_TELEPHONE");?></label>
                             <div class="col-xs-6">
                                 <input type="text" class="form-control" id="store-telephone-number" name="shopTel" ng-model="store.shopTel">
                             </div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.shopAbout}">
-                            <label for="store-about" class="col-xs-2 control-label">ABOUT STORE</label>
+                            <label for="store-about" class="col-xs-2 control-label"><?=__("store_index__ABOUT_STORE");?></label>
                             <div class="col-xs-6">
                            		<textcomplete>
                                   	<textarea class="form-control" id="store-about" ng-model="store.shopAbout"></textarea>
@@ -153,7 +153,7 @@
 						</div>
                         <div class="form-group col-xs-12">
                             <div class="col-xs-10 col-xs-offset-2">
-                                  <button class="btn btn-type-2" id="create-btn" ng-click="create();">SAVE</button>
+                                  <button class="btn btn-type-2" id="create-btn" ng-click="create();"><?=__("store_index__btn_SAVE");?></button>
                         	</div>
                         </div>
                     </form>
