@@ -137,7 +137,7 @@ return array_merge(
     array(
         'guide__SOLUTIONS_FOR_BRANDS' => 'SOLUTIONS FOR BRANDS',
         'guide__SOLUTIONS_FOR_RETAILERS' => 'SOLUTIONS FOR BUYERS',
-        'guide__X_SHOWROOM_FASHION_ACCESS' => 'X SHOWROOM FASHION ACCESS',
+        'guide__X_SHOWROOM_FASHION_ACCESS' => 'XSHOWROOM FASHION ACCESS',
         'guide__SOLUTION_BRAND' => 'BRAND',
         'guide__SOLUTION_RETAILER' => 'BUYER',
         'guide__SUBSCRIPTION' => 'SUBSCRIPTION',
