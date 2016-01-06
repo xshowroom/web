@@ -79,6 +79,12 @@
             <a class="lb_item_field" href="<?= URL::site("brands/".$brandInfo['brand_url'], 'http') ?>" target="_blank"><?= URL::site("brands/".$brandInfo['brand_url'], 'http') ?></a>
         </div>
         <div class="form-group">
+            <label class="lb_item_name"><?=__("profile__BRAND_DESCRIPTION")?></label>
+        </div>
+        <div class="form-group">
+            <span class="lb_item_field"><?= $brandInfo['description'] ?></span>
+        </div>
+        <div class="form-group">
             <img src="<?= URL::site($brandInfo['brand_image']) ?>"/>
         </div>
     </div>

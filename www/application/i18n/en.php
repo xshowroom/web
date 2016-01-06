@@ -343,6 +343,7 @@ return array_merge(
         'profile__BRAND_NAME' => 'BRAND NAME',
         'profile__DESIGNER_NAME' => 'DESIGNER NAME',
         'profile__BRAND_URL' => 'BRAND URL',
+        'profile__BRAND_DESCRIPTION' => 'DESCRIPTION',
     ),
     /**
      * user_password.php

@@ -343,6 +343,7 @@ return array_merge(
         'profile__BRAND_NAME' => '品牌名称',
         'profile__DESIGNER_NAME' => '品牌设计师',
         'profile__BRAND_URL' => '品牌网址',
+        'profile__BRAND_DESCRIPTION' => '品牌介绍',
     ),
     /**
      * user_password.php
