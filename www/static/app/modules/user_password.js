@@ -64,6 +64,7 @@ angular.module(
 					if (typeof(res) != 'object' || res.status) {
 						$modal({title: 'Error Info', content: res.msg, show: true});
         			}else{
+        				$scope.errorMsgs = [];
         				$modal({title: 'Update Successfully', content: res.msg, show: true});
         			}
 				});
