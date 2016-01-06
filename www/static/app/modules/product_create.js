@@ -17,7 +17,7 @@ angular.module(
      	'$scope', '$location', '$window', '$filter', '$modal', '$element', '$timeout', 'Country', 'Product', 'uiUploader',
         function ($scope, $location, $window, $filter, $modal,  $element, $timeout, Country, Product, uiUploader) {
      		$scope.countries = Country.getAll();
-     		$scope.categories = Product.getCategories();
+     		$scope.categories = Product.getCategoriesByCollection($scope.collectionCategory);
      		$scope.sizeRegions = Product.getSizeRegions();
      		$scope.materials = Product.getMaterials();
      		

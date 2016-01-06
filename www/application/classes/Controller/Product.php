@@ -17,7 +17,6 @@ class Controller_Product extends Controller_BaseReqLogin
         $this->collectionService =new Business_Collection();
     }
 
-    
     public function action_index()
     {
         $view = View::factory('product_index');
@@ -43,16 +42,14 @@ class Controller_Product extends Controller_BaseReqLogin
     public function action_create()
     {
         $collectionId = $this->request->param('id');
+        $collectionInfo = $this->collectionService->getCollectionInfo($this->opUser['id'], $collectionId);
 
-        if (empty($id)) {
-            // to do
+        $view = View::factory('product_create');
+        $view->set('user', $this->opUser);
+        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view->set('collectionId', $collectionId);
+        $view->set('collectionInfo', $collectionInfo);
 
-        }
-    	$view = View::factory('product_create');
-    	$view->set('user', $this->opUser);
-    	$view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
-    	$view->set('collectionId', $collectionId);
-    	
     	$this->response->body($view);
     
     }

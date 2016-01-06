@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  ng-app="xShowroom.product.create" ng-init="collectionId = <?=$collectionId?>;">
+<html  ng-app="xShowroom.product.create" ng-init="collectionId = <?=$collectionId?>; collectionCategory = '<?=$collectionInfo['category']?>';">
 <head>
     <meta charset="UTF-8" >
     <title>XSHOWROOM</title>
@@ -13,10 +13,9 @@
         <?php echo View::factory('common/global_setting_without_login'); ?>
     </nav>
     <nav class="row user-navigation">
-        <?php echo View::factory('common/global_navigation_top_brand',
-            array('currentPage' =>  'product', 'userAttr'=> $userAttr)); 
-           ?>
+        <?php echo View::factory('common/global_navigation_top_brand', array('currentPage' =>  'product', 'userAttr'=> $userAttr)); ?>
     </nav>
+
     <section class="row no-vertical-padding">
         <div class="container">
             <div class="row product-inputs uploading">
@@ -52,9 +51,8 @@
                         <div class="form-group col-xs-12"  ng-class="{'has-error': checkInfo.validation.category}">
                             <label for="category" class="col-xs-2 control-label"><?=__("product_create__PRODUCT_CATEGORY");?></label>
                             <div class="col-xs-6">
-                                <select class="form-control" id="category" name="category" ng-model="product.category"
-                                	ng-change="setSizeCodes(product.category, product.sizeRegion);">
-                                	<option ng-repeat="category in categories track by $index" value="dropdown__PRODUCT_CATEGORY__{{category | uppercase}}">{{('dropdown__PRODUCT_CATEGORY__' + category.toUpperCase()) | translate}}</option>
+                                <select class="form-control" id="category" name="category" ng-model="product.category" ng-change="setSizeCodes(product.category, product.sizeRegion);">
+                                	<option ng-repeat="category in categories track by $index" value="{{category}}">{{category | translate}}</option>
                                 </select>
                             </div>
                         </div>
@@ -149,6 +147,7 @@
             </div>
         </div>
     </section>
+
     <footer class="row footer-navigation">
         <?php echo View::factory('common/global_navigation_footer'); ?>
     </footer>

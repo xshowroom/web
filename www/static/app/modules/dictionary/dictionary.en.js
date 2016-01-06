@@ -353,18 +353,18 @@ angular.module('xShowroom.dictionary', []).constant('dictionary', {
 
         // Product Category Filter
         dropdown__PRODUCT_CATEGORY__ALL: "ALL",
-        // Product Category - WOMAN
-        dropdown__PRODUCT_CATEGORY__WOMAN__TOPS: "TOPS",
-        dropdown__PRODUCT_CATEGORY__WOMAN__SHIRTS: "SHIRTS",
-        dropdown__PRODUCT_CATEGORY__WOMAN__DRESSES: "DRESSES",
-        dropdown__PRODUCT_CATEGORY__WOMAN__JUMPSUITS: "JUMPSUITS",
-        dropdown__PRODUCT_CATEGORY__WOMAN__OUTERWEAR: "OUTERWEAR",
-        dropdown__PRODUCT_CATEGORY__WOMAN__KNITWEAR: "KNITWEAR",
-        dropdown__PRODUCT_CATEGORY__WOMAN__SWEATSHIRT: "SWEATSHIRT",
-        dropdown__PRODUCT_CATEGORY__WOMAN__JEANS: "JEANS",
-        dropdown__PRODUCT_CATEGORY__WOMAN__SKIRTS: "SKIRTS",
-        dropdown__PRODUCT_CATEGORY__WOMAN__PANTS: "PANTS",
-        dropdown__PRODUCT_CATEGORY__WOMAN__SWIMWEAR: "SWIMWEAR",
+        // Product Category - WOMEN
+        dropdown__PRODUCT_CATEGORY__WOMEN__TOPS: "TOPS",
+        dropdown__PRODUCT_CATEGORY__WOMEN__SHIRTS: "SHIRTS",
+        dropdown__PRODUCT_CATEGORY__WOMEN__DRESSES: "DRESSES",
+        dropdown__PRODUCT_CATEGORY__WOMEN__JUMPSUITS: "JUMPSUITS",
+        dropdown__PRODUCT_CATEGORY__WOMEN__OUTERWEAR: "OUTERWEAR",
+        dropdown__PRODUCT_CATEGORY__WOMEN__KNITWEAR: "KNITWEAR",
+        dropdown__PRODUCT_CATEGORY__WOMEN__SWEATSHIRT: "SWEATSHIRT",
+        dropdown__PRODUCT_CATEGORY__WOMEN__JEANS: "JEANS",
+        dropdown__PRODUCT_CATEGORY__WOMEN__SKIRTS: "SKIRTS",
+        dropdown__PRODUCT_CATEGORY__WOMEN__PANTS: "PANTS",
+        dropdown__PRODUCT_CATEGORY__WOMEN__SWIMWEAR: "SWIMWEAR",
         // Product Category - MAN
         dropdown__PRODUCT_CATEGORY__MAN__SHIRTS: "SHIRTS",
         dropdown__PRODUCT_CATEGORY__MAN__TOPS_TSHIRT: "TOPS AND T-SHIRT",
@@ -378,7 +378,6 @@ angular.module('xShowroom.dictionary', []).constant('dictionary', {
         // Product Category - JEWELRY
         dropdown__PRODUCT_CATEGORY__JEWELRY__BRACELETS: "BRACELETS",
         dropdown__PRODUCT_CATEGORY__JEWELRY__EARRINGS: "EARRINGS",
-        dropdown__PRODUCT_CATEGORY__JEWELRY__FINE_JEWELRY: "FINE JEWELRY",
         dropdown__PRODUCT_CATEGORY__JEWELRY__NECKLACES_PENDANTS: "NECKLACES PENDANTS",
         dropdown__PRODUCT_CATEGORY__JEWELRY__RINGS: "RINGS",
         dropdown__PRODUCT_CATEGORY__JEWELRY__BODY_HAND_CHAINS: "BODY/HAND CHAINS",
@@ -398,14 +397,10 @@ angular.module('xShowroom.dictionary', []).constant('dictionary', {
         dropdown__PRODUCT_CATEGORY__ACCESSORIES__TECH_ACCESSORIES: "TECH ACCESSORIES",
         // Product Category - FOOTWEAR
         dropdown__PRODUCT_CATEGORY__FOOTWEAR__BOOTS: "BOOTS",
-        dropdown__PRODUCT_CATEGORY__FOOTWEAR__DRESS_SHOES: "DRESS SHOES",
         dropdown__PRODUCT_CATEGORY__FOOTWEAR__FLATS: "FLATS",
         dropdown__PRODUCT_CATEGORY__FOOTWEAR__PUMPS: "PUMPS",
-        dropdown__PRODUCT_CATEGORY__FOOTWEAR__RAIN_BOOTS: "RAIN BOOTS",
         dropdown__PRODUCT_CATEGORY__FOOTWEAR__SANDALS: "SANDALS",
         dropdown__PRODUCT_CATEGORY__FOOTWEAR__SNEAKERS: "SNEAKERS",
-        dropdown__PRODUCT_CATEGORY__FOOTWEAR__WEDGES: "WEDGES",
-        dropdown__PRODUCT_CATEGORY__FOOTWEAR__WINTER_BOOTS: "WINTER BOOTS",
 
         // Product Material
         dropdown__PRODUCT_MATERIAL__Acetate: "Acetate",
