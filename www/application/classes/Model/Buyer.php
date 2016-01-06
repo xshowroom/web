@@ -16,7 +16,7 @@ class Model_Buyer
 
     // 买手权限状态
     const STATUS_BUYER_NOTAPPLIED   = -2;
-    const STATUS_BUYER_UNAUTHED     = -1
+    const STATUS_BUYER_UNAUTHED     = -1;
     const STATUS_BUYER_AUTHED       = 0;
 
     public function getAuthListByUser($userId)
