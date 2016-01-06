@@ -121,23 +121,23 @@
 								<label><?= __("brand_register__STEP_2__STORE_COLLECTION_TYPE");?></label>
 								<div>
 									<label class="checkbox-inline">
-										<input type="checkbox" name="categoryType" ng-change="setCollection('dropdown__COLLECTION__WOMEN')">
+										<input type="checkbox" name="categoryType" ng-model="dropdown__COLLECTION__WOMEN" ng-change="setCollection('dropdown__COLLECTION__WOMEN')">
 										{{ "dropdown__COLLECTION__WOMEN"| translate }}
 									</label>
 									<label class="checkbox-inline">
-										<input type="checkbox" name="categoryType" ng-change="setCollection('dropdown__COLLECTION__MEN')">
+										<input type="checkbox" name="categoryType" ng-model="dropdown__COLLECTION__MEN" ng-change="setCollection('dropdown__COLLECTION__MEN')">
 										{{ "dropdown__COLLECTION__MEN"| translate }}
 									</label>
 									<label class="checkbox-inline">
-										<input type="checkbox" name="categoryType" ng-change="setCollection('dropdown__COLLECTION__JEWELRY')">
+										<input type="checkbox" name="categoryType" ng-model="dropdown__COLLECTION__JEWELRY" ng-change="setCollection('dropdown__COLLECTION__JEWELRY')">
 										{{ "dropdown__COLLECTION__JEWELRY"| translate }}
 									</label>
 									<label class="checkbox-inline">
-										<input type="checkbox" name="categoryType" ng-change="setCollection('dropdown__COLLECTION__ACCESSORIES')">
+										<input type="checkbox" name="categoryType" ng-model="dropdown__COLLECTION__ACCESSORIES" ng-change="setCollection('dropdown__COLLECTION__ACCESSORIES')">
 										{{ "dropdown__COLLECTION__ACCESSORIES"| translate }}
 									</label>
 									<label class="checkbox-inline">
-										<input type="checkbox" name="categoryType" ng-change="setCollection('dropdown__COLLECTION__FOOTWEAR')">
+										<input type="checkbox" name="categoryType" ng-model="dropdown__COLLECTION__FOOTWEAR" ng-change="setCollection('dropdown__COLLECTION__FOOTWEAR')">
 										{{ "dropdown__COLLECTION__FOOTWEAR"| translate }}
 									</label>
 								</div>
