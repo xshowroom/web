@@ -105,7 +105,7 @@
 						</div>
 					</div>
 					<div class="collection-list-content row">
-						<div class="col-xs-3" ng-repeat="category in ['dress', 'top', 'shirt', 'skirt']">
+						<div class="col-xs-3" ng-repeat="category in ['WOMEN__OUTERWEAR', 'WOMEN__DRESSES', 'WOMEN__PANTS', 'JEWELRY__BRACELETS']">
 							<a target="_self" href="#" class="collection-item">
 								<img ng-src="/static/app/images/mock-{{category}}.png" class="collection-item-image">
 							</a>
