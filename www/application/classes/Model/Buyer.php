@@ -14,6 +14,11 @@ class Model_Buyer
     const STATUS_STOP       = 1;
     const STATUS_DELETED    = 2;
 
+    // 买手权限状态
+    const STATUS_BUYER_NOTAPPLIED   = -2;
+    const STATUS_BUYER_UNAUTHED     = -1
+    const STATUS_BUYER_AUTHED       = 0;
+
     public function getAuthListByUser($userId)
     {
         $result = DB::select()
@@ -73,7 +78,7 @@ class Model_Buyer
                     ->execute()
                     ->as_array();
 
-        return empty($result) ? array() : $result[0];
+        return $result;
     }
 
     public function listByAuthStatus($status)
