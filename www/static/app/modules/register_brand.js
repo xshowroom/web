@@ -26,7 +26,7 @@ angular.module(
 						'designerName': false,
 						'imagePath': false,
 						'brandUrl': false,
-						'collectionType': false
+						'categoryType': false
 				    },
 				    3: {
 				    	'companyName': false,
@@ -63,8 +63,8 @@ angular.module(
 			};
 			
 			$scope.setCollection = function(value){
-				var collections = $scope.user.collectionType
-					? $scope.user.collectionType.split(',')
+				var collections = $scope.user.categoryType
+					? $scope.user.categoryType.split(',')
 				    : [];
 				var index = collections.indexOf(value);
 				if(index >= 0){
@@ -72,7 +72,7 @@ angular.module(
 				}else{
 					collections.push(value);
 				}
-				$scope.user.collectionType = collections.join(',');
+				$scope.user.categoryType = collections.join(',');
 			};
 			
 			$scope.check = function() {
