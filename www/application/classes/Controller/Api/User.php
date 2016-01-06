@@ -9,6 +9,7 @@ class Controller_Api_User extends Controller_BaseReqLogin
 
     public function before()
     {
+        parent::before();
         $this->userService = new Business_User();
     }
 
