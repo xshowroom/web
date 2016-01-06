@@ -225,9 +225,10 @@ class Model_User
      * @param string $designerName
      * @param string $brandUrl
      * @param string $brandImage
+     * @param string $categoryType
      * @return int
      */
-    public function addBrandInfo($userId, $brandName, $designerName, $brandUrl, $brandImage)
+    public function addBrandInfo($userId, $brandName, $designerName, $brandUrl, $brandImage, $categoryType)
     {
         $result = DB::insert('brand')
                     ->columns(array(
@@ -236,6 +237,7 @@ class Model_User
                         'designer_name',
                         'brand_url',
                         'brand_image',
+                        'category_type',
                         'status',
                     ))
                     ->values(array(
@@ -244,10 +246,28 @@ class Model_User
                         $designerName,
                         $brandUrl,
                         $brandImage,
+                        $categoryType,
                         self::STATUS_USER_PENDING,
                     ))
                     ->execute();
     
+        return $result[0];
+    }
+
+    public function updateBrandInfo($userId, $designerName, $brandUrl, $brandImage, $categoryType, $description)
+    {
+        $result = DB::update('brand')
+                    ->set(array(
+                        'designer_name' => $designerName,
+                        'brand_url' => $brandUrl,
+                        'brand_image' => $brandImage,
+                        'category_type' => $categoryType,
+                        'description' => $description,
+                    ))
+                    ->where('brandId', '=', $userId)
+                    ->where('status', '=', self::STATUS_USER_NORMAL)
+                    ->execute();
+
         return $result[0];
     }
 

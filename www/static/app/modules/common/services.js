@@ -203,8 +203,8 @@ angular.module(
 				category: {
 	         		type: 'radio',
 	         		values: [
-	         		    'dropdown__COLLECTION__WOMEN', 'dropdown__COLLECTION__MEN', 'dropdown__COLLECTION__ACCESSORIES',
-	         	        'dropdown__COLLECTION__LIFESTYLE', 'dropdown__COLLECTION__OTHERS'
+	         		    'dropdown__COLLECTION__WOMEN', 'dropdown__COLLECTION__MEN', 'dropdown__COLLECTION__JEWELRY',
+	         	        'dropdown__COLLECTION__ACCESSORIES', 'dropdown__COLLECTION__FOOTWEAR'
 	         	    ]
 	         	},
 				season:{

@@ -32,5 +32,4 @@ class Controller_Api_Brand extends Controller_Base
             'data'   => $res,
         ));
     }
-
 }

@@ -41,9 +41,9 @@
                                   <select class="form-control" id="category" ng-model="collection.category">
                                       <option value="dropdown__COLLECTION__WOMEN">{{ 'dropdown__COLLECTION__WOMEN' | translate}}</option>
                                       <option value="dropdown__COLLECTION__MEN">{{ 'dropdown__COLLECTION__MEN' | translate}}</option>
+                                      <option value="dropdown__COLLECTION__JEWELRY">{{ 'dropdown__COLLECTION__JEWELRY' | translate}}</option>
                                       <option value="dropdown__COLLECTION__ACCESSORIES">{{ 'dropdown__COLLECTION__ACCESSORIES' | translate}}</option>
-                                      <option value="dropdown__COLLECTION__LIFESTYLE">{{ 'dropdown__COLLECTION__LIFESTYLE' | translate}}</option>
-                                      <option value="dropdown__COLLECTION__OTHERS">{{ 'dropdown__COLLECTION__OTHERS' | translate}}</option>
+                                      <option value="dropdown__COLLECTION__FOOTWEAR">{{ 'dropdown__COLLECTION__FOOTWEAR' | translate}}</option>
                                   </select>
                             </div>
                         </div>
