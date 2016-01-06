@@ -325,13 +325,6 @@ angular.module(
             dropdown__COUNTRY__Zaire: '扎伊尔',
             dropdown__COUNTRY__Zambia: '赞比亚',
             
-            
-            // Show
-            dropdown__SHOW__ALL: '所有产品',
-            dropdown__SHOW__WHATS_NEW: '最新发布',
-            dropdown__SHOW__WOMEN: '女士品牌',
-            dropdown__SHOW__MEN: '男士品牌',
-            
             // Available
             dropdown__AVAILABLE__LAST_DAY: '最后1天下单',
             dropdown__AVAILABLE__1_WEEK: '1 周后下线',
@@ -357,11 +350,12 @@ angular.module(
             // Collection Type
             dropdown__COLLECTION__ALL: '所有产品',
             dropdown__COLLECTION__WHATS_NEW: '最新发布',
-            dropdown__COLLECTION__WOMEN: '女士',
-            dropdown__COLLECTION__ACCESSORIES: '首饰',
-            dropdown__COLLECTION__MEN: '男士',
-            dropdown__COLLECTION__LIFESTYLE: '生活方式',
-            dropdown__COLLECTION__OTHERS: '其他',
+            // Collection Type
+            dropdown__COLLECTION__WOMEN: '女装',
+            dropdown__COLLECTION__MEN: '男装',
+            dropdown__COLLECTION__JEWELRY: '饰品',
+            dropdown__COLLECTION__ACCESSORIES: '配饰',
+            dropdown__COLLECTION__FOOTWEAR: '鞋履',
 
             // Collection Mode
             dropdown__COLLECTION_MODE__PRE_ORDER: '预售',
@@ -767,29 +761,21 @@ angular.module(
             dropdown__COUNTRY__Zimbabwe: 'Zimbabwe',
             dropdown__COUNTRY__Zaire: 'Zaire',
             dropdown__COUNTRY__Zambia: 'Zambia',
-            
-            // Show
-            dropdown__SHOW__ALL: 'ALL',
-            dropdown__SHOW__WHATS_NEW: 'WHAT\'S NEW',
-            dropdown__SHOW__WOMEN: 'WOMEN',
-            dropdown__SHOW__MEN: 'MEN',
-            
+
             // Available
             dropdown__AVAILABLE__LAST_DAY: 'LAST DAY TO ORDER',
             dropdown__AVAILABLE__1_WEEK: 'UP TO 1 WEEK',
             dropdown__AVAILABLE__4_WEEK: 'UP TO 4 WEEK',
             dropdown__AVAILABLE__8_WEEK: 'UP TO 8 WEEK',
             dropdown__AVAILABLE__12_WEEK: 'UP TO 12 WEEK',
-            
-            
+
             // Collection Status
             COLLECTION_STATUS_ALL: 'All',
             COLLECTION_STATUS_0: 'DRAFT',
             COLLECTION_STATUS_1: 'SUBMITTED',
             COLLECTION_STATUS_2: 'CLOSED',
             COLLECTION_STATUS_3: 'DELETED',
-            
-            
+
             // Store Type
             dropdown__STORE__ONLINE_RETAIL_SHOP: 'ONLINE-RETAIL SHOP',
             dropdown__STORE__MULTI_LABELS_SHOP: 'MULTI-LABELS SHOP',
@@ -798,15 +784,15 @@ angular.module(
             dropdown__STORE__DEPARTMENT_SHOP: 'DEPARTMENT STORE',
             dropdown__STORE__BUYING_OFFICE_SHOP: 'BUYING OFFICE',
 
-            // Collection Type
+            // Collection Type Filter
             dropdown__COLLECTION__ALL: 'ALL',
             dropdown__COLLECTION__WHATS_NEW: 'WHAT\'S NEW',
+            // Collection Type
             dropdown__COLLECTION__WOMEN: 'WOMEN',
-            dropdown__COLLECTION__ACCESSORIES: 'ACCESSORIES',
             dropdown__COLLECTION__MEN: 'MEN',
-            dropdown__COLLECTION__LIFESTYLE: 'LIFESTYLE',
-            dropdown__COLLECTION__OTHERS: 'OTHERS',
-
+            dropdown__COLLECTION__JEWELRY: 'JEWELRY',
+            dropdown__COLLECTION__ACCESSORIES: 'ACCESSORIES',
+            dropdown__COLLECTION__FOOTWEAR: 'FOOTWEAR',
 
             // Collection Mode
             dropdown__COLLECTION_MODE__PRE_ORDER: 'PRE ORDER',
