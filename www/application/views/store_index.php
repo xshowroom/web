@@ -79,34 +79,24 @@
                             <label class="col-xs-2 control-label"><?=__("store_index__COLLECTION_TYPES");?></label>
 							<div class="col-xs-6">
 								<label class="checkbox-inline">
-									<input type="checkbox" name="collectionType" ng-model="collectionType.dropdown__COLLECTION__WOMEN"
-										ng-true-value="true" ng-false-value="false" ng-change="setCollection('dropdown__COLLECTION__WOMEN')"
-										ng-disabled="!isEditing">
+									<input type="checkbox" name="collectionType" ng-true-value="true" ng-false-value="false" ng-change="setCollection('dropdown__COLLECTION__WOMEN')" ng-disabled="!isEditing">
 									{{ "dropdown__COLLECTION__WOMEN"| translate }}
 								</label>
 								<label for="collection-type-men" class="checkbox-inline">
-									<input type="checkbox" name="collectionType" ng-model="collectionType.dropdown__COLLECTION__MEN"
-										ng-true-value="true" ng-false-value="false" ng-change="setCollection('dropdown__COLLECTION__MEN')"
-										ng-disabled="!isEditing">
+									<input type="checkbox" name="collectionType" ng-true-value="true" ng-false-value="false" ng-change="setCollection('dropdown__COLLECTION__MEN')" ng-disabled="!isEditing">
 									{{ "dropdown__COLLECTION__MEN"| translate }}
 								</label>
 								<label class="checkbox-inline">
-									<input type="checkbox" name="collectionType" ng-model="collectionType.dropdown__COLLECTION__ACCESSORIES"
-										ng-true-value="true" ng-false-value="false" ng-change="setCollection('dropdown__COLLECTION__ACCESSORIES')"
-										ng-disabled="!isEditing">
+									<input type="checkbox" name="collectionType" ng-true-value="true" ng-false-value="false" ng-change="setCollection('dropdown__COLLECTION__JEWELRY')" ng-disabled="!isEditing">
+									{{ "dropdown__COLLECTION__JEWELRY"| translate }}
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" name="collectionType" ng-true-value="true" ng-false-value="false" ng-change="setCollection('dropdown__COLLECTION__ACCESSORIES')" ng-disabled="!isEditing">
 									{{ "dropdown__COLLECTION__ACCESSORIES"| translate }}
 								</label>
 								<label class="checkbox-inline">
-									<input type="checkbox" name="collectionType" ng-model="collectionType.dropdown__COLLECTION__LIFESTYLE"
-										ng-true-value="true" ng-false-value="false" ng-change="setCollection('dropdown__COLLECTION__LIFESTYLE')"
-										ng-disabled="!isEditing">
-									{{ "dropdown__COLLECTION__LIFESTYLE"| translate }}
-								</label>
-								<label class="checkbox-inline">
-									<input type="checkbox" name="collectionType" ng-model="collectionType.dropdown__COLLECTION__OTHERS"
-										ng-true-value="true" ng-false-value="false" ng-change="setCollection('dropdown__COLLECTION__OTHERS')"
-										ng-disabled="!isEditing">
-									{{ "dropdown__COLLECTION__OTHERS"| translate }}
+									<input type="checkbox" name="collectionType" ng-true-value="true" ng-false-value="false" ng-change="setCollection('dropdown__COLLECTION__FOOTWEAR')" ng-disabled="!isEditing">
+									{{ "dropdown__COLLECTION__FOOTWEAR"| translate }}
 								</label>
 							</div>
                         </div>
