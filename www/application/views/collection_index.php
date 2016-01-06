@@ -257,11 +257,9 @@
                  	<h3>{{ (filters.category == '' ? 'dropdown__PRODUCT_CATEGORY__ALL' : filters.category)  | translate}}</h3>
 				    <div class="text-center empty-warning" ng-if="!products.length">
 				      	<img src="/static/app/images/empty.png">
-				      	<?php if($collection['status'] == 0 && $collection['user_id'] == $userAttr['user_id']) {?>
+				      	<?php if($collection['status'] == 0 && $collection['user_id'] == $userAttr['user_id']): ?>
 				       	<p><?=__("collection_index__NO_PRODUCT_1")?><br/><?=__("collection_index__NO_PRODUCT_2")?></p>
-				       	<?php }else{ ?>
-				       	<p>不是吧！该系列中没有任何产品！</p>
-				       	<?php }?>
+				       	<?php endif; ?>
 				    </div>
                  	<div class="collection-category-content row"  ng-if="products.length">
                  		<div class="col-xs-3" ng-repeat="product in products | filter : filters.category | limitTo: filters.limit: 0">
@@ -269,7 +267,7 @@
 								<img ng-src="/{{product.medium_image_url[0]}}" class="product-image"/>
 								<span class="product-info">
 									<span class="product-name">{{product.name}}</span>
-									<span class="product-price">{{collection.currency}}{{product.retail_price}}</span>
+									<span class="product-price"><?=$collection['currency']?>{{product.whole_price}}</span>
 								</span>
                  			</a>
                  		</div>
