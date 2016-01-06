@@ -38,4 +38,24 @@ class Controller_Api_User extends Controller_BaseReqLogin
             'data'   => '',
         ));
     }
+
+    public function action_updateBrandInfo()
+    {
+        $userId  = $this->opUser['id'];
+
+        // generate brand info
+        $designerName  = Request::current()->getParam('designerName');
+        $imagePath     = Request::current()->getParam('imagePath');
+        $brandUrl      = Request::current()->getParam('brandUrl');
+        $categoryType  = Request::current()->getParam('categoryType');
+        $description   = Request::current()->getParam('description');
+
+        $res = $this->userService->updateBrandInfo($userId, $designerName, $brandUrl, $imagePath, $categoryType, $description);
+
+        echo json_encode(array(
+            'status' => STATUS_SUCCESS,
+            'msg'    => '',
+            'data'   => $res,
+        ));
+    }
 }

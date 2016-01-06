@@ -114,6 +114,7 @@ class Business_User
         $designerName  = Request::current()->getParam('designerName');
         $imagePath     = Request::current()->getParam('imagePath');
         $brandUrl      = Request::current()->getParam('brandUrl');
+        $categoryType  = Request::current()->getParam('categoryType');
 
         $brandUrl = urlencode($this->safeFileName($brandUrl));
         
@@ -131,7 +132,7 @@ class Business_User
         
         list($realPathFile, $mediumPathFile, $smallPathFile) = $this->uploadService->createThreeImage($imagePath); 
 
-        $brandId = $this->userModel->addBrandInfo($userId, $brandName, $designerName, $brandUrl, $mediumPathFile);
+        $brandId = $this->userModel->addBrandInfo($userId, $brandName, $designerName, $brandUrl, $mediumPathFile, $categoryType);
         return $brandId;
     }
     
@@ -247,5 +248,33 @@ class Business_User
         $find = array("/", "\\", "?", "*", "<", ">", "|", ":", ";");
         $niceFileName = str_replace($find, '', $fileName);
         return $niceFileName;
+    }
+
+    /**
+     * @param $userId
+     * @param $designerName
+     * @param $brandUrl
+     * @param $imagePath
+     * @param $categoryType
+     * @param $description
+     * @return mixed
+     * @throws Kohana_Exception
+     * @return int
+     */
+    public function updateBrandInfo($userId, $designerName, $brandUrl, $imagePath, $categoryType, $description)
+    {
+        $brandUrl = urlencode($this->safeFileName($brandUrl));
+
+        $brandUrlExist = $this->checkBrandUrl($brandUrl);
+        if ($brandUrlExist) {
+            $errorInfo = Kohana::message('message', 'STATUS_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+
+        list($realPathFile, $mediumPathFile, $smallPathFile) = $this->uploadService->createThreeImage($imagePath);
+
+        $rowUpdated = $this->userModel->updateBrandInfo($userId, $designerName, $brandUrl, $mediumPathFile, $categoryType, $description);
+
+        return $rowUpdated;
     }
 } 
