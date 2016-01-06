@@ -10,7 +10,7 @@ angular.module(
 	    '$scope', '$element', '$timeout', '$modal', '$q', 'User', 'Country',
 	    function($scope, $element, $timeout, $modal, $q, User, Country) {
 			$scope.step = {
-				stepNumber: 1,
+				stepNumber: 2,
 				validation: {
 				    1: {
 				    	'email': false,
@@ -25,7 +25,8 @@ angular.module(
 				    	'brandName': false, 
 						'designerName': false,
 						'imagePath': false,
-						'brandUrl': false
+						'brandUrl': false,
+						'collectionType': false
 				    },
 				    3: {
 				    	'companyName': false,
@@ -59,6 +60,19 @@ angular.module(
 			};
 			$scope.user = {
 				roleType: 1
+			};
+			
+			$scope.setCollection = function(value){
+				var collections = $scope.user.collectionType
+					? $scope.user.collectionType.split(',')
+				    : [];
+				var index = collections.indexOf(value);
+				if(index >= 0){
+					collections.splice(index, 1);
+				}else{
+					collections.push(value);
+				}
+				$scope.user.collectionType = collections.join(',');
 			};
 			
 			$scope.check = function() {

@@ -12,7 +12,7 @@ class Controller_Api_User extends Controller_BaseReqLogin
         $this->userService = new Business_User();
     }
 
-    public function action_change_password()
+    public function action_changePassword()
     {
         $userId  = $this->opUser['id'];
         $old = trim(Request::current()->getParam('old'));

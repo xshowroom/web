@@ -143,3 +143,15 @@ h2.brand-register-step {
     color: #e02432;
     margin-top: 5px;
 }
+#collection-type > label{
+	padding-top: 0;
+}
+#collection-type > label + label{
+	margin-left: 5px;
+}
+#collection-type label > input{
+	margin-top: 11px;
+}
+#collection-type.has-error label{
+	color: #a94442;
+}

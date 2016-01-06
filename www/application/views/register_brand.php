@@ -113,6 +113,30 @@
 								<input type="text" class="form-control" id="brand-name" name="brandName"
 									ng-model="user.brandName"  placeholder='<?= __("brand_register__STEP_2__BRAND_NAME_PLACEHOLDER");?>'>
 							</div>
+							<div class="form-group col-xs-12"
+								id="collection-type" ng-class="{'has-error': step.validation[2].collectionType}">
+								<label><?= __("buyer_register__STEP_2__STORE_COLLECTION_TYPE");?>*:</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" name="collectionType" ng-model="collectionType.women" ng-change="setCollection('dropdown__COLLECTION__WOMEN')">
+									{{ "dropdown__COLLECTION__WOMEN"| translate }}
+								</label>
+								<label for="collection-type-men" class="checkbox-inline">
+									<input type="checkbox" name="collectionType" ng-model="collectionType.man" ng-change="setCollection('dropdown__COLLECTION__MEN')">
+									{{ "dropdown__COLLECTION__MEN"| translate }}
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" name="collectionType" ng-model="collectionType.accessories" ng-change="setCollection('dropdown__COLLECTION__ACCESSORIES')">
+									{{ "dropdown__COLLECTION__ACCESSORIES"| translate }}
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" name="collectionType" ng-model="collectionType.lifestyle" ng-change="setCollection('dropdown__COLLECTION__LIFESTYLE')">
+									{{ "dropdown__COLLECTION__LIFESTYLE"| translate }}
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" name="collectionType" ng-model="collectionType.others" ng-change="setCollection('dropdown__COLLECTION__OTHERS')">
+									{{ "dropdown__COLLECTION__OTHERS"| translate }}
+								</label>
+							</div>
 							<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].designerName}">
 								<input type="text" class="form-control" id="designer-name" name="designerName"
 									ng-model="user.designerName"  placeholder='<?= __("brand_register__STEP_2__DESIGNER_NAME_PLACEHOLDER");?>'>

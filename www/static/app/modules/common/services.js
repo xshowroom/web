@@ -144,6 +144,9 @@ angular.module(
 		    	},
 				invitationCheck: function (opts) {
 					return PostRequester('register/checkInvitationCode', opts);
+				},
+				changePassword: function(opts) {
+					return PostRequester('user/changePassword', opts);
 				}
    			};
          }
