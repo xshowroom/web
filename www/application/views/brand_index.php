@@ -31,6 +31,7 @@
         <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); ?>
 	</nav>
 	<?php endif; ?>
+
     <section class="row no-vertical-padding">
         <div class="container">
             <div class="row brand-preview">
@@ -48,6 +49,10 @@
 	            		<span><?=__("brand_info__WEBSITE");?></span>
 	            		<span><?=$brandAttr['company_web_url']?></span>
 	            	</div>
+		            <div class="brand-info">
+			            <span><?=__("brand_info__DESCRIPTION");?></span>
+			            <span><?=$brandInfo['description']?></span>
+		            </div>
             	</div>
             	<div class="col-xs-3" ng-if="seasons.length">
             		<div class="brand-cover">

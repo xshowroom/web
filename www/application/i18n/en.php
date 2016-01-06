@@ -536,6 +536,7 @@ return array_merge(
         'brand_info__BASE_IN' => 'BASE IN',
         'brand_info__DESIGNER' => 'DESIGNER',
         'brand_info__WEBSITE' => 'WEB SITE',
+        'brand_info__DESCRIPTION' => 'DESCRIPTION',
 
         'brand_filter__COLLECTIONS' => 'COLLECTIONS',
         'brand_filter__NO_COLLECTION_1' => 'NO COLLECTION MATCHES YOUR CONDITIONS!',

@@ -536,6 +536,7 @@ return array_merge(
         'brand_info__BASE_IN' => '品牌国家',
         'brand_info__DESIGNER' => '设计师',
         'brand_info__WEBSITE' => '官网网址',
+        'brand_info__DESCRIPTION' => '品牌介绍',
 
         'brand_filter__COLLECTIONS' => '商品系列',
         'brand_filter__NO_COLLECTION_1' => '没找到符合条件的商品系列！',
