@@ -21,7 +21,7 @@ h2.brand-register-step {
 	height: 34px;
 }
 .brand-url input{
-	width: 46%;
+	width: 50%;
     float: left;
     margin-left: 2%;
 }
@@ -66,8 +66,14 @@ h2.brand-register-step {
  *//* #brand-register .brand-register-checkbox{
 	margin-bottom: 50px;
 } */
+#brand-register .brand-register-checkbox-group label.checkbox-inline{
+    line-height: 22px;
+    margin-left: 0;
+    width: 33%;
+    float: left;
+}
 #brand-register .brand-register-checkbox .checkbox-inline{
-	padding-top: 0;
+    padding-top: 0;
 }
 #brand-register .brand-register-checkbox .checkbox-inline input[type='checkbox']{
 	margin-top: 11px;
@@ -149,9 +155,7 @@ h2.brand-register-step {
 #collection-type > label + label{
 	margin-left: 5px;
 }
-#collection-type label > input{
-	margin-top: 11px;
-}
+
 #collection-type.has-error label{
 	color: #a94442;
 }

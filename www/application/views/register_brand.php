@@ -113,43 +113,45 @@
 								<input type="text" class="form-control" id="brand-name" name="brandName"
 									ng-model="user.brandName"  placeholder='<?= __("brand_register__STEP_2__BRAND_NAME_PLACEHOLDER");?>'>
 							</div>
-							<div class="form-group col-xs-12"
-								id="collection-type" ng-class="{'has-error': step.validation[2].collectionType}">
-								<label><?= __("buyer_register__STEP_2__STORE_COLLECTION_TYPE");?>*:</label>
-								<label class="checkbox-inline">
-									<input type="checkbox" name="collectionType" ng-model="collectionType.women" ng-change="setCollection('dropdown__COLLECTION__WOMEN')">
-									{{ "dropdown__COLLECTION__WOMEN"| translate }}
-								</label>
-								<label for="collection-type-men" class="checkbox-inline">
-									<input type="checkbox" name="collectionType" ng-model="collectionType.man" ng-change="setCollection('dropdown__COLLECTION__MEN')">
-									{{ "dropdown__COLLECTION__MEN"| translate }}
-								</label>
-								<label class="checkbox-inline">
-									<input type="checkbox" name="collectionType" ng-model="collectionType.accessories" ng-change="setCollection('dropdown__COLLECTION__ACCESSORIES')">
-									{{ "dropdown__COLLECTION__ACCESSORIES"| translate }}
-								</label>
-								<label class="checkbox-inline">
-									<input type="checkbox" name="collectionType" ng-model="collectionType.lifestyle" ng-change="setCollection('dropdown__COLLECTION__LIFESTYLE')">
-									{{ "dropdown__COLLECTION__LIFESTYLE"| translate }}
-								</label>
-								<label class="checkbox-inline">
-									<input type="checkbox" name="collectionType" ng-model="collectionType.others" ng-change="setCollection('dropdown__COLLECTION__OTHERS')">
-									{{ "dropdown__COLLECTION__OTHERS"| translate }}
-								</label>
-							</div>
 							<div class="form-group col-xs-12" ng-class="{'has-error': step.validation[2].designerName}">
 								<input type="text" class="form-control" id="designer-name" name="designerName"
-									ng-model="user.designerName"  placeholder='<?= __("brand_register__STEP_2__DESIGNER_NAME_PLACEHOLDER");?>'>
+								       ng-model="user.designerName"  placeholder='<?= __("brand_register__STEP_2__DESIGNER_NAME_PLACEHOLDER");?>'>
 							</div>
+							<div class="form-group col-xs-12 brand-register-checkbox-group" id="collection-type" ng-class="{'has-error': step.validation[2].collectionType}">
+								<label><?= __("brand_register__STEP_2__STORE_COLLECTION_TYPE");?></label>
+								<div>
+									<label class="checkbox-inline">
+										<input type="checkbox" name="collectionType" ng-model="collectionType.women" ng-change="setCollection('dropdown__COLLECTION__WOMEN')">
+										{{ "dropdown__COLLECTION__WOMEN"| translate }}
+									</label>
+									<label class="checkbox-inline">
+										<input type="checkbox" name="collectionType" ng-model="collectionType.man" ng-change="setCollection('dropdown__COLLECTION__MEN')">
+										{{ "dropdown__COLLECTION__MEN"| translate }}
+									</label>
+									<label class="checkbox-inline">
+										<input type="checkbox" name="collectionType" ng-model="collectionType.accessories" ng-change="setCollection('dropdown__COLLECTION__ACCESSORIES')">
+										{{ "dropdown__COLLECTION__ACCESSORIES"| translate }}
+									</label>
+									<label class="checkbox-inline">
+										<input type="checkbox" name="collectionType" ng-model="collectionType.lifestyle" ng-change="setCollection('dropdown__COLLECTION__LIFESTYLE')">
+										{{ "dropdown__COLLECTION__LIFESTYLE"| translate }}
+									</label>
+									<label class="checkbox-inline">
+										<input type="checkbox" name="collectionType" ng-model="collectionType.others" ng-change="setCollection('dropdown__COLLECTION__OTHERS')">
+										{{ "dropdown__COLLECTION__OTHERS"| translate }}
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12">
 							<div class="form-group col-xs-12">
 								<div class="brand-url" ng-class="{'has-error': step.validation[2].brandUrl}">
-									<span>www.xshowroom.com/brands/</span>
-									<input class="form-control brand-register-text-center" type="text" class="form-control" id="brand-url" name="brandUrl"
-										ng-model="user.brandUrl" placeholder='<?= __("brand_register__STEP_2__BRAND_URL");?>'>
+									<span>http://www.xshowroom.cn/brands/</span>
+									<input class="form-control brand-register-text-center" type="text" id="brand-url" name="brandUrl"
+									       ng-model="user.brandUrl" placeholder='<?= __("brand_register__STEP_2__BRAND_URL");?>'>
 								</div>
 								<p class="text-center help-block">
-									<?= __("brand_register__STEP_2__URL_DESC_1");?><br>
-									<?= __("brand_register__STEP_2__URL_DESC_2");?>
+									<?= __("brand_register__STEP_2__URL_DESC_1");?> <?= __("brand_register__STEP_2__URL_DESC_2");?>
 								</p>
 							</div>
 						</div>
