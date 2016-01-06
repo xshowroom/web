@@ -7,7 +7,7 @@ class Controller_Base extends Controller
     {
         session_start();
 
-        $lang = empty($_COOKIE['language'])?'en':$_COOKIE['language'];
+        $lang = empty($_COOKIE['language']) ? 'zh-CN' : $_COOKIE['language'];
 
         I18n::lang($lang);
     }
