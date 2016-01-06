@@ -4,12 +4,7 @@
  * @description In this file, we set the dictionary for i18n and provide the filter which 
  *              can be used in the view to translate the key into localized language.
  */
-angular.module(
-    'xShowroom.dictionary', []
-)
-.constant(
-	'dictionary',
-	{
+angular.module('xShowroom.dictionary', []).constant('dictionary', {
         /**
          * JS files
          */
@@ -358,50 +353,59 @@ angular.module(
 
         // Product Category Filter
         dropdown__PRODUCT_CATEGORY__ALL: "ALL",
-        // Product Category
-        dropdown__PRODUCT_CATEGORY__TOPS: "TOPS",
-        dropdown__PRODUCT_CATEGORY__SHIRTS: "SHIRTS",
-        dropdown__PRODUCT_CATEGORY__DRESSES: "DRESSES",
-        dropdown__PRODUCT_CATEGORY__OUTERWEAR: "OUTERWEAR",
-        dropdown__PRODUCT_CATEGORY__KNITWEAR: "KNITWEAR",
-        dropdown__PRODUCT_CATEGORY__SWEATSHIRT: "SWEATSHIRT",
-        dropdown__PRODUCT_CATEGORY__TOPS_TSHIRT: "TOPS AND T-SHIRT",
-        dropdown__PRODUCT_CATEGORY__BLAZERS: "BLAZERS",
-        dropdown__PRODUCT_CATEGORY__JEANS: "JEANS",
-        dropdown__PRODUCT_CATEGORY__SKIRTS: "SKIRTS",
-        dropdown__PRODUCT_CATEGORY__PANTS: "PANTS",
-        dropdown__PRODUCT_CATEGORY__SWIMWEAR: "SWIMWEAR",
-
-        dropdown__PRODUCT_CATEGORY__BRACELETS: "BRACELETS",
-        dropdown__PRODUCT_CATEGORY__EARRINGS: "EARRINGS",
-        dropdown__PRODUCT_CATEGORY__FINE_JEWELRY: "FINE JEWELRY",
-        dropdown__PRODUCT_CATEGORY__NECKLACES_PENDANTS: "NECKLACES PENDANTS",
-        dropdown__PRODUCT_CATEGORY__RINGS: "RINGS",
-        dropdown__PRODUCT_CATEGORY__BODY_HAND_CHAINS: "BODY/HAND CHAINS",
-        dropdown__PRODUCT_CATEGORY__BROOCH: "BROOCH",
-        dropdown__PRODUCT_CATEGORY__CUFFLINKS: "CUFFLINKS",
-
-        dropdown__PRODUCT_CATEGORY__WATCHES: "WATCHES",
-        dropdown__PRODUCT_CATEGORY__BAGS: "BAGS",
-        dropdown__PRODUCT_CATEGORY__BELTS: "BELTS",
-        dropdown__PRODUCT_CATEGORY__GLOVES: "GLOVES",
-        dropdown__PRODUCT_CATEGORY__HAIR_ACCESSORIES: "HAIR ACCESSORIES",
-        dropdown__PRODUCT_CATEGORY__HATS: "HATS",
-        dropdown__PRODUCT_CATEGORY__HOME_LIFESTYLE: "HOME/LIFESTYLE",
-        dropdown__PRODUCT_CATEGORY__SCARVES_WRAPS: "SCARVES/WRAPS",
-        dropdown__PRODUCT_CATEGORY__SOCKS_TIGHTS: "SOCKS/TIGHTS",
-        dropdown__PRODUCT_CATEGORY__SUNGLASSES: "SUNGLASSES",
-        dropdown__PRODUCT_CATEGORY__TECH_ACCESSORIES: "TECH ACCESSORIES",
-
-        dropdown__PRODUCT_CATEGORY__BOOTS: "BOOTS",
-        dropdown__PRODUCT_CATEGORY__DRESS_SHOES: "DRESS SHOES",
-        dropdown__PRODUCT_CATEGORY__FLATS: "FLATS",
-        dropdown__PRODUCT_CATEGORY__PUMPS: "PUMPS",
-        dropdown__PRODUCT_CATEGORY__RAIN_BOOTS: "RAIN BOOTS",
-        dropdown__PRODUCT_CATEGORY__SANDALS: "SANDALS",
-        dropdown__PRODUCT_CATEGORY__SNEAKERS: "SNEAKERS",
-        dropdown__PRODUCT_CATEGORY__WEDGES: "WEDGES",
-        dropdown__PRODUCT_CATEGORY__WINTER_BOOTS: "WINTER BOOTS",
+        // Product Category - WOMAN
+        dropdown__PRODUCT_CATEGORY__WOMAN__TOPS: "TOPS",
+        dropdown__PRODUCT_CATEGORY__WOMAN__SHIRTS: "SHIRTS",
+        dropdown__PRODUCT_CATEGORY__WOMAN__DRESSES: "DRESSES",
+        dropdown__PRODUCT_CATEGORY__WOMAN__JUMPSUITS: "JUMPSUITS",
+        dropdown__PRODUCT_CATEGORY__WOMAN__OUTERWEAR: "OUTERWEAR",
+        dropdown__PRODUCT_CATEGORY__WOMAN__KNITWEAR: "KNITWEAR",
+        dropdown__PRODUCT_CATEGORY__WOMAN__SWEATSHIRT: "SWEATSHIRT",
+        dropdown__PRODUCT_CATEGORY__WOMAN__JEANS: "JEANS",
+        dropdown__PRODUCT_CATEGORY__WOMAN__SKIRTS: "SKIRTS",
+        dropdown__PRODUCT_CATEGORY__WOMAN__PANTS: "PANTS",
+        dropdown__PRODUCT_CATEGORY__WOMAN__SWIMWEAR: "SWIMWEAR",
+        // Product Category - MAN
+        dropdown__PRODUCT_CATEGORY__MAN__SHIRTS: "SHIRTS",
+        dropdown__PRODUCT_CATEGORY__MAN__TOPS_TSHIRT: "TOPS AND T-SHIRT",
+        dropdown__PRODUCT_CATEGORY__MAN__OUTERWEAR: "OUTERWEAR",
+        dropdown__PRODUCT_CATEGORY__MAN__BLAZERS: "BLAZERS",
+        dropdown__PRODUCT_CATEGORY__MAN__KNITWEAR: "KNITWEAR",
+        dropdown__PRODUCT_CATEGORY__MAN__SWEATSHIRT: "SWEATSHIRT",
+        dropdown__PRODUCT_CATEGORY__MAN__JEANS: "JEANS",
+        dropdown__PRODUCT_CATEGORY__MAN__PANTS: "PANTS",
+        dropdown__PRODUCT_CATEGORY__MAN__SWIMWEAR: "SWIMWEAR",
+        // Product Category - JEWELRY
+        dropdown__PRODUCT_CATEGORY__JEWELRY__BRACELETS: "BRACELETS",
+        dropdown__PRODUCT_CATEGORY__JEWELRY__EARRINGS: "EARRINGS",
+        dropdown__PRODUCT_CATEGORY__JEWELRY__FINE_JEWELRY: "FINE JEWELRY",
+        dropdown__PRODUCT_CATEGORY__JEWELRY__NECKLACES_PENDANTS: "NECKLACES PENDANTS",
+        dropdown__PRODUCT_CATEGORY__JEWELRY__RINGS: "RINGS",
+        dropdown__PRODUCT_CATEGORY__JEWELRY__BODY_HAND_CHAINS: "BODY/HAND CHAINS",
+        dropdown__PRODUCT_CATEGORY__JEWELRY__BROOCH: "BROOCH",
+        dropdown__PRODUCT_CATEGORY__JEWELRY__CUFFLINKS: "CUFFLINKS",
+        // Product Category - ACCESSORIES
+        dropdown__PRODUCT_CATEGORY__ACCESSORIES__WATCHES: "WATCHES",
+        dropdown__PRODUCT_CATEGORY__ACCESSORIES__BAGS: "BAGS",
+        dropdown__PRODUCT_CATEGORY__ACCESSORIES__BELTS: "BELTS",
+        dropdown__PRODUCT_CATEGORY__ACCESSORIES__GLOVES: "GLOVES",
+        dropdown__PRODUCT_CATEGORY__ACCESSORIES__HAIR_ACCESSORIES: "HAIR ACCESSORIES",
+        dropdown__PRODUCT_CATEGORY__ACCESSORIES__HATS: "HATS",
+        dropdown__PRODUCT_CATEGORY__ACCESSORIES__HOME_LIFESTYLE: "HOME/LIFESTYLE",
+        dropdown__PRODUCT_CATEGORY__ACCESSORIES__SCARVES_WRAPS: "SCARVES/WRAPS",
+        dropdown__PRODUCT_CATEGORY__ACCESSORIES__SOCKS_TIGHTS: "SOCKS/TIGHTS",
+        dropdown__PRODUCT_CATEGORY__ACCESSORIES__SUNGLASSES: "SUNGLASSES",
+        dropdown__PRODUCT_CATEGORY__ACCESSORIES__TECH_ACCESSORIES: "TECH ACCESSORIES",
+        // Product Category - FOOTWEAR
+        dropdown__PRODUCT_CATEGORY__FOOTWEAR__BOOTS: "BOOTS",
+        dropdown__PRODUCT_CATEGORY__FOOTWEAR__DRESS_SHOES: "DRESS SHOES",
+        dropdown__PRODUCT_CATEGORY__FOOTWEAR__FLATS: "FLATS",
+        dropdown__PRODUCT_CATEGORY__FOOTWEAR__PUMPS: "PUMPS",
+        dropdown__PRODUCT_CATEGORY__FOOTWEAR__RAIN_BOOTS: "RAIN BOOTS",
+        dropdown__PRODUCT_CATEGORY__FOOTWEAR__SANDALS: "SANDALS",
+        dropdown__PRODUCT_CATEGORY__FOOTWEAR__SNEAKERS: "SNEAKERS",
+        dropdown__PRODUCT_CATEGORY__FOOTWEAR__WEDGES: "WEDGES",
+        dropdown__PRODUCT_CATEGORY__FOOTWEAR__WINTER_BOOTS: "WINTER BOOTS",
 
         // Product Material
         dropdown__PRODUCT_MATERIAL__Acetate: "Acetate",

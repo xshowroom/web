@@ -4,12 +4,7 @@
  * @description In this file, we set the dictionary for i18n and provide the filter which 
  *              can be used in the view to translate the key into localized language.
  */
-angular.module(
-    'xShowroom.dictionary', []
-)
-.constant(
-	'dictionary',
-	{
+angular.module( 'xShowroom.dictionary', []).constant('dictionary', {
         /**
          * JS files
          */
@@ -111,9 +106,6 @@ angular.module(
         password_new_SAME_ERROR: '新旧密码不能相同',
         password_new_PATTERN_ERROR: '新密码不能小于6位',
         password_confirm_PATTERN_ERROR: '确认密码不能小于6位',
-
-        modal_dialog__WARNING_TITLE : 'WARNING!',
-        modal_dialog__ERROR_TITLE : 'ERROR!',
 
         /**
          * DROP DOWN LIST
@@ -361,50 +353,59 @@ angular.module(
 
         // Product Category Filter
         dropdown__PRODUCT_CATEGORY__ALL: "所有",
-        // Product Category
-        dropdown__PRODUCT_CATEGORY__TOPS: "上装",
-        dropdown__PRODUCT_CATEGORY__SHIRTS: "衬衫",
-        dropdown__PRODUCT_CATEGORY__DRESSES: "连衣裙",
-        dropdown__PRODUCT_CATEGORY__OUTERWEAR: "外套",
-        dropdown__PRODUCT_CATEGORY__KNITWEAR: "针织衫",
-        dropdown__PRODUCT_CATEGORY__SWEATSHIRT: "卫衣",
-        dropdown__PRODUCT_CATEGORY__TOPS_TSHIRT: "上衣&T恤",
-        dropdown__PRODUCT_CATEGORY__BLAZERS: "夹克",
-        dropdown__PRODUCT_CATEGORY__JEANS: "牛仔裤",
-        dropdown__PRODUCT_CATEGORY__SKIRTS: "半裙",
-        dropdown__PRODUCT_CATEGORY__PANTS: "裤子",
-        dropdown__PRODUCT_CATEGORY__SWIMWEAR: "泳装",
-
-        dropdown__PRODUCT_CATEGORY__BRACELETS: "手链/手镯",
-        dropdown__PRODUCT_CATEGORY__EARRINGS: "耳环",
-        dropdown__PRODUCT_CATEGORY__FINE_JEWELRY: "高级珠宝",
-        dropdown__PRODUCT_CATEGORY__NECKLACES_PENDANTS: "项链",
-        dropdown__PRODUCT_CATEGORY__RINGS: "戒指",
-        dropdown__PRODUCT_CATEGORY__BODY_HAND_CHAINS: "美体链/手链",
-        dropdown__PRODUCT_CATEGORY__BROOCH: "胸针",
-        dropdown__PRODUCT_CATEGORY__CUFFLINKS: "袖口",
-
-        dropdown__PRODUCT_CATEGORY__WATCHES: "手表",
-        dropdown__PRODUCT_CATEGORY__BAGS: "包袋",
-        dropdown__PRODUCT_CATEGORY__BELTS: "腰带",
-        dropdown__PRODUCT_CATEGORY__GLOVES: "手套",
-        dropdown__PRODUCT_CATEGORY__HAIR_ACCESSORIES: "头饰",
-        dropdown__PRODUCT_CATEGORY__HATS: "帽子",
-        dropdown__PRODUCT_CATEGORY__HOME_LIFESTYLE: "家饰/生活产品",
-        dropdown__PRODUCT_CATEGORY__SCARVES_WRAPS: "围巾/披肩",
-        dropdown__PRODUCT_CATEGORY__SOCKS_TIGHTS: "袜子/连裤袜",
-        dropdown__PRODUCT_CATEGORY__SUNGLASSES: "太阳镜",
-        dropdown__PRODUCT_CATEGORY__TECH_ACCESSORIES: "数码产品饰品",
-
-        dropdown__PRODUCT_CATEGORY__BOOTS: "靴子",
-        dropdown__PRODUCT_CATEGORY__DRESS_SHOES: "晚宴鞋",
-        dropdown__PRODUCT_CATEGORY__FLATS: "平底鞋",
-        dropdown__PRODUCT_CATEGORY__PUMPS: "浅口鞋",
-        dropdown__PRODUCT_CATEGORY__RAIN_BOOTS: "雨靴",
-        dropdown__PRODUCT_CATEGORY__SANDALS: "凉鞋",
-        dropdown__PRODUCT_CATEGORY__SNEAKERS: "运动鞋",
-        dropdown__PRODUCT_CATEGORY__WEDGES: "坡跟鞋",
-        dropdown__PRODUCT_CATEGORY__WINTER_BOOTS: "冬日靴",
+        // Product Category - WOMAN
+        dropdown__PRODUCT_CATEGORY__WOMAN__TOPS: "上装",
+        dropdown__PRODUCT_CATEGORY__WOMAN__SHIRTS: "衬衫",
+        dropdown__PRODUCT_CATEGORY__WOMAN__DRESSES: "连衣裙",
+        dropdown__PRODUCT_CATEGORY__WOMAN__JUMPSUITS: "连体裤",
+        dropdown__PRODUCT_CATEGORY__WOMAN__OUTERWEAR: "外套",
+        dropdown__PRODUCT_CATEGORY__WOMAN__KNITWEAR: "针织衫",
+        dropdown__PRODUCT_CATEGORY__WOMAN__SWEATSHIRT: "卫衣",
+        dropdown__PRODUCT_CATEGORY__WOMAN__JEANS: "牛仔裤",
+        dropdown__PRODUCT_CATEGORY__WOMAN__SKIRTS: "半裙",
+        dropdown__PRODUCT_CATEGORY__WOMAN__PANTS: "裤子",
+        dropdown__PRODUCT_CATEGORY__WOMAN__SWIMWEAR: "泳装",
+        // Product Category - MAN
+        dropdown__PRODUCT_CATEGORY__MAN__SHIRTS: "衬衫",
+        dropdown__PRODUCT_CATEGORY__MAN__TOPS_TSHIRT: "上衣&T恤",
+        dropdown__PRODUCT_CATEGORY__MAN__OUTERWEAR: "外套",
+        dropdown__PRODUCT_CATEGORY__MAN__BLAZERS: "夹克",
+        dropdown__PRODUCT_CATEGORY__MAN__KNITWEAR: "针织衫",
+        dropdown__PRODUCT_CATEGORY__MAN__SWEATSHIRT: "卫衣",
+        dropdown__PRODUCT_CATEGORY__MAN__JEANS: "牛仔裤",
+        dropdown__PRODUCT_CATEGORY__MAN__PANTS: "裤子",
+        dropdown__PRODUCT_CATEGORY__MAN__SWIMWEAR: "泳装",
+        // Product Category - JEWELRY
+        dropdown__PRODUCT_CATEGORY__JEWELRY__BRACELETS: "手链/手镯",
+        dropdown__PRODUCT_CATEGORY__JEWELRY__EARRINGS: "耳环",
+        dropdown__PRODUCT_CATEGORY__JEWELRY__FINE_JEWELRY: "高级珠宝",
+        dropdown__PRODUCT_CATEGORY__JEWELRY__NECKLACES_PENDANTS: "项链",
+        dropdown__PRODUCT_CATEGORY__JEWELRY__RINGS: "戒指",
+        dropdown__PRODUCT_CATEGORY__JEWELRY__BODY_HAND_CHAINS: "美体链/手链",
+        dropdown__PRODUCT_CATEGORY__JEWELRY__BROOCH: "胸针",
+        dropdown__PRODUCT_CATEGORY__JEWELRY__CUFFLINKS: "袖扣",
+        // Product Category - ACCESSORIES
+        dropdown__PRODUCT_CATEGORY__ACCESSORIES__WATCHES: "手表",
+        dropdown__PRODUCT_CATEGORY__ACCESSORIES__BAGS: "包袋",
+        dropdown__PRODUCT_CATEGORY__ACCESSORIES__BELTS: "腰带",
+        dropdown__PRODUCT_CATEGORY__ACCESSORIES__GLOVES: "手套",
+        dropdown__PRODUCT_CATEGORY__ACCESSORIES__HAIR_ACCESSORIES: "头饰",
+        dropdown__PRODUCT_CATEGORY__ACCESSORIES__HATS: "帽子",
+        dropdown__PRODUCT_CATEGORY__ACCESSORIES__HOME_LIFESTYLE: "家饰/生活产品",
+        dropdown__PRODUCT_CATEGORY__ACCESSORIES__SCARVES_WRAPS: "围巾/披肩",
+        dropdown__PRODUCT_CATEGORY__ACCESSORIES__SOCKS_TIGHTS: "袜子/连裤袜",
+        dropdown__PRODUCT_CATEGORY__ACCESSORIES__SUNGLASSES: "太阳镜",
+        dropdown__PRODUCT_CATEGORY__ACCESSORIES__TECH_ACCESSORIES: "数码产品饰品",
+        // Product Category - FOOTWEAR
+        dropdown__PRODUCT_CATEGORY__FOOTWEAR__BOOTS: "靴子",
+        dropdown__PRODUCT_CATEGORY__FOOTWEAR__DRESS_SHOES: "晚宴鞋",
+        dropdown__PRODUCT_CATEGORY__FOOTWEAR__FLATS: "平底鞋",
+        dropdown__PRODUCT_CATEGORY__FOOTWEAR__PUMPS: "浅口鞋",
+        dropdown__PRODUCT_CATEGORY__FOOTWEAR__RAIN_BOOTS: "雨靴",
+        dropdown__PRODUCT_CATEGORY__FOOTWEAR__SANDALS: "凉鞋",
+        dropdown__PRODUCT_CATEGORY__FOOTWEAR__SNEAKERS: "运动鞋",
+        dropdown__PRODUCT_CATEGORY__FOOTWEAR__WEDGES: "坡跟鞋",
+        dropdown__PRODUCT_CATEGORY__FOOTWEAR__WINTER_BOOTS: "冬日靴",
 
         // Product Material
         dropdown__PRODUCT_MATERIAL__Acetate: "醋酯纤维",
