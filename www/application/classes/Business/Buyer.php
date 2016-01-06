@@ -163,13 +163,19 @@ class Business_Buyer
 
     public function checkAuth($userId, $brandId)
     {
-        $res = $this->getRelation($userId, $brandId);
+        $relationList = $this->getRelation($userId, $brandId);
 
-        if (empty($res)) {
-            return -2;
+        if (empty($relationList)) {
+            return Model_Buyer::STATUS_BUYER_NOTAPPLIED;
         }
 
-        return (int)$res['status'];
+        foreach ($relationList as $relation) {
+            if ((int)$relation['status'] == Model_Buyer::STATUS_NORMAL) {
+                return Model_Buyer::STATUS_BUYER_AUTHED;
+            }
+        }
+
+        return Model_Buyer::STATUS_BUYER_UNAUTHED;
     }
 
     public function getRelation($userId, $brandId)
