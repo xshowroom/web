@@ -118,6 +118,13 @@ angular.module(
             product_add_image_timeout_error: '上传图片超时，请重试',
             product_add_image_size_error: '上传图片不能超过 1 MB',
 
+            password_old_EMPTY_ERROR: '请输入旧密码',
+            password_new_EMPTY_ERROR: '请输入新的密码',
+            password_confirm_EMPTY_ERROR: '请确认新的密码',
+            password_new_SAME_ERROR: '新旧密码不能相同',
+            password_new_PATTERN_ERROR: '新密码不能小于6位',
+            password_confirm_PATTERN_ERROR: '确认密码不能小于6位',
+
             modal_dialog__WARNING_TITLE : 'WARNING!',
             modal_dialog__ERROR_TITLE : 'ERROR!',
 
@@ -556,6 +563,13 @@ angular.module(
             product_add_image_format_error: 'not support file type',
             product_add_image_timeout_error: 'upload image timeout, please retry',
             product_add_image_size_error: 'image size no more than 1 MB',
+
+            password_old_EMPTY_ERROR: 'please input old password',
+            password_new_EMPTY_ERROR: 'please input new password',
+            password_confirm_EMPTY_ERROR: 'please confirm new password',
+            password_new_SAME_ERROR: 'old password cannot be same as new password',
+            password_new_PATTERN_ERROR: 'invalid new password (Must contain at least 6 characters)',
+            password_confirm_PATTERN_ERROR: 'invalid confirm password (Must contain at least 6 characters)',
 
             /**
              * DROP DOWN LIST

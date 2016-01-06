@@ -34,7 +34,7 @@ class Controller_Api_User extends Controller_BaseReqLogin
 
         echo json_encode(array(
             'status' => $status,
-            'msg'    => $msg,
+            'msg'    => __($msg),
             'data'   => '',
         ));
     }
