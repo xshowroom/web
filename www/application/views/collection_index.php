@@ -17,11 +17,11 @@
 	</nav>
 	<?php if($user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
 	<nav class="row user-navigation">
-        <?php echo View::factory('common/global_navigation_top_brand', array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); ?>
+        <?php echo View::factory('common/global_navigation_top_brand', array('currentPage' =>  'collection', 'userAttr'=> $userAttr)); ?>
 	</nav>
 	<?php elseif ($user["role_type"] == Model_User::TYPE_USER_BUYER): ?>
 	<nav class="row user-navigation">
-        <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'shop', 'userAttr'=> $userAttr)); ?>
+        <?php echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'collection', 'userAttr'=> $userAttr)); ?>
 	</nav>
 	<?php endif; ?>
     <?php if($collection['user_id'] == $userAttr['user_id']): ?>
