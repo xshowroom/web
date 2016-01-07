@@ -135,7 +135,8 @@
 						</div>
                         <div class="form-group col-xs-12">
                             <div class="col-xs-10 col-xs-offset-2">
-                                  <button class="btn btn-type-2" id="create-btn" ng-click="create()"><?=__("product_create__PRODUCT_btn_SAVE");?></button>
+                                <button class="btn btn-type-2" id="create-btn" ng-click="create()"><?=__("product_create__PRODUCT_btn_SAVE");?></button>
+                                <a class="btn btn-type-1" id="create-btn" href="<?=url::site('product/'.$productId)?>"><?=__("product_create__PRODUCT_btn_CANCEL");?></a>
                         	</div>
                         </div>
                     </form>

@@ -476,6 +476,7 @@ return array_merge(
         'product_create__PRODUCT_CARE_INSTRUCTION_DESC' => 'including description, measurement, care instructions etc',
 
         'product_create__PRODUCT_btn_SAVE' => 'SAVE',
+        'product_create__PRODUCT_btn_CANCEL' => 'CANCEL',
 
         'product_create__PRODUCT_color_STANDARD_COLOR' => 'STANDARD COLOR',
         'product_create__PRODUCT_color_CUSTOMIZED_COLOR' => 'CUSTOMIZED COLOR',

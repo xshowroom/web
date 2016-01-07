@@ -476,6 +476,7 @@ return array_merge(
         'product_create__PRODUCT_CARE_INSTRUCTION_DESC' => '包括款式描述、尺寸测量、洗护处理等',
 
         'product_create__PRODUCT_btn_SAVE' => '保存',
+        'product_create__PRODUCT_btn_CANCEL' => '取消',
 
         'product_create__PRODUCT_color_STANDARD_COLOR' => '标准色彩',
         'product_create__PRODUCT_color_CUSTOMIZED_COLOR' => '自定义色彩',
