@@ -235,9 +235,8 @@ angular.module(
 			            images: res.data.image_url
      	     	    };
      				
-     				var collectionCategory = 'dropdown__COLLECTION__' + res.data.category.split('__')[2];
-     				$scope.countries = Country.getAll();
-     	     		$scope.categories = Product.getCategoriesByCollection(collectionCategory);
+     	     		$scope.categories = Product.getCategoriesByCollection($scope.collectionCategory);
+     	     		$scope.countries = Country.getAll();
      	     		$scope.sizeRegions = Product.getSizeRegions();
      	     		
      	     		$scope.currentColors = {
