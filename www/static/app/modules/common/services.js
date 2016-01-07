@@ -147,6 +147,9 @@ angular.module(
 				},
 				changePassword: function(opts) {
 					return PostRequester('user/changePassword', opts);
+				},
+				updateProfile: function(opts) {
+					return PostRequester('user/updateUserInfo', opts);
 				}
    			};
          }

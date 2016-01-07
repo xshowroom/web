@@ -28,10 +28,50 @@
 .lb_item_name {
 	width: 180px;
 	font-weight: 300;
+	float: left;
+	line-height: 34px;
 }
 
 .lb_item_field {
 	width: 500px;
 	font-weight: 300;
+	font-size: 12px;
+	display: inline-block;
+	line-height: 34px;
 }
-
+.lb_item_field  .form-control{
+	text-align: left;
+}
+.profile-actions{
+	margin-top: 50px;
+}
+.lb_item_field .image-uploader{
+	width: 150px;
+	height: 200px;
+	line-height: 20px;
+}
+.lb_item_field input[disabled],
+.lb_item_field select[disabled],
+.lb_item_field textarea[disabled]{
+	border: none;
+	background-color: #fff;
+	box-shadow: none;
+	background-image: none;
+	cursor: default;
+	resize: none;
+	padding: 0;
+	margin: 0;
+}
+.lb_item_field textarea[disabled]{
+	height: auto;
+}
+.lb_item_field select[disabled]{
+	margin-left: -5px;
+}
+.lb_item_field input[type="checkbox"]{
+	margin-top: 10px;
+}
+.lb_item_field textarea{
+	resize: none;
+	height: 10em;
+}
