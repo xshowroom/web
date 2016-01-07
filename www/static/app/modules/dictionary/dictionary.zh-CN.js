@@ -36,6 +36,7 @@ angular.module( 'xShowroom.dictionary', []).constant('dictionary', {
         brandName_EMPTY_ERROR: "请输入您的品牌名称",
         brandName_DUPLICATION_ERROR: "该品牌名称已经存在",
         designerName_EMPTY_ERROR: "请输入您的设计师",
+        categoryType_EMPTY_ERROR: "请选择品牌售卖类别",
         brandUrl_EMPTY_ERROR: "请输入您的个性化域名",
         brandUrl_PATTERN_ERROR: "url只能由字母和数字组成",
         brandUrl_DUPLICATION_ERROR: "该URL已经被注册",

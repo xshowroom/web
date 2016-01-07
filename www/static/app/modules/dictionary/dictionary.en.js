@@ -37,6 +37,7 @@ angular.module('xShowroom.dictionary', []).constant('dictionary', {
         brandName_DUPLICATION_ERROR: "this brand name is exist",
         designerName_EMPTY_ERROR: "please input your designers",
         brandUrl_EMPTY_ERROR: "please input your brand url",
+        categoryType_EMPTY_ERROR: "please select category for your brand",
         brandUrl_PATTERN_ERROR: "only number and character is allowed in URL",
         brandUrl_DUPLICATION_ERROR: "this brand url is exist",
 
