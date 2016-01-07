@@ -113,11 +113,7 @@
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.material}">
                             <label for="material" class="col-xs-2 control-label"><?=__("product_create__PRODUCT_MATERIAL");?></label>
                             <div class="col-xs-6">
-                            	<select class="form-control" id="material" ng-model="product.material">
-                                    <option ng-repeat="material in materials" value="{{'dropdown__PRODUCT_MATERIAL__' + material}}">
-                                    	{{('dropdown__PRODUCT_MATERIAL__' + material) | translate}}
-                                    </option>
-                                </select>
+                            	<input type="text" class="form-control" id="material" name="material" ng-model="product.material">
                             </div>
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.careIns}">
