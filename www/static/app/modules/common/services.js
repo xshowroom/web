@@ -1017,6 +1017,12 @@ angular.module(
 		    	},
 		    	destroy: function (opts) {
 		    		return PostRequester('product/delete', opts);
+		      	},
+		      	findOne: function (opts) {
+		    		return PostRequester('product/detail', opts);
+		      	},
+		      	modify: function (opts) {
+		    		return PostRequester('product/modify', opts);
 		      	}
 			};
 		}

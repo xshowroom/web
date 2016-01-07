@@ -16,35 +16,26 @@ angular.module(
     [
      	'$scope', '$location', '$window', '$filter', '$modal', '$element', '$timeout', 'Country', 'Product', 'uiUploader',
         function ($scope, $location, $window, $filter, $modal,  $element, $timeout, Country, Product, uiUploader) {
-     		$scope.countries = Country.getAll();
-     		$scope.categories = Product.getCategoriesByCollection($scope.collectionCategory);
-     		$scope.sizeRegions = Product.getSizeRegions();
-//     		$scope.materials = Product.getMaterials();
-     		
-     		$scope.product = {
-         		collectionId: $scope.collectionId,
-         		images: []
-         	};
      		
      		$scope.addProductImage = function(url){
 //     			var siteRootUrl = $location.protocol() + '://' + $location.host() + ":" + 	$location.port() + '/';
      			$scope.product.images.push(url);
      			$scope.$apply();
      		};
-     		$scope.setSizeCodes = function(category, region){
+     		$scope.setSizeCodes = function(category, region, notReset){
      			if (!category || !region){
      				return;
      			}
      			$scope.sizeCode = Product.getSizeCodes(category, region);
-     			$scope.product.sizeCode = {};
+     			if (!notReset){
+     				$scope.product.sizeCode = {};
+     			}
+     			
      		};
      		$scope.openColorModal = function(){
      			angular.element('#color-modal').modal('show');
      		};
-     		$scope.currentColors = {
-         		standard: {},
-         		customized: []
-         	};
+     		
      		$scope.standardColors = {
      			'white': '#fff',
      			'off white': '#f4f1ea',
@@ -206,7 +197,7 @@ angular.module(
      				$scope.checkInfo.validation[key] = false;
    				}
      			if (!$scope.errorMsgs.length){
-     				Product.create(
+     				Product.modify(
      	     			$scope.product
      	     		).success(function(res){
      	     			if (typeof(res) != 'object' || res.status) {
@@ -217,6 +208,60 @@ angular.module(
      	     		});
      			} 
      		};
+     		
+     		var init = function(){
+     			Product.findOne({
+     				productionId: $scope.productId
+     			}).success(function(res){
+     				if (typeof(res) != 'object' || res.status) {
+ 	     				$modal({title: 'Error Info', content: res.msg, show: true});
+ 	     				return;
+ 	     			}
+     				
+     				$scope.product = {
+     					id: res.data.id,
+     	     	        collectionId: res.data.collection_id,
+	     	     	  	name: res.data.name,
+	 					category: res.data.category,
+	 					styleNum: res.data.style_num,
+	 					wholePrice: res.data.whole_price,
+	 					retailPrice: res.data.retail_price,
+	 					sizeRegion: res.data.size_region,
+	 					sizeCode: JSON.parse(res.data.size_code),
+	 					color: JSON.parse(res.data.color),
+	 					madeIn: res.data.made_in,
+			            material: res.data.material,
+			            careIns: res.data.care_instruction,
+			            images: res.data.image_url
+     	     	    };
+     				
+     				var collectionCategory = 'dropdown__COLLECTION__' + res.data.category.split('__')[2];
+     				$scope.countries = Country.getAll();
+     	     		$scope.categories = Product.getCategoriesByCollection(collectionCategory);
+     	     		$scope.sizeRegions = Product.getSizeRegions();
+     	     		
+     	     		$scope.currentColors = {
+     	            	standard: {},
+     	            	customized: []
+     	            };
+     	     		for (var i = 0, len = $scope.product.color.length; i < len; i++) {
+     	     			var record = $scope.product.color[i];
+     	     			if (record.type){
+     	     				$scope.currentColors.customized.push({
+	                    		name: record.name,
+	                    		value: record.value,
+	                    		type: 'url',
+	                    		style: 'background-image: url(/' + record.value + ');',
+	                    		selected: true
+	                    	});
+     	     			} else {
+     	     				$scope.currentColors.standard[record.name] = record.value;
+     	     			}
+     	     		}
+     	     		$scope.setSizeCodes(res.data.category, res.data.size_region, true);
+     			})
+     		};
+     		init();
         }
     ]
 );

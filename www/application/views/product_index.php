@@ -137,7 +137,8 @@
                  	</div>
                  	<?php if($collection['status'] == '0' && $hasAuth): ?>
                  	<div class="col-xs-12 product-action">
-                 		<button class="btn btn-type-2" data-toggle="modal" data-target="#modalDeleteConfirm"><?=__("product_index__PRODUCT_btn_DELETE")?></button>
+                 		<a class="btn btn-type-2" href="/product/edit/<?=$production['id']?>">编辑产品</a>
+                 		<button class="btn btn-type-1" data-toggle="modal" data-target="#modalDeleteConfirm"><?=__("product_index__PRODUCT_btn_DELETE")?></button>
                  	</div>
                  	<?php elseif(!$hasAuth): ?>
                  	<div class="col-xs-12 product-action">

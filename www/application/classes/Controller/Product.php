@@ -53,4 +53,17 @@ class Controller_Product extends Controller_BaseReqLogin
     	$this->response->body($view);
     
     }
+    
+    public function action_edit()
+    {
+    	$productId = $this->request->param('id');
+    
+    	$view = View::factory('product_edit');
+    	$view->set('user', $this->opUser);
+    	$view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+    	$view->set('productId', $productId);
+    
+    	$this->response->body($view);
+    
+    }
 }
