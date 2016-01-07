@@ -503,6 +503,7 @@ return array_merge(
         'product_index__btn__REMOVE_IN_CART' => '删除购物车',
         'product_index__btn__VIEW_CART' => '查看购物车',
 
+        'product_index__PRODUCT_btn_EDIT' => '编辑产品',
         'product_index__PRODUCT_btn_DELETE' => '删除产品',
 
         'product_index__modal__DELETE_CONFIRM' => '确认删除?',

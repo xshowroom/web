@@ -503,6 +503,7 @@ return array_merge(
         'product_index__btn__REMOVE_IN_CART' => 'REMOVE IN CART',
         'product_index__btn__VIEW_CART' => 'VIEW MY CART',
 
+        'product_index__PRODUCT_btn_EDIT' => 'EDIT',
         'product_index__PRODUCT_btn_DELETE' => 'DELETE',
 
         'product_index__modal__DELETE_CONFIRM' => 'CONFIRM DELETE?',
