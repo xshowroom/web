@@ -140,12 +140,12 @@
                 </textcomplete>
             </div>
         </div>
-        <div class="form-group" ng-init="brand.brandImage='<?= $brandInfo['brand_image'] ?>';">
+        <div class="form-group" ng-init="brand.imagePath='<?= $brandInfo['brand_image'] ?>';">
         	<label class="lb_item_name">品牌封面</label>
         	<div class="lb_item_field">
             	<img src="<?= URL::site($brandInfo['brand_image']) ?>" ng-if="!isEditing"/>
-            	<div class="image-uploader" ng-class="{'has-error': step.validation.brand.imagePath}" data-target-model="brand.brandImage"
-					data-title="<?= __('brand_register__STEP_2__IMAGE');?>" ng-if="isEditing" data-image-online-url='brand.brandImage'>
+            	<div class="image-uploader" ng-class="{'has-error': step.validation.brand.imagePath}" data-target-model="brand.imagePath"
+					data-title="<?= __('brand_register__STEP_2__IMAGE');?>" ng-if="isEditing" data-image-online-url='brand.imagePath'>
 				</div>
             </div>
         </div>

@@ -30,7 +30,7 @@ angular.module(
     				brand: {
     					'designerName': false,
     					'categoryType': false,
-    					'brandImage': false
+    					'imagePath': false
    				    },
     				company: {
     					'companyAddr': false,
