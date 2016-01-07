@@ -58,9 +58,7 @@
 					</div>
 					<div class="order-status-list" ng-class="{'stock-collection': processes.length == 6}">
 						<div class="order-status" ng-repeat="step in processes track by $index" ng-class="{'active': statusIndex >= $index}">
-							<div>
-								<i class="fa fa-shopping-cart fa-5x"></i>
-							</div>
+							<div class="order-status-icon order-status-{{step}}"></div>
 							<div>
 								<span>{{"order_status__" + step | translate}}</span>
 							</div>
