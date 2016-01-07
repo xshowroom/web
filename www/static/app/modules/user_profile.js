@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'UserProfileCtrl',
     [
-        '$scope', '$window', '$filter', 'Country', 'User',
-        function ($scope, $window, $filter, Country, User) {
+        '$scope', '$window', '$filter', '$modal', 'Country', 'User',
+        function ($scope, $window, $filter, $modal, Country, User) {
         	$scope.isEditing = false;
         	$scope.countries = Country.getAll();
         	
@@ -126,16 +126,15 @@ angular.module(
         			$scope.check('brand', $scope.brand);
         			options = angular.extend(options, $scope.brand);
         		};
-//        		if (!$scope.errorMsgs.length){
-//        			User.updateProfile(options).success(function(res){
-//        				if (typeof(res) != 'object' || res.status) {
-//    						$modal({title: 'Error Info', content: res.msg, show: true});
-//            			}else{
-//            				$window.location.reload();
-//            			}
-//        			});
-//        		}
-        		console.log(options);
+        		if (!$scope.errorMsgs.length){
+        			User.updateProfile(options).success(function(res){
+        				if (typeof(res) != 'object' || res.status) {
+    						$modal({title: 'Error Info', content: res.msg, show: true});
+            			}else{
+            				$window.location.reload();
+            			}
+        			});
+        		}
         	}
         }
     ]
