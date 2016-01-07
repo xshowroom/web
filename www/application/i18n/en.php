@@ -758,9 +758,13 @@ return array_merge(
 
         'order_index__payment_TITLE' => 'PAYMENT INFORMATION',
         'order_index__payment_REMITTANCE' => 'REMITTANCE TO: ',
+        'order_index__payment_REMITTANCE_DESC' => 'XSHOWROOM',
         'order_index__payment_BANK_NAME' => 'BANK NAME: ',
+        'order_index__payment_BANK_NAME_DESC' => 'Agricultural Bank of China - Shanghai Weihai Road sub-branch',
         'order_index__payment_BANK_ACCOUTN' => 'BANK ACCOUNT: ',
+        'order_index__payment_BANK_ACCOUTN_DESC' => '6228 4800 3802 1782578',
         'order_index__payment_BANK_PAYEE' => 'BANK PAYEE: ',
+        'order_index__payment_BANK_PAYEE_DESC' => 'Rong Chen',
         'order_index__payment_DESC_01' => 'Please send your payment receipt to',
         'order_index__payment_DESC_02' => 'in order to confirm your payment.',
 

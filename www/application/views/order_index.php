@@ -207,10 +207,10 @@
 								<div class="col-xs-12">
 									<div class="admin-account-info">
 										<h4><?=__("order_index__payment_TITLE");?></h4>
-										<div><span><?=__("order_index__payment_REMITTANCE");?></span><span><?=PAYMENT_OFFLINE_REMITTANCE_TO?></span></div>
-										<div><span><?=__("order_index__payment_BANK_NAME");?></span><span><?=PAYMENT_OFFLINE_BANK_NAME?></span></span></div>
-										<div><span><?=__("order_index__payment_BANK_ACCOUTN");?></span><span><?=PAYMENT_OFFLINE_BANK_ACCOUNT?></span></div>
-										<div><span><?=__("order_index__payment_BANK_PAYEE");?></span><span><?=PAYMENT_OFFLINE_BANK_PAYEE?></span></div>
+										<div><span><?=__("order_index__payment_REMITTANCE");?></span><span><?=__("order_index__payment_REMITTANCE_DESC");?></span></div>
+										<div><span><?=__("order_index__payment_BANK_NAME");?></span><span><?=__("order_index__payment_BANK_NAME_DESC");?></span></span></div>
+										<div><span><?=__("order_index__payment_BANK_ACCOUTN");?></span><span><?=__("order_index__payment_BANK_ACCOUTN_DESC");?></span></div>
+										<div><span><?=__("order_index__payment_BANK_PAYEE");?></span><span><?=__("order_index__payment_BANK_PAYEE_DESC");?></span></div>
 										<div class="payment-tip">
 											<span class="glyphicon glyphicon-info-sign"></span><?=__("order_index__payment_DESC_01")." ".ADMIN_EMAIL." ".__("order_index__payment_DESC_02");?>
 										</div>

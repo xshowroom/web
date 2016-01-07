@@ -758,9 +758,13 @@ return array_merge(
 
         'order_index__payment_TITLE' => '支付信息',
         'order_index__payment_REMITTANCE' => '汇款到: ',
+        'order_index__payment_REMITTANCE_DESC' => 'XSHOWROOM买手圈',
         'order_index__payment_BANK_NAME' => '银行名称: ',
+        'order_index__payment_BANK_NAME_DESC' => '农业银行上海市威海路支行',
         'order_index__payment_BANK_ACCOUTN' => '银行账户: ',
+        'order_index__payment_BANK_ACCOUTN_DESC' => '6228 4800 3802 1782578',
         'order_index__payment_BANK_PAYEE' => '收款人: ',
+        'order_index__payment_BANK_PAYEE_DESC' => '陈容 ',
         'order_index__payment_DESC_01' => '请将您的汇款凭证发送到',
         'order_index__payment_DESC_02' => '以此来确认您的支付',
 

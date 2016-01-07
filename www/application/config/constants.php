@@ -41,11 +41,3 @@ define('UPLOAD_DIR', 'data');
  * ADMIN - MAILBOX
  */
 define('ADMIN_EMAIL', 'info@xshowroom.com');
-
-/**
- * Payment - Offline
- */
-define('PAYMENT_OFFLINE_REMITTANCE_TO', '陈蓉');
-define('PAYMENT_OFFLINE_BANK_NAME', '农业银行上海市威海路支行');
-define('PAYMENT_OFFLINE_BANK_ACCOUNT', '6228 4800 3802 1782578');
-define('PAYMENT_OFFLINE_BANK_PAYEE', '陈蓉');
