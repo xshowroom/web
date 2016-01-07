@@ -343,7 +343,13 @@ return array_merge(
         'profile__BRAND_NAME' => 'BRAND NAME',
         'profile__DESIGNER_NAME' => 'DESIGNER NAME',
         'profile__BRAND_URL' => 'BRAND URL',
+        'profile__BRAND_CATEGORY' => 'BRAND CATEGORY',
         'profile__BRAND_DESCRIPTION' => 'DESCRIPTION',
+        'profile__BRAND_COVER_IMAGE' => 'COVER IMAGE',
+
+        'profile__btn__EDIT' => 'EDIT',
+        'profile__btn__SAVE' => 'SAVE',
+        'profile__btn__CANCEL' => 'CANCEL',
     ),
     /**
      * user_password.php

@@ -107,7 +107,7 @@
             <a class="lb_item_field" href="<?= URL::site("brands/".$brandInfo['brand_url'], 'http') ?>" target="_blank"><?= URL::site("brands/".$brandInfo['brand_url'], 'http') ?></a>
         </div>
         <div class="form-group" ng-init="brand.categoryType = '<?= $brandInfo['category_type'] ?>';initCategory();">
-           	 <label class="lb_item_name">品牌类型</label>
+           	 <label class="lb_item_name"><?=__("profile__BRAND_CATEGORY")?></label>
            	 <span class="lb_item_field" ng-if="!isEditing">{{ getCategory("<?= $brandInfo['category_type'] ?>") }}</span>
            	 <div class="lb_item_field" ng-class="{'has-error': checkInfo.validation.brand.categoryType}" ng-if="isEditing">
 				<label class="checkbox-inline">
@@ -141,7 +141,7 @@
             </div>
         </div>
         <div class="form-group" ng-init="brand.imagePath='<?= $brandInfo['brand_image'] ?>';">
-        	<label class="lb_item_name">品牌封面</label>
+        	<label class="lb_item_name"><?=__("profile__BRAND_COVER_IMAGE")?></label>
         	<div class="lb_item_field">
             	<img src="<?= URL::site($brandInfo['brand_image']) ?>" ng-if="!isEditing"/>
             	<div class="image-uploader" ng-class="{'has-error': step.validation.brand.imagePath}" data-target-model="brand.imagePath"
@@ -161,8 +161,8 @@
 		<div class="clearfix"></div>
 	</div>
     <div class="profile-actions">
-    	<button class="btn btn-type-2" ng-if="!isEditing" ng-click="edit();">修改信息</button>
-    	<button class="btn btn-type-2" ng-if="isEditing" ng-click="save();">保存</button>
-    	<button class="btn btn-type-1" ng-if="isEditing" ng-click="reload();">取消</button>
+    	<button class="btn btn-type-2" ng-if="!isEditing" ng-click="edit();"><?= __('profile__btn__EDIT');?></button>
+    	<button class="btn btn-type-2" ng-if="isEditing" ng-click="save();"><?= __('profile__btn__SAVE');?></button>
+    	<button class="btn btn-type-1" ng-if="isEditing" ng-click="reload();"><?= __('profile__btn__CANCEL');?></button>
     </div>
 </div>

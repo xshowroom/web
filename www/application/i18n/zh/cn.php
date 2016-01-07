@@ -343,7 +343,13 @@ return array_merge(
         'profile__BRAND_NAME' => '品牌名称',
         'profile__DESIGNER_NAME' => '品牌设计师',
         'profile__BRAND_URL' => '品牌网址',
+        'profile__BRAND_CATEGORY' => '售卖类别',
         'profile__BRAND_DESCRIPTION' => '品牌介绍',
+        'profile__BRAND_COVER_IMAGE' => '封面照片',
+
+        'profile__btn__EDIT' => '修改信息',
+        'profile__btn__SAVE' => '保存信息',
+        'profile__btn__CANCEL' => '取消编辑',
     ),
     /**
      * user_password.php
