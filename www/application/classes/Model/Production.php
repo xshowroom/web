@@ -84,7 +84,7 @@ class Model_Production
                         'image_url' => $imagePaths,
                     ))
                     ->where ('user_id', '=', $userId)
-                    ->where ('collectiion', '=', $collection)
+                    ->where ('collection_id', '=', $collection)
                     ->where ('id', '=', $procuctionId)
                     ->execute();
     

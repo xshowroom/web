@@ -127,7 +127,7 @@
                  	</div>
                  	<div class="col-xs-12 product-detail">
                  		<div><?=__("product_index__PRODUCT_MATERIAL")?></div>
-                 		<div>{{'<?= $production['material']?>' | translate}}</div>
+                 		<div>{{'<?= $production['material']?>'}}</div>
                  	</div>
                  	<div class="col-xs-11 product-detail">
                  		<div><?=__("product_index__PRODUCT_CARE_INSTRUCTION")?></div>

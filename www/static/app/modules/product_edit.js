@@ -203,7 +203,7 @@ angular.module(
      	     			if (typeof(res) != 'object' || res.status) {
      	     				$modal({title: 'Error Info', content: res.msg, show: true});
      	     			}else{
-     	     				$window.open('/collection/'+$scope.collectionId, '_self');
+     	     				$window.open('/collection/'+$scope.product.collectionId, '_self');
      	     			}
      	     		});
      			} 

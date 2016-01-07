@@ -1022,7 +1022,12 @@ angular.module(
 		    		return PostRequester('product/detail', opts);
 		      	},
 		      	modify: function (opts) {
-		    		return PostRequester('product/modify', opts);
+		      		return PostRequester('product/modify', opts, function(data){
+						var options = angular.copy(data);
+						options.color = JSON.stringify(options.color);
+						options.images = JSON.stringify(options.images);
+						return $httpParamSerializer(options);
+					});
 		      	}
 			};
 		}
