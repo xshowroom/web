@@ -34,12 +34,8 @@ class Business_Brand
     
     private function doFilter($filter)
     {
-        // 如果有query查询条件
-        if (!empty($filter['query'])) {
-            $brandList = $this->queryBrand($filter['query']);
-        } else {
-            $brandList = $this->getAllBrand();
-        }
+        // 根据筛选条件查询brand表
+        $brandList = $this->brandModel->getByFilter($filter);
         
         if (empty($brandList)) {
             return array();
@@ -47,9 +43,9 @@ class Business_Brand
         
         // 所有的user_id
         $userIdList = array_column($brandList, 'user_id');
-        
+
         // 如果有show查询条件，筛选出相应的user_id
-        if ((!empty($filter['show']) && $filter['show'] != 'dropdown__COLLECTION__ALL')|| !empty($filter['season']) || !empty($filter['available'])) {
+        if (($filter['show'] == 'dropdown__COLLECTION__WHATS_NEW') || !empty($filter['season']) || !empty($filter['available'])) {
             $collectionList = $this->collectionModel->getByFilter($filter);
             $tempIdList = array_column($collectionList, 'user_id');
             $userIdList = array_intersect($userIdList, $tempIdList);

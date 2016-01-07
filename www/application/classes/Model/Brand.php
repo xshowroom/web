@@ -42,7 +42,19 @@ class Model_Brand
         
         return $result;
     }
-    
+
+    public function getByCategory($category)
+    {
+        $result = DB::select()
+                    ->from('brand')
+                    ->where('category_type', '=', $category)
+                    ->where('status', '=', Model_User::STATUS_USER_NORMAL)
+                    ->execute()
+                    ->as_array('user_id');
+
+        return $result;
+    }
+
     public function getByUrl($url)
     {
         $result = DB::select()
@@ -98,5 +110,22 @@ class Model_Brand
             ->execute();
 
         return $result[0];
+    }
+
+    public function getByFilter($filter)
+    {
+        $sql = "SELECT * FROM brand WHERE status = " . Model_User::STATUS_USER_NORMAL;
+
+        if ($filter['show'] == 'dropdown__COLLECTION__WOMEN' || $filter['show'] == 'dropdown__COLLECTION__MEN') {
+            $sql .= " AND category_type = '{$filter['show']}' ";
+        }
+
+        if (!empty($filter['query'])) {
+            $sql .= " AND brand_name LIKE '%{$filter['query']}%'";
+        }
+
+        $result = DB::query(Database::SELECT, $sql)->execute()->as_array('user_id');
+
+        return $result;
     }
 }

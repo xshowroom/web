@@ -252,17 +252,62 @@ class Business_User
 
     /**
      * @param $userId
-     * @param $designerName
-     * @param $brandUrl
-     * @param $imagePath
-     * @param $categoryType
-     * @param $description
+     * @return bool
+     * @throws Kohana_Exception
+     */
+    public function updateUser($userId)
+    {
+        try {
+            Database::instance()->begin();
+
+            $this->updateUserAttr($userId);
+
+            $this->updateBrandInfo($userId);
+
+            Database::instance()->commit();
+
+            return true;
+        } catch (Exception $e) {
+            Database::instance()->rollback();
+            return false;
+        }
+    }
+
+    /**
+     * @param $userId
+     * @return mixed
+     */
+    public function updateUserAttr($userId)
+    {
+        $firstName      = Request::current()->getParam('firstName');
+        $lastName       = Request::current()->getParam('lastName');
+        $displayName    = Request::current()->getParam('displayName');
+        $tel            = Request::current()->getParam('tel');
+        $mobile         = Request::current()->getParam('mobile');
+        $companyAddr    = Request::current()->getParam('companyAddr');
+        $companyCountry = Request::current()->getParam('companyCountry');
+        $companyZip     = Request::current()->getParam('companyZip');
+        $companyTel     = Request::current()->getParam('companyTel');
+        $companyWebsite = Request::current()->getParam('companyWebsite');
+
+        $rowUpdated = $this->userModel->updateUserAttr($userId, $firstName, $lastName, $displayName, $tel, $mobile, $companyAddr, $companyCountry, $companyZip, $companyTel, $companyWebsite);
+        return $rowUpdated;
+    }
+
+    /**
+     * @param $userId
      * @return mixed
      * @throws Kohana_Exception
-     * @return int
      */
-    public function updateBrandInfo($userId, $designerName, $brandUrl, $imagePath, $categoryType, $description)
+    public function updateBrandInfo($userId)
     {
+        // generate brand info
+        $designerName  = Request::current()->getParam('designerName');
+        $imagePath     = Request::current()->getParam('imagePath');
+        $brandUrl      = Request::current()->getParam('brandUrl');
+        $categoryType  = Request::current()->getParam('categoryType');
+        $description   = Request::current()->getParam('description');
+
         $brandUrl = urlencode($this->safeFileName($brandUrl));
 
         $brandUrlExist = $this->checkBrandUrl($brandUrl);

@@ -216,6 +216,42 @@ class Model_User
     
         return $result[0];
     }
+
+    /**
+     * @param $userId
+     * @param $firstName
+     * @param $lastName
+     * @param $displayName
+     * @param $tel
+     * @param $mobile
+     * @param $companyAddr
+     * @param $companyCountry
+     * @param $companyZip
+     * @param $companyTel
+     * @param $companyWebsite
+     * @return mixed
+     */
+    public function updateUserAttr($userId, $firstName, $lastName, $displayName, $tel, $mobile, $companyAddr, $companyCountry, $companyZip, $companyTel, $companyWebsite)
+    {
+        $result = DB::update('brand')
+                    ->set(array(
+                        'first_name'        => $firstName,
+                        'last_name'         => $lastName,
+                        'display_name'      => $displayName,
+                        'telephone'         => $tel,
+                        'mobile'            => $mobile,
+                        'company_address'   => $companyAddr,
+                        'company_country'   => $companyCountry,
+                        'company_zip'       => $companyZip,
+                        'company_telephone' => $companyTel,
+                        'company_web_url'   => $companyWebsite,
+                    ))
+                    ->where('user_id', '=', $userId)
+                    ->where('status', '=', self::STATUS_USER_NORMAL)
+                    ->execute();
+
+        return $result[0];
+    }
     
     /**
      * 增加品牌信息
@@ -254,6 +290,15 @@ class Model_User
         return $result[0];
     }
 
+    /**
+     * @param $userId
+     * @param $designerName
+     * @param $brandUrl
+     * @param $brandImage
+     * @param $categoryType
+     * @param $description
+     * @return mixed
+     */
     public function updateBrandInfo($userId, $designerName, $brandUrl, $brandImage, $categoryType, $description)
     {
         $result = DB::update('brand')
@@ -264,7 +309,7 @@ class Model_User
                         'category_type' => $categoryType,
                         'description' => $description,
                     ))
-                    ->where('brandId', '=', $userId)
+                    ->where('user_id', '=', $userId)
                     ->where('status', '=', self::STATUS_USER_NORMAL)
                     ->execute();
 

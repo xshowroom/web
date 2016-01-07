@@ -39,18 +39,11 @@ class Controller_Api_User extends Controller_BaseReqLogin
         ));
     }
 
-    public function action_updateBrandInfo()
+    public function action_updateUserInfo()
     {
         $userId  = $this->opUser['id'];
 
-        // generate brand info
-        $designerName  = Request::current()->getParam('designerName');
-        $imagePath     = Request::current()->getParam('imagePath');
-        $brandUrl      = Request::current()->getParam('brandUrl');
-        $categoryType  = Request::current()->getParam('categoryType');
-        $description   = Request::current()->getParam('description');
-
-        $res = $this->userService->updateBrandInfo($userId, $designerName, $brandUrl, $imagePath, $categoryType, $description);
+        $res = $this->userService->updateUser($userId);
 
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
