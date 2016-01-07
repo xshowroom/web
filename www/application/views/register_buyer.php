@@ -307,7 +307,7 @@
 					<a type="button" class="btn btn-type-2" ng-click="checkInvitation();"> <?=__("other__invite__btn_CONTINUE");?> </a>
 				</div>
 				<div>
-					<p><?=__("other__invite__APPLY_01");?> <a href="mailto:info@xshowroom.com">info@xshowroom.com</a> <?=__("other__invite__APPLY_02");?></p>
+					<p><?=__("other__invite__APPLY_01");?> <a href="mailto:info@xshowroom.com"><?=ADMIN_EMAIL?></a> <?=__("other__invite__APPLY_02");?></p>
 				</div>
 			</div>
 		</div>
