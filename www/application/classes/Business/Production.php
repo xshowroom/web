@@ -78,7 +78,35 @@ class Business_Production
             $errorInfo = Kohana::message('message', 'AUTH_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
-        
+
+        $colorArr = json_decode($color, true);
+        $colorFinalArr = array(); // 怕用引用乱掉，又得调半天
+        foreach ($colorArr as $color) {
+            if ($color['type'] == 0) {
+                $colorFinalArr[] = array(
+                    'name' => $color['name'],
+                    'value' => $color['value'],
+                    'type' => $color['type'],
+                );
+            } else {
+                list($realPathFile, $mediumPathFile, $smallPathFile) = $this->uploadService->createThreeImage($color['value']);
+                $colorFinalArr[] = array(
+                    'name' => $color['name'],
+                    'value' => $realPathFile,
+                    'type' => $color['type'],
+                );
+            }
+
+        }
+        $color = json_encode($colorFinalArr);
+
+        $imagePathsArr = json_decode($imagePaths, true);
+        $imagePathsFinalArr = array();
+        foreach ($imagePathsArr as $imagePath) {
+            list($realPathFile, $mediumPathFile, $smallPathFile) = $this->uploadService->createThreeImage($imagePath);
+            $imagePathsFinalArr[] = $realPathFile;
+        }
+        $imagePaths = json_encode($imagePathsFinalArr);
         $res = $this->productionModel->updateProduction($userId, $productionId, $name, $category, $collectionId, $styleNum, $wholePrice, $rtlPrice, $sizeRegion, $sizeCode, $color, $madeIn, $material, $careIns, $imagePaths);
         return $res;
     }
