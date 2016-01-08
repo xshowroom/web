@@ -107,13 +107,15 @@ class Model_User
      * 查询brandUrl信息
      *
      * @param string $brandUrl
+     * @param int $brandId
      * @return array
      */
-    public function checkBrandUrl($brandUrl)
+    public function checkBrandUrl($brandUrl, $brandId)
     {
         $result = DB::select()
                     ->from('brand')
                     ->where('brand_url', '=', $brandUrl)
+                    ->where('id', '!=', $brandId)
                     ->where('status', '=', self::STATUS_USER_NORMAL)
                     ->execute()
                     ->as_array();

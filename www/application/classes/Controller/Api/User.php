@@ -42,8 +42,9 @@ class Controller_Api_User extends Controller_BaseReqLogin
     public function action_updateUserInfo()
     {
         $userId  = $this->opUser['id'];
+        $roleType= $this->opUser['role_type'];
 
-        $res = $this->userService->updateUser($userId);
+        $res = $this->userService->updateUser($userId, $roleType);
 
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
