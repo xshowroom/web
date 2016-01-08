@@ -78,6 +78,7 @@
 	height: auto;
 }
 .lb_item_field p{
+	min-height: 34px;
 	white-space: pre;
 	word-break: break-word;
 }
