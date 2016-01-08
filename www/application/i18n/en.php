@@ -985,5 +985,11 @@ return array_merge(
         'other__invite__error_INFO' => 'WRONG INVITATION CODE',
         'other__invite__APPLY_01' => 'PLEASE CONTACT',
         'other__invite__APPLY_02' => 'TO APPLY FOR INVITATION CODE',
+
+        'other__404_MSG' => 'PAGE NOT EXIST',
+        'other__404_DESC_01' => 'We will redirect you to XSHOWROOM HOME in',
+        'other__404_DESC_02' => 'seconds',
+        'other__404_DESC_03' => 'If your browser is no response, please',
+        'other__404_DESC_04' => 'CLICK HERE',
     )
 );

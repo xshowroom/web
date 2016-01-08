@@ -985,5 +985,11 @@ return array_merge(
         'other__invite__error_INFO' => '邀请码错误',
         'other__invite__APPLY_01' => '未邀请的用户，请联系',
         'other__invite__APPLY_02' => '进行注册邀请码申请',
+
+        'other__404_MSG' => '您访问的页面不存在',
+        'other__404_DESC_01' => '我们将在',
+        'other__404_DESC_02' => '秒内将你重定向到XSHOWROOM主页',
+        'other__404_DESC_03' => '如果您的浏览器没有自动跳转，请',
+        'other__404_DESC_04' => '点击这里',
     )
 );
