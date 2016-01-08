@@ -172,9 +172,9 @@ class Business_User
         return $res;
     }
 
-    public function checkBrandUrl($brandUrl)
+    public function checkBrandUrl($brandUrl, $excludeBrandId = 0)
     {
-        $res = $this->userModel->checkBrandUrl($brandUrl);
+        $res = $this->userModel->checkBrandUrl($brandUrl, $excludeBrandId);
         return $res;
     }
     
@@ -252,17 +252,20 @@ class Business_User
 
     /**
      * @param $userId
+     * @param $roleType
      * @return bool
      * @throws Kohana_Exception
      */
-    public function updateUser($userId)
+    public function updateUser($userId, $roleType)
     {
         try {
             Database::instance()->begin();
 
             $this->updateUserAttr($userId);
 
-            $this->updateBrandInfo($userId);
+            if ($roleType == Model_User::TYPE_USER_BRAND) {
+                $this->updateBrandInfo($userId);
+            }
 
             Database::instance()->commit();
 
@@ -308,17 +311,30 @@ class Business_User
         $categoryType  = Request::current()->getParam('categoryType');
         $description   = Request::current()->getParam('description');
 
-        $brandUrl = urlencode($this->safeFileName($brandUrl));
-
-        $brandUrlExist = $this->checkBrandUrl($brandUrl);
-        if ($brandUrlExist) {
+        $brandInfo = $this->brandModel->getByUserId($userId);
+        if (empty($brandInfo)) {
             $errorInfo = Kohana::message('message', 'STATUS_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
 
-        list($realPathFile, $mediumPathFile, $smallPathFile) = $this->uploadService->createThreeImage($imagePath);
+        // 如果url未更新,则不操作
+        if ($brandInfo['brand_url'] != $brandUrl) {
+            $brandUrl = urlencode($this->safeFileName($brandUrl));
 
-        $rowUpdated = $this->userModel->updateBrandInfo($userId, $designerName, $brandUrl, $mediumPathFile, $categoryType, $description);
+            $brandUrlExist = $this->checkBrandUrl($brandUrl, $brandInfo['id']);
+            if ($brandUrlExist) {
+                $errorInfo = Kohana::message('message', 'STATUS_ERROR');
+                throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+            }
+        }
+
+        // 如果图片未更新过,则不重新生成
+        if ($brandInfo['brand_image'] != $imagePath) {
+            list($realPathFile, $mediumPathFile, $smallPathFile) = $this->uploadService->createThreeImage($imagePath);
+            $imagePath = $mediumPathFile;
+        }
+
+        $rowUpdated = $this->userModel->updateBrandInfo($userId, $designerName, $brandUrl, $imagePath, $categoryType, $description);
 
         return $rowUpdated;
     }
