@@ -82,7 +82,9 @@
         </div>
         <div class="form-group" ng-init="company.companyWebsite='<?= $userAttr['company_web_url'] ?>';">
             <label class="lb_item_name"><?=__("profile__COMPANY_WEB_URL")?></label>
-            <a class="lb_item_field" href="<?= $userAttr['company_web_url'] ?>" target="_blank" ng-if="!isEditing"><?= $userAttr['company_web_url'] ?></a>
+            <div class="lb_item_field" >
+            	<a href="<?= $userAttr['company_web_url'] ?>" target="_blank" ng-if="!isEditing"><?= $userAttr['company_web_url'] ?></a>
+            </div>
             <div class="lb_item_field" ng-if="isEditing" ng-class="{'has-error': checkInfo.validation.company.companyWebsite}">
             	<input type="text" class="form-control" ng-model="company.companyWebsite"/>
             </div>
@@ -104,7 +106,9 @@
         </div>
         <div class="form-group">
             <label class="lb_item_name"><?=__("profile__BRAND_URL")?></label>
-            <a class="lb_item_field" href="<?= URL::site("brands/".$brandInfo['brand_url'], 'http') ?>" target="_blank"><?= URL::site("brands/".$brandInfo['brand_url'], 'http') ?></a>
+            <div class="lb_item_field" >
+           		<a href="<?= URL::site("brands/".$brandInfo['brand_url'], 'http') ?>" target="_blank"><?= URL::site("brands/".$brandInfo['brand_url'], 'http') ?></a>
+            </div>
         </div>
         <div class="form-group" ng-init="brand.categoryType = '<?= $brandInfo['category_type'] ?>';initCategory();">
            	 <label class="lb_item_name"><?=__("profile__BRAND_CATEGORY")?></label>
