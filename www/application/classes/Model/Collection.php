@@ -159,25 +159,25 @@ class Model_Collection
     
     public function getByFilter($filter)
     {
-        $sql = "SELECT * FROM collection WHERE status = " . self::TYPE_OF_ONLINE;
+        $query = DB::select()->from('collection')->where('status', '=', self::TYPE_OF_ONLINE);
 
         if ($filter['show'] == 'dropdown__COLLECTION__WHATS_NEW') {
-            $sql .= " AND modify_time >= '". date('Y-m-d', strtotime('-3 month')) ."'";
+            $query->and_where('modify_time', '>=', date('Y-m-d', strtotime('-3 month')));
         }
         
         if (!empty($filter['season'])) {
-            $sql .= " AND season IN ({$filter['season']}) ";
+            $query->and_where('season', 'IN', explode(',', $filter['season']));
         }
         
         if (!empty($filter['available'])) {
-            $sql .= " AND deadline BETWEEN '".date('Y-m-d')."' AND '".date('Y-m-d', strtotime($filter['available']))."' ";
+            $query->and_where('deadline', 'BETWEEN', array(date('Y-m-d'), date('Y-m-d', strtotime($filter['available']))));
         }
         
         if (!empty($filter['mode'])) {
-            $sql .= " AND mode = '{$filter['mode']}' ";
+            $query->and_where('mode', '=', $filter['mode']);
         }
         
-        $result = DB::query(Database::SELECT, $sql)->execute()->as_array('id');
+        $result = $query->execute()->as_array('id');
         
         return $result;
     }

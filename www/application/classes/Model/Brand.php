@@ -114,17 +114,17 @@ class Model_Brand
 
     public function getByFilter($filter)
     {
-        $sql = "SELECT * FROM brand WHERE status = " . Model_User::STATUS_USER_NORMAL;
+        $query = DB::select()->from('brand')->where('status', '=', Model_User::STATUS_USER_NORMAL);
 
         if ($filter['show'] == 'dropdown__COLLECTION__WOMEN' || $filter['show'] == 'dropdown__COLLECTION__MEN') {
-            $sql .= " AND category_type LIKE '%{$filter['show']}%' ";
+            $query->and_where('category_type', 'LIKE', "%{$filter['show']}%");
         }
 
         if (!empty($filter['query'])) {
-            $sql .= " AND brand_name LIKE '%{$filter['query']}%'";
+            $query->and_where('brand_name', 'LIKE', "%{$filter['query']}%");
         }
 
-        $result = DB::query(Database::SELECT, $sql)->execute()->as_array('user_id');
+        $result = $query->execute()->as_array('user_id');
 
         return $result;
     }
