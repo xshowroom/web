@@ -22,16 +22,16 @@
 }
 .brand-preview{
 	background-color: #fcfcfc;
-	padding: 30px;
+	padding: 20px;
 }
 
 .brand-preview .brand-name{
-	font-size: 16px;
+	font-size: 18px;
 	margin-bottom: 30px;
 }
 .brand-preview .brand-info{
-	font-size: 14px;
-	line-height: 30px;
+	font-size: 12px;
+	line-height: 26px;
 }
 .brand-preview .brand-info > span{
 	display: inline-block;
