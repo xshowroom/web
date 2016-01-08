@@ -63,7 +63,7 @@ angular.module(
         	
         	$scope.check = function(name, target) {
 				for(var key in target){
-					if (key == 'mobile' || key =='description'){
+					if (key == 'mobile' || key =='description' || key=='brandUrl'){
 						continue;
 					}
 					var value = target[key];

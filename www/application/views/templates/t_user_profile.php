@@ -104,7 +104,7 @@
             	<input type="text" class="form-control" ng-model="brand.designerName" ng-disabled="!isEditing"/>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" ng-init="brand.brandUrl='<?= $brandInfo['brand_url'] ?>';">
             <label class="lb_item_name"><?=__("profile__BRAND_URL")?></label>
             <div class="lb_item_field" >
            		<a href="<?= URL::site("brands/".$brandInfo['brand_url'], 'http') ?>" target="_blank"><?= URL::site("brands/".$brandInfo['brand_url'], 'http') ?></a>
