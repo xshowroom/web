@@ -110,7 +110,7 @@ angular.module(
 					}
 					result.push($filter("translate")(categories[i]));
 				}
-				return result.join(',');
+				return result.join(',') || '(N/A)';
 			};
 			
 			
