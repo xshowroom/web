@@ -118,7 +118,7 @@ class Model_Brand
         $sql = "SELECT * FROM brand WHERE status = " . Model_User::STATUS_USER_NORMAL;
 
         if ($filter['show'] == 'dropdown__COLLECTION__WOMEN' || $filter['show'] == 'dropdown__COLLECTION__MEN') {
-            $sql .= " AND category_type = '{$filter['show']}' ";
+            $sql .= " AND category_type LIKE '%{$filter['show']}%' ";
         }
 
         if (!empty($filter['query'])) {
