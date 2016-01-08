@@ -139,7 +139,8 @@
         <div class="form-group" ng-init="brand.description='<?= $brandInfo['description'] ?>';">
          	<label class="lb_item_name"><?=__("profile__BRAND_DESCRIPTION")?></label>
             <div class="lb_item_field">
-            	<textcomplete>
+            	<p ng-if="!isEditing">{{brand.description}}</p>
+            	<textcomplete ng-if="isEditing">
                     <textarea class="form-control" ng-model="brand.description" ng-disabled="!isEditing"></textarea>
                 </textcomplete>
             </div>
