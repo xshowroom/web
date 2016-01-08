@@ -105,9 +105,12 @@ angular.module(
 				var result = [];
 				var categories = $scope.brand.categoryType.split(",");
 				for(var i = 0, len = categories.length; i < len; i++) {
+					if (!categories[i]){
+						continue;
+					}
 					result.push($filter("translate")(categories[i]));
 				}
-				return result.join(',');
+				return result.join(',') || '(N/A)';
 			};
 			
 			
