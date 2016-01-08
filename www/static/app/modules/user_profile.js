@@ -42,8 +42,8 @@ angular.module(
         		},	
     			reg:{
     				user: {
-    					'firstName': /^\S{2,50}$/,
-    					'lastName': /^\S{2,50}$/,
+    					'firstName': /^\S{1,50}$/,
+    					'lastName': /^\S{1,50}$/,
     					'tel': /^\S{6,20}$/
     			    },
     			    brand: {},
