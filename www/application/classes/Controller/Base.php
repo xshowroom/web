@@ -19,4 +19,9 @@ class Controller_Base extends Controller
             session_destroy();
         }
     }
+
+    protected function redirect_404()
+    {
+        throw new HTTP_Exception_404();
+    }
 }
