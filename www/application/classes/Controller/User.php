@@ -3,6 +3,17 @@
 
 class Controller_User extends Controller_BaseReqLogin
 {
+    public $userService;
+    public $brandService;
+
+    public function before()
+    {
+        parent::before();
+
+        $this->userService = new Business_User();
+        $this->brandService = new Business_Brand();
+    }
+
     public function action_index()
     {
         $this->action_login();
@@ -34,21 +45,35 @@ class Controller_User extends Controller_BaseReqLogin
     {
         $roleType = (int)$this->opUser['role_type'];
 
+        $view = View::factory('user_profile');
+
         if($roleType === Model_User::TYPE_USER_BRAND){
-            $this->redirect('/brand/profile');
+            $view->set('user', $this->opUser);
+            $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+            $view->set('brandInfo', $this->brandService->getBrandInfo($this->opUser['id']));
         } elseif ($roleType === Model_User::TYPE_USER_BUYER) {
-            $this->redirect('/buyer/profile');
+            $view->set('user', $this->opUser);
+            $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
         }
+
+        $this->response->body($view);
     }
 
     public function action_password()
     {
         $roleType = (int)$this->opUser['role_type'];
 
+        $view = View::factory('user_password');
+
         if($roleType === Model_User::TYPE_USER_BRAND){
-            $this->redirect('/brand/password');
+            $view->set('user', $this->opUser);
+            $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+            $view->set('brandInfo', $this->brandService->getBrandInfo($this->opUser['id']));
         } elseif ($roleType === Model_User::TYPE_USER_BUYER) {
-            $this->redirect('/buyer/password');
+            $view->set('user', $this->opUser);
+            $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
         }
+
+        $this->response->body($view);
     }
 }
