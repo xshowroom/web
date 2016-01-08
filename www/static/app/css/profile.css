@@ -79,4 +79,5 @@
 }
 .lb_item_field p{
 	white-space: pre;
+	word-break: break-word;
 }
