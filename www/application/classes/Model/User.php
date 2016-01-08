@@ -235,7 +235,7 @@ class Model_User
      */
     public function updateUserAttr($userId, $firstName, $lastName, $displayName, $tel, $mobile, $companyAddr, $companyCountry, $companyZip, $companyTel, $companyWebsite)
     {
-        $result = DB::update('brand')
+        $result = DB::update('user_attr')
                     ->set(array(
                         'first_name'        => $firstName,
                         'last_name'         => $lastName,
