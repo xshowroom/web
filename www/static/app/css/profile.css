@@ -79,6 +79,7 @@
 }
 .lb_item_field p{
 	min-height: 34px;
-	white-space: pre;
+	white-space: pre-line;
 	word-break: break-word;
+	word-wrap: break-word;
 }
