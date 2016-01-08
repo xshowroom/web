@@ -346,7 +346,6 @@ class Model_User
         $result = DB::select()
                   ->from('user_attr')
                   ->where('user_id', '=', $userId)
-                  ->where('status', '=', self::STATUS_USER_NORMAL)
                   ->execute()
                   ->as_array();
         

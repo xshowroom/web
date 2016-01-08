@@ -58,7 +58,9 @@ class Controller_Xsadmin_Management extends Controller_BaseAdmin
     {
         $userId = $this->request->param('id');
 
-        $view = View::factory('admin_views/user_detail');
+        $view = View::factory('user_profile');
+
+        $view->set('isAdmin', true);
         $view->set('user',$this->userService->getUserById($userId));
         $view->set('userAttr', $this->userService->getUserAttr($userId));
         $view->set('brandInfo', $this->brandService->getBrandInfo($userId));

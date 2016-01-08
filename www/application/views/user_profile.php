@@ -23,7 +23,7 @@
 	<section class="row profile">
         <div class="container">
             <!-- left nav -->
-            <?php if($user["role_type"] != Model_User::TYPE_USER_ADMIN): ?>
+            <?php if(!$isAdmin): ?>
                 <?php echo View::factory('common/global_navigation_user_center', array('currentPage' =>  'profile')); ?>
             <?php endif; ?>
             <!-- right nav -->
@@ -197,7 +197,7 @@
                     </div>
 
                     <!-- edit button  -->
-                    <?php if($user["role_type"] != Model_User::TYPE_USER_ADMIN): ?>
+                    <?php if(!$isAdmin): ?>
                         <div class="profile-actions">
                             <button class="btn btn-type-2" ng-if="!isEditing" ng-click="edit();"><?= __('profile__btn__EDIT');?></button>
                             <button class="btn btn-type-2" ng-if="isEditing" ng-click="save();"><?= __('profile__btn__SAVE');?></button>
