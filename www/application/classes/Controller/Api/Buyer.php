@@ -16,8 +16,9 @@ class Controller_Api_Buyer extends Controller_BaseReqLogin
 
         $shopId  = trim(Request::current()->getParam('shopIdList'));
         $brandId = (int)trim(Request::current()->getParam('brandId'));
+        $userType = $this->opUser['role_type'];
        
-        $res = $this->buyerService->batchApply($userId, $shopId, $brandId);
+        $res = $this->buyerService->batchApply($userId, $shopId, $brandId, $userType);
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,
