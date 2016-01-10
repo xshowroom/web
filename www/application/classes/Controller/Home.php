@@ -4,11 +4,14 @@
 class Controller_Home extends Controller_Base
 {
     public $userService;
-    
+    public $brandService;
+
     public function before()
     {
         parent::before();
+
         $this->userService = new Business_User();
+        $this->brandService = new Business_Brand();
     }
     
     public function action_index()
@@ -33,12 +36,16 @@ class Controller_Home extends Controller_Base
     	$opUser = $_SESSION['opUser'];
 
 	    if(!empty($opUser)) {
-		    $view->set('user', $opUser);
-		    $view->set('userAttr', $this->userService->getUserAttr($opUser['id']));
+            // only buyer user can view this page with login status
+            if ($opUser['role_type'] == Model_User::TYPE_USER_BUYER) {
+                $view->set('user', $opUser);
+                $view->set('userAttr', $this->userService->getUserAttr($opUser['id']));
+            } else {
+                $this->destroy_session();
+            }
 	    }
 
-	    $brandService = new Business_Brand();
-	    $brandInfo = $brandService->getBrandInfoByUrl($brandUrl);
+	    $brandInfo = $this->brandService->getBrandInfoByUrl($brandUrl);
 
         if(empty($brandInfo)){
             $this->redirect_404();
@@ -49,6 +56,5 @@ class Controller_Home extends Controller_Base
 
         
         $this->response->body($view);
-
     }
 }
