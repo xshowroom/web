@@ -5,11 +5,6 @@ class Controller_Base extends Controller
 {
     const LANG_EN = "en";
     const LANG_ZH_CN = "zh_CN";
-    // language list
-    const SUPPORT_LANG_LIST = array(
-        Controller_Base::LANG_EN,
-        Controller_Base::LANG_ZH_CN
-    );
 
     public function before()
     {
@@ -22,7 +17,12 @@ class Controller_Base extends Controller
     {
         $lang =  $_COOKIE['language'];
 
-        if(!in_array($lang, Controller_Base::SUPPORT_LANG_LIST))
+        $supportLanguageList = array(
+            Controller_Base::LANG_EN,
+            Controller_Base::LANG_ZH_CN
+        );
+
+        if(!in_array($lang, $supportLanguageList))
         {
             $lang = null;
         }
