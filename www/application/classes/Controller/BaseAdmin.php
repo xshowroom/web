@@ -9,8 +9,8 @@ class Controller_BaseAdmin extends Controller_Base
     {
         parent::before();
 
-        I18n::lang('en');
-        setcookie('language','en');
+        I18n::lang(Controller_Base::LANG_EN);
+        setcookie('language',Controller_Base::LANG_EN);
 
         $this->adminUser = $_SESSION['opUser'];
 
