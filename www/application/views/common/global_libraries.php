@@ -17,7 +17,7 @@
 <script type="text/javascript" src="/static/bower_components/spin/spin.js"></script>
 <script type="text/javascript" src="/static/bower_components/angular-spinner/angular-spinner.min.js"></script>
 <script type="text/javascript" src="/static/bower_components/angular-loading-spinner/angular-loading-spinner.js"></script>
-<script type="text/javascript" src="/static/app/modules/dictionary/dictionary.<?= empty($_COOKIE['language']) ? 'zh-CN' : $_COOKIE['language'];?>.js"></script>
+<script type="text/javascript" src="/static/app/modules/dictionary/dictionary.<?= empty($_COOKIE['language']) ? 'en' : $_COOKIE['language'];?>.js"></script>
 <script type="text/javascript" src="/static/app/modules/common/i18n.js"></script>
 <script type="text/javascript" src="/static/app/modules/common/services.js"></script>
 <script type="text/javascript" src="/static/app/modules/common/directives.js"></script>
