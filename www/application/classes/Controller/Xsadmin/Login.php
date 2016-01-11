@@ -6,6 +6,9 @@ class Controller_Xsadmin_Login extends Controller_Base
     public function before()
     {
         parent::before();
+
+        I18n::lang('en');
+        setcookie('language','en');
     }
 
     public function action_index()

@@ -26,19 +26,8 @@ angular.module(
 					'</a>',
 					'<ul class="dropdown-menu" aria-labelledby="locale-setting-language">',
 						'<li ng-click="setLanguage(\'en\')">English</li>',
-						'<li ng-click="setLanguage(\'zh-CN\')">简体中文</li>',
+						'<li ng-click="setLanguage(\'zh_CN\')">简体中文</li>',
 					'</ul>',
-//				'</div>',
-//				'<div class="dropdown">',
-//					'<a id="locale-setting-currency" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">',
-//					 	'{{ "directives_js__CURRENCY"| translate }}:{{ currency }}',
-//					 	'<span class="caret"></span>',
-//					'</a>',
-//					'<ul class="dropdown-menu" aria-labelledby="locale-setting-currency">',
-//						'<li ng-click="setCurrency(\'USD\')">USD</li>',
-//						'<li ng-click="setCurrency(\'CNY\')">CNY</li>',
-//						'<li ng-click="setCurrency(\'EUR\')">EUR</li>',
-//					'</ul>',
 				'</div>'
             ].join('');
             return html;
@@ -49,19 +38,10 @@ angular.module(
         link: function ($scope, $element, $attrs, $transclude) {
         	var languageDict = {
         		'en': 'ENGLISH',
-        		'zh-CN': '简体中文'
+        		'zh_CN': '简体中文'
         	};
         	$scope.language = languageDict[$cookies.get('language')];
-        	if (!$scope.language) {
-        		$cookies.put('language', 'en');
-        		$scope.language = languageDict['en'];
-        	}
-//        	$scope.currency = $cookies.get('currency');
-//        	if (!$scope.currency) {
-//        		$cookies.put('currency', 'USD');
-//        		$scope.language = 'USD';
-//        	}
-        	
+
         	$element.find('.dropdown-toggle').dropdown();
         	
         	$scope.setLanguage = function(language){
