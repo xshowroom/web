@@ -46,17 +46,26 @@ angular.module(
          		customized: []
          	};
      		$scope.standardColors = {
-     			'white': '#fff',
-     			'off white': '#f4f1ea',
-     			'beige': '#c5a485',
-     			'grey': '#939393',
-     			'black': '#000',
-     			'red': '#fe0000',
-     			'yellow': '#f6e911',
-     			'blue': '#00ffff',
-     			'green': '#31c857',
-     			'purple': '#ff00fe'
-     		};
+     			'white':         '#fff',
+     			'off white':     '#f4f1ea',
+     			'beige':         '#f5f5dc',
+     			'grey':          '#939393',
+     			'black':         '#000',
+
+     			'red':           '#fe0000',
+     			'yellow':        '#f6e911',
+     			'blue':          '#000fff',
+     			'green':         '#31c857',
+     			'purple':        '#7d26cd',
+
+				'Navy':          '#191970',
+				'Earth':         '#D2B48C',
+                'Pink':          '#ffb5c5',
+                'Brown':         '#5E2612',
+                'Gold':          '#ffc125',
+
+                'Neutrals':      '#eecbad'
+		};
      		
 			
         	$element.on('change', '#color-file', function(e){
