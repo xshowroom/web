@@ -62,9 +62,13 @@ angular.module(
 				'earth':         '#D2B48C',
                 'pink':          '#ffb5c5',
                 'brown':         '#5E2612',
-                'gold':          '#ffc125',
+                'neutrals':      '#eecbad',
 
-                'neutrals':      '#eecbad'
+                'gold':           '#ffc125',
+                'yellow gold':    '#dfc32d',
+                'rose gold':      '#e7c6ba',
+                'silver':         '#b6b1b1',
+                'bronze':         '#a98633'
 		};
      		
 			
