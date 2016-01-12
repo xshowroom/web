@@ -20,26 +20,6 @@ class Controller_Brand extends Controller_BaseReqLogin
         $this->orderService = new Business_Order();
     }
 
-    public function action_profile()
-    {
-        $view = View::factory('user_profile');
-        $view->set('user', $this->opUser);
-        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
-        $view->set('brandInfo', $this->brandService->getBrandInfo($this->opUser['id']));
-
-        $this->response->body($view);
-    }
-
-    public function action_password()
-    {
-        $view = View::factory('user_password');
-        $view->set('user', $this->opUser);
-        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
-        $view->set('brandInfo', $this->brandService->getBrandInfo($this->opUser['id']));
-
-        $this->response->body($view);
-    }
-
     public function action_dashboard()
     {
         $view = View::factory('brand_dashboard');

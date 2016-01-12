@@ -123,8 +123,12 @@ class Business_Buyer
         return $realProduction;
     }
 
-    public function batchApply($userId, $shopIdList, $brandId)
+    public function batchApply($userId, $shopIdList, $brandId, $userType)
     {
+        if ($userType != Model_User::TYPE_USER_BUYER) {
+            $errorInfo = Kohana::message('message', 'STATUS_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
         $applyingShopList = $this->buyerModel->getShopInApplying($userId, $brandId);
         $applyingShopIdList = array_column($applyingShopList, 'shop_id');
 
@@ -134,7 +138,7 @@ class Business_Buyer
         $wellShopIdList = array_intersect($applyingShopIdList, $authedShopIdList);
 
         $shopIdArr = explode(',', $shopIdList);
-        if (empty($shopIdArr)) {
+        if (empty($shopIdArr) || empty($shopIdList)) {
             $errorInfo = Kohana::message('message', 'STATUS_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }

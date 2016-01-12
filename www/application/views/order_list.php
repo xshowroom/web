@@ -78,7 +78,7 @@
 						</div>
 						<div class="col-xs-12 text-center empty-warning"  ng-if="!results.length">
 		                    <img src="/static/app/images/empty.png">
-		                    <p><?=__("brand_filter__NO_BRAND_1");?><br/><?=__("brand_filter__NO_BRAND_2");?></p>
+		                    <p><?=__("order_list__NO_TIEM_01");?><br/><?=__("order_list__NO_TIEM_02");?></p>
 		                </div>
 		                <div class="order-list-action text-center col-xs-12" ng-if="filters.limit < (orders | filter: {$: filters.query, 'status': filters.status}).length ">
 			                 <button class="btn btn-type-1" ng-click="filters.limit = filters.limit + pageSize;">LOAD MORE</button>

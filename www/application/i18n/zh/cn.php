@@ -728,6 +728,9 @@ return array_merge(
         'order_list__filter_STATUS' => '订单状态',
         'order_list__filter_ALL' => '全部订单',
 
+        'order_list__NO_TIEM_01' => '未找到符合条件的订单信息',
+        'order_list__NO_TIEM_02' => '您可以探索品牌进行下单',
+
         'order_list__LIST' => '订单列表',
         'order_list__STATUS' => '订单状态：',
         'order_list__AMOUNT' => '订单总额：',
@@ -985,5 +988,11 @@ return array_merge(
         'other__invite__error_INFO' => '邀请码错误',
         'other__invite__APPLY_01' => '未邀请的用户，请联系',
         'other__invite__APPLY_02' => '进行注册邀请码申请',
+
+        'other__404_MSG' => '您访问的页面不存在',
+        'other__404_DESC_01' => '我们将在',
+        'other__404_DESC_02' => '秒内将你重定向到XSHOWROOM主页',
+        'other__404_DESC_03' => '如果您的浏览器没有自动跳转，请',
+        'other__404_DESC_04' => '点击这里',
     )
 );

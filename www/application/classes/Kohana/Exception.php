@@ -31,7 +31,7 @@ class Kohana_Exception extends Kohana_Kohana_Exception
         // 处理error code和error message
         if ($e->getCode() === 404) {
             $errorCode = 404;
-            $errorMsg = '您所查找的页面不存在';
+            $errorMsg = 'other__404_MSG';
         } else {
             $errorCode = 500;
             $errorInfo = Kohana::message('message','STATUS_ERROR');
@@ -42,6 +42,9 @@ class Kohana_Exception extends Kohana_Kohana_Exception
         $errorMsg = HTML::entities($errorMsg);
         
         $opUser = $_SESSION['opUser'];
+        $lang = empty($_COOKIE['language']) ? 'zh-CN' : $_COOKIE['language'];
+        I18n::lang($lang);
+
         if(!empty($opUser)) {
             $view->set('user', $opUser);
             $userService = new Business_User();
@@ -49,7 +52,7 @@ class Kohana_Exception extends Kohana_Kohana_Exception
         }
         
         $view->set('errorCode', $errorCode);
-        $view->set('errorMsg', $errorMsg);
+        $view->set('errorMsg', __($errorMsg));
         
         echo $view->render();
         

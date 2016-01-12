@@ -142,25 +142,6 @@ class Model_Shop
 
         return $result;
     }
-    
-    public function getByFilter($filter)
-    {
-        $sql = "SELECT * FROM shop WHERE status = " . Model_User::STATUS_USER_NORMAL;
-    
-        if (!empty($filter['show'])) {
-            if ($filter['show'] == 'all') {
-                $sql .= " AND collection_type = 'dropdown__COLLECTION__WOMEN' OR collection_type = 'dropdown__COLLECTION__MEN' OR collection_type = 'dropdown__COLLECTION__ACCESSORIES' OR modify_time >= '". date('Y-m-d', strtotime('-3 month')) ."'";
-            } elseif ($filter['show'] == 'new') {
-                $sql .= " AND modify_time >= '". date('Y-m-d', strtotime('-3 month')) ."'";
-            } elseif ($filter['show'] == 'dropdown__COLLECTION__WOMEN' || $filter['show'] == 'dropdown__COLLECTION__MEN' || $filter['show'] == 'dropdown__COLLECTION__ACCESSORIES') {
-                $sql .= " AND collection_type = '{$filter['show']}' ";
-            }
-        }
-        
-        $result = DB::query(Database::SELECT, $sql)->execute()->as_array();
-    
-        return $result;
-    }
 
     public function listShopsByStatus($status)
     {

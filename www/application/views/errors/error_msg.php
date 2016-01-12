@@ -35,8 +35,8 @@
 				<h1 class="text-center" style="font-size:90px;color: #ca7379;"><?= $errorCode ?></h1>
 				<h2 class="text-center"><?= $errorMsg ?></h2>
 
-				<h5  class="text-center" style="margin-top:50px;">We will redirect you to XSHOWROOM HOME in <span id="timeTick" style="font-size:16px;color: #ca7379;">10</span> seconds</h5>
-				<h5  class="text-center">If your browser is no response, please <a id='targetPage' href="/home" role="button">CLICK HERE</a>.</h5>
+				<h5  class="text-center" style="margin-top:50px;"><?=__('other__404_DESC_01');?> <span id="timeTick" style="font-size:16px;color: #ca7379;">10</span> <?=__('other__404_DESC_02');?></h5>
+				<h5  class="text-center"><?=__('other__404_DESC_03');?> <a id='targetPage' href="/" role="button"><?=__('other__404_DESC_04');?></a>.</h5>
 
 			</div>
 

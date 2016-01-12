@@ -42,8 +42,8 @@ angular.module(
         		},	
     			reg:{
     				user: {
-    					'firstName': /^\S{2,50}$/,
-    					'lastName': /^\S{2,50}$/,
+    					'firstName': /^\S{1,50}$/,
+    					'lastName': /^\S{1,50}$/,
     					'tel': /^\S{6,20}$/
     			    },
     			    brand: {},
@@ -63,7 +63,7 @@ angular.module(
         	
         	$scope.check = function(name, target) {
 				for(var key in target){
-					if (key == 'mobile' || key =='description'){
+					if (key == 'mobile' || key =='description' || key=='brandUrl'){
 						continue;
 					}
 					var value = target[key];
@@ -105,9 +105,12 @@ angular.module(
 				var result = [];
 				var categories = $scope.brand.categoryType.split(",");
 				for(var i = 0, len = categories.length; i < len; i++) {
+					if (!categories[i]){
+						continue;
+					}
 					result.push($filter("translate")(categories[i]));
 				}
-				return result.join(',');
+				return result.join(',') || '(N/A)';
 			};
 			
 			

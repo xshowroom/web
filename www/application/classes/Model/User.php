@@ -107,13 +107,15 @@ class Model_User
      * 查询brandUrl信息
      *
      * @param string $brandUrl
+     * @param int $brandId
      * @return array
      */
-    public function checkBrandUrl($brandUrl)
+    public function checkBrandUrl($brandUrl, $brandId)
     {
         $result = DB::select()
                     ->from('brand')
                     ->where('brand_url', '=', $brandUrl)
+                    ->where('id', '!=', $brandId)
                     ->where('status', '=', self::STATUS_USER_NORMAL)
                     ->execute()
                     ->as_array();
@@ -233,7 +235,7 @@ class Model_User
      */
     public function updateUserAttr($userId, $firstName, $lastName, $displayName, $tel, $mobile, $companyAddr, $companyCountry, $companyZip, $companyTel, $companyWebsite)
     {
-        $result = DB::update('brand')
+        $result = DB::update('user_attr')
                     ->set(array(
                         'first_name'        => $firstName,
                         'last_name'         => $lastName,
@@ -344,7 +346,6 @@ class Model_User
         $result = DB::select()
                   ->from('user_attr')
                   ->where('user_id', '=', $userId)
-                  ->where('status', '=', self::STATUS_USER_NORMAL)
                   ->execute()
                   ->as_array();
         

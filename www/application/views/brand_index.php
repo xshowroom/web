@@ -47,7 +47,7 @@
 	            	</div>
 	            	<div class="brand-info">
 	            		<span><?=__("brand_info__WEBSITE");?></span>
-	            		<span><?=$brandAttr['company_web_url']?></span>
+	            		<a target="_blank" href="<?=$brandAttr['company_web_url']?>"><?=$brandAttr['company_web_url']?></a>
 	            	</div>
 		            <div class="brand-info">
 			            <span><?=__("brand_info__DESCRIPTION");?></span>
