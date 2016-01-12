@@ -74,11 +74,8 @@ angular.module(
 				$q.all(promises).then(function(){
 					for(var i = 0; i < arguments[0].length; i++) {
 						var res = arguments[0][i];
-						var key;
-						for (param in res.config.params){
-							key = param;
-							break;
-						}
+						var key = res.config.data.key;
+
 						if (res.data.status) {
 							$scope.checkInfo.validation[key] = true;
 							$scope.errorMsgs.push([key, 'DUPLICATION_ERROR']);
