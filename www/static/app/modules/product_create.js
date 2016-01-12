@@ -58,13 +58,13 @@ angular.module(
      			'green':         '#31c857',
      			'purple':        '#7d26cd',
 
-				'Navy':          '#191970',
-				'Earth':         '#D2B48C',
-                'Pink':          '#ffb5c5',
-                'Brown':         '#5E2612',
-                'Gold':          '#ffc125',
+				'navy':          '#191970',
+				'earth':         '#D2B48C',
+                'pink':          '#ffb5c5',
+                'brown':         '#5E2612',
+                'gold':          '#ffc125',
 
-                'Neutrals':      '#eecbad'
+                'neutrals':      '#eecbad'
 		};
      		
 			
