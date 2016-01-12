@@ -368,7 +368,7 @@ return array_merge(
      */
     array(
         'brand_dashboard__BASED_IN' => '所在地',
-        'brand_dashboard__ESTABLISHED' => '成立于',
+        'brand_dashboard__LAST_VISIT' => '上次登录',
         'brand_dashboard__WEBSITE'=> '官网地址',
 
         'brand_dashboard__MY_ORDERS' => '我的订单',

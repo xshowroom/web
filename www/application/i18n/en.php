@@ -368,7 +368,7 @@ return array_merge(
      */
     array(
         'brand_dashboard__BASED_IN' => 'BASED IN',
-        'brand_dashboard__ESTABLISHED' => 'ESTABLISHED',
+        'brand_dashboard__LAST_VISIT' => 'LAST VISIT',
         'brand_dashboard__WEBSITE'=> 'WEBSITE',
 
         'brand_dashboard__MY_ORDERS' => 'MY ORDERS',
@@ -387,7 +387,7 @@ return array_merge(
         'brand_dashboard__COLLECTION_EMPTY_3' => 'ADD COLLECTION',
 
         'brand_dashboard__ACCOUNT_MANAGER' => 'At XSHOWROOM we have Brand Account Manager to help you to introduce the brand, book you in to see the collection, and follow up your order.',
-         'brand_dashboard__ACCOUNT_MANAGER_CONTRACT' => 'CONTRACT US'
+        'brand_dashboard__ACCOUNT_MANAGER_CONTRACT' => 'CONTRACT US'
     ),
     /**
      * collection_create.php

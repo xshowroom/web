@@ -30,8 +30,8 @@
                             <span>{{ "<?= $userAttr['company_country'] ?>" | translate}}</span>
                         </div>
                         <div class="brand-detail">
-                            <span><?= __("brand_dashboard__ESTABLISHED"); ?></span>
-                            <span><?= date('Y', strtotime($user['register_date'])) ?></span>
+                            <span><?= __("brand_dashboard__LAST_VISIT"); ?></span>
+                            <span><?= date('Y-m-d h:i:s', strtotime($user['last_login_time'])) ?></span>
                         </div>
                         <div class="brand-detail">
                             <span><?= __("brand_dashboard__WEBSITE"); ?></span>
