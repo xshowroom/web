@@ -103,9 +103,10 @@ class Controller_Api_Collection extends Controller_BaseReqLogin
         
         $key = Request::current()->getParam('key');
         $value = Request::current()->getParam('param');
+        $collectionId = Request::current()->getParam('collectionId');
         
         if ($key == 'name') {
-        	list($status, $msg) = $this->collectionService->checkCollectionName($userId, $value);
+        	list($status, $msg) = $this->collectionService->checkCollectionName($userId, $value, $collectionId);
         }
         
         echo json_encode(array(
