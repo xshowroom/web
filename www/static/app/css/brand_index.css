@@ -44,6 +44,13 @@
 .brand-preview .brand-info > span:nth-child(2){
 	width: 70%;
 }
+.brand-preview .brand-info .hide-desc{
+	height: 11.5em;
+    overflow: hidden;
+}
+.brand-preview .brand-info .show-all-desc{
+	height: auto;
+}
 .brand-preview .brand-cover{
 	height: 360px;
 	position: relative;
