@@ -666,8 +666,8 @@ return array_merge(
         'order_create__btn_VIEW_DETAIL' => '查看详情',
 
         'order_create__STYLE_NUMBER' => '产品货号:',
-        'order_create__RETAIL_PRICE' => '零售价:',
-        'order_create__WHOLE_PRICE' => '批发价:',
+        'order_create__RETAIL_PRICE' => '零售价格:',
+        'order_create__WHOLE_PRICE' => '批发价格:',
         'order_create__SIZE_REGION' => '尺码地区:',
 
         'order_create__btn_REMOVE' => '删除',
