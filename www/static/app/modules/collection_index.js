@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'CollectionIndexCtrl',
     [
-     	'$scope', '$modal', '$filter', '$location', 'Collection', 
-        function ($scope, $modal, $filter, $location, Collection) {
+     	'$scope', '$modal', '$filter', '$q', '$location', 'Collection', 
+        function ($scope, $modal, $filter, $q, $location, Collection) {
      		$scope.checkInfo = {
          		validation: {
      			   	'name': false,
