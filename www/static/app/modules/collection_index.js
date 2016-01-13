@@ -63,7 +63,8 @@ angular.module(
      				if ($scope.checkInfo.duplication.indexOf(key) >= 0){
     					promises.push(Collection.duplicationCheck({
     						key: key,
-    						param: value
+    						param: value,
+    						collectionId: $scope.collectionId
     					}));
     				}
      				$scope.checkInfo.validation[key] = false;
