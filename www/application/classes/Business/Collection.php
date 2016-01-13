@@ -179,9 +179,20 @@ class Business_Collection
         return $res;
     }
     
-    public function checkCollectionName($userId, $collectionName)
+    public function checkCollectionName($userId, $collectionName, $collectionId)
     {
-        $res = $this->collectionModel->checkName($userId, $collectionName);
+        $res = false;
+
+        if ($collectionId > 0) {
+            $collectionInfo = $this->getCollectionInfo($userId, $collectionId);
+
+            if (!empty($collectionInfo) && $collectionInfo['name'] == $collectionName) {
+                $res = false;
+            } else {
+                $res = $this->collectionModel->checkName($userId, $collectionName);
+            }
+        }
+
         if ($res) {
             return array(STATUS_ERROR, 'name_existed');
         } else {
