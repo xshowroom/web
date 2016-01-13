@@ -50,10 +50,9 @@
 	            		<a target="_blank" href="<?=$brandAttr['company_web_url']?>"><?=$brandAttr['company_web_url']?></a>
 	            	</div>
 		            <div class="brand-info"  ng-init="showAll = false;">
-			            <span><?=__("brand_info__DESCRIPTION");?></span>
-			            <span ng-class="{'show-all-desc':showAll,'hide-desc':!showAll}" ng-bind="'<?=$brandInfo['description']?>'">
-			            </span>
-			            <div class="text-right" ng-if="'<?=$brandInfo['description']?>'.length">
+				        <!-- <span<?//=__("brand_info__DESCRIPTION");?></span>-->
+			            <p ng-class="{'show-all-desc':showAll,'hide-desc':!showAll}" ng-bind="'<?=$brandInfo['description']?>'"></p>
+			            <div class="text-right">
 				            <a ng-show="!showAll" ng-click="showAll = true;">Show All</a>
 				            <a ng-show="showAll"  ng-click="showAll = false;">Hide</a>
 			            </div>

@@ -212,21 +212,21 @@
 			<div class="row"> 
 				<div class="col-xs-3 showcase-item">
 					<a class="showcase-image image-link" href="<?=URL::site('about#play-lounge')?>" data-has-button="false" data-content="<?=mb_substr(__('about__testimonials__comment_1'), 0, 70, 'utf-8').'. . .' ?>">
-						<img src="/static/app/images/home-testomonial-1.png"/>
+						<img src="/static/app/images/home-testomonial-1.jpg"/>
 					</a>
 					<div class="showcase-name">PLAY LOUNGE</div>
 					<div class="showcase-collection">Iris Hu: <?=__('home__people_BUYER');?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
 					<a class="showcase-image image-link" href="<?=URL::site('about#wendyz')?>" data-has-button="false" data-content="<?=mb_substr(__('about__testimonials__comment_2'), 0, 70, 'utf-8').'. . .' ?>">
-						<img src="/static/app/images/home-testomonial-2.png"/>
+						<img src="/static/app/images/home-testomonial-2.jpg"/>
 					</a>
 					<div class="showcase-name">WENDYZ</div>
 					<div class="showcase-collection">Wendy Weng: <?=__('home__people_DIRECTOR');?></div>
 				</div>
 				<div class="col-xs-3 showcase-item">
 					<a class="showcase-image image-link" href="<?=URL::site('about#ppq')?>" data-has-button="false" data-content="<?=mb_substr(__('about__testimonials__comment_3'), 0, 70, 'utf-8').'. . .' ?>">
-						<img src="/static/app/images/home-testomonial-3.png"/>
+						<img src="/static/app/images/home-testomonial-3.jpg"/>
 					</a>
 					<div class="showcase-name">PPQ</div>
 					<div class="showcase-collection">Percy Parker: <?=__('home__people_BRAND_DIRECTOR');?></div>
