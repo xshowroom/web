@@ -58,7 +58,8 @@ angular.module(
 				'yellow gold':    '#dfc32d',
 				'rose gold':      '#e7c6ba',
 				'silver':         '#b6b1b1',
-				'bronze':         '#a98633'
+				'bronze':         '#a98633',
+				'orange':         '#f29c00'
      		};
      		
 			
