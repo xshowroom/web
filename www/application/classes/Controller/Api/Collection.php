@@ -100,8 +100,13 @@ class Controller_Api_Collection extends Controller_BaseReqLogin
     public function action_check()
     {
         $userId     = $this->opUser['id'];
-        $collectionName = Request::current()->getParam('name');
-        list($status, $msg) = $this->collectionService->checkCollectionName($userId, $collectionName);
+        
+        $key = Request::current()->getParam('key');
+        $value = Request::current()->getParam('param');
+        
+        if ($key == 'name') {
+        	list($status, $msg) = $this->collectionService->checkCollectionName($userId, $value);
+        }
         
         echo json_encode(array(
             'status'    => $status,
