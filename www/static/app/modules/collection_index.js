@@ -33,42 +33,66 @@ angular.module(
      				'order': /^\d+$/,
      				'deadline': /\d{4}-\d{2}-\d{2}/,
      				'delivery': /\d{4}-\d{2}-\d{2}/
-     			}
+     			},
+ 				duplication: ['name']
          	};
          	$scope.updateCollection = function(){
-       			$scope.errorMsgs = [];
-         				
-       			for(var key in $scope.checkInfo.validation){
-         			var value = $scope.collection[key];
-         			if ((key == "deadline" || key == "delivery") && !value) {
-         				$scope.errorMsgs.push([key, 'DATE_ERROR']);
-         				$scope.checkInfo.validation[key] = true;
-         				continue;
-         			}
-         			if (!value || value == '') {
-         				$scope.errorMsgs.push([key, 'EMPTY_ERROR']);
-         				$scope.checkInfo.validation[key] = true;
-         				continue;
-         			}
-         			if($scope.checkInfo.reg[key] && !$scope.checkInfo.reg[key].test(value)){
-         				$scope.errorMsgs.push([key, 'PATTERN_ERROR']);
-         				$scope.checkInfo.validation[key] = true;
-         				continue;
-         			}
-         			$scope.checkInfo.validation[key] = false;
-       			}
-       				
-         		if (!$scope.errorMsgs.length){
-         			Collection.modify(
-         	   			$scope.collection
-         	    	).success(function(res){
-         	    		if (typeof(res) != 'object' || res.status) {
-            				$modal({title: 'Error Info', content: res.msg, show: true});
-         	     		}else{
-         	     			window.location.reload();
-         	     		}
-         	     	});
-         		} 
+         		
+         		$scope.errorMsgs = [];
+     			
+   				var promises = [];
+   				
+   				for(var key in $scope.checkInfo.validation){
+     				var value = $scope.collection[key];
+     				if ((key == "deadline" || key == "delivery") && !value) {
+     					$scope.errorMsgs.push([key, 'DATE_ERROR']);
+     					$scope.checkInfo.validation[key] = true;
+     					continue;
+     				}
+     				if (!value || value == '') {
+     					$scope.errorMsgs.push([key, 'EMPTY_ERROR']);
+     					$scope.checkInfo.validation[key] = true;
+     					continue;
+     				}
+     				if($scope.checkInfo.reg[key] && !$scope.checkInfo.reg[key].test(value)){
+     					$scope.errorMsgs.push([key, 'PATTERN_ERROR']);
+     					$scope.checkInfo.validation[key] = true;
+     					continue;
+     				}
+     				
+     				if ($scope.checkInfo.duplication.indexOf(key) >= 0){
+    					promises.push(Collection.duplicationCheck({
+    						key: key,
+    						value: value
+    					}));
+    				}
+     				$scope.checkInfo.validation[key] = false;
+   				}
+   				
+				$q.all(promises).then(function(){
+					for(var i = 0; i < arguments[0].length; i++) {
+						var res = arguments[0][i];
+						var key = res.config.data.key;
+
+						if (res.data.status) {
+							$scope.checkInfo.validation[key] = true;
+							$scope.errorMsgs.push([key, 'DUPLICATION_ERROR']);
+						}else{
+							$scope.checkInfo.validation[key] = false;
+						}
+					}
+					if (!$scope.errorMsgs.length){
+	         			Collection.modify(
+	         	   			$scope.collection
+	         	    	).success(function(res){
+	         	    		if (typeof(res) != 'object' || res.status) {
+	            				$modal({title: 'Error Info', content: res.msg, show: true});
+	         	     		}else{
+	         	     			window.location.reload();
+	         	     		}
+	         	     	});
+	         		} 
+				});
          	};
          	
          	$scope.deleteCollection = function(){

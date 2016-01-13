@@ -87,9 +87,9 @@ angular.module(
 	     				Collection.create(
 	     	     			$scope.collection
 	     	     		).success(function(res){
-	     	     			if (res.status) {
-	     	     				$modal({title: 'Error Info', content: res.msg, show: true});
-	     	     			}else{
+	     	     			if (typeof(res) != 'object' || res.status) {
+	            				$modal({title: 'Error Info', content: res.msg, show: true});
+	         	     		}else{
 	     	     				window.open('/collection/'+res.data, '_self');
 	     	     			}
 	     	     		});
