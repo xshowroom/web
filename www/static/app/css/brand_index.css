@@ -49,12 +49,18 @@
 	height: 12em;
 	line-height: 1.5em;
     overflow: hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-word;
 }
 .brand-preview .brand-info .show-all-desc{
 	margin-top: 10px;
 	min-height: 12em;
 	line-height: 1.5em;
 	height: auto;
+	white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-word;
 }
 .brand-preview .brand-cover{
 	height: 360px;
