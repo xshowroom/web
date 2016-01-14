@@ -55,11 +55,11 @@ angular.module(
 				'brown':         '#5E2612',
 				'neutrals':      '#eecbad',
 
-                'gold':           '#ffc125',
 				'yellow gold':    '#dfc32d',
 				'rose gold':      '#e7c6ba',
 				'silver':         '#b6b1b1',
-				'bronze':         '#a98633'
+				'bronze':         '#a98633',
+				'orange':         '#f29c00'
      		};
      		
 			
