@@ -65,7 +65,7 @@
                         </div>
                         <div class="form-group col-xs-12" ng-class="{'has-error': checkInfo.validation.collectionType}">
                             <label class="col-xs-2 control-label"><?=__("store_index__COLLECTION_TYPES");?></label>
-							<div class="col-xs-6">
+							<div class="col-xs-10">
 								<label class="checkbox-inline">
 									<input type="checkbox" name="collectionType" ng-model="dropdown__COLLECTION__WOMEN" ng-change="setCollection('dropdown__COLLECTION__WOMEN')">
 									{{ "dropdown__COLLECTION__WOMEN"| translate }}
