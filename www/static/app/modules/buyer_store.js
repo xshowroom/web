@@ -21,14 +21,14 @@ angular.module(
      		};
      		
      		$scope.closeStore = function(storeId, index) {
-     			if (!confirm('确认删除该店铺?')){
+     			if (!confirm($filter('translate')('modal__confirm__DELETE_STORE'))){
      				return;
      			}
      			Store.destroy({
      				shopId: storeId
      			}).success(function(res){
      				if (typeof(res) != 'object' || res.status) {
-        				$modal({title: 'Error Info', content: res.msg , show: true});
+        				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg , show: true});
      					return;
      				}
      				if ($scope.stores[index].id == storeId) {
@@ -41,7 +41,7 @@ angular.module(
      			$scope.limit = 6;
      			Buyer.getMyStoreList().success(function(res){
      				if (typeof(res) != 'object' || res.status) {
-        				$modal({title: 'Error Info', content: res.msg , show: true});
+        				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg , show: true});
      					return;
      				}
      				for (var i = 0, len = res.data.length; i < len; i++){

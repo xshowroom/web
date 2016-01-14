@@ -132,7 +132,7 @@ angular.module(
         		if (!$scope.errorMsgs.length){
         			User.updateProfile(options).success(function(res){
         				if (typeof(res) != 'object' || res.status) {
-    						$modal({title: 'Error Info', content: res.msg, show: true});
+    						$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
             			}else{
             				$window.location.reload();
             			}

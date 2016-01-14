@@ -14,8 +14,8 @@ angular.module(
 .controller(
     'UserPasswordCtrl',
     [
-        '$scope', '$modal', 'User',
-        function ($scope, $modal, User) {
+        '$scope', '$modal', '$filter', 'User',
+        function ($scope, $modal, $filter, User) {
         	$scope.password = {};
         	$scope.checkInfo = {
         		validation: {
@@ -62,10 +62,10 @@ angular.module(
 					'new': $scope.password['new']
 				}).success(function (res) {
 					if (typeof(res) != 'object' || res.status) {
-						$modal({title: 'Error Info', content: res.msg, show: true});
+						$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
         			}else{
         				$scope.errorMsgs = [];
-        				$modal({title: 'Update Successfully', content: res.msg, show: true});
+        				$modal({title: $filter('translate')('modal__title__SUCCESS'), content: res.msg, show: true});
         			}
 				});
         	}

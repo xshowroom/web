@@ -24,6 +24,18 @@ angular.module( 'xShowroom.dictionary', []).constant('dictionary', {
         modal__msg__error__ORDER_NOT_ENOUGH: "该订单尚未满足最小金额，请增加购买数量，谢谢！",
         modal__msg__error__ORDER_NOT_SELECT_SHIP_ADDRESS: "该订单尚未选择送货地址，请选择，谢谢！",
         modal__msg__error__ORDER_NOT_SELECT_PAYMENT_METHOD: "该订单尚未选择支付方式，请选择，谢谢！",
+        modal__msg__error__PDF_TYPE_ERROR: "PDF文件格式错误，请重新上传！",
+        modal__msg__error__PDF_SIZE_ERROR: "上传PDF文件不得大于2MB，请重新上传！",
+        modal__msg__error__PDF_TIMEOUT: "上传文件超时，请重新上传！",
+        modal__msg__error__PDF_UPLOAD_ERROR: "上传文件失败，请重新上传！",
+        modal__msg__error__INVOICE_ERROR: "尚未提交清单相关文件!",
+        modal__msg__error__SHIP_INFO: "运单信息尚未填写",
+        modal__msg__error__SHIP_FEE: "运费信息尚未填写或有非数字内容",
+
+        modal__title__SUCCESS: "成功",
+        modal__success__INVOICE_UPLOADED: "提交清单成功！",
+
+        modal__confirm__DELETE_STORE: "删除这个店铺？",
 
         /**
          * Error Message
@@ -114,6 +126,7 @@ angular.module( 'xShowroom.dictionary', []).constant('dictionary', {
         password_new_EMPTY_ERROR: '请输入新的密码',
         password_confirm_EMPTY_ERROR: '请确认新的密码',
         password_new_SAME_ERROR: '新旧密码不能相同',
+        password_new_NOT_SAME_ERROR: '新密码两次输入不一致',
         password_new_PATTERN_ERROR: '新密码不能小于6位',
         password_confirm_PATTERN_ERROR: '确认密码不能小于6位',
 

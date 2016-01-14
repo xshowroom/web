@@ -42,7 +42,7 @@ angular.module(
             		brandId: $scope.brandOwner
             	}).success(function(res){
      				if (typeof(res) != 'object' || res.status || !res.data) {
-     					$modal({title: 'Error Info', content: res.msg, show: true});
+     					$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
      					return;
      				}
      				$scope.seasons = [];
@@ -72,7 +72,7 @@ angular.module(
      				brandId: $scope.brandId
      			}).success(function(res){
      				if (typeof(res) != 'object' || res.status) {
-     					$modal({title: 'Error Info', content: res.msg, show: true});
+     					$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
      					return;
      				}
      				$scope.authCode = -1;
@@ -109,7 +109,7 @@ angular.module(
 
      			Brand.getCollectionList(options).success(function(res){
      				if (typeof(res) != 'object' || res.status) {
-     					$modal({title: 'Error Info', content: res.msg, show: true});
+     					$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
      					return;
      				}
      				if(isRefresh){
@@ -137,7 +137,7 @@ angular.module(
      				brandId: $scope.brandId
      			}).success(function(res){
      				if (typeof(res) != 'object' || res.status) {
-     					$modal({title: 'Error Info', content: res.msg, show: true});
+     					$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
      					return;
      				}
      				$scope.authCode = res.data;

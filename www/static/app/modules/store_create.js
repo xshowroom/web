@@ -83,7 +83,7 @@ angular.module(
      	     			$scope.store
      	     		).success(function(res){
      	     			if (res.status){
-     	     				$modal({title: 'Error Info', content: res.msg, show: true});
+     	     				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
      	     			}else{
      	     				$window.open('/buyer/store', '_self');
      	     			}

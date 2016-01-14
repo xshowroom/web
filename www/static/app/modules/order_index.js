@@ -26,7 +26,7 @@ angular.module(
         			orderId: $scope.orderId
         		}).success(function(res){
         			if (typeof(res) != 'object' || res.status) {
-        				$modal({title: 'Error Info', content: '订单获取失败，请检查！', show: true});
+        				$modal({title: $filter('translate')('modal__title__ERROR'), content:$filter('translate')('modal__msg__error__SYSTEM_ERROR'), show: true});
      					return;
      				}
         			$scope.processes = Order.getProcessByCollectionType(res.data.collection_mode);
@@ -79,14 +79,14 @@ angular.module(
         		}, 30000, true);
         		
         		if(files[0].type !== 'application/pdf'){
-					$modal({title: 'Error Info', content: '上传PDF文件格式错误，请重新上传！', show: true});
+					$modal({title: $filter('translate')('modal__title__ERROR'), content: $filter('translate')('modal__msg__error__PDF_TYPE_ERROR'), show: true});
 					$scope.$apply();
 					self.val('');
 					$scope.$emit('uploading.end');
 				    return; 
 				}
         		if(files[0].size / 1024 / 1024 > 2){
-					$modal({title: 'Error Info', content: '上传PDF文件不得大于2MB，请重新上传！', show: true});
+					$modal({title: $filter('translate')('modal__title__ERROR'), content: $filter('translate')('modal__msg__error__PDF_SIZE_ERROR'), show: true});
 					$scope.$apply();
 					self.val('');
 					$scope.$emit('uploading.end');
@@ -99,7 +99,7 @@ angular.module(
                     url: '/api/upload/pdf',
                     onCompleted: function(file, response) {
                     	if (!timeout) {
-                    		$modal({title: 'Error Info', content: '上传文件超时，请重新上传！', show: true});
+                    		$modal({title: $filter('translate')('modal__title__ERROR'), content: $filter('translate')('modal__msg__error__PDF_TIMEOUT'), show: true});
             				$scope.$apply();
             				self.val('');
             				$scope.$emit('uploading.end');
@@ -107,7 +107,7 @@ angular.module(
                     	}
                     	response = JSON.parse(response);
                     	if (response.status != 0) {
-                    		$modal({title: 'Error Info', content: '上传文件失败，请重新上传！', show: true});
+                    		$modal({title: $filter('translate')('modal__title__ERROR'), content: $filter('translate')('modal__msg__error__PDF_UPLOAD_ERROR'), show: true});
         					$scope.$apply();
         					self.val('');
         					$scope.$emit('uploading.end');
@@ -129,7 +129,7 @@ angular.module(
         			orderStatus:  $scope.processes[$scope.statusIndex + 1]
         		}).success(function(res){
         			if (typeof(res) != 'object' || res.status) {
-        				$modal({title: 'Error Info', content: res.msg, show: true});
+        				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
      					return;
      				}
         			$window.location.reload();
@@ -138,7 +138,7 @@ angular.module(
         	
         	$scope.updateInvoice = function(){
         		if (!$scope.order.invoice_url){
-        			$modal({title: 'Error Info', content: '尚未提交invoice相关文件', show: true});
+        			$modal({title: $filter('translate')('modal__title__ERROR'), content: $filter('translate')('modal__msg__error__INVOICE_ERROR'), show: true});
         			return;
         		}
         		Order.updateInvoice({
@@ -146,16 +146,16 @@ angular.module(
         			invoiceUrl: $scope.order.invoice_url
         		}).success(function(res){
         			if (typeof(res) != 'object' || res.status) {
-        				$modal({title: 'Error Info', content: res.msg, show: true});
+        				$modal({title:  $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
      					return;
      				}
-        			$modal({title: 'Submit successfully', content: '提交invoice成功！', show: true});
+        			$modal({title: $filter('translate')('modal__title__SUCCESS'), content: $filter('translate')('modal__success__INVOICE_UPLOADED'), show: true});
         		});
         	};
         	
         	$scope.updateShipNo = function(){
         		if (!$scope.order.shipNo){
-        			$modal({title: 'Error Info', content: '运单信息尚未填写', show: true});
+        			$modal({title: $filter('translate')('modal__title__ERROR'), content: $filter('translate')('modal__msg__error__SHIP_INFO'), show: true});
         			return;
         		}
         		Order.updateShipNo({
@@ -163,7 +163,7 @@ angular.module(
         			shipNo: $scope.order.shipNo
         		}).success(function(res){
         			if (typeof(res) != 'object' || res.status) {
-        				$modal({title: 'Error Info', content: res.msg, show: true});
+        				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
      					return;
      				}
         			$scope.updateStatus();
@@ -176,7 +176,7 @@ angular.module(
 					comments: $scope.order.comments
 				}).success(function(res){
         			if (typeof(res) != 'object' || res.status) {
-        				$modal({title: 'Error Info', content: res.msg, show: true});
+        				$modal({title:$filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
      					return;
      				}
         			$scope.updateStatus();
@@ -185,7 +185,7 @@ angular.module(
         	
         	$scope.updateShipAmountComments = function(){
         		if (!$scope.order.shipNo && !/^\d+$/.test($scope.order.shipAmount)){
-        			$modal({title: 'Error Info', content: '运费信息尚未填写或有非数字内容', show: true});
+        			$modal({title: $filter('translate')('modal__title__ERROR'), content: $filter('translate')('modal__msg__error__SHIP_FEE'), show: true});
         			return;
         		}
         		$q.all([
@@ -200,7 +200,7 @@ angular.module(
         		]).then(function(res){
         			for (var i = 0, len = res.length; i < len; i++) {
         				if (typeof(res[i].data) != 'object' || res[i].data.status) {
-            				$modal({title: 'Error Info', content: res[i].data.msg, show: true});
+            				$modal({title: $filter('translate')('modal__title__ERROR'), content: res[i].data.msg, show: true});
          					return;
          				}
         			}

@@ -87,7 +87,7 @@ angular.module(
 	         	   			$scope.collection
 	         	    	).success(function(res){
 	         	    		if (typeof(res) != 'object' || res.status) {
-	            				$modal({title: 'Error Info', content: res.msg, show: true});
+	            				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
 	         	     		}else{
 	         	     			window.location.reload();
 	         	     		}
@@ -101,7 +101,7 @@ angular.module(
 					id: $scope.collectionId
 				}).success(function(res){
 					if (typeof(res) != 'object' || res.status) {
-						$modal({title: 'Error Info', content: res.msg, show: true});
+						$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
 					}else{
 						window.open('/brand/collection', '_self');
 					}
@@ -112,7 +112,7 @@ angular.module(
 					id: $scope.collectionId
 				}).success(function(res){
 					if (typeof(res) != 'object' || res.status) {
-        				$modal({title: 'Error Info', content: res.msg, show: true});
+        				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
 					}else{
 						window.location.reload();
 					}
@@ -123,7 +123,7 @@ angular.module(
 					id: $scope.collectionId
 				}).success(function(res){
 					if (typeof(res) != 'object' || res.status) {
-        				$modal({title: 'Error Info', content: res.msg, show: true});
+        				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
 					}else{
 						window.location.reload();
 					}
@@ -162,7 +162,7 @@ angular.module(
          	 				'image': res.data.cover_image	
      					};
          			}else{
-         				$modal({title: 'Error Info', content: res.msg, show: true});
+         				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
          			};
          		});
          	};
@@ -173,7 +173,7 @@ angular.module(
              		timestamp: new Date().getTime()
          		}).success(function(res){
          			if (typeof(res) != 'object' || res.status) {
-        				$modal({title: 'Error Info', content: res.msg, show: true});
+        				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
          				return;
          			}
          			$scope.products = res.data;

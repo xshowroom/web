@@ -7,8 +7,8 @@ angular.module(
 .controller(
     'RegisterBuyerCtrl', 
     [
-        '$scope', '$element', '$q', '$modal', 'User', 'Country',
-        function($scope, $element, $q, $modal, User, Country) {
+        '$scope', '$element', '$filter', '$q', '$modal', 'User', 'Country',
+        function($scope, $element, $filter, $q, $modal, User, Country) {
 			$scope.step = {
 				stepNumber: 1,
 				validation: {
