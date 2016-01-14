@@ -68,6 +68,7 @@ angular.module(
 			$scope.user = {
 				roleType: 2
 			};
+			$scope.isRegistering = false;
 			
 			$scope.setCollection = function(value){
 				var collections = $scope.user.collectionType
@@ -145,8 +146,13 @@ angular.module(
 			};
 			$scope.countries = Country.getAll();
 			$scope.register = function() {
+				if ($scope.isRegistering) {
+					return;
+				}
+				$scope.isRegistering = true;
 				var register = User.register($scope.user);
 				register.success(function(res){
+					$scope.isRegistering = false;
 					if (typeof(res) != 'object' || res.status) {
 						$modal({title: 'Error Info', content: res.msg, show: true});
         			}else{
