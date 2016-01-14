@@ -17,6 +17,15 @@ angular.module('xShowroom.dictionary', []).constant('dictionary', {
         login__EMAIL_PATTERN_ERROR: 'email address is not valid！',
 
         /**
+         * Modal
+         */
+        modal__title__ERROR: "ERROR INFO",
+        modal__msg__error__SYSTEM_ERROR: "System Error",
+        modal__message__ERROR__ORDER_NOT_ENOUGH: "Not reach the minimum order, please select more products!",
+        modal__msg__error__ORDER_NOT_SELECT_SHIP_ADDRESS: "please select ship address for this order!",
+        modal__msg__error__ORDER_NOT_SELECT_PAYMENT_METHOD: "please select payment method for this order!",
+
+        /**
          * Error Message
          */
         email_EMPTY_ERROR: "please input your Email",

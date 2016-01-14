@@ -17,6 +17,15 @@ angular.module( 'xShowroom.dictionary', []).constant('dictionary', {
         login__EMAIL_PATTERN_ERROR: 'Email格式错误！',
 
         /**
+        * Modal
+        */
+        modal__title__ERROR: "错误信息",
+        modal__msg__error__SYSTEM_ERROR: "系统错误",
+        modal__msg__error__ORDER_NOT_ENOUGH: "该订单尚未满足最小金额，请增加购买数量，谢谢！",
+        modal__msg__error__ORDER_NOT_SELECT_SHIP_ADDRESS: "该订单尚未选择送货地址，请选择，谢谢！",
+        modal__msg__error__ORDER_NOT_SELECT_PAYMENT_METHOD: "该订单尚未选择支付方式，请选择，谢谢！",
+
+        /**
          * Error Message
          */
         email_EMPTY_ERROR: "请输入您的Email",
