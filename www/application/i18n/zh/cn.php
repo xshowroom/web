@@ -18,8 +18,8 @@ return array_merge(
         'brandUrl_existed' => '该URL已存在',
         'check_ok' => '参数验证成功',
         'not_active' => '等待管理员审核中',
-        'OLD_PASSWORD_ERROR'=> 'old password is not match',
-        'CHANGE_PASSWORD_SUCCESS'=> 'password has been changed',
+        'OLD_PASSWORD_ERROR'=> '旧密码错误',
+        'CHANGE_PASSWORD_SUCCESS'=> '您的密码已经更新',
     ),
     /**
      * Inbox Message
@@ -546,6 +546,8 @@ return array_merge(
         'brand_info__DESIGNER' => '设计师',
         'brand_info__WEBSITE' => '官网网址',
         'brand_info__DESCRIPTION' => '品牌介绍',
+        'brand_info__SHOW_ALL' => '显示全部',
+        'brand_info__HIDE' => '隐藏详细',
 
         'brand_filter__COLLECTIONS' => '商品系列',
         'brand_filter__NO_COLLECTION_1' => '没找到符合条件的商品系列！',

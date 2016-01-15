@@ -37,7 +37,7 @@
                  		<h3>{{order.order_id}}</h3>
                  	</div>
                  	<div class="col-xs-12 order-detail">
-                 		<span><?=__("order_index__info_STORE");?></span><span>{{order.brand_name}} - {{order.shop_name}}</span>
+                 		<span><?=__("order_index__info_STORE");?></span><span>{{order.buyer_name}} - <a href="<?=url::site('/store/{{order.shop_id}}')?>" target="_blank">{{order.shop_name}}</a></span>
                  	</div>
                  	<div class="col-xs-12 order-detail">
                  		<span><?=__("order_index__info_BUYER");?></span><span>{{order.buyer_name}}</span>

@@ -15,7 +15,7 @@ angular.module(
         			lookbook: url
         		}).success(function(res){
         			if (typeof(res) != 'object' || res.status || !res.data) {
-        				$modal({title: 'Error Info', content: res.msg, show: true});
+        				$modal({title:  $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
      					return;
      				}
         			if (!$scope.photos[season]){
@@ -30,7 +30,7 @@ angular.module(
         			id: photo.id
         		}).success(function(res){
         			if (typeof(res) != 'object' || res.status) {
-        				$modal({title: 'Error Info', content: res.msg, show: true});
+        				$modal({title:  $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
      					return;
      				}
         			var index = $scope.photos[photo.season].indexOf(photo);
@@ -42,7 +42,7 @@ angular.module(
         		brandId: $scope.userId
         	}).success(function(res){
         		if (typeof(res) != 'object' || res.status) {
-    				$modal({title: 'Error Info', content: res.msg, show: true});
+    				$modal({title:  $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
  					return;
  				}
         		$scope.seasons = Brand.getSeasonsForLookbook();

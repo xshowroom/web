@@ -546,6 +546,8 @@ return array_merge(
         'brand_info__DESIGNER' => 'DESIGNER',
         'brand_info__WEBSITE' => 'WEB SITE',
         'brand_info__DESCRIPTION' => 'DESCRIPTION',
+        'brand_info__SHOW_ALL' => 'SHOW ALL',
+        'brand_info__HIDE' => 'HIDE',
 
         'brand_filter__COLLECTIONS' => 'COLLECTIONS',
         'brand_filter__NO_COLLECTION_1' => 'NO COLLECTION MATCHES YOUR CONDITIONS!',
@@ -983,7 +985,7 @@ return array_merge(
     array(
         'other__invite__TITLE' => 'XSHOWROOM IS INVITATION ONLY',
         'other__invite__HINT' => 'PLEASE ENTER YOUR INVITATION CODE TO START REGISTRATION',
-        'other__invite__btn_BACK' => 'BACK TO HONE PAGE',
+        'other__invite__btn_BACK' => 'BACK TO HOME PAGE',
         'other__invite__btn_CONTINUE' => 'START REGISTRATION',
         'other__invite__error_INFO' => 'WRONG INVITATION CODE',
         'other__invite__APPLY_01' => 'PLEASE CONTACT',

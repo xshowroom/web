@@ -16,7 +16,7 @@ angular.module(
         	var init = function(){
         		Order.findAll().success(function(res){
         			if (typeof(res) != 'object' || res.status) {
-        				$modal({title: 'Error Info', content: '订单获取失败，请检查！', show: true});
+        				$modal({title: $filter('translate')('modal__title__ERROR'), content:$filter('translate')('modal__msg__error__SYSTEM_ERROR'), show: true});
      					return;
      				}
         			$scope.statuses = {};

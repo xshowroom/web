@@ -11,6 +11,27 @@ angular.module('xShowroom.dictionary', []).constant('dictionary', {
         login__EMAIL_PATTERN_ERROR: 'email address is not valid！',
 
         /**
+         * Modal
+         */
+        modal__title__ERROR: "ERROR INFO",
+        modal__msg__error__SYSTEM_ERROR: "System Error",
+        modal__message__ERROR__ORDER_NOT_ENOUGH: "Not reach the minimum order, please select more products!",
+        modal__msg__error__ORDER_NOT_SELECT_SHIP_ADDRESS: "Please select ship address for this order!",
+        modal__msg__error__ORDER_NOT_SELECT_PAYMENT_METHOD: "Please select payment method for this order!",
+        modal__msg__error__PDF_TYPE_ERROR: "Please upload a PDF file!",
+        modal__msg__error__PDF_SIZE_ERROR: "Upload file is no more than 2MB",
+        modal__msg__error__PDF_TIMEOUT: "Upload file timeout, please retry!",
+        modal__msg__error__PDF_UPLOAD_ERROR: "Upload failed, please retry!",
+        modal__msg__error__INVOICE_ERROR: "You have not submit invoice file!",
+        modal__msg__error__SHIP_INFO: "Shipping info is blank!",
+        modal__msg__error__SHIP_FEE: "Not a number in shipping fee",
+
+        modal__title__SUCCESS: "SUCCESS",
+        modal__success__INVOICE_UPLOADED: "Submit invoice success！",
+
+        modal__confirm__DELETE_STORE: "Delete this store?",
+
+        /**
          * Error Message
          */
         email_EMPTY_ERROR: "please input your Email",
@@ -99,6 +120,7 @@ angular.module('xShowroom.dictionary', []).constant('dictionary', {
         password_new_EMPTY_ERROR: 'please input new password',
         password_confirm_EMPTY_ERROR: 'please confirm new password',
         password_new_SAME_ERROR: 'old password cannot be same as new password',
+        password_new_NOT_SAME_ERROR: 'input for the new password not match',
         password_new_PATTERN_ERROR: 'invalid new password (Must contain at least 6 characters)',
         password_confirm_PATTERN_ERROR: 'invalid confirm password (Must contain at least 6 characters)',
 

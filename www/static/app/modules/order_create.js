@@ -14,7 +14,7 @@ angular.module(
         			productionId: product.id
         		}).success(function(res){
         			if (typeof(res) != 'object' || res.status) {
-        				$modal({title: 'Error Info', content: 'remove product from cart失败，请检查！', show: true});
+        				$modal({title: $filter('translate')('modal__title__ERROR'), content: $filter('translate')('modal__msg__error__SYSTEM_ERROR'), show: true});
      					return;
      				}
         			var index = $scope.products.indexOf(product);
@@ -69,7 +69,6 @@ angular.module(
      			var reg = /^(0|[1-9]{1}\d*)$/;
      			var isNumber = reg.test(input);
      			if (input && !isNumber){
-     				$modal({title: 'Error Info', content: '您输入了非法数字！', show: true});
      				$scope.quantities[productId][colorName][size] = null;
      			}
      		};
@@ -77,7 +76,7 @@ angular.module(
      		$scope.checkout = function(){
      			var result = {};
      			if ($scope.getRestAmount() > 0){
-     				$modal({title: 'Error Info', content: '该订单尚未满足最小金额，请增加货物，谢谢！', show: true});
+     				$modal({title: $filter('translate')('modal__title__ERROR'), content: $filter('translate')('modal__message__ERROR__ORDER_NOT_ENOUGH'), show: true});
      			}else{
      				var orderItems = [];
      				for(var i = 0, len = $scope.products.length; i < len; i++) {
@@ -107,7 +106,7 @@ angular.module(
      					collectionId: $scope.collectionId
      				}).success(function(res){
      					if (typeof(res) != 'object' || res.status) {
-            				$modal({title: 'Error Info', content: res.msg, show: true});
+            				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
             				return;
              			}
      					$scope.stores = res.data;
@@ -120,14 +119,16 @@ angular.module(
      		$scope.setOptions = function(){
      			if (!$scope.order.store){
      				$modal({
-     					title: $filter('translate')('error_title'), 
-     					content: '该订单尚未选择送货地址，请选择，谢谢！',
+     					title: $filter('translate')('modal__title__ERROR'),
+     					content: $filter('translate')('modal__msg__error__ORDER_NOT_SELECT_SHIP_ADDRESS'),
      					show: true
      				});
      				return;
      			}
      			if (!$scope.order.paymentType){
-     				$modal({title: 'Error Info', content: '该订单尚未选择支付方式，请选择，谢谢！', show: true});
+     				$modal({title: $filter('translate')('modal__title__ERROR'),
+						content: $filter('translate')('modal__msg__error__ORDER_NOT_SELECT_PAYMENT_METHOD'),
+						show: true});
      				return;
      			}
      			$scope.generateOrderStep += 1;
@@ -160,7 +161,7 @@ angular.module(
      		        shopId: $scope.order.store.id
      			}).success(function(res){
      				if (typeof(res) != 'object' || res.status) {
-        				$modal({title: 'Error Info', content: res.msg, show: true});
+        				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
         				return;
          			}
      				$window.open('/order/list', '_self');
@@ -177,7 +178,7 @@ angular.module(
          			collectionId: $scope.collectionId
          		}).success(function(res){
          			if (typeof(res) != 'object' || res.status) {
-        				$modal({title: 'Error Info', content: res.msg, show: true});
+        				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
         				return;
          			}
          			$scope.quantities = {};
@@ -187,7 +188,7 @@ angular.module(
          				var sizes = [];
          				for(var size in res.data[i].sizeCode) {
          					sizes.push(size);
-         				};
+         				}
          				for(var j = 0, clen = res.data[i].color.length; j < clen; j++) {
          					var colorName = res.data[i].color[j].name;
          					$scope.quantities[productId][colorName] = {};
@@ -204,7 +205,7 @@ angular.module(
          			id: $scope.collectionId
          		}).success(function(res){
          			if (typeof(res) != 'object' || res.status) {
-        				$modal({title: 'Error Info', content: res.msg, show: true});
+        				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
         				return
          			}
          			$scope.collection = res.data;

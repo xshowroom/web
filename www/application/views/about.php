@@ -77,7 +77,7 @@
 				<div class="col-xs-4 col-xs-offset-1 showcase-testimonials"  id="play-lounge">
 					<div class="media">
 						<div class="media-left">
-							<img src="/static/app/images/home-testomonial-1.png">
+							<img src="/static/app/images/home-testomonial-1.jpg">
 						</div>
 						<div class="media-body showcase-testimonials-people">
 							<h4 class="media-heading">PLAY LOUNGE</h4>
@@ -92,7 +92,7 @@
 				<div class="col-xs-4 col-xs-offset-2 showcase-testimonials"  id="wendyz">
 					<div class="media">
 						<div class="media-left">
-							<img src="/static/app/images/home-testomonial-2.png">
+							<img src="/static/app/images/home-testomonial-2.jpg">
 						</div>
 						<div class="media-body showcase-testimonials-people">
 							<h4 class="media-heading">WENDYZ</h4>
@@ -107,7 +107,7 @@
 				<div class="col-xs-4 col-xs-offset-1 showcase-testimonials"  id="ppq">
 					<div class="media">
 						<div class="media-left">
-							<img src="/static/app/images/home-testomonial-3.png">
+							<img src="/static/app/images/home-testomonial-3.jpg">
 						</div>
 						<div class="media-body showcase-testimonials-people">
 							<h4 class="media-heading">PPQ</h4>

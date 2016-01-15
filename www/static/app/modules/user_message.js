@@ -19,7 +19,7 @@ angular.module(
                     rnd: new Date().getTime()
                 }).success(function(res){
                 	if (typeof(res) != 'object' || res.status) {
-	    				$modal({title: 'Error Info', content: res.msg, show: true});
+	    				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
 	    				return;
                 	}
                     window.location.reload();
