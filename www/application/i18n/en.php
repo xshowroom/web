@@ -689,9 +689,10 @@ return array_merge(
 
         'order_create__SHIPPING_ADDRESS' => 'SHIPPING ADDRESS',
         'order_create__store_TYPE' => 'STORE TYPE:',
-        'order_create__store_ADDRESS' => 'ADDRESS:',
-        'order_create__store_ZIPCODE' => 'ZIPCODE:',
+        'order_create__store_ADDRESS' => 'STORE ADDR:',
+        'order_create__store_ZIPCODE' => 'ZIP CODE:',
         'order_create__store_TELEPHONE' => 'TELEPHONE:',
+        'order_create__store_SHIP_ADDRESS' => 'SHIP ADDR:',
 
         'order_create__payment__TITLE' => 'PAYMENT OPTIONS',
         'order_create__payment__OPTIONS__OFFLINE_PAYMENT' => 'OFFLINE PAYMENT',

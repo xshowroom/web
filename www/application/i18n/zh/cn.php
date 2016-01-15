@@ -692,6 +692,7 @@ return array_merge(
         'order_create__store_ADDRESS' => '店铺地址：',
         'order_create__store_ZIPCODE' => '店铺邮编：',
         'order_create__store_TELEPHONE' => '收货电话：',
+        'order_create__store_SHIP_ADDRESS' => '收货地址：',
 
         'order_create__payment__TITLE' => '支付方式',
         'order_create__payment__OPTIONS__OFFLINE_PAYMENT' => '线下支付',
