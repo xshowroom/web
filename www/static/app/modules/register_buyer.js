@@ -53,7 +53,7 @@ angular.module(
 						'tel': /^\S{6,20}$/
 				    },
 				    2:{
-						'shopWebsite': /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-@?^=%&amp;/~\+#])?/,
+						'shopWebsite': /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-@?^=%&amp;/~\+#])?/
 					},
 				    3:{
 						'companyWebsite': /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-@?^=%&amp;/~\+#])?/
@@ -99,6 +99,10 @@ angular.module(
 						$scope.step.validation[stepNumber][key] = false;
      					continue;
      				}
+					if (key == 'companyWebsite' && !value){
+						$scope.step.validation[stepNumber][key] = false;
+						continue;
+					}
 					if (!value || value == '') {
 						$scope.errorMsgs.push([key, 'EMPTY_ERROR']);
 						$scope.step.validation[stepNumber][key] = true;

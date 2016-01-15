@@ -60,6 +60,11 @@ angular.module(
 						continue;
 					}
 					var value = target[key];
+
+					if (key == 'companyWebsite' && !value){
+						$scope.checkInfo.validation[name][key] = false;
+						continue;
+					}
 					if (!value || value == '') {
 						$scope.errorMsgs.push([key, 'EMPTY_ERROR']);
 						$scope.checkInfo.validation[name][key] = true;
