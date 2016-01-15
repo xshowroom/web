@@ -1,1 +1,121 @@
-/*! xshowroom - v1.0.0 - 2016-01-15 */angular.module("xShowroom.store.index",["xShowroom.i18n","xShowroom.directives","xShowroom.services","mgcrea.ngStrap","ui.uploader","ngTextcomplete"]).controller("StoreIndexCtrl",["$scope","$window","$location","$filter","Country","Store",function(a,b,c,d,e,f){a.isEditing=1==c.search().isEdit,a.setCollection=function(b){var c=a.store.collectionType?a.store.collectionType.split(","):[],d=c.indexOf(b);d>=0?c.splice(d,1):c.push(b),a.store.collectionType=c.join(",")},a.countries=e.getAll(),a.checkInfo={validation:{shopName:!1,shopType:!1,collectionType:!1,brandList:!1,shopWebsite:!1,shopAddress:!1,shopCountry:!1,shopZipcode:!1,shopShipAddress:!1,shopTel:!1},reg:{shopWebsite:/(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-@?^=%&amp;/~\+#])?/}},a.addStoreImage=function(b){a.store.shopImage.push(b),a.$apply()},a.update=function(){a.errorMsgs=[];for(var c in a.checkInfo.validation){var d=a.store[c];"shopWebsite"!=c||d?d&&""!=d&&!angular.equals(d,{})?!a.checkInfo.reg[c]||a.checkInfo.reg[c].test(d)?a.checkInfo.validation[c]=!1:(a.errorMsgs.push([c,"PATTERN_ERROR"]),a.checkInfo.validation[c]=!0):(a.errorMsgs.push([c,"EMPTY_ERROR"]),a.checkInfo.validation[c]=!0):a.checkInfo.validation[c]=!1}a.errorMsgs.length||f.create(a.store).success(function(c){c.status?a.errorMsgs.push(["create error",c.msg]):b.open("/buyer/store","_self")})},a.toggleEditing=function(){a.isEditing=!a.isEditing};var g=function(){f.findOne({shopId:a.storeId}).success(function(b){if("object"!=typeof b||b.status)return void $modal({title:d("translate")("modal__title__ERROR"),content:b.msg,show:!0});a.store={shopId:b.data.id,shopName:b.data.name,shopType:b.data.type,collectionType:b.data.collection_type,brandList:b.data.brand_list,shopWebsite:b.data.website,shopAddress:b.data.address,shopCountry:b.data.country,shopZipcode:b.data.zip,shopTel:b.data.telephone,shopImage:b.data.image?JSON.parse(b.data.image):[],shopAbout:b.data.about,shopShipAddress:b.data.ship_address},a.collectionType={};for(var c=b.data.collection_type.split(","),e=0,f=c.length;f>e;e++)a.collectionType[c[e]]=!0})};g()}]);
+angular.module(
+    'xShowroom.store.index', 
+    [
+        'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services', 'mgcrea.ngStrap', 'ui.uploader', 'ngTextcomplete'
+    ]
+)
+.controller(
+    'StoreIndexCtrl',
+    [
+     	'$scope', '$window', '$location', '$filter', 'Country', 'Store',
+        function ($scope, $window, $location, $filter, Country, Store) {
+     		$scope.isEditing = $location.search().isEdit == 1;
+     		$scope.setCollection = function(value){
+				var collections = $scope.store.collectionType
+					? $scope.store.collectionType.split(',')
+				    : [];
+				var index = collections.indexOf(value);
+				if(index >= 0){
+					collections.splice(index, 1);
+				}else{
+					collections.push(value);
+				}
+				$scope.store.collectionType = collections.join(',');
+			};
+			$scope.countries = Country.getAll();
+			
+			$scope.checkInfo = {
+				validation: {
+				   	'shopName': false,
+				   	'shopType': false,
+				   	'collectionType': false, 
+				   	'brandList': false,
+				   	'shopWebsite': false,
+				  	'shopAddress': false,
+				   	'shopCountry': false,
+				   	'shopZipcode': false,
+				   	'shopShipAddress': false,
+				   	'shopTel': false
+//					'shopImage': false,
+//					'shopAbout': false
+				},
+				reg:{
+					'shopWebsite': /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-@?^=%&amp;/~\+#])?/,
+				}
+			};
+			$scope.addStoreImage = function(url){
+     			$scope.store.shopImage.push(url);
+     			$scope.$apply();
+     		};
+			
+			$scope.update = function() {
+				$scope.errorMsgs = [];
+					
+   				for(var key in $scope.checkInfo.validation){
+     				var value = $scope.store[key];
+     				if (key == 'shopWebsite' && !value){
+     					$scope.checkInfo.validation[key] = false;
+     					continue;
+     				}
+     				if (!value || value == '' || angular.equals(value, {})) {
+     					$scope.errorMsgs.push([key, 'EMPTY_ERROR']);
+     					$scope.checkInfo.validation[key] = true;
+     					continue;
+     				}
+     				if($scope.checkInfo.reg[key] && !$scope.checkInfo.reg[key].test(value)){
+     					$scope.errorMsgs.push([key, 'PATTERN_ERROR']);
+     					$scope.checkInfo.validation[key] = true;
+     					continue;
+     				}
+     				$scope.checkInfo.validation[key] = false;
+   				}
+     			if (!$scope.errorMsgs.length){
+     				Store.create(
+     	     			$scope.store
+     	     		).success(function(res){
+     	     			if (res.status){
+     	     				$scope.errorMsgs.push(['create error', res.msg]);
+     	     			}else{
+     	     				$window.open('/buyer/store', '_self');
+     	     			}
+     	     		});
+     			} 
+			};
+			$scope.toggleEditing = function(){
+				$scope.isEditing = !$scope.isEditing;
+			}
+			var init = function(){
+				Store.findOne({
+					shopId: $scope.storeId
+				}).success(function(res){
+					if (typeof(res) != 'object' || res.status) {
+	    				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
+	    				return;
+					}
+					
+					$scope.store = {
+						shopId: res.data.id,
+						shopName: res.data.name,
+						shopType: res.data.type,
+						collectionType: res.data.collection_type,
+						brandList: res.data.brand_list,
+						shopWebsite: res.data.website,
+						shopAddress: res.data.address,
+						shopCountry: res.data.country,
+						shopZipcode: res.data.zip,
+						shopTel: res.data.telephone,
+						shopImage: (res.data.image ? JSON.parse(res.data.image) : []),
+						shopAbout: res.data.about,
+						shopShipAddress: res.data.ship_address
+					};
+					$scope.collectionType = {};
+					var collectionTypes = res.data.collection_type.split(',');
+					for(var i = 0, len = collectionTypes.length; i < len; i++) {
+						$scope.collectionType[collectionTypes[i]] = true;
+					}
+				});
+			};
+			init();
+        }
+    ]
+);

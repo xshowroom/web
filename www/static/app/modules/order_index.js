@@ -1,1 +1,208 @@
-/*! xshowroom - v1.0.0 - 2016-01-15 */angular.module("xShowroom.order.index",["xShowroom.i18n","xShowroom.directives","xShowroom.services","mgcrea.ngStrap","ui.uploader"]).controller("OrderIndexCtrl",["$scope","$element","$window","$timeout","$modal","$filter","$q","Order","uiUploader",function(a,b,c,d,e,f,g,h,i){var j=function(){h.findOne({orderId:a.orderId}).success(function(b){if("object"!=typeof b||b.status)return void e({title:f("translate")("modal__title__ERROR"),content:f("translate")("modal__msg__error__SYSTEM_ERROR"),show:!0});a.processes=h.getProcessByCollectionType(b.data.collection_mode),b.data.order_status=parseInt(b.data.order_status);var c=0;for(var d in b.data.productions){var g=b.data.productions[d],i=[],j={},k=0;for(var l in g.sizeCode)i.push(l);for(var m=0,n=g.detail.length;n>m;m++)j[g.detail[m].color]||(j[g.detail[m].color]={}),j[g.detail[m].color][g.detail[m].size_code]=g.detail[m].buy_num,k+=parseInt(g.detail[m].buy_num);b.data.productions[d].quantity=k,b.data.productions[d].size=i,b.data.productions[d].detail=j,c+=k}b.data.quantity=c,a.order=b.data,a.statusIndex=a.processes.indexOf(b.data.order_status)})};b.on("change","#invoice-file",function(b){a.$emit("uploading.start");var c=$(this),g=b.target.files;if(!g.length)return void a.$emit("uploading.end");a.colorErrorMsg=[];var h=d(function(){h=null},3e4,!0);return"application/pdf"!==g[0].type?(e({title:f("translate")("modal__title__ERROR"),content:f("translate")("modal__msg__error__PDF_TYPE_ERROR"),show:!0}),a.$apply(),c.val(""),void a.$emit("uploading.end")):g[0].size/1024/1024>2?(e({title:f("translate")("modal__title__ERROR"),content:f("translate")("modal__msg__error__PDF_SIZE_ERROR"),show:!0}),a.$apply(),c.val(""),void a.$emit("uploading.end")):(i.removeAll(),i.addFiles(g),void i.startUpload({url:"/api/upload/pdf",onCompleted:function(b,g){return h?(g=JSON.parse(g),0!=g.status?(e({title:f("translate")("modal__title__ERROR"),content:f("translate")("modal__msg__error__PDF_UPLOAD_ERROR"),show:!0}),a.$apply(),c.val(""),void a.$emit("uploading.end")):(a.order.invoice_url=g.data,a.$apply(),a.$emit("uploading.end"),d.cancel(h),void(h=null))):(e({title:f("translate")("modal__title__ERROR"),content:f("translate")("modal__msg__error__PDF_TIMEOUT"),show:!0}),a.$apply(),c.val(""),void a.$emit("uploading.end"))}}))}),a.updateStatus=function(){h.updateStatus({orderId:a.orderId,orderStatus:a.processes[a.statusIndex+1]}).success(function(a){return"object"!=typeof a||a.status?void e({title:f("translate")("modal__title__ERROR"),content:a.msg,show:!0}):void c.location.reload()})},a.updateInvoice=function(){return a.order.invoice_url?void h.updateInvoice({orderId:a.orderId,invoiceUrl:a.order.invoice_url}).success(function(a){return"object"!=typeof a||a.status?void e({title:f("translate")("modal__title__ERROR"),content:a.msg,show:!0}):void e({title:f("translate")("modal__title__SUCCESS"),content:f("translate")("modal__success__INVOICE_UPLOADED"),show:!0})}):void e({title:f("translate")("modal__title__ERROR"),content:f("translate")("modal__msg__error__INVOICE_ERROR"),show:!0})},a.updateShipNo=function(){return a.order.shipNo?void h.updateShipNo({orderId:a.orderId,shipNo:a.order.shipNo}).success(function(b){return"object"!=typeof b||b.status?void e({title:f("translate")("modal__title__ERROR"),content:b.msg,show:!0}):void a.updateStatus()}):void e({title:f("translate")("modal__title__ERROR"),content:f("translate")("modal__msg__error__SHIP_INFO"),show:!0})},a.updateComments=function(){h.updateComments({orderId:a.orderId,comments:a.order.comments}).success(function(b){return"object"!=typeof b||b.status?void e({title:f("translate")("modal__title__ERROR"),content:b.msg,show:!0}):void a.updateStatus()})},a.updateShipAmountComments=function(){return a.order.shipNo||/^\d+$/.test(a.order.shipAmount)?void g.all([h.updateShipAmount({orderId:a.orderId,shipAmount:a.order.shipAmount}),h.updateComments({orderId:a.orderId,comments:a.order.comments})]).then(function(b){for(var c=0,d=b.length;d>c;c++)if("object"!=typeof b[c].data||b[c].data.status)return void e({title:f("translate")("modal__title__ERROR"),content:b[c].data.msg,show:!0});a.updateStatus()}):void e({title:f("translate")("modal__title__ERROR"),content:f("translate")("modal__msg__error__SHIP_FEE"),show:!0})},j()}]);
+angular.module(
+    'xShowroom.order.index', 
+    [
+     	'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services',
+     	'mgcrea.ngStrap', 'ui.uploader'
+    ]
+)
+.controller(
+    'OrderIndexCtrl',
+    [
+        '$scope', '$element', '$window', '$timeout',
+        '$modal', '$filter', '$q', 'Order', 'uiUploader',
+        function (
+        	$scope, $element, $window, $timeout,
+        	$modal, $filter, $q, Order, uiUploader
+        ) {
+        	var init = function (){
+        		Order.findOne({
+        			orderId: $scope.orderId
+        		}).success(function(res){
+        			if (typeof(res) != 'object' || res.status) {
+        				$modal({title: $filter('translate')('modal__title__ERROR'), content:$filter('translate')('modal__msg__error__SYSTEM_ERROR'), show: true});
+     					return;
+     				}
+        			$scope.processes = Order.getProcessByCollectionType(res.data.collection_mode);
+        			
+        			res.data.order_status = parseInt(res.data.order_status);
+        			
+        			var totalQuantity = 0;
+        			
+         			for(var id in res.data.productions) {
+         				var info = res.data.productions[id];
+         				var sizes = [];
+         				var detail = {};
+         				var quantity = 0;
+         				for(var size in info.sizeCode) {
+         					sizes.push(size);
+         				};
+         				for(var i = 0, len = info.detail.length; i < len; i++) {
+         					if (!detail[info.detail[i]['color']]){
+         						detail[info.detail[i]['color']] = {};
+         					}
+         					detail[info.detail[i]['color']][info.detail[i]['size_code']] = info.detail[i]['buy_num'];
+         					quantity += parseInt(info.detail[i]['buy_num']);
+         				};
+         				res.data.productions[id].quantity = quantity;
+         				res.data.productions[id].size = sizes;
+         				res.data.productions[id].detail = detail;
+         				totalQuantity += quantity;
+         			}
+         			res.data.quantity = totalQuantity;
+        			$scope.order = res.data;
+        			
+        			$scope.statusIndex = $scope.processes.indexOf(res.data.order_status);
+        		});
+        	};
+        	
+        	$element.on('change', '#invoice-file', function(e){
+        		$scope.$emit('uploading.start');
+        		var self = $(this);
+				var files = e.target.files;
+				if (!files.length){
+					$scope.$emit('uploading.end');
+					return;
+				}
+				var error = {
+					index: -1
+				}
+				$scope.colorErrorMsg = [];
+				var timeout = $timeout(function(){
+					timeout = null;
+        		}, 30000, true);
+        		
+        		if(files[0].type !== 'application/pdf'){
+					$modal({title: $filter('translate')('modal__title__ERROR'), content: $filter('translate')('modal__msg__error__PDF_TYPE_ERROR'), show: true});
+					$scope.$apply();
+					self.val('');
+					$scope.$emit('uploading.end');
+				    return; 
+				}
+        		if(files[0].size / 1024 / 1024 > 2){
+					$modal({title: $filter('translate')('modal__title__ERROR'), content: $filter('translate')('modal__msg__error__PDF_SIZE_ERROR'), show: true});
+					$scope.$apply();
+					self.val('');
+					$scope.$emit('uploading.end');
+				    return; 
+				}
+        		
+				uiUploader.removeAll();
+				uiUploader.addFiles(files);
+                uiUploader.startUpload({
+                    url: '/api/upload/pdf',
+                    onCompleted: function(file, response) {
+                    	if (!timeout) {
+                    		$modal({title: $filter('translate')('modal__title__ERROR'), content: $filter('translate')('modal__msg__error__PDF_TIMEOUT'), show: true});
+            				$scope.$apply();
+            				self.val('');
+            				$scope.$emit('uploading.end');
+            				return;
+                    	}
+                    	response = JSON.parse(response);
+                    	if (response.status != 0) {
+                    		$modal({title: $filter('translate')('modal__title__ERROR'), content: $filter('translate')('modal__msg__error__PDF_UPLOAD_ERROR'), show: true});
+        					$scope.$apply();
+        					self.val('');
+        					$scope.$emit('uploading.end');
+                    		return;
+                    	}
+                    	$scope.order.invoice_url = response.data;
+                    	$scope.$apply();
+                    	
+                    	$scope.$emit('uploading.end');
+                    	$timeout.cancel(timeout);
+                    	timeout = null;
+                    }
+                });
+			});
+        	
+        	$scope.updateStatus = function(){
+        		Order.updateStatus({
+        			orderId: $scope.orderId,
+        			orderStatus:  $scope.processes[$scope.statusIndex + 1]
+        		}).success(function(res){
+        			if (typeof(res) != 'object' || res.status) {
+        				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
+     					return;
+     				}
+        			$window.location.reload();
+        		});
+        	};
+        	
+        	$scope.updateInvoice = function(){
+        		if (!$scope.order.invoice_url){
+        			$modal({title: $filter('translate')('modal__title__ERROR'), content: $filter('translate')('modal__msg__error__INVOICE_ERROR'), show: true});
+        			return;
+        		}
+        		Order.updateInvoice({
+        			orderId: $scope.orderId,
+        			invoiceUrl: $scope.order.invoice_url
+        		}).success(function(res){
+        			if (typeof(res) != 'object' || res.status) {
+        				$modal({title:  $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
+     					return;
+     				}
+        			$modal({title: $filter('translate')('modal__title__SUCCESS'), content: $filter('translate')('modal__success__INVOICE_UPLOADED'), show: true});
+        		});
+        	};
+        	
+        	$scope.updateShipNo = function(){
+        		if (!$scope.order.shipNo){
+        			$modal({title: $filter('translate')('modal__title__ERROR'), content: $filter('translate')('modal__msg__error__SHIP_INFO'), show: true});
+        			return;
+        		}
+        		Order.updateShipNo({
+        			orderId: $scope.orderId,
+        			shipNo: $scope.order.shipNo
+        		}).success(function(res){
+        			if (typeof(res) != 'object' || res.status) {
+        				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
+     					return;
+     				}
+        			$scope.updateStatus();
+        		});
+        	};
+        	
+        	$scope.updateComments = function(){
+        		Order.updateComments({
+					orderId: $scope.orderId,
+					comments: $scope.order.comments
+				}).success(function(res){
+        			if (typeof(res) != 'object' || res.status) {
+        				$modal({title:$filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
+     					return;
+     				}
+        			$scope.updateStatus();
+        		});
+        	};
+        	
+        	$scope.updateShipAmountComments = function(){
+        		if (!$scope.order.shipNo && !/^\d+$/.test($scope.order.shipAmount)){
+        			$modal({title: $filter('translate')('modal__title__ERROR'), content: $filter('translate')('modal__msg__error__SHIP_FEE'), show: true});
+        			return;
+        		}
+        		$q.all([
+					Order.updateShipAmount({
+						orderId: $scope.orderId,
+						shipAmount: $scope.order.shipAmount
+					}),
+					Order.updateComments({
+						orderId: $scope.orderId,
+						comments: $scope.order.comments
+					})
+        		]).then(function(res){
+        			for (var i = 0, len = res.length; i < len; i++) {
+        				if (typeof(res[i].data) != 'object' || res[i].data.status) {
+            				$modal({title: $filter('translate')('modal__title__ERROR'), content: res[i].data.msg, show: true});
+         					return;
+         				}
+        			}
+        			$scope.updateStatus();
+        		});
+        		
+        	};
+        	
+        	init();
+        }
+    ]
+);

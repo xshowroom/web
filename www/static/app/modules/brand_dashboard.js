@@ -1,1 +1,15 @@
-/*! xshowroom - v1.0.0 - 2016-01-15 */angular.module("xShowroom.brand.dashboard",["xShowroom.i18n","xShowroom.directives"]).controller("BrandDashboardCtrl",["$scope",function(a){}]);
+angular.module(
+    'xShowroom.brand.dashboard', 
+    [
+        'xShowroom.i18n', 'xShowroom.directives'
+    ]
+)
+.controller(
+    'BrandDashboardCtrl',
+    [
+     	'$scope',
+        function ($scope) {
+     	
+        }
+    ]
+);

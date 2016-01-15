@@ -1,1 +1,272 @@
-/*! xshowroom - v1.0.0 - 2016-01-15 */angular.module("xShowroom.product.create",["xShowroom.i18n","xShowroom.directives","xShowroom.services","mgcrea.ngStrap","ui.uploader","ngTextcomplete"]).controller("ProductCreateCtrl",["$scope","$location","$window","$filter","$modal","$element","$timeout","Country","Product","uiUploader",function(a,b,c,d,e,f,g,h,i,j){a.addProductImage=function(b){a.product.images.push(b),a.$apply()},a.setSizeCodes=function(b,c,d){b&&c&&(a.sizeCode=i.getSizeCodes(b,c),d||(a.product.sizeCode={}))},a.openColorModal=function(){angular.element("#color-modal").modal("show")},a.standardColors={white:"#fff","off white":"#f4f1ea",beige:"#f5f5dc",grey:"#939393",black:"#000",red:"#fe0000",yellow:"#f6e911",blue:"#000fff",green:"#31c857",purple:"#7d26cd",navy:"#191970",earth:"#D2B48C",pink:"#ffb5c5",brown:"#5E2612",neutrals:"#eecbad","yellow gold":"#dfc32d","rose gold":"#e7c6ba",silver:"#b6b1b1",bronze:"#a98633",orange:"#f29c00"},f.on("change","#color-file",function(b){a.$emit("uploading.start");var c=$(this),d=b.target.files;if(!d.length)return void a.$emit("uploading.end");var e={index:-1};a.colorErrorMsg=[];var f=g(function(){f=null},3e4,!0);return/image\/\w+/.test(d[0].type)?d[0].size/1024/1024>1?(e.msg="size_error",a.colorErrorMsg.push(e),a.$apply(),c.val(""),void a.$emit("uploading.end")):(j.removeAll(),j.addFiles(d),j.startUpload({url:"/api/upload/image",onCompleted:function(b,c){return f?(c=JSON.parse(c),0!=c.status?(e.msg="response_error",a.colorErrorMsg.push(e),a.$apply(),void a.$emit("uploading.end")):(a.currentColors.customized.push({name:void 0,value:c.data,type:"url",style:"background-image: url(/"+c.data+");",selected:!0}),a.$apply(),a.$emit("uploading.end"),g.cancel(f),void(f=null))):(e.msg="timeout_error",a.colorErrorMsg.push(e),a.$apply(),void a.$emit("uploading.end"))}}),void c.val("")):(e.msg="format_error",a.colorErrorMsg.push(e),a.$apply(),c.val(""),void a.$emit("uploading.end"))}),a.removeCustomizedColor=function(b){a.currentColors.customized.splice(b,1);for(var c=0,d=a.colorErrorMsg.length;d>c;c++)a.colorErrorMsg[c].index==b&&a.colorErrorMsg.splice(c--,1)},a.setColor=function(){var b=[];a.colorErrorMsg=[];for(var c in a.currentColors.standard)a.currentColors.standard[c]&&b.push({name:c,value:a.currentColors.standard[c],type:0});for(var d=0,e=a.currentColors.customized.length;e>d;d++){var f=a.currentColors.customized[d];f.selected&&f.name?b.push({name:f.name,value:f.value,type:1}):a.colorErrorMsg.push({index:d,msg:"unnamed_error"})}a.colorErrorMsg.length||(a.product.color=b,angular.element("#color-modal").modal("hide"))},a.checkInfo={validation:{name:!1,category:!1,styleNum:!1,wholePrice:!1,retailPrice:!1,sizeRegion:!1,sizeCode:!1,color:!1,madeIn:!1,material:!1,careIns:!1,images:!1},reg:{wholePrice:/^(0|[1-9][0-9]*)(\.?\d{0,2})?$/,retailPrice:/^(0|[1-9][0-9]*)(\.?\d{0,2})?$/}},a.create=function(){a.errorMsgs=[];for(var b in a.checkInfo.validation){var f=a.product[b];f&&""!=f&&!angular.equals(f,{})?!a.checkInfo.reg[b]||a.checkInfo.reg[b].test(f)?a.checkInfo.validation[b]=!1:(a.errorMsgs.push([b,"PATTERN_ERROR"]),a.checkInfo.validation[b]=!0):(a.errorMsgs.push([b,"EMPTY_ERROR"]),a.checkInfo.validation[b]=!0)}a.errorMsgs.length||i.modify(a.product).success(function(b){"object"!=typeof b||b.status?e({title:d("translate")("modal__title__ERROR"),content:b.msg,show:!0}):c.open("/collection/"+a.product.collectionId,"_self")})};var k=function(){i.findOne({productionId:a.productId}).success(function(b){if("object"!=typeof b||b.status)return void e({title:d("translate")("modal__title__ERROR"),content:b.msg,show:!0});a.product={id:b.data.id,collectionId:b.data.collection_id,name:b.data.name,category:b.data.category,styleNum:b.data.style_num,wholePrice:b.data.whole_price,retailPrice:b.data.retail_price,sizeRegion:b.data.size_region,sizeCode:JSON.parse(b.data.size_code),color:JSON.parse(b.data.color),madeIn:b.data.made_in,material:b.data.material,careIns:b.data.care_instruction,images:b.data.image_url},a.categories=i.getCategoriesByCollection(a.collectionCategory),a.countries=h.getAll(),a.sizeRegions=i.getSizeRegions(),a.currentColors={standard:{},customized:[]};for(var c=0,f=a.product.color.length;f>c;c++){var g=a.product.color[c];g.type?a.currentColors.customized.push({name:g.name,value:g.value,type:"url",style:"background-image: url(/"+g.value+");",selected:!0}):a.currentColors.standard[g.name]=g.value}a.setSizeCodes(b.data.category,b.data.size_region,!0)})};k()}]);
+angular.module(
+    'xShowroom.product.create', 
+    [
+        'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services', 'mgcrea.ngStrap', 'ui.uploader', 'ngTextcomplete'
+    ]
+)
+.controller(
+    'ProductCreateCtrl',
+    [
+     	'$scope', '$location', '$window', '$filter', '$modal', '$element', '$timeout', 'Country', 'Product', 'uiUploader',
+        function ($scope, $location, $window, $filter, $modal,  $element, $timeout, Country, Product, uiUploader) {
+     		
+     		$scope.addProductImage = function(url){
+//     			var siteRootUrl = $location.protocol() + '://' + $location.host() + ":" + 	$location.port() + '/';
+     			$scope.product.images.push(url);
+     			$scope.$apply();
+     		};
+     		$scope.setSizeCodes = function(category, region, notReset){
+     			if (!category || !region){
+     				return;
+     			}
+     			$scope.sizeCode = Product.getSizeCodes(category, region);
+     			if (!notReset){
+     				$scope.product.sizeCode = {};
+     			}
+     			
+     		};
+     		$scope.openColorModal = function(){
+     			angular.element('#color-modal').modal('show');
+     		};
+     		
+     		$scope.standardColors = {
+				'white':         '#fff',
+				'off white':     '#f4f1ea',
+				'beige':         '#f5f5dc',
+				'grey':          '#939393',
+				'black':         '#000',
+
+				'red':           '#fe0000',
+				'yellow':        '#f6e911',
+				'blue':          '#000fff',
+				'green':         '#31c857',
+				'purple':        '#7d26cd',
+
+				'navy':          '#191970',
+				'earth':         '#D2B48C',
+				'pink':          '#ffb5c5',
+				'brown':         '#5E2612',
+				'neutrals':      '#eecbad',
+
+				'yellow gold':    '#dfc32d',
+				'rose gold':      '#e7c6ba',
+				'silver':         '#b6b1b1',
+				'bronze':         '#a98633',
+				'orange':         '#f29c00'
+     		};
+     		
+			
+        	$element.on('change', '#color-file', function(e){
+        		$scope.$emit('uploading.start');
+        		var self = $(this);
+				var files = e.target.files;
+				if (!files.length){
+					$scope.$emit('uploading.end');
+					return;
+				}
+				var error = {
+					index: -1
+				}
+				$scope.colorErrorMsg = [];
+				var timeout = $timeout(function(){
+					timeout = null;
+        		}, 30000, true);
+        		
+				if(!/image\/\w+/.test(files[0].type)){
+					error.msg = 'format_error';
+					$scope.colorErrorMsg.push(error);
+					$scope.$apply();
+					self.val('');
+					$scope.$emit('uploading.end');
+				    return; 
+				}
+				if(files[0].size / 1024 / 1024 > 1){
+					error.msg = 'size_error';
+					$scope.colorErrorMsg.push(error);
+					$scope.$apply();
+					self.val('');
+					$scope.$emit('uploading.end');
+				    return; 
+				}
+				uiUploader.removeAll();
+				uiUploader.addFiles(files);
+                uiUploader.startUpload({
+                    url: '/api/upload/image',
+                    onCompleted: function(file, response) {
+                    	if (!timeout) {
+                    		error.msg = 'timeout_error';
+            				$scope.colorErrorMsg.push(error);
+            				$scope.$apply();
+            				$scope.$emit('uploading.end');
+            				return;
+                    	}
+                    	response = JSON.parse(response);
+                    	if (response.status != 0) {
+                    		error.msg = 'response_error';
+        					$scope.colorErrorMsg.push(error);
+        					$scope.$apply();
+        					$scope.$emit('uploading.end');
+                    		return;
+                    	}
+                    	$scope.currentColors.customized.push({
+                    		name: undefined,
+                    		value: response.data,
+                    		type: 'url',
+                    		style: 'background-image: url(/' + response.data + ');',
+                    		selected: true
+                    	});
+                    	$scope.$apply();
+                    	$scope.$emit('uploading.end');
+                    	$timeout.cancel(timeout);
+                    	timeout = null;
+                    }
+                });
+				self.val('');
+			});
+        	
+        	$scope.removeCustomizedColor = function(index){
+        		$scope.currentColors.customized.splice(index, 1);
+        		for(var i = 0, len = $scope.colorErrorMsg.length; i < len; i++){
+        			if($scope.colorErrorMsg[i].index == index){
+        				$scope.colorErrorMsg.splice(i--, 1);
+        			}
+        		}
+        	}
+     		
+     		$scope.setColor = function(){
+     			var colors = [];
+     			$scope.colorErrorMsg = [];
+     			for(var name in $scope.currentColors.standard){
+     				if($scope.currentColors.standard[name]){
+     					colors.push({
+         					name: name,
+         					value: $scope.currentColors.standard[name],
+         					type: 0
+         				});
+     				}
+     			}
+     			for(var i = 0, len = $scope.currentColors.customized.length; i < len; i++){
+     				var record = $scope.currentColors.customized[i];
+     				if (record.selected && record.name){
+     					colors.push({
+         					name: record.name,
+         					value: record.value,
+         					type: 1
+         				});
+     				}else{
+     					$scope.colorErrorMsg.push({
+     						index: i,
+     						msg: 'unnamed_error'
+     					});
+     				}
+     			}
+     			if (!$scope.colorErrorMsg.length){
+     				$scope.product.color = colors;
+         			angular.element('#color-modal').modal('hide');
+     			}
+     		};
+     		$scope.checkInfo = {
+     			validation: {
+ 				   	'name': false,
+ 					'category': false,
+ 					'styleNum': false,
+ 					'wholePrice': false,
+ 					'retailPrice': false,
+ 					'sizeRegion': false,
+ 					'sizeCode': false,
+ 					'color': false,
+ 					'madeIn': false,
+		            'material': false,
+		            'careIns': false,
+		            'images': false
+ 				},
+ 				reg:{
+ 					'wholePrice': /^(0|[1-9][0-9]*)(\.?\d{0,2})?$/,
+ 					'retailPrice': /^(0|[1-9][0-9]*)(\.?\d{0,2})?$/
+ 				}
+     		};
+     		$scope.create = function(){
+   				$scope.errorMsgs = [];
+     					
+   				for(var key in $scope.checkInfo.validation){
+     				var value = $scope.product[key];
+     				if (!value || value == '' || angular.equals(value, {})) {
+     					$scope.errorMsgs.push([key, 'EMPTY_ERROR']);
+     					$scope.checkInfo.validation[key] = true;
+     					continue;
+     				}
+     				if($scope.checkInfo.reg[key] && !$scope.checkInfo.reg[key].test(value)){
+     					$scope.errorMsgs.push([key, 'PATTERN_ERROR']);
+     					$scope.checkInfo.validation[key] = true;
+     					continue;
+     				}
+     				$scope.checkInfo.validation[key] = false;
+   				}
+     			if (!$scope.errorMsgs.length){
+     				Product.modify(
+     	     			$scope.product
+     	     		).success(function(res){
+     	     			if (typeof(res) != 'object' || res.status) {
+     	     				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
+     	     			}else{
+     	     				$window.open('/collection/'+$scope.product.collectionId, '_self');
+     	     			}
+     	     		});
+     			} 
+     		};
+     		
+     		var init = function(){
+     			Product.findOne({
+     				productionId: $scope.productId
+     			}).success(function(res){
+     				if (typeof(res) != 'object' || res.status) {
+ 	     				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
+ 	     				return;
+ 	     			}
+     				
+     				$scope.product = {
+     					id: res.data.id,
+     	     	        collectionId: res.data.collection_id,
+	     	     	  	name: res.data.name,
+	 					category: res.data.category,
+	 					styleNum: res.data.style_num,
+	 					wholePrice: res.data.whole_price,
+	 					retailPrice: res.data.retail_price,
+	 					sizeRegion: res.data.size_region,
+	 					sizeCode: JSON.parse(res.data.size_code),
+	 					color: JSON.parse(res.data.color),
+	 					madeIn: res.data.made_in,
+			            material: res.data.material,
+			            careIns: res.data.care_instruction,
+			            images: res.data.image_url
+     	     	    };
+     				
+     	     		$scope.categories = Product.getCategoriesByCollection($scope.collectionCategory);
+     	     		$scope.countries = Country.getAll();
+     	     		$scope.sizeRegions = Product.getSizeRegions();
+     	     		
+     	     		$scope.currentColors = {
+     	            	standard: {},
+     	            	customized: []
+     	            };
+     	     		for (var i = 0, len = $scope.product.color.length; i < len; i++) {
+     	     			var record = $scope.product.color[i];
+     	     			if (record.type){
+     	     				$scope.currentColors.customized.push({
+	                    		name: record.name,
+	                    		value: record.value,
+	                    		type: 'url',
+	                    		style: 'background-image: url(/' + record.value + ');',
+	                    		selected: true
+	                    	});
+     	     			} else {
+     	     				$scope.currentColors.standard[record.name] = record.value;
+     	     			}
+     	     		}
+     	     		$scope.setSizeCodes(res.data.category, res.data.size_region, true);
+     			})
+     		};
+     		init();
+        }
+    ]
+);

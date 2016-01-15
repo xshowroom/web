@@ -1,1 +1,77 @@
-/*! xshowroom - v1.0.0 - 2016-01-15 */angular.module("xShowroom.shop",["xShowroom.i18n","xShowroom.directives","xShowroom.services","mgcrea.ngStrap"]).controller("ShopCtrl",["$scope","$timeout","$modal","$filter","Brand",function(a,b,c,d,e){a.hasFilter=function(){return!angular.equals(a.filters,{})},a.filterTimeout=null,a.setFilters=function(c,d){a.filterTimeout&&(b.cancel(a.filterTimeout),a.filterTimeout=null),a.filters[c]=d,a.filterTimeout=b(function(){a.getNewBrands(!0)},500,!0)},a.getNewBrands=function(b){a.brands.offset+=b?-a.brands.offset:a.brands.pageSize;var f=angular.copy(a.filters);f.pageSize=a.brands.pageSize,f.offset=a.brands.offset,f.season&&(f.season=f.season.join(",")),f.country&&(f.country=f.country.join(",")),e.findAll(f).success(function(e){if("object"!=typeof e||e.status)return void c({title:d("translate")("modal__title__ERROR"),content:e.msg,show:!0});if(b)a.brands.content=e.data;else for(var f=0,g=e.data.length;g>f;f++)a.brands.content.push(e.data[f]);a.hasNext=e.data.length==a.brands.pageSize})};var f=function(){a.brands={pageSize:16,offset:0,content:null},a.filters={},a.conditions=e.getShopConditions(),a.getNewBrands(!0)};f()}]);
+angular.module(
+    'xShowroom.shop', 
+    [
+        'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services', 'mgcrea.ngStrap'
+    ]
+)
+.controller(
+    'ShopCtrl',
+    [
+     	'$scope', '$timeout', '$modal', '$filter', 'Brand',
+        function ($scope, $timeout, $modal, $filter, Brand) {
+     		$scope.hasFilter = function(){
+     			return !angular.equals($scope.filters, {});
+     		}
+     		
+     		$scope.filterTimeout = null;
+     		
+     		$scope.setFilters = function(name, condition){
+     			if($scope.filterTimeout){
+     				$timeout.cancel($scope.filterTimeout);
+     				$scope.filterTimeout = null;
+     			}
+     			$scope.filters[name] = condition
+     			
+     			$scope.filterTimeout = $timeout(function(){
+     				$scope.getNewBrands(true);
+     			}, 500, true);
+     		};
+     		
+     		$scope.getNewBrands = function(isRefresh){
+     			$scope.brands.offset += isRefresh ? -$scope.brands.offset : $scope.brands.pageSize;
+     			
+     			var options = angular.copy($scope.filters);
+     			options.pageSize = $scope.brands.pageSize;
+     			options.offset = $scope.brands.offset;
+     			
+     			if(options.season){
+     				options.season = options.season.join(',');
+     			}
+     			if(options.country){
+     				options.country = options.country.join(',');
+     			}
+     			Brand.findAll(options).success(function(res){
+     				if (typeof(res) != 'object' || res.status) {
+	    				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
+     					return;
+     				}
+     				if(isRefresh){
+     					$scope.brands.content = res.data;
+     				}else{
+     					for(var i = 0, len = res.data.length; i < len; i++) {
+     						$scope.brands.content.push(res.data[i])
+     					}
+     				}
+     				$scope.hasNext = res.data.length == $scope.brands.pageSize;
+         		});
+     		};
+     		
+     		
+     		var init = function(){
+     			$scope.brands = {
+     				pageSize: 16,
+     				offset: 0,
+     				content: null
+     			};
+     			$scope.filters = {};
+     			
+     			$scope.conditions = Brand.getShopConditions();
+     			$scope.getNewBrands(true);
+     		};
+     		
+     		init();
+     		
+     		
+        }
+    ]
+);

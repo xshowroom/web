@@ -1,1 +1,14 @@
-/*! xshowroom - v1.0.0 - 2016-01-15 */angular.module("xShowroom.about",["xShowroom.i18n","xShowroom.directives"]).controller("AboutCtrl",["$scope",function(a){}]);
+angular.module(
+    'xShowroom.about', 
+    [
+     	'xShowroom.i18n', 'xShowroom.directives',
+    ]
+)
+.controller(
+    'AboutCtrl',
+    [
+        '$scope',
+        function ($scope) {
+        }
+    ]
+);

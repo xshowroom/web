@@ -1,1 +1,15 @@
-/*! xshowroom - v1.0.0 - 2016-01-15 */angular.module("xShowroom.admin",["ngCookies","xShowroom.i18n","xShowroom.directives","xShowroom.services"]).controller("AdminStatCtrl",["$scope",function(a){}]);
+angular.module(
+    'xShowroom.admin',
+    [
+        'ngCookies', 'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services'
+    ]
+)
+.controller(
+    'AdminStatCtrl',
+    [
+        '$scope',
+        function ($scope){
+
+        }
+    ]
+);

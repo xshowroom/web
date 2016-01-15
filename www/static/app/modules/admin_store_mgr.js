@@ -1,1 +1,39 @@
-/*! xshowroom - v1.0.0 - 2016-01-15 */angular.module("xShowroom.admin",["ngCookies","xShowroom.i18n","xShowroom.directives","xShowroom.services"]).controller("AdminStoreMgrCtrl",["$scope","$filter","Admin",function(a,b,c){a.clickStore=function(a){mapId=a},a.adminAllowStore=function(){c.allowStore({mapId:mapId}).success(function(a){return"object"!=typeof a||a.status?void $modal({title:b("translate")("modal__title__ERROR"),content:a.msg,show:!0}):void window.location.reload()})},a.adminRejectStore=function(){c.rejectStore({mapId:mapId}).success(function(a){return"object"!=typeof a||a.status?void $modal({title:b("translate")("modal__title__ERROR"),content:a.msg,show:!0}):void window.location.reload()})}}]);
+angular.module(
+    'xShowroom.admin',
+    [
+        'ngCookies', 'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services'
+    ]
+)
+.controller(
+    'AdminStoreMgrCtrl',
+    [
+        '$scope', '$filter', 'Admin',
+        function ($scope, $filter, Admin){
+            $scope.clickStore=function(mid) {
+                mapId = mid;
+            };
+            $scope.adminAllowStore=function() {
+                Admin.allowStore({
+                    mapId: mapId
+                }).success(function(res){
+                    if (typeof(res) != 'object' || res.status) {
+                        $modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
+                        return;
+                    }
+                    window.location.reload();
+                });
+            };
+            $scope.adminRejectStore=function() {
+                Admin.rejectStore({
+                    mapId: mapId
+                }).success(function(res){
+                    if (typeof(res) != 'object' || res.status) {
+                        $modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
+                        return;
+                    }
+                    window.location.reload();
+                });
+            };
+        }
+    ]
+);

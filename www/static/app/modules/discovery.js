@@ -1,1 +1,14 @@
-/*! xshowroom - v1.0.0 - 2016-01-15 */angular.module("xShowroom.discovery",["xShowroom.i18n","xShowroom.directives"]).controller("DiscoveryCtrl",["$scope",function(a){}]);
+angular.module(
+    'xShowroom.discovery',
+    [
+     	'xShowroom.i18n', 'xShowroom.directives',
+    ]
+)
+.controller(
+    'DiscoveryCtrl',
+    [
+        '$scope',
+        function ($scope) {
+        }
+    ]
+);

@@ -1,1 +1,15 @@
-/*! xshowroom - v1.0.0 - 2016-01-15 */angular.module("xShowroom.error",["xShowroom.i18n","xShowroom.directives"]).controller("ErrorCtrl",["$scope",function(a){}]);
+angular.module(
+    'xShowroom.error', 
+    [
+        'xShowroom.i18n', 'xShowroom.directives'
+    ]
+)
+.controller(
+    'ErrorCtrl',
+    [
+     	'$scope',
+        function ($scope) {
+     	
+        }
+    ]
+);
