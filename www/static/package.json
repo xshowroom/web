@@ -1,0 +1,25 @@
+{
+  "name": "xshowroom",
+  "version": "1.0.0",
+  "description": "css & js for xshworoom",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xshowroom/web.git"
+  },
+  "keywords": [
+    "xshowroom",
+    "fashion",
+    "brand",
+    "buyer"
+  ],
+  "author": "shiliang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xshowroom/web/issues"
+  },
+  "homepage": "https://github.com/xshowroom/web#readme",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "^0.11.0"
+  }
+}
