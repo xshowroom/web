@@ -1,11 +1,1 @@
-angular.module(
-    'xShowroom.i18n', 
-    [
-        'xShowroom.dictionary'
-    ]
-)
-.filter('translate', ['dictionary', function(dictionary){
-	return function(key){
-		return dictionary[key] || 'Error: label is not found';
-	}
-}]);
+/*! xshowroom - v1.0.0 - 2016-01-15 */angular.module("xShowroom.i18n",["xShowroom.dictionary"]).filter("translate",["dictionary",function(a){return function(b){return a[b]||"Error: label is not found"}}]);

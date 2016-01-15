@@ -1,14 +1,1 @@
-angular.module(
-    'xShowroom.press',
-    [
-     	'xShowroom.i18n', 'xShowroom.directives',
-    ]
-)
-.controller(
-    'PressCtrl',
-    [
-        '$scope',
-        function ($scope) {
-        }
-    ]
-);
+/*! xshowroom - v1.0.0 - 2016-01-15 */angular.module("xShowroom.press",["xShowroom.i18n","xShowroom.directives"]).controller("PressCtrl",["$scope",function(a){}]);

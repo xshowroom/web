@@ -1,15 +1,1 @@
-angular.module(
-    'xShowroom.buyer.dashboard', 
-    [
-        'xShowroom.i18n', 'xShowroom.directives'
-    ]
-)
-.controller(
-    'BuyerDashboardCtrl',
-    [
-     	'$scope',
-        function ($scope) {
-     	
-        }
-    ]
-);
+/*! xshowroom - v1.0.0 - 2016-01-15 */angular.module("xShowroom.buyer.dashboard",["xShowroom.i18n","xShowroom.directives"]).controller("BuyerDashboardCtrl",["$scope",function(a){}]);

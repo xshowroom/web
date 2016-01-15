@@ -1,17 +1,1 @@
-angular.module(
-    'xShowroom.customer',
-    [
-     	'xShowroom.i18n', 'xShowroom.directives',
-    ]
-)
-.controller(
-    'CustomerCtrl',
-    [
-        '$scope',
-        function ($scope) {
-            $scope.setOpenPosition = function(index){
-                $scope.selectedPosition = $scope.selectedPosition == index ? null : index;
-            }
-        }
-    ]
-);
+/*! xshowroom - v1.0.0 - 2016-01-15 */angular.module("xShowroom.customer",["xShowroom.i18n","xShowroom.directives"]).controller("CustomerCtrl",["$scope",function(a){a.setOpenPosition=function(b){a.selectedPosition=a.selectedPosition==b?null:b}}]);
