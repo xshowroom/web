@@ -2,7 +2,7 @@
 <html ng-app="xShowroom.guide">
 <head>
 	<meta charset="UTF-8" >
-	<title>XSHOWROOM GUIDE</title>
+	<title><?=SITE_TITLE_PROFIX?>  Solution</title>
 	<?php echo View::factory('common/global_libraries'); ?>
 	<link rel="stylesheet" type="text/css" href="/static/app/css/guide.css" />
 	<script type="text/javascript" src="/static/app/modules/guide.js"></script>

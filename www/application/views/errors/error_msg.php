@@ -2,7 +2,7 @@
 <html  ng-app="xShowroom.error">
 <head>
 	<meta charset="UTF-8" >
-	<title>XSHOWROOM</title>
+	<title><?=SITE_TITLE_PROFIX?> </title>
 	<?php echo View::factory('common/global_libraries'); ?>
 	<script type="text/javascript" src="/static/app/modules/error.js"></script>
 </head>

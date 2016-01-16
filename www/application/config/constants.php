@@ -1,6 +1,11 @@
 <?php defined('SYSPATH') || die('No direct script access.');
 
 /**
+ * web site page configuration
+ */
+define('SITE_TITLE_PROFIX', "XSHOWROOM 买手圈");
+
+/**
  * 报告响应状态码
  */
 define('STATUS_SUCCESS',    0);     // 正常/成功

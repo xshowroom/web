@@ -2,7 +2,7 @@
 <html ng-app="xShowroom.customer">
 <head>
 	<meta charset="UTF-8" >
-	<title>XSHOWROOM</title>
+	<title><?=SITE_TITLE_PROFIX?> </title>
 	<?php echo View::factory('common/global_libraries'); ?>
 	<link rel="stylesheet" type="text/css" href="/static/app/css/customer.css" />
 	<script type="text/javascript" src="/static/app/modules/customer.js"></script>

@@ -2,7 +2,7 @@
 <html ng-app="xShowroom.register.brand">
 <head>
 	<meta charset="UTF-8">
-	<title>XSHOWROOM</title>
+	<title><?=SITE_TITLE_PROFIX?> </title>
 	<?php echo View::factory('common/global_libraries'); ?>
 	<link rel="stylesheet" type="text/css" href="/static/app/css/register_brand.css" />
 	<script type="text/javascript" src="/static/app/modules/register_brand.js"></script>

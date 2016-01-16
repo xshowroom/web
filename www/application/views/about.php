@@ -2,7 +2,7 @@
 <html ng-app="xShowroom.about">
 <head>
 	<meta charset="UTF-8" >
-	<title>XSHOWROOM ABOUT</title>
+	<title><?=SITE_TITLE_PROFIX?>  ABOUT US</title>
 	<?php echo View::factory('common/global_libraries'); ?>
 	<link rel="stylesheet" type="text/css" href="/static/app/css/about.css" />
 	<script type="text/javascript" src="/static/app/modules/about.js"></script>

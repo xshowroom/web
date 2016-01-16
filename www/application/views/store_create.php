@@ -2,7 +2,7 @@
 <html  ng-app="xShowroom.store.create">
 <head>
     <meta charset="UTF-8" >
-    <title>XSHOWROOM</title>
+    <title><?=SITE_TITLE_PROFIX?> </title>
     <?php echo View::factory('common/global_libraries'); ?>
     <link rel="stylesheet" type="text/css" href="/static/app/css/store_create.css" />
     <script type="text/javascript" src="/static/bower_components/ng-textcomplete/ng-textcomplete.min.js"></script>

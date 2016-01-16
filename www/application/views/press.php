@@ -2,7 +2,7 @@
 <html ng-app="xShowroom.press">
 <head>
 	<meta charset="UTF-8" >
-	<title>XSHOWROOM PRESS</title>
+	<title><?=SITE_TITLE_PROFIX?> PRESS</title>
 	<?php echo View::factory('common/global_libraries'); ?>
 	<link rel="stylesheet" type="text/css" href="/static/app/css/press.css" />
 	<script type="text/javascript" src="/static/app/modules/press.js"></script>
