@@ -36,6 +36,8 @@ class Controller_Order extends Controller_BaseReqLogin
     
     public function action_create()
     {
+        $this->checkBuyerUser();
+
         $collectionId = $this->request->param('id');
 
     	$view = View::factory('order_create');
