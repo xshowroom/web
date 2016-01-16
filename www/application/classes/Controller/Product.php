@@ -41,6 +41,8 @@ class Controller_Product extends Controller_BaseReqLogin
     
     public function action_create()
     {
+        $this->checkBuyerUser();
+
         $collectionId = $this->request->param('id');
         $collectionInfo = $this->collectionService->getCollectionInfo($this->opUser['id'], $collectionId);
 
@@ -56,25 +58,20 @@ class Controller_Product extends Controller_BaseReqLogin
     
     public function action_edit()
     {
-    	$productId = $this->request->param('id');
-    	$userId = $this->opUser['id'];
-    	
-    	if ($this->opUser['role_type'] == Model_User::TYPE_USER_BRAND) {
-    		$production = $this->productionService->getProduction($userId, $productId);
-    		$collection = $this->collectionService->getCollectionInfo($userId, $production['collection_id']);
-    	} else {
-    		$production = $this->buyerService->getProduction($userId, $productionId);
-    		$collection = $this->buyerService->getCollectionInfo($userId, $production['collection_id']);
-    	}
-    	
-    	
-    	$view = View::factory('product_edit');
-    	$view->set('user', $this->opUser);
-    	$view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
-    	$view->set('productId', $productId);
-    	$view->set('collectionCategory', $collection['category']);
-    
-    	$this->response->body($view);
-    
+        $this->checkBrandUser();
+
+        $productId = $this->request->param('id');
+        $userId = $this->opUser['id'];
+
+        $production = $this->productionService->getProduction($userId, $productId);
+        $collection = $this->collectionService->getCollectionInfo($userId, $production['collection_id']);
+
+        $view = View::factory('product_edit');
+        $view->set('user', $this->opUser);
+        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view->set('productId', $productId);
+        $view->set('collectionCategory', $collection['category']);
+
+        $this->response->body($view);
     }
 }

@@ -17,6 +17,8 @@ class Controller_Collection extends Controller_BaseReqLogin
 
     public function action_create()
     {
+        $this->checkBrandUser();
+
         $view = View::factory('collection_create');
         $view->set('user', $this->opUser);
         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));

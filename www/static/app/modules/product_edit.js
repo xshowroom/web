@@ -209,7 +209,7 @@ angular.module(
      	     			if (typeof(res) != 'object' || res.status) {
      	     				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
      	     			}else{
-     	     				$window.open('/collection/'+$scope.product.collectionId, '_self');
+     	     				$window.open('/product/'+$scope.product.id, '_self');
      	     			}
      	     		});
      			} 
