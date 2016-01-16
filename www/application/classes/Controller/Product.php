@@ -41,7 +41,7 @@ class Controller_Product extends Controller_BaseReqLogin
     
     public function action_create()
     {
-        $this->checkBuyerUser();
+        $this->checkBrandUser();
 
         $collectionId = $this->request->param('id');
         $collectionInfo = $this->collectionService->getCollectionInfo($this->opUser['id'], $collectionId);
