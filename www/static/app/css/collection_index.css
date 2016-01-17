@@ -25,7 +25,7 @@
 	-o-transform: translateY(-50%);
 }
 .collection-info .collection-detail > *{
-	font-size: 11px;
+	font-size: 12px;
 	line-height: 30px;
 }
 .collection-info .collection-detail.collection-name{
@@ -33,16 +33,18 @@
 }
 .collection-info .collection-detail.collection-name h2{
 	display: inline-block;
-	font-size: 16px;
-	margin: 40px 30px 0 0;
+	font-size: 24px;
+	margin: 20px 30px 0 0;
 }
 .collection-info .collection-detail.collection-name .collection-edit{
 	position: relative;
+	font-size: 16px;
+	top: -2px;
 }
 .collection-info .collection-detail.collection-name .collection-edit:after{
 	content: "";
     width: 1px;
-    height: 20px;
+    height: 24px;
     background-color: #25272c;
     display: inline-block;
     left: -15px;

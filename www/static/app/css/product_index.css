@@ -8,6 +8,11 @@
 	padding-top: 10px;
 	padding-bottom: 50px;
 }
+
+.product-info .breadcrumb{
+	background: none;
+}
+
 .product-info a:before{
 	content: none;
 }

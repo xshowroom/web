@@ -25,6 +25,7 @@ class Controller_Product extends Controller_BaseReqLogin
 
         $userId = $this->opUser['id'];
         $productionId = Request::current()->param('id');
+
         if ($this->opUser['role_type'] == Model_User::TYPE_USER_BRAND) {
             $production = $this->productionService->getProduction($userId, $productionId);
             $collection = $this->collectionService->getCollectionInfo($userId, $production['collection_id']);
@@ -32,6 +33,9 @@ class Controller_Product extends Controller_BaseReqLogin
             $production = $this->buyerService->getProduction($userId, $productionId);
             $collection = $this->buyerService->getCollectionInfo($userId, $production['collection_id']);
         }
+
+        $production['gallery_image_urls'] = strtr(json_encode($production['image_url']), array('"'=>'\''));
+
         $view->set('production', $production);
         $view->set('collection', $collection);
         $view->set('hasAuth', $collection['user_id'] == $userId);
