@@ -24,10 +24,16 @@ class Controller_Order extends Controller_BaseReqLogin
     {
         $view = View::factory('order_index');
         $orderId = Request::current()->param('id');
-        
+
+        $orderInfo = $this->orderModel->getById($orderId);
+
+        if(empty($orderInfo)) {
+            $this->redirect_404();
+        }
+
         $view->set('user', $this->opUser);
         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
-        $view->set('order', $this->orderModel->getById($orderId));
+        $view->set('order', $orderInfo);
         $view->set('adminAccount', '123123123123123');
         
 
