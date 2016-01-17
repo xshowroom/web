@@ -107,7 +107,13 @@ class Business_Buyer
         
         // 判断用户是否有该品牌的权限
         $this->validateAuth($userId, $collection['user_id']);
-        
+
+        // buyer can only view when it is online
+        if ($collection['status'] != Model_Collection::TYPE_OF_ONLINE) {
+            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+
         return $collection;
     }
     

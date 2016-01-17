@@ -36,7 +36,7 @@ class Controller_Collection extends Controller_BaseReqLogin
         
         if ($this->opUser['role_type'] == Model_User::TYPE_USER_BRAND) {
             $view->set('collection', $this->collectionService->getCollectionInfo($userId, $collectionId));
-        } else {
+        } elseif($this->opUser['role_type'] == Model_User::TYPE_USER_BUYER) {
             $view->set('collection', $this->buyerService->getCollectionInfo($userId, $collectionId));
         }
         
