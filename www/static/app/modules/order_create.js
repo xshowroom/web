@@ -76,7 +76,7 @@ angular.module(
      		$scope.checkout = function(){
      			var result = {};
      			if ($scope.getRestAmount() > 0){
-     				$modal({title: $filter('translate')('modal__title__ERROR'), content: $filter('translate')('modal__message__ERROR__ORDER_NOT_ENOUGH'), show: true});
+     				$modal({title: $filter('translate')('modal__title__ERROR'), content: $filter('translate')('modal__msg__error__ORDER_NOT_ENOUGH'), show: true});
      			}else{
      				var orderItems = [];
      				for(var i = 0, len = $scope.products.length; i < len; i++) {

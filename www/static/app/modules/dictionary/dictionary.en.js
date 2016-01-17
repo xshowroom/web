@@ -15,7 +15,7 @@ angular.module('xShowroom.dictionary', []).constant('dictionary', {
          */
         modal__title__ERROR: "ERROR INFO",
         modal__msg__error__SYSTEM_ERROR: "System Error",
-        modal__message__ERROR__ORDER_NOT_ENOUGH: "Not reach the minimum order, please select more products!",
+        modal__msg__error__ORDER_NOT_ENOUGH: "Not reach the minimum order, please select more products!",
         modal__msg__error__ORDER_NOT_SELECT_SHIP_ADDRESS: "Please select ship address for this order!",
         modal__msg__error__ORDER_NOT_SELECT_PAYMENT_METHOD: "Please select payment method for this order!",
         modal__msg__error__PDF_TYPE_ERROR: "Please upload a PDF file!",
