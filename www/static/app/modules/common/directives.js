@@ -170,13 +170,13 @@ angular.module(
                             url: '/api/upload/image',
                             onCompleted: function (file, response) {
                                 if (!$scope.timeout) {
-                                    $modal({title: 'Error Info', content: '上传图片超时，请重新上传！', show: true});
+                                    $modal({title: $filter('translate')('modal__title__ERROR'), content: '上传图片超时，请重新上传！', show: true});
                                     $scope.$emit('uploading.end');
                                     return;
                                 }
                                 response = JSON.parse(response);
                                 if (response.status !== 0) {
-                                    $modal({title: 'Error Info', content: '上传图片接口出错，请重新上传，如多次失败请联系我们！', show: true});
+                                    $modal({title: $filter('translate')('modal__title__ERROR'), content: '上传图片接口出错，请重新上传，如多次失败请联系我们！', show: true});
                                     $scope.$emit('uploading.end');
                                     return;
                                 }
