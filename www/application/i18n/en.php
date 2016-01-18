@@ -736,7 +736,7 @@ return array_merge(
         'order_list__filter_ALL' => 'ALL',
 
         'order_list__NO_TIEM_01' => 'Order has not been found.',
-        'order_list__NO_TIEM_02' => 'Tou can explorer brands to make order.',
+        'order_list__NO_TIEM_02' => 'You can explorer brands to make order.',
 
         'order_list__LIST' => 'ORDER LIST',
         'order_list__STATUS' => 'ORDER STATUS:',
