@@ -31,6 +31,7 @@ class Business_User
         if (!empty($user)) {
             $_SESSION['opUser'] = $user;
             unset($user['password']);
+            $_SESSION['opUser']['userAttr'] = $this->getUserAttr($user['id']);
             $this->userModel->updateLoginTime($user['id']);
         }
 

@@ -6,13 +6,11 @@ class Controller_Guide extends Controller_Base
     public function action_index()
     {
         $view = View::factory('guide');
-     	$opUser = $_SESSION['opUser'];
+        $opUser = $_SESSION['opUser'];
 
         if(!empty($opUser)) {
             $view->set('user', $opUser);
-
-            $userService = new Business_User();
-            $view->set('userAttr', $userService->getUserAttr($opUser['id']));
+            $view->set('userAttr', $opUser['userAttr']);
         }
         $this->response->body($view);
     }

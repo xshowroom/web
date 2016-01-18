@@ -27,7 +27,7 @@ class Controller_Buyer extends Controller_BaseReqLogin
         $view = View::factory('buyer_dashboard');
         $view->set('user', $this->opUser);
         $userId = $this->opUser['id'];
-        $view->set('userAttr', $this->userService->getUserAttr($userId));
+        $view->set('userAttr', $this->opUser['userAttr']);
         
         $view->set('authBrandList', array_slice($this->buyerService->getAuthBrandList($userId), 0, 6));
         
@@ -42,9 +42,9 @@ class Controller_Buyer extends Controller_BaseReqLogin
     
     public function action_brand()
     {
-    	$view = View::factory('buyer_brand');
-    	$view->set('user', $this->opUser);
-    	$view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view = View::factory('buyer_brand');
+        $view->set('user', $this->opUser);
+        $view->set('userAttr', $this->opUser['userAttr']);
         
         // $brandUrl = Request::current()->param('url');
         // $view->set('brandInfo', $this->brandService->getBrandInfoByUrl($brandUrl));
@@ -56,7 +56,7 @@ class Controller_Buyer extends Controller_BaseReqLogin
     {
     	$view = View::factory('buyer_cart');
     	$view->set('user', $this->opUser);
-    	$view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+    	$view->set('userAttr', $this->opUser['userAttr']);
     	$this->response->body($view);
     }
     
@@ -65,7 +65,7 @@ class Controller_Buyer extends Controller_BaseReqLogin
     {
         $view = View::factory('buyer_store');
         $view->set('user', $this->opUser);
-        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view->set('userAttr', $this->opUser['userAttr']);
         $this->response->body($view);
     }
 
@@ -73,7 +73,7 @@ class Controller_Buyer extends Controller_BaseReqLogin
     {
         $view = View::factory('user_message');
         $view->set('user', $this->opUser);
-        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view->set('userAttr', $this->opUser['userAttr']);
         $this->response->body($view);
     }
 }

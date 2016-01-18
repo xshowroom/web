@@ -24,7 +24,7 @@ class Controller_Message extends Controller_BaseReqLogin
     {
         $view = View::factory('user_message');
         $view->set('user', $this->opUser);
-        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view->set('userAttr', $this->opUser['userAttr']);
         $view->set('messageList', $this->messageService->getMessageList($this->opUser['id']));
 
         $this->response->body($view);
@@ -43,7 +43,7 @@ class Controller_Message extends Controller_BaseReqLogin
 
         $view = View::factory('user_message_detail');
         $view->set('user', $this->opUser);
-        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view->set('userAttr', $this->opUser['userAttr']);
         $view->set('message', $message);
         $view->set('order', $this->orderService->buildOrderDetail($this->orderService->getOrderById($message['order_id'])));
 

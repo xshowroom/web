@@ -25,7 +25,7 @@ class Controller_Brand extends Controller_BaseReqLogin
         $view = View::factory('brand_dashboard');
         $view->set('user', $this->opUser);
         $userId = $this->opUser['id'];
-        $view->set('userAttr', $this->userService->getUserAttr($userId));
+        $view->set('userAttr', $this->opUser['userAttr']);
         $view->set('brandInfo', $this->brandService->getBrandInfo($userId));
         
        	$orderList = $this->orderService->getOrderList($userId, null, $this->opUser['role_type']);
@@ -39,9 +39,9 @@ class Controller_Brand extends Controller_BaseReqLogin
 
     public function action_collection()
     {
-         $view = View::factory('brand_collection');
+        $view = View::factory('brand_collection');
         $view->set('user', $this->opUser);
-        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view->set('userAttr', $this->opUser['userAttr']);
         $view->set('brandInfo', $this->brandService->getBrandInfo($this->opUser['id']));
         
         $collectionList = $this->collectionService->getAllCollectionList($this->opUser['id']);
@@ -54,7 +54,7 @@ class Controller_Brand extends Controller_BaseReqLogin
     {
         $view = View::factory('brand_lookbook');
         $view->set('user', $this->opUser);
-        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view->set('userAttr', $this->opUser['userAttr']);
         $view->set('brandInfo', $this->brandService->getBrandInfo($this->opUser['id']));
 
         $this->response->body($view);
@@ -64,7 +64,7 @@ class Controller_Brand extends Controller_BaseReqLogin
     {
         $view = View::factory('user_message');
         $view->set('user', $this->opUser);
-        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view->set('userAttr', $this->opUser['userAttr']);
         $this->response->body($view);
     }
 }

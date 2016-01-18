@@ -21,7 +21,7 @@ class Controller_Collection extends Controller_BaseReqLogin
 
         $view = View::factory('collection_create');
         $view->set('user', $this->opUser);
-        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view->set('userAttr', $this->opUser['userAttr']);
         $this->response->body($view);
     }
     
@@ -29,7 +29,7 @@ class Controller_Collection extends Controller_BaseReqLogin
     {
         $view = View::factory('collection_index');
         $view->set('user', $this->opUser);
-        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view->set('userAttr', $this->opUser['userAttr']);
         
         $userId = $this->opUser['id'];
         $collectionId = Request::current()->param('id');

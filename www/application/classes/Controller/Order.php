@@ -32,7 +32,7 @@ class Controller_Order extends Controller_BaseReqLogin
         }
 
         $view->set('user', $this->opUser);
-        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view->set('userAttr', $this->opUser['userAttr']);
         $view->set('order', $orderInfo);
         $view->set('adminAccount', '123123123123123');
         
@@ -48,7 +48,7 @@ class Controller_Order extends Controller_BaseReqLogin
 
     	$view = View::factory('order_create');
     	$view->set('user', $this->opUser);
-    	$view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+    	$view->set('userAttr', $this->opUser['userAttr']);
     	$view->set('collection', $this->buyerService->getCollectionInfo($this->opUser['id'], $collectionId));
     	
     	$this->response->body($view);
@@ -60,7 +60,7 @@ class Controller_Order extends Controller_BaseReqLogin
     {
     	$view = View::factory('order_list');
     	$view->set('user', $this->opUser);
-    	$view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+    	$view->set('userAttr', $this->opUser['userAttr']);
     	 
     	$this->response->body($view);
     }

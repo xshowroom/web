@@ -21,7 +21,7 @@ class Controller_Product extends Controller_BaseReqLogin
     {
         $view = View::factory('product_index');
         $view->set('user', $this->opUser);
-        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view->set('userAttr', $this->opUser['userAttr']);
 
         $userId = $this->opUser['id'];
         $productionId = Request::current()->param('id');
@@ -52,7 +52,7 @@ class Controller_Product extends Controller_BaseReqLogin
 
         $view = View::factory('product_create');
         $view->set('user', $this->opUser);
-        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view->set('userAttr', $this->opUser['userAttr']);
         $view->set('collectionId', $collectionId);
         $view->set('collectionInfo', $collectionInfo);
 
@@ -72,7 +72,7 @@ class Controller_Product extends Controller_BaseReqLogin
 
         $view = View::factory('product_edit');
         $view->set('user', $this->opUser);
-        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view->set('userAttr', $this->opUser['userAttr']);
         $view->set('productId', $productId);
         $view->set('collectionCategory', $collection['category']);
 
