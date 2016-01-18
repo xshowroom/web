@@ -1,5 +1,10 @@
+/**
+ * @file error page controller
+ * @author shiliang - shiliang87@gmail.com
+ *
+ */
 angular.module(
-    'xShowroom.error', 
+    'xShowroom.error',
     [
         'xShowroom.i18n', 'xShowroom.directives'
     ]
@@ -7,9 +12,8 @@ angular.module(
 .controller(
     'ErrorCtrl',
     [
-     	'$scope',
+        '$scope',
         function ($scope) {
-     	
         }
     ]
 );
