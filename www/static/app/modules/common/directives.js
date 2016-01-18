@@ -170,13 +170,21 @@ angular.module(
                             url: '/api/upload/image',
                             onCompleted: function (file, response) {
                                 if (!$scope.timeout) {
-                                    $modal({title: $filter('translate')('modal__title__ERROR'), content: '上传图片超时，请重新上传！', show: true});
+                                    $modal({
+                                        title: $filter('translate')('modal__title__ERROR'),
+                                        content: $filter('translate')('product_add_image_timeout_error'),
+                                        show: true
+                                    });
                                     $scope.$emit('uploading.end');
                                     return;
                                 }
                                 response = JSON.parse(response);
                                 if (response.status !== 0) {
-                                    $modal({title: $filter('translate')('modal__title__ERROR'), content: '上传图片接口出错，请重新上传，如多次失败请联系我们！', show: true});
+                                    $modal({
+                                        title: $filter('translate')('modal__title__ERROR'),
+                                        content: '上传图片接口出错，请重新上传，如多次失败请联系我们！',
+                                        show: true
+                                    });
                                     $scope.$emit('uploading.end');
                                     return;
                                 }
@@ -203,13 +211,21 @@ angular.module(
                             return;
                         }
                         if (!/image\/\w+/.test(files[0].type)) {
-                            $modal({title: $filter('translate')('modal__title__ERROR'), content: '上传文件类型必须为图片！', show: true});
+                            $modal({
+                                title: $filter('translate')('modal__title__ERROR'),
+                                content: $filter('translate')('product_add_image_format_error'),
+                                show: true
+                            });
                             self.val('');
                             $scope.$emit('uploading.end');
                             return;
                         }
                         if (files[0].size / 1024 / 1024 > 2) {
-                            $modal({title: $filter('translate')('modal__title__ERROR'), content: '上传文件大于2MB！', show: true});
+                            $modal({
+                                title: $filter('translate')('modal__title__ERROR'),
+                                content: $filter('translate')('directives_js__FILE_SIZE'),
+                                show: true
+                            });
                             self.val('');
                             $scope.$emit('uploading.end');
                             return;
@@ -361,7 +377,7 @@ angular.module(
                 if (!email || !reg.test(email)) {
                     $modal({
                         title: $filter('translate')('modal__title__ERROR'),
-                        content: '邮箱地址输入有误，请重新输入',
+                        content: $filter('translate')('email_PATTERN_ERROR'),
                         show: true
                     });
                     return;
@@ -372,7 +388,7 @@ angular.module(
                     $modal({
                         title: typeof res !== 'object' || res.status
                             ? $filter('translate')('modal__title__ERROR')
-                            : '订阅成功',
+                            : $filter('translate')('modal__title__SUCCESS'),
                         content: res.msg,
                         show: true
                     });
