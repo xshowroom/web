@@ -82,6 +82,12 @@ class Business_Buyer
     public function getCollectionList($brandId)
     {
         $collectionStatList = $this->collectionService->getCollectionStatInfo($brandId);
+        // 过滤掉未上线的
+        foreach ($collectionStatList as $idx => $collection) {
+            if ($collection['status'] != Model_Collection::TYPE_OF_ONLINE) {
+                unset($collection[$idx]);
+            }
+        }
         return $collectionStatList;
     }
     
@@ -100,10 +106,15 @@ class Business_Buyer
 
         return $authedShopList;
     }
-    
+
     public function getCollectionInfo($userId, $collectionId)
     {
         $collection = $this->collectionModel->getByCollectionId($collectionId);
+        // 判断这个collection是否已发布状态
+        if ($collection['status'] != Model_Collection::TYPE_OF_ONLINE) {
+            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
         
         // 判断用户是否有该品牌的权限
         $this->validateAuth($userId, $collection['user_id']);
