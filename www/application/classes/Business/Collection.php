@@ -90,8 +90,6 @@ class Business_Collection
             return array();
         }
         
-        
-        
         $collectionList = $this->getCollectionList($brandInfo['user_id']);
         if (empty($collectionList)) {
             return array();

@@ -49,15 +49,15 @@ class Controller_Buyer extends Controller_BaseReqLogin
         // $brandUrl = Request::current()->param('url');
         // $view->set('brandInfo', $this->brandService->getBrandInfoByUrl($brandUrl));
     
-    	$this->response->body($view);
+        $this->response->body($view);
     }
-	
+
     public function action_cart()
     {
-    	$view = View::factory('buyer_cart');
-    	$view->set('user', $this->opUser);
-    	$view->set('userAttr', $this->opUser['userAttr']);
-    	$this->response->body($view);
+        $view = View::factory('buyer_cart');
+        $view->set('user', $this->opUser);
+        $view->set('userAttr', $this->opUser['userAttr']);
+        $this->response->body($view);
     }
     
     

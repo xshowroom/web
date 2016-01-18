@@ -46,22 +46,22 @@ class Controller_Order extends Controller_BaseReqLogin
 
         $collectionId = $this->request->param('id');
 
-    	$view = View::factory('order_create');
-    	$view->set('user', $this->opUser);
-    	$view->set('userAttr', $this->opUser['userAttr']);
-    	$view->set('collection', $this->buyerService->getCollectionInfo($this->opUser['id'], $collectionId));
-    	
-    	$this->response->body($view);
+        $view = View::factory('order_create');
+        $view->set('user', $this->opUser);
+        $view->set('userAttr', $this->opUser['userAttr']);
+        $view->set('collection', $this->buyerService->getCollectionInfo($this->opUser['id'], $collectionId));
+
+        $this->response->body($view);
     
     }
     
     
     public function action_list()
     {
-    	$view = View::factory('order_list');
-    	$view->set('user', $this->opUser);
-    	$view->set('userAttr', $this->opUser['userAttr']);
-    	 
-    	$this->response->body($view);
+        $view = View::factory('order_list');
+        $view->set('user', $this->opUser);
+        $view->set('userAttr', $this->opUser['userAttr']);
+
+        $this->response->body($view);
     }
 }
