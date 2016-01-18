@@ -54,7 +54,6 @@ angular.module(
                 $cookies.put('language', language);
                 window.location.reload();
             };
-
         }
     };
 }])
