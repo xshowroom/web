@@ -42,7 +42,7 @@
 							<button type="submit" class="btn btn-type-2"><?=__("login__btn_LOGIN")?></button>
 							<div class="checkbox">
 								<label><input type="checkbox" ng-model="rememberMe"
-           							ng-true-value="true" ng-false-value="false"><?=__("login__REMEMBER_ME")?></label>
+           							ng-true-value="1" ng-false-value="0"><?=__("login__REMEMBER_ME")?></label>
 							</div>
 							<!-- <a href="#">LOST YOUR PASSWORD?</a> -->
 						</form>

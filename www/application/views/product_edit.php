@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  ng-app="xShowroom.product.create" ng-init="productId = <?=$productId?>;collectionCategory = '<?=$collectionCategory?>';">
+<html  ng-app="xShowroom.product.edit" ng-init="productId = <?=$productId?>;collectionCategory = '<?=$collectionCategory?>';">
 <head>
     <meta charset="UTF-8" >
     <title><?=SITE_TITLE_PROFIX?> </title>

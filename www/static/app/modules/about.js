@@ -1,7 +1,12 @@
+/**
+ * @file about page controller
+ * @author shiliang - shiliang87@gmail.com
+ *
+ */
 angular.module(
-    'xShowroom.about', 
+    'xShowroom.about',
     [
-     	'xShowroom.i18n', 'xShowroom.directives',
+        'xShowroom.i18n', 'xShowroom.directives'
     ]
 )
 .controller(

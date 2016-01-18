@@ -1,3 +1,8 @@
+/**
+ * @file controller of user module
+ * @author shiliang - shiliang87@gmail.com
+ *
+ */
 angular.module(
     'xShowroom.user.message',
     [
@@ -9,22 +14,22 @@ angular.module(
     [
         '$scope', '$modal', '$filter', 'Message',
         function ($scope, $modal, $filter, Message) {
-            $scope.clickMessage=function(msgId){
-                messageId = msgId;
+            $scope.clickMessage = function (msgId) {
+                $scope.messageId = msgId;
             };
 
-            $scope.deleteMessage=function(){
+            $scope.deleteMessage = function () {
                 Message.destroy({
-                    id: messageId,
+                    id: $scope.messageId,
                     rnd: new Date().getTime()
-                }).success(function(res){
-                	if (typeof(res) != 'object' || res.status) {
-	    				$modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
-	    				return;
-                	}
+                }).success(function (res) {
+                    if (typeof res !== 'object' || res.status) {
+                        $modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
+                        return;
+                    }
                     window.location.reload();
                 });
-            }
+            };
         }
     ]
 );
