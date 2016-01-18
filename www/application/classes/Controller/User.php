@@ -46,14 +46,11 @@ class Controller_User extends Controller_BaseReqLogin
         $roleType = (int)$this->opUser['role_type'];
 
         $view = View::factory('user_profile');
+        $view->set('user', $this->opUser);
+        $view->set('userAttr', $this->opUser['userAttr']);
 
         if($roleType === Model_User::TYPE_USER_BRAND){
-            $view->set('user', $this->opUser);
-            $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
             $view->set('brandInfo', $this->brandService->getBrandInfo($this->opUser['id']));
-        } elseif ($roleType === Model_User::TYPE_USER_BUYER) {
-            $view->set('user', $this->opUser);
-            $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
         }
 
         $this->response->body($view);
@@ -64,14 +61,11 @@ class Controller_User extends Controller_BaseReqLogin
         $roleType = (int)$this->opUser['role_type'];
 
         $view = View::factory('user_password');
+        $view->set('user', $this->opUser);
+        $view->set('userAttr', $this->opUser['userAttr']);
 
         if($roleType === Model_User::TYPE_USER_BRAND){
-            $view->set('user', $this->opUser);
-            $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
             $view->set('brandInfo', $this->brandService->getBrandInfo($this->opUser['id']));
-        } elseif ($roleType === Model_User::TYPE_USER_BUYER) {
-            $view->set('user', $this->opUser);
-            $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
         }
 
         $this->response->body($view);

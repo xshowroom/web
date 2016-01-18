@@ -10,9 +10,7 @@ class Controller_Customer extends Controller_Base
 
         if(!empty($opUser)) {
             $view->set('user', $opUser);
-
-            $userService = new Business_User();
-            $view->set('userAttr', $userService->getUserAttr($opUser['id']));
+            $view->set('userAttr', $opUser['userAttr']);
         }
 
 

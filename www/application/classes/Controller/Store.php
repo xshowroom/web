@@ -16,7 +16,7 @@ class Controller_Store extends Controller_BaseReqLogin
     {
         $view = View::factory('store_index');
         $view->set('user', $this->opUser);
-        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+        $view->set('userAttr', $this->opUser['userAttr']);
         $storeId = Request::current()->param('id');
         $view->set('storeId', $storeId);
         $this->response->body($view);
@@ -28,7 +28,7 @@ class Controller_Store extends Controller_BaseReqLogin
 
     	$view = View::factory('store_create');
     	$view->set('user', $this->opUser);
-    	$view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
+    	$view->set('userAttr', $this->opUser['userAttr']);
     
     	$this->response->body($view);
     }

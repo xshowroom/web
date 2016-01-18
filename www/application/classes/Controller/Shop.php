@@ -26,7 +26,7 @@ class Controller_Shop extends Controller_Base
             // only buyer user can view this page with login status
             if ($opUser['role_type'] == Model_User::TYPE_USER_BUYER) {
                 $view->set('user', $opUser);
-                $view->set('userAttr', $this->userService->getUserAttr($opUser['id']));
+                $view->set('userAttr', $opUser['userAttr']);
             } else {
                 $this->destroy_session();
             }
