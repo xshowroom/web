@@ -1,3 +1,8 @@
+/**
+ * @file controller of admin module
+ * @author shiliang - shiliang87@gmail.com
+ *
+ */
 angular.module(
     'xShowroom.admin',
     [
@@ -8,7 +13,7 @@ angular.module(
     'AdminStatCtrl',
     [
         '$scope',
-        function ($scope){
+        function ($scope) {
 
         }
     ]
