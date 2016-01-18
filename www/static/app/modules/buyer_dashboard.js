@@ -1,5 +1,10 @@
+/**
+ * @file controller of buyer module
+ * @author shiliang - shiliang87@gmail.com
+ *
+ */
 angular.module(
-    'xShowroom.buyer.dashboard', 
+    'xShowroom.buyer.dashboard',
     [
         'xShowroom.i18n', 'xShowroom.directives'
     ]
@@ -7,9 +12,8 @@ angular.module(
 .controller(
     'BuyerDashboardCtrl',
     [
-     	'$scope',
+        '$scope',
         function ($scope) {
-     	
         }
     ]
 );
