@@ -2,7 +2,7 @@
 <html ng-app="xShowroom.brand.index" ng-init="brandOwner=<?=$brandInfo['user_id']?>;brandId=<?=$brandInfo['id']?>;isGuest=<?=empty($user) ? 'true' : 'false'?>;">
 <head>
     <meta charset="UTF-8" >
-    <title><?=SITE_TITLE_PROFIX?> </title>
+    <title><?=$brandInfo['brand_name']?> - <?=SITE_TITLE_PROFIX?></title>
     <?php echo View::factory('common/global_libraries'); ?>
     <link rel="stylesheet" type="text/css" href="/static/app/css/brand_index.css" />
     <script type="text/javascript" src="/static/app/modules/brand_index.js"></script>
