@@ -181,7 +181,7 @@ angular.module(
                                 if (response.status !== 0) {
                                     $modal({
                                         title: $filter('translate')('modal__title__ERROR'),
-                                        content: '上传图片接口出错，请重新上传，如多次失败请联系我们！',
+                                        content: $filter('translate')('modal__msg__error__SYSTEM_ERROR'),
                                         show: true
                                     });
                                     $scope.$emit('uploading.end');
