@@ -39,13 +39,6 @@ class Business_Buyer
         }
     }
     
-    public function queryBrand($userId, $name)
-    {
-        $brandList = $this->brandModel->getByName($name);
-        
-        return $brandList;
-    }
-    
     public function getAuthBrandList($userId)
     {
         $authBrandList = $this->getAuthList($userId);
@@ -110,11 +103,6 @@ class Business_Buyer
     public function getCollectionInfo($userId, $collectionId)
     {
         $collection = $this->collectionModel->getByCollectionId($collectionId);
-        // 判断这个collection是否已发布状态
-        if ($collection['status'] != Model_Collection::TYPE_OF_ONLINE) {
-            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
-            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
-        }
         
         // 判断用户是否有该品牌的权限
         $this->validateAuth($userId, $collection['user_id']);
@@ -246,8 +234,8 @@ class Business_Buyer
 
     public function getAuthedShopByCollection($userId, $collectionId)
     {
-    	$collection = $this->collectionModel->getByCollectionId($collectionId);
-    	$brand = $this->brandModel->getByUserId($collection['user_id']);
+        $collection = $this->collectionModel->getByCollectionId($collectionId);
+        $brand = $this->brandModel->getByUserId($collection['user_id']);
         $authedShopList = $this->buyerModel->getAuthListByUserAndBrand($userId, $brand['id']);
         $shopIdList = array_column($authedShopList, 'shop_id');
 
