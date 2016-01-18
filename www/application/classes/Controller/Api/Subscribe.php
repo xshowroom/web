@@ -9,10 +9,12 @@ class Controller_Api_Subscribe extends Controller_Base
 
     public function before()
     {
+        parent::before();
+
         $this->subscribeService = new Business_Subscribe();
     }
 
-    public function subscribe()
+    public function action_subscribe()
     {
         $email = Request::current()->getParam('email');
 
@@ -24,7 +26,7 @@ class Controller_Api_Subscribe extends Controller_Base
         ));
     }
 
-    public function unsubscribe()
+    public function action_unsubscribe()
     {
         $email = Request::current()->getParam('email');
         $hash = Request::current()->getParam('hash');

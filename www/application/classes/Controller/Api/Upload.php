@@ -10,6 +10,8 @@ class Controller_Api_Upload extends Controller_Base
 
     public function before()
     {
+        parent::before();
+
         $this->uploadService = new Business_Upload();
     }
 

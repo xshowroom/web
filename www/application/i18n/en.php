@@ -18,8 +18,12 @@ return array_merge(
         'brandUrl_existed' => 'brand url has already been resisted',
         'check_ok' => 'ok',
         'not_active' => 'user is pending approval',
+        // change password
         'OLD_PASSWORD_ERROR'=> 'old password is not match',
         'CHANGE_PASSWORD_SUCCESS'=> 'password has been changed',
+        // subscribe
+        'MSG_SUBSCRIBE_SUCCESS' => 'YOU HAVE SUBSCRIBED LATEST INFO FROM XSHOWROOM!',
+        'MSG_SUBSCRIBE_ERROR' => 'SUBSCRIBE FAILED!',
     ),
     /**
      * Inbox Message

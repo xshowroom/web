@@ -18,8 +18,12 @@ return array_merge(
         'brandUrl_existed' => '该URL已存在',
         'check_ok' => '参数验证成功',
         'not_active' => '等待管理员审核中',
+        // change password
         'OLD_PASSWORD_ERROR'=> '旧密码错误',
         'CHANGE_PASSWORD_SUCCESS'=> '您的密码已经更新',
+        // subscribe
+        'MSG_SUBSCRIBE_SUCCESS' => '您已经成功订阅XSHOWROOM的信息',
+        'MSG_SUBSCRIBE_ERROR' => '订阅失败',
     ),
     /**
      * Inbox Message

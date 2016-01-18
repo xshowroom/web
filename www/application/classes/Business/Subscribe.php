@@ -22,7 +22,7 @@ class Business_Subscribe
             return false;
         }
 
-        if ($this->subscribeModel->checkEmail($email)) {
+        if (!$this->subscribeModel->checkEmail($email)) {
             $this->subscribeModel->subscribe($email);
         }
 
