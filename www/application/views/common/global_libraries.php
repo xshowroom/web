@@ -1,4 +1,4 @@
-<meta name="keywords" content="XSHOWROOM showroom 买手 买手圈">
+<meta name="keywords" content="XSHOWROOM,showroom,买手,买手圈,时尚,品牌时装">
 <meta name="description" content="XSHOWROOM是中国时尚行业中第一个提供专业买手服务的线上平台。 通过创新的平台及领先的科技， 我们将大大提升采购效率、节约采购成本， 从而全面升级时尚买手行业采购体系，引领行业发展。  XSHOWROOM is the first online global fashion platform for wholesale buying in China. Through our innovative platform and intuitive technology, we're pioneering a wholesale evolution by making the process more convenient and cost effective.">
 <meta name="author" content="tangxiaotao arwutang@hotmail.com">
 <link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" />
