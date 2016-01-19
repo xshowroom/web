@@ -735,8 +735,10 @@ return array_merge(
         'order_list__filter_STATUS' => '订单状态',
         'order_list__filter_ALL' => '全部订单',
 
-        'order_list__NO_TIEM_01' => '未找到符合条件的订单信息',
-        'order_list__NO_TIEM_02' => '您可以探索品牌进行下单',
+        'order_list__buyer__NO_TIEM_01' => '未找到符合条件的订单信息',
+        'order_list__buyer__NO_TIEM_02' => '您可以探索品牌进行下单',
+        'order_list__brand__NO_TIEM_01' => '未找到符合条件的订单信息',
+        'order_list__brand__NO_TIEM_02' => '请完善您的系列和产品的信息',
 
         'order_list__LIST' => '订单列表',
         'order_list__STATUS' => '订单状态：',

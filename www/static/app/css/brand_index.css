@@ -79,10 +79,10 @@
 	-o-transform: translateY(-50%);
 }
 .brand-preview .collection-cover{
-	height: 68px;
+	height: 70px;
 	border: 1px solid #eee;
     position: relative;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
     width: 10.1%;
     float: left;
     margin-right: 1%;

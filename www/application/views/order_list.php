@@ -14,9 +14,9 @@
 	</nav>
 	<nav class="row user-navigation">
 		<?php 
-		if ($user["role_type"] == "1"){
+		if ($user["role_type"] == Model_User::TYPE_USER_BRAND){
         	echo View::factory('common/global_navigation_top_brand', array('currentPage' =>  'order', 'userAttr'=> $userAttr));
-        } else if ($user["role_type"] == "2"){
+        } else if ($user["role_type"] == Model_User::TYPE_USER_BUYER){
         	echo View::factory('common/global_navigation_top_buyer', array('currentPage' =>  'order', 'userAttr'=> $userAttr));
        	}
        	?>
@@ -78,7 +78,11 @@
 						</div>
 						<div class="col-xs-12 text-center empty-warning"  ng-if="!results.length">
 		                    <img src="/static/app/images/empty.png">
-		                    <p><?=__("order_list__NO_TIEM_01");?><br/><?=__("order_list__NO_TIEM_02");?></p>
+							<?php if ($user["role_type"] == Model_User::TYPE_USER_BRAND): ?>
+								<p><?=__("order_list__brand__NO_TIEM_01");?><br/><?=__("order_list__brand__NO_TIEM_02");?></p>
+							<?php elseif ($user["role_type"] == Model_User::TYPE_USER_BUYER): ?>
+								<p><?=__("order_list__buyer__NO_TIEM_01");?><br/><?=__("order_list__buyer__NO_TIEM_02");?></p>
+							<?php endif; ?>
 		                </div>
 		                <div class="order-list-action text-center col-xs-12" ng-if="filters.limit < (orders | filter: {$: filters.query, 'status': filters.status}).length ">
 			                 <button class="btn btn-type-1" ng-click="filters.limit = filters.limit + pageSize;">LOAD MORE</button>
