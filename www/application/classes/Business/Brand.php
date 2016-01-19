@@ -102,13 +102,6 @@ class Business_Brand
         
         $res = $this->doFilter($filter);
         
-        $pageSize = Request::current()->getParam('pageSize');
-        $pageSize = empty($pageSize) ? 0 : $pageSize;
-        $offset = Request::current()->getParam('offset');
-        $offset = empty($offset) ? 0 : $offset;
-        
-        $res = array_slice($res, $offset, $pageSize);
-        
         return $res;
     }
     
