@@ -91,7 +91,11 @@ angular.module(
             };
 
             $scope.checkout = function () {
-                if ($scope.getRestAmount() > 0) {
+                // 客户说暂时不检查最小起订金额了
+                //if ($scope.getRestAmount() > 0) {
+                //    $modal({title: $filter('translate')('modal__title__ERROR'), content: $filter('translate')('modal__msg__error__ORDER_NOT_ENOUGH'), show: true});
+                //}
+                if ($scope.getTotalAmount() == 0) {
                     $modal({title: $filter('translate')('modal__title__ERROR'), content: $filter('translate')('modal__msg__error__ORDER_NOT_ENOUGH'), show: true});
                 }
                 else {
