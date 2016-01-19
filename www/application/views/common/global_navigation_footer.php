@@ -36,8 +36,8 @@
 			<h3><?=__("global_navigation_footer__SUBSCRIBE")?></h3>
 			<form class="subscribe">
 				<span><?=__("global_navigation_footer__SUBSCRIBE__SIGN_IP")?></span>
-				<input type="text" placeholder="<?=__("global_navigation_footer__SUBSCRIBE__EMAIL")?>"/>
-				<button class="btn"><?=__("global_navigation_footer__SUBSCRIBE__BUTTON")?></button>
+				<input type="text" placeholder="<?=__("global_navigation_footer__SUBSCRIBE__EMAIL")?>" id="subscribe-email"/>
+				<button class="btn" id="subscribe-btn"><?=__("global_navigation_footer__SUBSCRIBE__BUTTON")?></button>
 			</form>
 			<span class="copyright">
 				©2015 XSHOWROOM

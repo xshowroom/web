@@ -8,6 +8,7 @@ class Controller_Api_Guest extends Controller_Base
     public function before()
     {
         parent::before();
+
         $this->brandService = new Business_Brand();
         $this->collectionService = new Business_Collection();
     }

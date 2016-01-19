@@ -155,6 +155,9 @@ angular.module(
                 },
                 updateProfile: function (opts) {
                     return postRequester('user/updateUserInfo', opts);
+                },
+                subscribe: function (opts) {
+                    return postRequester('subscribe/subscribe', opts);
                 }
             };
         }

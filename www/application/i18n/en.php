@@ -18,8 +18,12 @@ return array_merge(
         'brandUrl_existed' => 'brand url has already been resisted',
         'check_ok' => 'ok',
         'not_active' => 'user is pending approval',
+        // change password
         'OLD_PASSWORD_ERROR'=> 'old password is not match',
         'CHANGE_PASSWORD_SUCCESS'=> 'password has been changed',
+        // subscribe
+        'MSG_SUBSCRIBE_SUCCESS' => 'YOU HAVE SUBSCRIBED LATEST INFO FROM XSHOWROOM!',
+        'MSG_SUBSCRIBE_ERROR' => 'SUBSCRIBE FAILED!',
     ),
     /**
      * Inbox Message
@@ -731,8 +735,10 @@ return array_merge(
         'order_list__filter_STATUS' => 'STATUS',
         'order_list__filter_ALL' => 'ALL',
 
-        'order_list__NO_TIEM_01' => 'Order has not been found.',
-        'order_list__NO_TIEM_02' => 'Tou can explorer brands to make order.',
+        'order_list__buyer__NO_TIEM_01' => 'Order has not been found.',
+        'order_list__buyer__NO_TIEM_02' => 'You can explorer brands to make order.',
+        'order_list__brand__NO_TIEM_01' => 'Order has not been found.',
+        'order_list__brand__NO_TIEM_02' => 'Please complete your collection and product information.',
 
         'order_list__LIST' => 'ORDER LIST',
         'order_list__STATUS' => 'ORDER STATUS:',

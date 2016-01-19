@@ -73,7 +73,7 @@
 							<li ng-repeat="season in seasons" ng-click="selectSeason(season);">{{season | translate}}</li>
 						</ul>
 					</div>
-            		<div class="collection-cover" ng-repeat="cover in covers[selectedSeason]|limitTo: 18" ng-click="selectCover(cover);">
+            		<div class="collection-cover" ng-repeat="cover in covers[selectedSeason]|limitTo: 36" ng-click="selectCover(cover);">
             			<img ng-src="/{{cover.lookbook}}"/>
             		</div>
             	</div>

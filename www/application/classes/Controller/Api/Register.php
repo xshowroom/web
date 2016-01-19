@@ -3,7 +3,7 @@
 /**
  * @author liyashuai
  */
-class Controller_Api_Register extends Controller
+class Controller_Api_Register extends Controller_Base
 {
 
     const MSG_KEY_1 = 'register_failed';
@@ -13,7 +13,8 @@ class Controller_Api_Register extends Controller
 
     public function before()
     {
-        I18n::lang($_COOKIE['language']);
+        parent::before();
+
         $this->userService = new Business_User();
     }
 

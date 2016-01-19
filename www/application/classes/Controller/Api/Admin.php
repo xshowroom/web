@@ -8,6 +8,7 @@ class Controller_Api_Admin extends Controller_BaseAdmin
     public function before()
     {
         parent::before();
+
         $this->userService = new Business_User();
         $this->buyService = new Business_Buyer();
     }

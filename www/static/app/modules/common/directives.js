@@ -54,7 +54,6 @@ angular.module(
                 $cookies.put('language', language);
                 window.location.reload();
             };
-
         }
     };
 }])
@@ -132,8 +131,8 @@ angular.module(
 }])
 .directive('imageUploader',
     [
-        'uiUploader', '$modal', '$location', '$timeout',
-        function (uiUploader, $modal, $location, $timeout) {
+        'uiUploader', '$modal', '$location', '$timeout', '$filter',
+        function (uiUploader, $modal, $location, $timeout, $filter) {
             return {
                 template: [
                     '<div>',
@@ -170,13 +169,21 @@ angular.module(
                             url: '/api/upload/image',
                             onCompleted: function (file, response) {
                                 if (!$scope.timeout) {
-                                    $modal({title: 'Error Info', content: '上传图片超时，请重新上传！', show: true});
+                                    $modal({
+                                        title: $filter('translate')('modal__title__ERROR'),
+                                        content: $filter('translate')('product_add_image_timeout_error'),
+                                        show: true
+                                    });
                                     $scope.$emit('uploading.end');
                                     return;
                                 }
                                 response = JSON.parse(response);
                                 if (response.status !== 0) {
-                                    $modal({title: 'Error Info', content: '上传图片接口出错，请重新上传，如多次失败请联系我们！', show: true});
+                                    $modal({
+                                        title: $filter('translate')('modal__title__ERROR'),
+                                        content: $filter('translate')('modal__msg__error__SYSTEM_ERROR'),
+                                        show: true
+                                    });
                                     $scope.$emit('uploading.end');
                                     return;
                                 }
@@ -203,13 +210,21 @@ angular.module(
                             return;
                         }
                         if (!/image\/\w+/.test(files[0].type)) {
-                            $modal({title: 'Error Info', content: '上传文件类型必须为图片！', show: true});
+                            $modal({
+                                title: $filter('translate')('modal__title__ERROR'),
+                                content: $filter('translate')('product_add_image_format_error'),
+                                show: true
+                            });
                             self.val('');
                             $scope.$emit('uploading.end');
                             return;
                         }
                         if (files[0].size / 1024 / 1024 > 2) {
-                            $modal({title: 'Error Info', content: '上传文件大于5MB！', show: true});
+                            $modal({
+                                title: $filter('translate')('modal__title__ERROR'),
+                                content: $filter('translate')('directives_js__FILE_SIZE'),
+                                show: true
+                            });
                             self.val('');
                             $scope.$emit('uploading.end');
                             return;
@@ -313,7 +328,7 @@ angular.module(
         link: function ($scope, $element, $attrs, $transclude) {
             Message.getUnReadCount().success(function (res) {
                 if (res.status !== 0) {
-                    $modal({title: 'Error Info', content: '获取未读信息数失败！', show: true});
+                    $modal({title: $filter('translate')('modal__title__ERROR'), content: '获取未读信息数失败！', show: true});
                     return;
                 }
                 $scope.counter = res.data;
@@ -345,6 +360,38 @@ angular.module(
 
             content.find('.back-to-top').on('click', function () {
                 $anchorScroll('top-target');
+            });
+        }
+    };
+}])
+.directive('subscribe', ['User', '$filter', '$modal', function (User, $filter, $modal) {
+    return {
+        transclude: false,
+        restrict: 'C',
+        replace: false,
+        link: function ($scope, $element, $attrs, $transclude) {
+            $element.on('click', '#subscribe-btn', function () {
+                var email = $element.find('#subscribe-email').val();
+                var reg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                if (!email || !reg.test(email)) {
+                    $modal({
+                        title: $filter('translate')('modal__title__ERROR'),
+                        content: $filter('translate')('email_PATTERN_ERROR'),
+                        show: true
+                    });
+                    return;
+                }
+                User.subscribe({
+                    email: email
+                }).success(function (res) {
+                    $modal({
+                        title: typeof res !== 'object' || res.status
+                            ? $filter('translate')('modal__title__ERROR')
+                            : $filter('translate')('modal__title__SUCCESS'),
+                        content: res.msg,
+                        show: true
+                    });
+                });
             });
         }
     };

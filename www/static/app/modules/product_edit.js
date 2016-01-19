@@ -4,7 +4,7 @@
  *
  */
 angular.module(
-    'xShowroom.product.create',
+    'xShowroom.product.edit',
     [
         'xShowroom.i18n', 'xShowroom.directives', 'xShowroom.services',
         'mgcrea.ngStrap', 'ui.uploader', 'ngTextcomplete'

@@ -12,7 +12,8 @@ class Controller_Api_Login extends Controller_Base
 
     public function before()
     {
-        I18n::lang($_COOKIE['language']);
+        parent::before();
+
         $this->userService = new Business_User();
         $this->codeService = new Business_VerifyCode();
     }
