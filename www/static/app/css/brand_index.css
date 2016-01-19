@@ -63,7 +63,7 @@
     word-break: break-word;
 }
 .brand-preview .brand-cover{
-	height: 360px;
+	height: 370px;
 	position: relative;
 }
 .brand-preview .brand-cover > img{
@@ -79,15 +79,15 @@
 	-o-transform: translateY(-50%);
 }
 .brand-preview .collection-cover{
-	height: 95px;
+	height: 68px;
 	border: 1px solid #eee;
     position: relative;
-    margin-bottom: 15px;
-    width: 15%;
+    margin-bottom: 5px;
+    width: 10.1%;
     float: left;
-    margin-right: 2%;
+    margin-right: 1%;
 }
-.brand-preview .collection-cover:nth-child(6n+1){
+.brand-preview .collection-cover:nth-child(9n+1){
 	margin-right: 0;
 }
 .brand-preview .collection-cover > img{
