@@ -558,7 +558,7 @@ return array_merge(
         'brand_filter__NO_COLLECTION_2' => 'CHANGING YOUR SEARCH CONDITIONS TO VIEW MORE COLLECTIONS',
 
         'brand_access__NO_PRIVILEGE_1' => 'YOU DO NOT HAVE ACCESS TO THIS BRAND.',
-        'brand_access__NO_PRIVILEGE_2' => 'APPLY PRIVILEGE TO VIEW ALL HIS COLLECTION.',
+        'brand_access__NO_PRIVILEGE_2' => 'APPLY PRIVILEGE TO VIEW ALL THIS COLLECTION.',
 
         'brand_access__btn_APPLY' => 'APPLY',
 
