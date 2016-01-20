@@ -79,15 +79,15 @@
 	-o-transform: translateY(-50%);
 }
 .brand-preview .collection-cover{
-	height: 70px;
+	height: 90px;
 	border: 1px solid #eee;
     position: relative;
     margin-bottom: 7px;
-    width: 10.1%;
+    width: 13.285%;
     float: left;
     margin-right: 1%;
 }
-.brand-preview .collection-cover:nth-child(9n+1){
+.brand-preview .collection-cover:nth-child(7n+1){
 	margin-right: 0;
 }
 .brand-preview .collection-cover > img{
