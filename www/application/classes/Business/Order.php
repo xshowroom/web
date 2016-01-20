@@ -482,7 +482,7 @@ class Business_Order
         $order = $this->orderModel->getById($orderId);
 
         // 品牌用户拿别人订单报错
-        if ($order['user_id'] != $userId) {
+        if ($order['user_id'] != $userId || $order['order_status'] != Model_Order::ORDER_STATUS_FULLPAYMENT) {
             $errorInfo = Kohana::message('message', 'AUTH_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
@@ -502,7 +502,7 @@ class Business_Order
         $order = $this->orderModel->getById($orderId);
 
         // 品牌用户拿别人订单报错
-        if ($order['user_id'] != $userId) {
+        if ($order['user_id'] != $userId || $order['order_status'] != Model_Order::ORDER_STATUS_PREPARING) {
             $errorInfo = Kohana::message('message', 'AUTH_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
@@ -522,7 +522,7 @@ class Business_Order
         $order = $this->orderModel->getById($orderId);
 
         // 品牌用户拿别人订单报错
-        if ($order['user_id'] != $userId) {
+        if ($order['user_id'] != $userId || $order['order_status'] != Model_Order::ORDER_STATUS_PREPARING) {
             $errorInfo = Kohana::message('message', 'AUTH_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
@@ -601,7 +601,7 @@ class Business_Order
         $order = $this->orderModel->getById($orderId);
 
         // 品牌用户拿别人订单报错
-        if ($order['user_id'] != $userId || $order['status'] != Model_Order::ORDER_STATUS_PENDING) {
+        if ($order['user_id'] != $userId || $order['order_status'] != Model_Order::ORDER_STATUS_PENDING) {
             $errorInfo = Kohana::message('message', 'AUTH_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
