@@ -82,6 +82,7 @@ class Controller_Api_Order extends Controller_BaseReqLogin
     public function action_createOrder()
     {
         $userId = $this->opUser['id'];
+        $userType = $this->opUser['role_type'];
         $collectionId = Request::current()->getParam('collectionId');
         $productionDetail = Request::current()->getParam('productionDetail');
         $comments = Request::current()->getParam('comments');
@@ -90,7 +91,7 @@ class Controller_Api_Order extends Controller_BaseReqLogin
         $paymentType = Request::current()->getParam('paymentType');
         $shopId = Request::current()->getParam('shopId');
 
-        $res = $this->orderService->createOrder($userId, $collectionId, $productionDetail, $comments, $description, $shopId, $address, $paymentType);       
+        $res = $this->orderService->createOrder($userId, $userType, $collectionId, $productionDetail, $comments, $description, $shopId, $address, $paymentType);       
         
         echo json_encode(array(
             'status' => STATUS_SUCCESS,

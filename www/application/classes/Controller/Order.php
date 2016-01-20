@@ -16,7 +16,7 @@ class Controller_Order extends Controller_BaseReqLogin
         $this->buyerService = new Business_Buyer();
         $this->productionService = new Business_Production();
         $this->collectionService = new Business_Collection();
-        $this->orderModel = new Model_Order();
+        $this->orderService = new Business_Order();
     }
 
     
@@ -25,7 +25,7 @@ class Controller_Order extends Controller_BaseReqLogin
         $view = View::factory('order_index');
         $orderId = Request::current()->param('id');
 
-        $orderInfo = $this->orderModel->getById($orderId);
+        $orderInfo = $this->orderService>getOrderById($orderId);
 
         if(empty($orderInfo)) {
             $this->redirect_404();

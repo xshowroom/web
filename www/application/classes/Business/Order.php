@@ -28,10 +28,17 @@ class Business_Order
     public function addToCart($userId, $productionId)
     {
         $production = $this->productionService->getProduction($userId, $productionId);
+        if (empty($production)) {
+            return false;    
+        }
+
         $collectionId = $production['collection_id'];
+        $collection = $this->collectionService->getCollectionInfo($userId, $collectionId);
+        if (empty($collection) || $collection['status'] != Model_Collection::TYPE_OF_ONLINE) {
+            return false;    
+        }
 
         $productInCart = $this->getProductionFromCart($userId, $productionId);
-
         if (!empty($productInCart)) {
             return false;    
         }
@@ -62,8 +69,8 @@ class Business_Order
             if (empty($res[$collectionId])) {
                 $collection = $this->collectionService->getCollectionInfo($userId, $collectionId);
                
-                // 防止collection信息为空
-                if (empty($collection)) {
+                // 防止collection信息为空或者collection未生效
+                if (empty($collection) || $collection['status'] != Model_Collection::TYPE_OF_ONLINE) {
                     continue;
                 }
 
@@ -71,7 +78,8 @@ class Business_Order
 
                 $brand = $this->brandService->getBrandInfo($collection['user_id']);
                 // 防止brand信息为空
-                if (empty($brand)) {
+                if (empty($brand) || $brand['status'] != STATUS_USER_NORMAL) {
+                    unset($res[$collectionId]);
                     continue;
                 }
 
@@ -97,7 +105,7 @@ class Business_Order
     public function getListFromCartByCollection($userId, $collectionId)
     {
         $collection = $this->collectionService->getCollectionInfo($userId, $collectionId);
-        if (empty($collection)) {
+        if (empty($collection) || $collection['status'] != Model_Collection::TYPE_OF_ONLINE) {
             return null;
         }
         $deadline = $collection['deadline'];
@@ -141,8 +149,12 @@ class Business_Order
         return $res;
     }
 
-    public function createOrder($userId, $collectionId, $productionDetail, $comments, $description, $shopId, $address, $paymentType)
+    public function createOrder($userId, $userType, $collectionId, $productionDetail, $comments, $description, $shopId, $address, $paymentType)
     {
+        if ($userType != Model_User::TYPE_USER_BUYER) {
+            $errorInfo = Kohana::message('message', 'STATUS_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
         // 需要从购物车删除的产品id列表
         $productionIds = array();
         // item_amount && total_num
@@ -150,6 +162,10 @@ class Business_Order
         $detail = json_decode($productionDetail, true);
         foreach ($detail as $productionId => $items) {
             $production = $this->productionService->getProduction($userId, $productionId);
+            if (empty($production) || $production['collection_id'] != $collectionId) {
+                $errorInfo = Kohana::message('message', 'STATUS_ERROR');
+                throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+            }
             foreach ($items as $item) {
                 $totalNum = $totalNum + $item['buy_num'];
                 $itemAmount = $itemAmount + $item['buy_num'] * $production['whole_price']; // 批发价
@@ -159,7 +175,12 @@ class Business_Order
 
         $totalAmount = $shippingAmount + $itemAmount;
 
-        $collection = $this->collectionService->getCollectionInfo($userId, $collectionId); 
+        $collection = $this->collectionService->getCollectionInfo($userId, $collectionId);
+
+        if (empty($collection) || $collection['status'] != Model_Collection::TYPE_OF_ONLINE) {
+            $errorInfo = Kohana::message('message', 'STATUS_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        } 
 
         // 客户说暂时禁用最小订单金额
         //        if ($collection['mini_order'] > $itemAmount) {
@@ -174,7 +195,17 @@ class Business_Order
         //$relation = $this->buyerService->getRelation($userId, $collection['user_id']);
         $shop = $this->shopService->getShopById($userId, $shopId);
 
+        if (empty($shop)) {
+            $errorInfo = Kohana::message('message', 'STATUS_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
+
         $user = $this->userModel->getAttrByUserId($userId);
+
+        if (empty($user)) {
+            $errorInfo = Kohana::message('message', 'STATUS_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
 
         $orderId = $this->getOrderId();
 
@@ -504,9 +535,17 @@ class Business_Order
     public function buildOrderDetail($order)
     {
         $brand = $this->brandService->getBrandInfo($order['user_id']);
+        if (empty($brand)) {
+            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
         $order['brand_name'] = $brand['brand_name'];
 
         $collection = $this->collectionService->getCollectionInfo($order['user_id'], $order['collection_id']);
+        if (empty($collection) || $collection['status'] != Model_Collection::TYPE_OF_ONLINE) {
+            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        }
         $order['collection_name'] = $collection['name'];
         $order['collection_mode'] = $collection['mode'];
         $order['currency'] = $collection['currency'];
@@ -516,6 +555,10 @@ class Business_Order
         $productionDetail = json_decode($order['production_detail']);
         foreach ($productionDetail as $productionId => $detail) {
             $production = $this->productionService->getProduction($order['user_id'], $productionId);
+            if (empty($production)) {
+            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+            }
             $productions[$productionId] = array(
                 'styleNum' => $production['style_num'],
                 'name' => $production['name'],
@@ -558,7 +601,7 @@ class Business_Order
         $order = $this->orderModel->getById($orderId);
 
         // 品牌用户拿别人订单报错
-        if ($order['user_id'] != $userId) {
+        if ($order['user_id'] != $userId || $order['status'] != Model_Order::ORDER_STATUS_PENDING) {
             $errorInfo = Kohana::message('message', 'AUTH_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
