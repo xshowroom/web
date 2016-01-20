@@ -161,8 +161,13 @@ class Business_Order
 
         $collection = $this->collectionService->getCollectionInfo($userId, $collectionId); 
 
-        if ($collection['mini_order'] > $itemAmount) { // 要不要加shipAmount
-            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+        // 客户说暂时禁用最小订单金额
+        //        if ($collection['mini_order'] > $itemAmount) {
+        //            $errorInfo = Kohana::message('message', 'AUTH_ERROR');
+        //            throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
+        //        }
+        if ($itemAmount == 0) {
+            $errorInfo = Kohana::message('message', 'STATUS_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
 
