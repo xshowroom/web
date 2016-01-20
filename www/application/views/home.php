@@ -77,7 +77,7 @@
 			    <p>SS16 MUSEUM</p>
 			    <div>
 					<a href="/guide#/retailer" class="btn btn-type-1"><?=__("home__LEARN_MORE")?></a>
-					<a href="<?=URL::site('about#contact-us');?>" class="btn btn-type-2"><?=__("home__CONTRACT_US")?></a>
+					<a href="<?=URL::site('about#contact-us');?>" class="btn btn-type-2"><?=__("home__CONTACT_US")?></a>
 				</div>
 			</div>
 			<div id="banner-content-2" class="nivo-html-caption">
@@ -85,7 +85,7 @@
 			    <p>SS16 MOROCCAN AFFAIR</p>
 			    <div>
 					<a href="/guide#/retailer" class="btn btn-type-1"><?=__("home__LEARN_MORE")?></a>
-					<a href="<?=URL::site('about#contact-us');?>" class="btn btn-type-2"><?=__("home__CONTRACT_US")?></a>
+					<a href="<?=URL::site('about#contact-us');?>" class="btn btn-type-2"><?=__("home__CONTACT_US")?></a>
 				</div>
 			</div>
 			<div id="banner-content-3" class="nivo-html-caption">
@@ -93,7 +93,7 @@
 			    <p>SS16  ONCE THERE WAS</p>
 			    <div>
 					<a href="/guide#/retailer" class="btn btn-type-1"><?=__("home__LEARN_MORE")?></a>
-					<a href="<?=URL::site('about#contact-us');?>" class="btn btn-type-2"><?=__("home__CONTRACT_US")?></a>
+					<a href="<?=URL::site('about#contact-us');?>" class="btn btn-type-2"><?=__("home__CONTACT_US")?></a>
 				</div>
 			</div>
             <div id="banner-content-4" class="nivo-html-caption">
@@ -101,7 +101,7 @@
                 <p>SS16 COLLECTION</p>
                 <div>
                     <a href="/guide#/retailer" class="btn btn-type-1"><?=__("home__LEARN_MORE")?></a>
-                    <a href="<?=URL::site('about#contact-us');?>" class="btn btn-type-2"><?=__("home__CONTRACT_US")?></a>
+                    <a href="<?=URL::site('about#contact-us');?>" class="btn btn-type-2"><?=__("home__CONTACT_US")?></a>
                 </div>
             </div>
 		</div>

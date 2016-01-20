@@ -111,7 +111,7 @@ return array_merge(
      */
     array(
         'home__LEARN_MORE' => '了解更多',
-        'home__CONTRACT_US' => '联系我们',
+        'home__CONTACT_US' => '联系我们',
 
         'home__XSHOWROOM_DESC' => '与我们并肩开创你的商业之旅',
         'home__XSHOWROOM_BUYER_COUNT' => '时尚买手',
@@ -391,7 +391,7 @@ return array_merge(
         'brand_dashboard__COLLECTION_EMPTY_3' => '添加系列',
 
         'brand_dashboard__ACCOUNT_MANAGER' => '在XSHOWROOM 我们拥有专属的品牌客户经理来帮助您介绍品牌, 与您共建商品集合, 并帮助您完成订单！',
-        'brand_dashboard__ACCOUNT_MANAGER_CONTRACT' => '联系我们'
+        'brand_dashboard__ACCOUNT_MANAGER_CONTACT' => '联系我们'
     ),
     /**
      * collection_create.php
@@ -600,7 +600,7 @@ return array_merge(
         'buyer_dashboard__STORE_NO_ABOUT' => '暂无相关介绍',
 
         'buyer_dashboard__ACCOUNT_MANAGER' => '在XSHOWROOM 我们拥有专属的品牌客户经理来帮助您介绍品牌, 与您共建商品集合, 并帮助您完成订单！',
-        'buyer_dashboard__ACCOUNT_MANAGER_CONTRACT' => '联系我们'
+        'buyer_dashboard__ACCOUNT_MANAGER_CONTACT' => '联系我们'
     ),
     /**
      * buyer_cart.php

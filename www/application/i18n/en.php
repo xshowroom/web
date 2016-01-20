@@ -111,7 +111,7 @@ return array_merge(
      */
     array(
         'home__LEARN_MORE' => 'LEARN MORE',
-        'home__CONTRACT_US' => 'CONTACT US',
+        'home__CONTACT_US' => 'CONTACT US',
 
         'home__XSHOWROOM_DESC' => 'FIND YOUR BUSINESS HERE',
         'home__XSHOWROOM_BUYER_COUNT' => 'BUYERS',
@@ -391,7 +391,7 @@ return array_merge(
         'brand_dashboard__COLLECTION_EMPTY_3' => 'ADD COLLECTION',
 
         'brand_dashboard__ACCOUNT_MANAGER' => 'At XSHOWROOM we have Brand Account Manager to help you to introduce the brand, book you in to see the collection, and follow up your order.',
-        'brand_dashboard__ACCOUNT_MANAGER_CONTRACT' => 'CONTRACT US'
+        'brand_dashboard__ACCOUNT_MANAGER_CONTACT' => 'CONTACT US'
     ),
     /**
      * collection_create.php
@@ -600,7 +600,7 @@ return array_merge(
         'buyer_dashboard__STORE_NO_ABOUT' => 'NO INFORMATION',
 
         'buyer_dashboard__ACCOUNT_MANAGER' => 'At XSHOWROOM we have Brand Account Manager to help you to introduce the brand, book you in to see the collection, and follow up your order.',
-        'buyer_dashboard__ACCOUNT_MANAGER_CONTRACT' => 'CONTRACT US'
+        'buyer_dashboard__ACCOUNT_MANAGER_CONTACT' => 'CONTACT US'
     ),
     /**
      * buyer_cart.php
@@ -704,7 +704,7 @@ return array_merge(
         'order_create__INSTRUCTIONS' => 'SOME INSTRUCTIONS',
 
         'order_create__review__TITLE' => 'REVIEW YOUR ORDER',
-        'order_create__review__DESC_01' => 'When you click the "SUBMIT" button, we’ll contract with brand to acknowledging receipt your order.',
+        'order_create__review__DESC_01' => 'When you click the "SUBMIT" button, we’ll contact with brand to acknowledging receipt your order.',
         'order_create__review__DESC_02' => 'Once the order confirmed, we will inform you. Please take an eye on order status updating.',
 
         'order_create__review__PAYMANET_SHIPPING' => 'PAYMENT & SHIPPING',

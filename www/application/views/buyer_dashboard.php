@@ -155,7 +155,7 @@
                 <div class="col-xs-10 col-xs-offset-1">
                     <img src="/static/app/images/account-manager.png" class="account-manager-image">
                     <p><?= __("buyer_dashboard__ACCOUNT_MANAGER"); ?></p>
-                    <a class="btn btn-type-2" href="/about#contact-us"><?= __("buyer_dashboard__ACCOUNT_MANAGER_CONTRACT"); ?></a>
+                    <a class="btn btn-type-2" href="/about#contact-us"><?= __("buyer_dashboard__ACCOUNT_MANAGER_CONTACT"); ?></a>
                 </div>
             </div>
         </div>

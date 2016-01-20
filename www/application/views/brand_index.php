@@ -50,7 +50,6 @@
 	            		<a target="_blank" href="<?=$brandAttr['company_web_url']?>"><?=$brandAttr['company_web_url']?></a>
 	            	</div>
 		            <div class="brand-info"  ng-init="showAll = false;">
-				        <!-- <span<?//=__("brand_info__DESCRIPTION");?></span>-->
 			            <p ng-class="{'show-all-desc':showAll,'hide-desc':!showAll}" ng-bind="'<?=$brandInfo['description']?>'"></p>
 			            <div class="text-right" ng-show="'<?=$brandInfo['description']?>'.length">
 				            <a ng-show="!showAll" ng-click="showAll=true;"><?= __("brand_info__SHOW_ALL"); ?></a>
@@ -63,7 +62,7 @@
             			<img ng-src="/{{selectedCover.lookbook}}"/>
             		</div>
             	</div>
-            	<div class="col-xs-5"  ng-if="seasons.length">
+            	<div class="col-xs-5"  ng-if="seasons.length"  ng-init="showLookbookAll = false;">
             		<div class="dropdown season-filter">
 						<span type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						 	<span>{{selectedSeason | translate}}</span>
@@ -73,9 +72,14 @@
 							<li ng-repeat="season in seasons" ng-click="selectSeason(season);">{{season | translate}}</li>
 						</ul>
 					</div>
-            		<div class="collection-cover" ng-repeat="cover in covers[selectedSeason]|limitTo: 36" ng-click="selectCover(cover);">
+            		<div class="collection-cover"  ng-repeat="cover in covers[selectedSeason]|limitTo: showLookbookAll? 96 : 21" ng-click="selectCover(cover);">
             			<img ng-src="/{{cover.lookbook}}"/>
             		</div>
+		            <div class="clearfix"></div>
+		            <div class="text-right" ng-show="covers[selectedSeason].length > 21">
+			            <a ng-show="!showLookbookAll" ng-click="showLookbookAll=true;"><?= __("brand_info__SHOW_ALL"); ?></a>
+			            <a ng-show="showLookbookAll"  ng-click="showLookbookAll=false;"><?= __("brand_info__HIDE"); ?></a>
+		            </div>
             	</div>
             </div>
         </div>
