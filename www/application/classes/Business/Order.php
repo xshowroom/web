@@ -78,7 +78,7 @@ class Business_Order
 
                 $brand = $this->brandService->getBrandInfo($collection['user_id']);
                 // 防止brand信息为空
-                if (empty($brand) || $brand['status'] != STATUS_USER_NORMAL) {
+                if (empty($brand) || $brand['status'] != Model_User::STATUS_USER_NORMAL) {
                     unset($res[$collectionId]);
                     continue;
                 }

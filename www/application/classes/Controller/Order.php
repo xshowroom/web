@@ -25,7 +25,7 @@ class Controller_Order extends Controller_BaseReqLogin
         $view = View::factory('order_index');
         $orderId = Request::current()->param('id');
 
-        $orderInfo = $this->orderService>getOrderById($orderId);
+        $orderInfo = $this->orderService->getOrderById($orderId);
 
         if(empty($orderInfo)) {
             $this->redirect_404();
