@@ -57,7 +57,7 @@
 					<div>info@projectcrossover.com</div>
 				</div>
 				<div class="col-xs-4 col-xs-offset-2 contact-office">
-					<h4><?=__("about__CONTACT_US");?></h4>
+					<h4><?=__("about__CONTACT__SHANGHAI");?></h4>
 					<div><?=__("about__CONTACT__TEL_01");?>:  +86 21 6236 3226<br/><?=__("about__CONTACT__TEL_02");?>:  +86 135 244 09274</div>
 					<div><?=__("about__CONTACT__ADDRESS2_01");?><br/><?=__("about__CONTACT__ADDRESS2_02");?><br/><?=__("about__CONTACT__ADDRESS2_03");?></div>
 					<div><?=__("about__CONTACT__PEOPLE_02");?><br/><?=__("about__CONTACT__PEOPLE_POSITION_02");?></div>
