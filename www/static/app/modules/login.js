@@ -32,7 +32,7 @@ angular.module(
             $scope.login = function () {
                 var login = User.login($scope.user);
 
-                var emailReg = /^([a-zA-Z0-9])+([a-zA-Z0-9_-])*@([a-zA-Z0-9_-])+\.([a-zA-Z0-9_-])+/;
+                var emailReg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 if (!emailReg.test($scope.user.email)) {
                     $scope.loginError = {
                         hasError: true,
