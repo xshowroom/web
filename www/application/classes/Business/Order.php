@@ -542,7 +542,7 @@ class Business_Order
         $order['brand_name'] = $brand['brand_name'];
 
         $collection = $this->collectionService->getCollectionInfo($order['user_id'], $order['collection_id']);
-        if (empty($collection) || $collection['status'] != Model_Collection::TYPE_OF_ONLINE) {
+        if (empty($collection)) {
             $errorInfo = Kohana::message('message', 'AUTH_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
