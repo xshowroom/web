@@ -475,7 +475,7 @@ angular.module('xShowroom.dictionary', [])
          * filters in service
          */
         filter_head__ALL_BRAND: 'ALL BRAND',
-        filter_head_MY_BRAND: 'MY BRAND',
+        filter_head__MY_BRAND: 'MY BRAND',
         filter_head__FILTERED_BRAND: 'FILTERED BRAND',
         filter_head__SEARCH_BRAND: 'SEARCH BRAND',
 
