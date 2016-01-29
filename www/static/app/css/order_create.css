@@ -60,6 +60,7 @@
 	-webkit-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
 	-o-transform: translateY(-50%);
+	max-width: 85%;
 }
 .cart-details .cart-product-list .cart-product-item .product-info{
 	width: 50%;
