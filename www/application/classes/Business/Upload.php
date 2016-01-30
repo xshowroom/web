@@ -132,25 +132,30 @@ class Business_Upload
     public function createResizeImage($imagePath, $resizeTerm)
     {
         $fileSize = filesize($imagePath);
+        $smallImagePath = $imagePath;
 
-        // 裁图，目标50K一个图
+        // 裁图，目标200K一个图
         if($fileSize > 1 * 1024 * 1024) {
-            $resizeImagePath = $this->resize($imagePath, 0.05, $resizeTerm);
-            Business_Upload::deleteFile($imagePath);
-            $imagePath = $resizeImagePath;
-        } elseif ($fileSize > 0.5 * 1024 * 1024)  {
-            $resizeImagePath = $this->resize($imagePath, 0.1, $resizeTerm);
-            Business_Upload::deleteFile($imagePath);
-            $imagePath = $resizeImagePath;
-        } elseif ($fileSize > 0.3 * 1024 * 1024)  {
             $resizeImagePath = $this->resize($imagePath, 0.2, $resizeTerm);
-            Business_Upload::deleteFile($imagePath);
-            $imagePath = $resizeImagePath;
+            $smallImagePath = $resizeImagePath;
+        } elseif ($fileSize > 0.5 * 1024 * 1024)  {
+            $resizeImagePath = $this->resize($imagePath, 0.5, $resizeTerm);
+            $smallImagePath = $resizeImagePath;
+        } elseif ($fileSize > 0.3 * 1024 * 1024)  {
+            $resizeImagePath = $this->resize($imagePath, 0.7, $resizeTerm);
+            $smallImagePath = $resizeImagePath;
         }
 
         $extension = substr(strrchr($imagePath, '.'), 1);
-        $realPathFile  = 'data/' . date('ymdHis'). substr(microtime(),2,4). '_'  .$resizeTerm. '.' . $extension;
+
+        $realPathFilename = 'data/' . date('ymdHis'). substr(microtime(),2,4);
+        $realPathFile  = $realPathFilename. '_'  .$resizeTerm. '.' . $extension;
+        $realPathSmallFile  = $realPathFilename. '_'  .$resizeTerm. '_small' . '.' . $extension;
+
         copy($imagePath, $realPathFile);
+        copy($smallImagePath, $realPathSmallFile);
+//        Business_Upload::deleteFile($imagePath);
+//        Business_Upload::deleteFile($smallImagePath);
 
         return $realPathFile;
     }
