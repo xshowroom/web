@@ -371,7 +371,10 @@ angular.module( 'xShowroom.dictionary', [])
         dropdown__COLLECTION_SEASON__SS_15: '15春夏',
         dropdown__COLLECTION_SEASON__AW_15: '15秋冬',
         dropdown__COLLECTION_SEASON__PRE_SS16: '16早春',
+        dropdown__COLLECTION_SEASON__SPRING_16: '16春',
+        dropdown__COLLECTION_SEASON__SUMMER_16: '16夏',
         dropdown__COLLECTION_SEASON__SS_16: '16春夏',
+        dropdown__COLLECTION_SEASON__PRE_AW_16: '16早秋',
         dropdown__COLLECTION_SEASON__AW_16: '16秋冬',
 
         // Product Category Filter

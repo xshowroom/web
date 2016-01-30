@@ -62,10 +62,16 @@
                             <label for="season" class="col-xs-4 control-label"><?= __("collection_create__COLLECTION_SEASON"); ?></label>
                             <div class="col-xs-8">
                                   <select class="form-control" id="season" ng-model="collection.season">
-                                      <option value="dropdown__COLLECTION_SEASON__AW_15">{{ 'dropdown__COLLECTION_SEASON__AW_15' | translate}}</option>
-                                      <option value="dropdown__COLLECTION_SEASON__PRE_SS16">{{ 'dropdown__COLLECTION_SEASON__PRE_SS16' | translate}}</option>
-                                      <option value="dropdown__COLLECTION_SEASON__SS_16">{{ 'dropdown__COLLECTION_SEASON__SS_16' | translate}}</option>
                                       <option value="dropdown__COLLECTION_SEASON__AW_16">{{ 'dropdown__COLLECTION_SEASON__AW_16' | translate}}</option>
+                                      <option value="dropdown__COLLECTION_SEASON__PRE_AW_16">{{ 'dropdown__COLLECTION_SEASON__PRE_AW_16' | translate}}</option>
+                                      <option value="dropdown__COLLECTION_SEASON__SS_16">{{ 'dropdown__COLLECTION_SEASON__SS_16' | translate}}</option>
+                                      <option value="dropdown__COLLECTION_SEASON__SUMMER_16">{{ 'dropdown__COLLECTION_SEASON__SUMMER_16' | translate}}</option>
+                                      <option value="dropdown__COLLECTION_SEASON__SPRING_16">{{ 'dropdown__COLLECTION_SEASON__SPRING_16' | translate}}</option>
+                                      <option value="dropdown__COLLECTION_SEASON__PRE_SS16">{{ 'dropdown__COLLECTION_SEASON__PRE_SS16' | translate}}</option>
+                                      <option value="dropdown__COLLECTION_SEASON__AW_15">{{ 'dropdown__COLLECTION_SEASON__AW_15' | translate}}</option>
+                                      <option value="dropdown__COLLECTION_SEASON__SS_15">{{ 'dropdown__COLLECTION_SEASON__SS_15' | translate}}</option>
+                                      <option value="dropdown__COLLECTION_SEASON__PRE_SS_15">{{ 'dropdown__COLLECTION_SEASON__PRE_SS_15' | translate}}</option>
+                                      <option value="dropdown__COLLECTION_SEASON__AW_14">{{ 'dropdown__COLLECTION_SEASON__AW_14' | translate}}</option>
                                   </select>
                             </div>
                         </div>
