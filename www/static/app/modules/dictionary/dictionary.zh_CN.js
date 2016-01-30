@@ -478,7 +478,7 @@ angular.module( 'xShowroom.dictionary', [])
          * filters in service
          */
         filter_head__ALL_BRAND: '所有品牌',
-        filter_head_MY_BRAND: 'MY BRAND',
+        filter_head__MY_BRAND: 'MY BRAND',
         filter_head__FILTERED_BRAND: '筛选品牌',
         filter_head__SEARCH_BRAND: '搜索品牌',
 
