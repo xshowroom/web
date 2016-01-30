@@ -21,6 +21,7 @@ angular.module('xShowroom.dictionary', [])
          */
         modal__title__ERROR: 'ERROR INFO',
         modal__msg__error__SYSTEM_ERROR: 'System Error',
+        modal__msg__warn__ORDER_NOT_ENOUGH: 'Your order has not met minimum order. Please press CANCEL to back to the order. Press OK to still submit and your order could be rejected',
         modal__msg__error__ORDER_NOT_ENOUGH: 'Not reach the minimum order, please select more products!',
         modal__msg__error__ORDER_NOT_SELECT_SHIP_ADDRESS: 'Please select ship address for this order!',
         modal__msg__error__ORDER_NOT_SELECT_PAYMENT_METHOD: 'Please select payment method for this order!',
