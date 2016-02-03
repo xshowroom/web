@@ -266,6 +266,7 @@
 	left: 15px;
 	right: 15px;
 	top:50%;
+	max-width: 85%;
 	z-index: 0;
 	transform: translateY(-50%);
 	-webkit-transform: translateY(-50%);

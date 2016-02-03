@@ -21,6 +21,7 @@ angular.module('xShowroom.dictionary', [])
          */
         modal__title__ERROR: 'ERROR INFO',
         modal__msg__error__SYSTEM_ERROR: 'System Error',
+        modal__msg__warn__ORDER_NOT_ENOUGH: 'Your order has not met minimum order. Please press CANCEL to back to the order. Press OK to still submit and your order could be rejected',
         modal__msg__error__ORDER_NOT_ENOUGH: 'Not reach the minimum order, please select more products!',
         modal__msg__error__ORDER_NOT_SELECT_SHIP_ADDRESS: 'Please select ship address for this order!',
         modal__msg__error__ORDER_NOT_SELECT_PAYMENT_METHOD: 'Please select payment method for this order!',
@@ -371,7 +372,10 @@ angular.module('xShowroom.dictionary', [])
         dropdown__COLLECTION_SEASON__SS_15: 'SS15',
         dropdown__COLLECTION_SEASON__AW_15: 'AW15',
         dropdown__COLLECTION_SEASON__PRE_SS16: 'PRE-SS16',
+        dropdown__COLLECTION_SEASON__SPRING_16: 'SPRING 16',
+        dropdown__COLLECTION_SEASON__SUMMER_16: 'SUMMER 16',
         dropdown__COLLECTION_SEASON__SS_16: 'SS16',
+        dropdown__COLLECTION_SEASON__PRE_AW_16: 'PRE-AW16',
         dropdown__COLLECTION_SEASON__AW_16: 'AW16',
 
         // Product Category Filter

@@ -21,6 +21,7 @@ angular.module( 'xShowroom.dictionary', [])
         */
         modal__title__ERROR: '错误信息',
         modal__msg__error__SYSTEM_ERROR: '系统错误',
+        modal__msg__warn__ORDER_NOT_ENOUGH: '您的订单没有满足最小起订金额，请按“取消”继续选购，按“确认”将提交订单，但是您的订单可能被拒绝',
         modal__msg__error__ORDER_NOT_ENOUGH: '该订单尚未满足最小金额，请增加购买数量，谢谢！',
         modal__msg__error__ORDER_NOT_SELECT_SHIP_ADDRESS: '该订单尚未选择送货地址，请选择，谢谢！',
         modal__msg__error__ORDER_NOT_SELECT_PAYMENT_METHOD: '该订单尚未选择支付方式，请选择，谢谢！',
@@ -371,7 +372,10 @@ angular.module( 'xShowroom.dictionary', [])
         dropdown__COLLECTION_SEASON__SS_15: '15春夏',
         dropdown__COLLECTION_SEASON__AW_15: '15秋冬',
         dropdown__COLLECTION_SEASON__PRE_SS16: '16早春',
+        dropdown__COLLECTION_SEASON__SPRING_16: '16春',
+        dropdown__COLLECTION_SEASON__SUMMER_16: '16夏',
         dropdown__COLLECTION_SEASON__SS_16: '16春夏',
+        dropdown__COLLECTION_SEASON__PRE_AW_16: '16早秋',
         dropdown__COLLECTION_SEASON__AW_16: '16秋冬',
 
         // Product Category Filter

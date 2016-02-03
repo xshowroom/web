@@ -228,10 +228,11 @@ angular.module(
                 seasonInLookbook: {
                     type: 'checkbox',
                     values: [
-                        'dropdown__COLLECTION_SEASON__AW_14', 'dropdown__COLLECTION_SEASON__PRE_SS_15',
-                        'dropdown__COLLECTION_SEASON__SS_15', 'dropdown__COLLECTION_SEASON__AW_15',
-                        'dropdown__COLLECTION_SEASON__PRE_SS16', 'dropdown__COLLECTION_SEASON__SS_16'
-                        // 'dropdown__COLLECTION_SEASON__AW_16'
+                        'dropdown__COLLECTION_SEASON__AW_16', 'dropdown__COLLECTION_SEASON__PRE_AW_16',
+                        'dropdown__COLLECTION_SEASON__SS_16', 'dropdown__COLLECTION_SEASON__SUMMER_16',
+                        'dropdown__COLLECTION_SEASON__SPRING_16', 'dropdown__COLLECTION_SEASON__PRE_SS16',
+                        'dropdown__COLLECTION_SEASON__AW_15', 'dropdown__COLLECTION_SEASON__SS_15',
+                        'dropdown__COLLECTION_SEASON__PRE_SS_15', 'dropdown__COLLECTION_SEASON__AW_14'
                     ]
                 },
                 available: {

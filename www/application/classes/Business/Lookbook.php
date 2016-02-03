@@ -50,7 +50,14 @@ class Business_Lookbook
 
         if ($lookbookItem)
         {
-            Business_Upload::deleteFile($lookbookItem['lookbook']);
+            $lookbookFilePath = $lookbookItem['lookbook'];
+            $arr = explode('.', $lookbookFilePath);
+            $extension = $arr[1];
+            $lookbookSmallFilePath = $arr[0] . '_small'.'.'.$extension;
+
+            Business_Upload::deleteFile($lookbookSmallFilePath);
+            Business_Upload::deleteFile($lookbookFilePath);
+
             $this->lookbookModel->deleteLookbook($userId, $lookbookId);
         }
     }

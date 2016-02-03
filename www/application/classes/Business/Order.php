@@ -482,7 +482,7 @@ class Business_Order
         $order = $this->orderModel->getById($orderId);
 
         // 品牌用户拿别人订单报错
-        if ($order['user_id'] != $userId || $order['order_status'] != Model_Order::ORDER_STATUS_FULLPAYMENT) {
+        if ($order['user_id'] != $userId) {
             $errorInfo = Kohana::message('message', 'AUTH_ERROR');
             throw new Kohana_Exception($errorInfo['msg'], null, $errorInfo['code']);
         }
