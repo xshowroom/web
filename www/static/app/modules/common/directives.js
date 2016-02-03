@@ -141,7 +141,7 @@ angular.module(
                             '<span>{{"directives_js__UPLOAD" | translate}}</span>',
                             '<span ng-if="title">{{title}}</span>',
                             '<span>({{"directives_js__FILE_SIZE" | translate}})</span>',
-                            '<input id="{{imageId}}" type="file">',
+                            '<input id="{{imageId}}" multiple="multiple" type="file">',
                         '</label>',
                     '</div>'
                 ].join(''),
@@ -153,17 +153,26 @@ angular.module(
                     targetModel: '=',
                     renderImage: '@',
                     afterUploading: '&',
-                    imageOnlineUrl: '='
+                    imageOnlineUrl: '=',
+                    multiple: '@'
                 },
                 controller: function ($scope, $element, $attrs, $transclude) {
                     $scope.imageId = [
                         new Date().getTime(),
                         Math.round(Math.random() * 1000)
                     ].join('');
-
+                    
+                    if (!$scope.multiple) {
+                    	$($element).one('click', '#' + $scope.imageId, function(){
+                    		$(this).removeAttr('multiple');
+                    	});
+                    }
+                    
                     $scope.timeout = null;
+                    
                     var uploadFile = function (files) {
                         uiUploader.removeAll();
+                        uiUploader.counter = files.length;
                         uiUploader.addFiles(files);
                         uiUploader.startUpload({
                             url: '/api/upload/image',
@@ -195,9 +204,13 @@ angular.module(
                                     $scope.$apply();
                                 }
                                 $scope.afterUploading({url: response.data});
-                                $scope.$emit('uploading.end');
-                                $timeout.cancel($scope.timeout);
-                                $scope.timeout = null;
+                                uiUploader.counter -= 1;
+                                
+                                if (uiUploader.counter == 0) {
+                                	$scope.$emit('uploading.end');
+                                    $timeout.cancel($scope.timeout);
+                                    $scope.timeout = null;
+                                }
                             }
                         });
                     };
@@ -209,25 +222,27 @@ angular.module(
                         if (!files.length) {
                             return;
                         }
-                        if (!/image\/\w+/.test(files[0].type)) {
-                            $modal({
-                                title: $filter('translate')('modal__title__ERROR'),
-                                content: $filter('translate')('product_add_image_format_error'),
-                                show: true
-                            });
-                            self.val('');
-                            $scope.$emit('uploading.end');
-                            return;
-                        }
-                        if (files[0].size / 1024 / 1024 > 2) {
-                            $modal({
-                                title: $filter('translate')('modal__title__ERROR'),
-                                content: $filter('translate')('directives_js__FILE_SIZE'),
-                                show: true
-                            });
-                            self.val('');
-                            $scope.$emit('uploading.end');
-                            return;
+                        for (var i = 0, len = files.length; i < len; i++) {
+                        	if (!/image\/\w+/.test(files[i].type)) {
+                                $modal({
+                                    title: $filter('translate')('modal__title__ERROR'),
+                                    content: $filter('translate')('product_add_image_format_error'),
+                                    show: true
+                                });
+                                self.val('');
+                                $scope.$emit('uploading.end');
+                                return;
+                            }
+                            if (files[i].size / 1024 / 1024 > 2) {
+                                $modal({
+                                    title: $filter('translate')('modal__title__ERROR'),
+                                    content: $filter('translate')('directives_js__FILE_SIZE'),
+                                    show: true
+                                });
+                                self.val('');
+                                $scope.$emit('uploading.end');
+                                return;
+                            }
                         }
                         $scope.timeout = $timeout(function () {
                             $scope.timeout = null;
