@@ -12,8 +12,8 @@ angular.module(
 .controller(
     'OrderCreateCtrl',
     [
-        '$scope', '$modal', '$window', '$filter', 'Cart', 'Order', 'Collection', 'Buyer',
-        function ($scope, $modal, $window, $filter, Cart, Order, Collection, Buyer) {
+        '$scope', '$modal', '$window', '$filter', '$q', 'Cart', 'Order', 'Collection', 'Buyer',
+        function ($scope, $modal, $window, $filter, $q, Cart, Order, Collection, Buyer) {
             $scope.removeProductFromCart  = function (product) {
                 Cart.removeProduct({
                     productionId: product.id
@@ -93,13 +93,17 @@ angular.module(
             $scope.checkout = function () {
                 // 客户说暂时不检查最小起订金额了
                 if ($scope.getRestAmount() > 0) {
-                    if(!window.confirm($filter('translate')('modal__msg__warn__ORDER_NOT_ENOUGH'))) {
+                    if (!window.confirm($filter('translate')('modal__msg__warn__ORDER_NOT_ENOUGH'))) {
                         return;
                     }
                 }
 
-                if ($scope.getTotalAmount() == 0) {
-                    $modal({title: $filter('translate')('modal__title__ERROR'), content: $filter('translate')('modal__msg__error__ORDER_NOT_ENOUGH'), show: true});
+                if ($scope.getTotalAmount() === 0) {
+                    $modal({
+                        title: $filter('translate')('modal__title__ERROR'),
+                        content: $filter('translate')('modal__msg__error__ORDER_NOT_ENOUGH'),
+                        show: true
+                    });
                 }
                 else {
                     var orderItems = [];
@@ -127,18 +131,37 @@ angular.module(
                         }
                     }
                     $scope.orderItems = orderItems;
-                    if ($scope.stores) {
+                    if ($scope.authStores) {
                         $scope.generateOrderStep += 1;
                         return;
                     }
-                    Buyer.getAuthedShopList({
-                        collectionId: $scope.collectionId
-                    }).success(function (res) {
-                        if (typeof res !== 'object' || res.status) {
-                            $modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
-                            return;
+                    $q.all([
+                        Buyer.getStoreList(),
+                        Buyer.getAuthedShopList({
+                            collectionId: $scope.collectionId
+                        })
+                    ]).then(function (res) {
+                        for (var i = 0; i < 2; i++) {
+                            if (typeof res[i].data !== 'object' || res[i].data.status) {
+                                $modal({
+                                    title: $filter('translate')('modal__title__ERROR'),
+                                    content: res[i].data.msg,
+                                    show: true
+                                });
+                                return;
+                            }
                         }
-                        $scope.stores = res.data;
+                        $scope.authStores = res[1].data.data;
+
+                        $scope.selectedStores = [];
+                        $scope.stores = [];
+
+                        while (res[0].data.data.length) {
+                            var store = res[0].data.data.shift();
+                            if (!$filter('filter')($scope.authStores, {id: store.id}).length) {
+                                $scope.stores.push(store);
+                            }
+                        }
                         $scope.generateOrderStep += 1;
                     });
                 }
@@ -200,6 +223,34 @@ angular.module(
                     }
                     $window.open('/order/list', '_self');
                 });
+            };
+
+            $scope.selectStore = function (store) {
+                var index = $scope.selectedStores.indexOf(store);
+                if (index >= 0) {
+                    $scope.selectedStores.splice(index, 1);
+                }
+                else {
+                    $scope.selectedStores.push(store);
+                }
+            };
+
+            $scope.applyAuth = function () {
+                var storeIds = [];
+                for (var i = 0, len = $scope.selectedStores.length; i < len; i++) {
+                    storeIds.push($scope.selectedStores[i].id);
+                }
+                Buyer.applyAuth({
+                    shopIdList: storeIds.join(','),
+                    brandId: $scope.brandId
+                }).success(function (res) {
+                    if (typeof res !== 'object' || res.status) {
+                        $modal({title: $filter('translate')('modal__title__ERROR'), content: res.msg, show: true});
+                        return;
+                    }
+                    $modal({title: $filter('translate')('modal__title__SUCCESS'), content: '请等待admin审批！', show: true});
+                });
+                $('#auth-store-modal').modal('hide');
             };
 
             var init = function () {

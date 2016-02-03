@@ -161,15 +161,15 @@ angular.module(
                         new Date().getTime(),
                         Math.round(Math.random() * 1000)
                     ].join('');
-                    
+
                     if (!$scope.multiple) {
-                    	$($element).one('click', '#' + $scope.imageId, function(){
-                    		$(this).removeAttr('multiple');
-                    	});
+                        $($element).one('click', '#' + $scope.imageId, function () {
+                            $(this).removeAttr('multiple');
+                        });
                     }
-                    
+
                     $scope.timeout = null;
-                    
+
                     var uploadFile = function (files) {
                         uiUploader.removeAll();
                         uiUploader.counter = files.length;
@@ -205,9 +205,9 @@ angular.module(
                                 }
                                 $scope.afterUploading({url: response.data});
                                 uiUploader.counter -= 1;
-                                
-                                if (uiUploader.counter == 0) {
-                                	$scope.$emit('uploading.end');
+
+                                if (uiUploader.counter === 0) {
+                                    $scope.$emit('uploading.end');
                                     $timeout.cancel($scope.timeout);
                                     $scope.timeout = null;
                                 }
@@ -223,7 +223,7 @@ angular.module(
                             return;
                         }
                         for (var i = 0, len = files.length; i < len; i++) {
-                        	if (!/image\/\w+/.test(files[i].type)) {
+                            if (!/image\/\w+/.test(files[i].type)) {
                                 $modal({
                                     title: $filter('translate')('modal__title__ERROR'),
                                     content: $filter('translate')('product_add_image_format_error'),
