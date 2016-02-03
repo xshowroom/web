@@ -234,7 +234,7 @@ class Business_User
     {
         $this->userModel->updateUserStatus($userId, Model_User::STATUS_USER_REJECTED);
         $this->userModel->updateUserAttrStatus($userId, Model_User::STATUS_USER_REJECTED);
-        $this->brandModel->updateBrandStatus($userId, Model_User::STATUS_USER_NORMAL);
+        $this->brandModel->updateBrandStatus($userId, Model_User::STATUS_USER_REJECTED);
 
         return true;
     }
