@@ -47,7 +47,8 @@ class Controller_User extends Controller_BaseReqLogin
 
         $view = View::factory('user_profile');
         $view->set('user', $this->opUser);
-        $view->set('userAttr', $this->opUser['userAttr']);
+
+        $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
 
         if($roleType === Model_User::TYPE_USER_BRAND){
             $view->set('brandInfo', $this->brandService->getBrandInfo($this->opUser['id']));
