@@ -120,7 +120,7 @@ angular.module(
                         shopCountry: res.data.country,
                         shopZipcode: res.data.zip,
                         shopTel: res.data.telephone,
-                        shopImage: (res.data.image ? JSON.parse(res.data.image) : []),
+                        shopImage: (res.data.image && res.data.image != 'null' ? JSON.parse(res.data.image) : []),
                         shopAbout: res.data.about,
                         shopShipAddress: res.data.ship_address
                     };
