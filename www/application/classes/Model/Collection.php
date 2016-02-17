@@ -31,7 +31,6 @@ class Model_Collection
         $result = DB::select()
                     ->from('collection')
                     ->where('id', '=', $collectionId)
-                    ->where('status', '!=', self::TYPE_OF_DELETE)
                     ->execute()
                     ->as_array();
         
