@@ -502,6 +502,7 @@ angular.module('xShowroom.dictionary', [])
         order_status__3: 'PREPARING',
         order_status__4: 'BALANCE PAYMENT',
         order_status__5: 'SHIPPED',
-        order_status__6: 'COMPLETE'
+        order_status__6: 'COMPLETE',
+        order_status__7: 'FULL PAYMENT'
     }
 );
