@@ -50,7 +50,7 @@
 	            		<a target="_blank" href="<?=$brandAttr['company_web_url']?>"><?=$brandAttr['company_web_url']?></a>
 	            	</div>
 		            <div class="brand-info"  ng-init="showAll = false;">
-			            <p ng-class="{'show-all-desc':showAll,'hide-desc':!showAll}" ng-bind="'<?=addSlashes($brandInfo['description'])?>'"></p>
+			            <p ng-class="{'show-all-desc':showAll,'hide-desc':!showAll}">{{'<?=addSlashes($brandInfo['description'])?>'}}</p>
 			            <div class="text-right" ng-show="'<?=$brandInfo['description']?>'.length">
 				            <a ng-show="!showAll" ng-click="showAll=true;"><?= __("brand_info__SHOW_ALL"); ?></a>
 				            <a ng-show="showAll"  ng-click="showAll=false;"><?= __("brand_info__HIDE"); ?></a>
