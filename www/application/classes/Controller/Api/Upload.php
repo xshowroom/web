@@ -31,6 +31,11 @@ class Controller_Api_Upload extends Controller_Base
 
     public function action_resize() {
         $res = $this->uploadService->resizeImages();
+
+        echo json_encode(array(
+            'status' => STATUS_SUCCESS,
+            'data'   => $res,
+        ));
     }
 
     public function action_pdf()
