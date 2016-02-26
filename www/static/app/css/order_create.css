@@ -13,6 +13,10 @@
 	margin-top: 15px;
 	margin-bottom: 15px;
 }
+.cart-details .cart-details-header a{
+	margin-top: 15px;
+	float: right;
+}
 .cart-details .cart-product-list {
     border: 1px solid #ccc;
     margin: 15px 0;

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="xShowroom.order.create"
-	ng-init="collectionId=<?=$collection['id']?>; minOrder=<?=$collection['mini_order']?>;">
+	ng-init="collectionId=<?=$collection['id']?>; minOrder=<?=$collection['mini_order']?>;brandId=<?=$collection['brand_id']?>;">
 <head>
 	<meta charset="UTF-8">
 	<title><?=SITE_TITLE_PROFIX?> </title>
@@ -122,9 +122,10 @@
 				<div class="col-xs-8 cart-details">
 					<div class="cart-details-header">
 						<h2 class="cart-details-title"><?=__("order_create__SHIPPING_ADDRESS");?></h2>
+						<a ng-if="stores.length" data-toggle="modal" data-target="#auth-store-modal">申请新店铺</a>
 					</div>
 					<div class="shipping-address">
-						<div class="address-card" ng-repeat="store in stores">
+						<div class="address-card" ng-repeat="store in authStores">
 							<h4>
 								 <label><input type="radio" name="address" ng-value="store" ng-model="order.store" checked>{{store.name}}</label>
 							</h4>
@@ -248,5 +249,28 @@
 	<footer class="row footer-navigation">
         <?php echo View::factory('common/global_navigation_footer'); ?>
 	</footer>
+	
+	<div class="modal fade" id="auth-store-modal" tabindex="-1" role="dialog" aria-labelledby="auth-store-modal">
+	  	<div class="modal-dialog" role="document">
+		    <div class="modal-content">
+	      		<div class="modal-body">
+		       		<h4><?=__('brand_store_application__TITLE')?></h4>
+		       		<p><?=__('brand_store_application__BODY')?></p>
+		       		<div>
+		       			<div class="checkbox" ng-repeat="store in stores track by $index">
+							<label>
+								<input type="checkbox" name="authStore" ng-value="store" ng-click="selectStore(store)">
+								<span>{{store.name}}</span>
+							</label>
+						</div>
+		       		</div>
+		       		<div>
+						<button class="btn btn-type-1" ng-click="applyAuth()"><?=__('brand_store_application__btn_APPLY')?></button>
+		       			<button class="btn btn-type-1" data-dismiss="modal"><?=__('brand_store_application__btn_CANCEL')?></button>
+		       		</div>
+	      		</div>
+	    	</div>
+		</div>
+    </div>
 </body>
 </html>

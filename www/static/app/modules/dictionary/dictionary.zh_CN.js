@@ -502,6 +502,7 @@ angular.module( 'xShowroom.dictionary', [])
         order_status__3: '备货中',
         order_status__4: '待付尾款',
         order_status__5: '已付尾款/发货',
-        order_status__6: '订单完成'
+        order_status__6: '订单完成',
+        order_status__7: '支付全款'
     }
 );

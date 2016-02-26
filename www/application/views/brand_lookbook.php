@@ -27,7 +27,7 @@
 							<a class="btn btn-type-1" ng-click="removePhoto(photo)"><i class="fa fa-trash"></i></a>
 						</div>
 					</div>
-					<div class="product-image image-uploader"
+					<div class="product-image image-uploader" data-multiple="multiple"
                     	data-render-image='0' data-after-uploading="addPhoto(url, season);">
                     </div>
 				</div>
