@@ -20,9 +20,38 @@ class Business_Lookbook
      */
     public function getLookbookList($userId)
     {
-        $msgList = $this->lookbookModel->getAllLookbookByUser($userId);
+        $lookbookList = $this->lookbookModel->getAllLookbookByUser($userId);
 
-        return $msgList;
+        $position =array(
+            'dropdown__COLLECTION_SEASON__AW_14' => 0,
+            'dropdown__COLLECTION_SEASON__PRE_SS_15' => 1,
+            'dropdown__COLLECTION_SEASON__SS_15' => 2,
+            'dropdown__COLLECTION_SEASON__AW_15' => 3,
+            'dropdown__COLLECTION_SEASON__PRE_SS16' => 4,
+            'dropdown__COLLECTION_SEASON__SPRING_16' => 5,
+            'dropdown__COLLECTION_SEASON__SUMMER_16' => 6,
+            'dropdown__COLLECTION_SEASON__SS_16' => 7,
+            'dropdown__COLLECTION_SEASON__PRE_AW_16' => 8,
+            'dropdown__COLLECTION_SEASON__AW_16' => 9,
+        );
+
+        foreach($lookbookList as $b=>$c) {
+            $c['index'] = $position[$c['season']];
+            $lookbookList[$b]=$c;
+        }
+
+        $this->sortArrByField($lookbookList, 'index', true);
+
+        return $lookbookList;
+    }
+
+    function sortArrByField(&$array, $field, $desc = false){
+        $fieldArr = array();
+        foreach ($array as $k => $v) {
+            $fieldArr[$k] = $v[$field];
+        }
+        $sort = $desc == false ? SORT_ASC : SORT_DESC;
+        array_multisort($fieldArr, $sort, $array);
     }
 
     /**
