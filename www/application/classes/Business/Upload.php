@@ -93,7 +93,12 @@ class Business_Upload
         
         return $output;
     }
-    
+
+    public static function resizeImages($percent=0.9)
+    {
+
+    }
+
     public function createThreeImage($imagePath)
     {
         $extension = substr(strrchr($imagePath, '.'), 1);

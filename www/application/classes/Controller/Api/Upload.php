@@ -29,6 +29,10 @@ class Controller_Api_Upload extends Controller_Base
         ));
     }
 
+    public function action_resize() {
+        $res = $this->uploadService->resizeImages();
+    }
+
     public function action_pdf()
     {
         $res = $this->uploadService->imageAndPdf();
@@ -42,5 +46,4 @@ class Controller_Api_Upload extends Controller_Base
             'data'   => $res,
         ));
     }
-
 }
