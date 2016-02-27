@@ -85,7 +85,7 @@ class Business_Lookbook
             $lookbookSmallFilePath = $arr[0] . '_small'.'.'.$extension;
 
             // Business_Upload::deleteFile($lookbookSmallFilePath);
-            Business_Upload::deleteFile($lookbookFilePath);
+            // Business_Upload::deleteFile($lookbookFilePath);
 
             $this->lookbookModel->deleteLookbook($userId, $lookbookId);
         }
