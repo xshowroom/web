@@ -246,7 +246,7 @@ angular.module(
                         }
                         $scope.timeout = $timeout(function () {
                             $scope.timeout = null;
-                        }, 30000, true);
+                        }, 300000, true);
                         $scope.$apply();
                         uploadFile(files);
                         self.val('');
