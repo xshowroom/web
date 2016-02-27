@@ -19,7 +19,7 @@ class Controller_Order extends Controller_BaseReqLogin
         $this->orderService = new Business_Order();
     }
 
-    
+
     public function action_index()
     {
         $view = View::factory('order_index');
@@ -27,7 +27,7 @@ class Controller_Order extends Controller_BaseReqLogin
 
         $orderInfo = $this->orderService->getOrderById($orderId);
 
-        if(empty($orderInfo)) {
+        if (empty($orderInfo)) {
             $this->redirect_404();
         }
 
@@ -35,11 +35,11 @@ class Controller_Order extends Controller_BaseReqLogin
         $view->set('userAttr', $this->opUser['userAttr']);
         $view->set('order', $orderInfo);
         $view->set('adminAccount', '123123123123123');
-        
+
 
         $this->response->body($view);
     }
-    
+
     public function action_create()
     {
         $this->checkBuyerUser();
@@ -52,10 +52,10 @@ class Controller_Order extends Controller_BaseReqLogin
         $view->set('collection', $this->buyerService->getCollectionInfo($this->opUser['id'], $collectionId));
 
         $this->response->body($view);
-    
+
     }
-    
-    
+
+
     public function action_list()
     {
         $view = View::factory('order_list');

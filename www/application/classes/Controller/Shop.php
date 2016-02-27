@@ -22,7 +22,7 @@ class Controller_Shop extends Controller_Base
         // get user info if login
         $opUser = $_SESSION['opUser'];
 
-        if(!empty($opUser)) {
+        if (!empty($opUser)) {
             // only buyer user can view this page with login status
             if ($opUser['role_type'] == Model_User::TYPE_USER_BUYER) {
                 $view->set('user', $opUser);

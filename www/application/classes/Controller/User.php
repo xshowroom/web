@@ -23,11 +23,11 @@ class Controller_User extends Controller_BaseReqLogin
     {
         $roleType = (int)$this->opUser['role_type'];
 
-        if($roleType === Model_User::TYPE_USER_BRAND){
+        if ($roleType === Model_User::TYPE_USER_BRAND) {
             $this->redirect('/brand/dashboard');
         } elseif ($roleType === Model_User::TYPE_USER_BUYER) {
             $this->redirect('/buyer/dashboard');
-        }elseif ($roleType === Model_User::TYPE_USER_ADMIN){
+        } elseif ($roleType === Model_User::TYPE_USER_ADMIN) {
             $this->redirect('/xsadmin/management');
         }
 
@@ -50,7 +50,7 @@ class Controller_User extends Controller_BaseReqLogin
 
         $view->set('userAttr', $this->userService->getUserAttr($this->opUser['id']));
 
-        if($roleType === Model_User::TYPE_USER_BRAND){
+        if ($roleType === Model_User::TYPE_USER_BRAND) {
             $view->set('brandInfo', $this->brandService->getBrandInfo($this->opUser['id']));
         }
 
@@ -65,7 +65,7 @@ class Controller_User extends Controller_BaseReqLogin
         $view->set('user', $this->opUser);
         $view->set('userAttr', $this->opUser['userAttr']);
 
-        if($roleType === Model_User::TYPE_USER_BRAND){
+        if ($roleType === Model_User::TYPE_USER_BRAND) {
             $view->set('brandInfo', $this->brandService->getBrandInfo($this->opUser['id']));
         }
 

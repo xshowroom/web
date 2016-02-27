@@ -21,16 +21,16 @@ class Controller_Store extends Controller_BaseReqLogin
         $view->set('storeId', $storeId);
         $this->response->body($view);
     }
-    
+
     public function action_create()
     {
         $this->checkBuyerUser();
 
-    	$view = View::factory('store_create');
-    	$view->set('user', $this->opUser);
-    	$view->set('userAttr', $this->opUser['userAttr']);
-    
-    	$this->response->body($view);
+        $view = View::factory('store_create');
+        $view->set('user', $this->opUser);
+        $view->set('userAttr', $this->opUser['userAttr']);
+
+        $this->response->body($view);
     }
-    
+
 }

@@ -8,7 +8,7 @@ class Controller_Press extends Controller_Base
         $view = View::factory('press');
         $opUser = $_SESSION['opUser'];
 
-        if(!empty($opUser)) {
+        if (!empty($opUser)) {
             $view->set('user', $opUser);
             $view->set('userAttr', $opUser['userAttr']);
         }
@@ -22,7 +22,7 @@ class Controller_Press extends Controller_Base
         $view = View::factory('press_detail');
         $opUser = $_SESSION['opUser'];
 
-        if(!empty($opUser)) {
+        if (!empty($opUser)) {
             $view->set('user', $opUser);
             $view->set('userAttr', $opUser['userAttr']);
         }

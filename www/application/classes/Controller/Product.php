@@ -13,8 +13,8 @@ class Controller_Product extends Controller_BaseReqLogin
         parent::before();
         $this->userService = new Business_User();
         $this->buyerService = new Business_Buyer();
-        $this->productionService =new Business_Production();
-        $this->collectionService =new Business_Collection();
+        $this->productionService = new Business_Production();
+        $this->collectionService = new Business_Collection();
     }
 
     public function action_index()
@@ -34,7 +34,7 @@ class Controller_Product extends Controller_BaseReqLogin
             $collection = $this->buyerService->getCollectionInfo($userId, $production['collection_id']);
         }
 
-        $production['gallery_image_urls'] = strtr(json_encode($production['image_url']), array('"'=>'\''));
+        $production['gallery_image_urls'] = strtr(json_encode($production['image_url']), array('"' => '\''));
 
         $view->set('production', $production);
         $view->set('collection', $collection);
@@ -42,7 +42,7 @@ class Controller_Product extends Controller_BaseReqLogin
         $this->response->body($view);
 
     }
-    
+
     public function action_create()
     {
         $this->checkBrandUser();
@@ -56,10 +56,10 @@ class Controller_Product extends Controller_BaseReqLogin
         $view->set('collectionId', $collectionId);
         $view->set('collectionInfo', $collectionInfo);
 
-    	$this->response->body($view);
-    
+        $this->response->body($view);
+
     }
-    
+
     public function action_edit()
     {
         $this->checkBrandUser();
