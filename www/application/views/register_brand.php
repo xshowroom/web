@@ -175,6 +175,11 @@
 
 				<!-- step 3 -->
 				<div class="col-xs-12" ng-show="step.stepNumber == 3">
+					<div class="form-group">
+						<div class="col-xs-12">
+							<p class="text-center help-block">品牌代理和授权需要真实的实体公司，请您正确填写您的真实公司信息，以便审核。</p>
+						</div>
+					</div>
 					<div class="form-group"  ng-class="{'has-error': step.validation[3].companyName}">
 						<div class="col-xs-12">
 							<input type="text" class="form-control" id="company-name" name="companyName"

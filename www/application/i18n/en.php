@@ -18,6 +18,7 @@ return array_merge(
         'brandUrl_existed' => 'brand url has already been resisted',
         'check_ok' => 'ok',
         'not_active' => 'user is pending approval',
+        'reject' => 'your register is reject by admin',
         // change password
         'OLD_PASSWORD_ERROR'=> 'old password is not match',
         'CHANGE_PASSWORD_SUCCESS'=> 'password has been changed',
@@ -586,7 +587,7 @@ return array_merge(
         'buyer_dashboard__MY_ORDERS' => 'MY ORDERS',
         'buyer_dashboard__ALL_ORDERS' => 'ALL ORDERS >',
         'buyer_dashboard__ORDER_EMPTY_1' => 'WELCOME TO XSHOWROOM',
-        'buyer_dashboard__ORDER_EMPTY_2' => 'YOU HAVE ON ORDERS. PLEASE',
+        'buyer_dashboard__ORDER_EMPTY_2' => 'YOU HAVE NO ORDERS. PLEASE',
         'buyer_dashboard__ORDER_EMPTY_3' => 'EXPLORE BRANDS',
         'buyer_dashboard__ORDER_NUMBER' => 'ORDER:',
         'buyer_dashboard__ORDER_SUBMIT' => 'SUBMIT:',

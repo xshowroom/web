@@ -2,7 +2,7 @@
 
 /**
  * Brand
- * 
+ *
  * @author shenpeipei
  * @author liyashuai
  */
@@ -11,46 +11,46 @@ class Model_Brand
     public function getAllList()
     {
         $result = DB::select()
-                    ->from('brand')
-                    ->where('status', '=', Model_User::STATUS_USER_NORMAL)
-                    ->execute()
-                    ->as_array('user_id');
-        
+            ->from('brand')
+            ->where('status', '=', Model_User::STATUS_USER_NORMAL)
+            ->execute()
+            ->as_array('user_id');
+
         return $result;
     }
-    
+
     public function getById($id)
     {
         $result = DB::select()
-                    ->from('brand')
-                    ->where('id', '=', $id)
-                    ->where('status', '=', Model_User::STATUS_USER_NORMAL)
-                    ->execute()
-                    ->as_array();
-        
+            ->from('brand')
+            ->where('id', '=', $id)
+            ->where('status', '=', Model_User::STATUS_USER_NORMAL)
+            ->execute()
+            ->as_array();
+
         return empty($result) ? array() : $result[0];
     }
-    
+
     public function getByName($name)
     {
         $result = DB::select()
-                    ->from('brand')
-                    ->where('brand_name', 'like', '%'.$name.'%')
-                    ->where('status', '=', Model_User::STATUS_USER_NORMAL)
-                    ->execute()
-                    ->as_array('user_id');
-        
+            ->from('brand')
+            ->where('brand_name', 'like', '%' . $name . '%')
+            ->where('status', '=', Model_User::STATUS_USER_NORMAL)
+            ->execute()
+            ->as_array('user_id');
+
         return $result;
     }
 
     public function getByCategory($category)
     {
         $result = DB::select()
-                    ->from('brand')
-                    ->where('category_type', '=', $category)
-                    ->where('status', '=', Model_User::STATUS_USER_NORMAL)
-                    ->execute()
-                    ->as_array('user_id');
+            ->from('brand')
+            ->where('category_type', '=', $category)
+            ->where('status', '=', Model_User::STATUS_USER_NORMAL)
+            ->execute()
+            ->as_array('user_id');
 
         return $result;
     }
@@ -58,47 +58,47 @@ class Model_Brand
     public function getByUrl($url)
     {
         $result = DB::select()
-                    ->from('brand')
-                    ->where('brand_url', '=', $url)
-                    ->where('status', '=', Model_User::STATUS_USER_NORMAL)
-                    ->execute()
-                    ->as_array();
-        
+            ->from('brand')
+            ->where('brand_url', '=', $url)
+            ->where('status', '=', Model_User::STATUS_USER_NORMAL)
+            ->execute()
+            ->as_array();
+
         return empty($result) ? array() : $result[0];
     }
-    
+
     public function getByUserId($userId)
     {
         $result = DB::select()
-                    ->from('brand')
-                    ->where('user_id', '=', $userId)
-                    ->execute()
-                    ->as_array();
-        
+            ->from('brand')
+            ->where('user_id', '=', $userId)
+            ->execute()
+            ->as_array();
+
         return empty($result) ? array() : $result[0];
     }
-    
+
     public function getByUserIdList($userIdList)
     {
         $result = DB::select()
-                    ->from('brand')
-                    ->where('user_id', 'IN', $userIdList)
-                    ->where('status', '=', Model_User::STATUS_USER_NORMAL)
-                    ->execute()
-                    ->as_array();
-        
+            ->from('brand')
+            ->where('user_id', 'IN', $userIdList)
+            ->where('status', '=', Model_User::STATUS_USER_NORMAL)
+            ->execute()
+            ->as_array();
+
         return $result;
     }
-    
+
     public function getByBrandIdList($brandList)
     {
         $result = DB::select()
-                    ->from('brand')
-                    ->where('id', 'IN', $brandList)
-                    ->where('status', '=', Model_User::STATUS_USER_NORMAL)
-                    ->execute()
-                    ->as_array('user_id');
-    
+            ->from('brand')
+            ->where('id', 'IN', $brandList)
+            ->where('status', '=', Model_User::STATUS_USER_NORMAL)
+            ->execute()
+            ->as_array('user_id');
+
         return $result;
     }
 

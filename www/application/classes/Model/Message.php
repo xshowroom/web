@@ -2,12 +2,12 @@
 
 /**
  * Message
- * 
+ *
  * @author tangxiaotao
  */
 class Model_Message
 {
-    protected static $TABLE= 'message';
+    protected static $TABLE = 'message';
 
     /**
      * define some messages
@@ -18,7 +18,7 @@ class Model_Message
 
     const MSG_STATUS_DELETE = -1;
     const MSG_STATUS_UNREAD = 0;
-    const MSG_STATUS_READ =  1;
+    const MSG_STATUS_READ = 1;
 
     public function createMessage($toUserId, $messageBody, $orderId, $order_status)
     {
@@ -47,10 +47,10 @@ class Model_Message
     public function changeMessageStatus($userId, $messageId, $status)
     {
         $result = DB::update(Model_Message::$TABLE)
-                    ->set(array('status'=>$status))
-                    ->where('user_id', '=', $userId)
-                    ->where('id', '=', $messageId)
-                    ->execute();
+            ->set(array('status' => $status))
+            ->where('user_id', '=', $userId)
+            ->where('id', '=', $messageId)
+            ->execute();
 
         return $result[0];
     }
@@ -58,23 +58,23 @@ class Model_Message
     public function getAllMessagesByUser($userId)
     {
         $result = DB::select()
-                    ->from(Model_Message::$TABLE)
-                    ->where('user_id', '=', $userId)
-                    ->where('status', '!=', Model_Message::MSG_STATUS_DELETE)
-                    ->execute()
-                    ->as_array();
-        
+            ->from(Model_Message::$TABLE)
+            ->where('user_id', '=', $userId)
+            ->where('status', '!=', Model_Message::MSG_STATUS_DELETE)
+            ->execute()
+            ->as_array();
+
         return $result;
     }
-    
+
     public function getMessageById($userId, $messageId)
     {
         $result = DB::select()
-                    ->from(Model_Message::$TABLE)
-                    ->where('user_id', '=', $userId)
-                    ->where('id', '=', $messageId)
-                    ->execute();
-        
+            ->from(Model_Message::$TABLE)
+            ->where('user_id', '=', $userId)
+            ->where('id', '=', $messageId)
+            ->execute();
+
         return $result[0];
     }
 

@@ -159,7 +159,7 @@
                             <label for="store-about" class="col-xs-2 control-label"><?=__("store_index__ABOUT_STORE");?></label>
                             <div class="col-xs-6">
                            		<textcomplete>
-                                  	<textarea class="form-control" id="store-about" ng-model="store.shopAbout" ng-disabled="!isEditing"></textarea>
+                                  	<textarea style="height:200px;overflow-y:auto;" class="form-control" id="store-about" ng-model="store.shopAbout" ng-disabled="!isEditing"></textarea>
                                 </textcomplete>
                             </div>
                           </div>

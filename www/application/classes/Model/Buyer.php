@@ -2,81 +2,81 @@
 
 /**
  * Buyer
- * 
+ *
  * @author shenpeipei
  * @author liyashuai
  */
 class Model_Buyer
 {
     // 权限申请
-    const STATUS_APPLYING   = -1;
-    const STATUS_NORMAL     = 0;
-    const STATUS_STOP       = 1;
-    const STATUS_DELETED    = 2;
+    const STATUS_APPLYING = -1;
+    const STATUS_NORMAL = 0;
+    const STATUS_STOP = 1;
+    const STATUS_DELETED = 2;
 
     // 买手权限状态
-    const STATUS_BUYER_NOTAPPLIED   = -2;
-    const STATUS_BUYER_UNAUTHED     = -1;
-    const STATUS_BUYER_AUTHED       = 0;
+    const STATUS_BUYER_NOTAPPLIED = -2;
+    const STATUS_BUYER_UNAUTHED = -1;
+    const STATUS_BUYER_AUTHED = 0;
 
     public function getAuthListByUser($userId)
     {
         $result = DB::select()
-                    ->from('buyer_brand_map')
-                    ->where('user_id', '=', $userId)
-                    ->where('status', '=', self::STATUS_NORMAL)
-                    ->execute()
-                    ->as_array();
-        
+            ->from('buyer_brand_map')
+            ->where('user_id', '=', $userId)
+            ->where('status', '=', self::STATUS_NORMAL)
+            ->execute()
+            ->as_array();
+
         return $result;
     }
 
     public function getAuthListByUserAndBrand($userId, $brandId)
     {
         $result = DB::select()
-                    ->from('buyer_brand_map')
-                    ->where('user_id', '=', $userId)
-                    ->where('brand_id', '=', $brandId)
-                    ->where('status', '=', self::STATUS_NORMAL)
-                    ->execute()
-                    ->as_array();
-        
+            ->from('buyer_brand_map')
+            ->where('user_id', '=', $userId)
+            ->where('brand_id', '=', $brandId)
+            ->where('status', '=', self::STATUS_NORMAL)
+            ->execute()
+            ->as_array();
+
         return $result;
     }
 
     public function apply($userId, $shopId, $brandId)
     {
         $result = DB::insert('buyer_brand_map')
-                    ->columns(array(
-                        'user_id',
-                        'shop_id',
-                        'op_user_id',
-                        'brand_id',
-                        'update_time',
-                        'status',
-                    ))
-                    ->values(array(
-                        $userId,
-                        $shopId,
-                        $userId,
-                        $brandId,
-                        date('Y-m-d H:i:s'),
-                        self::STATUS_APPLYING,
-                    ))
-                    ->execute();
-        
+            ->columns(array(
+                'user_id',
+                'shop_id',
+                'op_user_id',
+                'brand_id',
+                'update_time',
+                'status',
+            ))
+            ->values(array(
+                $userId,
+                $shopId,
+                $userId,
+                $brandId,
+                date('Y-m-d H:i:s'),
+                self::STATUS_APPLYING,
+            ))
+            ->execute();
+
         return $result[0];
     }
 
     public function getRelation($userId, $brandId)
     {
         $result = DB::select()
-                    ->from('buyer_brand_map')
-                    ->where('user_id', '=', $userId)
-                    ->where('brand_id', '=', $brandId)
-                    ->where('status', '!=', self::STATUS_DELETED)
-                    ->execute()
-                    ->as_array();
+            ->from('buyer_brand_map')
+            ->where('user_id', '=', $userId)
+            ->where('brand_id', '=', $brandId)
+            ->where('status', '!=', self::STATUS_DELETED)
+            ->execute()
+            ->as_array();
 
         return $result;
     }
@@ -84,10 +84,10 @@ class Model_Buyer
     public function listByAuthStatus($status)
     {
         $result = DB::select()
-                    ->from('buyer_brand_map')
-                    ->where('status', '=', $status)
-                    ->execute()
-                    ->as_array();
+            ->from('buyer_brand_map')
+            ->where('status', '=', $status)
+            ->execute()
+            ->as_array();
 
         return $result;
     }
@@ -95,15 +95,15 @@ class Model_Buyer
     public function updateAuthStatus($userId, $shopId, $brandId, $opUserId, $status)
     {
         $result = DB::update('buyer_brand_map')
-                    ->set(array(
-                        'op_user_id' => $opUserId,
-                        'update_time' => date('Y-m-d H:i:s'),
-                        'status'      => $status,
-                    ))
-                    ->where('user_id', '=', $userId)
-                    ->where('shop_id', '=', $shopId)
-                    ->where('brand_id', '=', $brandId)
-                    ->execute();
+            ->set(array(
+                'op_user_id' => $opUserId,
+                'update_time' => date('Y-m-d H:i:s'),
+                'status' => $status,
+            ))
+            ->where('user_id', '=', $userId)
+            ->where('shop_id', '=', $shopId)
+            ->where('brand_id', '=', $brandId)
+            ->execute();
 
         return $result;
     }
@@ -111,14 +111,14 @@ class Model_Buyer
     public function updateAuthStatusByShop($userId, $shopId, $opUserId, $status)
     {
         $result = DB::update('buyer_brand_map')
-                    ->set(array(
-                        'op_user_id' => $opUserId,
-                        'update_time' => date('Y-m-d H:i:s'),
-                        'status'      => $status,
-                    ))
-                    ->where('user_id', '=', $userId)
-                    ->where('shop_id', '=', $shopId)
-                    ->execute();
+            ->set(array(
+                'op_user_id' => $opUserId,
+                'update_time' => date('Y-m-d H:i:s'),
+                'status' => $status,
+            ))
+            ->where('user_id', '=', $userId)
+            ->where('shop_id', '=', $shopId)
+            ->execute();
 
         return $result;
     }
@@ -126,12 +126,12 @@ class Model_Buyer
     public function getShopInApplying($userId, $brandId)
     {
         $result = DB::select()
-                    ->from('buyer_brand_map')
-                    ->where('user_id', '=', $userId)
-                    ->where('brand_id', '=', $brandId)
-                    ->where('status', '=', self::STATUS_APPLYING)
-                    ->execute()
-                    ->as_array();
+            ->from('buyer_brand_map')
+            ->where('user_id', '=', $userId)
+            ->where('brand_id', '=', $brandId)
+            ->where('status', '=', self::STATUS_APPLYING)
+            ->execute()
+            ->as_array();
 
         return $result;
     }
@@ -142,7 +142,7 @@ class Model_Buyer
             ->set(array(
                 'op_user_id' => $opUserId,
                 'update_time' => date('Y-m-d H:i:s'),
-                'status'      => $status,
+                'status' => $status,
             ))
             ->where('id', '=', $mapId)
             ->execute();

