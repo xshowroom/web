@@ -111,15 +111,15 @@ class Business_Upload
                 $fileSize = filesize($realPathFile);
 
                 // 生成medium图和small图，目标：中图大概200K左右，小图大概在30K
-                if($fileSize > 1 * 1024 * 1024) {
-                    $mediumPathFile = $this->resize($realPathFile, 0.15, 'medium');
-                    $smallPathFile = $this->resize($realPathFile, 0.02, 'small');
-                } elseif ($fileSize > 0.5 * 1024 * 1024)  {
-                    $mediumPathFile = $this->resize($realPathFile, 0.3, 'medium');
-                    $smallPathFile = $this->resize($realPathFile, 0.05, 'small');
+                if($fileSize > 2 * 1024 * 1024) {
+                    $mediumPathFile = $this->resize($realPathFile, 0.5, 'medium');
+                    $smallPathFile = $this->resize($realPathFile, 0.2, 'small');
+                } elseif ($fileSize > 1 * 1024 * 1024)  {
+                    $mediumPathFile = $this->resize($realPathFile, 0.5, 'medium');
+                    $smallPathFile = $this->resize($realPathFile, 0.25, 'small');
                 } else {
                     $mediumPathFile = $this->resize($realPathFile, 0.5, 'medium');
-                    $smallPathFile = $this->resize($realPathFile, 0.1, 'small');
+                    $smallPathFile = $this->resize($realPathFile, 0.3, 'small');
                 }
 
             } catch (Exception $e) {
@@ -140,13 +140,13 @@ class Business_Upload
         $smallImagePath = $imagePath;
 
         // 裁图，目标200K一个图
-        if($fileSize > 1 * 1024 * 1024) {
+        if($fileSize > 2 * 1024 * 1024) {
             $resizeImagePath = $this->resize($imagePath, 0.2, $resizeTerm);
             $smallImagePath = $resizeImagePath;
-        } elseif ($fileSize > 0.5 * 1024 * 1024)  {
+        } elseif ($fileSize > 0.8 * 1024 * 1024)  {
             $resizeImagePath = $this->resize($imagePath, 0.5, $resizeTerm);
             $smallImagePath = $resizeImagePath;
-        } elseif ($fileSize > 0.3 * 1024 * 1024)  {
+        } elseif ($fileSize > 0.5 * 1024 * 1024)  {
             $resizeImagePath = $this->resize($imagePath, 0.7, $resizeTerm);
             $smallImagePath = $resizeImagePath;
         }
