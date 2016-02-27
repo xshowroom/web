@@ -27,6 +27,10 @@ class Business_User
         if ($user['status'] == Model_User::STATUS_USER_PENDING) {
             throw new Kohana_Exception('not_active');
         }
+
+        if ($user['status'] == Model_User::STATUS_USER_REJECTED) {
+            throw new Kohana_Exception('reject');
+        }
         
         if (!empty($user)) {
             $_SESSION['opUser'] = $user;
