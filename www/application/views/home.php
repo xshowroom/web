@@ -2,6 +2,7 @@
 <html ng-app="xShowroom.home">
 <head>
 	<meta charset="UTF-8" >
+	<meta name="baidu_union_verify" content="10a49be17293eff802847e6fe73dcd54">
 	<title><?=SITE_TITLE_PROFIX?></title>
 	<?php echo View::factory('common/global_libraries'); ?>
 	<link rel="stylesheet" type="text/css" href="/static/bower_components/nivoslider/nivo-slider.css" />
